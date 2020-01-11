@@ -2,6 +2,4 @@
 User-agent : *
 Allow: /
 sitemap:https://lada-aym.github.io/sitemap.xml
-sitemap:https://lada-aym.github.io/Lada4x4/sitemap.xml
-sitemap:https://lada-aym.github.io/Chevrolet_NIVA/sitemap.xml
-sitemap:https://lada-aym.github.io/Lada_Samara/sitemap.xml
+
