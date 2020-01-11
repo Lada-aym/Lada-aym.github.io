@@ -1,11 +1,7 @@
 
 User-agent : *
 Allow: /
-sitemap: http://www.lada-aym.narod.ru/sitemap.xml
-sitemap:http://www.lada-aym.narod.ru/Lada4x4/sitemap.xml
-sitemap:http://www.lada-aym.narod.ru/Chevrolet_NIVA/sitemap.xml
-sitemap:http://www.lada-aym.narod.ru/Lada_Samara/sitemap.xml
-sitemap:http://www.lada-aym.ru./sitemap-2.xml
-sitemap:http://www.lada-aym.ru/Chevrolet_NIVA/sitemap-Chevrolet_NIVA.xml
-sitemap:http://www.lada-aym.ru/Lada_Samara/sitemap-Lada_Samara.xml
-sitemap:http://www.lada-aym.ru//Lada4x4/sitemap-Lada4x4.xml
+sitemap:https://lada-aym.github.io/sitemap.xml
+sitemap:https://lada-aym.github.io/Lada4x4/sitemap.xml
+sitemap:https://lada-aym.github.io/Chevrolet_NIVA/sitemap.xml
+sitemap:https://lada-aym.github.io/Lada_Samara/sitemap.xml
