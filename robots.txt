@@ -1,2 +1,13 @@
 User-agent: *
 Disallow: /cgi-bin
+sitemap:https://lada-aym.github.io/sitemap.xml
+sitemap:https://lada-aym.github.io/LADA_Granta/sitemap.xml
+sitemap:https://lada-aym.github.io/LADA_Vesta/sitemap.xml
+sitemap:https://lada-aym.github.io/LADA_XRAY/sitemap.xml
+sitemap:https://lada-aym.github.io/LADA_Largus/sitemap.xml
+sitemap:https://lada-aym.github.io/Lada4x4/sitemap.xml
+sitemap:https://lada-aym.github.io/LADA_Priora/sitemap.xml
+sitemap:https://lada-aym.github.io/LADA_Kalina/sitemap.xml
+sitemap:https://lada-aym.github.io/Lada_Samara/sitemap.xml
+sitemap:https://lada-aym.github.io/Chevrolet_NIVA/sitemap.xml
+sitemap:https://lada-aym.github.io/Video/sitemap.xml
