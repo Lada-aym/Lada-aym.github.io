@@ -1,0 +1,654 @@
+{
+  "settings": {
+    "name": "LADA Granta",
+    "currentPage": "index.html",
+    "theme": {
+      "name": "mobirise-amp",
+      "title": "Mobirise AMP",
+      "styling": {
+        "primaryColor": "#f54d11",
+        "secondaryColor": "#4addff",
+        "successColor": "#0dcd7b",
+        "infoColor": "#8282e7",
+        "warningColor": "#767676",
+        "dangerColor": "#a0a0a0",
+        "mainFont": "Roboto",
+        "display1Font": "Roboto",
+        "display1Size": 4.5,
+        "display2Font": "Roboto",
+        "display2Size": 2.2,
+        "display5Font": "Roboto",
+        "display5Size": 1.8,
+        "display7Font": "Roboto",
+        "display7Size": 1.1,
+        "display4Font": "Roboto",
+        "display4Size": 0.9,
+        "isRoundedButtons": false,
+        "isScrollToTopButton": false,
+        "arrowColor": "#4ea2e3"
+      },
+      "additionalSetColors": [
+        "#f54d11",
+        "#ef482a"
+      ]
+    },
+    "path": "@PROJECT_PATH@",
+    "versionFirst": "4.11.9",
+    "siteFonts": [
+      {
+        "css": "'Roboto', sans-serif",
+        "name": "Roboto",
+        "url": "https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+      }
+    ],
+    "favicon": false,
+    "canonical-url": "https://lada-aym.github.io/",
+    "imageResize": true,
+    "robotsSwitcher": true,
+    "robotsText": "User-agent: *\nDisallow: /cgi-bin\n",
+    "sitemapSwitcher": true,
+    "siteUrl": "https://lada-aym.github.io/",
+    "sitemapSwitcherAuto": "on",
+    "google-analytics": "<!-- Google Tag Manager -->\n<amp-analytics config=\"https://www.googletagmanager.com/amp.json?id=GTM-5R6T3Z5&gtm.url=SOURCE_URL\" data-credentials=\"include\"></amp-analytics>\n<amp-auto-ads type=\"adsense\"\n              data-ad-client=\"ca-pub-2079102452301021\">\n</amp-auto-ads>",
+    "gdpr": {
+      "colorText": "#a7a7a7",
+      "colorLink": "#149dcc",
+      "underlineLink": false,
+      "text": "By continuing you agree to our <a href='terms.html'>Terms of Service</a> and <a href='policy.html'>Privacy Policy</a>."
+    },
+    "cookiesAlert": {
+      "customDialogSelector": false,
+      "colorText": "#424a4d",
+      "colorBg": "#eaeff1",
+      "colorButton": "",
+      "colorLink": "#424a4d",
+      "underlineLink": true,
+      "opacity": "99",
+      "opacityOverlay": "80",
+      "text": "We use cookies to give you the best experience. Read our <a href='privacy.html'>cookie policy</a>.",
+      "textButton": "Agree"
+    },
+    "uniqCompNum": 5,
+    "versionPublish": "4.11.9",
+    "screenshot": "screenshot.png"
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "Авто руководства | LADA Granta",
+        "meta_descr": "Руководство по эксплуатации\nавтомобиля и его модификаций",
+        "header_custom": "<!-- AMP Analytics --><script async custom-element=\"amp-analytics\" src=\"https://cdn.ampproject.org/v0/amp-analytics-0.1.js\"></script>\n<script async custom-element=\"amp-auto-ads\"\n        src=\"https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js\">\n</script>",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "min-height": "80px",
+            ".brand-name": {
+              "color": "#000000",
+              "margin": "0"
+            },
+            ".nav-item:focus, .nav-link:focus": {
+              "outline": "none"
+            },
+            ".navbar-nav": {
+              "list-style-type": "none",
+              "display": "flex",
+              "-webkit-flex-direction": "row",
+              "flex-direction": "row",
+              "padding-left": "0",
+              ".nav-link": {
+                "margin": ".667em 1em",
+                "font-weight": "normal"
+              }
+            },
+            "@media (min-width: 992px)": {
+              ".dropdown-menu .dropdown-toggle:after": {
+                "content": "''",
+                "border-bottom": "0.35em solid transparent",
+                "border-left": "0.35em solid",
+                "border-right": "0",
+                "border-top": "0.35em solid transparent",
+                "margin-left": "0.3rem",
+                "margin-top": "-0.3077em",
+                "position": "absolute",
+                "right": "1.1538em",
+                "top": "50%"
+              }
+            },
+            "@media (max-width: 991px)": {
+              "ul.navbar-nav": {
+                "-webkit-flex-direction": "column !important",
+                "flex-direction": "column !important",
+                "li": {
+                  "margin": "auto"
+                }
+              },
+              ".dropdown-toggle[data-toggle=\"dropdown-submenu\"]:after": {
+                "content": "''",
+                "margin-left": ".25rem",
+                "border-top": "0.35em solid",
+                "border-right": "0.35em solid transparent",
+                "border-left": "0.35em solid transparent",
+                "border-bottom": "0",
+                "top": "55%"
+              },
+              ".nav-dropdown .dropdown-menu .dropdown-item": {
+                "-webkit-justify-content": "center",
+                "justify-content": "center",
+                "display": "flex !important",
+                "-webkit-align-items": "center",
+                "align-items": "center"
+              }
+            },
+            ".nav-dropdown .dropdown-menu": {
+              "border-radius": "0",
+              "border": "0",
+              "left": "0",
+              "margin": "0",
+              "min-width": "10rem",
+              "padding-bottom": "1.25rem",
+              "padding-top": "1.25rem",
+              "position": "absolute",
+              ".dropdown-item": {
+                "font-weight": "400",
+                "line-height": "2",
+                "display": "flex",
+                "-webkit-align-items": "center",
+                "align-items": "center",
+                "width": "100%",
+                "padding": ".25rem 1.5rem",
+                "clear": "both",
+                "text-align": "inherit",
+                "white-space": "nowrap",
+                "background": "0 0",
+                "border": "0"
+              },
+              ".dropdown": {
+                "position": "relative"
+              }
+            },
+            ".nav-item.dropdown": {
+              "position": "relative",
+              ".dropdown-menu": {
+                "z-index": "-1",
+                "opacity": "0",
+                "pointer-events": "none"
+              },
+              "&:hover": {
+                "& > .dropdown-menu": {
+                  "z-index": "1",
+                  "opacity": "1",
+                  "pointer-events": "all"
+                }
+              }
+            },
+            ".dropdown-menu .dropdown:hover": {
+              "& > .dropdown-menu": {
+                "z-index": "1",
+                "opacity": "1",
+                "pointer-events": "all"
+              }
+            },
+            ".link.dropdown-toggle:after": {
+              "content": "''",
+              "margin-left": ".25rem",
+              "border-top": "0.35em solid",
+              "border-right": "0.35em solid transparent",
+              "border-left": "0.35em solid transparent",
+              "border-bottom": "0"
+            },
+            ".nav-dropdown .dropdown-submenu": {
+              "top": "0"
+            },
+            ".navbar": {
+              "z-index": "100",
+              "display": "flex",
+              "-webkit-flex-direction": "row",
+              "flex-direction": "row",
+              "width": "100%",
+              "min-height": "80px",
+              "transition": "all .3s",
+              "background": "@menuBgColor",
+              ".navbar-logo": {
+                "margin-right": ".8rem",
+                "img": {
+                  "height": "auto"
+                }
+              },
+              "&.navbar-short": {
+                "background": "@menuBgColor !important",
+                ".brand": {
+                  "padding": "0"
+                }
+              },
+              "&.opened": {
+                "transition": "all .3s",
+                "background": "@menuBgColor !important"
+              },
+              ".dropdown-item": {
+                "padding": ".25rem 1.5rem"
+              },
+              ".navbar-collapse": {
+                "display": "flex",
+                "-webkit-justify-content": "flex-end",
+                "justify-content": "flex-end",
+                "z-index": "1",
+                "-webkit-flex-basis": "100%",
+                "flex-basis": "100%",
+                "-webkit-align-items": "center",
+                "align-items": "center",
+                "& when not (@showItems)": {
+                  "display": "none !important"
+                }
+              },
+              "@media (max-width: 991px)": {
+                ".navbar-collapse": {
+                  "display": "none",
+                  "position": "absolute",
+                  "top": "0",
+                  "right": "0",
+                  "min-height": "100vh",
+                  "background": "@menuBgColor",
+                  "padding": "1rem 2rem 1rem 2rem",
+                  "& when (@sidebarSide = 'left')": {
+                    "right": "auto",
+                    "left": "0"
+                  }
+                },
+                "&.opened": {
+                  ".navbar-collapse": {
+                    "&.show, &.collapsing": {
+                      "display": "block"
+                    }
+                  },
+                  ".dropdown-menu": {
+                    "top": "0"
+                  }
+                },
+                ".dropdown-menu": {
+                  "position": "relative",
+                  "background": "transparent !important",
+                  ".dropdown-submenu": {
+                    "left": "0 !important"
+                  },
+                  ".dropdown-item:after": {
+                    "right": "auto"
+                  }
+                },
+                ".dropdown-menu .dropdown-item": {
+                  "padding": ".25rem 1.5rem",
+                  "text-align": "center",
+                  "margin": "0"
+                },
+                ".brand": {
+                  "-webkit-flex-shrink": "initial",
+                  "flex-shrink": "initial",
+                  "word-break": "break-word"
+                }
+              }
+            },
+            ".brand": {
+              "display": "flex",
+              "-webkit-flex-shrink": "0",
+              "flex-shrink": "0",
+              "-webkit-align-items": "center",
+              "align-items": "center",
+              "margin-right": "0",
+              "padding": "0",
+              "transition": "all .3s",
+              "word-break": "break-word",
+              "z-index": "1",
+              ".navbar-caption": {
+                "line-height": "inherit !important",
+                "font-weight": "normal"
+              },
+              ".navbar-logo a": {
+                "outline": "none"
+              },
+              ".navbar-caption-wrap": {
+                "display": "flex"
+              }
+            },
+            ".dropdown-item.active,.dropdown-item:active": {
+              "background-color": "transparent"
+            },
+            ".navbar-expand-lg .navbar-nav .nav-link": {
+              "padding": "0"
+            },
+            ".navbar.navbar-expand-lg .dropdown": {
+              ".dropdown-menu": {
+                "background": "@menuBgColor",
+                ".dropdown-submenu": {
+                  "margin": "0",
+                  "left": "100%"
+                }
+              }
+            },
+            ".navbar .dropdown.open > .dropdown-menu": {
+              "display": "block"
+            },
+            "ul.navbar-nav": {
+              "-webkit-flex-wrap": "wrap",
+              "flex-wrap": "wrap"
+            },
+            ".navbar-buttons": {
+              "text-align": "center"
+            },
+            "button.navbar-toggler": {
+              "display": "none",
+              "outline": "none",
+              "width": "31px",
+              "height": "20px",
+              "cursor": "pointer",
+              "transition": "all .2s",
+              "position": "relative",
+              "-webkit-align-self": "center",
+              "align-self": "center",
+              ".hamburger span": {
+                "position": "absolute",
+                "right": "0",
+                "width": "30px",
+                "height": "2px",
+                "border-right": "5px",
+                "background-color": "@hamburgerColor",
+                "&:nth-child(1)": {
+                  "top": "0",
+                  "transition": "all .2s"
+                },
+                "&:nth-child(2)": {
+                  "top": "8px",
+                  "transition": "all .15s"
+                },
+                "&:nth-child(3)": {
+                  "top": "8px",
+                  "transition": "all .15s"
+                },
+                "&:nth-child(4)": {
+                  "top": "16px",
+                  "transition": "all .2s"
+                }
+              }
+            },
+            "nav.opened .navbar-toggler:not(.hide) .hamburger span": {
+              "&:nth-child(1)": {
+                "top": "8px",
+                "width": "0",
+                "opacity": "0",
+                "right": "50%",
+                "transition": "all .2s"
+              },
+              "&:nth-child(2)": {
+                "-webkit-transform": "rotate(45deg)",
+                "transform": "rotate(45deg)",
+                "transition": "all .25s"
+              },
+              "&:nth-child(3)": {
+                "-webkit-transform": "rotate(-45deg)",
+                "transform": "rotate(-45deg)",
+                "transition": "all .25s"
+              },
+              "&:nth-child(4)": {
+                "top": "8px",
+                "width": "0",
+                "opacity": "0",
+                "right": "50%",
+                "transition": "all .2s"
+              }
+            },
+            ".navbar-dropdown": {
+              "padding": ".5rem 1rem",
+              "& when (@sticky)": {
+                "position": "fixed"
+              }
+            },
+            "a.nav-link": {
+              "display": "flex",
+              "-webkit-align-items": "center",
+              "align-items": "center",
+              "-webkit-justify-content": "center",
+              "justify-content": "center"
+            },
+            ".nav-link,.dropdown-item": {
+              ".mbr-iconfont": {
+                "margin-right": ".2rem"
+              }
+            },
+            ".ampstart-btn": {
+              "display": "flex",
+              "@media (min-width: 992px)": {
+                "display": "none"
+              },
+              "-webkit-align-self": "center",
+              "align-self": "center",
+              "&.hamburger": {
+                "position": "relative",
+                "right": "20px",
+                "margin-left": "auto",
+                "width": "30px",
+                "height": "20px",
+                "background": "none",
+                "border": "none",
+                "cursor": "pointer",
+                "z-index": "1000",
+                "&:focus": {
+                  "outline": "none"
+                },
+                "span": {
+                  "position": "absolute",
+                  "right": "0",
+                  "width": "30px",
+                  "height": "2px",
+                  "border-right": "5px",
+                  "background-color": "@hamburgerColor",
+                  "&:nth-child(1)": {
+                    "top": "0",
+                    "transition": "all .2s"
+                  },
+                  "&:nth-child(2)": {
+                    "top": "8px",
+                    "transition": "all .15s"
+                  },
+                  "&:nth-child(3)": {
+                    "top": "8px",
+                    "transition": "all .15s"
+                  },
+                  "&:nth-child(4)": {
+                    "top": "16px",
+                    "transition": "all .2s"
+                  }
+                }
+              }
+            },
+            "amp-sidebar": {
+              "min-width": "260px!important",
+              "z-index": "1050!important",
+              "background-color": "@menuBgColor"
+            },
+            "amp-sidebar.open:after": {
+              "content": "''",
+              "position": "absolute",
+              "top": "0",
+              "left": "0",
+              "bottom": "0",
+              "right": "0",
+              "background-color": "red"
+            },
+            ".open": {
+              "transform": "translateX(0%) !important",
+              "display": "block!important",
+              "-webkit-transform": "translateX(0%) !important"
+            },
+            ".builder-sidebar": {
+              "background-color": "@menuBgColor",
+              "position": "relative",
+              "min-height": "100vh",
+              "z-index": "1030",
+              "padding": "1rem 2rem",
+              "max-width": "20rem",
+              ".dropdown": {
+                "position": "relative",
+                "&:hover": {
+                  "& > .dropdown-menu": {
+                    "position": "relative",
+                    "text-align": "center"
+                  }
+                }
+              }
+            },
+            ".sidebar": {
+              "padding": "1rem 0",
+              "margin": "0"
+            },
+            ".sidebar > li": {
+              "list-style": "none",
+              "display": "flex",
+              "-webkit-flex-direction": "column",
+              "flex-direction": "column"
+            },
+            ".sidebar a": {
+              "display": "block",
+              "text-decoration": "none",
+              "margin-bottom": "10px"
+            },
+            ".close-sidebar": {
+              "width": "30px",
+              "height": "30px",
+              "position": "relative",
+              "cursor": "pointer",
+              "background-color": "transparent",
+              "border": "none",
+              "&:focus": {
+                "outline": "2px auto @primaryColor"
+              },
+              "span": {
+                "position": "absolute",
+                "left": "0",
+                "top": "14px",
+                "width": "30px",
+                "height": "2px",
+                "border-right": "5px",
+                "background-color": "@hamburgerColor",
+                "&:nth-child(1)": {
+                  "-webkit-transform": "rotate(45deg)",
+                  "transform": "rotate(45deg)"
+                },
+                "&:nth-child(2)": {
+                  "-webkit-transform": "rotate(-45deg)",
+                  "transform": "rotate(-45deg)"
+                }
+              }
+            },
+            "amp-img": {
+              "margin-right": "1rem",
+              "display": "flex",
+              "-webkit-align-items": "center",
+              "align-items": "center",
+              "height": "~\"@{logoHeight}px\"",
+              "width": "~\"@{logoWidth}px\"",
+              "@media (max-width: 767px)": {
+                "max-height": "35px",
+                "max-width": "35px"
+              }
+            }
+          },
+          "_name": "menu2",
+          "_customHTML": "<section class=\"menu horizontal-menu\" group=\"Menu\" plugins=\"DropDown, amp-main,amp-sidebar\" global once=\"menu\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Show Logo\" name=\"showLogo\" checked>\n        <input type=\"range\" title=\"Logo Height\" inline name=\"logoHeight\" min=\"35\" max=\"120\" value=\"45\" step=\"1\" condition=\"showLogo\">\n        <input type=\"range\" title=\"Logo Width\" inline name=\"logoWidth\" min=\"35\" max=\"120\" value=\"45\" step=\"1\" condition=\"showLogo\">\n        <input type=\"checkbox\" title=\"Show Brand Name\" name=\"showBrand\" checked>\n        <input type=\"checkbox\" title=\"Show Menu Items\" name=\"showItems\" checked>\n        <input type=\"checkbox\" title=\"Show Button(s)\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Sticky\" name=\"sticky\" checked>\n        <select title=\"Sidebar Side\" name=\"sidebarSide\">\n            <option value=\"left\">Left</option>\n            <option value=\"right\" selected>Right</option>\n        </select>\n        <input type=\"color\" title=\"Hamburger Color\" name=\"hamburgerColor\" value=\"#4ea2e3\">\n        <input type=\"color\" title=\"Background Color\" name=\"menuBgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    \n\n    <nav class=\"navbar navbar-dropdown navbar-expand-lg\" mbr-class=\"{'navbar-fixed-top':sticky}\">\n      <div class=\"brand\" mbr-if=\"showLogo || showBrand\">\n          <span mbr-if=\"showLogo\" class=\"brand-logo\">\n              <amp-img src=\"@PROJECT_PATH@/assets/images/ci-142-82x34.png\" layout=\"responsive\" width=\"45.8235294117647\" height=\"19\" alt=\"Lada-aym\" class=\"mobirise-loader\" title=\"Lada-aym\">\n                  <div placeholder class=\"placeholder\"></div>\n                  <img class=\"mbr-temp\" src=\"@PROJECT_PATH@/assets/images/ci-142-82x34.png\" alt=\"Lada-aym\" title=\"Lada-aym\">\n              </amp-img>\n          </span>\n          <p mbr-text mbr-theme-style=\"display-2\" mbr-if=\"showBrand\" class=\"brand-name mbr-fonts-style mbr-bold\" data-app-selector=\".brand-name\">Lada-AYM.ru</p>\n      </div>\n      <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n            <button class=\"navbar-toggler mb-2\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" mbr-if=\"showItems||showButtons\">\n                <div class=\"hamburger\">\n                    <span></span>\n                    <span></span>\n                    <span></span>\n                    <span></span>\n                </div>\n            </button>\n            <ul mbr-menu class=\"navbar-nav nav-dropdown\" mbr-theme-style=\"display-7\" mbr-if=\"showItems\" mbr-class=\"{'nav-right': !showButtons,'navbar-nav-top-padding': isPublish && !showBrand && !showLogo}\"><li class=\"nav-item\">\n                    <a class=\"nav-link link text-black\" href=\"/\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Введите Текст\"><span class=\"mbri-home mbr-iconfont mbr-iconfont-btn\"></span>Главная</a>\n                </li><li class=\"nav-item\"><a class=\"nav-link link text-black\" href=\"index.html\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Введите Текст\">Введение</a></li></ul>\n            \n            <div mbr-if=\"showButtons\" mbr-buttons mbr-theme-style=\"display-7\" class=\"navbar-buttons mbr-section-btn\"><a class=\"btn btn-sm btn-primary\" href=\"https://mobirise.co\" data-app-placeholder=\"Type Text\">\n                  Contact Us\n                </a></div>\n      </div>\n      <button class=\"navbar-toggler hide\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" mbr-if=\"showItems||showButtons\">\n          <div class=\"hamburger\">\n              <span></span>\n              <span></span>\n              <span></span>\n              <span></span>\n          </div>\n      </button>\n      <button on=\"tap:sidebar.toggle\" class=\"ampstart-btn hamburger\" mbr-class=\"{'sticky-but':sticky}\" mbr-if=\"showItems||showButtons\">\n        <span></span>\n        <span></span>\n        <span></span>\n        <span></span>\n    </button>\n    </nav>\n\n  <!-- AMP plug -->\n    <amp-sidebar id=\"sidebar\" layout=\"nodisplay\" side=\"{{sidebarSide}}\">\n        <div class=\"builder-sidebar\" id=\"builder-sidebar\">\n            <button on=\"tap:sidebar.close\" class=\"close-sidebar\">\n                <span></span>\n                <span></span>\n            </button>\n        </div>\n    </amp-sidebar>\n\n</section>",
+          "_cid": "rPpBRI2CI5",
+          "_anchor": "menu2-0",
+          "_protectedParams": [],
+          "_global": true,
+          "_once": "menu",
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 15px)",
+              "padding-bottom": "(@paddingBottom * 15px)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-section-title": {
+              "color": "#ef482a"
+            },
+            ".mbr-section-subtitle": {
+              "text-align": "right",
+              "color": "#ffffff"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#ef482a"
+            }
+          },
+          "_name": "header1",
+          "_customHTML": "<section class=\"header1\" group=\"Headers\" plugins=\"amp-main\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"2\" condition=\"fullScreen == false\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/lada-granta1-1615x1221.jpg\" selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#0dd1ff\">\n        </fieldset>\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <h1 class=\"mbr-section-title mbr-fonts-style align-right mbr-bold mbr-white\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\" mbr-if=\"showTitle\"><i>LADA Granta</i></h1>\n        <h3 class=\"mbr-section-subtitle mbr-fonts-style align-right mbr-white mbr-light\" mbr-theme-style=\"display-2\" data-app-selector=\".mbr-section-subtitle\" mbr-if=\"showSubTitle\"><b><i>Руководство по эксплуатации\n</i></b><div><b><i>автомобиля и его модификаций</i></b></div></h3>\n        <p class=\"mbr-fonts-style mbr-text align-right\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-text, .mbr-section-btn\" mbr-if=\"showText\"><b><i>ВВЕДЕНИЕ</i></b></p>\n        <div class=\"mbr-section-btn align-right\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn btn-md btn-primary\" href=\"assets/files/lada_granta.pdf\" data-app-placeholder=\"Введите Текст\" target=\"_blank\"><span class=\"fa fa-file-pdf-o mbr-iconfont mbr-iconfont-btn\"></span>LADA Granta</a></div>\n    </div>\n\n</section>",
+          "_anchor": "header1-2",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise-amp",
+          "_cid": "rPpBZDhKsu",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            ".mbr-text": {
+              "margin-bottom": "0"
+            },
+            ".mbr-section-title": {
+              "margin": "0"
+            }
+          },
+          "_name": "content2",
+          "_customHTML": "<section class=\"content2 mbr-section article\" plugins=\"amp-main\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"mbr-row mbr-justify-content-center\">\n            <div class=\"mbr-col-sm-12 mbr-col-md-10 mbr-col-lg-8\">\n                <h3 class=\"mbr-fonts-style mbr-section-title mbr-light\" mbr-if=\"showTitle\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-title\"><b><i>ВАШЕМУ ВНИМАНИЮ!</i></b></h3>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article><b><i>Благодарим Вас за Ваш выбор и решение приобрести автомобиль LADA.\n<br>Перед началом эксплуатации Вашего автомобиля внимательно изучите данное руководство! <br>В нем Вы ознакомитесь с особенностями его конструкции, органами\nуправления, оборудованием, а также с требованиями\nбезопасности и правилами использования.\n<br>Автомобиль обладает высокими динамическими качествами, поэтому в начальный период эксплуатации, независимо\nот Вашего водительского стажа, рекомендуем проявлять\nосторожность, пока полностью не освоите технику его\n<br>вождения.\n<br>При движении автомобиля с целью обеспечения безопасного движения и исключения возникновения аварийной ситуации не допускается отпускать рулевое колесо.\n<br>Автомобиль предназначен для перевозки людей и багажа (в количестве и массе, заявленной изготовителем</i></b>&nbsp;<br><b><i>см. таблицы 7а, 7б, 7в и 7г в разделе «Техническая характеристика автомобиля») при температуре окружающего воздуха от минус 40 °C до плюс 45 °C по дорогам общего пользования с твердым покрытием, отвечающим требованиям &nbsp;<br>ГОСТ Р 50597. <br>В случае необходимости движения по дорогам со щебеночным покрытием или по ухабам необходимо\nвыбирать режим, который:\n<br>– обеспечит сохранность защитных чехлов подвески, привода передних колес, защитных покрытий кузова от повреждений вылетающим из под колес щебнем;\n<br>– исключит или максимально снизит резкие удары подвески\nи сильные «скручивающие» нагрузки на кузов.\n<br>Максимальные преодолеваемые подъемы – не более 30%.\n<br>Автомобиль соответствует установленным в Российской\nФедерации требованиям, предъявляемым к показателям\nкачества продукции и его безопасности. Соответствие автомобиля данным требованиям удостоверено соответствующими уполномоченными органами Российской Федерации\nпутем выдачи «Одобрения типа транспортного средства»,\nномер которого указан на сводной табличке заводских данных (см. рисунок 65 в подразделе «Паспортные данные»).\n<br>При эксплуатации не допускайте повреждений автомобиля, в\nтом числе вследствие механических, химических, термических\nи иных внешних воздействий, а также дорожно-транспортных\nпроисшествий, так как данные повреждения влияют на общее\nтехническое состояние автомобиля, безопасность его эксплуатации, потребительские свойства и возможность использования в соответствии с его целевым назначением в пределах\nустановленного изготовителем срока службы автомобиля.\n<br>Помните, что любая заводская маркировка, идентификационные ярлыки и наклейки на деталях и узлах Вашего автомобиля должны быть сохранены до окончания срока службы,\nв противном случае производитель (уполномоченное лицо)\nоставляет за собой право отказать в удовлетворении требований владельца о ремонте или замене неисправной детали\nили узла.\n<br>Соответствие целевому назначению и исполнение потребительских свойств автомобилем в течение установленного\nизготовителем срока службы обеспечивается комплексом\nмероприятий по хранению, эксплуатации, уходу и техническому обслуживанию, рекомендованных изготовителем.\n<br>Помните, что Федеральным законом РФ «О безопасности\nдорожного движения» на Вас возложена обязанность&nbsp;по поддержанию автомобиля в технически исправном\n<br>состоянии, в связи с чем напоминаем Вам об обязанности соблюдать своевременность и полноту выполнения\nвсех регламентных работ по техническому обслуживанию, указанных в прилагаемой к каждому автомобилю\n<br>сервисной книжке, а также всех необходимых работ по\nтекущему ремонту.\n</i></b><br><b><i>Для сохранения гарантии изготовителя техническое обслуживание, ремонт и установку на автомобиле дополнительного оборудования проводите у дилеров LADA с обязательной\nотметкой в сервисной книжке. <br>Адреса дилеров LADA, выполняющих гарантийный ремонт и техническое обслуживание\nавтомобилей на территории Российской Федерации, указаны в приложении 1 сервисной книжки автомобиля.\n</i></b><br><b><i>Дилеры LADA используют разработанную в АО «АВТОВАЗ»\nтехнологию обслуживания и ремонта автомобилей и оснащены всем необходимым специальным оборудованием и\nинструментом.\n</i></b><br><b><i>Своевременное выполнение регламентных и ремонтных\nработ существенно влияет на техническое состояние автомобиля, обеспечивает предусмотренные конструкцией долговечность и эксплуатационные характеристики автомобиля.\n<br>По прохождении технического обслуживания проконтролируйте внесение персоналом предприятия, проводившим\nего, соответствующих отметок в сервисную книжку.\n</i></b><br><b><i>При эксплуатации и техническом обслуживании автомобиля\nприменяйте материалы, перечень которых указан в настоящем руководстве и имеется у дилеров LADA.\n</i></b><br><b><i>Использование при эксплуатации автомобиля не рекомендуемых и некачественных бензинов и моторных масел приводит к повышенным отложениям на деталях двигателя, выходу\nиз строя элементов систем управления и снижения токсичности, отказу нейтрализатора отработавших газов.\n<br>Не допускается применение бензинов с металлорганическими антидетонаторами на основе свинца (этилированный бензин), железа (ферроценами), марганца, никеля и других металлов.\n</i></b><br><b><i>Двигатель автомобиля заправлен на заводе-изготовителе\nмаслом класса вязкости SAE 5W-40, рассчитанным на применение в условиях температуры окружающей среды от\nминус 30 °С до плюс 35 °С. <br>Если эксплуатация нового автомобиля предстоит, в том числе, вне этого температурного диапазона, то необходимо сменить масло на рекомендованное\n<br>в подразделе «Моторное масло» приложения 1, не дожидаясь срока смены масла в соответствии с сервисной книжкой.\n<br>Не допускается применение вторичных присадок к бензинам и смазочным маслам.\n<br>Ответственность за применение некачественных бензинов и\nмасел несёт автовладелец. </i></b><br><b><i>Установку на автомобиль любых\nдополнительных устройств, а также замену, модификацию\nпрограммного или аппаратного обеспечения контроллера ЭСУД производите у дилеров LADA с обязательной\nотметкой в разделе «Особые отметки» сервисной книжки.<br> У дилеров LADA имеется перечень разрешенного\nАО «АВТОВАЗ» к установке дополнительного оборудования и специально разработанные технологии по его монтажу. <br>В противном случае АО «АВТОВАЗ» не несет ответственности за все возможные последствия, которые могут\nвозникнуть после установки дополнительных устройств.\n<br>Эксплуатационной нормы расхода моторного масла не\nсуществует из-за большого количества влияющих объективных и субъективных факторов. <br>Расход масла не является\nпостоянной величиной: в период приработки нового двигателя (до 7500 км после начала эксплуатации нового двигателя или прошедшего ремонт) расход относительно большой,\nминимален на приработанном двигателе и постепенно увеличивается по мере износа двигателя.</i></b> <br><b><i>Но на любой стадии\nрасход моторного масла в большей степени зависит от стиля\n<br>вождения владельца и условий эксплуатации, например,\nэксплуатация автомобиля с высокими частотами вращения\nколенчатого вала двигателя.<br> В зависимости от сочетания\nуказанных выше факторов, расход масла может достигать\nдо 0,5 л/1000 км, а в период приработки и превышать это\nзначение. Уровень масла следует периодически проверять,\nпо меньшей мере перед каждой длительной поездкой, чтобы\nизбежать повреждения двигателя.\n<br>Не забывайте – Ваша безопасность и безопасность других участников дорожного движения, состояние окружающей среды, а также обеспечение высоких эксплуатационных качеств и заявленного изготовителем срока службы Вашего автомобиля зависят от его технической исправности и соблюдения Вами правил эксплуатации, изложенных в настоящем руководстве и сервисной книжке!\n</i></b><br><b><i>Заголовки «Предупреждение» и «Внимание!» информируют Вас об условиях, которые могут привести к травмированию людей или повреждению Вашего автомобиля.\n<br>Заголовок «Предупреждение» означает, что неправильные действия могут привести к травмированию людей,\n<br>«Внимание!» – неправильные действия могут привести к\nповреждению Вашего автомобиля.\n<br>Конструкция автомобиля постоянно совершенствуется, поэтому отдельные узлы и детали, а также варианты исполнения\nи комплектации могут несколько отличаться от описанных в\nруководстве. <br>Подробную информацию о Вашем автомобиле\nВы можете получить у продавца.\n</i></b><br><b><i>Изменение данных о пробеге в показаниях одометра\nприводит к утере гарантийных обязательств изготовителя и возможному выходу из строя оборудования автомобиля.\n<br>При неисправностях, влияющих на безопасность движения, при которых запрещается эксплуатация автомобиля, пользуйтесь услугами эвакуатора.\n</i></b><br><b><i>На новые автомобили, приобретенные за рубежом,\nравно как и ввезенные в Российскую Федерацию для\nреализации и реализованные физическим и юридическим лицам, гарантийные обязательства изготовителя\nна территории Российской Федерации не распространяются.\n</i></b><br><b><i>Техническое обслуживание и ремонт реэкспортных автомобилей производятся продавцом или дилером LADA\nза счет потребителя. <br>Отличительные особенности автомобиля, изготовленного в экспортном исполнении, состоят в\nследующем:\n<br>– паспорт транспортного средства (ПТС) выдан таможенными органами РФ, в нем нет реквизитов и печати\nАО «АВТОВАЗ» как организации, выдавшей ПТС;\n<br>– идентификационная табличка, установленная в подкапотном пространстве, выполнена на английском языке;\n<br>– гарантийный талон АО «АВТОВАЗ» отсутствует;\n<br>– возможны иные отличительные особенности, связанные с\nнациональными требованиями страны-импортера.</i></b>\n<br><b><i>Для сокращения сроков поступления информации о проблемах с Вашим автомобилем LADA и сервисом автомобиля\nLADA просим обращаться:\n<br><a href=\"http://www.lada.ru\" target=\"_blank\">– сайт компании АО «АВТОВАЗ» www.lada.ru;\n</a><br><a href=\"tel:8 800 700 52 32\">– клиентская линия LADA – 8 800 700 52 32, звонок по России\nбесплатный.&nbsp;</a>&nbsp;</i></b></p>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "rPpC5cLDmZ",
+          "_anchor": "content2-3",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "p": {
+              "margin": "0",
+              "color": "#ffffff"
+            }
+          },
+          "_name": "footer1",
+          "_customHTML": "<section class=\"footer1\" group=\"Footers\" plugins=\"amp-main\" global=\"\" once=\"footer\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/background6.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#232323\" selected=\"\">\n        </fieldset>\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <div class=\"mbr-col-sm-12 align-center mbr-white\">\n            <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-col-sm-12, .mbr-text\" data-app-placeholder=\"Type Text\">\n                © Copyright 2020 <a href=\"https://lada-aym.github.io/\"><b><i>Lada-AYM.GitHub.io</i></b></a> - All Rights Reserved\n            </p>\n        </div>\n    </div>\n</section>",
+          "_anchor": "footer1-4",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise-amp",
+          "_cid": "rPpJ5eUgxk",
+          "_protectedParams": [],
+          "_global": true,
+          "_once": "footer",
+          "_params": {}
+        }
+      ]
+    }
+  }
+}
