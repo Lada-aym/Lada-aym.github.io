@@ -11,3 +11,4 @@ sitemap:https://lada-aym.github.io/LADA_Kalina/sitemap.xml
 sitemap:https://lada-aym.github.io/Lada_Samara/sitemap.xml
 sitemap:https://lada-aym.github.io/Chevrolet_NIVA/sitemap.xml
 sitemap:https://lada-aym.github.io/Video/sitemap.xml
+sitemap:https://lada-aym.github.io/GAZel_next/sitemap.xml
