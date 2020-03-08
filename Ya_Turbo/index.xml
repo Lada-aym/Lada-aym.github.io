@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
- <!--created with www.maxim-m.ru-->
  <rss xmlns:yandex="http://news.yandex.ru" xmlns:media="http://search.yahoo.com/mrss/"
  xmlns:turbo="http://turbo.yandex.ru" version="2.0">
  <channel>
- <turbo:cms_plugin>MaxImco Genarator</turbo:cms_plugin>
  <title>Авто руководства | LADA Largus</title>
  <link>https://lada-aym.github.io</link>
  <description>Руководство по эксплуатации автомобиля и его модификаций</description>
  <language>ru</language>
  <author>https://lada-aym.github.io</author>
  <yandex:analytics type="Yandex" id="57171244"/>
+  <turbo:adNetwork></turbo:adNetwork>
 <item turbo="true">
   <title>Авто руководства | LADA Largus</title>
   <link>https://lada-aym.github.io/LADA_Largus/</link>
