@@ -1,17 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:yandex="http://news.yandex.ru"
-     xmlns:media="http://search.yahoo.com/mrss/"
-     xmlns:turbo="http://turbo.yandex.ru"
-     version="2.0">
-    <channel>
-        <!-- Информация о сайте-источнике -->
-        <title>Авто руководства | LADA Largus</title>
-        <link>https://lada-aym.github.io</link>
-        <description>Руководство по эксплуатации
-автомобиля и его модификаций</description>
-        <language>ru</language>
-        <turbo:analytics></turbo:analytics>
-        <turbo:adNetwork></turbo:adNetwork>
 <item turbo="true">
   <title>Авто руководства | LADA Largus</title>
   <link>https://lada-aym.github.io/LADA_Largus/</link>
