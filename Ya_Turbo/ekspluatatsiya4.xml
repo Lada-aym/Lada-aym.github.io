@@ -14,7 +14,7 @@
  <description>Торможение и стоянка</description>
  <title>LADA Largus | Эксплуатация автомобиля</title><link>https://lada-aym.github.io/LADA_Largus/ekspluatatsiya4.html</link><category>Официальный сайт</category>
  
- <turbo:content><![CDATA[<header><menu><a href='https://lada-aym.github.io'>Главная</a></menu></header> <amp-animation id="showScrollToTopAnim" layout="nodisplay"> <amp-animation id="hideScrollToTopAnim" layout="nodisplay"> <amp-position-observer on="enter:hideScrollToTopAnim.start; exit:showScrollToTopAnim.start" layout="nodisplay"> <amp-sidebar id="sidebar" layout="nodisplay" side="right">
+ <turbo:content><![CDATA[<header><menu><a href="https://lada-aym.github.io">Главная</a></menu></header> <amp-animation id="showScrollToTopAnim" layout="nodisplay"> <amp-animation id="hideScrollToTopAnim" layout="nodisplay"> <amp-position-observer on="enter:hideScrollToTopAnim.start; exit:showScrollToTopAnim.start" layout="nodisplay"> <amp-sidebar id="sidebar" layout="nodisplay" side="right">
  
  
  <ul><li>
