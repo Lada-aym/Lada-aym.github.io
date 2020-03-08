@@ -5,10 +5,10 @@
      version="2.0">
     <channel>
         <!-- Информация о сайте-источнике -->
-        <title>Руководство по эксплуатации
-автомобиля и его модификаций</title>
+        <title>Авто руководства | LADA Largus</title>
         <link>https://lada-aym.github.io</link>
-        <description>Краткое описание канала</description>
+        <description>Руководство по эксплуатации
+автомобиля и его модификаций</description>
         <language>ru</language>
         <turbo:analytics></turbo:analytics>
         <turbo:adNetwork></turbo:adNetwork>
