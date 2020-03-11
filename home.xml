@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 
+ <rss xmlns:yandex="http://news.yandex.ru" xmlns:media="http://search.yahoo.com/mrss/"
+ xmlns:turbo="http://turbo.yandex.ru" version="2.0">
+ <channel>
+
+ <title>Руководства по эксплуатации автомобилей LADA и их модификаций</title>
+ <link>https://lada-aym.github.io</link>
+ <description>Руководства по эксплуатации автомобилей LADA</description>
+ <language>ru</language>
+ <author>https://lada-aym.github.io</author>
+ <yandex:analytics type="Yandex" id="000000"/>
+<item turbo="true">
+ <description>Руководства по эксплуатации
+автомобилей LADA</description>
+ <title>Руководства по эксплуатации автомобилей LADA и их модификаций</title><link>https://lada-aym.github.io/</link><category>Официальный сайт</category>
+ 
+ <turbo:content><![CDATA[<header><menu></menu></header> 
+ <img src="https://lada-aym.github.io/assets/images/lada-1382x504.jpg"/>
+ 
+ 
+<p>
+ 
+ <p>
+ © Copyright 2020 <a href="https://lada-aym.github.io/"><strong>Lada-AYM.GitHub.io</strong></a> - All Rights Reserved
+ </p>
+ 
+ ]]></turbo:content></item></channel></rss>
