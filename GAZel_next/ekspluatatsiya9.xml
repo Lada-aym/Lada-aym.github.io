@@ -14,7 +14,7 @@
  <description>Система «ЭРА-ГЛОНАСС»</description>
  <title>«ГАЗель Next» | Эксплуатация автомобиля</title><link>https://lada-aym.github.io/GAZel_next/ekspluatatsiya9.html</link><category>Официальный сайт</category>
  
- <turbo:content><![CDATA[<header><menu></menu></header>
+ <turbo:content><![CDATA[<header><menu><a href='https://lada-aym.github.io'>Главная</a></menu></header>
  <img src="https://lada-aym.github.io/GAZel_next/assets/images/gazel-next-1980x700.jpg"/>
   <button
   formaction="https://lada-aym.github.io/assets/files/GAZel_next.pdf"
