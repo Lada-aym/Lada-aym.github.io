@@ -9,7 +9,7 @@
  <description>Система «ЭРА-ГЛОНАСС»</description>
  <language>ru</language>
  <author>https://lada-aym.github.io</author>
-
+ <yandex:analytics type="Yandex" id="000000"/>
 <item turbo="true">
  <description>Система «ЭРА-ГЛОНАСС»</description>
  <title>«ГАЗель Next» | Эксплуатация автомобиля</title><link>https://lada-aym.github.io/GAZel_next/ekspluatatsiya9.html</link><category>Официальный сайт</category>
@@ -24,7 +24,6 @@
   data-primary="true"
   >«ГАЗель Next».pdf
   </button>
- 
 </p>
 <p>
  
