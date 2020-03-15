@@ -34,8 +34,7 @@
  
  <h2>КОНТАКТЫ ЗАО «ДЖИ ЭМ-АВТОВАЗ»</h2>
  <h3><a href="https://lada-aym.github.io/tel:8 800 737 77 21">8 800 737 77 21</a> <a href="http://chevrolet-niva.ru">chevrolet-niva.ru</a></h3>
- <amp-iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCy9r70T3NYf3PhvVflTo0_zdif2_IoIYs&amp;q=place_id:ChIJBxBwaTx3aEERdHqDoPmJq3s" height="400" layout="fill" sandbox="allow-scripts allow-same-origin allow-popups" frameborder="0">
- 
+ <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aef726844bd8bef8553dafce9580448c8f100028bf75d75849ed9540fbc1761a8&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
  <p>Телефон: +7 (8482) 758−000</p>
  
  <p>Факс: +7 (8482) 758−060</p>
