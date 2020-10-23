@@ -67,7 +67,49 @@ body{font-family: Roboto;}blockquote{border-color: #f5140c;}.display-1{font-fami
 <amp-auto-ads type="adsense" data-ad-client="ca-pub-2079102452301021">
 </amp-auto-ads>
 <!-- /Analytics -->
-
+<amp-analytics type="metrika">
+            <script type="application/json">
+                {"vars": {
+                        "counterId": "57171244",
+                        "yaParams": "{\"key\":\"value\",\"__ymu\":{\"user_param_key\":\"user_param_value\"}}"
+                    },"triggers": {
+                        "notBounce": {
+                            "on": "timer",
+                            "timerSpec": {
+                                "immediate": false,
+                                "interval": 15,
+                                "maxTimerLength": 16
+                            },
+                            "request": "notBounce"
+                        },"halfScroll": {
+                            "on": "scroll",
+                            "scrollSpec": {
+                                "verticalBoundaries": [
+                                    50
+                                ]
+                            },"request": "reachGoal",
+                            "vars": {
+                                "goalId": "halfScrollGoal"
+                            }
+                        },"partsScroll": {
+                            "on": "scroll",
+                            "scrollSpec": {
+                                "verticalBoundaries": [
+                                    25,
+                                    90
+                                ]
+                            },"request": "reachGoal",
+                            "vars": {
+                                "goalId": "partsScrollGoal"
+                            }
+                        },"trackScrollThrough": {
+                            "on": "amp-next-page-scroll",
+                            "request": "pageview"
+                        }
+                    }
+                }
+            </script>
+        </amp-analytics>
 
   <section class="menu horizontal-menu cid-rQKPxOXO1m" id="menu2-m8">
 
