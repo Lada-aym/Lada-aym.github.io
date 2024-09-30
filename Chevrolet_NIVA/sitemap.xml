@@ -1,83 +1,152 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/ekspluatatsiya-shevi1.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/ekspluatatsiya-shevi3.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/ekspluatatsiya-shevi4.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi1.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi3.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi4.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi5.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi6.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi7.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi8.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi9.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi10.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi11.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi1.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi2.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi3.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi4.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi5.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi6.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi7.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/tehnicheskaya-harakteristika-shevi1.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/tehnicheskaya-harakteristika-shevi2.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/prilozheniya-shevi.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/about_us.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/ekspluatatsiya-shevi2.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/Chevrolet_NIVA/tehnicheskaya-harakteristika-shevi3.html</loc>
-	</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/index.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi1.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi3.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi4.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi5.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi6.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi7.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi8.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi9.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi10.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi11.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/ekspluatatsiya-shevi1.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/ekspluatatsiya-shevi2.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/ekspluatatsiya-shevi3.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/ekspluatatsiya-shevi4.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi1.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi2.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi3.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi4.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi5.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi6.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi7.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/tehnicheskaya-harakteristika-shevi1.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/tehnicheskaya-harakteristika-shevi2.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/tehnicheskaya-harakteristika-shevi3.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/prilozheniya-shevi.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/Chevrolet_NIVA/about_us.html</loc>
+  <lastmod>2024-09-30T10:41:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
 </urlset>
