@@ -1,107 +1,187 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya1.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/opisanie1.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya2.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya3.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya4.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika1.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika2.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika3.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/prilozheniya.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya5.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/opisanie2.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/opisanie4.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/opisanie3.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/opisanie5.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/opisanie6.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/opisanie7.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/opisanie8.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/opisanie9.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/opisanie10.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/opisanie12.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/opisanie13.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/opisanie14.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/opisanie15.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/opisanie16.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/opisanie17.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/opisanie11.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie1.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie2.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie3.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie4.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie5.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie6.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie7.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya6.html</loc>
-	</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/index.html</loc>
+  <lastmod>2024-10-15T11:15:40+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/opisanie1.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/opisanie2.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/opisanie3.html</loc>
+  <lastmod>2024-10-15T11:15:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/opisanie4.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/opisanie5.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/opisanie6.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/opisanie7.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/opisanie8.html</loc>
+  <lastmod>2024-10-15T11:15:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/opisanie9.html</loc>
+  <lastmod>2024-10-15T11:15:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/opisanie10.html</loc>
+  <lastmod>2024-10-15T11:15:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/opisanie11.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/opisanie12.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/opisanie13.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/opisanie14.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/opisanie15.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/opisanie16.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/opisanie17.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya1.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya2.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya3.html</loc>
+  <lastmod>2024-10-15T11:15:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya4.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya5.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya6.html</loc>
+  <lastmod>2024-10-15T11:15:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie1.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie2.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie3.html</loc>
+  <lastmod>2024-10-15T11:15:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie4.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie5.html</loc>
+  <lastmod>2024-10-15T11:15:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie6.html</loc>
+  <lastmod>2024-10-15T11:15:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie7.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika1.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika2.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika3.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Granta/prilozheniya.html</loc>
+  <lastmod>2024-10-15T11:15:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
 </urlset>
