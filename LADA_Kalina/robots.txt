@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /cgi-bin
+Disallow: /assets/index.html
 Disallow: /assets/files/index.html
 Disallow: /assets/images/index.html
