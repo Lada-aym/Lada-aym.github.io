@@ -1,83 +1,152 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/ekspluatatsiya1.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/opisanie1.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/opisanie2.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/opisanie3.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/ekspluatatsiya2.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/ekspluatatsiya3.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/ekspluatatsiya4.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie1.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie2.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie3.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie4.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie5.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie6.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie7.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/tehnicheskaya-harakteristika1.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/tehnicheskaya-harakteristika2.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/tehnicheskaya-harakteristika3.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/opisanie11.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/opisanie10.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/opisanie9.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/opisanie8.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/opisanie7.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/opisanie6.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/opisanie5.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/opisanie4.html</loc>
-	</url>
-	<url>
-		<loc>https://lada-aym.github.io/LADA_Kalina/prilozheniya.html</loc>
-	</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/index.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/opisanie1.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/opisanie2.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/opisanie3.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/opisanie4.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/opisanie5.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/opisanie6.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/opisanie7.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/opisanie8.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/opisanie9.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/opisanie10.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/opisanie11.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/ekspluatatsiya1.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/ekspluatatsiya2.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/ekspluatatsiya3.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/ekspluatatsiya4.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie1.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie2.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie3.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie4.html</loc>
+  <lastmod>2024-10-15T10:17:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie5.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie6.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie7.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/tehnicheskaya-harakteristika1.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/tehnicheskaya-harakteristika2.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/tehnicheskaya-harakteristika3.html</loc>
+  <lastmod>2024-10-15T10:17:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lada-aym.github.io/LADA_Kalina/prilozheniya.html</loc>
+  <lastmod>2024-10-15T10:17:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
 </urlset>
