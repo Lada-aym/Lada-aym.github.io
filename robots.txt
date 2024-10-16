@@ -1,14 +1,11 @@
 User-agent: *
 Disallow: /cgi-bin
-sitemap:https://lada-aym.github.io/sitemap.xml
-sitemap:https://lada-aym.github.io/LADA_Granta/sitemap.xml
-sitemap:https://lada-aym.github.io/LADA_Vesta/sitemap.xml
-sitemap:https://lada-aym.github.io/LADA_XRAY/sitemap.xml
-sitemap:https://lada-aym.github.io/LADA_Largus/sitemap.xml
-sitemap:https://lada-aym.github.io/Lada4x4/sitemap.xml
-sitemap:https://lada-aym.github.io/LADA_Priora/sitemap.xml
-sitemap:https://lada-aym.github.io/LADA_Kalina/sitemap.xml
-sitemap:https://lada-aym.github.io/Lada_Samara/sitemap.xml
-sitemap:https://lada-aym.github.io/Chevrolet_NIVA/sitemap.xml
-sitemap:https://lada-aym.github.io/Video/sitemap.xml
-sitemap:https://lada-aym.github.io/GAZel_next/sitemap.xml
+Disallow: /Chevrolet_NIVA/assets/files/Chevrolet_Niva.pdf
+Disallow: /GAZel_next/assets/files/GAZel_next.pdf
+Disallow: /LADA_Granta/assets/files/lada_granta.pdf
+Disallow: /LADA_Kalina/assets/files/lada_kalina.pdf
+Disallow: /LADA_Largus/assets/files/lada_largus.pdf
+Disallow: /LADA_Priora/assets/files/lada_priora.pdf
+Disallow: /LADA_Vesta/assets/files/lada_vesta.pdf
+Disallow: /LADA_XRAY/assets/files/lada_xray.pdf
+Disallow: /Lada4x4/assets/files/lada_4x4.pdf 
