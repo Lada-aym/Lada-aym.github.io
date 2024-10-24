@@ -9,3 +9,6 @@ Disallow: /LADA_Priora/assets/files/lada_priora.pdf
 Disallow: /LADA_Vesta/assets/files/lada_vesta.pdf
 Disallow: /LADA_XRAY/assets/files/lada_xray.pdf
 Disallow: /Lada4x4/assets/files/lada_4x4.pdf 
+sitemap:https://lada-aym.github.io/sitemap.xml
+sitemap:https://lada-aym.github.io/sitemap.html
+sitemap:https://lada-aym.github.io/urllist.txt
