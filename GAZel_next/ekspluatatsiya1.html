@@ -137,6 +137,38 @@ body{font-family: Roboto;}blockquote{border-color: #f5140c;}.display-1{font-fami
   <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
   <script async custom-element="amp-user-notification" src="https://cdn.ampproject.org/v0/amp-user-notification-0.1.js"></script>
   <!--  -->
+  <script async src='https://yandex.ru/ads/system/header-bidding.js'></script>
+<script>
+var adfoxBiddersMap = {
+  "myTarget": "3221129"
+};
+
+var adUnits = [
+  {
+    "code": "322697",
+    "bids": [
+      {
+        "bidder": "myTarget",
+        "params": {
+          "placementId": "22980462"
+        }
+      }
+    ]
+  }
+];
+
+var userTimeout = 500;
+
+window.YaHeaderBiddingSettings = {
+   biddersMap: adfoxBiddersMap,
+   adUnits: adUnits,
+   timeout: userTimeout,
+};
+</script>
+<script>window.yaContextCb = window.yaContextCb || []</script>
+<script src='https://yandex.ru/ads/system/context.js' async></script>
+    
+  <!--  -->
   </head>
 <body><div id="top-page"></div>                                         <amp-animation id="showScrollToTopAnim" layout="nodisplay">                                             <script type="application/json">                                             {                                                 "duration": "200ms",                                                 "fill": "both",                                                 "iterations": "1",                                                 "direction": "alternate",                                                 "animations": [                                                     {                                                         "selector": "#scrollToTopButton",                                                         "keyframes": [                                                             { "opacity": "0.4", "visibility": "visible" }                                                         ]                                                     }                                                 ]                                             }                                             </script>                                         </amp-animation>                                         <amp-animation id="hideScrollToTopAnim" layout="nodisplay">                                             <script type="application/json">                                             {                                                 "duration": "200ms",                                                 "fill": "both",                                                 "iterations": "1",                                                 "direction": "alternate",                                                 "animations": [                                                     {                                                         "selector": "#scrollToTopButton",                                                         "keyframes": [                                                             { "opacity": "0", "visibility": "hidden" }                                                         ]                                                     }                                                 ]                                             }                                             </script>                                         </amp-animation>                                         <div id="scrollToTopMarker">                                             <amp-position-observer on="enter:hideScrollToTopAnim.start; exit:showScrollToTopAnim.start" layout="nodisplay">                                             </amp-position-observer>                                         </div><amp-sidebar id="sidebar" class="cid-rP9p3qhMai" layout="nodisplay" side="right">
         <div class="builder-sidebar" id="builder-sidebar">
