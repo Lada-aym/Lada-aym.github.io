@@ -27,6 +27,9 @@ body{font-family: Roboto;}blockquote{border-color: #f54d11;}.display-1{font-fami
   <script async custom-element="amp-user-notification" src="https://cdn.ampproject.org/v0/amp-user-notification-0.1.js"></script>
   <script async custom-element="amp-sticky-ad" src="https://cdn.ampproject.org/v0/amp-sticky-ad-1.0.js"></script>
   <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <!--  -->
+  <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+  <!--  -->
   </head>
 <body>
   <!-- Google Tag Manager -->
@@ -157,32 +160,30 @@ body{font-family: Roboto;}blockquote{border-color: #f54d11;}.display-1{font-fami
   <!-- AMP plug -->
 </section>
 <!--  -->
-  <!--AdFox START-->
-<!--Площадка: lada-aym.github.io / * / *-->
-<!--Тип баннера: Adaptive AMP-->
-<!--Расположение: верх страницы-->
-<amp-ad width="auto" height="180"
-        type="adfox"
-        data-owner-id="322697"
-        data-adfox-params='{
-            "pp": "g",
-            "ps": "iivd",
-            "p2": "fqzb"
-        }'>
-    <div placeholder></div>
-    <div fallback></div>
+<amp-lightbox id="my-lightbox" layout="nodisplay">
+  <div class="lightbox" on="tap:my-lightbox.close" role="button" tabindex="0">
+    <h1>Hello World!</h1>
+  </div>
+</amp-lightbox>
+<button on="tap:my-lightbox">
+  Open lightbox
+</button>
+<!--  -->
+<amp-ad
+    width="auto"
+    height="120"
+    layout="fixed-height"
+    type="yandex"
+    data-block-id="R-A-537370-21"
+    data-html-access-allowed="true">
 </amp-ad>
 <amp-sticky-ad layout="nodisplay">
-<amp-ad width="350" height="100"
-        type="adfox"
-        data-owner-id="322697"
-        data-adfox-params='{
-            "pp": "g",
-            "ps": "iivd",
-            "p2": "fqzb"
-        }'>
-    <div placeholder></div>
-    <div fallback></div>
+<amp-ad
+    width="350" 
+    height="100"
+    type="yandex" 
+    data-block-id="R-A-537370-23"
+    data-html-access-allowed="true">
 </amp-ad>
 </amp-sticky-ad>
 <!--  -->
