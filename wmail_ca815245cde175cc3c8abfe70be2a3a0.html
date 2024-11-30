@@ -2,17 +2,15 @@
 <html amp lang="ru-RU">
 <head>
  <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>Заголовок страницы</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
  <!-- Yandex.RTB и/или Yandex Native Ads -->
- <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
- <form accept-charset="UTF-8">window.yaContextCb=window.yaContextCb||[]</form>
+ <script>window.yaContextCb=window.yaContextCb||[]</script>
  <script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 <body>
  <!-- Yandex.RTB и/или Yandex Native Ads -->
- <form accept-charset="UTF-8">
-
+<script>
 window.yaContextCb.push(() => {
     Ya.Context.AdvManager.render({
         "blockId": "R-A-537370-35",
@@ -20,7 +18,6 @@ window.yaContextCb.push(() => {
         "platform": "touch"
     })
 })
-
-</form>
+</script>
 </body>
 </html>
