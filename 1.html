@@ -1,30 +1,84 @@
- 
 <!DOCTYPE html>
 <html ⚡>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Пример AMP-страницы с полноэкранным рекламным блоком</title>
+    <style amp-boilerplate>body{visibility:hidden;}</style>
     <style amp-custom>
         body {
+            visibility: visible;
+        }
+        
+       .fullscreen-ad {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        
+       .ad-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
             background-color: #fff;
-            color: #000;
+            padding: 1rem;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        
+       .ad-content h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #333;
+        }
+        
+       .ad-content p {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+       .ad-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            cursor: pointer;
+        }
+        
+       .ad-close:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
-    <div class="fullscreen-block">
-          <amp-ad
-    width="auto"
-    height="500"
-    type="yandex"
-    data-block-id="R-A-537370-35"
-    data-html-access-allowed="true">
-</amp-ad>
-        <h1>Пример полноэкранного блока</h1>
-        <p>Этот блок занимает весь экран.</p>
+    <div class="fullscreen-ad">
+        <div class="ad-content">
+            <h1>Полноэкранная реклама</h1>
+            <p>Нажмите на крестик, чтобы закрыть.</p>
+            <div class="ad-close">×</div>
+        </div>
     </div>
+    <div>
+        <h1>Основной контент</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget erat eget nunc tincidunt tincidunt. Nam velit erat, aliquam ut erat vel, aliquet eget erat. Sed sit amet erat eget erat tincidunt tincidunt. Nam velit erat, aliquam ut erat vel, aliquet eget erat.</p>
+    </div>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    <script>
+        window.onload = function() {
+            var ad = document.createElement('amp-ad');
+            ad.setAttribute('type', 'yandex');
+            ad.setAttribute('blockId', 'R-A-537370-35');
+            ad.setAttribute('layout', 'fill');
+            document.body.appendChild(ad);
+        };
+    </script>
 </body>
 </html>
- 
-Этот пример демонстрирует, как создать полноэкранный блок на AMP-странице с использованием асинхронных скриптов.
