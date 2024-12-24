@@ -11,28 +11,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <title>Моя AMP страница</title>
   <script>window.yaContextCb = window.yaContextCb || []</script>
-  <script async>
-    window.yaContextCb.push(()=>{
-        Ya.adfoxCode.createAdaptive({
-            ownerId: 322697,
-            containerId: 'adfox_173444122016624357',
-            params: {
-                pp: 'g',
-                ps: 'ipjp',
-                p2: 'hiuq'
-            }
-        }, ['desktop', 'tablet', 'phone'], {
-            tabletWidth: 830,
-            phoneWidth: 480,
-            isAutoReloads: false
-        })
-  })
-
-    const script = document.createElement('script');
-  script.src = 'https://yandex.ru/ads/system/context.js';
-  script.async = true;
-  document.head.appendChild(script);
-  </script>
+  
 </head>
 <body>
   
@@ -46,7 +25,20 @@
 <!--Тип баннера: Fullscreen-->
 <!--Расположение: верх страницы-->
 <div id="adfox_173444122016624357"></div>
-
+<amp-script layout="nodisplay" script="https://yandex.ru/ads/system/context.js">
+<script>
+    window.yaContextCb.push(()=>{
+        Ya.adfoxCode.create({
+            ownerId: 322697,
+            containerId: 'adfox_173502157751554357',
+            params: {
+                pp: 'g',
+                ps: 'ipjp',
+                p2: 'hiuq'
+            }
+        })
+    })
+</amp-script>
 
 </body>
 </html>
