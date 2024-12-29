@@ -210,6 +210,21 @@ window.yaContextCb.push(() => {
 </section>
 <!--  -->
 <amp-user-notification class="display-7" id="amp-cookies-notification" style="color:#424a4d; background:rgba(234, 239, 241, 0.99); padding: 10px 5%; display:inline-block; font-size:inherit; text-align: center;" layout="nodisplay">We use cookies to give you the best experience. Read our <a style="color: #424a4d; text-decoration: underline;" href="privacy.html">cookie policy</a>.<button class="btn btn-sm btn-primary display-7" on="tap:amp-cookies-notification.dismiss,amp-cookies-notification.hide" style="display: inline-block; cursor: pointer; margin-left: 10px; font-size:inherit;">Agree</button></amp-user-notification>
-
+<script>
+        AMP.registerElement('amp-sticky-ad', function() {
+            return {
+                build: function(config) {
+                    return {
+                        tag: 'div',
+                        events: {
+                            'tap': function() {
+                                this.style.display = 'none';
+                            }
+                        }
+                    };
+                }
+            };
+        });
+</script>
 </body>
 </html>
