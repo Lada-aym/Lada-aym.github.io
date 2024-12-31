@@ -313,84 +313,6 @@ body{font-family: Roboto;}blockquote{border-color: #f5140c;}.display-1{font-fami
     <!--  -->
     <amp-auto-ads type="adsense" data-ad-client="ca-pub-2079102452301021">
 </amp-auto-ads>
-<!-- /Analytics -->
-<!--- Configure analytics to use gtag -->
-    <amp-analytics type="gtag" data-credentials="include">
-      <script type="application/json">
-        {
-          "vars": {
-            "gtag_id": "G-60PJ9X9EGQ",
-            "config": {
-              "G-60PJ9X9EGQ": {}
-            }
-          },
-          "triggers": {
-            "button": {
-              "selector": "#the-button",
-              "on": "click",
-              "vars": {
-                "event_name": "login",
-                "method": "Google"
-              }
-            }
-          }
-        }
-      </script>
-    </amp-analytics>
-<!-- /Analytics -->
-<amp-analytics type="metrika">
-            <script type="application/json">
-                {"vars": {
-                        "counterId": "57171244",
-                        "yaParams": "{\"key\":\"value\",\"__ymu\":{\"user_param_key\":\"user_param_value\"}}"
-                    },"triggers": {
-                        "notBounce": {
-                            "on": "timer",
-                            "timerSpec": {
-                                "immediate": false,
-                                "interval": 15,
-                                "maxTimerLength": 16
-                            },
-                            "request": "notBounce"
-                        },"halfScroll": {
-                            "on": "scroll",
-                            "scrollSpec": {
-                                "verticalBoundaries": [
-                                    50
-                                ]
-                            },"request": "reachGoal",
-                            "vars": {
-                                "goalId": "halfScrollGoal"
-                            }
-                        },"partsScroll": {
-                            "on": "scroll",
-                            "scrollSpec": {
-                                "verticalBoundaries": [
-                                    25,
-                                    90
-                                ]
-                            },"request": "reachGoal",
-                            "vars": {
-                                "goalId": "partsScrollGoal"
-                            }
-                        },"trackScrollThrough": {
-                            "on": "amp-next-page-scroll",
-                            "request": "pageview"
-                        }
-                    }
-                }
-            </script>
-        </amp-analytics>
-<!--  -->
-<amp-analytics type="metrika">
-<script type="application/json">
-{
-      "vars": {
-            "counterId": "98596458"
-      }
-}
-</script>
-</amp-analytics>
 <!--  -->
   <section class="menu horizontal-menu cid-rNydGp8JCw" id="menu2-5a">
    <nav class="navbar navbar-dropdown navbar-expand-lg navbar-fixed-top">
@@ -2936,5 +2858,85 @@ F13 (10 A)
 <amp-user-notification class="display-7" id="amp-cookies-notification" style="color:#424a4d; background:rgba(234, 239, 241, 0.99); padding: 10px 5%; display:inline-block; font-size:inherit; text-align: center;" layout="nodisplay">We use cookies to give you the best experience. Read our <a style="color: #424a4d; text-decoration: underline;" href="privacy.html">cookie policy</a>.<button class="btn btn-sm btn-primary display-7" on="tap:amp-cookies-notification.dismiss,amp-cookies-notification.hide" style="display: inline-block; cursor: pointer; margin-left: 10px; font-size:inherit;">Agree</button></amp-user-notification>
  <button id="scrollToTopButton" on="tap:top-page.scrollTo(duration=200)">                                         <a class="scroll-to-top-arrow"></a>                                     </button>
 <!--  -->
+
+<!-- /Analytics -->
+<!--- Configure analytics to use gtag -->
+    <amp-analytics type="gtag" data-credentials="include">
+      <script type="application/json">
+        {
+          "vars": {
+            "gtag_id": "G-60PJ9X9EGQ",
+            "config": {
+              "G-60PJ9X9EGQ": {}
+            }
+          },
+          "triggers": {
+            "button": {
+              "selector": "#the-button",
+              "on": "click",
+              "vars": {
+                "event_name": "login",
+                "method": "Google"
+              }
+            }
+          }
+        }
+      </script>
+    </amp-analytics>
+<!-- /Analytics -->
+<amp-analytics type="metrika">
+            <script type="application/json">
+                {"vars": {
+                        "counterId": "57171244",
+                        "yaParams": "{\"key\":\"value\",\"__ymu\":{\"user_param_key\":\"user_param_value\"}}"
+                    },"triggers": {
+                        "notBounce": {
+                            "on": "timer",
+                            "timerSpec": {
+                                "immediate": false,
+                                "interval": 15,
+                                "maxTimerLength": 16
+                            },
+                            "request": "notBounce"
+                        },"halfScroll": {
+                            "on": "scroll",
+                            "scrollSpec": {
+                                "verticalBoundaries": [
+                                    50
+                                ]
+                            },"request": "reachGoal",
+                            "vars": {
+                                "goalId": "halfScrollGoal"
+                            }
+                        },"partsScroll": {
+                            "on": "scroll",
+                            "scrollSpec": {
+                                "verticalBoundaries": [
+                                    25,
+                                    90
+                                ]
+                            },"request": "reachGoal",
+                            "vars": {
+                                "goalId": "partsScrollGoal"
+                            }
+                        },"trackScrollThrough": {
+                            "on": "amp-next-page-scroll",
+                            "request": "pageview"
+                        }
+                    }
+                }
+            </script>
+        </amp-analytics>
+<!--  -->
+<amp-analytics type="metrika">
+<script type="application/json">
+{
+      "vars": {
+            "counterId": "98596458"
+      }
+}
+</script>
+</amp-analytics>
+  
  </body>
 </html>
