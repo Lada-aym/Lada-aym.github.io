@@ -17,35 +17,7 @@
  
  <turbo:content><![CDATA[<header><menu><a href='https://lada-aym.github.io'>Главная</a></menu></header>
  
- <amp-analytics type="gtag" data-credentials="include">
- 
- <amp-animation id="showScrollToTopAnim" layout="nodisplay"> <amp-animation id="hideScrollToTopAnim" layout="nodisplay"> <amp-position-observer on="enter:hideScrollToTopAnim.start; exit:showScrollToTopAnim.start" layout="nodisplay"> <amp-sidebar id="sidebar" layout="nodisplay" side="left">
- 
- 
- <ul><li><a href="https://lada-aym.github.io/">Главная</a></li>
-<li>
- <a href="https://lada-aym.github.io/index.html">Описание</a></li>
-<li>
- <a href="https://lada-aym.github.io/#content2-z24">Обслуживание</a></li>
-<li>
- <a href="https://lada-aym.github.io/#content2-z34">Характеристики</a></li>
- </ul>
- 
- <p>
- <p>
- <span>
- <img src="assets/images/Lada-aym.png" layout="responsive" width="45.8235294117647" height="19" alt="Lada-aym" title="Авто руководства | Lada-aym">
- <a href="https://lada-aym.github.io/"></a>
- </span>
- <p>Chevrolet Niva</p>
- <ul><li><a href="https://lada-aym.github.io/">Главная</a></li>
-<li>
- <a href="https://lada-aym.github.io/index.html">Описание</a></li>
- <li>
- <a href="https://lada-aym.github.io/#content2-z24">Обслуживание</a></li>
- <li>
- <a href="https://lada-aym.github.io/#content2-z34">Характеристики</a></li>
- </ul> 
+
  
  
  
@@ -55,11 +27,6 @@
 <p>
  <h1>Chevrolet Niva : <br>Описание, обслуживание, характеристики автомобиля</h1>
  </p>
- <amp-sticky-ad layout="nodisplay">
-<amp-ad
- width="350" height="100"
- type="yandex" data-block-id="R-A-537370-36"
- data-html-access-allowed="true">
 <p>
  <h2><strong>Панель приборов</strong></h2>
  
