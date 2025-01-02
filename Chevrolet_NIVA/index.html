@@ -2539,41 +2539,8 @@ F13 (10 A)
  <button id="scrollToTopButton" on="tap:top-page.scrollTo(duration=200)">                                         <a class="scroll-to-top-arrow"></a>                                     </button>
 <!--  -->
 <!-- Yandex.RTB R-A-537370-42 -->
-<script>
-window.addEventListener("load", () => {
-    const render = (imageId) => {
-        window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.render({
-                "renderTo": imageId,
-                "blockId": "R-A-537370-42",
-                "type": "inImage"
-            })
-        })
-    }
-    const renderInImage = (images) => {
-        if (!images.length) {
-            return
-        }
-        const image = images.shift()
-        image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
-        if (image.tagName === "IMG" && !image.complete) {
-            image.addEventListener("load", () => {
-                render(image.id)
-            }, { once: true })
-        } else {
-            render(image.id)
-        }
-        renderInImage(images)
-    }
-    renderInImage(Array.from(document.querySelectorAll("img")))
-}, { once: true })
-</script>
+<script> (function renderInImage(adImagesCounter, images) { if (adImagesCounter <= 0 || !images.length) { return } const image = images.shift() image.id = `yandex_rtb_R-A-77777-77-${Math.random().toString(16).slice(2)}` window.yaContextCb.push(() => { Ya.Context.AdvManager.render({ "renderTo": image.id, "blockId": "R-A-537370-42", "type": "inImage", "onRender": () => { renderInImage(adImagesCounter-1, images) }, "altCallback": () => { renderInImage(adImagesCounter, images) }, "onError": () => { renderInImage(adImagesCounter, images) } }) }) })(9, Array.from(document.querySelectorAll("img"))) </script>
 <!--  -->
-<!--AdFox START-->
-<!--yandex_acer.manuilov-->
-<!--Площадка: lada-aym.github.io / * / *-->
-<!--Тип баннера: Fullscreen-->
-<!--Расположение: верх страницы-->
 <div id="adfox_173582368927934357"></div>
 <script>
     window.yaContextCb.push(()=>{
