@@ -2538,7 +2538,7 @@ F13 (10 A)
 <amp-user-notification class="display-7" id="amp-cookies-notification" style="color:#424a4d; background:rgba(234, 239, 241, 0.99); padding: 10px 5%; display:inline-block; font-size:inherit; text-align: center;" layout="nodisplay">We use cookies to give you the best experience. Read our <a style="color: #424a4d; text-decoration: underline;" href="privacy.html">cookie policy</a>.<button class="btn btn-sm btn-primary display-7" on="tap:amp-cookies-notification.dismiss,amp-cookies-notification.hide" style="display: inline-block; cursor: pointer; margin-left: 10px; font-size:inherit;">Agree</button></amp-user-notification>
  <button id="scrollToTopButton" on="tap:top-page.scrollTo(duration=200)">                                         <a class="scroll-to-top-arrow"></a>                                     </button>
 <!--  -->
-<!-- Yandex.RTB R-A-537370-42 -->
+  <!-- Yandex.RTB R-A-537370-42 -->
 <script>
 window.addEventListener("load", () => {
     const render = (imageId) => {
@@ -2555,10 +2555,6 @@ window.addEventListener("load", () => {
             return
         }
         const image = images.shift()
-        const {width, height} = image.getBoundingClientRect()
-        if (width < 320 || height < 190) {
-            return renderInImage(images)
-        }
         image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
         if (image.tagName === "IMG" && !image.complete) {
             image.addEventListener("load", () => {
