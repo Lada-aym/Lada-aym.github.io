@@ -542,22 +542,20 @@ body{font-family: Roboto;}blockquote{border-color: #f5140c;}.display-1{font-fami
 .headline {
     font-size: 18px;
     font-weight: bold;
-    font-family: Roboto Condensed, sans-serif;
-    line-height: 24px;
+    line-height: 18px;
     color: #373e44;
     padding-bottom: 20px;
     padding-top: 15px;
 }
 .grid-row {
     margin-top: 10px;
-    min-height: 230px;
 }
 .grid-item {
     margin-left: 10px;
 }
 .unit-wrapper {
     height: 100%;
-    border: 0px #dee2e3;
+    border: 1px solid gray;
     border-radius: 2px;
     background-color: #fff;
 }
@@ -566,54 +564,37 @@ body{font-family: Roboto;}blockquote{border-color: #f5140c;}.display-1{font-fami
 }
 .title {
     color: #000;
-    line-height: 24px;
-    font-size: 18px;
-    font-family: Roboto Condensed, sans-serif;
-    font-stretch: condensed;
-    font-weight: 700;
-    font-style: normal;
+    font-size: 15px;
+    font-weight: bold;
     padding-left: 10px;
     padding-right: 10px;
 }
 .meta {
-    display: inline-block;
-    vertical-align: bottom;
-    border-radius: 3px;
-    padding: 4px 5px 2px 5px;
-    border: 1px solid;
-    border-color: #fff;
-    line-height: 1;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    margin-left: 2px;
-    background: #fff;
-    padding: 2px 8px;
-    font-size: 11px;
-    line-height: 1.45;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    color: #757575;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 10px;
+}
+.desc {
+    color: #757575;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 10px;
 }
 .category {
-    color: #3670f9;
-    font-family: Roboto Condensed, sans-serif;
-    padding-right: 0px;
-    font-size: 12px;
-    font-stretch: condensed;
-    font-weight: bold;
-    font-style: normal;
+    color: #093;
+    padding-right: 20px;
 }
-.ya-recommendation-label {
-    color: #e7e7e7;
-    font-size: 10px;
-    font-family: Roboto Condensed, sans-serif;
-    font-style: normal;
+.unit-wrapper:hover {
+    border: 1px solid #093;
+    background-color: #eee;
 }
 .unit-wrapper:hover .title {
-    color: #ED5E42;
-}
-
-.ya-unit-domain {
-    color: #373e44;
+    color: red;
 }
 <!--  -->
 .engine{position: absolute;text-indent: -2400px;text-align: center;padding: 0;top: 0;left: -2400px;}[class*="-iconfont"]{display: inline-flex;}</style>
@@ -998,20 +979,18 @@ parktronic). <br>Система поможет избежать досадных
 </section>
 <!--  -->
 <section class="content2 mbr-section article cid-rP2LRDRTwS" id="content2-dy">
-        <div class="container">
+    <div class="container">
         <div class="mbr-row mbr-justify-content-center">
             <div class="mbr-col-sm-12 mbr-col-md-10 mbr-col-lg-8">
 <div class="wrapper">
-    <div class="headline">Читайте также</div>
-    <ya-units-grid sizes="(max-width: 1024px) 2x3, (max-width: 600px) 6x1, ${grid_rows}x${grid_columns}" target_top>
-        <div class="card">
-            <div class="image">
-                <ya-unit-media ratio="0.5" />
-            </div>
+    <div class="headline">Смотрите также</div>
+    <ya-units-grid sizes="(max-width: 959px) 3x3, (max-width: 639px) 3x2, ${grid_rows}x${grid_columns}">
+        <div class="unit-wrapper">
+            <div class="image"><ya-unit-image ratio="1" /></div>
             <ya-clamp lines="4" class="title"><ya-unit-title /></ya-clamp>
             <div class="meta">
-                <ya-unit-category class="category" /> <ya-unit-domain class="category" />
-            </div>
+              <ya-unit-category class="category"/> <ya-unit-domain class="category" />
+          	</div>
         </div>
         <ya-unit-kebab />
     </ya-units-grid>
@@ -1020,6 +999,7 @@ parktronic). <br>Система поможет избежать досадных
 </div>
         </div>
     </div>
+</section>
 </section>
 <!--  -->
 <section class="footer1 cid-rNPObH9KtC" id="footer1-8z">
