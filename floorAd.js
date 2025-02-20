@@ -9,12 +9,6 @@ window.yaContextCb.push(()=>{
             }
         })
     })
-<!--AdFox START-->
-<!--yandex_acer.manuilov-->
-<!--Площадка: lada-aym.github.io / * / *-->
-<!--Тип баннера: FlorAd-->
-<!--Расположение: низ страницы-->
-<div id="adfox_174004375205214357"></div>
     window.yaContextCb.push(()=>{
         Ya.adfoxCode.create({
             ownerId: 322697,
