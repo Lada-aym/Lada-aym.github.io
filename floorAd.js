@@ -15,7 +15,6 @@ window.yaContextCb.push(()=>{
 <!--Тип баннера: FlorAd-->
 <!--Расположение: низ страницы-->
 <div id="adfox_174004375205214357"></div>
-<script>
     window.yaContextCb.push(()=>{
         Ya.adfoxCode.create({
             ownerId: 322697,
@@ -27,4 +26,3 @@ window.yaContextCb.push(()=>{
             }
         })
     })
-</script>
