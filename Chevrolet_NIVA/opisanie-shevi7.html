@@ -208,6 +208,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <!-- Yandex.RTB -->
 <script src="https://yastatic.net/share2/share.js" async></script>
+<script async src='https://yandex.ru/ads/system/header-bidding.js'></script>
+<script>
+var adfoxBiddersMap = {
+  "myTarget": "3221129"
+};
+
+var adUnits = [
+  {
+    "code": "322697",
+    "codeType": "combo",
+    "bids": [
+      {
+        "bidder": "myTarget",
+        "params": {
+          "placementId": "22980462"
+        }
+      }
+    ]
+  }
+];
+
+var userTimeout = 500;
+
+window.YaHeaderBiddingSettings = {
+   biddersMap: adfoxBiddersMap,
+   adUnits: adUnits,
+   timeout: userTimeout,
+};
+</script>
 <script>window.yaContextCb=window.yaContextCb||[]</script>
 <script src="https://yandex.ru/ads/system/context.js" async></script>
   </head>
@@ -438,6 +467,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 stick: true,
                 stickTo: 'auto',
                 stickyColorScheme: 'light'
+            }
+        })
+    })
+</script>
+<!--AdFox START-->
+<!--yandex_acer.manuilov-->
+<!--Площадка: https://lada-aym.github.io/ / * / *-->
+<!--Тип баннера: mytarget-->
+<!--Расположение: низ страницы-->
+<div id="adfox_174030188872184357"></div>
+<script>
+    window.yaContextCb.push(()=>{
+        Ya.adfoxCode.create({
+            ownerId: 3278703,
+            containerId: 'adfox_174030188872184357',
+            params: {
+                pp: 'i',
+                ps: 'ivjz',
+                p2: 'jjyg'
             }
         })
     })
