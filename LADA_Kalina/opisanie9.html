@@ -269,7 +269,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="navbar navbar-dropdown navbar-expand-lg navbar-fixed-top">
       <div class="brand">
           <span class="brand-logo">
-              <img src="assets/images/ci-141-82x34.png" layout="responsive" width="45.8235294117647" height="19" alt="Lada-AYM.ru" class="mobirise-loader" title="Lada-AYM.ru">
+              <amp-img src="assets/images/ci-141-82x34.png" layout="responsive" width="45.8235294117647" height="19" alt="Lada-AYM.ru" class="mobirise-loader" title="Lada-AYM.ru">
                   <div placeholder="" class="placeholder">
                                 <div class="mobirise-spinner">
                                     <em></em>
@@ -277,7 +277,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <em></em>
                                 </div></div>
                   <a href="/"></a>
-              </img>
+              </amp-img>
           </span>
           <p class="brand-name mbr-fonts-style mbr-bold display-5">LADA Kalina</p>
       </div>
@@ -339,14 +339,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="image2 cid-rPIXA16dWb" id="image2-jf">
     <div class="container">
         <div class="image-block">
-            <img src="assets/images/ri-65-600x482.jpg" layout="responsive" width="444.39834024896265" height="357" alt="Рис. 32. Рычаг переключателя световой сигнализации" class="mobirise-loader" title="Рис. 32. Рычаг переключателя световой сигнализации">
+            <amp-img src="assets/images/ri-65-600x482.jpg" layout="responsive" width="444.39834024896265" height="357" alt="Рис. 32. Рычаг переключателя световой сигнализации" class="mobirise-loader" title="Рис. 32. Рычаг переключателя световой сигнализации">
                 <div placeholder="" class="placeholder">
                                 <div class="mobirise-spinner">
                                     <em></em>
                                     <em></em>
                                     <em></em>
                                 </div></div>
-                            </img>
+                            </amp-img>
                     </div>
     </div>
 </section>
@@ -505,6 +505,79 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button id="scrollToTopButton" on="tap:top-page.scrollTo(duration=200)">                                         <a class="scroll-to-top-arrow"></a>                                     </button>
     <!--  -->
 <button id="floating-button"><div class="ya-share2" data-curtain data-size="l" data-shape="round" data-limit="0" data-more-button-type="short" data-services="messenger,vkontakte,odnoklassniki,telegram"></div></button>
-    
+    <!-- Yandex.RTB R-A-537370-35 -->
+<script>
+window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-537370-35",
+        "type": "fullscreen",
+        "platform": "touch"
+    })
+})
+</script>
+<!-- Yandex.RTB R-A-537370-43 -->
+<script>
+window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-537370-43",
+        "type": "fullscreen",
+        "platform": "desktop"
+    })
+})
+</script>
+<!-- Yandex.RTB R-A-537370-44 -->
+<script>
+window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-537370-44",
+        "type": "floorAd",
+        "platform": "desktop"
+    })
+})
+</script>
+<!-- Yandex.RTB R-A-537370-36 -->
+<script>
+window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-537370-36",
+        "type": "floorAd",
+        "platform": "touch"
+    })
+})
+</script>
+<!-- Yandex.RTB R-A-537370-42 -->
+<script>
+window.addEventListener("load", () => {
+    const render = (imageId) => {
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                "renderTo": imageId,
+                "blockId": "R-A-537370-42",
+                "type": "inImage"
+            })
+        })
+    }
+    const renderInImage = (images) => {
+        if (!images.length) {
+            return
+        }
+        const image = images.shift()
+        const {width, height} = image.getBoundingClientRect()
+        if (width < 320 || height < 190) {
+            return renderInImage(images)
+        }
+        image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
+        if (image.tagName === "IMG" && !image.complete) {
+            image.addEventListener("load", () => {
+                render(image.id)
+            }, { once: true })
+        } else {
+            render(image.id)
+        }
+        renderInImage(images)
+    }
+    renderInImage(Array.from(document.querySelectorAll("amp-img")))
+}, { once: true })
+</script>
     </body>
 </html>
