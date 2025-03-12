@@ -711,57 +711,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button id="scrollToTopButton" on="tap:top-page.scrollTo(duration=200)">                                         <a class="scroll-to-top-arrow"></a>                                     </button>
     <!--  -->
 <button id="floating-button"><div class="ya-share2" data-curtain data-size="l" data-shape="round" data-limit="0" data-more-button-type="short" data-services="messenger,vkontakte,odnoklassniki,telegram"></div></button>
-    <!--AdFox START-->
-<div id="adfox_174168326306254357"></div>
-<script>
-    window.yaContextCb.push(()=>{
-        Ya.adfoxCode.create({
-            ownerId: 322697,
-            containerId: 'adfox_174168326306254357',
-            params: {
-                pp: 'i',
-                ps: 'iwrg',
-                p2: 'hiuq'
-            }
+    <script>
+// Определяем функцию для рендера обычных блоков
+const renderBlock = (blockId, type, platform) => {
+    window.yaContextCb.push(() => {
+        Ya.Context.AdvManager.render({
+            "blockId": blockId,
+            "type": type,
+            "platform": platform
         })
     })
-</script>
-<div id="adfox_174168326306254357"></div>
-<script>
-    window.yaContextCb.push(()=>{
-        Ya.adfoxCode.create({
-            ownerId: 322697,
-            containerId: 'adfox_174168326306254357',
-            params: {
-                pp: 'i',
-                ps: 'iwrg',
-                p2: 'hiuq'
-            }
-        })
-    })
-</script>
-<!-- Yandex.RTB R-A-537370-42 -->
-<script>
-window.addEventListener("load", () => {
+}
+
+// Определяем функцию для рендера inImage блока
+const renderInImage = (blockId) => {
     const render = (imageId) => {
         window.yaContextCb.push(() => {
             Ya.Context.AdvManager.render({
                 "renderTo": imageId,
-                "blockId": "R-A-537370-42",
+                "blockId": blockId,
                 "type": "inImage"
             })
         })
     }
-    const renderInImage = (images) => {
+    
+    const processImages = (images) => {
         if (!images.length) {
             return
         }
         const image = images.shift()
         const {width, height} = image.getBoundingClientRect()
         if (width < 320 || height < 190) {
-            return renderInImage(images)
+            return processImages(images)
         }
-        image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
+        image.id = `yandex_rtb_${blockId}-${Math.random().toString(16).slice(2)}`
         if (image.tagName === "IMG" && !image.complete) {
             image.addEventListener("load", () => {
                 render(image.id)
@@ -769,9 +752,21 @@ window.addEventListener("load", () => {
         } else {
             render(image.id)
         }
-        renderInImage(images)
+        processImages(images)
     }
-    renderInImage(Array.from(document.querySelectorAll("amp-img")))
+    
+    processImages(Array.from(document.querySelectorAll("amp-img")))
+}
+
+// Рендерим все блоки
+renderBlock("R-A-537370-35", "fullscreen", "touch")
+renderBlock("R-A-537370-43", "fullscreen", "desktop")
+renderBlock("R-A-537370-44", "floorAd", "desktop")
+renderBlock("R-A-537370-36", "floorAd", "touch")
+
+// Рендерим inImage блок после загрузки страницы
+window.addEventListener("load", () => {
+    renderInImage("R-A-537370-42")
 }, { once: true })
 </script>
     </body>
