@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PRQ33NW3');</script>
+<!-- End Google Tag Manager -->
+	
 	<title>Руководство по автомобилям LADA Granta, LADA Vesta, LADA XRAY, LADA Largus, LADA 4x4, LADA Priora, LADA Kalina, LADA Samara, Chevrolet Niva и ГАЗели NEXT. Site Map  Page 1 - created with PRO Sitemap Service - pro-sitemaps.com</title>
 	
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -164,10 +172,19 @@
 	.pager span {
 		border: #ccc 1px solid;
 	}
+		#floating-button { position: fixed; z-index: 100; bottom: 120px; right: 20px; background-color: #e3e3db; color: white; border: none; padding: 0px 0px; text-align: center; text-decoration: none; font-size: 16px; border-radius: 44px; cursor: pointer; } #floating-button:hover { background-color: #e3e3db; }
 	</style>
+	
+  <script src="https://yastatic.net/share2/share.js" async></script>
+<script>window.yaContextCb = window.yaContextCb || []</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 
 <body>
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRQ33NW3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 	<div id="top">
 		<nav>
 			lada-aym.github.io HTML Site Map</nav>
@@ -2126,7 +2143,65 @@ Total pages: 353</span>
 <div id="footer">
 Page created with PRO-Sitemaps.com - <a href="https://pro-sitemaps.com">PRO Sitemap Service</a>
 </div>
+<button id="floating-button"><div class="ya-share2" data-curtain data-size="l" data-shape="round" data-limit="0" data-more-button-type="short" data-services="messenger,vkontakte,odnoklassniki,telegram"></div></button>
+<script>
+// Определяем функцию для рендера обычных блоков
+const renderBlock = (blockId, type, platform) => {
+    window.yaContextCb.push(() => {
+        Ya.Context.AdvManager.render({
+            "blockId": blockId,
+            "type": type,
+            "platform": platform
+        })
+    })
+}
 
+// Определяем функцию для рендера inImage блока
+const renderInImage = (blockId) => {
+    const render = (imageId) => {
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                "renderTo": imageId,
+                "blockId": blockId,
+                "type": "inImage"
+            })
+        })
+    }
+    
+    const processImages = (images) => {
+        if (!images.length) {
+            return
+        }
+        const image = images.shift()
+        const {width, height} = image.getBoundingClientRect()
+        if (width < 320 || height < 190) {
+            return processImages(images)
+        }
+        image.id = `yandex_rtb_${blockId}-${Math.random().toString(16).slice(2)}`
+        if (image.tagName === "IMG" && !image.complete) {
+            image.addEventListener("load", () => {
+                render(image.id)
+            }, { once: true })
+        } else {
+            render(image.id)
+        }
+        processImages(images)
+    }
+    
+    processImages(Array.from(document.querySelectorAll("amp-img")))
+}
+
+// Рендерим все блоки
+renderBlock("R-A-537370-35", "fullscreen", "touch")
+renderBlock("R-A-537370-43", "fullscreen", "desktop")
+renderBlock("R-A-537370-44", "floorAd", "desktop")
+renderBlock("R-A-537370-36", "floorAd", "touch")
+
+// Рендерим inImage блок после загрузки страницы
+window.addEventListener("load", () => {
+    renderInImage("R-A-537370-42")
+}, { once: true })
+</script>
 </body>
 
 </html>
