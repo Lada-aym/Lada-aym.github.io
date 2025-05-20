@@ -1,0 +1,55 @@
+﻿/*
+Theme Name: Responsive mega menu by Di-Grand
+Theme URL: di-grand.com
+Author: Di-Grand
+Author URL: https://di-grand.com/
+Description: Responsive mega menu by Di-Grand - вертикальное мега меню каталога, для интернет магазина и не только, аналогов нет
+Version: 1.0
+*/
+
+/* Body, reset, default tags setting */
+* {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;margin: 0;padding: 0;}  
+body {font-family: 'Roboto', sans-serif;margin: 0 auto;font-weight: 400;color: #626568;line-height: 1.5;font-size: 14px;background: #F8F8F8;} 
+html {overflow: visible!important;margin: 0!important;}
+img {height: auto;vertical-align: middle;border: none; max-width: 100%; }
+a{color: #4967D0; text-decoration: none; cursor: pointer; outline: none;}
+a:hover { text-decoration: underline;} 
+a:focus {outline: none;}
+ul, ol {padding: 0; margin: 0; list-style-type: none;}
+ol{counter-reset: myCounter;}
+ol li{list-style: none;padding: 5px 0;font-weight: 400;font-size: 16px; color: #626467;}
+ol li:before {counter-increment: myCounter;content:counter(myCounter);display: inline-block;margin: 0px 12px 0px 0px;width: 30px;height: 30px;color: white;background: #4967D0;}
+ 
+/* Сетевая система*/
+.container {
+max-width: 1330px;
+margin: 0 auto;
+position: relative;
+padding: 0 15px;
+display: flex;
+flex-direction: row;
+align-items: center;
+width: 100%;
+}
+.row {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;margin: 0;padding: 0;display: flex;flex-direction: row;align-items: center;width: 100%;}
+.row:before, .row:after {
+content: " ";
+display: table; 
+clear: both;
+}  
+
+/* 3 Header */
+header {
+/* position: relative; */
+/* z-index: 99999; */
+position: fixed;
+z-index: 101;
+top: 0;
+left: 0;
+width: 100%;
+background: #000000;
+padding-top: 25px;
+padding-bottom: 70px;
+box-shadow: 0px 10px 36px 0px rgb(0 0 0 / 6%);
+} 
+#site-header.fixed {-webkit-transition: 0.5s;-moz-transition: 0.5s;-o-transition: 0.5s;transition: 0.5s;}
