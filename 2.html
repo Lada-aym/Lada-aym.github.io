@@ -49,8 +49,7 @@ body {
 	  url("assets/images/lada-1382x504.jpg"); 
 	  background-size: no-repeat; 
 	  background-position: center; 
-	  
-	  aspect-ratio: auto 640 / 360;
+	  background-size: cover; 
 	  height: 250px; 
 	  width: 100%;
 	}
@@ -69,7 +68,7 @@ body {
 		z-index: 1;
 	}
 
-	h2 {
+	h1 {
 	font-size: 28px;
 		margin: auto;
 		padding: 10px;
@@ -77,11 +76,11 @@ body {
 		color: #f3f3f3;
 	}
 
-	h2 span {
+	h1 span {
 		float: center;
 	}
 
-	h2 a {
+	h1 a {
 		font-weight: normal;
 		display: block;
 	}
@@ -222,13 +221,11 @@ top: 100px !important;
 <body>
     <!-- Google Tag Manager (noscript) -->
 <!-- End Google Tag Manager (noscript) -->
-  <div id="topimg">
-      
- <div class="card bg-dark text-white text-center"> 
-     <div class="card-img-overlay"> 
-         <h1 class="card-title">ГАЗель Next: Информация об автомобиле</h1> 
-         </div> 
-         </div>
+<div id="topimg1">
+<div class="position-relative"> 
+  <img src="assets/images/lada-1382x504.jpg" class="img-fluid" alt="..." style="margin-top:40px">
+      <div class="position-absolute top-50 start-50 translate-middle"> 
+                    <h1>ГАЗель Next: Информация об автомобиле</h1> </div>
 <!-- menu -->
 		<nav class="navbar bg-light navbar-light fixed-top" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
 		    <div class="container-fluid">
