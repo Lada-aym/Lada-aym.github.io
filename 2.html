@@ -1,1 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5"crossorigin="anonymous">
+    <title>Заголовок страницы</title>
+    <script src="color-modes.js"></script>
+    <style>.bd-placeholder-img{font-size:1.125rem;text-anchor:middle;-webkit-user-select:none;-moz-user-select:none;user-select:none}@media (min-width: 768px){.bd-placeholder-img-lg{font-size:3.5rem}}.b-example-divider{width:100%;height:3rem;background-color:#0000001a;border:solid rgba(0,0,0,.15);border-width:1px 0;box-shadow:inset 0 .5em 1.5em #0000001a,inset 0 .125em .5em #00000026}.b-example-vr{flex-shrink:0;width:1.5rem;height:100vh}.bi{vertical-align:-.125em;fill:currentColor}.nav-scroller{position:relative;z-index:2;height:2.75rem;overflow-y:hidden}.nav-scroller .nav{display:flex;flex-wrap:nowrap;padding-bottom:1rem;margin-top:-1px;overflow-x:auto;text-align:center;white-space:nowrap;-webkit-overflow-scrolling:touch}.btn-bd-primary{--bd-violet-bg: #712cf9;--bd-violet-rgb: 112.520718, 44.062154, 249.437846;--bs-btn-font-weight: 600;--bs-btn-color: var(--bs-white);--bs-btn-bg: var(--bd-violet-bg);--bs-btn-border-color: var(--bd-violet-bg);--bs-btn-hover-color: var(--bs-white);--bs-btn-hover-bg: #6528e0;--bs-btn-hover-border-color: #6528e0;--bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);--bs-btn-active-color: var(--bs-btn-hover-color);--bs-btn-active-bg: #5a23c8;--bs-btn-active-border-color: #5a23c8}.bd-mode-toggle{z-index:1500}.bd-mode-toggle .bi{width:1em;height:1em}.bd-mode-toggle .dropdown-menu .active .bi{display:block!important}
+	.menu-custom {
+         height: 480px;
+      }
+</style>
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none"> <symbol id="check2" viewBox="0 0 16 16"> <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path> </symbol> <symbol id="circle-half" viewBox="0 0 16 16"> <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path> </symbol> <symbol id="moon-stars-fill" viewBox="0 0 16 16"> <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path> <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path> </symbol> <symbol id="sun-fill" viewBox="0 0 16 16"> <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path> </symbol> </svg> <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"> <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)"> <svg class="bi my-1 theme-icon-active" aria-hidden="true"><use href="#circle-half"></use></svg> <span class="visually-hidden" id="bd-theme-text">Toggle theme</span> </button> <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text"> <li> <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false"> <svg class="bi me-2 opacity-50" aria-hidden="true"><use href="#sun-fill"></use></svg>
+Light
+<svg class="bi ms-auto d-none" aria-hidden="true"><use href="#check2"></use></svg> </button> </li> <li> <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false"> <svg class="bi me-2 opacity-50" aria-hidden="true"><use href="#moon-stars-fill"></use></svg>
+Dark
+<svg class="bi ms-auto d-none" aria-hidden="true"><use href="#check2"></use></svg> </button> </li> <li> <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true"> <svg class="bi me-2 opacity-50" aria-hidden="true"><use href="#circle-half"></use></svg>
+Auto
+<svg class="bi ms-auto d-none" aria-hidden="true"><use href="#check2"></use></svg> </button> </li> </ul> </div> 
+    
+    
+      <nav class="navbar navbar-expand-xxl navbar-dark bg-dark" aria-label="Seventh navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Expand at xxl</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleXxl" aria-controls="navbarsExampleXxl" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div class="pure-menu pure-menu-scrollable collapse navbar-collapse" id="navbarsExampleXxl">
+          
+          
+          
+        <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownXxl" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownXxl">
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/"  itemprop="url" title="Руководство по автомобилям LADA Granta, LADA Vesta, LADA XRAY, LADA Largus, LADA Urban, LADA Priora, LADA Kalina, LADA Samara, Chevrolet Niva и ГАЗели NEXT"><span itemprop="name">Руководство по автомобилям LADA Granta, LADA Vesta, LADA XRAY, LADA Largus, LADA Urban, LADA Priora, LADA Kalina, LADA Samara, Chevrolet Niva и ГАЗели NEXT</a>
+						<br /><small><span itemprop="description">Узнайте больше об автомобилях LADA Granta, LADA Vesta, LADA XRAY, LADA Largus, LADA Urban, LADA Priora, LADA Kalina, LADA Samara, Chevrolet Niva и ГАЗели NEXT. Видеообзор и руководство по эксплуатации.</small>
+					</li>
+              <li><a class="dropdown-item" href=".github.io/">Руковод</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownXxl" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownXxl">
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/" itemprop="url" title="LADA Granta: Руководство по эксплуатации автомобиля и его модификаций"><span itemprop="name"><strong><em>LADA Granta: Руководство по эксплуатации автомобиля и его модификаций</a>
+						<br /><small><span itemprop="description"><strong><em>LADA Granta: руководство по эксплуатации, особенности конструкции, органы управления, оборудование, требования безопасности и правила использования.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/opisanie1.html" itemprop="url" title="LADA Granta: Ключи зажигания, замена элемента питания ПДУ"><span itemprop="name"><strong><em>LADA Granta: Ключи зажигания, замена элемента питания ПДУ</a>
+						<br /><small><span itemprop="description"><strong><em>Узнайте больше о ключах для автомобиля LADA Granta: Замена элемента питания пульта дистанционного управления иммобилайзера автомобиля.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/opisanie2.html" itemprop="url" title="LADA Granta: Система дистанционного управления"><span itemprop="name"><strong><em>LADA Granta: Система дистанционного управления</a>
+						<br /><small><span itemprop="description"><strong><em>Узнайте о системе дистанционного управления LADA Granta: функции, принцип работы и особенности использования.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/opisanie3.html" itemprop="url" title="LADA Granta: Двери автомобиля"><span itemprop="name"><strong><em>LADA Granta: Двери автомобиля</a>
+						<br /><small><span itemprop="description"><strong><em>Информация о дверях автомобиля LADA Granta, включая блокировку и разблокировку замков, управление электростеклоподъемниками и работу механических стеклоподъемников.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/opisanie4.html" itemprop="url" title="LADA Granta: Сиденья автомобиля"><span itemprop="name"><strong><em>LADA Granta: Сиденья автомобиля</a>
+						<br /><small><span itemprop="description"><strong><em>Узнайте всё о регулировке сидений и их особенностях в LADA Granta.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/opisanie5.html" itemprop="url" title="LADA Granta: Система пассивной безопасности"><span itemprop="name"><strong><em>LADA Granta: Система пассивной безопасности</a>
+						<br /><small><span itemprop="description"><strong><em>Система пассивной безопасности LADA Granta, компоненты, срабатывание, ремонт и утилизация.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/opisanie6.html" itemprop="url" title="LADA Granta: Подушки безопасности"><span itemprop="name"><strong><em>LADA Granta: Подушки безопасности</a>
+						<br /><small><span itemprop="description"><strong><em>Подушки безопасности в автомобиле LADA Granta: принцип работы, типы, рекомендации по использованию и уходу.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/opisanie7.html" itemprop="url" title="LADA Granta: Регулировка положения рулевого колеса, зеркала, освещение салона и другое"><span itemprop="name"><strong><em>LADA Granta: Регулировка положения рулевого колеса, зеркала, освещение салона и другое</a>
+						<br /><small><span itemprop="description"><strong><em>LADA Granta, руководство по эксплуатации, регулировка положения рулевого колеса, зеркала, освещение салона, противосолнечные козырьки, вещевой ящик, патрон для подключения дополнительного оборудования.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/opisanie8.html" itemprop="url" title="LADA Granta: Капот и крышка багажника"><span itemprop="name"><strong><em>LADA Granta: Капот и крышка багажника</a>
+						<br /><small><span itemprop="description"><strong><em>Узнайте больше о капоте и крышке багажника, пробке топливного бака автомобиля LADA Granta из руководства по эксплуатации.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/opisanie9.html" itemprop="url" title="Lada Granta: Панель приборов"><span itemprop="name"><strong><em>Lada Granta: Панель приборов</a>
+						<br /><small><span itemprop="description"><strong><em>Описание панели приборов автомобиля LADA Granta, руководство по эксплуатации, органы управления и приборы.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/opisanie10.html" itemprop="url" title="LADA Granta: Комбинация приборов"><span itemprop="name"><strong><em>LADA Granta: Комбинация приборов</a>
+						<br /><small><span itemprop="description"><strong><em>Описание комбинации приборов Lada Granta: тахометр, сигнализаторы, индикаторы и их значение. Функции комбинации приборов.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/opisanie11.html" itemprop="url" title="LADA Granta: Органы управления"><span itemprop="name"><strong><em>LADA Granta: Органы управления</a>
+						<br /><small><span itemprop="description"><strong><em>LADA Granta, руководство по эксплуатации, органы управления и приборы, выключатель зажигания, установка времени, бортовой компьютер, функция подсказчика переключения передач, звуковой дублёр подсказки переключения передач</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/opisanie12.html" itemprop="url" title="LADA Granta: Круиз-контроль и ограничитель скорости"><span itemprop="name"><strong><em>LADA Granta: Круиз-контроль и ограничитель скорости</a>
+						<br /><small><span itemprop="description"><strong><em>LADA Granta, руководство по эксплуатации, управление круиз-контролем и ограничителем скорости, принцип работы, активация функций, изменение установленных пределов скорости.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/opisanie13.html" itemprop="url" title="LADA Granta: Подрулевые переключатели и органы управления"><span itemprop="name"><strong><em>LADA Granta: Подрулевые переключатели и органы управления</a>
+						<br /><small><span itemprop="description"><strong><em>Информация о подрулевых переключателях, модуле управления светотехникой и корректоре ближнего света фар для автомобиля LADA Granta.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/opisanie14.html" itemprop="url" title="LADA Granta: Система вентиляции и отопления"><span itemprop="name"><strong><em>LADA Granta: Система вентиляции и отопления</a>
+						<br /><small><span itemprop="description"><strong><em>Управление системой вентиляции и отопления салона автомобиля LADA Granta, отопительно-вентиляционная установка, климатическая установка, режимы работы, обогрев, вентиляция, предотвращение запотевания стёкол, очистка стёкол от снега и льда, быстрый прогрев салона, отопление салона, рекомендации по использованию.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/opisanie15.html" itemprop="url" title="LADA Granta: Климат-контроль"><span itemprop="name"><strong><em>LADA Granta: Климат-контроль</a>
+						<br /><small><span itemprop="description"><strong><em>Узнайте больше об управлении климатической установкой в автомобиле LADA Granta, включая режимы кондиционирования, электрообогрева ветрового стекла и автоматический режим очистки стёкол.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/opisanie16.html" itemprop="url" title="LADA Granta: Рычаг переключения передач (МКП,АКП)"><span itemprop="name"><strong><em>LADA Granta: Рычаг переключения передач (МКП,АКП)</a>
+						<br /><small><span itemprop="description"><strong><em>Узнайте о принципах работы рычага переключения передач в механической и автоматизированной коробках передач автомобиля LADA Granta. Руководство по эксплуатации, советы и рекомендации.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/opisanie17.html" itemprop="url" title="LADA Granta: Автоматизированная трансмиссия (АМТ)"><span itemprop="name"><strong><em>LADA Granta: Автоматизированная трансмиссия (АМТ)</a>
+						<br /><small><span itemprop="description"><strong><em>LADA Granta с автоматизированной трансмиссией (АМТ): особенности, преимущества и принцип работы.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/ekspluatatsiya1.html" itemprop="url" title="LADA Granta: Основы безопасной эксплуатации"><span itemprop="name"><strong><em>LADA Granta: Основы безопасной эксплуатации</a>
+						<br /><small><span itemprop="description"><strong><em>Основы безопасной эксплуатации автомобиля LADA Granta, руководство по эксплуатации, меры предосторожности, советы и рекомендации.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/ekspluatatsiya2.html" itemprop="url" title="LADA Granta: Особенности запуска двигателя"><span itemprop="name"><strong><em>LADA Granta: Особенности запуска двигателя</a>
+						<br /><small><span itemprop="description"><strong><em>Эксплуатация автомобиля, запуск двигателя, особенности, LADA Granta, руководство по эксплуатации, автомобили с различными типами трансмиссий, электромеханический усилитель рулевого управления.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/ekspluatatsiya3.html" itemprop="url" title="LADA Granta: Вождение автомобиля"><span itemprop="name"><strong><em>LADA Granta: Вождение автомобиля</a>
+						<br /><small><span itemprop="description"><strong><em>Движение автомобиля, эксплуатация автомобиля, рекомендации по вождению, безопасность на дороге</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/ekspluatatsiya4.html" itemprop="url" title="LADA Granta: Торможение и стоянка"><span itemprop="name"><strong><em>LADA Granta: Торможение и стоянка</a>
+						<br /><small><span itemprop="description"><strong><em>Узнайте о правилах торможения и стоянки в автомобиле LADA Granta, включая использование антиблокировочной системы тормозов (ABS) и системы электронного контроля устойчивости (ESC).</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/ekspluatatsiya5.html" itemprop="url" title="LADA Granta с автоматической коробкой передач"><span itemprop="name"><strong><em>LADA Granta с автоматической коробкой передач</a>
+						<br /><small><span itemprop="description"><strong><em>Узнайте, как управлять автомобилем LADA Granta с автоматической коробкой передач, включая особенности управления на подъёмах и спусках, запуск двигателя, переключение передач и другие полезные советы.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/ekspluatatsiya6.html" itemprop="url" title="LADA Granta с ручным управлением"><span itemprop="name"><strong><em>LADA Granta с ручным управлением</a>
+						<br /><small><span itemprop="description"><strong><em>В этой статье рассказывается об устройстве ручного управления автомобилем LADA Granta, его особенностях и правилах эксплуатации. Также описываются процедуры обслуживания и ремонта этого механизма.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/obsluzhivanie1.html" itemprop="url" title="LADA Granta: Уход за автомобилем"><span itemprop="name"><strong><em>LADA Granta: Уход за автомобилем</a>
+						<br /><small><span itemprop="description"><strong><em>Узнайте, как правильно ухаживать за кузовом, салоном, двигателем, шинами и интерьером автомобиля LADA Granta.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/obsluzhivanie2.html" itemprop="url" title="LADA Granta: Проверка и замена рабочих жидкостей в автомобиле"><span itemprop="name"><strong><em>LADA Granta: Проверка и замена рабочих жидкостей в автомобиле</a>
+						<br /><small><span itemprop="description"><strong><em>Регулярная проверка уровня масла в картере двигателя, особенности замены масла при интенсивной эксплуатации зимой, проверка и замена рабочих жидкостей в коробке передач и тормозной системе.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/obsluzhivanie3.html" itemprop="url" title="LADA Granta: Системы омывания и очистки стёкол"><span itemprop="name"><strong><em>LADA Granta: Системы омывания и очистки стёкол</a>
+						<br /><small><span itemprop="description"><strong><em>Узнайте всё о системе омывания и очистки стёкол автомобиля LADA Granta из подробного руководства по эксплуатации. Советы по замене щёток стеклоочистителей и уходу за аккумуляторной батареей.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/obsluzhivanie4.html" itemprop="url" title="LADA Granta: Шины и колёса"><span itemprop="name"><strong><em>LADA Granta: Шины и колёса</a>
+						<br /><small><span itemprop="description"><strong><em>Узнайте о рекомендациях по эксплуатации шин и колёс автомобиля LADA Granta, а также о допустимых размерах.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/obsluzhivanie5.html" itemprop="url" title="LADA Granta: Замена колёс"><span itemprop="name"><strong><em>LADA Granta: Замена колёс</a>
+						<br /><small><span itemprop="description"><strong><em>Замена колёс на автомобиле LADA Granta: руководство по эксплуатации, безопасность и советы по выполнению процедуры.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/obsluzhivanie6.html" itemprop="url" title="LADA Granta: Замена плавких предохранителей"><span itemprop="name"><strong><em>LADA Granta: Замена плавких предохранителей</a>
+						<br /><small><span itemprop="description"><strong><em>Замена плавких предохранителей в LADA Granta. Руководство по эксплуатации.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/obsluzhivanie7.html" itemprop="url" title="LADA Granta: Замена ламп"><span itemprop="name"><strong><em>LADA Granta: Замена ламп</a>
+						<br /><small><span itemprop="description"><strong><em>Замена ламп в автомобиле LADA Granta: руководство по эксплуатации, советы и рекомендации.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika1.html" itemprop="url" title="LADA Granta: Техническая характеристика автомобиля"><span itemprop="name"><strong><em>LADA Granta: Техническая характеристика автомобиля</a>
+						<br /><small><span itemprop="description"><strong><em>Основные эксплуатационные параметры и размеры</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika2.html" itemprop="url" title="LADA Granta: Фактический расход топлива и масла"><span itemprop="name"><strong><em>LADA Granta: Фактический расход топлива и масла</a>
+						<br /><small><span itemprop="description"><strong><em>Руководство по эксплуатации LADA Granta: Фактический расход топлива и масла, рекомендации по снижению расхода и эксплуатации.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika3.html" itemprop="url" title="LADA Granta: Паспортные данные (VIN)"><span itemprop="name"><strong><em>LADA Granta: Паспортные данные (VIN)</a>
+						<br /><small><span itemprop="description"><strong><em>Узнайте все паспортные данные автомобиля LADA Granta. Информация о модели, номере, двигателе и запчастях.</small>
+					</li>
+				
+					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList" class="lpage">
+						<a href="https://lada-aym.github.io/LADA_Granta/prilozheniya.html" itemprop="url" title="LADA Granta: Дополнительное оборудование для обучения вождению"><span itemprop="name"><strong><em>LADA Granta: Дополнительное оборудование для обучения вождению</a>
+						<br /><small><span itemprop="description"><strong><em>LADA Granta, топливо, моторное масло, лампы накаливания, свечи зажигания, дополнительное оборудование для обучения вождению</small>
+					</li>
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownXxl" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownXxl">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownXxl" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownXxl">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownXxl" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownXxl">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownXxl" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownXxl">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownXxl" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownXxl">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownXxl" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownXxl">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownXxl" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownXxl">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownXxl" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownXxl">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          
+          
+          
+          
+        </ul>
+        <form>
+          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        </form>
+      </div>
+    </div>
+  </nav>
+  
+  
+  
+  
+</body>
+</html>
