@@ -26,6 +26,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PRQ33NW3');</script>
 <!-- End Google Tag Manager -->
+<!-- Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet. --> 
+<link rel="preload" fetchpriority="high" as="image" href="assets/images/gazel-next-1980x700.avif" type="image/avif">
 <style type="text/css">
 body {
 		background-color: #fff;
@@ -49,9 +51,8 @@ body {
 	}
 	#topimg {
    margin: 40px 0px 0px;
-	  background-image: 
-	  image-set(url("assets/images/gazel-next.jpg") 1x, 
-	      url("assets/images/gazel-next-1980x700.jpg") 3x); 
+		background-image:
+	  url("assets/images/gazel-next-1980x700.avif"); 
 	  background-size: no-repeat; 
 	  background-position: center; 
 	  background-size: cover; 
