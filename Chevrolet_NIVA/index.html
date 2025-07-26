@@ -1104,40 +1104,81 @@ Auto
 <script src="assets/js/color-modes.js"></script>
 
 
-<!-- Adfox блок -->
+
+<div id="adfox_175352870304334357"></div>
 <script>
-window.addEventListener("load", () => {
-    const render = (imageId) => {
-        const adfox = document.createElement('script');
-        adfox.type = 'text/javascript';
-        adfox.async = true;
-        adfox.src = `//adfox.yandex.ru/adv?p1=322697&p2=R-A-537370-62&puid=0&p3=${imageId}`;
-        
-        const s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(adfox, s);
-    }
-    
-    const renderInImage = (images) => {
-        if (!images.length) {
-            return;
-        }
-        
-        const image = images.shift();
-        image.id = `adfox_block_${Math.random().toString(16).slice(2)}`;
-        
-        if (image.tagName === "IMG" && !image.complete) {
-            image.addEventListener("load", () => {
-                render(image.id);
-            }, { once: true });
-        } else {
-            render(image.id);
-        }
-        
-        renderInImage(images);
-    }
-    
-    renderInImage(Array.from(document.querySelectorAll("img")));
-}, { once: true });
+  window.yaContextCb.push(()=>{
+    Ya.adfoxCode.create({
+      ownerId: 322697,
+      containerId: 'adfox_175352870304334357',
+      type: 'inImage',
+      params: {
+        p1: 'cdvyr',
+        p2: 'ghnb',
+      }
+    })
+  })
+</script> 
+
+
+
+<script>
+  window.yaContextCb.push(() => {
+      if (Ya.adfoxCode.getPlatform() === 'desktop') {
+        // вызов fullscreen для десктопной версии
+        Ya.adfoxCode.create({
+          ownerId: 322697,
+          containerId: 'adfox_175352870304334357',
+          type: 'fullscreen',
+          platform: 'desktop',
+            params: {
+              p1: 'cdvyr',
+              p2: 'ghnb',
+            }
+        });
+      } else {
+        // вызов fullscreen для мобильной версии
+        Ya.adfoxCode.create({
+          ownerId: 322697,
+          containerId: 'adfox_175352870304334357',
+          type: 'fullscreen',
+          platform: 'touch',
+            params: {
+              p1: 'cdvyr',
+              p2: 'ghnb',
+            }
+        });
+      }
+  });
+</script>
+<script>
+  window.yaContextCb.push(() => {
+      if (Ya.adfoxCode.getPlatform() === 'desktop') {
+        // вызов FloorAd для десктопной версии
+        Ya.adfoxCode.create({
+          ownerId: 322697,
+          containerId: 'adfox_175352870304334357',
+          type: 'floorAd',
+          platform: 'desktop',
+            params: {
+              p1: 'cdvyr',
+              p2: 'ghnb',
+            }
+        });
+      } else {
+        // вызов FloorAd для мобильной версии
+        Ya.adfoxCode.create({
+          ownerId: 322697,
+          containerId: 'adfox_175352870304334357',
+          type: 'floorAd',
+          platform: 'touch',
+            params: {
+              p1: 'cdvyr',
+              p2: 'ghnb',
+            }
+        });
+      }
+  });
 </script>
 
 </body>
