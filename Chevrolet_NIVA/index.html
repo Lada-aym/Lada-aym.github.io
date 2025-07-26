@@ -1103,6 +1103,7 @@ Auto
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 <script src="assets/js/color-modes.js"></script>
 
+
 <!--AdFox START-->
 <!--yandex_acer.manuilov-->
 <!--Площадка: lada-aym.github.io/ / * / *-->
@@ -1110,6 +1111,9 @@ Auto
 <!--Расположение: внутри изображений-->
 <script>
 window.addEventListener("load", () => {
+    const MIN_WIDTH = 300; // минимальная ширина изображения в пикселях
+    const MIN_HEIGHT = 200; // минимальная высота изображения в пикселях
+    
     const render = (imageId) => {
         window.yaContextCb.push(() => {
             Ya.adfoxCode.create({
@@ -1130,6 +1134,13 @@ window.addEventListener("load", () => {
         }
         
         const image = images.shift()
+        
+        // Проверяем размер изображения
+        if (image.naturalWidth < MIN_WIDTH || image.naturalHeight < MIN_HEIGHT) {
+            renderInImage(images)
+            return
+        }
+        
         const containerId = `adfox_container_${Math.random().toString(16).slice(2)}`
         
         // Создаем контейнер для рекламы
