@@ -1102,35 +1102,43 @@ Auto
 </article></section></main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 <script src="assets/js/color-modes.js"></script>
-<!-- Yandex.RTB R-A-537370-42 -->
+
+
+<!-- Adfox блок -->
 <script>
 window.addEventListener("load", () => {
     const render = (imageId) => {
-        window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.render({
-                "renderTo": imageId,
-                "blockId": "R-A-537370-42",
-                "type": "inImage"
-            })
-        })
+        const adfox = document.createElement('script');
+        adfox.type = 'text/javascript';
+        adfox.async = true;
+        adfox.src = `//adfox.yandex.ru/adv?p1=adfox_175352194506474357&p2=322697&puid=0&p3=${imageId}`;
+        
+        const s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(adfox, s);
     }
+    
     const renderInImage = (images) => {
         if (!images.length) {
-            return
+            return;
         }
-        const image = images.shift()
-        image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
+        
+        const image = images.shift();
+        image.id = `adfox_block_${Math.random().toString(16).slice(2)}`;
+        
         if (image.tagName === "IMG" && !image.complete) {
             image.addEventListener("load", () => {
-                render(image.id)
-            }, { once: true })
+                render(image.id);
+            }, { once: true });
         } else {
-            render(image.id)
+            render(image.id);
         }
-        renderInImage(images)
+        
+        renderInImage(images);
     }
-    renderInImage(Array.from(document.querySelectorAll("img")))
-}, { once: true })
+    
+    renderInImage(Array.from(document.querySelectorAll("img")));
+}, { once: true });
 </script>
+
 </body>
 </html>
