@@ -1120,7 +1120,7 @@ window.addEventListener("load", () => {
         }
         const image = images.shift()
         const {width} = image.getBoundingClientRect()
-        if (width < 450) {
+        if (width < 350) {
             return renderInImage(images)
         }
         image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
