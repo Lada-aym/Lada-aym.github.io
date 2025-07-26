@@ -1104,63 +1104,40 @@ Auto
 <script src="assets/js/color-modes.js"></script>
 
 
-<!--AdFox START-->
-<!--yandex_acer.manuilov-->
-<!--Площадка: lada-aym.github.io/ / * / *-->
-<!--Тип баннера: In-Image-->
-<!--Расположение: внутри изображений-->
+<!-- Adfox блок -->
 <script>
 window.addEventListener("load", () => {
-    const MIN_WIDTH = 300; // минимальная ширина изображения в пикселях
-    const MIN_HEIGHT = 200; // минимальная высота изображения в пикселях
-    
     const render = (imageId) => {
-        window.yaContextCb.push(() => {
-            Ya.adfoxCode.create({
-                containerId: imageId,
-                ownerId: 322697,
-                params: {
-                    pp: 'i',
-                    ps: 'jxla',
-                    p2: 'p'
-                }
-            })
-        })
+        const adfox = document.createElement('script');
+        adfox.type = 'text/javascript';
+        adfox.async = true;
+        adfox.src = `//adfox.yandex.ru/adv?p1=322697&p2=R-A-537370-62&puid=0&p3=${imageId}`;
+        
+        const s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(adfox, s);
     }
     
     const renderInImage = (images) => {
         if (!images.length) {
-            return
+            return;
         }
         
-        const image = images.shift()
+        const image = images.shift();
+        image.id = `adfox_block_${Math.random().toString(16).slice(2)}`;
         
-        // Проверяем размер изображения
-        if (image.naturalWidth < MIN_WIDTH || image.naturalHeight < MIN_HEIGHT) {
-            renderInImage(images)
-            return
-        }
-        
-        const containerId = `adfox_container_${Math.random().toString(16).slice(2)}`
-        
-        // Создаем контейнер для рекламы
-        const container = document.createElement('div')
-        container.id = containerId
-        image.parentNode.insertBefore(container, image)
-
         if (image.tagName === "IMG" && !image.complete) {
             image.addEventListener("load", () => {
-                render(containerId)
-            }, { once: true })
+                render(image.id);
+            }, { once: true });
         } else {
-            render(containerId)
+            render(image.id);
         }
         
-        renderInImage(images)
+        renderInImage(images);
     }
     
-    renderInImage(Array.from(document.querySelectorAll("img")))
-}, { once: true })
+    renderInImage(Array.from(document.querySelectorAll("img")));
+}, { once: true });
 </script>
 
 </body>
