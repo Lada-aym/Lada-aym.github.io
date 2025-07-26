@@ -1103,90 +1103,66 @@ Auto
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 <script src="assets/js/color-modes.js"></script>
 
-  
-<!--AdFox START-->
-<!--yandex_acer.manuilov-->
-<!--Площадка: lada-aym.github.io/ / * / *-->
-<!--Тип баннера: Fullscreen-->
-<!--Расположение: низ страницы-->
-<div id="adfox_175354015394984357"></div>
+  <div>
+      
 <script>
-    window.yaContextCb.push(()=>{
-        Ya.adfoxCode.create({
-            ownerId: 322697,
-            containerId: 'adfox_175354015394984357',
-            type: 'floorAd', 
-            platform: 'desktop',
-            params: {
-                pp: 'i',
-                ps: 'jxla',
-                p2: 'hiuq'
-            }
+// Определяем функцию для рендера обычных блоков
+const renderBlock = (blockId, type, platform) => {
+    window.yaContextCb.push(() => {
+        Ya.Context.AdvManager.render({
+            "blockId": blockId,
+            "type": type,
+            "platform": platform
         })
     })
-</script>
-<!--AdFox START-->
-<!--yandex_acer.manuilov-->
-<!--Площадка: lada-aym.github.io/ / * / *-->
-<!--Тип баннера: Fullscreen-->
-<!--Расположение: низ страницы-->
-<div id="adfox_175354015394984357"></div>
-<script>
-    window.yaContextCb.push(()=>{
-        Ya.adfoxCode.create({
-            ownerId: 322697,
-            containerId: 'adfox_175354015394984357',
-            type: 'topAd', 
-            params: {
-                pp: 'i',
-                ps: 'jxla',
-                p2: 'hiuq'
-            }
+}
+
+// Определяем функцию для рендера inImage блока
+const renderInImage = (blockId) => {
+    const render = (imageId) => {
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                "renderTo": imageId,
+                "blockId": blockId,
+                "type": "inImage"
+            })
         })
-    })
+    }
+    
+    const processImages = (images) => {
+        if (!images.length) {
+            return
+        }
+        const image = images.shift()
+        const {width, height} = image.getBoundingClientRect()
+        if (width < 320 || height < 190) {
+            return processImages(images)
+        }
+        image.id = `yandex_rtb_${blockId}-${Math.random().toString(16).slice(2)}`
+        if (image.tagName === "IMG" && !image.complete) {
+            image.addEventListener("load", () => {
+                render(image.id)
+            }, { once: true })
+        } else {
+            render(image.id)
+        }
+        processImages(images)
+    }
+    
+    processImages(Array.from(document.querySelectorAll("amp-img")))
+}
+// Рендерим все блоки
+renderBlock("R-A-537370-35", "fullscreen", "touch")
+renderBlock("R-A-537370-43", "fullscreen", "desktop")
+renderBlock("R-A-537370-44", "floorAd", "desktop")
+renderBlock("R-A-537370-36", "floorAd", "touch")
+
+// Рендерим inImage блок после загрузки страницы
+window.addEventListener("load", () => {
+    renderInImage("R-A-537370-42")
+}, { once: true })
 </script>
-<!--AdFox START-->
-<!--yandex_acer.manuilov-->
-<!--Площадка: lada-aym.github.io/ / * / *-->
-<!--Тип баннера: Fullscreen-->
-<!--Расположение: низ страницы-->
-<div id="adfox_175354105135124357"></div>
-<script>
-    window.yaContextCb.push(()=>{
-        Ya.adfoxCode.create({
-            ownerId: 322697,
-            containerId: 'adfox_175354105135124357',
-            type: 'fullscreen', 
-            platform: 'desktop',
-            params: {
-                pp: 'i',
-                ps: 'jxla',
-                p2: 'hiuq'
-            }
-        })
-    })
-</script>
-<!--AdFox START-->
-<!--yandex_acer.manuilov-->
-<!--Площадка: lada-aym.github.io/ / * / *-->
-<!--Тип баннера: Fullscreen-->
-<!--Расположение: низ страницы-->
-<div id="adfox_175354105135124357"></div>
-<script>
-    window.yaContextCb.push(()=>{
-        Ya.adfoxCode.create({
-            ownerId: 322697,
-            containerId: 'adfox_175354105135124357',
-            type: 'fullscreen',
-            platform: 'touch',
-            params: {
-                pp: 'i',
-                ps: 'jxla',
-                p2: 'hiuq'
-            }
-        })
-    })
-</script>
+  </div>
 
 </body>
 </html>
