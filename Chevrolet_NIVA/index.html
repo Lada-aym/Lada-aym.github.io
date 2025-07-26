@@ -1102,84 +1102,62 @@ Auto
 </article></section></main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 <script src="assets/js/color-modes.js"></script>
-
-
-
-<div id="adfox_175352870304334357"></div>
 <script>
-  window.yaContextCb.push(()=>{
-    Ya.adfoxCode.create({
-      ownerId: 322697,
-      containerId: 'adfox_175352870304334357',
-      type: 'inImage',
-      params: {
-        p1: 'cdvyr',
-        p2: 'ghnb',
-      }
+// Определяем функцию для рендера обычных блоков
+const renderBlock = (blockId, type, platform) => {
+    window.yaContextCb.push(() => {
+        Ya.Context.AdvManager.render({
+            "blockId": blockId,
+            "type": type,
+            "platform": platform
+        })
     })
-  })
-</script> 
+}
 
+// Определяем функцию для рендера inImage блока
+const renderInImage = (blockId) => {
+    const render = (imageId) => {
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                "renderTo": imageId,
+                "blockId": blockId,
+                "type": "inImage"
+            })
+        })
+    }
+    
+    const processImages = (images) => {
+        if (!images.length) {
+            return
+        }
+        const image = images.shift()
+        const {width, height} = image.getBoundingClientRect()
+        if (width < 320 || height < 190) {
+            return processImages(images)
+        }
+        image.id = `yandex_rtb_${blockId}-${Math.random().toString(16).slice(2)}`
+        if (image.tagName === "IMG" && !image.complete) {
+            image.addEventListener("load", () => {
+                render(image.id)
+            }, { once: true })
+        } else {
+            render(image.id)
+        }
+        processImages(images)
+    }
+    
+    processImages(Array.from(document.querySelectorAll("img")))
+}
+// Рендерим все блоки
+renderBlock("R-A-537370-35", "fullscreen", "touch")
+renderBlock("R-A-537370-43", "fullscreen", "desktop")
+renderBlock("R-A-537370-44", "floorAd", "desktop")
+renderBlock("R-A-537370-36", "floorAd", "touch")
 
-
-<script>
-  window.yaContextCb.push(() => {
-      if (Ya.adfoxCode.getPlatform() === 'desktop') {
-        // вызов fullscreen для десктопной версии
-        Ya.adfoxCode.create({
-          ownerId: 322697,
-          containerId: 'adfox_175352870304334357',
-          type: 'fullscreen',
-          platform: 'desktop',
-            params: {
-              p1: 'cdvyr',
-              p2: 'ghnb',
-            }
-        });
-      } else {
-        // вызов fullscreen для мобильной версии
-        Ya.adfoxCode.create({
-          ownerId: 322697,
-          containerId: 'adfox_175352870304334357',
-          type: 'fullscreen',
-          platform: 'touch',
-            params: {
-              p1: 'cdvyr',
-              p2: 'ghnb',
-            }
-        });
-      }
-  });
+// Рендерим inImage блок после загрузки страницы
+window.addEventListener("load", () => {
+    renderInImage("R-A-537370-42")
+}, { once: true })
 </script>
-<script>
-  window.yaContextCb.push(() => {
-      if (Ya.adfoxCode.getPlatform() === 'desktop') {
-        // вызов FloorAd для десктопной версии
-        Ya.adfoxCode.create({
-          ownerId: 322697,
-          containerId: 'adfox_175352870304334357',
-          type: 'floorAd',
-          platform: 'desktop',
-            params: {
-              p1: 'cdvyr',
-              p2: 'ghnb',
-            }
-        });
-      } else {
-        // вызов FloorAd для мобильной версии
-        Ya.adfoxCode.create({
-          ownerId: 322697,
-          containerId: 'adfox_175352870304334357',
-          type: 'floorAd',
-          platform: 'touch',
-            params: {
-              p1: 'cdvyr',
-              p2: 'ghnb',
-            }
-        });
-      }
-  });
-</script>
-
 </body>
 </html>
