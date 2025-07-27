@@ -1105,64 +1105,65 @@ Auto
 </article></section></main>
 
  
-      
+      <!--AdFox START-->
+<!--yandex_acer.manuilov-->
+<!--Площадка: lada-aym.github.io/ / * / *-->
+<!--Тип баннера: In-Image-->
+<!--Расположение: внутри изображений-->
 <script>
-// Определяем функцию для рендера обычных блоков
-const renderBlock = (blockId, type, platform) => {
-    window.yaContextCb.push(() => {
-        Ya.Context.AdvManager.render({
-            "blockId": blockId,
-            "type": type,
-            "platform": platform
-        })
-    })
-}
-
-// Определяем функцию для рендера inImage блока
-const renderInImage = (blockId) => {
+window.addEventListener("load", () => {
+    const MIN_WIDTH = 300; // минимальная ширина изображения в пикселях
+    const MIN_HEIGHT = 200; // минимальная высота изображения в пикселях
+    
     const render = (imageId) => {
         window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.render({
-                "renderTo": imageId,
-                "blockId": blockId,
-                "type": "inImage"
+            Ya.adfoxCode.create({
+                containerId: imageId,
+                ownerId: 322697,
+                params: {
+                    pp: 'i',
+                    ps: 'jxla',
+                    p2: 'p'
+                }
             })
         })
     }
     
-    const processImages = (images) => {
+    const renderInImage = (images) => {
         if (!images.length) {
             return
         }
+        
         const image = images.shift()
-        const {width, height} = image.getBoundingClientRect()
-        if (width < 320 || height < 190) {
-            return processImages(images)
+        
+        // Проверяем размер изображения
+        if (image.naturalWidth < MIN_WIDTH || image.naturalHeight < MIN_HEIGHT) {
+            renderInImage(images)
+            return
         }
-        image.id = `yandex_rtb_${blockId}-${Math.random().toString(16).slice(2)}`
+        
+        const containerId = `adfox_container_${Math.random().toString(16).slice(2)}`
+        
+        // Создаем контейнер для рекламы
+        const container = document.createElement('div')
+        container.id = containerId
+        image.parentNode.insertBefore(container, image)
+
         if (image.tagName === "IMG" && !image.complete) {
             image.addEventListener("load", () => {
-                render(image.id)
+                render(containerId)
             }, { once: true })
         } else {
-            render(image.id)
+            render(containerId)
         }
-        processImages(images)
+        
+        renderInImage(images)
     }
     
-    processImages(Array.from(document.querySelectorAll("img")))
-}
-// Рендерим все блоки
-renderBlock("R-A-537370-35", "fullscreen", "touch")
-renderBlock("R-A-537370-43", "fullscreen", "desktop")
-renderBlock("R-A-537370-44", "floorAd", "desktop")
-renderBlock("R-A-537370-36", "floorAd", "touch")
-
-// Рендерим inImage блок после загрузки страницы
-window.addEventListener("load", () => {
-    renderInImage("R-A-537370-42")
+    renderInImage(Array.from(document.querySelectorAll("img")))
 }, { once: true })
 </script>
+
   
 
 </body>
