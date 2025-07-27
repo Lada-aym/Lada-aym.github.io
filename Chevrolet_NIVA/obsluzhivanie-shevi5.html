@@ -590,7 +590,7 @@ const renderInImage = (blockId) => {
         processImages(images)
     }
     
-    processImages(Array.from(document.querySelectorAll("img")))
+    processImages(Array.from(document.querySelectorAll("amp-img")))
 }
 
 // Рендерим все блоки
@@ -600,43 +600,8 @@ renderBlock("R-A-537370-44", "floorAd", "desktop")
 renderBlock("R-A-537370-36", "floorAd", "touch")
 // Рендерим inImage блок после загрузки страницы
 window.addEventListener("load", () => {
-    renderInImage("R-A-537370-42")
+    renderInImage("R-A-537370-62")
 }, { once: true })
-</script>
-<!-- Adfox блок -->
-<script>
-window.addEventListener("load", () => {
-    const render = (imageId) => {
-        const adfox = document.createElement('script');
-        adfox.type = 'text/javascript';
-        adfox.async = true;
-        adfox.src = `//adfox.yandex.ru/adv?p1=537370&p2=R-A-537370-62&puid=0&p3=${imageId}`;
-        
-        const s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(adfox, s);
-    }
-    
-    const renderInImage = (images) => {
-        if (!images.length) {
-            return;
-        }
-        
-        const image = images.shift();
-        image.id = `adfox_block_${Math.random().toString(16).slice(2)}`;
-        
-        if (image.tagName === "IMG" && !image.complete) {
-            image.addEventListener("load", () => {
-                render(image.id);
-            }, { once: true });
-        } else {
-            render(image.id);
-        }
-        
-        renderInImage(images);
-    }
-    
-    renderInImage(Array.from(document.querySelectorAll("amp-img")));
-}, { once: true });
 </script>
 
   </body>
