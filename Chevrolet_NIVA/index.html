@@ -1105,66 +1105,8 @@ Auto
 </article></section></main>
 
  
-      <!--AdFox START-->
-<!--yandex_acer.manuilov-->
-<!--Площадка: lada-aym.github.io/ / * / *-->
-<!--Тип баннера: In-Image-->
-<!--Расположение: внутри изображений-->
-<script>
-window.addEventListener("load", () => {
-    const MIN_WIDTH = 320; // минимальная ширина изображения в пикселях
-    const MIN_HEIGHT = 50; // минимальная высота изображения в пикселях
-    
-    const render = (imageId) => {
-        window.yaContextCb.push(() => {
-            Ya.adfoxCode.create({
-                containerId: imageId,
-                ownerId: 322697,
-                params: {
-                    pp: 'i',
-                    ps: 'jxla',
-                    p2: 'p'
-                }
-            })
-        })
-    }
-    
-    const renderInImage = (images) => {
-        if (!images.length) {
-            return
-        }
-        
-        const image = images.shift()
-        
-        // Проверяем размер изображения
-        if (image.naturalWidth < MIN_WIDTH || image.naturalHeight < MIN_HEIGHT) {
-            renderInImage(images)
-            return
-        }
-        
-        const containerId = `adfox_container_${Math.random().toString(16).slice(2)}`
-        
-        // Создаем контейнер для рекламы
-        const container = document.createElement('div')
-        container.id = containerId
-        image.parentNode.insertBefore(container, image)
 
-        if (image.tagName === "IMG" && !image.complete) {
-            image.addEventListener("load", () => {
-                render(containerId)
-            }, { once: true })
-        } else {
-            render(containerId)
-        }
-        
-        renderInImage(images)
-    }
-    
-    renderInImage(Array.from(document.querySelectorAll("img")))
-}, { once: true })
-</script>
-
-  
+  <!-- Yandex.RTB R-A-537370-42 --> <script> (function renderInImage(adImagesCounter, images) { if (adImagesCounter <= 0 || !images.length) { return } const image = images.shift() image.id = `yandex_rtb_R-A-77777-77-${Math.random().toString(16).slice(2)}` window.yaContextCb.push(() => { Ya.Context.AdvManager.render({ "renderTo": image.id, "blockId": "R-A-537370-42", "type": "inImage", "onRender": () => { renderInImage(adImagesCounter-1, images) }, "altCallback": () => { renderInImage(adImagesCounter, images) }, "onError": () => { renderInImage(adImagesCounter, images) } }) }) })(9, Array.from(document.querySelectorAll("img"))) </script>
 
 </body>
 </html>
