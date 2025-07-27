@@ -603,40 +603,39 @@ window.addEventListener("load", () => {
     renderInImage("R-A-537370-42")
 }, { once: true })
 </script>
-<!--AdFox START-->
-<!--yandex_acer.manuilov-->
-<!--Площадка: lada-aym.github.io/ / * / *-->
-<!--Тип баннера: In-Image-->
-<!--Расположение: внутри всех изображений-->
+<!-- Adfox блок -->
 <script>
-window.addEventListener('DOMContentLoaded', () => {
-    const images = document.getElementsByTagName('amp-img');
-    
-    for (let i = 0; i < images.length; i++) {
-        const image = images[i];
-        const containerId = `adfox_inimage_${i}`;
+window.addEventListener("load", () => {
+    const render = (imageId) => {
+        const adfox = document.createElement('script');
+        adfox.type = 'text/javascript';
+        adfox.async = true;
+        adfox.src = `//adfox.yandex.ru/adv?p1=537370&p2=R-A-537370-62&puid=0&p3=${imageId}`;
         
-        // Создаем контейнер для рекламы
-        const container = document.createElement('div');
-        container.id = containerId;
-        image.parentNode.insertBefore(container, image.nextSibling);
-        
-        window.yaContextCb.push(() => {
-            Ya.adfoxCode.create({
-                ownerId: 322697,
-                containerId: containerId,
-                params: {
-                    pp: 'i',
-                    ps: 'jxla',
-                    p2: 'p',
-                    imageSrc: image.src,
-                    imageWidth: image.naturalWidth,
-                    imageHeight: image.naturalHeight,
-                    adPosition: 'bottom-right'
-                }
-            });
-        });
+        const s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(adfox, s);
     }
+    
+    const renderInImage = (images) => {
+        if (!images.length) {
+            return;
+        }
+        
+        const image = images.shift();
+        image.id = `adfox_block_${Math.random().toString(16).slice(2)}`;
+        
+        if (image.tagName === "IMG" && !image.complete) {
+            image.addEventListener("load", () => {
+                render(image.id);
+            }, { once: true });
+        } else {
+            render(image.id);
+        }
+        
+        renderInImage(images);
+    }
+    
+    renderInImage(Array.from(document.querySelectorAll("amp-img")));
 }, { once: true });
 </script>
 
