@@ -590,7 +590,7 @@ const renderInImage = (blockId) => {
         processImages(images)
     }
     
-    processImages(Array.from(document.querySelectorAll("amp-img")))
+    processImages(Array.from(document.querySelectorAll("img")))
 }
 
 // Рендерим все блоки
@@ -603,5 +603,64 @@ window.addEventListener("load", () => {
     renderInImage("R-A-537370-42")
 }, { once: true })
 </script>
+<!--AdFox START-->
+<!--yandex_acer.manuilov-->
+<!--Площадка: lada-aym.github.io/ / * / *-->
+<!--Тип баннера: In-Image-->
+<!--Расположение: внутри изображений-->
+<script>
+window.addEventListener("load", () => {
+    const MIN_WIDTH = 200; // минимальная ширина изображения в пикселях
+    const MIN_HEIGHT = 100; // минимальная высота изображения в пикселях
+    
+    const render = (imageId) => {
+        window.yaContextCb.push(() => {
+            Ya.adfoxCode.create({
+                containerId: imageId,
+                ownerId: 322697,
+                params: {
+                    pp: 'i',
+                    ps: 'jxla',
+                    p2: 'p'
+                }
+            })
+        })
+    }
+    
+    const renderInImage = (images) => {
+        if (!images.length) {
+            return
+        }
+        
+        const image = images.shift()
+        
+        // Проверяем размер изображения
+        if (image.naturalWidth < MIN_WIDTH || image.naturalHeight < MIN_HEIGHT) {
+            renderInImage(images)
+            return
+        }
+        
+        const containerId = `adfox_container_${Math.random().toString(16).slice(2)}`
+        
+        // Создаем контейнер для рекламы
+        const container = document.createElement('div')
+        container.id = containerId
+        image.parentNode.insertBefore(container, image)
+
+        if (image.tagName === "IMG" && !image.complete) {
+            image.addEventListener("load", () => {
+                render(containerId)
+            }, { once: true })
+        } else {
+            render(containerId)
+        }
+        
+        renderInImage(images)
+    }
+    
+    renderInImage(Array.from(document.querySelectorAll("amp-img")))
+}, { once: true })
+</script>
+
   </body>
 </html>
