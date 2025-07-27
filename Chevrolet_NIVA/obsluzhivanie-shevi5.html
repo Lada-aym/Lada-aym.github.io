@@ -607,59 +607,37 @@ window.addEventListener("load", () => {
 <!--yandex_acer.manuilov-->
 <!--Площадка: lada-aym.github.io/ / * / *-->
 <!--Тип баннера: In-Image-->
-<!--Расположение: внутри изображений-->
+<!--Расположение: внутри всех изображений-->
 <script>
-window.addEventListener("load", () => {
-    const MIN_WIDTH = 200; // минимальная ширина изображения в пикселях
-    const MIN_HEIGHT = 100; // минимальная высота изображения в пикселях
+window.addEventListener('DOMContentLoaded', () => {
+    const images = document.getElementsByTagName('img');
     
-    const render = (imageId) => {
+    for (let i = 0; i < images.length; i++) {
+        const image = images[i];
+        const containerId = `adfox_inimage_${i}`;
+        
+        // Создаем контейнер для рекламы
+        const container = document.createElement('div');
+        container.id = containerId;
+        image.parentNode.insertBefore(container, image.nextSibling);
+        
         window.yaContextCb.push(() => {
             Ya.adfoxCode.create({
-                containerId: imageId,
                 ownerId: 322697,
+                containerId: containerId,
                 params: {
                     pp: 'i',
                     ps: 'jxla',
-                    p2: 'p'
+                    p2: 'p',
+                    imageSrc: image.src,
+                    imageWidth: image.naturalWidth,
+                    imageHeight: image.naturalHeight,
+                    adPosition: 'bottom-right'
                 }
-            })
-        })
+            });
+        });
     }
-    
-    const renderInImage = (images) => {
-        if (!images.length) {
-            return
-        }
-        
-        const image = images.shift()
-        
-        // Проверяем размер изображения
-        if (image.naturalWidth < MIN_WIDTH || image.naturalHeight < MIN_HEIGHT) {
-            renderInImage(images)
-            return
-        }
-        
-        const containerId = `adfox_container_${Math.random().toString(16).slice(2)}`
-        
-        // Создаем контейнер для рекламы
-        const container = document.createElement('div')
-        container.id = containerId
-        image.parentNode.insertBefore(container, image)
-
-        if (image.tagName === "IMG" && !image.complete) {
-            image.addEventListener("load", () => {
-                render(containerId)
-            }, { once: true })
-        } else {
-            render(containerId)
-        }
-        
-        renderInImage(images)
-    }
-    
-    renderInImage(Array.from(document.querySelectorAll("amp-img")))
-}, { once: true })
+}, { once: true });
 </script>
 
   </body>
