@@ -1104,7 +1104,8 @@ Auto
 </div>
 </article></section></main>
 
- <!-- Yandex.RTB R-A-537370-42 -->
+
+<!-- Yandex.RTB R-A-537370-42 -->
 <script>
 window.addEventListener("load", () => {
     const render = (imageId) => {
@@ -1121,10 +1122,6 @@ window.addEventListener("load", () => {
             return
         }
         const image = images.shift()
-        const {width, height} = image.getBoundingClientRect()
-        if (width < 320 || height < 180) {
-            return renderInImage(images)
-        }
         image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
         if (image.tagName === "IMG" && !image.complete) {
             image.addEventListener("load", () => {
@@ -1138,7 +1135,5 @@ window.addEventListener("load", () => {
     renderInImage(Array.from(document.querySelectorAll("img")))
 }, { once: true })
 </script>
-
-
 </body>
 </html>
