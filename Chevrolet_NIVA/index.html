@@ -1050,8 +1050,199 @@ function addscript(a,callback,d) {
 </script>
 
 
+<script>
+( function () {
+    var loadedTLAnalytics = false,timerId;
+    
+    if ( navigator.userAgent.indexOf( 'YandexMetrika' ) > -1) { //Это пропуск робота Метрики
+        loadTLAnalytics();
+    } else {
+        window.addEventListener( 'scroll', loadTLAnalytics, { passive: true } );
+        window.addEventListener( 'touchstart', loadTLAnalytics, { passive: true } );
+        document.addEventListener( 'mouseenter', loadTLAnalytics, { passive: true } );
+        document.addEventListener( 'click', loadTLAnalytics, { passive: true } );
+        document.addEventListener( 'DOMContentLoaded', loadFallback, { passive: true } );
+    }
+    
+    function loadFallback() {
+        timerId = setTimeout( loadTLAnalytics, 5000 ); //Это глобальное время задержки 5000 - 5 сек.
+    }
+    
+    function loadTLAnalytics( e ) {
+        if ( loadedTLAnalytics ) {
+            return;
+        }
 
+        setTimeout(function () { //Загрузка счетчика Метрики
+            (function(m,e,t,r,i,k,a) { m[i]=m[i]||function() { (m[i].a=m[i].a||[]).push(arguments) }; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } } k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a) } ) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym( 103992277, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, ecommerce:"dataLayer", triggerEvent:true } );
+        },0);
 
+        setTimeout(function () {
+            addscript("https://yandex.ru/ads/system/context.js", function() {
+                
+                // Добавление рекламных блоков
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-537370-36",
+                        "type": "floorAd",
+                        "platform": "touch"
+                    })
+                });
+                
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-537370-44",
+                        "type": "floorAd",
+                        "platform": "desktop"
+                    })
+                });
+                
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-537370-35",
+                        "type": "fullscreen",
+                        "platform": "touch"
+                    })
+                });
+                
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-537370-43",
+                        "type": "fullscreen",
+                        "platform": "desktop"
+                    })
+                });
+            });
+        },2000);
+        
+        loadedTLAnalytics = true;
+        clearTimeout( timerId );
+        
+        window.removeEventListener( 'scroll', loadTLAnalytics, { passive: true} );
+        window.removeEventListener( 'touchstart', loadTLAnalytics, {passive: true} );
+        document.removeEventListener( 'mouseenter', loadTLAnalytics, { passive: true } );
+        document.removeEventListener( 'click', loadTLAnalytics, { passive: true } );
+        document.removeEventListener( 'DOMContentLoaded', loadFallback, { passive: true } );
+    }
+} )();
 
+function addscript(a,callback,d) {
+    var eli = document.createElement("script");
+    eli.src = a;
+    eli.async = true;
+    m=document.getElementsByTagName("script")[0];
+    m.parentNode.insertBefore(eli,m);
+    eli.onload = () => {
+        if (callback) callback();
+    }
+}
+</script>
+
+<script>
+( function () {
+    var loadedTLAnalytics = false,timerId;
+    
+    if ( navigator.userAgent.indexOf( 'YandexMetrika' ) > -1) { //Это пропуск робота Метрики
+        loadTLAnalytics();
+    } else {
+        window.addEventListener( 'scroll', loadTLAnalytics, { passive: true } );
+        window.addEventListener( 'touchstart', loadTLAnalytics, { passive: true } );
+        document.addEventListener( 'mouseenter', loadTLAnalytics, { passive: true } );
+        document.addEventListener( 'click', loadTLAnalytics, { passive: true } );
+        document.addEventListener( 'DOMContentLoaded', loadFallback, { passive: true } );
+    }
+    
+    function loadFallback() {
+        timerId = setTimeout( loadTLAnalytics, 5000 ); //Это глобальное время задержки 5000 - 5 сек.
+    }
+    
+    function loadTLAnalytics( e ) {
+        if ( loadedTLAnalytics ) {
+            return;
+        }
+
+        setTimeout(function () { //Загрузка счетчика Метрики
+            (function(m,e,t,r,i,k,a) { m[i]=m[i]||function() { (m[i].a=m[i].a||[]).push(arguments) }; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } } k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a) } ) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym( 103992277, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, ecommerce:"dataLayer", triggerEvent:true } );
+        },0);
+
+        setTimeout(function () {
+            addscript("https://yandex.ru/ads/system/context.js", function() {
+                
+                // Добавление рекламных блоков
+                window.addEventListener("DOMContentLoaded", () => {
+    const render = (imageId) => {
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                "renderTo": imageId,
+                "blockId": "R-A-537370-42",
+                "type": "inImage"
+            })
+        })
+    }
+
+    const renderInImage = (images) => {
+        if (!images.length) {
+            return
+        }
+
+        const image = images.shift()
+        
+        // Проверяем, имеет ли изображение атрибут loading="lazy"
+        if (image.hasAttribute('loading') && image.getAttribute('loading') === 'lazy') {
+            // Добавляем обработчик для отложенной загрузки
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Генерируем уникальный ID
+                        image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
+                        render(image.id)
+                        observer.unobserve(entry.target)
+                    }
+                })
+            })
+
+            observer.observe(image)
+        } else {
+            // Для обычных изображений
+            image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
+            if (image.tagName === "IMG" && !image.complete) {
+                image.addEventListener("load", () => {
+                    render(image.id)
+                }, { once: true })
+            } else {
+                render(image.id)
+            }
+        }
+
+        renderInImage(images)
+    }
+
+    renderInImage(Array.from(document.querySelectorAll("img")))
+}, { once: true });
+            });
+        },2000);
+        
+        loadedTLAnalytics = true;
+        clearTimeout( timerId );
+        
+        window.removeEventListener( 'scroll', loadTLAnalytics, { passive: true} );
+        window.removeEventListener( 'touchstart', loadTLAnalytics, {passive: true} );
+        document.removeEventListener( 'mouseenter', loadTLAnalytics, { passive: true } );
+        document.removeEventListener( 'click', loadTLAnalytics, { passive: true } );
+        document.removeEventListener( 'DOMContentLoaded', loadFallback, { passive: true } );
+    }
+} )();
+
+function addscript(a,callback,d) {
+    var eli = document.createElement("script");
+    eli.src = a;
+    eli.async = true;
+    m=document.getElementsByTagName("script")[0];
+    m.parentNode.insertBefore(eli,m);
+    eli.onload = () => {
+        if (callback) callback();
+    }
+}
+</script>
 </body>
 </html>
