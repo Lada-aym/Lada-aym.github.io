@@ -961,7 +961,6 @@ Auto
 Издание 3, Редакция 1 (Ноябрь 2003 г.)</p></div></div></article></section><!--  --></main>
 <script src="assets/js/color-modes.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous" defer></script>
-
 <script>
 ( function () {
     var loadedTLAnalytics = false,timerId;
@@ -1024,76 +1023,35 @@ Auto
                         "platform": "desktop"
                     })
                 });
-                
-                // Добавление InImage рекламы
-                const render = (imageId) => {
-                    window.yaContextCb.push(() => {
-                        Ya.Context.AdvManager.render({
-                            "renderTo": imageId,
-                            "blockId": "R-A-537370-42",
-                            "type": "inImage"
-                        })
-                    })
-                }
-
-                const renderInImage = (images) => {
-                    if (!images.length) {
-                        return
-                    }
-
-                    const image = images.shift()
-                    
-                    if (image.hasAttribute('loading') && image.getAttribute('loading') === 'lazy') {
-                        const observer = new IntersectionObserver((entries, observer) => {
-                            entries.forEach(entry => {
-                                if (entry.isIntersecting) {
-    image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
-    render(image.id)
-    observer.unobserve(entry.target)
-  })
-}, { rootMargin: '0px' })
-
-observer.observe(image)
-} else {
-  image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
-  if (image.tagName === "IMG" && !image.complete) {
-    image.addEventListener("load", () => {
-      render(image.id)
-    }, { once: true })
-  } else {
-    render(image.id)
-  }
-}
-
-renderInImage(images)
-}
-
-renderInImage(Array.from(document.querySelectorAll("img")))
-
-});
-},5000);
- 
- loadedTLAnalytics = true;
- clearTimeout( timerId );
- 
- window.removeEventListener( 'scroll', loadTLAnalytics, { passive: true} );
- window.removeEventListener( 'touchstart', loadTLAnalytics, {passive: true} );
- document.removeEventListener( 'mouseenter', loadTLAnalytics, { passive: true } );
- document.removeEventListener( 'click', loadTLAnalytics, { passive: true } );
- document.removeEventListener( 'DOMContentLoaded', loadFallback, { passive: true } );
- }
+            });
+        },5000);
+        
+        loadedTLAnalytics = true;
+        clearTimeout( timerId );
+        
+        window.removeEventListener( 'scroll', loadTLAnalytics, { passive: true} );
+        window.removeEventListener( 'touchstart', loadTLAnalytics, {passive: true} );
+        document.removeEventListener( 'mouseenter', loadTLAnalytics, { passive: true } );
+        document.removeEventListener( 'click', loadTLAnalytics, { passive: true } );
+        document.removeEventListener( 'DOMContentLoaded', loadFallback, { passive: true } );
+    }
 } )();
 
 function addscript(a,callback,d) {
- var eli = document.createElement("script");
- eli.src = a;
- eli.async = true;
- m=document.getElementsByTagName("script")[0];
- m.parentNode.insertBefore(eli,m);
- eli.onload = () => {
- if (callback) callback();
- }
+    var eli = document.createElement("script");
+    eli.src = a;
+    eli.async = true;
+    m=document.getElementsByTagName("script")[0];
+    m.parentNode.insertBefore(eli,m);
+    eli.onload = () => {
+        if (callback) callback();
+    }
 }
 </script>
+
+
+
+
+
 </body>
 </html>
