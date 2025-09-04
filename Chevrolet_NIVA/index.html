@@ -1169,6 +1169,39 @@ function addscript(a,callback,d) {
             addscript("https://yandex.ru/ads/system/context.js", function() {
                 
                 // Добавление рекламных блоков
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-537370-36",
+                        "type": "floorAd",
+                        "platform": "touch"
+                    })
+                });
+                
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-537370-44",
+                        "type": "floorAd",
+                        "platform": "desktop"
+                    })
+                });
+                
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-537370-35",
+                        "type": "fullscreen",
+                        "platform": "touch"
+                    })
+                });
+                
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-537370-43",
+                        "type": "fullscreen",
+                        "platform": "desktop"
+                    })
+                });
+                
+                // Добавление InImage рекламы
                 window.addEventListener("DOMContentLoaded", () => {
     const render = (imageId) => {
         window.yaContextCb.push(() => {
@@ -1180,15 +1213,14 @@ function addscript(a,callback,d) {
         })
     }
 
-    const renderInImage = (images) => {
-        if (!images.length) {
-            return
-        }
+                const renderInImage = (images) => {
+                    if (!images.length) {
+                        return
+                    }
 
-        const image = images.shift()
-        
-        // Проверяем, имеет ли изображение атрибут loading="lazy"
-        if (image.hasAttribute('loading') && image.getAttribute('loading') === 'lazy') {
+                    const image = images.shift()
+                    
+                      if (image.hasAttribute('loading') && image.getAttribute('loading') === 'lazy') {
             // Добавляем обработчик для отложенной загрузки
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
@@ -1202,46 +1234,45 @@ function addscript(a,callback,d) {
             })
 
             observer.observe(image)
-        } else {
-            // Для обычных изображений
-            image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
-            if (image.tagName === "IMG" && !image.complete) {
-                image.addEventListener("load", () => {
-                    render(image.id)
-                }, { once: true })
-            } else {
-                render(image.id)
-            }
-        }
+} else {
+  image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
+  if (image.tagName === "IMG" && !image.complete) {
+    image.addEventListener("load", () => {
+      render(image.id)
+    }, { once: true })
+  } else {
+    render(image.id)
+  }
+}
 
-        renderInImage(images)
-    }
+renderInImage(images)
+}
 
-    renderInImage(Array.from(document.querySelectorAll("img")))
-}, { once: true })
-            });
-        },5000);
-        
-        loadedTLAnalytics = true;
-        clearTimeout( timerId );
-        
-        window.removeEventListener( 'scroll', loadTLAnalytics, { passive: true} );
-        window.removeEventListener( 'touchstart', loadTLAnalytics, {passive: true} );
-        document.removeEventListener( 'mouseenter', loadTLAnalytics, { passive: true } );
-        document.removeEventListener( 'click', loadTLAnalytics, { passive: true } );
-        document.removeEventListener( 'DOMContentLoaded', loadFallback, { passive: true } );
-    }
+renderInImage(Array.from(document.querySelectorAll("img")))
+
+});
+},5000);
+ 
+ loadedTLAnalytics = true;
+ clearTimeout( timerId );
+ 
+ window.removeEventListener( 'scroll', loadTLAnalytics, { passive: true} );
+ window.removeEventListener( 'touchstart', loadTLAnalytics, {passive: true} );
+ document.removeEventListener( 'mouseenter', loadTLAnalytics, { passive: true } );
+ document.removeEventListener( 'click', loadTLAnalytics, { passive: true } );
+ document.removeEventListener( 'DOMContentLoaded', loadFallback, { passive: true } );
+ }
 } )();
 
 function addscript(a,callback,d) {
-    var eli = document.createElement("script");
-    eli.src = a;
-    eli.async = true;
-    m=document.getElementsByTagName("script")[0];
-    m.parentNode.insertBefore(eli,m);
-    eli.onload = () => {
-        if (callback) callback();
-    }
+ var eli = document.createElement("script");
+ eli.src = a;
+ eli.async = true;
+ m=document.getElementsByTagName("script")[0];
+ m.parentNode.insertBefore(eli,m);
+ eli.onload = () => {
+ if (callback) callback();
+ }
 }
 </script>
 </body>
