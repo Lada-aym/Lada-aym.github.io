@@ -28,7 +28,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PRQ33NW3');</script>
 <!-- End Google Tag Manager -->
-   <script src="https://yandex.ru/ads/system/context.js" async></script>
+   <script>
+    setTimeout(function() {
+        var script = document.createElement('script');
+        script.src = 'https://yandex.ru/ads/system/context.js';
+        document.body.appendChild(script);
+    }, 5000);
+</script>
+
         <script>window.yaContextCb=window.yaContextCb||[]</script>
 </head> 
 <body class="bg-body-tertiary fw-bold fst-italic "> <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
