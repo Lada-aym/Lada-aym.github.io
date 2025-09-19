@@ -1,38 +1,6 @@
-# Папка Chevrolet_NIVA
-# Раздел эксплуатации
+# Простой тестовый редирект
+/test /Chevrolet_NIVA/ 301
+
+# Основной контент
 /Chevrolet_NIVA/ekspluatatsiya-shevi1.html /Chevrolet_NIVA/#ekspluatatsiya2 301
-/Chevrolet_NIVA/ekspluatatsiya-shevi2.html /Chevrolet_NIVA/#ekspluatatsiya3 301
-/Chevrolet_NIVA/ekspluatatsiya-shevi3.html /Chevrolet_NIVA/#ekspluatatsiya4 301
-/Chevrolet_NIVA/ekspluatatsiya-shevi4.html /Chevrolet_NIVA/#ekspluatatsiya5 301
-
-# Главная страница
 /Chevrolet_NIVA/home.html /Chevrolet_NIVA/ 301
-
-# Раздел обслуживания
-/Chevrolet_NIVA/obsluzhivanie-shevi1.html /Chevrolet_NIVA/#obsluzhivanie1 301
-/Chevrolet_NIVA/obsluzhivanie-shevi2.html /Chevrolet_NIVA/#obsluzhivanie4 301
-/Chevrolet_NIVA/obsluzhivanie-shevi3.html /Chevrolet_NIVA/#obsluzhivanie9 301
-/Chevrolet_NIVA/obsluzhivanie-shevi4.html /Chevrolet_NIVA/#obsluzhivanie10 301
-/Chevrolet_NIVA/obsluzhivanie-shevi5.html /Chevrolet_NIVA/#obsluzhivanie11 301
-/Chevrolet_NIVA/obsluzhivanie-shevi6.html /Chevrolet_NIVA/#obsluzhivanie13 301
-/Chevrolet_NIVA/obsluzhivanie-shevi7.html /Chevrolet_NIVA/#obsluzhivanie12 301
-
-# Раздел описания
-/Chevrolet_NIVA/opisanie-shevi1.html /Chevrolet_NIVA/#opisanie1 301
-/Chevrolet_NIVA/opisanie-shevi3.html /Chevrolet_NIVA/#opisanie2 301
-/Chevrolet_NIVA/opisanie-shevi4.html /Chevrolet_NIVA/#opisanie3 301
-/Chevrolet_NIVA/opisanie-shevi5.html /Chevrolet_NIVA/#opisanie7 301
-/Chevrolet_NIVA/opisanie-shevi6.html /Chevrolet_NIVA/#opisanie8 301
-/Chevrolet_NIVA/opisanie-shevi7.html /Chevrolet_NIVA/#opisanie10 301
-/Chevrolet_NIVA/opisanie-shevi8.html /Chevrolet_NIVA/#opisanie11 301
-/Chevrolet_NIVA/opisanie-shevi9.html /Chevrolet_NIVA/#opisanie12 301
-/Chevrolet_NIVA/opisanie-shevi10.html /Chevrolet_NIVA/#opisanie16 301
-/Chevrolet_NIVA/opisanie-shevi11.html /Chevrolet_NIVA/#opisanie18 301
-
-# Приложения
-/Chevrolet_NIVA/prilozheniya-shevi.html /Chevrolet_NIVA/#harakteristiki5 301
-
-# Технические характеристики
-/Chevrolet_NIVA/tehnicheskaya-harakteristika-shevi1.html /Chevrolet_NIVA/#harakteristiki1 301
-/Chevrolet_NIVA/tehnicheskaya-harakteristika-shevi2.html /Chevrolet_NIVA/#harakteristiki2 301
-/Chevrolet_NIVA/tehnicheskaya-harakteristika-shevi3.html /Chevrolet_NIVA/#harakteristiki4 301
