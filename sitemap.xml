@@ -3,7 +3,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd">
   <url>
     <loc>https://lada-aym.github.io/</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/assets/images/ci-142-82x34.png</image:loc>
@@ -11,12 +11,12 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/opisanie1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Car-keys-1.webp</image:loc>
@@ -48,7 +48,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/opisanie2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Remote-control.webp</image:loc>
@@ -73,7 +73,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/opisanie3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Opening-the-front-door.webp</image:loc>
@@ -104,7 +104,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/opisanie4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Front-seat-adjustment.webp</image:loc>
@@ -129,11 +129,8 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/opisanie5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/lada.webp</image:loc>
-    </image:image>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/img839.jpg</image:loc>
     </image:image>
@@ -177,7 +174,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/opisanie6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Interior-lighting-unit.webp</image:loc>
@@ -198,7 +195,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/opisanie7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Sun-visors.webp</image:loc>
@@ -219,7 +216,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/opisanie8.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Trunk-and-tailgate-opening-button.webp</image:loc>
@@ -236,7 +233,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/opisanie9.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Instrument-panel-in-the-Standard-configuration.webp</image:loc>
@@ -253,8 +250,11 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/opisanie10.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/lada.webp</image:loc>
+    </image:image>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Instrument-cluster.webp</image:loc>
       <image:caption>Комбинация приборов</image:caption>
@@ -334,7 +334,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/opisanie11.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Liquid-crystal-display.webp</image:loc>
@@ -395,7 +395,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/opisanie12.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Control-of-cruise-control-and-speed-limiter.webp</image:loc>
@@ -413,7 +413,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/opisanie13.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Lighting-control-module.webp</image:loc>
@@ -453,7 +453,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/opisanie14.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Ventilation-and-heating-system-control-unit.webp</image:loc>
@@ -488,7 +488,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/opisanie15.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Climate-system-control-unit.webp</image:loc>
@@ -503,7 +503,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/opisanie16.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Gearshift-lever-in-a-manual-transmission.webp</image:loc>
@@ -520,7 +520,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/opisanie17.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Indication-of-AMT-modes.webp</image:loc>
@@ -535,7 +535,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Fixing-license-plates.webp</image:loc>
@@ -548,17 +548,17 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Lugs-for-towing.webp</image:loc>
@@ -567,12 +567,12 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Parking-sensors.webp</image:loc>
@@ -581,12 +581,12 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Engine-compartment.webp</image:loc>
@@ -622,12 +622,12 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Wheel-alignment-scheme.webp</image:loc>
@@ -655,12 +655,12 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Opening-the-fuse-box-cover.webp</image:loc>
@@ -677,7 +677,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/The-block-lamp.webp</image:loc>
@@ -722,7 +722,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Overall-dimensions-of-a-sedan-body.webp</image:loc>
@@ -747,12 +747,12 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Passport-data.webp</image:loc>
@@ -761,1002 +761,1005 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/prilozheniya.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/opisanie1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/opisanie2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/opisanie3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/opisanie4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/opisanie6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/opisanie7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/opisanie8.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/opisanie9.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/opisanie10.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/opisanie11.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/opisanie12.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/opisanie13.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/opisanie14.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/opisanie15.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/ekspluatatsiya1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/ekspluatatsiya2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/ekspluatatsiya3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/ekspluatatsiya4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/ekspluatatsiya5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/ekspluatatsiya6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/ekspluatatsiya8.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/ekspluatatsiya9.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/ekspluatatsiya10.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/ekspluatatsiya11.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/ekspluatatsiya12.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/ekspluatatsiya14.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/ekspluatatsiya16.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/obsluzhivanie1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/obsluzhivanie2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/obsluzhivanie3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/obsluzhivanie4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/obsluzhivanie5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/obsluzhivanie6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/obsluzhivanie7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/obsluzhivanie8.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/obsluzhivanie9.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/tehnicheskaya-harakteristika1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/tehnicheskaya-harakteristika2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/tehnicheskaya-harakteristika3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Vesta/prilozheniya.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/opisanie1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/opisanie2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/opisanie3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/opisanie4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/opisanie6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/opisanie7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/opisanie8.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/opisanie9.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/opisanie10.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/opisanie11.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/opisanie12.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/opisanie13.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/opisanie14.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/opisanie15.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/ekspluatatsiya1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/ekspluatatsiya2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/ekspluatatsiya3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/ekspluatatsiya4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/ekspluatatsiya5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/ekspluatatsiya6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/ekspluatatsiya7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/ekspluatatsiya8.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/ekspluatatsiya9.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/ekspluatatsiya10.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/ekspluatatsiya11.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/ekspluatatsiya12.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/ekspluatatsiya13.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/obsluzhivanie1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/obsluzhivanie2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/obsluzhivanie3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/obsluzhivanie4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/obsluzhivanie5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/obsluzhivanie6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/obsluzhivanie7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/obsluzhivanie8.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/obsluzhivanie9.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/tehnicheskaya-harakteristika1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/tehnicheskaya-harakteristika2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/tehnicheskaya-harakteristika3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_XRAY/prilozheniya.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/opisanie1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/opisanie2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/opisanie3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/opisanie4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/opisanie5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/opisanie6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/opisanie7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/opisanie9.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/opisanie8.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/opisanie10.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/opisanie11.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/opisanie12.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/opisanie13.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/opisanie14.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/opisanie15.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/opisanie16.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/ekspluatatsiya1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/ekspluatatsiya2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/ekspluatatsiya3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/ekspluatatsiya4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/obsluzhivanie1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/obsluzhivanie2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/obsluzhivanie3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/obsluzhivanie4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/obsluzhivanie5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/obsluzhivanie6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/obsluzhivanie7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/obsluzhivanie8.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/tehnicheskaya-harakteristika1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/tehnicheskaya-harakteristika2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Largus/tehnicheskaya-harakteristika3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/opisanie1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/opisanie2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/opisanie3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/opisanie4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/opisanie5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/opisanie6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/opisanie7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/opisanie8.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/opisanie9.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/opisanie10.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/opisanie11.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/ekspluatatsiya1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/ekspluatatsiya2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/ekspluatatsiya3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/ekspluatatsiya4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/obsluzhivanie1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/obsluzhivanie2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/obsluzhivanie3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/obsluzhivanie4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/obsluzhivanie5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/obsluzhivanie6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/obsluzhivanie7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/tehnicheskaya-harakteristika1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/tehnicheskaya-harakteristika2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/tehnicheskaya-harakteristika3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/prilozheniya.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada4x4/about_us.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/opisanie1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/opisanie2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/opisanie3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/opisanie4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/opisanie5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/opisanie6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/opisanie7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/opisanie8.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/opisanie9.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/opisanie10.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/opisanie11.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/opisanie12.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/opisanie13.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/obsluzhivanie1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/obsluzhivanie2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/obsluzhivanie3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/obsluzhivanie4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/obsluzhivanie5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/obsluzhivanie6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/obsluzhivanie7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/tehnicheskaya-harakteristika1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/tehnicheskaya-harakteristika2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/tehnicheskaya-harakteristika3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Priora/prilozheniya.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/lada.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/opisanie1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/opisanie2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/opisanie3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/opisanie4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/opisanie5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/opisanie6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/opisanie7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/opisanie8.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/opisanie9.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/opisanie10.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/opisanie11.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/ekspluatatsiya1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/ekspluatatsiya2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/ekspluatatsiya3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/ekspluatatsiya4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/obsluzhivanie7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/tehnicheskaya-harakteristika1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/tehnicheskaya-harakteristika2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/tehnicheskaya-harakteristika3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Kalina/prilozheniya.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/assets/images/ci-141-82x34.png</image:loc>
@@ -1764,137 +1767,137 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA8.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA9.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA10.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA11.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA12.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/ekspluatatsiya-SAMARA1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/ekspluatatsiya-SAMARA2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/ekspluatatsiya-SAMARA3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/ekspluatatsiya-SAMARA4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/obsluzhivanie-SAMARA1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/obsluzhivanie-SAMARA2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/obsluzhivanie-SAMARA3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/obsluzhivanie-SAMARA4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/obsluzhivanie-SAMARA5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/obsluzhivanie-SAMARA6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/obsluzhivanie-SAMARA7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/tehnicheskaya-harakteristika-SAMARA1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/tehnicheskaya-harakteristika-SAMARA2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/tehnicheskaya-harakteristika-SAMARA3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/prilozheniya-samara.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/lada.webp</image:loc>
@@ -1902,7 +1905,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/Car-keys.webp</image:loc>
@@ -1918,7 +1921,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/The-front-door.webp</image:loc>
@@ -1939,7 +1942,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/Seats.webp</image:loc>
@@ -1952,7 +1955,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/Seat-belt.webp</image:loc>
@@ -1961,7 +1964,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/External-mirror-control-unit.webp</image:loc>
@@ -1978,7 +1981,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/Instrument-panel.webp</image:loc>
@@ -1987,7 +1990,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi8.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/Instrument-cluster.webp</image:loc>
@@ -2054,7 +2057,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi9.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/push-button-switches.webp</image:loc>
@@ -2096,7 +2099,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi10.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/Transmission-lever-positions.webp</image:loc>
@@ -2105,7 +2108,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/opisanie-shevi11.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/Controls-for-the-cabin-ventilation-and-heating-system.webp</image:loc>
@@ -2129,7 +2132,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/ekspluatatsiya-shevi1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/Fixing-license-plates.webp</image:loc>
@@ -2142,17 +2145,17 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/ekspluatatsiya-shevi2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/ekspluatatsiya-shevi3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/ekspluatatsiya-shevi4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/Lugs-for-towing.webp</image:loc>
@@ -2161,7 +2164,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/Opening-the-hood.webp</image:loc>
@@ -2202,12 +2205,12 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/Wheel-alignment-scheme.webp</image:loc>
@@ -2220,12 +2223,12 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/Mounting-block-with-fuses.webp</image:loc>
@@ -2238,7 +2241,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/Drainage-holes-in-doors-and-thresholds.webp</image:loc>
@@ -2247,7 +2250,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/obsluzhivanie-shevi7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/The-block-lamp.webp</image:loc>
@@ -2280,7 +2283,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/tehnicheskaya-harakteristika-shevi1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/Overall-dimensions-of-the-car.webp</image:loc>
@@ -2289,12 +2292,12 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/tehnicheskaya-harakteristika-shevi2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/tehnicheskaya-harakteristika-shevi3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/Chevrolet_NIVA/assets/images/Vehicle-passport-data.webp</image:loc>
@@ -2303,22 +2306,25 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/prilozheniya-shevi.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/about_us.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/ci-141-82x34.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/opisanie1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image1.webp</image:loc>
@@ -2331,7 +2337,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/opisanie2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image3.webp</image:loc>
@@ -2355,7 +2361,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/opisanie3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image6.webp</image:loc>
@@ -2376,7 +2382,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/opisanie4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image10.webp</image:loc>
@@ -2385,7 +2391,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/opisanie5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image21.webp</image:loc>
@@ -2430,12 +2436,12 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/opisanie6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/opisanie7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image23.webp</image:loc>
@@ -2444,7 +2450,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/opisanie8.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image24.webp</image:loc>
@@ -2499,29 +2505,17 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/opisanie9.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image26.webp</image:loc>
       <image:caption>Сигнализаторы комбинации приборов в автомобиле GAZel Next</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind15.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind16.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind17.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind18.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind19.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind20.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind21.webp</image:loc>
@@ -2584,9 +2578,6 @@
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind40.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind41.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind42.webp</image:loc>
     </image:image>
     <image:image>
@@ -2594,9 +2585,6 @@
     </image:image>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind44.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind45.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind46.webp</image:loc>
@@ -2610,7 +2598,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/opisanie10.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image37.webp</image:loc>
@@ -2639,7 +2627,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/opisanie11.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image28.webp</image:loc>
@@ -2656,9 +2644,6 @@
     </image:image>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind54.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind55.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind56.webp</image:loc>
@@ -2708,7 +2693,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/opisanie12.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image43.webp</image:loc>
@@ -2733,6 +2718,78 @@
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind63.webp</image:loc>
     </image:image>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/GAZel_next/ekspluatatsiya1.html</loc>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image50.webp</image:loc>
+      <image:caption>Заправка автомобиля топливом в автомобиле Chevrolet Niva</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind16.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind15.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind20.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind18.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind55.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/GAZel_next/ekspluatatsiya2.html</loc>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image51.webp</image:loc>
+      <image:caption>Переключение передач в автомобиле GAZel Next</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image52.webp</image:loc>
+      <image:caption>Блокируемый дифференциал в автомобиле GAZel Next</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind41.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/GAZel_next/ekspluatatsiya3.html</loc>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image53.webp</image:loc>
+      <image:caption>Стояночный тормоз в автомобиле GAZel Next</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-ind45.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/GAZel_next/ekspluatatsiya4.html</loc>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/GAZel_next/ekspluatatsiya5.html</loc>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/GAZel_next/ekspluatatsiya6.html</loc>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/GAZel_next/ekspluatatsiya7.html</loc>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
+    <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image45.webp</image:loc>
       <image:caption>Догреватель охлаждающей жидкости в автомобиле GAZel Next</image:caption>
@@ -2755,64 +2812,13 @@
     </image:image>
   </url>
   <url>
-    <loc>https://lada-aym.github.io/GAZel_next/ekspluatatsiya1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image50.webp</image:loc>
-      <image:caption>Заправка автомобиля топливом в автомобиле Chevrolet Niva</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/GAZel_next/ekspluatatsiya2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image51.webp</image:loc>
-      <image:caption>Переключение передач в автомобиле GAZel Next</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image52.webp</image:loc>
-      <image:caption>Блокируемый дифференциал в автомобиле GAZel Next</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/GAZel_next/ekspluatatsiya3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image53.webp</image:loc>
-      <image:caption>Стояночный тормоз в автомобиле GAZel Next</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/GAZel_next/ekspluatatsiya4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/GAZel_next/ekspluatatsiya5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/GAZel_next/ekspluatatsiya6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/GAZel_next/ekspluatatsiya7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://lada-aym.github.io/GAZel_next/ekspluatatsiya8.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/ekspluatatsiya9.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image27.webp</image:loc>
@@ -2827,22 +2833,22 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/ekspluatatsiya10.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/obsluzhivanie1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/obsluzhivanie2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/obsluzhivanie3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image55.webp</image:loc>
@@ -2871,11 +2877,8 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/obsluzhivanie4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/ci-141-82x34.png</image:loc>
-    </image:image>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image61.webp</image:loc>
       <image:caption>Проверка уровня охлаждающей жидкости в расширительном бачке автомобиля GAZel Next</image:caption>
@@ -2903,12 +2906,12 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/obsluzhivanie5.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/obsluzhivanie6.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image67.webp</image:loc>
@@ -2937,7 +2940,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/obsluzhivanie7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image73.webp</image:loc>
@@ -2958,7 +2961,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/obsluzhivanie8.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image77.webp</image:loc>
@@ -2971,7 +2974,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/obsluzhivanie9.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image79.webp</image:loc>
@@ -2992,17 +2995,17 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/obsluzhivanie10.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/obsluzhivanie11.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/obsluzhivanie12.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image83.webp</image:loc>
@@ -3035,7 +3038,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/tehnicheskaya-harakteristika1.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image90.webp</image:loc>
@@ -3064,17 +3067,17 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/tehnicheskaya-harakteristika2.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/tehnicheskaya-harakteristika3.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/tehnicheskaya-harakteristika4.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image96.webp</image:loc>
@@ -3107,7 +3110,7 @@
   </url>
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya7.html</loc>
-    <lastmod>2025-11-26T11:50:07+03:00</lastmod>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Manual-control-device-for-vehicles-with-manual-transmissions.webp</image:loc>
@@ -3124,6 +3127,518 @@
     <image:image>
       <image:loc>https://lada-aym.github.io/LADA_Granta/assets/images/Placement-of-the-Disabled-sign.webp</image:loc>
       <image:caption>Размещение и ориентация знака «Инвалид»</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Kalina/dostup-kluchi-immobilayzer.html</loc>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image1.webp</image:loc>
+      <image:caption>Ключи для автомобиля</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image2.webp</image:loc>
+      <image:caption>Ключи для автомобиля (в вариантном исполнении)</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image3.webp</image:loc>
+      <image:caption>Пульт дистанционного управления</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind2.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind1.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind3.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind4.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind5.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind7.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind6.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image4.webp</image:loc>
+      <image:caption>Замена элемента питания пульта дистанционного управления</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Kalina/kuzov-dveri-modul-voditelya.html</loc>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image5.webp</image:loc>
+      <image:caption>Открывание двери</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image6.webp</image:loc>
+      <image:caption>Блок переключателей</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image7.webp</image:loc>
+      <image:caption>Модуль двери водителя (в вариантном исполнении)</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind8.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind9.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image8.webp</image:loc>
+      <image:caption>Задние двери</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image9.webp</image:loc>
+      <image:caption>Дверь задка</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Kalina/salon-sidennya-osveshchenie.html</loc>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image10.webp</image:loc>
+      <image:caption>Переднее сиденье</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image11.webp</image:loc>
+      <image:caption>Регулировка переднего сиденья по высоте</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image12.webp</image:loc>
+      <image:caption>Выключатели обогрева передних сидений</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image13.webp</image:loc>
+      <image:caption>Регулировка подголовника</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image14.webp</image:loc>
+      <image:caption>Раскладка заднего сиденья</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image15.webp</image:loc>
+      <image:caption>Плафон освещения салона</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind10.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind11.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image16.webp</image:loc>
+      <image:caption>Блок освещения салона</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image17.webp</image:loc>
+      <image:caption>Блок освещения салона с функцией «ЭРА-ГЛОНАСС»</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind12.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind13.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Kalina/upravlenie-panel-priborov.html</loc>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image18.webp</image:loc>
+      <image:caption>Органы управления и приборы (в комплектации «стандарт» и «норма»)</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image19.webp</image:loc>
+      <image:caption>Органы управления и приборы (B комплектации «люкс»)</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image24.webp</image:loc>
+      <image:caption>Модуль управления светотехникой и корректор ближнего света фар</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind69.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind70.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind71.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image25.webp</image:loc>
+      <image:caption>Рычаг переключателя световой сигнализации</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image26.webp</image:loc>
+      <image:caption>Рычаг переключателя стеклоочистителей</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image27.webp</image:loc>
+      <image:caption>Датчик дождя и освещенности</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Kalina/pribory-bortovoy-kompyuter.html</loc>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image20.webp</image:loc>
+      <image:caption>Комбинация приборов</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind14.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind15.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind16.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind17.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind18.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind19.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind20.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind21.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind22.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind23.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind24.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind25.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind26.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind34.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind27.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind28.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind29.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind30.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind31.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind32.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind33.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind35.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind45.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind36.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind46.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind37.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind47.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind38.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind48.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind39.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind49.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind40.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind50.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind41.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind51.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind42.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind43.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind53.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind44.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind54.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind55.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind56.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind57.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind58.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind59.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind60.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind61.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind62.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind63.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind64.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind65.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind66.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image23.webp</image:loc>
+      <image:caption>Кнопки управления бортовым компьютером (в вариантном исполнении)</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image28.webp</image:loc>
+      <image:caption>Клавиши управления круиз-контролем и ограничителем скорости</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind72.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image22.webp</image:loc>
+      <image:caption>Функция подсказчика переключения передач в ЖКИ комбинации приборов</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind67.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind68.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind73.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind74.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind75.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind76.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind77.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind78.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Kalina/pereklyuchenie-peredach.html</loc>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image29.webp</image:loc>
+      <image:caption>Рычаг переключения передач в механической коробке передач</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image31.webp</image:loc>
+      <image:caption>Рычаг переключения передач в автоматической коробке передач</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image30.webp</image:loc>
+      <image:caption>Рычаг переключения передач автоматизированной коробки передач</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind87.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Kalina/otoplenie-ventilyaciya-kondicioner.html</loc>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image32.webp</image:loc>
+      <image:caption>Блок управления системой вентиляции и отопления</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind79.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind80.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind81.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind82.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind83.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind84.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image33.webp</image:loc>
+      <image:caption>Направления потоков воздуха из дефлекторов и воздуховодов</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image34.webp</image:loc>
+      <image:caption>Блок управления климатической системой</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind85.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-ind86.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image35.webp</image:loc>
+      <image:caption>Выключатель электрообогрева ветрового стекла</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Kalina/to-zamena-zhidkostey.html</loc>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image36.webp</image:loc>
+      <image:caption>Проверка уровня масла в картере 8-ми и 16-клапанного двигателя.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image37.webp</image:loc>
+      <image:caption>Проверка уровня масла в механической коробке передач.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image38.webp</image:loc>
+      <image:caption>Расширительный бачок</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image39.webp</image:loc>
+      <image:caption>Бачок гидропровода тормозов</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image40.webp</image:loc>
+      <image:caption>Бачок омывателей</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image41.webp</image:loc>
+      <image:caption>Аккумуляторная батарея</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Kalina/predohraniteli-rele.html</loc>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image42.webp</image:loc>
+      <image:caption>Открывание крышки монтажного блока в салоне автомобиля</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image43.webp</image:loc>
+      <image:caption>Монтажный блок в салоне автомобиля</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image44.webp</image:loc>
+      <image:caption>Блок предохранителей моторного отсека</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Kalina/zamena-lamp.html</loc>
+    <lastmod>2025-12-11T10:12:12+03:00</lastmod>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image45.webp</image:loc>
+      <image:caption>Замена ламп в блок-фаре.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image46.webp</image:loc>
+      <image:caption>Замена ламп в заднем фонаре.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image47.webp</image:loc>
+      <image:caption>Замена лампы в боковом указателе поворота.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image48.webp</image:loc>
+      <image:caption>Замена лампы в фонаре освещения номерного знака.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image49.webp</image:loc>
+      <image:caption>Замена лампы в плафоне освещения салона.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image50.webp</image:loc>
+      <image:caption>Замена ламп в блоке освещения салона.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image51.webp</image:loc>
+      <image:caption>Замена лампы в плафоне освещения багажника или бокового вещевого ящика.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image52.webp</image:loc>
+      <image:caption>Замена лампы в противотуманной фаре.</image:caption>
     </image:image>
   </url>
 </urlset>
