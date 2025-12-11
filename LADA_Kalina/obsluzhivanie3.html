@@ -267,33 +267,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PRQ33NW3');</script>
 <!-- End Google Tag Manager -->
-<!-- Yandex.RTB -->
-<script src="https://yastatic.net/share2/share.js" async></script>
-<script>window.yaContextCb=window.yaContextCb||[]</script>
-<script src="https://yandex.ru/ads/system/context.js" async></script>
+<meta name="robots" content="noindex, nofollow">
   </head>
 <body itemscope itemtype="https://schema.org/Article">
+  <div id="notification" style="position: fixed; top: 20px; right: 20px; background: #FFFF00; color: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); z-index: 1000; max-width: 300px;">
+  <p>Сайт обновлён Через <span id="countdown">5</span> секунд вы будете перенаправлены на новую версию.</p>
+  <button onclick="skipRedirect()" style="margin-top: 8px; padding: 5px 10px; background: white; border: none; border-radius: 4px; cursor: pointer;">Остаться</button>
+</div>
+<script>
+  let timeLeft = 5;
+  const countdown = document.getElementById('countdown');
+  const notification = document.getElementById('notification');
+
+  const timer = setInterval(() => {
+    timeLeft--;
+    countdown.textContent = timeLeft;
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      window.location.href = '/LADA_Kalina/';
+    }
+  }, 1000);
+
+  function skipRedirect() {
+    clearInterval(timer);
+    notification.style.display = 'none';
+    document.cookie = "redirect_shown=1; max-age=86400; path=/";
+  }
+</script>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRQ33NW3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(98621698, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/98621698" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
     <div id="top-page"></div>                                         <amp-animation id="showScrollToTopAnim" layout="nodisplay">                                             <script type="application/json">                                             {                                                 "duration": "200ms",                                                 "fill": "both",                                                 "iterations": "1",                                                 "direction": "alternate",                                                 "animations": [                                                     {                                                         "selector": "#scrollToTopButton",                                                         "keyframes": [                                                             { "opacity": "0.4", "visibility": "visible" }                                                         ]                                                     }                                                 ]                                             }                                             </script>                                         </amp-animation>                                         <amp-animation id="hideScrollToTopAnim" layout="nodisplay">                                             <script type="application/json">                                             {                                                 "duration": "200ms",                                                 "fill": "both",                                                 "iterations": "1",                                                 "direction": "alternate",                                                 "animations": [                                                     {                                                         "selector": "#scrollToTopButton",                                                         "keyframes": [                                                             { "opacity": "0", "visibility": "hidden" }                                                         ]                                                     }                                                 ]                                             }                                             </script>                                         </amp-animation>                                         <div id="scrollToTopMarker">                                             <amp-position-observer on="enter:hideScrollToTopAnim.start; exit:showScrollToTopAnim.start" layout="nodisplay">                                             </amp-position-observer>                                         </div><amp-sidebar id="sidebar" class="cid-rP9p3qhMai" layout="nodisplay" side="right">
         <div class="builder-sidebar" id="builder-sidebar">
             <button on="tap:sidebar.close" class="close-sidebar">
@@ -620,29 +624,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </section>
 <!--  -->
-<section class="content2 mbr-section article cid-rQ6l5OhY5E" id="content2-mm">
-<div class="container">
-        <div class="mbr-row mbr-justify-content-center">
-            <div class="mbr-col-sm-12 mbr-col-md-10 mbr-col-lg-8">
-<div id="adfox_173934500594834357"></div>
-<script>
-    window.yaContextCb.push(()=>{
-        Ya.adfoxCode.create({
-            ownerId: 322697,
-            containerId: 'adfox_173934500594834357',
-            params: {
-                pp: 'i',
-                ps: 'ivjz',
-                p2: 'gqqu'
-            }
-        })
-    })
-</script>
-            </div>
-        </div>
-    </div>
-</section>
-<!--  -->
 <section class="footer1 cid-rNPObH9KtC" id="footer1-8z">
     <div class="container">
         <div class="mbr-col-sm-12 align-center mbr-white">
@@ -661,64 +642,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <amp-user-notification class="display-7" id="amp-cookies-notification" style="color:#424a4d; background:rgba(234, 239, 241, 0.99); padding: 10px 5%; display:inline-block; font-size:inherit; text-align: center;" layout="nodisplay">We use cookies to give you the best experience. Read our <a style="color: #424a4d; text-decoration: underline;" href="privacy.html">cookie policy</a>.<button class="btn btn-sm btn-primary display-7" on="tap:amp-cookies-notification.dismiss,amp-cookies-notification.hide" style="display: inline-block; cursor: pointer; margin-left: 10px; font-size:inherit;">Agree</button></amp-user-notification>
     <button id="scrollToTopButton" on="tap:top-page.scrollTo(duration=200)">                                         <a class="scroll-to-top-arrow"></a>                                     </button>
     <!--  -->
-<button id="floating-button"><div class="ya-share2" data-curtain data-size="l" data-shape="round" data-limit="0" data-more-button-type="short" data-services="messenger,vkontakte,odnoklassniki,telegram"></div></button>
-    <script>
-// Определяем функцию для рендера обычных блоков
-const renderBlock = (blockId, type, platform) => {
-    window.yaContextCb.push(() => {
-        Ya.Context.AdvManager.render({
-            "blockId": blockId,
-            "type": type,
-            "platform": platform
-        })
-    })
-}
-
-// Определяем функцию для рендера inImage блока
-const renderInImage = (blockId) => {
-    const render = (imageId) => {
-        window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.render({
-                "renderTo": imageId,
-                "blockId": blockId,
-                "type": "inImage"
-            })
-        })
-    }
-    
-    const processImages = (images) => {
-        if (!images.length) {
-            return
-        }
-        const image = images.shift()
-        const {width, height} = image.getBoundingClientRect()
-        if (width < 320 || height < 190) {
-            return processImages(images)
-        }
-        image.id = `yandex_rtb_${blockId}-${Math.random().toString(16).slice(2)}`
-        if (image.tagName === "IMG" && !image.complete) {
-            image.addEventListener("load", () => {
-                render(image.id)
-            }, { once: true })
-        } else {
-            render(image.id)
-        }
-        processImages(images)
-    }
-    
-    processImages(Array.from(document.querySelectorAll("amp-img")))
-}
-
-// Рендерим все блоки
-renderBlock("R-A-537370-35", "fullscreen", "touch")
-renderBlock("R-A-537370-43", "fullscreen", "desktop")
-renderBlock("R-A-537370-44", "floorAd", "desktop")
-renderBlock("R-A-537370-36", "floorAd", "touch")
-
-// Рендерим inImage блок после загрузки страницы
-window.addEventListener("load", () => {
-    renderInImage("R-A-537370-42")
-}, { once: true })
-</script>
     </body>
 </html>
