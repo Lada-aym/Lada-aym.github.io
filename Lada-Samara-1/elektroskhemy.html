@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Электросхемы LADA Samara (ВАЗ-2108, 2109, 21099): полная проводка, цвета проводов, распиновка, схемы фар, приборов, стартера, генератора, печки." />
+    <meta name="keywords" content="электросхема ВАЗ-2108, схема проводки Самара, цвета проводов ВАЗ, распиновка генератора, схема печки, схема стартера, блок предохранителей" />
+    <meta name="author" content="LADA SAMARA Руководство" />
+    <meta name="robots" content="index, follow" />
+
+    <title>Электросхемы LADA Samara — Полная проводка ВАЗ-2108, 2109, 21099</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lada-aym.github.io/Lada-Samara-1/elektroskhemy.html" />
+
+    <!-- Open Graph (для соцсетей) -->
+    <meta property="og:title" content="Электросхемы LADA Samara — Полная проводка" />
+    <meta property="og:description" content="Схемы электрооборудования LADA Samara: фары, приборы, стартер, генератор, печка, блок предохранителей." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://lada-aym.github.io/Lada-Samara-1/elektroskhemy.html" />
+    <meta property="og:image" content="img/electro-preview.jpg" />
+    <meta property="og:site_name" content="LADA SAMARA Руководство" />
+    <meta property="article:published_time" content="2008-04-10T00:00:00+03:00" />
+    <meta property="article:modified_time" content="2024-04-10T12:00:00+03:00" />
+    <meta property="article:section" content="Электросхемы" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Электросхемы LADA Samara — Полная проводка" />
+    <meta name="twitter:description" content="Схемы электрооборудования LADA Samara: фары, приборы, стартер, генератор, печка, блок предохранителей." />
+    <meta name="twitter:image" content="img/electro-preview.jpg" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #212529;
+            transition: background-color 0.3s, color 0.3s;
+            min-height: 100vh;
+            padding-top: 56px;
+        }
+        body.dark-theme {
+            background-color: #121212;
+            color: #e9ecef;
+        }
+
+        /* ФИКСИРОВАННАЯ ВЕРХНЯЯ ШАПКА */
+        .navbar-top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: 56px;
+        }
+        body.dark-theme .navbar-top {
+            background-color: #1e1e1e;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #0d6efd !important;
+            text-decoration: none;
+        }
+        body.dark-theme .navbar-brand {
+            color: #6ea8fe !important;
+        }
+
+        .navbar-brand img {
+            height: 30px;
+            margin-right: 8px;
+        }
+
+        /* Гамбургер-иконка */
+        .navbar-toggler {
+            border: 1px solid #0d6efd;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%230d6efd' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Меню — не прозрачный фон */
+        .navbar-collapse {
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin: 0.5rem;
+        }
+        body.dark-theme .navbar-collapse {
+            background-color: #2c2c2c;
+        }
+        .navbar-nav .nav-link {
+            color: #495057;
+            font-size: 0.9rem;
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+        }
+        body.dark-theme .navbar-nav .nav-link {
+            color: #ddd;
+        }
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        /* ЛЕВАЯ ПАНЕЛЬ ЯКОРЕЙ */
+        .sidebar-left {
+            width: 220px;
+            background-color: #ffffff;
+            border-right: 1px solid #dee2e6;
+            height: calc(100vh - 56px);
+            position: fixed;
+            left: 0;
+            top: 56px;
+            bottom: 0;
+            z-index: 1010;
+            overflow-y: auto;
+            padding: 1.5rem 0.5rem 2rem;
+            transform: translateX(0);
+            transition: transform 0.3s ease;
+        }
+        body.dark-theme .sidebar-left {
+            background-color: #1e1e1e;
+            border-color: #444;
+        }
+
+        .sidebar-left .nav-link {
+            padding: 0.5rem 0.8rem;
+            color: #495057;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+        body.dark-theme .sidebar-left .nav-link {
+            color: #ddd;
+        }
+        .sidebar-left .nav-link:hover,
+        .sidebar-left .nav-link.active {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar-left {
+                transform: translateX(-100%);
+            }
+            .sidebar-left.show {
+                transform: translateX(0);
+            }
+        }
+
+        /* ОСНОВНОЙ КОНТЕНТ */
+        .main-content {
+            margin-left: 220px;
+            padding: 2rem 2rem 6rem;
+            min-height: calc(100vh - 56px);
+            transition: margin-left 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                margin-left: 0;
+                padding: 1.5rem;
+            }
+        }
+
+        /* Кнопка открытия якорей */
+        .btn-toc {
+            margin-bottom: 1rem;
+        }
+
+        /* Контент с прокруткой */
+        .scrollspy-content {
+            height: calc(100vh - 120px);
+            overflow-y: auto;
+            padding: 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+        }
+        body.dark-theme .scrollspy-content {
+            background-color: #2c2c2c;
+            border-color: #444;
+            color: #e9ecef;
+        }
+
+        .scrollspy-content h4 {
+            margin-top: 2rem;
+            color: #0d6efd;
+        }
+        body.dark-theme .scrollspy-content h4 {
+            color: #6ea8fe;
+        }
+
+        /* Изображения схем */
+        .schema-img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background-color: #fff;
+            transition: transform 0.2s;
+            cursor: zoom-in;
+        }
+        .schema-img:hover {
+            transform: scale(1.02);
+        }
+        body.dark-theme .schema-img {
+            border-color: #444;
+            background-color: #1e1e1e;
+        }
+
+        /* Ссылка на увеличение */
+        .zoom-link {
+            font-size: 0.9rem;
+            color: #0d6efd;
+            text-decoration: none;
+        }
+        .zoom-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Таблицы */
+        .scrollspy-content table {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        .scrollspy-content th,
+        .scrollspy-content td {
+            padding: 0.75rem;
+            border: 1px solid #dee2e6;
+            text-align: left;
+        }
+        .scrollspy-content th {
+            background-color: #e9ecef;
+            font-weight: 500;
+        }
+        body.dark-theme .scrollspy-content th,
+        body.dark-theme .scrollspy-content td {
+            border-color: #444;
+            color: #e9ecef;
+        }
+        body.dark-theme .scrollspy-content th {
+            background-color: #333;
+        }
+
+        /* Кнопки */
+        .btn-custom {
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-weight: 500;
+        }
+        .btn-custom:hover {
+            background-color: #0b5ed7;
+        }
+
+        /* Футер */
+        footer {
+            margin-left: 220px;
+            padding: 1.5rem 0;
+            background-color: #f1f1f1;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            font-size: 0.95em;
+            color: #555;
+            margin-top: 3rem;
+        }
+        body.dark-theme footer {
+            background-color: #1a1a1a;
+            color: #aaa;
+            border-color: #333;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                margin-left: 0;
+            }
+        }
+
+        /* Хлебные крошки */
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+        .breadcrumb .nav-link {
+            color: #0d6efd;
+        }
+        body.dark-theme .breadcrumb .nav-link {
+            color: #6ea8fe;
+        }
+    </style>
+    
+<!-- Google Tag Manager -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PRQ33NW3');
+        }, 5000);
+    });
+</script>
+<!-- Google Tag Manager (noscript) -->
+<script>
+    setTimeout(function() {
+        var script = document.createElement('script');
+        script.src = 'https://yandex.ru/ads/system/context.js';
+        document.body.appendChild(script);
+    }, 5000);
+</script>
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<!--  -->
+</head>
+<body  data-bs-spy="scroll" data-bs-target="#toc-nav" data-bs-offset="100" data-bs-smooth-scroll="true">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRQ33NW3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <!-- Микроразметка: Хлебные крошки -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://lada-aym.github.io/Lada-Samara-1/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Электросхемы",
+          "item": "https://lada-aym.github.io/Lada-Samara-1/elektroskhemy.html"
+        }
+      ]
+    }
+    </script>
+
+        <!-- Микроразметка: Статья -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Электросхемы LADA Samara — Полная проводка ВАЗ-2108, 2109, 21099",
+      "description": "Схемы электрооборудования LADA Samara: фары, приборы, стартер, генератор, печка, блок предохранителей.",
+      "image": "https://lada-aym.github.io/Lada-Samara-1/img/electro-preview.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Руководство по ремонту LADA Samara"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "LADA SAMARA Руководство",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://lada-aym.github.io/Lada-Samara-1/img/lada-logo.svg"
+        }
+      },
+      "datePublished": "2008-04-10T00:00:00+03:00",
+      "dateModified": "2024-04-10T12:00:00+03:00",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lada-aym.github.io/Lada-Samara-1/elektroskhemy.html"
+      }
+    }
+    </script>
+
+    <!-- ФИКСИРОВАННОЕ ВЕРХНЕЕ МЕНЮ -->
+    <nav class="navbar-top navbar navbar-expand-lg" aria-label="Основная навигация">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html" aria-label="На главную страницу">
+                <img src="img/lada-logo.webp" alt="Логотип LADA" height="30" class="me-2" loading="lazy">
+                LADA SAMARA
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Открыть меню навигации">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="opisanie.html">Описание</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="upravlenie.html">Управление</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ekspluatatsiya.html">Эксплуатация</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="to.html">ТО</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="neispravnosti.html">Неисправности</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="elektroskhemy.html" aria-current="page">Электросхемы</a>
+                    </li>
+                </ul>
+                <div class="ms-auto d-flex align-items-center">
+                    <button id="theme-toggle" class="btn btn-sm me-2" aria-label="Переключить на тёмную тему">
+                        🌙
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- КОНТЕЙНЕР С ДВУМЯ КОЛОНКАМИ: ЯКОРЯ + КОНТЕНТ -->
+    <div class="container-fluid" style="padding: 0;">
+        <!-- ЛЕВАЯ ПАНЕЛЬ ЯКОРЕЙ -->
+        <div class="sidebar-left" id="sidebar-left" role="navigation" aria-label="Навигация по схемам">
+            <h6 class="px-3 mb-3 card-title">На этой странице</h6>
+            <ul class="nav flex-column" id="toc-nav">
+                <li class="nav-item"><a class="nav-link" href="#colors">Цвета проводов</a></li>
+                <li class="nav-item"><a class="nav-link" href="#legend">Условные обозначения</a></li>
+                <li class="nav-item"><a class="nav-link" href="#main-schema">Общая схема проводки</a></li>
+                <li class="nav-item"><a class="nav-link" href="#fuses">Блок предохранителей</a></li>
+                <li class="nav-item"><a class="nav-link" href="#headlights">Фары и габариты</a></li>
+                <li class="nav-item"><a class="nav-link" href="#instruments">Панель приборов</a></li>
+                <li class="nav-item"><a class="nav-link" href="#starter">Схема стартера</a></li>
+                <li class="nav-item"><a class="nav-link" href="#generator">Генератор и АКБ</a></li>
+                <li class="nav-item"><a class="nav-link" href="#heater">Печка и вентилятор</a></li>
+                <li class="nav-item"><a class="nav-link" href="#horn">Звуковой сигнал</a></li>
+            </ul>
+        </div>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main class="main-content" id="main-content" role="main">
+            <!-- Кнопка открытия боковой панели (мобильные) -->
+            <button class="btn btn-outline-primary btn-sm btn-toc d-md-none" id="toc-toggle" aria-expanded="false" aria-controls="sidebar-left">
+                <i class="fas fa-sitemap me-1" aria-hidden="true"></i> Электросхемы
+            </button>
+<!-- Хлебные крошки -->
+<nav aria-label="Хлебные крошки" class="container mt-3" style="position: relative; z-index: 10;">
+  <ul class="breadcrumb" style="
+    background: var(--bg);
+    padding: 8px 12px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+  ">
+    <li><a href="index.html" style="color: var(--link); text-decoration: none;">Главная</a></li>
+    <li style="color: #6c757d;">/</li>
+    <li style="color: var(--text-muted); font-weight: 500;">Электросхемы</li>        
+  </ul>
+</nav>
+            <!-- Заголовок статьи -->
+            <h1>Электросхемы LADA Samara</h1>
+            <p class="lead card-text">Полная электрическая схема ВАЗ-2108, 2109, 21099: цвета проводов, распиновка, условные обозначения, схемы по узлам.</p>
+
+            <!-- Прокручиваемый контент -->
+            <div class="scrollspy-content" id="content-scroll" tabindex="0" aria-label="Основной текстовый контент с прокруткой">
+                <h4 id="colors">Цвета проводов в LADA Samara</h4>
+                <p>Все провода в Samara маркируются по цвету. Ниже — основные комбинации:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Цвет</th>
+                            <th>Назначение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>Красный</code></td>
+                            <td>Постоянное питание от АКБ (зажигание выключено)</td>
+                        </tr>
+                        <tr>
+                            <td><code>Голубой</code></td>
+                            <td>Питание при включённом зажигании</td>
+                        </tr>
+                        <tr>
+                            <td><code>Чёрный</code></td>
+                            <td>Масса («минус»)</td>
+                        </tr>
+                        <tr>
+                            <td><code>Жёлтый</code></td>
+                            <td>Сигналы: поворотники, аварийка</td>
+                        </tr>
+                        <tr>
+                            <td><code>Зелёный</code></td>
+                            <td>Датчики, приборы, контрольные лампы</td>
+                        </tr>
+                        <tr>
+                            <td><code>Белый</code></td>
+                            <td>Фары, габариты</td>
+                        </tr>
+                        <tr>
+                            <td><code>Коричневый</code></td>
+                            <td>Освещение салона, прикуриватель</td>
+                        </tr>
+                        <tr>
+                            <td><code>Розовый</code></td>
+                            <td>Обогрев заднего стекла</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Важно:</strong> цвет может отличаться у разных годов выпуска. При ремонте сверяйтесь с конкретной схемой.</p>
+
+                <h4 id="legend">Условные обозначения</h4>
+                <p>На схемах используются стандартные обозначения:</p>
+                <ul>
+                    <li><strong>БП</strong> — блок предохранителей</li>
+                    <li><strong>Р</strong> — реле</li>
+                    <li><strong>Д</strong> — датчик</li>
+                    <li><strong>М</strong> — мотор (вентилятор, стеклоподъёмник)</li>
+                    <li><strong>Л</strong> — лампа</li>
+                    <li><strong>К</strong> — кнопка, выключатель</li>
+                    <li><strong>П</strong> — переключатель</li>
+                    <li><strong>АКБ</strong> — аккумуляторная батарея</li>
+                    <li><strong>Г</strong> — генератор</li>
+                    <li><strong>С</strong> — соединительная колодка</li>
+                </ul>
+
+                <h4 id="main-schema">Общая схема проводки</h4>
+                <p>Полная схема электрооборудования ВАЗ-2108/2109/21099 (инжектор и карбюратор):</p>
+                <img src="img/schema-full.svg" alt="Общая электросхема LADA Samara" class="schema-img" loading="lazy" data-bs-toggle="modal" data-bs-target="#fullSchemaModal">
+                <a href="img/schema-full.svg" target="_blank" class="zoom-link"><i class="fas fa-search-plus me-1" aria-hidden="true"></i> Открыть в полном размере</a>
+                <p><strong>Совет:</strong> распечатайте схему и используйте при диагностике. Особенно полезно при поиске обрывов.</p>
+
+                <h4 id="fuses">Блок предохранителей</h4>
+                <p>Расположение предохранителей в салоне (под панелью):</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Номер</th>
+                            <th>Амперы</th>
+                            <th>Назначение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>10 А</td>
+                            <td>Задние противотуманки</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>10 А</td>
+                            <td>Обогрев заднего стекла</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>10 А</td>
+                            <td>Лампы поворотов</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>30 А</td>
+                            <td>Электронасос омывателя</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>30 А</td>
+                            <td>Печка, вентилятор радиатора</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>15 А</td>
+                            <td>Габариты (левые)</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>15 А</td>
+                            <td>Габариты (правые)</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>10 А</td>
+                            <td>Стоп-сигнал</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>10 А</td>
+                            <td>Указатели поворотов</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>10 А</td>
+                            <td>Звуковой сигнал</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>10 А</td>
+                            <td>Прикуриватель</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>10 А</td>
+                            <td>Лампы освещения салона</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>10 А</td>
+                            <td>Панель приборов</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>10 А</td>
+                            <td>Топливный насос (инжектор)</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>10 А</td>
+                            <td>Блок управления (инжектор)</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>10 А</td>
+                            <td>Фары (ближний свет)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 id="headlights">Фары и габариты</h4>
+                <p>Схема подключения фар:</p>
+                <img src="img/schema-headlights.svg" alt="Схема фар LADA Samara" class="schema-img" loading="lazy" data-bs-toggle="modal" data-bs-target="#headlightsModal">
+                <a href="img/schema-headlights.svg" target="_blank" class="zoom-link"><i class="fas fa-search-plus me-1" aria-hidden="true"></i> Открыть схему фар</a>
+                <p><strong>Проверка:</strong> если не работают фары — проверьте предохранитель №16, реле, выключатель света.</p>
+
+                <h4 id="instruments">Панель приборов</h4>
+                <p>Подключение спидометра, тахометра, датчиков:</p>
+                <img src="img/schema-instruments.svg" alt="Схема панели приборов LADA Samara" class="schema-img" loading="lazy" data-bs-toggle="modal" data-bs-target="#instrumentsModal">
+                <a href="img/schema-instruments.svg" target="_blank" class="zoom-link"><i class="fas fa-search-plus me-1" aria-hidden="true"></i> Открыть схему приборов</a>
+                <p><strong>Частая неисправность:</strong> пропадание показаний — проверьте массу на приборной панели.</p>
+
+                                <h4 id="starter">Схема стартера</h4>
+                <p>Электрическая схема подключения стартера ВАЗ-2108/2109/21099:</p>
+                <img src="img/schema-starter.svg" alt="Схема стартера LADA Samara" class="schema-img" loading="lazy" data-bs-toggle="modal" data-bs-target="#starterModal">
+                <a href="img/schema-starter.svg" target="_blank" class="zoom-link"><i class="fas fa-search-plus me-1" aria-hidden="true"></i> Открыть схему стартера</a>                                
+                <p><strong>Как работает:</strong> при повороте ключа в положение «Стартер» напряжение с АКБ поступает на управляющий контакт втягивающего реле (тонкий провод, обычно красно-белый). Реле замыкает цепь между аккумулятором и двигателем стартера — он начинает вращаться.</p>
+                <p><strong>Типичные неисправности:</strong></p>
+                <ul>
+                    <li><strong>Не крутит</strong> — проверьте АКБ, контакт на втягивающем, массу двигателя</li>
+                    <li><strong>Щёлкает, но не крутит</strong> — слабый АКБ или неисправно втягивающее</li>
+                    <li><strong>Крутит, но не отключается</strong> — заедание реле или замок зажигания</li>
+                </ul>
+                <p><strong>Совет:</strong> при проверке «напрямую» используйте отвёртку с изолированной ручкой — кратковременно замыкайте основной и управляющий контакты на втягивающем.</p>
+
+                <h4 id="generator">Генератор и АКБ</h4>
+                <p>Схема зарядки и подключения генератора:</p>
+                <img src="img/schema-generator.svg" alt="Схема генератора LADA Samara" class="schema-img" loading="lazy" data-bs-toggle="modal" data-bs-target="#generatorModal">
+                <a href="img/schema-generator.svg" target="_blank" class="zoom-link"><i class="fas fa-search-plus me-1" aria-hidden="true"></i> Открыть схему генератора</a>
+                <p><strong>Контакты генератора:</strong></p>
+                <ul>
+                    <li><strong>«+» (30)</strong> — основной провод на АКБ</li>
+                    <li><strong>«D+» (61)</strong> — контрольная лампа заряда на панели</li>
+                    <li><strong>«Ш» (ШУ)</strong> — обмотка возбуждения</li>
+                    <li><strong>«Масса»</strong> — корпус генератора</li>
+                </ul>
+                <p><strong>Проверка зарядки:</strong> на заведённом двигателе напряжение на клеммах АКБ должно быть 13,8–14,5 В. Ниже — неисправен генератор или регулятор напряжения.</p>
+
+                <h4 id="heater">Печка и вентилятор</h4>
+                <p>Схема электродвигателя отопителя:</p>
+                <img src="img/schema-heater.svg" alt="Схема печки LADA Samara" class="schema-img" loading="lazy" data-bs-toggle="modal" data-bs-target="#heaterModal">
+                <a href="img/schema-heater.svg" target="_blank" class="zoom-link"><i class="fas fa-search-plus me-1" aria-hidden="true"></i> Открыть схему печки</a>
+                <p><strong>Управление скоростью:</strong> через резистор (сопротивление), установленный в корпусе печки. При включении 1-й скорости — ток идёт через все секции резистора, при 4-й — напрямую на мотор.</p>
+                <p><strong>Частые проблемы:</strong></p>
+                <ul>
+                    <li><strong>Не работает вообще</strong> — проверьте предохранитель №5 (30 А), мотор, массу</li>
+                    <li><strong>Работает только на 4-й скорости</strong> — сгорел резистор</li>
+                    <li><strong>Шумит</strong> — износ подшипников мотора или посторонний предмет</li>
+                </ul>
+
+                <h4 id="horn">Звуковой сигнал</h4>
+                <p>Схема подключения сигнала:</p>
+                <img src="img/schema-horn.svg" alt="Схема звукового сигнала LADA Samara" class="schema-img" loading="lazy" data-bs-toggle="modal" data-bs-target="#hornModal">
+                <a href="img/schema-horn.svg" target="_blank" class="zoom-link"><i class="fas fa-search-plus me-1" aria-hidden="true"></i> Открыть схему сигнала</a>
+                <p><strong>Компоненты:</strong> кнопка на руле → реле → сигнал (обычно 12 В, 85–100 дБ).</p>
+                <p><strong>Диагностика:</strong></p>
+                <ol>
+                    <li>Проверьте предохранитель №10 (10 А)</li>
+                    <li>Нажмите на кнопку — прозвоните цепь</li>
+                    <li>Подайте напряжение напрямую на сигнал — если работает, проблема в кнопке или реле</li>
+                </ol>
+                <p><strong>Совет:</strong> при установке двух сигналов (низкий + высокий) используйте отдельное реле для каждого.</p>
+
+                <!-- Подвал -->
+                <div class="alert alert-info mt-5" role="alert">
+                    <i class="fas fa-lightbulb me-2" aria-hidden="true"></i>
+                    <strong>Совет:</strong> при ремонте электрики используйте мультиметр. Проверяйте не только обрыв, но и плохой контакт — он часто маскируется под «работает, но слабо».
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ФУТЕР -->
+    <footer class="text-center" role="contentinfo">
+        &copy; 2024 — Руководство по электрическим схемам ВАЗ-2108, 2109, 21099: цвета проводов, распиновка, условные обозначения, схемы по узлам.<br>
+        Дата обновления: 10.04.2008
+    </footer>
+
+    <!-- Модальные окна для увеличения схем -->
+    <div class="modal fade" id="fullSchemaModal" tabindex="-1" aria-labelledby="fullSchemaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="fullSchemaModalLabel">Общая электросхема LADA Samara</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="img/schema-full.svg" alt="Полная электросхема" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="headlightsModal" tabindex="-1" aria-labelledby="headlightsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="headlightsModalLabel">Схема фар и габаритов</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="img/schema-headlights.svg" alt="Схема фар" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="instrumentsModal" tabindex="-1" aria-labelledby="instrumentsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="instrumentsModalLabel">Схема панели приборов</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="img/schema-instruments.svg" alt="Схема приборов" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="starterModal" tabindex="-1" aria-labelledby="starterModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="starterModalLabel">Схема стартера</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="img/schema-starter.svg" alt="Схема стартера" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="generatorModal" tabindex="-1" aria-labelledby="generatorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="generatorModalLabel">Схема генератора и зарядки</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="img/schema-generator.svg" alt="Схема генератора" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="heaterModal" tabindex="-1" aria-labelledby="heaterModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="heaterModalLabel">Схема печки и вентилятора</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="img/schema-heater.svg" alt="Схема печки" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="hornModal" tabindex="-1" aria-labelledby="hornModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="hornModalLabel">Схема звукового сигнала</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="img/schema-horn.svg" alt="Схема сигнала" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- ОСНОВНОЙ СКРИПТ -->
+    <script>
+        // Кнопка "Электросхемы" (для мобильных)
+        const sidebarLeft = document.getElementById('sidebar-left');
+        const tocToggle = document.getElementById('toc-toggle');
+
+        tocToggle?.addEventListener('click', () => {
+            sidebarLeft?.classList.toggle('show');
+            const isExpanded = sidebarLeft?.classList.contains('show');
+            tocToggle.setAttribute('aria-expanded', String(isExpanded));
+        });
+
+        // Переключение светлой/тёмной темы
+        const themeToggle = document.getElementById('theme-toggle');
+
+        themeToggle?.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            const isDark = document.body.classList.contains('dark-theme');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            themeToggle.textContent = isDark ? '☀️' : '🌙';
+            themeToggle.setAttribute('aria-label', isDark ? 'Переключить на светлую тему' : 'Переключить на тёмную тему');
+        });
+
+        // Восстановление темы из localStorage при загрузке
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                themeToggle.textContent = '☀️';
+            }
+            themeToggle.setAttribute('aria-label', savedTheme === 'dark' ? 'Переключить на светлую тему' : 'Переключить на тёмную тему');
+        });
+
+        // Закрытие боковой панели при клике вне её (на мобильных)
+        document.addEventListener('click', (e) => {
+            const isMobile = window.innerWidth <= 768;
+            if (isMobile && sidebarLeft && tocToggle) {
+                const clickedInsideSidebar = sidebarLeft.contains(e.target);
+                const clickedOnToggle = tocToggle.contains(e.target);
+                if (!clickedInsideSidebar && !clickedOnToggle && sidebarLeft.classList.contains('show')) {
+                    sidebarLeft.classList.remove('show');
+                    tocToggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+
+        // Закрытие боковой панели при открытии основного меню
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        navbarToggler?.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                sidebarLeft?.classList.remove('show');
+                tocToggle?.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Адаптация при изменении размера окна
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                sidebarLeft?.classList.remove('show');
+                tocToggle?.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Инициализация Scrollspy для прокручиваемого контента
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollContainer = document.getElementById('content-scroll');
+            if (scrollContainer) {
+                new bootstrap.ScrollSpy(scrollContainer, {
+                    target: '#toc-nav',
+                    offset: 50
+                });
+
+                // Плавная прокрутка при переходе по якорям
+                const tocLinks = document.querySelectorAll('#toc-nav .nav-link');
+                tocLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetId = link.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            scrollContainer.scrollTo({
+                                top: targetElement.offsetTop - 50,
+                                behavior: 'smooth'
+                            });
+                            history.pushState(null, null, targetId);
+                        }
+                    });
+                });
+            }
+        });
+
+                // Плавная прокрутка по всей странице (для якорей вне scrollContainer)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            if (!anchor.closest('#toc-nav')) return;
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Обновляем URL без перезагрузки
+                    history.pushState(null, null, this.getAttribute('href'));
+                }
+            });
+        });
+
+        // Инициализация модальных окон (на случай динамической загрузки)
+        const modalElements = document.querySelectorAll('.modal');
+        modalElements.forEach(modal => {
+            new bootstrap.Modal(modal);
+        });
+
+        // Оптимизация: отложенная загрузка изображений
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                // Принудительная загрузка при прокрутке к ним
+                if ('IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver((entries, observer) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const img = entry.target;
+                                if (img.dataset.src) {
+                                    img.src = img.dataset.src;
+                                    img.removeAttribute('data-src');
+                                }
+                                observer.unobserve(img);
+                            }
+                        });
+                    }, { threshold: 0.1 });
+                    observer.observe(img);
+                }
+            });
+        });
+
+        // Дополнительная защита от двойного нажатия на модальные кнопки
+        document.querySelectorAll('[data-bs-toggle="modal"]').forEach(button => {
+            button.addEventListener('click', function () {
+                const modalId = this.getAttribute('data-bs-target') || this.getAttribute('href');
+                const modal = document.querySelector(modalId);
+                if (modal && modal.classList.contains('show')) {
+                    e.preventDefault();
+                    return;
+                }
+            });
+        });
+
+        // Обработка закрытия модальных окон — фокус на кнопку открытия
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('hidden.bs.modal', () => {
+                const triggerButton = document.querySelector(`[data-bs-target="#${modal.id}"]`) ||
+                                      document.querySelector(`[href="#${modal.id}"]`);
+                if (triggerButton) {
+                    triggerButton.focus();
+                }
+            });
+        });
+
+        // Улучшение доступности: фокусировка при прокрутке к якорю
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash;
+            if (hash) {
+                const target = document.querySelector(hash);
+                if (target) {
+                    // Устанавливаем фокус на элемент (если он поддерживает фокусировку)
+                    if (!target.hasAttribute('tabindex')) {
+                        target.setAttribute('tabindex', '-1');
+                    }
+                    target.focus();
+                }
+            }
+        });
+
+        // Инициализация фокуса при загрузке, если есть якорь в URL
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.location.hash) {
+                const target = document.querySelector(window.location.hash);
+                if (target) {
+                    if (!target.hasAttribute('tabindex')) {
+                        target.setAttribute('tabindex', '-1');
+                    }
+                    target.focus();
+                }
+            }
+        });
+
+        // Предотвращение прыжков при открытии модальных окон
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('show.bs.modal', function () {
+                if (window.innerWidth > 768) return; // Только на мобильных
+                const scrollPosition = window.pageYOffset;
+                document.body.style.position = 'fixed';
+                document.body.style.top = `-${scrollPosition}px`;
+                document.body.style.width = '100%';
+            });
+
+            modal.addEventListener('hidden.bs.modal', function () {
+                const scrollPosition = document.body.style.top;
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.width = '';
+                window.scrollTo(0, parseInt(scrollPosition) * -1);
+            });
+        });
+    </script>
+<script>
+    window.yaContextCb.push(()=>{
+        Ya.adfoxCode.create({
+            ownerId: 322697,
+            containerId: 'adfox_173934500594834357',
+            params: {
+                pp: 'i',
+                ps: 'ivjz',
+                p2: 'gqqu'
+            }
+        })
+    })
+</script>
+<!-- Yandex.RTB R-A-537370-36 -->
+<script>
+window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-537370-36",
+        "type": "floorAd",
+        "platform": "touch"
+    })
+})
+</script>
+<!-- Yandex.RTB R-A-537370-44 -->
+<script>
+window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-537370-44",
+        "type": "floorAd",
+        "platform": "desktop"
+    })
+})
+</script>
+<!-- Yandex.RTB R-A-537370-35 -->
+<script>
+window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-537370-35",
+        "type": "fullscreen",
+        "platform": "touch"
+    })
+})
+</script>
+</body>
+</html>

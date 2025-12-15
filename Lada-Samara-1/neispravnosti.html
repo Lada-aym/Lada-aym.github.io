@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Неисправности LADA Samara: симптомы, причины, способы устранения. Диагностика двигателя, электрики, трансмиссии, тормозов." />
+    <meta name="keywords" content="неисправности ВАЗ-2108, ремонт Самары, троит двигатель, не заводится, электрика Самара, течёт масло, стук в двигателе" />
+    <meta name="author" content="LADA SAMARA Руководство" />
+    <meta name="robots" content="index, follow" />
+
+    <title>Неисправности LADA Samara — Диагностика и устранение</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lada-aym.github.io/Lada-Samara-1/neispravnosti.html" />
+
+    <!-- Open Graph (для соцсетей) -->
+    <meta property="og:title" content="Неисправности LADA Samara — Диагностика и ремонт" />
+    <meta property="og:description" content="Частые неисправности LADA Samara: двигатель, электрика, трансмиссия, тормоза. Причины и способы устранения." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://lada-aym.github.io/Lada-Samara-1/neispravnosti.html" />
+    <meta property="og:image" content="img/failure-preview.jpg" />
+    <meta property="og:site_name" content="LADA SAMARA Руководство" />
+    <meta property="article:published_time" content="2008-04-10T00:00:00+03:00" />
+    <meta property="article:modified_time" content="2024-04-10T12:00:00+03:00" />
+    <meta property="article:section" content="Диагностика неисправностей" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Неисправности LADA Samara — Диагностика и ремонт" />
+    <meta name="twitter:description" content="Частые неисправности LADA Samara: двигатель, электрика, трансмиссия, тормоза." />
+    <meta name="twitter:image" content="img/failure-preview.jpg" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #212529;
+            transition: background-color 0.3s, color 0.3s;
+            min-height: 100vh;
+            padding-top: 56px;
+        }
+        body.dark-theme {
+            background-color: #121212;
+            color: #e9ecef;
+        }
+
+        /* ФИКСИРОВАННАЯ ВЕРХНЯЯ ШАПКА */
+        .navbar-top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: 56px;
+        }
+        body.dark-theme .navbar-top {
+            background-color: #1e1e1e;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #0d6efd !important;
+            text-decoration: none;
+        }
+        body.dark-theme .navbar-brand {
+            color: #6ea8fe !important;
+        }
+
+        .navbar-brand img {
+            height: 30px;
+            margin-right: 8px;
+        }
+
+        /* Гамбургер-иконка */
+        .navbar-toggler {
+            border: 1px solid #0d6efd;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%230d6efd' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Меню — не прозрачный фон */
+        .navbar-collapse {
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin: 0.5rem;
+        }
+        body.dark-theme .navbar-collapse {
+            background-color: #2c2c2c;
+        }
+        .navbar-nav .nav-link {
+            color: #495057;
+            font-size: 0.9rem;
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+        }
+        body.dark-theme .navbar-nav .nav-link {
+            color: #ddd;
+        }
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        /* ЛЕВАЯ ПАНЕЛЬ ЯКОРЕЙ */
+        .sidebar-left {
+            width: 220px;
+            background-color: #ffffff;
+            border-right: 1px solid #dee2e6;
+            height: calc(100vh - 56px);
+            position: fixed;
+            left: 0;
+            top: 56px;
+            bottom: 0;
+            z-index: 1010;
+            overflow-y: auto;
+            padding: 1.5rem 0.5rem 2rem;
+            transform: translateX(0);
+            transition: transform 0.3s ease;
+        }
+        body.dark-theme .sidebar-left {
+            background-color: #1e1e1e;
+            border-color: #444;
+        }
+
+        .sidebar-left .nav-link {
+            padding: 0.5rem 0.8rem;
+            color: #495057;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+        body.dark-theme .sidebar-left .nav-link {
+            color: #ddd;
+        }
+        .sidebar-left .nav-link:hover,
+        .sidebar-left .nav-link.active {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar-left {
+                transform: translateX(-100%);
+            }
+            .sidebar-left.show {
+                transform: translateX(0);
+            }
+        }
+
+        /* ОСНОВНОЙ КОНТЕНТ */
+        .main-content {
+            margin-left: 220px;
+            padding: 2rem 2rem 6rem;
+            min-height: calc(100vh - 56px);
+            transition: margin-left 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                margin-left: 0;
+                padding: 1.5rem;
+            }
+        }
+
+        /* Кнопка открытия якорей */
+        .btn-toc {
+            margin-bottom: 1rem;
+        }
+
+        /* Контент с прокруткой */
+        .scrollspy-content {
+            height: calc(100vh - 120px);
+            overflow-y: auto;
+            padding: 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+        }
+        body.dark-theme .scrollspy-content {
+            background-color: #2c2c2c;
+            border-color: #444;
+            color: #e9ecef;
+        }
+
+        .scrollspy-content h4 {
+            margin-top: 2rem;
+            color: #0d6efd;
+        }
+        body.dark-theme .scrollspy-content h4 {
+            color: #6ea8fe;
+        }
+
+        /* Таблицы */
+        .scrollspy-content table {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        .scrollspy-content th,
+        .scrollspy-content td {
+            padding: 0.75rem;
+            border: 1px solid #dee2e6;
+            text-align: left;
+        }
+        .scrollspy-content th {
+            background-color: #e9ecef;
+            font-weight: 500;
+        }
+        body.dark-theme .scrollspy-content th,
+        body.dark-theme .scrollspy-content td {
+            border-color: #444;
+            color: #e9ecef;
+        }
+        body.dark-theme .scrollspy-content th {
+            background-color: #333;
+        }
+
+        /* Кнопки */
+        .btn-custom {
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-weight: 500;
+        }
+        .btn-custom:hover {
+            background-color: #0b5ed7;
+        }
+
+        /* Футер */
+        footer {
+            margin-left: 220px;
+            padding: 1.5rem 0;
+            background-color: #f1f1f1;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            font-size: 0.95em;
+            color: #555;
+            margin-top: 3rem;
+        }
+        body.dark-theme footer {
+            background-color: #1a1a1a;
+            color: #aaa;
+            border-color: #333;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                margin-left: 0;
+            }
+        }
+
+        /* Хлебные крошки */
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+        .breadcrumb .nav-link {
+            color: #0d6efd;
+        }
+        body.dark-theme .breadcrumb .nav-link {
+            color: #6ea8fe;
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#toc-nav" data-bs-offset="100" data-bs-smooth-scroll="true">
+
+    <!-- Микроразметка: Хлебные крошки -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://lada-aym.github.io/Lada-Samara-1/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Неисправности",
+          "item": "https://lada-aym.github.io/Lada-Samara-1/neispravnosti.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Микроразметка: Статья -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Неисправности LADA Samara — Диагностика и устранение",
+      "description": "Частые неисправности LADA Samara: двигатель, электрика, трансмиссия, тормоза. Причины и способы устранения.",
+      "image": "https://lada-aym.github.io/Lada-Samara-1/img/failure-preview.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Руководство по ремонту LADA Samara"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "LADA SAMARA Руководство",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://lada-aym.github.io/Lada-Samara-1/img/lada-logo.svg"
+        }
+      },
+      "datePublished": "2008-04-10T00:00:00+03:00",
+      "dateModified": "2024-04-10T12:00:00+03:00",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lada-aym.github.io/Lada-Samara-1/neispravnosti.html"
+      }
+    }
+    </script>
+
+        <!-- ФИКСИРОВАННОЕ ВЕРХНЕЕ МЕНЮ -->
+    <nav class="navbar-top navbar navbar-expand-lg" aria-label="Основная навигация">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html" aria-label="На главную страницу">
+                <img src="img/lada-logo.webp" alt="Логотип LADA" height="30" class="me-2" loading="lazy">
+                LADA SAMARA
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Открыть меню навигации">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="opisanie.html">Описание</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="upravlenie.html">Управление</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ekspluatatsiya.html">Эксплуатация</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="to.html">ТО</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="neispravnosti.html" aria-current="page">Неисправности</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="elektroskhemy.html">Электросхемы</a>
+                    </li>
+                </ul>
+                <div class="ms-auto d-flex align-items-center">
+                    <button id="theme-toggle" class="btn btn-sm me-2" aria-label="Переключить на тёмную тему">
+                        🌙
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Хлебные крошки -->
+  
+    <!-- КОНТЕЙНЕР С ДВУМЯ КОЛОНКАМИ: ЯКОРЯ + КОНТЕНТ -->
+    <div class="container-fluid" style="padding: 0;">
+        <!-- ЛЕВАЯ ПАНЕЛЬ ЯКОРЕЙ -->
+        <div class="sidebar-left" id="sidebar-left" role="navigation" aria-label="Навигация по разделам страницы">
+            <h6 class="px-3 mb-3 card-title">На этой странице</h6>
+            <ul class="nav flex-column" id="toc-nav">
+                <li class="nav-item"><a class="nav-link" href="#engine">Двигатель не запускается</a></li>
+                <li class="nav-item"><a class="nav-link" href="#stalling">Двигатель троит или глохнет</a></li>
+                <li class="nav-item"><a class="nav-link" href="#oil-leak">Течь масла</a></li>
+                <li class="nav-item"><a class="nav-link" href="#overheat">Перегрев двигателя</a></li>
+                <li class="nav-item"><a class="nav-link" href="#transmission">Проблемы с КПП</a></li>
+                <li class="nav-item"><a class="nav-link" href="#brakes-failure">Тормоза: стук, провал, шум</a></li>
+                <li class="nav-item"><a class="nav-link" href="#electrics">Электрика: фары, приборы, АКБ</a></li>
+                <li class="nav-item"><a class="nav-link" href="#suspension">Стук в подвеске</a></li>
+                <li class="nav-item"><a class="nav-link" href="#heating">Печка не греет</a></li>
+            </ul>
+        </div>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <main class="main-content" id="main-content" role="main">
+            <!-- Кнопка открытия боковой панели (мобильные) -->
+            <button class="btn btn-outline-primary btn-sm btn-toc d-md-none" id="toc-toggle" aria-expanded="false" aria-controls="sidebar-left">
+                <i class="fas fa-exclamation-circle me-1" aria-hidden="true"></i> Диагностика
+            </button>
+<!-- Хлебные крошки -->
+<nav aria-label="Хлебные крошки" class="container mt-3" style="position: relative; z-index: 10;">
+  <ul class="breadcrumb" style="
+    background: var(--bg);
+    padding: 8px 12px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+  ">
+    <li><a href="index.html" style="color: var(--link); text-decoration: none;">Главная</a></li>
+    <li style="color: #6c757d;">/</li>
+    <li style="color: var(--text-muted); font-weight: 500;">Неисправности</li>        
+  </ul>
+</nav>
+            <!-- Заголовок статьи -->
+            <h1>Неисправности LADA Samara</h1>
+            <p class="lead card-text">Распространённые неисправности ВАЗ-2108, 2109, 21099: симптомы, причины, способы устранения.</p>
+
+            <!-- Прокручиваемый контент -->
+            <div class="scrollspy-content" id="content-scroll" tabindex="0" aria-label="Основной текстовый контент с прокруткой">
+                <h4 id="engine">Двигатель не запускается</h4>
+                <p><strong>Возможные причины:</strong></p>
+                <ul>
+                    <li><strong>Разряжен аккумулятор</strong> — проверьте напряжение (должно быть ≥12,4 В)</li>
+                    <li><strong>Неисправность стартера</strong> — щёлкает, но не крутит</li>
+                    <li><strong>Отсутствие искры</strong> — проверьте катушку, ВВ-провода, свечи</li>
+                    <li><strong>Нет топлива</strong> — проверьте бензонасос, топливный фильтр, реле</li>
+                    <li><strong>Забит воздушный фильтр</strong> — может мешать запуску на холодную</li>
+                </ul>
+                <p><strong>Что делать:</strong> начните с проверки АКБ и звука стартера. Если крутит — ищите искру и топливо.</p>
+
+                <h4 id="stalling">Двигатель троит или глохнет</h4>
+                <p><strong>Симптомы:</strong> нестабильные обороты, вибрация, провалы при разгоне.</p>
+                <p><strong>Причины:</strong></p>
+                <ul>
+                    <li><strong>Неисправные свечи</strong> — замените комплектом</li>
+                    <li><strong>Пробой ВВ-проводов</strong> — проверьте в темноте на искрение</li>
+                    <li><strong>Засор дроссельной заслонки</strong> — особенно на инжекторных моделях</li>
+                    <li><strong>Неисправность РХХ (регулятор холостого хода)</strong> — замена или чистка</li>
+                    <li><strong>Подсос воздуха</strong> — проверьте патрубки и вакуумные шланги</li>
+                </ul>
+                <p><strong>Совет:</strong> отключите по очереди свечные провода — на каком цилиндре не будет изменений — тот и проблемный.</p>
+
+                <h4 id="oil-leak">Течь моторного масла</h4>
+                <p><strong>Частые места утечек:</strong></p>
+                <ul>
+                    <li><strong>Сальник коленвала (передний)</strong> — под шкивом</li>
+                    <li><strong>Сальник распредвала</strong> — под крышкой ГРМ</li>
+                    <li><strong>Прокладка клапанной крышки</strong> — подтяните или замените</li>
+                    <li><strong>Сливная пробка</strong> — проверьте затяжку и уплотнительное кольцо</li>
+                    <li><strong>Прокладка поддона</strong> — на старых двигателях</li>
+                </ul>
+                <p><strong>Что делать:</strong> очистите двигатель, прогрейте, подложите лист — определите место утечки.</p>
+
+                <h4 id="overheat">Перегрев двигателя</h4>
+                <p><strong>Причины:</strong></p>
+                <ul>
+                    <li><strong>Низкий уровень ОЖ</strong> — проверьте расширительный бачок</li>
+                    <li><strong>Неисправность термостата</strong> — заедает в закрытом положении</li>
+                    <li><strong>Забит радиатор</strong> — промойте или замените</li>
+                    <li><strong>Не работает вентилятор</strong> — проверьте датчик, реле, мотор</li>
+                    <li><strong>Пробита прокладка ГБЦ</strong> — пузыри в бачке, белый дым из выхлопной</li>
+                </ul>
+                <p><strong>Важно:</strong> не открывайте крышку радиатора на горячем двигателе — риск ожога!</p>
+
+                <h4 id="transmission">Проблемы с КПП</h4>
+                <p><strong>Симптомы:</strong> трудное включение передач, хруст, выбивание.</p>
+                <p><strong>Причины:</strong></p>
+                <ul>
+                    <li><strong>Низкий уровень масла в КПП</strong> — проверьте через контрольное отверстие</li>
+                    <li><strong>Износ синхронизаторов</strong> — особенно на 2-й и 3-й передачах</li>
+                    <li><strong>Износ кулисы</strong> — регулировка или замена</li>
+                    <li><strong>Износ подушек КПП</strong> — увеличивает вибрацию и люфт</li>
+                </ul>
+                <p><strong>Рекомендация:</strong> при замене масла используйте трансмиссионное масло 75W-90 или 80W-90.</p>
+
+                <h4 id="brakes-failure">Тормоза: стук, провал, шум</h4>
+                <p><strong>Провал педали:</strong></p>
+                <ul>
+                    <li>Воздух в системе — прокачка тормозов</li>
+                    <li>Износ колодок — замените</li>
+                    <li>Утечка тормозной жидкости — проверьте магистрали и цилиндры</li>
+                </ul>
+                <p><strong>Стук при торможении:</strong></p>
+                <ul>
+                    <li>Ослаблены направляющие суппортов</li>
+                    <li>Износ подвески (рычаги, стойки стабилизатора)</li>
+                </ul>
+                <p><strong>Скрип:</strong> замените колодки или установите антискрипные пластины.</p>
+
+                <h4 id="electrics">Электрика: фары, приборы, АКБ</h4>
+                <p><strong>Горит лампочка зарядки:</strong></p>
+                <ul>
+                    <li>Неисправен генератор</li>
+                    <li>Ремень ГРМ ослаблен</li>
+                    <li>Регулятор напряжения («шоколадка») — замена</li>
+                </ul>
+                <p><strong>Мигают приборы:</strong> плохой контакт в блоке предохранителей или массе.</p>
+                <p><strong>Фары не работают:</strong> проверьте предохранители, реле, лампы, выключатель.</p>
+                <p><strong>АКБ быстро разряжается:</strong> проверьте утечку тока (норма — до 50 мА).</p>
+
+                <h4 id="suspension">Стук в подвеске</h4>
+                <p><strong>Частые причины:</strong></p>
+                <ul>
+                    <li><strong>Износ шаровых опор</strong> — люфт при покачивании колеса</li>
+                    <li><strong>Износ рулевых наконечников</strong> — ведёт в сторону</li>
+                    <li><strong>Износ амортизаторов</strong> — «клевки» на торможении, раскачка</li>
+                    <li><strong>Ослаблены гайки ступицы</strong> — проверьте момент затяжки</li>
+                    <li><strong>Износ втулок стабилизатора</strong> — характерный стук на неровностях</li>
+                </ul>
+                <p><strong>Проверка:</strong> поднимите автомобиль, покачайте колесо — определите источник люфта.</p>
+
+                <h4 id="heating">Печка не греет</h4>
+                <p><strong>Возможные причины:</strong></p>
+                <ul>
+                    <li><strong>Низкий уровень ОЖ</strong> — долейте до нормы</li>
+                    <li><strong>Воздух в системе</strong> — прокачайте через шланги печки</li>
+                    <li><strong>Забит радиатор печки</strong> — промойте или замените</li>
+                    <li><strong>Неисправен кран отопителя</strong> — проверьте тросик или сам кран</li>
+                    <li><strong>Не работает моторчик печки</strong> — проверьте предохранитель, реле, щётки</li>
+                </ul>
+                <p><strong>Совет:</strong> при промывке радиатора печки используйте специальную жидкость или дистиллированную воду.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- КНОПКА ВОЗВРАТА НА ГЛАВНУЮ -->
+    <div class="text-center my-5">
+        <a href="index.html" class="btn btn-custom" aria-label="Вернуться на главную страницу">
+            <i class="fas fa-arrow-left me-1" aria-hidden="true"></i> На главную
+        </a>
+    </div>
+
+    <!-- ФУТЕР -->
+    <footer class="text-center" role="contentinfo">
+        &copy; 2024 — Руководство по диагностике неисправностей LADA SAMARA (ВАЗ-2108, 2109, 21099)<br>
+        Дата обновления: 10.04.2008
+    </footer>
+
+        <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- ОСНОВНОЙ СКРИПТ -->
+    <script>
+        // Кнопка "Диагностика" (для мобильных)
+        const sidebarLeft = document.getElementById('sidebar-left');
+        const tocToggle = document.getElementById('toc-toggle');
+
+        tocToggle?.addEventListener('click', () => {
+            sidebarLeft?.classList.toggle('show');
+            const isExpanded = sidebarLeft?.classList.contains('show');
+            tocToggle.setAttribute('aria-expanded', String(isExpanded));
+        });
+
+        // Переключение светлой/тёмной темы
+        const themeToggle = document.getElementById('theme-toggle');
+
+        themeToggle?.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            const isDark = document.body.classList.contains('dark-theme');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            themeToggle.textContent = isDark ? '☀️' : '🌙';
+            themeToggle.setAttribute('aria-label', isDark ? 'Переключить на светлую тему' : 'Переключить на тёмную тему');
+        });
+
+        // Восстановление темы из localStorage при загрузке
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                themeToggle.textContent = '☀️';
+            }
+            themeToggle.setAttribute('aria-label', savedTheme === 'dark' ? 'Переключить на светлую тему' : 'Переключить на тёмную тему');
+        });
+
+        // Закрытие боковой панели при клике вне её (на мобильных)
+        document.addEventListener('click', (e) => {
+            const isMobile = window.innerWidth <= 768;
+            if (isMobile && sidebarLeft && tocToggle) {
+                const clickedInsideSidebar = sidebarLeft.contains(e.target);
+                const clickedOnToggle = tocToggle.contains(e.target);
+                if (!clickedInsideSidebar && !clickedOnToggle && sidebarLeft.classList.contains('show')) {
+                    sidebarLeft.classList.remove('show');
+                    tocToggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+
+        // Закрытие боковой панели при открытии основного меню
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        navbarToggler?.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                sidebarLeft?.classList.remove('show');
+                tocToggle?.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Адаптация при изменении размера окна
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                sidebarLeft?.classList.remove('show');
+                tocToggle?.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Инициализация Scrollspy для прокручиваемого контента
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollContainer = document.getElementById('content-scroll');
+            if (scrollContainer) {
+                new bootstrap.ScrollSpy(scrollContainer, {
+                    target: '#toc-nav',
+                    offset: 50
+                });
+
+                // Плавная прокрутка при переходе по якорям
+                const tocLinks = document.querySelectorAll('#toc-nav .nav-link');
+                tocLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetId = link.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            scrollContainer.scrollTo({
+                                top: targetElement.offsetTop - 50,
+                                behavior: 'smooth'
+                            });
+                            history.pushState(null, null, targetId);
+                        }
+                    });
+                });
+            }
+        });
+
+        // Плавная прокрутка по всей странице (для якорей вне scrollContainer)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            if (!anchor.closest('#toc-nav')) return;
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
