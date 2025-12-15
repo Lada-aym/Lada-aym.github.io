@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" font-family="DejaVu Sans, Arial, sans-serif">
+  <style>
+    /* Тема: переменные для светлой и тёмной */
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --stroke: #000000;
+      --fill-comp: #f8f8f8;
+      --wire-red: #e53935;
+      --wire-green: #43a047;
+      --wire-blue: #1e88e5;
+      --wire-black: #263238;
+    }
+    .dark-theme svg, .dark svg {
+      --bg: #121212;
+      --text: #eeeeee;
+      --stroke: #cccccc;
+      --fill-comp: #333333;
+      --wire-red: #ef5350;
+      --wire-green: #66bb6a;
+      --wire-blue: #42a5f5;
+      --wire-black: #b0bec5;
+    }
+
+    .component {
+      fill: var(--fill-comp);
+      stroke: var(--stroke);
+      stroke-width: 1.8;
+      rx: 4;
+      ry: 4;
+    }
+    .wire {
+      stroke-width: 3.2;
+      fill: none;
+    }
+    .red { stroke: var(--wire-red); }
+    .green { stroke: var(--wire-green); }
+    .blue { stroke: var(--wire-blue); }
+    .black { stroke: var(--wire-black); }
+    .label {
+      font-size: 15px;
+      fill: var(--text);
+      font-weight: 500;
+    }
+    .label-small {
+      font-size: 13px;
+      fill: var(--text);
+    }
+    .center { text-anchor: middle; }
+    .start { text-anchor: start; }
+    .marker {
+      marker-mid: url(#arrow);
+    }
+  </style>
+
+  <!-- Определение стрелки тока -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5"
+            markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text)" />
+    </marker>
+  </defs>
+
+  <!-- Фон (для встраивания в тёмную тему) -->
+  <rect width="100%" height="100%" fill="var(--bg)" />
+
+  <!-- АКБ (GB) по ГОСТ 2.747-68 -->
+  <g transform="translate(80,200)">
+    <rect width="70" height="50" class="component" />
+    <line x1="25" y1="15" x2="25" y2="35" stroke="var(--stroke)" stroke-width="4"/>
+    <line x1="50" y1="20" x2="50" y2="30" stroke="var(--stroke)" stroke-width="6"/>
+    <text x="35" y="-10" class="label center">GB</text>
+    <text x="35" y="70" class="label-small center">АКБ 12 В</text>
+  </g>
+
+  <!-- Генератор (G) по ГОСТ 2.721-74 -->
+  <g transform="translate(320,200)">
+    <circle r="45" class="component" />
+    <text x="0" y="0" class="label center">G</text>
+    <text x="0" y="55" class="label-small center">Генератор</text>
+  </g>
+
+  <!-- Реле-регулятор (К1) -->
+  <g transform="translate(230,300)">
+    <rect width="70" height="40" class="component" />
+    <text x="35" y="25" class="label center">К1</text>
+    <text x="35" y="55" class="label-small center">РР</text>
+  </g>
+
+  <!-- Панель приборов (приборы) -->
+  <g transform="translate(600,200)">
+    <rect width="100" height="50" class="component" />
+    <text x="50" y="25" class="label center">П</text>
+    <text x="50" y="-10" class="label center">Панель</text>
+    <text x="50" y="70" class="label-small center">Приборы</text>
+  </g>
+
+  <!-- Контрольная лампа заряда (HL1) -->
+  <g transform="translate(600,150)">
+    <circle r="10" class="component" />
+    <text x="0" y="5" class="label center" font-size="12">HL1</text>
+  </g>
+
+  <!-- Цепи подключения -->
+
+  <!-- +12В с АКБ на генератор (30) -->
+  <line x1="150" y1="225" x2="275" y2="225" class="wire red marker"/>
+  <line x1="275" y1="225" x2="275" y2="245" class="wire red"/>
+  <line x1="275" y1="245" x2="320" y2="245" class="wire red"/>
+  <line x1="365" y1="245" x2="700" y2="225" class="wire red marker"/>
+
+  <!-- D+ (61) — контрольная лампа -->
+  <line x1="320" y1="155" x2="600" y2="150" class="wire green marker"/>
+  <line x1="600" y1="150" x2="600" y2="180" class="wire green"/>
+
+  <!-- Обмотка возбуждения (Ш) -->
+  <line x1="320" y1="245" x2="230" y2="320" class="wire blue marker"/>
+  <line x1="230" y1="320" x2="265" y2="320" class="wire blue"/>
+  <line x1="265" y1="320" x2="265" y2="270" class="wire blue"/>
+  <line x1="265" y1="270" x2="320" y2="270" class="wire blue"/>
+
+  <!-- Масса (генератор и РР) -->
+  <line x1="320" y1="245" x2="320" y2="280" class="wire black"/>
+  <line x1="320" y1="280" x2="265" y2="300" class="wire black"/>
+  <line x1="230" y1="340" x2="230" y2="360" class="wire black"/>
+  <text x="230" y="380" class="label center">Масса</text>
+
+  <!-- Подписи проводов -->
+  <text x="450" y="400" class="label start">Красный: +12В (постоянное)</text>
+  <text x="450" y="420" class="label start">Зелёный: D+ (лампа заряда)</text>
+  <text x="450" y="440" class="label start">Синий: Ш (возбуждение)</text>
+
+  <!-- ГОСТ и технические данные -->
+  <text x="20" y="20" class="label-small start">ГОСТ 2.755-87, 2.721-74</text>
+  <text x="400" y="40" class="label center" font-weight="bold">Схема зарядки ВАЗ-2108/2109</text>
+</svg>

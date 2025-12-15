@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" font-family="DejaVu Sans, Arial, sans-serif">
+  <style>
+    /* Цветовые переменные: светлая / тёмная тема */
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --stroke: #000000;
+      --fill-comp: #f8f8f8;
+      --wire-red: #e53935;
+      --wire-blue: #1e88e5;
+      --wire-green: #43a047;
+      --wire-yellow: #fbc02d;
+      --wire-black: #263238;
+    }
+    .dark-theme svg, .dark svg {
+      --bg: #121212;
+      --text: #eeeeee;
+      --stroke: #cccccc;
+      --fill-comp: #333333;
+      --wire-red: #ef5350;
+      --wire-blue: #42a5f5;
+      --wire-green: #66bb6a;
+      --wire-yellow: #ffee58;
+      --wire-black: #b0bec5;
+    }
+
+    .component {
+      fill: var(--fill-comp);
+      stroke: var(--stroke);
+      stroke-width: 1.8;
+      rx: 4;
+      ry: 4;
+    }
+    .wire {
+      stroke-width: 3.2;
+      fill: none;
+    }
+    .red    { stroke: var(--wire-red); }
+    .blue   { stroke: var(--wire-blue); }
+    .green  { stroke: var(--wire-green); }
+    .yellow { stroke: var(--wire-yellow); }
+    .black  { stroke: var(--wire-black); }
+    .label {
+      font-size: 15px;
+      fill: var(--text);
+      font-weight: 500;
+    }
+    .label-small {
+      font-size: 13px;
+      fill: var(--text);
+    }
+    .center { text-anchor: middle; }
+    .start  { text-anchor: start; }
+    .marker { marker-mid: url(#arrow); }
+  </style>
+
+  <!-- Стрелка тока -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5"
+            markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text)" />
+    </marker>
+  </defs>
+
+  <!-- Фон -->
+  <rect width="100%" height="100%" fill="var(--bg)" />
+
+  <!-- Блок предохранителей (F) -->
+  <g transform="translate(100,100)">
+    <rect width="80" height="60" class="component" />
+    <text x="40" y="-10" class="label center">F</text>
+    <text x="40" y="80" class="label-small center">БП</text>
+  </g>
+
+  <!-- Замок зажигания (SA1) -->
+  <g transform="translate(250,100)">
+    <circle r="25" class="component" />
+    <path d="M 0 0 L 15 -15 M 0 0 L 15 15" stroke="var(--stroke)" stroke-width="2"/>
+    <text x="0" y="-35" class="label center">SA1</text>
+    <text x="0" y="40" class="label-small center">Замок</text>
+  </g>
+
+  <!-- Панель приборов (П) -->
+  <g transform="translate(450,150)">
+    <rect width="140" height="100" class="component" />
+    <text x="70" y="-10" class="label center">П</text>
+    <text x="70" y="120" class="label-small center">Панель приборов</text>
+  </g>
+
+  <!-- Датчик температуры (BE1) -->
+  <g transform="translate(400,350)">
+    <circle r="20" class="component" />
+    <line x1="-10" y1="-10" x2="10" y2="10" stroke="var(--stroke)" stroke-width="2"/>
+    <text x="0" y="-30" class="label center">BE1</text>
+    <text x="0" y="40" class="label-small center">ДТ</text>
+  </g>
+
+  <!-- Датчик давления масла (BE2) -->
+  <g transform="translate(500,350)">
+    <circle r="20" class="component" />
+    <line x1="0" y1="-15" x2="0" y2="15" stroke="var(--stroke)" stroke-width="2"/>
+    <text x="0" y="-30" class="label center">BE2</text>
+    <text x="0" y="40" class="label-small center">ДДМ</text>
+  </g>
+
+  <!-- Контрольная лампа заряда (HL1) -->
+  <g transform="translate(600,350)">
+    <circle r="15" class="component" />
+    <path d="M -8 -8 L 8 8 M -8 8 L 8 -8" stroke="var(--stroke)" stroke-width="2"/>
+    <text x="0" y="-25" class="label center">HL1</text>
+    <text x="0" y="35" class="label-small center">АКБ</text>
+  </g>
+
+  <!-- Цепи -->
+
+  <!-- Питание от БП → Замок зажигания → Панель (зажигание) -->
+  <line x1="180" y1="130" x2="220" y2="130" class="wire blue marker"/>
+  <line x1="220" y1="130" x2="220" y2="125" class="wire blue"/>
+  <line x1="220" y1="125" x2="250" y2="125" class="wire blue"/>
+  <line x1="275" y1="125" x2="450" y2="180" class="wire blue marker"/>
+
+  <!-- Панель → Контрольная лампа (HL1) -->
+  <line x1="520" y1="180" x2="580" y2="350" class="wire yellow marker"/>
+
+  <!-- Генератор → HL1 (сигнал) -->
+  <line x1="620" y1="350" x2="650" y2="350" class="wire green marker"/>
+  <text x="670" y="355" class="label start" font-size="13">от G</text>
+
+  <!-- Датчик температуры → Панель -->
+  <line x1="420" y1="350" x2="450" y2="220" class="wire green marker"/>
+
+  <!-- Датчик давления масла → Панель -->
+  <line x1="520" y1="350" x2="500" y2="220" class="wire green marker"/>
+
+  <!-- Масса (от датчиков и панели) -->
+  <line x1="420" y1="370" x2="420" y2="400" class="wire black"/>
+  <line x1="500" y1="370" x2="500" y2="400" class="wire black"/>
+  <line x1="600" y1="370" x2="600" y2="400" class="wire black"/>
+  <line x1="420" y1="400" x2="500" y2="400" class="wire black"/>
+  <line x1="500" y1="400" x2="600" y2="400" class="wire black"/>
+  <text x="500" y="420" class="label center">Масса</text>
+
+  <!-- Подписи цветов проводов -->
+  <g transform="translate(750,100)">
+    <text x="0" y="0" class="label">Цвета проводов:</text>
+    <line x1="0" y1="25" x2="40" y2="25" class="wire blue"/>
+    <text x="50" y="29" class="label start">+12В (зажигание)</text>
+
+    <line x1="0" y1="55" x2="40" y2="55" class="wire yellow"/>
+    <text x="50" y="59" class="label start">Сигнал (лампа)</text>
+
+    <line x1="0" y1="85" x2="40" y2="85" class="wire green"/>
+    <text x="50" y="89" class="label start">Сигналы датчиков</text>
+
+    <line x1="0" y1="115" x2="40" y2="115" class="wire black"/>
+    <text x="50" y="119" class="label start">Масса</text>
+  </g>
+
+  <!-- Заголовок -->
+  <text x="500" y="40" class="label center" font-size="18" font-weight="bold">Схема панели приборов — ВАЗ-2108/2109</text>
+  <text x="500" y="580" class="label-small center">ГОСТ 2.755-87 — обозначения: П — панель, BE1 — датчик температуры, BE2 — давления, HL1 — лампа АКБ</text>
+</svg>

@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" font-family="DejaVu Sans, Arial, sans-serif">
+  <style>
+    /* Цветовые переменные: светлая / тёмная тема */
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --stroke: #000000;
+      --fill-comp: #f8f8f8;
+      --wire-red: #e53935;
+      --wire-blue: #1e88e5;
+      --wire-black: #263238;
+    }
+    .dark-theme svg, .dark svg {
+      --bg: #121212;
+      --text: #eeeeee;
+      --stroke: #cccccc;
+      --fill-comp: #333333;
+      --wire-red: #ef5350;
+      --wire-blue: #42a5f5;
+      --wire-black: #b0bec5;
+    }
+
+    .component {
+      fill: var(--fill-comp);
+      stroke: var(--stroke);
+      stroke-width: 1.8;
+      rx: 4;
+      ry: 4;
+    }
+    .wire {
+      stroke-width: 3.2;
+      fill: none;
+    }
+    .red    { stroke: var(--wire-red); }
+    .blue   { stroke: var(--wire-blue); }
+    .black  { stroke: var(--wire-black); }
+    .label {
+      font-size: 15px;
+      fill: var(--text);
+      font-weight: 500;
+    }
+    .label-small {
+      font-size: 13px;
+      fill: var(--text);
+    }
+    .center { text-anchor: middle; }
+    .start  { text-anchor: start; }
+    .marker { marker-mid: url(#arrow); }
+  </style>
+
+  <!-- Стрелка тока -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5"
+            markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text)" />
+    </marker>
+  </defs>
+
+  <!-- Фон -->
+  <rect width="100%" height="100%" fill="var(--bg)" />
+
+  <!-- Блок предохранителей (F) -->
+  <g transform="translate(100,100)">
+    <rect width="80" height="60" class="component" />
+    <text x="40" y="-10" class="label center">F</text>
+    <text x="40" y="80" class="label-small center">БП</text>
+  </g>
+
+  <!-- Замок зажигания (SA1) -->
+  <g transform="translate(250,100)">
+    <circle r="25" class="component" />
+    <path d="M 0 0 L 15 -15 M 0 0 L 15 15" stroke="var(--stroke)" stroke-width="2"/>
+    <text x="0" y="-35" class="label center">SA1</text>
+    <text x="0" y="40" class="label-small center">Замок</text>
+  </g>
+
+  <!-- Кнопка сигнала (SB1) -->
+  <g transform="translate(400,100)">
+    <rect width="30" height="30" class="component" />
+    <line x1="5" y1="30" x2="25" y2="30" stroke="var(--stroke)" stroke-width="1"/>
+    <path d="M 15 5 L 15 25" stroke="var(--stroke)" stroke-width="2" stroke-dasharray="2,2"/>
+    <text x="15" y="-10" class="label center">SB1</text>
+    <text x="15" y="50" class="label-small center">Кнопка</text>
+  </g>
+
+  <!-- Реле сигнала (K1) -->
+  <g transform="translate(550,100)">
+    <rect width="60" height="40" class="component" />
+    <text x="30" y="25" class="label center">K1</text>
+  </g>
+
+  <!-- Звуковой сигнал (HA1) -->
+  <g transform="translate(750,100)">
+    <rect width="50" height="50" class="component" />
+    <path d="M 10 25 L 20 15 L 40 25 L 20 35 Z" fill="none" stroke="var(--stroke)" stroke-width="2"/>
+    <text x="25" y="25" class="label center">HA1</text>
+    <text x="25" y="70" class="label-small center">Сигнал</text>
+  </g>
+
+  <!-- Цепи -->
+
+  <!-- Питание от БП → Замок зажигания -->
+  <line x1="180" y1="130" x2="220" y2="130" class="wire blue marker"/>
+  <line x1="220" y1="130" x2="220" y2="125" class="wire blue"/>
+  <line x1="220" y1="125" x2="250" y2="125" class="wire blue"/>
+
+  <!-- Замок → Кнопка сигнала -->
+  <line x1="275" y1="125" x2="370" y2="125" class="wire blue marker"/>
+
+  <!-- Кнопка → Реле (управление) -->
+  <line x1="430" y1="115" x2="550" y2="115" class="wire green marker"/>
+
+  <!-- Реле → Сигнал (питание) -->
+  <line x1="610" y1="120" x2="750" y2="120" class="wire red marker"/>
+
+  <!-- Постоянное питание от АКБ к реле и сигналу -->
+  <line x1="180" y1="100" x2="550" y2="80" class="wire red"/>
+  <line x1="550" y1="80" x2="750" y2="80" class="wire red"/>
+  <text x="650" y="70" class="label-small center">+12В (постоянное)</text>
+
+  <!-- Масса (от сигнала к БП) -->
+  <line x1="800" y1="150" x2="800" y2="200" class="wire black"/>
+  <line x1="800" y1="200" x2="100" y2="200" class="wire black"/>
+  <line x1="100" y1="200" x2="100" y2="160" class="wire black"/>
+  <text x="80" y="220" class="label start">Масса</text>
+
+  <!-- Подписи цветов проводов -->
+  <g transform="translate(700,200)">
+    <text x="0" y="0" class="label">Цвета проводов:</text>
+    <line x1="0" y1="25" x2="40" y2="25" class="wire blue"/>
+    <text x="50" y="29" class="label start">+12В (зажигание)</text>
+
+    <line x1="0" y1="55" x2="40" y2="55" class="wire red"/>
+    <text x="50" y="59" class="label start">+12В (постоянное)</text>
+
+    <line x1="0" y1="85" x2="40" y2="85" class="wire green"/>
+    <text x="50" y="89" class="label start">Управление (кнопка)</text>
+
+    <line x1="0" y1="115" x2="40" y2="115" class="wire black"/>
+    <text x="50" y="119" class="label start">Масса</text>
+  </g>
+
+  <!-- Заголовок -->
+  <text x="450" y="40" class="label center" font-size="18" font-weight="bold">Схема звукового сигнала — ВАЗ-2108/2109</text>
+  <text x="450" y="480" class="label-small center">ГОСТ 2.755-87 — обозначения: F — предохранитель, SA1 — замок, SB1 — кнопка, K1 — реле, HA1 — сигнал</text>
+</svg>
