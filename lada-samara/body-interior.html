@@ -89,6 +89,27 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRQ33NW3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+  <!-- Yandex.RTB R-A-537370-35 (fullscreen touch) -->
+  <script>
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        "blockId": "R-A-537370-35",
+        "type": "fullscreen",
+        "platform": "touch"
+      })
+    })
+  </script>
+
+  <!-- Yandex.RTB R-A-537370-43 (fullscreen desktop) -->
+  <script>
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        "blockId": "R-A-537370-43",
+        "type": "fullscreen",
+        "platform": "desktop"
+      })
+    })
+  </script>
     <!-- Горизонтальное прокручиваемое меню -->
 <div class="horizontal-menu">
   <div class="container-fluid">
@@ -2493,10 +2514,80 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
+  <!-- Yandex.RTB R-A-537370-36 (floorAd touch) -->
+  <script>
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        "blockId": "R-A-537370-36",
+        "type": "floorAd",
+        "platform": "touch"
+      })
+    })
+  </script>
+
+  <!-- Yandex.RTB R-A-537370-44 (floorAd desktop) -->
+  <script>
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        "blockId": "R-A-537370-44",
+        "type": "floorAd",
+        "platform": "desktop"
+      })
+    })
+  </script>
+  <!-- Yandex.RTB R-A-537370-42 (inImage) -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const render = (imageId) => {
+        window.yaContextCb.push(() => {
+          Ya.Context.AdvManager.render({
+            "renderTo": imageId,
+            "blockId": "R-A-537370-42",
+            "type": "inImage"
+          })
+        })
+      }
+
+      const renderInImage = (images) => {
+        if (!images.length) {
+          return
+        }
+
+        const image = images.shift()
+
+        if (image.hasAttribute('loading') && image.getAttribute('loading') === 'lazy') {
+          const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
+                render(image.id)
+                observer.unobserve(entry.target)
+              }
+            })
+          })
+
+          observer.observe(image)
+        } else {
+          image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
+          if (image.tagName === "IMG" && !image.complete) {
+            image.addEventListener("load", () => {
+              render(image.id)
+            }, { once: true })
+          } else {
+            render(image.id)
+          }
+        }
+
+        renderInImage(images)
+      }
+
+      renderInImage(Array.from(document.querySelectorAll("img")))
+    }, { once: true })
+  </script>
+
 <!-- Bootstrap 5.3 JS Bundle (с Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 <script src="/lada-samara/assets/js/main.js"></script>
-
 
 </body>
 </html>
