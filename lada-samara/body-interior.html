@@ -75,128 +75,61 @@
     });
 </script>
 <!-- Google Tag Manager -->
-<script>
-  // Инициализируем массив для отложенных вызовов
-  window.yaContextCb = window.yaContextCb || [];
+  <script>
+    // Инициализируем массив для отложенных вызовов
+    window.yaContextCb = window.yaContextCb || [];
 
-  // Функция для отложенной загрузки скрипта
-  const loadYandexAds = () => {
-    const script = document.createElement('script');
-    script.src = 'https://yandex.ru/ads/system/context.js';
-    script.async = true; // Асинхронная загрузка
-
-    // Обработчик успешной загрузки
-    script.onload = () => {
-      console.log('Yandex ads script loaded');
+    // Функция определения типа устройства
+    const getDeviceType = () => {
+      const userAgent = navigator.userAgent.toLowerCase();
+      return 'ontouchstart' in window ||
+             navigator.maxTouchPoints > 0 ||
+             /android|iphone|ipad|mobile/i.test(userAgent)
+        ? 'touch'
+        : 'desktop';
     };
 
-    // Обработчик ошибки загрузки
-    script.onerror = () => {
-      console.error('Failed to load Yandex ads script');
-      // Здесь можно добавить fallback — например, показать баннер из другого источника
-    };
+    // Отложенная загрузка скрипта Яндекс.Рекламы
+    setTimeout(() => {
+      const script = document.createElement('script');
+      script.src = 'https://yandex.ru/ads/system/context.js';
+      script.async = true;
 
-    document.body.appendChild(script);
-  };
+      script.onload = () => console.log('Yandex ads script loaded');
+      script.onerror = () => console.error('Failed to load Yandex ads script');
 
-  // Загружаем через 3 секунды или после загрузки DOM — что наступит раньше
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => setTimeout(loadYandexAds, 3000));
-  } else {
-    setTimeout(loadYandexAds, 3000);
-  }
-</script>
+      document.body.appendChild(script);
+    }, 5000);
+  </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRQ33NW3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<!-- Yandex.RTB fullscreen (оптимизированная версия) -->
-<script>
-  // Настройки
-  const FULLSCREEN_ADS = {
-    touch: { blockId: 'R-A-537370-35', platform: 'touch' },
-    desktop: { blockId: 'R-A-537370-43', platform: 'desktop' }
-  };
-  const COOKIE_NAME = 'yandex_fullscreen_shown';
-  const SHOW_INTERVAL_HOURS = 24; // Показывать не чаще 1 раза в 24 часа
+  <!-- Yandex.RTB fullscreen (оптимизированная версия) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const deviceType = getDeviceType();
+        const blockId = deviceType === 'touch' ? 'R-A-537370-35' : 'R-A-537370-43';
 
-  // Функция для работы с cookies
-  const getCookie = (name) => {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-  };
-
-  const setCookie = (name, value, hours) => {
-    const date = new Date();
-    date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
-    document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
-  };
-
-  // Функция определения типа устройства
-  const getDeviceType = () => {
-    const userAgent = navigator.userAgent.toLowerCase();
-    return 'ontouchstart' in window ||
-           navigator.maxTouchPoints > 0 ||
-           /android|iphone|ipad|mobile/i.test(userAgent)
-      ? 'touch'
-      : 'desktop';
-  };
-
-  // Функция рендера рекламы с обработкой ошибок
-  const renderFullscreenAd = (config) => {
-    // Проверяем доступность контекста Яндекс
-    if (!window.yaContextCb) {
-      console.warn('Yandex context not available, fullscreen ad will not be rendered');
-      return false;
-    }
-
-    window.yaContextCb.push(() => {
-      try {
-        Ya.Context.AdvManager.render({
-          blockId: config.blockId,
-          type: 'fullscreen',
-          platform: config.platform
+        window.yaContextCb.push(() => {
+          try {
+            Ya.Context.AdvManager.render({
+              blockId: blockId,
+              type: 'fullscreen',
+              platform: deviceType
+            });
+            console.log(`fullscreen ad rendered: ${blockId} (${deviceType})`);
+          } catch (error) {
+            console.error('Failed to render fullscreen ad:', error);
+          }
         });
-        console.log(`Fullscreen ad rendered: ${config.blockId} (${config.platform})`);
-        // Устанавливаем cookie для ограничения частоты показа
-        setCookie(COOKIE_NAME, '1', SHOW_INTERVAL_HOURS);
-        return true;
-      } catch (error) {
-        console.error('Failed to render fullscreen ad:', error);
-        return false;
-      }
+      }, 2000); // Показываем через 2 секунды после загрузки DOM
     });
-    return true;
-  };
+  </script>
 
-  // Основная функция инициализации
-  const initFullscreenAd = () => {
-    // Проверяем, не показана ли реклама недавно
-    if (getCookie(COOKIE_NAME)) {
-      console.log('Fullscreen ad shown recently, skipping');
-      return;
-    }
-
-    // Определяем тип устройства
-    const deviceType = getDeviceType();
-    const adConfig = FULLSCREEN_ADS[deviceType];
-
-    // Отложенная загрузка — ждём полной загрузки страницы
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(() => renderFullscreenAd(adConfig), 1000);
-      });
-    } else {
-      setTimeout(() => renderFullscreenAd(adConfig), 1000);
-    }
-  };
-
-  // Запускаем инициализацию
-  initFullscreenAd();
-</script>
 
     <!-- Горизонтальное прокручиваемое меню -->
 <div class="horizontal-menu">
@@ -2602,150 +2535,99 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
-<!-- Yandex.RTB floorAd (оптимизированная версия) -->
-<script>
-  // Функция для определения типа устройства
-  const getDeviceType = () => {
-    const userAgent = navigator.userAgent.toLowerCase();
-    const isTouch = 'ontouchstart' in window ||
-                   navigator.maxTouchPoints > 0 ||
-                   /android|iphone|ipad|mobile/i.test(userAgent);
-    return isTouch ? 'touch' : 'desktop';
+  <!-- Yandex.RTB floorAd (оптимизированная версия) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Отложенный рендер floorAd — ждём скролла пользователя
+      const handleScroll = () => {
+        if (window.scrollY > 100) { // Показываем после скролла на 100px
+          window.removeEventListener('scroll', handleScroll);
+
+          const deviceType = getDeviceType();
+          const blockId = deviceType === 'touch' ? 'R-A-537370-36' : 'R-A-537370-44';
+
+          window.yaContextCb.push(() => {
+            try {
+              Ya.Context.AdvManager.render({
+                blockId: blockId,
+                type: 'floorAd',
+                platform: deviceType
+              });
+              console.log(`floorAd rendered: ${blockId} (${deviceType})`);
+            } catch (error) {
+              console.error('Failed to render floorAd:', error);
+            }
+          });
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+    });
+  </script>
+
+  <!-- Yandex.RTB inImage (оптимизированная версия) -->
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const MAX_ADS = 3;
+  const MIN_IMAGE_WIDTH = 300;
+  const MIN_IMAGE_HEIGHT = 250;
+  let adCount = 0;
+
+  const isImageLargeEnough = (image) => {
+    // Для загруженных изображений проверяем naturalWidth/naturalHeight
+    if (image.complete) {
+      return image.naturalWidth >= MIN_IMAGE_WIDTH &&
+             image.naturalHeight >= MIN_IMAGE_HEIGHT;
+    }
+    // Если изображение ещё не загружено, проверяем атрибуты width/height
+    const width = parseInt(image.getAttribute('width') || image.style.width || 0);
+    const height = parseInt(image.getAttribute('height') || image.style.height || 0);
+    return width >= MIN_IMAGE_WIDTH && height >= MIN_IMAGE_HEIGHT;
   };
 
-  // Функция рендера рекламы с обработкой ошибок
-  const renderFloorAd = (blockId, platform) => {
-    // Проверяем доступность контекста Яндекс
-    if (!window.yaContextCb) {
-      console.warn('Yandex context not available, floorAd will not be rendered');
+  const renderInImageAd = (image) => {
+    if (adCount >= MAX_ADS) return;
+    if (!isImageLargeEnough(image)) {
+      console.log(`Image too small: ${image.src} (${image.naturalWidth}×${image.naturalHeight})`);
       return;
     }
+
+    const imageId = `yandex_rtb_R-A-537370-42_${Math.random().toString(16).slice(2)}`;
+    image.id = imageId;
+    image.setAttribute('data-ad-rendered', 'true');
 
     window.yaContextCb.push(() => {
       try {
         Ya.Context.AdvManager.render({
-          blockId: blockId,
-          type: 'floorAd',
-          platform: platform
+          renderTo: imageId,
+          blockId: 'R-A-537370-42',
+          type: 'inImage'
         });
-        console.log(`FloorAd rendered: ${blockId} (${platform})`);
+        adCount++;
+        console.log(`inImage ad rendered: ${imageId}`);
       } catch (error) {
-        console.error('Failed to render floorAd:', error);
+        console.warn('Failed to render inImage ad:', error);
       }
     });
   };
 
-  // Отложенная инициализация — ждём загрузки DOM и скролла пользователя
-  document.addEventListener('DOMContentLoaded', () => {
-    // Определяем тип устройства
-    const deviceType = getDeviceType();
-
-    // Выбираем соответствующий блок
-    const adConfig = deviceType === 'touch'
-      ? { blockId: 'R-A-537370-36', platform: 'touch' }
-      : { blockId: 'R-A-537370-44', platform: 'desktop' };
-
-    // Отложенный рендер — ждём, пока пользователь доскроллит до конца
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight;
-      const pageHeight = document.documentElement.scrollHeight;
-
-      // Показываем рекламу, когда пользователь доскроллил до последних 200px страницы
-      if (pageHeight - scrollPosition <= 200) {
-        renderFloorAd(adConfig.blockId, adConfig.platform);
-        // Убираем обработчик после первого срабатывания
-        window.removeEventListener('scroll', handleScroll);
-      }
-    };
-
-    // Добавляем обработчик скролла
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    // Дополнительный триггер — если страница короткая, показываем сразу
-    setTimeout(() => {
-      if (document.documentElement.scrollHeight <= window.innerHeight) {
-        renderFloorAd(adConfig.blockId, adConfig.platform);
-      }
-    }, 1000);
-  });
-</script>
-
-<!-- Yandex.RTB R-A-537370-42 (inImage) -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Настройки
-    const BLOCK_ID = 'R-A-537370-42';
-    const MAX_ADS = 3; // Максимум рекламных блоков на странице
-    const TARGET_SELECTOR = 'img:not([data-ad-rendered])'; // Игнорируем уже обработанные
-
-    let adCount = 0;
-
-    // Функция рендера рекламы
-    const renderAd = (image) => {
+  const processImages = (images) => {
+    images.forEach(image => {
       if (adCount >= MAX_ADS) return;
 
-      // Генерируем уникальный ID
-      const imageId = `yandex_rtb_${BLOCK_ID}_${Math.random().toString(16).slice(2)}`;
-      image.id = imageId;
-      image.setAttribute('data-ad-rendered', 'true');
+      if (image.complete) {
+        renderInImageAd(image);
+      } else {
+        image.addEventListener('load', () => renderInImageAd(image), { once: true });
+      }
+    });
+  };
 
-      window.yaContextCb.push(() => {
-        try {
-          Ya.Context.AdvManager.render({
-            renderTo: imageId,
-            blockId: BLOCK_ID,
-            type: 'inImage'
-          });
-          adCount++;
-        } catch (error) {
-          console.warn('Failed to render Yandex inImage ad:', error);
-        }
-      });
-    };
-
-    // Обработчик для обычных изображений (загруженных сразу)
-    const processImmediateImages = (images) => {
-      images.forEach(image => {
-        if (adCount >= MAX_ADS) return;
-
-        if (image.complete) {
-          renderAd(image);
-        } else {
-          image.addEventListener('load', () => renderAd(image), { once: true });
-        }
-      });
-    };
-
-    // Обработчик для lazy‑изображений
-    const processLazyImages = (lazyImages) => {
-      if (lazyImages.length === 0 || adCount >= MAX_ADS) return;
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && adCount < MAX_ADS) {
-            observer.unobserve(entry.target);
-            renderAd(entry.target);
-          }
-        });
-      }, {
-        rootMargin: '100px 0px', // Начинаем наблюдать заранее
-        threshold: 0.01 // Срабатывает при малейшем появлении
-      });
-
-      lazyImages.forEach(img => observer.observe(img));
-    };
-
-    // Основной процесс
-    const images = Array.from(document.querySelectorAll(TARGET_SELECTOR));
-    const lazyImages = images.filter(img =>
-      img.hasAttribute('loading') && img.getAttribute('loading') === 'lazy'
-    );
-    const immediateImages = images.filter(img => !lazyImages.includes(img));
-
-    processImmediateImages(immediateImages);
-    processLazyImages(lazyImages);
-  });
+  const images = Array.from(document.querySelectorAll('img:not([data-ad-rendered])'));
+  processImages(images);
+});
 </script>
+
 
 <!-- Bootstrap 5.3 JS Bundle (с Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
