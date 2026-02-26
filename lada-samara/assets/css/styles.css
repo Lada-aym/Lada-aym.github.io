@@ -1,0 +1,516 @@
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+  padding-top: 50px; /* Увеличен отступ под два меню: горизонтальное (50 px) + липкое (70 px) */
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Заголовки */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #343a40;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #343a40;
+}
+
+.lead {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #6c757d;
+  text-align: center;
+}
+
+/* Горизонтальное меню — стилизация под липкое меню */
+.horizontal-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* выше липкого меню */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  padding: 0;
+  background-color: #fff;
+}
+
+.horizontal-menu .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+/* Скрываем скроллбар: комбинированный подход */
+.horizontal-menu .container-fluid {
+  scrollbar-width: none; /* Firefox */
+}
+.horizontal-menu .container-fluid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.horizontal-menu .logo-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.horizontal-menu .logo {
+  width: 30px;
+  height: 30px;
+}
+
+.horizontal-menu .site-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #000;
+  white-space: nowrap;
+}
+
+.horizontal-menu .menu-scroller {
+  flex-grow: 1;
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.horizontal-menu .menu-items {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+.horizontal-menu .menu-item {
+  text-decoration: none;
+  color: #343a40;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0; /* предотвращаем сжатие пунктов */
+}
+
+.horizontal-menu .menu-item:hover,
+.horizontal-menu .menu-item:focus {
+  color: #007bff;
+  background-color: #f8f9fa;
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.horizontal-menu .menu-item.active {
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 4px;
+}
+
+/* Липкое меню — теперь ниже горизонтального */
+#sticky-navbar,
+#sticky-navbar.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1050; /* ниже горизонтального меню */
+}
+
+nav.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar-light .navbar-brand {
+  color: #000;
+}
+
+/* Анимация меню */
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  animation: slideDown 0.3s forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+/* Скрытие меню при прокрутке вверх */
+nav.navbar.hidden {
+  animation: slideUp 0.3s forwards;
+}
+
+/* Стили для аккордеона */
+.accordion-button {
+  font-weight: 500;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+  background-color: #fff;
+  padding: 1rem 1.25rem;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #f8f9fa;
+  box-shadow: none;
+  color: #2c3e50;
+}
+
+.accordion-body {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #dee2e6;
+  border-top: none;
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+  background-color: #fff;
+}
+
+/* Стили для футера */
+.footer {
+  background-color: #f8f9fa;
+  padding: 2rem 0;
+  margin-top: 4rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.footer p {
+  color: #6c757d;
+  margin: 0.5rem 0;
+}
+
+/* Offcanvas */
+.offcanvas {
+  z-index: 1200 !important; /* выше, чем у липкого меню (1100) */
+  background-color: #fafafa;
+  padding: 1rem;
+}
+
+.offcanvas .nav-link {
+  color: #333;
+  font-weight: 500;
+}
+
+.offcanvas .nav-link.active {
+  color: #007bff;
+}
+
+.offcanvas .dropdown-menu {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+}
+
+.offcanvas .dropdown-item {
+  color: #333;
+}
+
+.offcanvas .dropdown-item.active {
+  color: #007bff;
+}
+
+/* Базовый стиль для карточек с изображениями */
+.image-card {
+  border: 1px solid #e9ecef;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.image-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.image-card figure {
+  margin: 0;
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-caption {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6c757d;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+
+/* Класс для изображений с ограничением 400px (центрированных) */
+.image-card--limited {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Класс для изображений с ограничением 800px (центрированных) */
+.image-card--limited-800 {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Класс для изображений на 100% ширины */
+.image-card--fullwidth {
+  width: 100%;
+  margin: 0;
+}
+
+/* Адаптивность: на мобильных экранах оба типа карточек занимают 100% ширины */
+@media (max-width: 768px) {
+  .image-card--limited,
+  .image-card--fullwidth {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  .image-caption {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Группировка изображений в ряд на средних и больших экранах */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Отступы для отдельных блоков с изображениями */
+.mb-image-block {
+  margin-bottom: 2rem;
+}
+
+/* Дополнительные стили для кнопок и интерактивных элементов */
+.indicator-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.section-title {
+  margin-top: 40px;
+}
+
+.card-indicator {
+  transition: transform 0.2s;
+}
+
+.card-indicator:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для предупреждающих сообщений */
+.alert-info {
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+  color: #0c5460;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  border-color: #ffeaa7;
+  color: #856404;
+}
+
+/* Стили для списков в инструкциях */
+ol.mb-4,
+ol.mb-0 {
+  padding-left: 1.5rem;
+}
+
+ol li {
+  margin-bottom: 0.75rem;
+}
+
+ul.mt-2 {
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Улучшение читаемости текста в карточках */
+.card-text {
+  line-height: 1.5;
+}
+
+/* Стили для выделенных элементов в карточках индикаторов */
+.badge {
+  font-size: 0.875em;
+}
+
+/* Фиксация заголовка при прокрутке */
+#sticky-navbar.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+}
+
+/* Стили для кнопок в футере */
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.btn-back:hover,
+.btn-back:focus {
+  color: #0056b3;
+  outline: 2px dashed #0056b3;
+  outline-offset: 3px;
+}
+
+/* Базовые стили для адаптивной таблицы (Flex‑таблица) */
+.flex-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.flex-table-row {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #ddd;
+}
+
+.flex-cell {
+  flex: 1;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+/* Стили для заголовка таблицы */
+.flex-table-row.header {
+  background-color: #ffc107;
+  font-weight: bold;
+  border-bottom: 2px solid #f5b000;
+}
+
+/* Адаптация для мобильных устройств (ширина экрана ≤ 768 px) */
+@media screen and (max-width: 768px) {
+  .flex-table-row {
+    flex-direction: column;
+    border-bottom: none;
+    margin-bottom: 15px;
+    background-color: #fff9e6;
+    border: 1px dashed #ffd166;
+    border-radius: 8px;
+  }
+
+  .flex-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px dashed #ffeaa7;
+    position: relative;
+  }
+
+  /* Скрываем заголовок на мобильных */
+  .flex-table-row.header {
+    display: none;
+  }
+
+  /* Добавляем подписи для каждой ячейки на мобильных */
+  .flex-cell:before {
+    content: attr(data-label) ": ";
+    font-weight: bold;
+    color: #e67e22;
+    min-width: 40%;
+    text-align: right;
+  }
+
+  /* Убираем границу у последней ячейки в карточке */
+  .flex-cell:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Дополнительные адаптивные стили для узких экранов (≤ 576 px) */
+@media screen and (max-width: 576px) {
+  .flex-cell {
+    padding: 8px 12px;
+    flex-wrap: wrap;
+  }
+
+  .flex-cell:before {
+    font-size: 0.85rem;
+    min-width: 45%;
+  }
+
+  /* Уменьшаем отступы для карточек на очень маленьких экранах */
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  /* Корректировка отступов в карточках */
+  .card-body {
+    padding: 0.75rem;
+  }
+
+  /* Уменьшаем размер шрифта в списках */
+  ul li,
+  ol li {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+}
+
+/* Стили для улучшения читаемости на экранах с высоким DPI */
+@media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
