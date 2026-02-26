@@ -89,27 +89,29 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRQ33NW3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-  <!-- Yandex.RTB R-A-537370-35 (fullscreen touch) -->
-  <script>
-    window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.render({
-        "blockId": "R-A-537370-35",
-        "type": "fullscreen",
-        "platform": "touch"
-      })
-    })
-  </script>
+<script>
+  const renderFullscreenAdSafe = (blockId, platform) => {
+    if (window.yaContextCb) {
+      window.yaContextCb.push(() => {
+        try {
+          Ya.Context.AdvManager.render({ blockId, type: 'fullscreen', platform });
+        } catch (e) {
+          console.error('Fullscreen ad error:', e);
+        }
+      });
+    } else {
+      console.warn('Yandex context not loaded');
+    }
+  };
 
-  <!-- Yandex.RTB R-A-537370-43 (fullscreen desktop) -->
-  <script>
-    window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.render({
-        "blockId": "R-A-537370-43",
-        "type": "fullscreen",
-        "platform": "desktop"
-      })
-    })
-  </script>
+  const isTouchDevice = 'ontouchstart' in window || /android|iphone/i.test(navigator.userAgent);
+
+  renderFullscreenAdSafe(
+    isTouchDevice ? 'R-A-537370-35' : 'R-A-537370-43',
+    isTouchDevice ? 'touch' : 'desktop'
+  );
+</script>
+
     <!-- Горизонтальное прокручиваемое меню -->
 <div class="horizontal-menu">
   <div class="container-fluid">
@@ -2514,76 +2516,105 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
-  <!-- Yandex.RTB R-A-537370-36 (floorAd touch) -->
-  <script>
-    window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.render({
-        "blockId": "R-A-537370-36",
-        "type": "floorAd",
-        "platform": "touch"
-      })
-    })
-  </script>
+<script>
+  const renderFloorAdSafe = (blockId, platform) => {
+    if (window.yaContextCb) {
+      window.yaContextCb.push(() => {
+        try {
+          Ya.Context.AdvManager.render({ blockId, type: 'floorAd', platform });
+        } catch (e) {
+          console.error('FloorAd error:', e);
+        }
+      });
+    } else {
+      console.warn('Yandex context not loaded');
+    }
+  };
 
-  <!-- Yandex.RTB R-A-537370-44 (floorAd desktop) -->
-  <script>
-    window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.render({
-        "blockId": "R-A-537370-44",
-        "type": "floorAd",
-        "platform": "desktop"
-      })
-    })
-  </script>
-  <!-- Yandex.RTB R-A-537370-42 (inImage) -->
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const render = (imageId) => {
-        window.yaContextCb.push(() => {
+  const isTouchDevice = 'ontouchstart' in window || /android|iphone/i.test(navigator.userAgent);
+
+  renderFloorAdSafe(
+    isTouchDevice ? 'R-A-537370-36' : 'R-A-537370-44',
+    isTouchDevice ? 'touch' : 'desktop'
+  );
+</script>
+
+<!-- Yandex.RTB R-A-537370-42 (inImage) -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Настройки
+    const BLOCK_ID = 'R-A-537370-42';
+    const MAX_ADS = 3; // Максимум рекламных блоков на странице
+    const TARGET_SELECTOR = 'img:not([data-ad-rendered])'; // Игнорируем уже обработанные
+
+    let adCount = 0;
+
+    // Функция рендера рекламы
+    const renderAd = (image) => {
+      if (adCount >= MAX_ADS) return;
+
+      // Генерируем уникальный ID
+      const imageId = `yandex_rtb_${BLOCK_ID}_${Math.random().toString(16).slice(2)}`;
+      image.id = imageId;
+      image.setAttribute('data-ad-rendered', 'true');
+
+      window.yaContextCb.push(() => {
+        try {
           Ya.Context.AdvManager.render({
-            "renderTo": imageId,
-            "blockId": "R-A-537370-42",
-            "type": "inImage"
-          })
-        })
-      }
-
-      const renderInImage = (images) => {
-        if (!images.length) {
-          return
+            renderTo: imageId,
+            blockId: BLOCK_ID,
+            type: 'inImage'
+          });
+          adCount++;
+        } catch (error) {
+          console.warn('Failed to render Yandex inImage ad:', error);
         }
+      });
+    };
 
-        const image = images.shift()
+    // Обработчик для обычных изображений (загруженных сразу)
+    const processImmediateImages = (images) => {
+      images.forEach(image => {
+        if (adCount >= MAX_ADS) return;
 
-        if (image.hasAttribute('loading') && image.getAttribute('loading') === 'lazy') {
-          const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
-                render(image.id)
-                observer.unobserve(entry.target)
-              }
-            })
-          })
-
-          observer.observe(image)
+        if (image.complete) {
+          renderAd(image);
         } else {
-          image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
-          if (image.tagName === "IMG" && !image.complete) {
-            image.addEventListener("load", () => {
-              render(image.id)
-            }, { once: true })
-          } else {
-            render(image.id)
-          }
+          image.addEventListener('load', () => renderAd(image), { once: true });
         }
+      });
+    };
 
-        renderInImage(images)
-      }
+    // Обработчик для lazy‑изображений
+    const processLazyImages = (lazyImages) => {
+      if (lazyImages.length === 0 || adCount >= MAX_ADS) return;
 
-      renderInImage(Array.from(document.querySelectorAll("img")))
-    }, { once: true })
-  </script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && adCount < MAX_ADS) {
+            observer.unobserve(entry.target);
+            renderAd(entry.target);
+          }
+        });
+      }, {
+        rootMargin: '100px 0px', // Начинаем наблюдать заранее
+        threshold: 0.01 // Срабатывает при малейшем появлении
+      });
+
+      lazyImages.forEach(img => observer.observe(img));
+    };
+
+    // Основной процесс
+    const images = Array.from(document.querySelectorAll(TARGET_SELECTOR));
+    const lazyImages = images.filter(img =>
+      img.hasAttribute('loading') && img.getAttribute('loading') === 'lazy'
+    );
+    const immediateImages = images.filter(img => !lazyImages.includes(img));
+
+    processImmediateImages(immediateImages);
+    processLazyImages(lazyImages);
+  });
+</script>
 
 <!-- Bootstrap 5.3 JS Bundle (с Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
