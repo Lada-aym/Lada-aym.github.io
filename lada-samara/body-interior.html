@@ -89,27 +89,90 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRQ33NW3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+<!-- Yandex.RTB fullscreen (оптимизированная версия) -->
 <script>
-  const renderFullscreenAdSafe = (blockId, platform) => {
-    if (window.yaContextCb) {
-      window.yaContextCb.push(() => {
-        try {
-          Ya.Context.AdvManager.render({ blockId, type: 'fullscreen', platform });
-        } catch (e) {
-          console.error('Fullscreen ad error:', e);
-        }
+  // Настройки
+  const FULLSCREEN_ADS = {
+    touch: { blockId: 'R-A-537370-35', platform: 'touch' },
+    desktop: { blockId: 'R-A-537370-43', platform: 'desktop' }
+  };
+  const COOKIE_NAME = 'yandex_fullscreen_shown';
+  const SHOW_INTERVAL_HOURS = 24; // Показывать не чаще 1 раза в 24 часа
+
+  // Функция для работы с cookies
+  const getCookie = (name) => {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  };
+
+  const setCookie = (name, value, hours) => {
+    const date = new Date();
+    date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+    document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
+  };
+
+  // Функция определения типа устройства
+  const getDeviceType = () => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    return 'ontouchstart' in window ||
+           navigator.maxTouchPoints > 0 ||
+           /android|iphone|ipad|mobile/i.test(userAgent)
+      ? 'touch'
+      : 'desktop';
+  };
+
+  // Функция рендера рекламы с обработкой ошибок
+  const renderFullscreenAd = (config) => {
+    // Проверяем доступность контекста Яндекс
+    if (!window.yaContextCb) {
+      console.warn('Yandex context not available, fullscreen ad will not be rendered');
+      return false;
+    }
+
+    window.yaContextCb.push(() => {
+      try {
+        Ya.Context.AdvManager.render({
+          blockId: config.blockId,
+          type: 'fullscreen',
+          platform: config.platform
+        });
+        console.log(`Fullscreen ad rendered: ${config.blockId} (${config.platform})`);
+        // Устанавливаем cookie для ограничения частоты показа
+        setCookie(COOKIE_NAME, '1', SHOW_INTERVAL_HOURS);
+        return true;
+      } catch (error) {
+        console.error('Failed to render fullscreen ad:', error);
+        return false;
+      }
+    });
+    return true;
+  };
+
+  // Основная функция инициализации
+  const initFullscreenAd = () => {
+    // Проверяем, не показана ли реклама недавно
+    if (getCookie(COOKIE_NAME)) {
+      console.log('Fullscreen ad shown recently, skipping');
+      return;
+    }
+
+    // Определяем тип устройства
+    const deviceType = getDeviceType();
+    const adConfig = FULLSCREEN_ADS[deviceType];
+
+    // Отложенная загрузка — ждём полной загрузки страницы
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => renderFullscreenAd(adConfig), 1000);
       });
     } else {
-      console.warn('Yandex context not loaded');
+      setTimeout(() => renderFullscreenAd(adConfig), 1000);
     }
   };
 
-  const isTouchDevice = 'ontouchstart' in window || /android|iphone/i.test(navigator.userAgent);
-
-  renderFullscreenAdSafe(
-    isTouchDevice ? 'R-A-537370-35' : 'R-A-537370-43',
-    isTouchDevice ? 'touch' : 'desktop'
-  );
+  // Запускаем инициализацию
+  initFullscreenAd();
 </script>
 
     <!-- Горизонтальное прокручиваемое меню -->
@@ -2516,27 +2579,72 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
+<!-- Yandex.RTB floorAd (оптимизированная версия) -->
 <script>
-  const renderFloorAdSafe = (blockId, platform) => {
-    if (window.yaContextCb) {
-      window.yaContextCb.push(() => {
-        try {
-          Ya.Context.AdvManager.render({ blockId, type: 'floorAd', platform });
-        } catch (e) {
-          console.error('FloorAd error:', e);
-        }
-      });
-    } else {
-      console.warn('Yandex context not loaded');
-    }
+  // Функция для определения типа устройства
+  const getDeviceType = () => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isTouch = 'ontouchstart' in window ||
+                   navigator.maxTouchPoints > 0 ||
+                   /android|iphone|ipad|mobile/i.test(userAgent);
+    return isTouch ? 'touch' : 'desktop';
   };
 
-  const isTouchDevice = 'ontouchstart' in window || /android|iphone/i.test(navigator.userAgent);
+  // Функция рендера рекламы с обработкой ошибок
+  const renderFloorAd = (blockId, platform) => {
+    // Проверяем доступность контекста Яндекс
+    if (!window.yaContextCb) {
+      console.warn('Yandex context not available, floorAd will not be rendered');
+      return;
+    }
 
-  renderFloorAdSafe(
-    isTouchDevice ? 'R-A-537370-36' : 'R-A-537370-44',
-    isTouchDevice ? 'touch' : 'desktop'
-  );
+    window.yaContextCb.push(() => {
+      try {
+        Ya.Context.AdvManager.render({
+          blockId: blockId,
+          type: 'floorAd',
+          platform: platform
+        });
+        console.log(`FloorAd rendered: ${blockId} (${platform})`);
+      } catch (error) {
+        console.error('Failed to render floorAd:', error);
+      }
+    });
+  };
+
+  // Отложенная инициализация — ждём загрузки DOM и скролла пользователя
+  document.addEventListener('DOMContentLoaded', () => {
+    // Определяем тип устройства
+    const deviceType = getDeviceType();
+
+    // Выбираем соответствующий блок
+    const adConfig = deviceType === 'touch'
+      ? { blockId: 'R-A-537370-36', platform: 'touch' }
+      : { blockId: 'R-A-537370-44', platform: 'desktop' };
+
+    // Отложенный рендер — ждём, пока пользователь доскроллит до конца
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const pageHeight = document.documentElement.scrollHeight;
+
+      // Показываем рекламу, когда пользователь доскроллил до последних 200px страницы
+      if (pageHeight - scrollPosition <= 200) {
+        renderFloorAd(adConfig.blockId, adConfig.platform);
+        // Убираем обработчик после первого срабатывания
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+
+    // Добавляем обработчик скролла
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Дополнительный триггер — если страница короткая, показываем сразу
+    setTimeout(() => {
+      if (document.documentElement.scrollHeight <= window.innerHeight) {
+        renderFloorAd(adConfig.blockId, adConfig.platform);
+      }
+    }, 1000);
+  });
 </script>
 
 <!-- Yandex.RTB R-A-537370-42 (inImage) -->
