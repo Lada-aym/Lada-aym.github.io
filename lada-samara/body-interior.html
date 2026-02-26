@@ -76,13 +76,36 @@
 </script>
 <!-- Google Tag Manager -->
 <script>
-    setTimeout(function() {
-        var script = document.createElement('script');
-        script.src = 'https://yandex.ru/ads/system/context.js';
-        document.body.appendChild(script);
-    }, 5000);
+  // Инициализируем массив для отложенных вызовов
+  window.yaContextCb = window.yaContextCb || [];
+
+  // Функция для отложенной загрузки скрипта
+  const loadYandexAds = () => {
+    const script = document.createElement('script');
+    script.src = 'https://yandex.ru/ads/system/context.js';
+    script.async = true; // Асинхронная загрузка
+
+    // Обработчик успешной загрузки
+    script.onload = () => {
+      console.log('Yandex ads script loaded');
+    };
+
+    // Обработчик ошибки загрузки
+    script.onerror = () => {
+      console.error('Failed to load Yandex ads script');
+      // Здесь можно добавить fallback — например, показать баннер из другого источника
+    };
+
+    document.body.appendChild(script);
+  };
+
+  // Загружаем через 3 секунды или после загрузки DOM — что наступит раньше
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => setTimeout(loadYandexAds, 3000));
+  } else {
+    setTimeout(loadYandexAds, 3000);
+  }
 </script>
-<script>window.yaContextCb=window.yaContextCb||[]</script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
