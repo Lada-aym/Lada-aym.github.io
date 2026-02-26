@@ -1758,142 +1758,52 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://lada-aym.github.io/assets/images/ci-141-82x34.png</image:loc>
-    </image:image>
+    <loc>https://lada-aym.github.io/lada-samara/</loc>
+    <lastmod>2023-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA1.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
+    <loc>https://lada-aym.github.io/lada-samara/applications.html</loc>
+    <lastmod>2023-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA3.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
+    <loc>https://lada-aym.github.io/lada-samara/body-interior.html</loc>
+    <lastmod>2023-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA4.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
+    <loc>https://lada-aym.github.io/lada-samara/controls-instruments.html</loc>
+    <lastmod>2023-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA5.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
+    <loc>https://lada-aym.github.io/lada-samara/maintenance.html</loc>
+    <lastmod>2023-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA6.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
+    <loc>https://lada-aym.github.io/lada-samara/malfunctions-solutions.html</loc>
+    <lastmod>2023-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA7.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
+    <loc>https://lada-aym.github.io/lada-samara/operation.html</loc>
+    <lastmod>2023-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA8.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA9.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA10.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA11.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/opisanie-SAMARA12.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/ekspluatatsiya-SAMARA1.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/ekspluatatsiya-SAMARA2.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/ekspluatatsiya-SAMARA3.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/ekspluatatsiya-SAMARA4.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/obsluzhivanie-SAMARA1.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/obsluzhivanie-SAMARA2.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/obsluzhivanie-SAMARA3.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/obsluzhivanie-SAMARA4.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/obsluzhivanie-SAMARA5.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/obsluzhivanie-SAMARA6.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/obsluzhivanie-SAMARA7.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/tehnicheskaya-harakteristika-SAMARA1.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/tehnicheskaya-harakteristika-SAMARA2.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/tehnicheskaya-harakteristika-SAMARA3.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/prilozheniya-samara.html</loc>
-    <lastmod>2025-12-11T10:12:13+03:00</lastmod>
-    <priority>0.9</priority>
+    <loc>https://lada-aym.github.io/lada-samara/technical-specs.html</loc>
+    <lastmod>2023-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lada-aym.github.io/Chevrolet_NIVA/</loc>
