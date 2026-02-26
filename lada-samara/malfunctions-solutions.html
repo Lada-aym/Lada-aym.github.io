@@ -1,0 +1,3497 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Глава 6. Неисправности и методы их устранения — Lada Samara</title>
+    <meta name="description" content="Руководство по поиску и устранению неисправностей Lada Samara: двигатель, трансмиссия, электрика, тормоза и другие системы.">
+    <meta name="keywords" content="Lada Samara, неисправности, ремонт, диагностика, устранение проблем">
+    <meta name="author" content="lada-aym.github.io">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="shortcut icon" href="/lada-samara/assets/images/ci-141-82x34.png" type="image/png">
+    <link rel="canonical" href="https://lada-aym.github.io/lada-samara/malfunctions-solutions.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Глава 6. Неисправности Lada Samara">
+    <meta property="og:description" content="Практическое руководство по поиску и устранению неисправностей автомобиля Lada Samara">
+    <meta property="og:url" content="https://lada-aym.github.io/lada-samara/malfunctions-solutions.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://lada-aym.github.io/lada-samara/assets/images/og-preview.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Глава 6. Неисправности Lada Samara">
+    <meta name="twitter:description" content="Поиск и устранение неисправностей Lada Samara: пошаговые инструкции">
+    <meta name="twitter:image" content="https://lada-aym.github.io/lada-samara/images/twitter-preview.webp">
+    <meta name="twitter:image:alt" content="Lada Samara: диагностика неисправностей">
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/lada-samara/assets/css/styles.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://lada-aym.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Lada Samara",
+      "item": "https://lada-aym.github.io/lada-samara/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Неисправности"
+    }
+  ]
+}
+</script>
+<!-- Google Tag Manager -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PRQ33NW3');
+        }, 5000);
+    });
+</script>
+<!-- Google Tag Manager -->
+  <script>
+    // Инициализируем массив для отложенных вызовов
+    window.yaContextCb = window.yaContextCb || [];
+
+    // Функция определения типа устройства
+    const getDeviceType = () => {
+      const userAgent = navigator.userAgent.toLowerCase();
+      return 'ontouchstart' in window ||
+             navigator.maxTouchPoints > 0 ||
+             /android|iphone|ipad|mobile/i.test(userAgent)
+        ? 'touch'
+        : 'desktop';
+    };
+
+    // Отложенная загрузка скрипта Яндекс.Рекламы
+    setTimeout(() => {
+      const script = document.createElement('script');
+      script.src = 'https://yandex.ru/ads/system/context.js';
+      script.async = true;
+
+      script.onload = () => console.log('Yandex ads script loaded');
+      script.onerror = () => console.error('Failed to load Yandex ads script');
+
+      document.body.appendChild(script);
+    }, 2000);
+  </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRQ33NW3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <!-- Yandex.RTB fullscreen (оптимизированная версия) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const deviceType = getDeviceType();
+        const blockId = deviceType === 'touch' ? 'R-A-537370-35' : 'R-A-537370-43';
+
+        window.yaContextCb.push(() => {
+          try {
+            Ya.Context.AdvManager.render({
+              blockId: blockId,
+              type: 'fullscreen',
+              platform: deviceType
+            });
+            console.log(`fullscreen ad rendered: ${blockId} (${deviceType})`);
+          } catch (error) {
+            console.error('Failed to render fullscreen ad:', error);
+          }
+        });
+      }, 2000); // Показываем через 2 секунды после загрузки DOM
+    });
+  </script>
+    <!-- Горизонтальное прокручиваемое меню -->
+<div class="horizontal-menu">
+  <div class="container-fluid">
+    <div class="menu-scroller">
+      <ul class="menu-items">
+        <li><a href="/" class="menu-item">Главная</a></li>
+        <li><a href="/LADA_Granta/" class="menu-item">LADA Granta</a></li>
+        <li><a href="/LADA_Vesta/" class="menu-item">LADA Vesta</a></li>
+        <li><a href="/LADA_XRAY/" class="menu-item">LADA XRAY</a></li>
+        <li><a href="/LADA_Largus/" class="menu-item">LADA Largus</a></li>
+        <li><a href="/Lada4x4/" class="menu-item">LADA Niva Legend</a></li>
+        <li><a href="/LADA_Priora/" class="menu-item">LADA Priora</a></li>
+        <li><a href="/LADA_Kalina/" class="menu-item">LADA Kalina</a></li>
+        <li><a href="/lada-samara/" class="menu-item">LADA Samara</a></li>
+        <li><a href="/Chevrolet_NIVA/" class="menu-item">Chevrolet Niva</a></li>
+        <li><a href="/GAZel_next/" class="menu-item">ГАЗели NEXT</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Липкое меню -->
+<nav class="navbar navbar-light bg-white" id="sticky-navbar">
+      <div class="container-fluid">
+          <a class="navbar-brand d-flex align-items-center" href="/lada-samara/">
+              <img src="/lada-samara/assets/images/ci-141-82x34.png" width="30" height="30" class="me-2"    alt="Логотип Lada Samara Guide">
+              <span class="fw-bold">Lada Samara Guide</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-expanded="false" aria-label="Переключить меню">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+      </div>
+</nav>
+
+<!-- Offcanvas справа -->
+<div class="offcanvas offcanvas-end"
+     tabindex="-1"
+     id="sidebarOffcanvas"
+     role="dialog"
+     aria-labelledby="sidebarOffcanvasLabel"
+     aria-modal="true">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="sidebarOffcanvasLabel">Меню</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav nav-pills flex-column w-100">
+                 <!-- Раздел 1: Кузов и салон -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="body-interior.html" role="button" data-bs-toggle="dropdown">Кузов и салон</a>
+                    <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="body-interior.html#key-system">Ключи</a></li>
+                <li><a class="dropdown-item" href="body-interior.html#door-system">Двери</a></li>
+                <li><a class="dropdown-item" href="body-interior.html#seats-system">Сиденья</a></li>
+                <li><a class="dropdown-item" href="body-interior.html#safety-system">Ремни и подушки</a></li>
+                <li><a class="dropdown-item" href="body-interior.html#cabin-features">Оборудование салона</a></li>
+                <li><a class="dropdown-item" href="body-interior.html#hood-section">Капот</a></li>
+                <li><a class="dropdown-item" href="body-interior.html#bagazhnik">Крышка багажника</a></li>
+                <li><a class="dropdown-item" href="body-interior.html#probka-toplivnogo-baka">Пробка бака</a></li>
+            </ul>
+        </li>
+
+                <!-- Раздел 2: Органы управления и приборы -->
+                <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="controls-instruments.html" role="button" data-bs-toggle="dropdown">Органы управления</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="controls-instruments.html#panel-instruments">Панель приборов</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#instrument-combo">Комбинация приборов</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#steering-adjust">Регулировка руля</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#ignition-switch">Замок зажигания</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#immobilizer-info">Иммобилайзер</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#steering-column-switches">Подрулевые переключатели</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#key-switches">Клавиши управления</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#onboard-monitoring">Бортовая диагностика</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#mirror-control">Зеркала</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#trip-computer">Маршрутный компьютер</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#ventilation-heating">Климат‑контроль</a></li>
+            </ul>
+        </li>
+
+                <!-- Раздел 3: Эксплуатация автомобиля -->
+                <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="operation.html" role="button" data-bs-toggle="dropdown">Эксплуатация</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="operation.html#license-plates">Номера</a></li>
+                <li><a class="dropdown-item" href="operation.html#safe-operation">Безопасность</a></li>
+                <li><a class="dropdown-item" href="operation.html#engine-start">Запуск двигателя</a></li>
+                <li><a class="dropdown-item" href="operation.html#vehicle-movement">Движение</a></li>
+                <li><a class="dropdown-item" href="operation.html#braking-parking">Торможение и стоянка</a></li>
+                <li><a class="dropdown-item" href="operation.html#towing">Буксировка</a></li>
+                <li><a class="dropdown-item" href="operation.html#fuel-injection">Система впрыска</a></li>
+            </ul>
+        </li>
+
+
+                <!-- Раздел 4: Техническое обслуживание -->
+                <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="maintenance.html" role="button" data-bs-toggle="dropdown">Обслуживание</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="maintenance.html#lubrication-system">Смазка двигателя</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#cooling-system">Охлаждение</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#braking-system">Тормоза</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#battery">Аккумулятор</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#washing-liquids">Омыватели</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#spark-plugs">Свечи</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#tires">Шины</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#wheel-replacement">Замена колёс</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#lamp-replacement">Замена ламп</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#fuse-replacement">Замена предохранителей</a></li>
+            </ul>
+        </li>
+
+                                <!-- Раздел 5: Техническая характеристика автомобиля -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="technical-specs.html" role="button" data-bs-toggle="dropdown">Характеристики</a>
+                    <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="technical-specs.html#heading-basic-dimensions">Габариты</a></li>
+                <li><a class="dropdown-item" href="technical-specs.html#chassis-transmission">Ходовая и трансмиссия</a></li>
+                <li><a class="dropdown-item" href="technical-specs.html#engine-specs">Двигатель</a></li>
+                <li><a class="dropdown-item" href="technical-specs.html#fuel-performance">Расход и динамика</a></li>
+                <li><a class="dropdown-item" href="technical-specs.html#filling-volumes">Заправочные объёмы</a></li>
+                <li><a class="dropdown-item" href="technical-specs.html#adjustment-parameters">Регулировки</a></li>
+                <li><a class="dropdown-item" href="technical-specs.html#passport-data">Паспортные данные</a></li>
+            </ul>
+        </li>
+
+         <!-- Раздел 6: Неисправности и методы их устранения -->
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="malfunctions-solutions.html" role="button" data-bs-toggle="dropdown">Неисправности</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="malfunctions-solutions.html#engine-issues">Двигатель</a></li>
+    <li><a class="dropdown-item" href="malfunctions-solutions.html#fuel-system">Топливная система</a></li>
+    <li><a class="dropdown-item" href="malfunctions-solutions.html#electrical-system">Электрооборудование</a></li>
+    <li><a class="dropdown-item" href="malfunctions-solutions.html#transmission">Трансмиссия</a></li>
+    <li><a class="dropdown-item" href="malfunctions-solutions.html#suspension">Ходовая часть</a></li>
+    <li><a class="dropdown-item" href="malfunctions-solutions.html#brake-system">Тормозная система</a></li>
+    <li><a class="dropdown-item" href="malfunctions-solutions.html#cooling-heating">Система охлаждения и отопления</a></li>
+    <li><a class="dropdown-item" href="malfunctions-solutions.html#body-interior">Кузов и салон</a></li>
+    <li><a class="dropdown-item" href="malfunctions-solutions.html#general-advice">Общие рекомендации</a></li>
+  </ul>
+</li>
+
+        <!-- Раздел 7: Приложения для Lada Samara -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="applications.html" role="button" data-bs-toggle="dropdown">Приложения</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="applications.html#fuel-lubricants-content">ГСМ</a></li>
+                <li><a class="dropdown-item" href="applications.html#car-lamps-app">Лампы</a></li>
+                <li><a class="dropdown-item" href="applications.html#precious-metals-items">Драгоценные металлы</a></li>
+            </ul>
+        </li>
+          </ul>
+      </div>
+</div>
+    <!--  -->
+<div class="container my-4">
+  <h1 class="text-center" aria-label="Глава 6: неисправности и методы их устранения для Lada Samara">Глава 6. Неисправности и методы их устранения</h1>
+  <p class="lead text-center mb-5">Практическое руководство по поиску и устранению неисправностей Lada Samara</p>
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb justify-content-center">
+      <li class="breadcrumb-item"><a href="/">Главная</a></li>
+      <li class="breadcrumb-item"><a href="/lada-samara/">Lada Samara</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Неисправности</li>
+    </ol>
+  </nav>
+
+  <div class="accordion" id="mainAccordion">
+      <!-- 6.1. Неисправности двигателя -->
+<div id="engine-issues" class="accordion-item">
+  <h2 class="accordion-header">
+    <button id="heading61" class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse61-unique"
+            aria-expanded="false"
+            aria-controls="collapse61-unique">
+      6.1. Неисправности двигателя
+    </button>
+  </h2>
+  <div id="collapse61-unique" class="accordion-collapse collapse"
+       data-bs-parent="#mainAccordion"
+       role="region"
+       aria-labelledby="heading61">
+    <div class="accordion-body">
+      <p class="mb-4">Описание распространённых неисправностей двигателя Lada Samara и способы их устранения:</p>
+
+      <div class="alert alert-warning mt-3" role="alert">
+        <strong>Важно:</strong> при обнаружении серьёзных неисправностей рекомендуется обратиться в специализированный сервис. Самостоятельный ремонт без необходимых навыков может усугубить проблему.
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Карточка 1: Двигатель не запускается -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+              <h3 class="card-title mb-0">Двигатель не запускается</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Разряжен аккумулятор</li>
+                <li>Неисправность стартера</li>
+                <li>Проблемы с топливной системой</li>
+                <li>Отсутствие искры в свечах зажигания</li>
+                <li>Засорение топливного фильтра</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ul>
+                <li>Проверьте заряд аккумулятора</li>
+                <li>Осмотрите клеммы аккумулятора на предмет окисления</li>
+                <li>Проверьте подачу топлива</li>
+                <li>Осмотрите свечи зажигания</li>
+                <li>Убедитесь в исправности стартера</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Двигатель работает неустойчиво -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <h3 class="card-title mb-0">Двигатель работает неустойчиво</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> троение, плавающие обороты, рывки при разгоне.</p>
+              <p><strong>Вероятные причины:</strong></p>
+              <ul>
+                <li>Неисправные свечи зажигания</li>
+                <li>Подсос воздуха во впускном тракте</li>
+                <li>Загрязнение форсунок</li>
+                <li>Проблемы с катушкой зажигания</li>
+                <li>Низкое давление топлива</li>
+              </ul>
+              <p><strong>Диагностика:</strong> проверка системы зажигания, топливной системы, герметичности впуска.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Повышенный расход масла -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h3 class="card-title mb-0">Повышенный расход масла</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Признаки:</strong> заметное снижение уровня масла между заменами, сизый дым из выхлопной трубы.</p>
+              <p><strong>Причины:</strong></p>
+              <ul>
+                <li>Износ поршневых колец</li>
+                <li>Износ маслосъёмных колпачков</li>
+                <li>Утечки масла через сальники</li>
+                <li>Засорение системы вентиляции картера</li>
+              </ul>
+              <p><strong>Рекомендации:</strong> замена изношенных деталей, проверка системы вентиляции картера.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 4: Перегрев двигателя -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-secondary text-white">
+              <h3 class="card-title mb-0">Перегрев двигателя</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> стрелка температуры в красной зоне, пар из‑под капота.</p>
+              <p><strong>Основные причины:</strong></p>
+              <ul>
+                <li>Недостаток охлаждающей жидкости</li>
+                <li>Неисправный термостат</li>
+                <li>Поломка вентилятора охлаждения</li>
+                <li>Засорение радиатора</li>
+                <li>Пробой прокладки ГБЦ</li>
+              </ul>
+              <p><strong>Немедленные действия:</strong> остановка автомобиля, проверка уровня ОЖ, диагностика системы охлаждения.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 5: Стуки в двигателе -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+              <h3 class="card-title mb-0">Стуки в двигателе</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Характер звуков:</strong> металлические стуки различной частоты.</p>
+              <p><strong>Возможные источники:</strong></p>
+              <ul>
+                <li>Износ коренных или шатунных подшипников</li>
+                <li>Увеличение зазоров в клапанном механизме</li>
+                <li>Детонация из‑за некачественного топлива</li>
+                <li>Износ поршней или цилиндров</li>
+              </ul>
+              <p><strong>Действия:</strong> немедленная диагностика, избегание высоких нагрузок до устранения проблемы.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 6: Потеря мощности -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <h3 class="card-title mb-0">Потеря мощности двигателя</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Проявления:</strong> ухудшение динамики разгона, трудности при подъёме в гору, замедленный отклик на нажатие педали газа.</p>
+              <p><strong>Распространённые причины:</strong></p>
+              <ul>
+                <li>Засорение воздушного фильтра</li>
+                <li>Неисправность датчика массового расхода воздуха (ДМРВ)</li>
+                <li>Проблемы с топливным насосом или форсунками</li>
+                <li>Нагар на клапанах или в камере сгорания</li>
+                <li>Снижение компрессии в цилиндрах</li>
+                <li>Подсос воздуха во впускном тракте</li>
+                <li>Некорректная работа системы зажигания</li>
+              </ul>
+              <p><strong>Диагностика:</strong></p>
+              <ul>
+                <li>Компьютерная диагностика (чтение кодов ошибок)</li>
+                <li>Проверка компрессии в цилиндрах</li>
+                <li>Осмотр и замена воздушного фильтра</li>
+                <li>Диагностика топливного насоса и давления в топливной рампе</li>
+                <li>Проверка состояния свечей зажигания и высоковольтных проводов</li>
+                <li>Очистка или замена ДМРВ при необходимости</li>
+              </ul>
+              <p><strong>Рекомендации:</strong> при первых признаках потери мощности проведите диагностику. Игнорирование проблемы может привести к более серьёзным повреждениям двигателя.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <div class="mt-4">
+        <h3>Рекомендации по профилактике неисправностей двигателя:</h3>
+        <ul>
+          <li>Соблюдайте интервалы ТО согласно регламенту производителя автомобиля</li>
+          <li>Используйте качественные ГСМ и расходные материалы, соответствующие спецификациям автопроизводителя</li>
+          <li>Регулярно проверяйте уровни всех технических жидкостей (моторного масла, охлаждающей жидкости, тормозной жидкости, жидкости ГУР)</li>
+          <li>Своевременно заменяйте фильтры:
+            <ul class="ps-3">
+              <li>воздушный фильтр — каждые 10–15&nbsp;тыс.&nbsp;км или при заметном загрязнении;</li>
+              <li>масляный фильтр — при каждой замене масла;</li>
+              <li>топливный фильтр — каждые 20–30&nbsp;тыс.&nbsp;км;</li>
+              <li>салонный фильтр — ежегодно или каждые 15&nbsp;тыс.&nbsp;км.</li>
+            </ul>
+          </li>
+          <li>Следите за состоянием ремней (ГРМ, генератора, кондиционера) и шлангов системы охлаждения — проверяйте на наличие трещин, расслоений, следов подтеканий</li>
+          <li>Контролируйте состояние свечей зажигания и высоковольтных проводов:
+            <ul class="ps-3">
+              <li>проверяйте зазор между электродами;</li>
+              <li>очищайте от нагара при необходимости;</li>
+              <li>меняйте согласно регламенту (обычно каждые 30–60&nbsp;тыс.&nbsp;км).</li>
+            </ul>
+          </li>
+          <li>Поддерживайте чистоту двигателя:
+            <ul class="ps-3">
+              <li>удаляйте загрязнения с корпуса двигателя;</li>
+              <li>не допускайте скопления масляных подтёков;</li>
+              <li>избегайте попадания воды на электрические компоненты при мойке.</li>
+            </ul>
+          </li>
+          <li>Проверяйте герметичность систем:
+            <ul class="ps-3">
+              <li>впускного тракта (исключите подсос воздуха);</li>
+              <li>системы охлаждения (отсутствие утечек антифриза);</li>
+              <li>топливной системы (целостность шлангов, отсутствие подтёков).</li>
+            </ul>
+          </li>
+          <li>Обращайте внимание на посторонние звуки, запахи и изменения в работе двигателя — при первых признаках неисправности проводите диагностику</li>
+          <li>Избегайте длительного движения на предельно высоких оборотах двигателя</li>
+          <li>Не допускайте перегрева двигателя — следите за показаниями температуры охлаждающей жидкости</li>
+          <li>В холодное время года:
+            <ul class="ps-3">
+              <li>перед поездкой прогревайте двигатель 2–3&nbsp;минуты;</li>
+              <li>используйте масло, соответствующее зимним условиям эксплуатации;</li>
+              <li>проверьте плотность электролита в аккумуляторе.</li>
+            </ul>
+          </li>
+          <li>При длительных стоянках (более 2&nbsp;недель):
+            <ul class="ps-3">
+              <li>зарядите аккумулятор;</li>
+              <li>поднимите давление в шинах на 0,2–0,3&nbsp;бар;</li>
+              <li>накройте автомобиль защитным чехлом.</li>
+            </ul>
+          </li>
+          <li>Проводите компьютерную диагностику двигателя не реже одного раза в год для выявления скрытых неисправностей</li>
+          <li>Заправляйтесь только на проверенных АЗС топливом с октановым числом, рекомендованным производителем автомобиля</li>
+          <li>Периодически проверяйте состояние клемм аккумулятора:
+            <ul class="ps-3">
+              <li>очищайте от окислов и загрязнений;</li>
+              <li>обеспечьте надёжное крепление;</li>
+              <li>обрабатывайте специальными защитными составами.</li>
+            </ul>
+          </li>
+          <li>Следите за работой системы охлаждения:
+            <ul class="ps-3">
+              <li>регулярно меняйте охлаждающую жидкость согласно регламенту;</li>
+              <li>проверяйте исправность термостата;</li>
+              <li>контролируйте работу вентилятора охлаждения;</li>
+              <li>очищайте радиатор от загрязнений.</li>
+            </ul>
+          </li>
+          <li>При обнаружении любых отклонений в работе двигателя (ухудшение динамики, повышенный расход топлива, необычные шумы) не откладывайте диагностику</li>
+        </ul>
+      </div>
+
+      <div class="alert alert-success mt-4" role="alert">
+        <strong>Помните:</strong> регулярное техническое обслуживание и своевременная диагностика — лучший способ избежать серьёзных поломок двигателя и дорогостоящего ремонта. Профилактические меры обходятся значительно дешевле, чем устранение последствий запущенных неисправностей.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Неисправности двигателя Lada Samara и способы их устранения",
+  "description": "Подробное руководство по распространённым неисправностям двигателя Lada Samara: симптомы, причины, способы диагностики и устранения. Включает рекомендации по профилактике для продления срока службы двигателя.",
+  "datePublished": "2024-03-15T09:00:00+03:00",
+  "dateModified": "2024-03-20T14:30:00+03:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "url": "https://lada-aym.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lada-aym.github.io/lada-samara/assets/images/lada.webp",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#engine-issues"
+  },
+  "wordCount": "1200",
+  "timeRequired": "PT20M",
+  "articleSection": "Диагностика и устранение неисправностей",
+  "articleBody": "Описание распространённых неисправностей двигателя Lada Samara и способы их устранения. Двигатель может не запускаться из‑за разряженного аккумулятора, неисправности стартера, проблем с топливной системой или отсутствия искры в свечах зажигания. Неустойчивая работа двигателя проявляется троением, плавающими оборотами и рывками при разгоне, что может быть вызвано неисправными свечами зажигания, подсосом воздуха во впускном тракте, загрязнением форсунок и другими причинами. Повышенный расход масла сопровождается снижением уровня масла между заменами и сизым дымом из выхлопной трубы. Перегрев двигателя характеризуется стрелкой температуры в красной зоне и паром из‑под капота. Стуки в двигателе проявляются металлическими звуками различной частоты. Потеря мощности двигателя выражается в ухудшении динамики разгона и трудностях при подъёме в гору. Профилактика включает соблюдение интервалов ТО, использование качественных ГСМ, регулярную проверку уровней жидкостей, своевременную замену фильтров, контроль состояния ремней и шлангов, а также внимание к посторонним звукам и запахам.",
+  "keywords": [
+    "неисправности двигателя Lada Samara",
+    "двигатель не запускается",
+    "неустойчивая работа двигателя",
+    "повышенный расход масла",
+    "перегрев двигателя",
+    "стуки в двигателе",
+    "потеря мощности двигателя",
+    "диагностика двигателя Lada Samara",
+    "профилактика неисправностей двигателя",
+    "техническое обслуживание Lada Samara",
+    "замена фильтров Lada Samara"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Lada Samara",
+      "description": "Модель автомобиля, для которой предназначено данное руководство"
+    },
+    {
+      "@type": "Thing",
+      "name": "Двигатель Lada Samara",
+      "description": "Силовой агрегат автомобиля, требующий регулярного технического обслуживания и диагностики"
+    },
+    {
+      "@type": "Thing",
+      "name": "Техническое обслуживание двигателя",
+      "description": "Комплекс профилактических мер для поддержания надёжной работы двигателя"
+    },
+    {
+      "@type": "Thing",
+      "name": "Диагностика двигателя",
+      "description": "Процесс выявления неисправностей двигателя с помощью визуальных, инструментальных и компьютерных методов"
+    }
+  ],
+  "genre": "Automotive Troubleshooting Guide",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Руководство по диагностике и устранению неисправностей Lada Samara",
+    "author": "Lada Samara Guide"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Раздел 6.1. Неисправности двигателя",
+    "url": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#engine-issues"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide"
+  },
+  "copyrightYear": 2024,
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/"
+}
+</script>
+
+<!-- 6.2. Топливная система -->
+<div id="fuel-system" class="accordion-item">
+  <h2 class="accordion-header">
+    <button id="heading62" class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse62"
+            aria-expanded="false"
+            aria-controls="collapse62">
+      6.2. Топливная система
+    </button>
+  </h2>
+  <div id="collapse62" class="accordion-collapse collapse"
+       data-bs-parent="#mainAccordion"
+       role="region"
+       aria-labelledby="heading62">
+    <div class="accordion-body">
+      <p class="mb-4">Подробное описание распространённых проблем топливной системы Lada Samara и способы их устранения:</p>
+
+      <div class="alert alert-warning mt-3" role="alert">
+        <strong>Важно:</strong> работы с топливной системой требуют особой осторожности. Перед началом работ убедитесь, что поблизости нет источников открытого огня. При обнаружении серьёзных утечек топлива не запускайте двигатель до устранения проблемы.
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Карточка 1: Низкое давление топлива -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <h3 class="card-title mb-0">Низкое давление топлива</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Затруднённый запуск двигателя</li>
+                <li>Провалы при разгоне</li>
+                <li>Нестабильная работа на холостом ходу</li>
+                <li>Потеря мощности</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Износ топливного насоса</li>
+                <li>Засорение топливного фильтра</li>
+                <li>Неисправность регулятора давления топлива</li>
+                <li>Подсос воздуха во впускной магистрали насоса</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Проверьте давление топлива манометром (норма: 2,8–3,2 бар)</li>
+                <li>Замените топливный фильтр</li>
+                <li>Проверьте и при необходимости замените топливный насос</li>
+                <li>Осмотрите регулятор давления топлива</li>
+                <li>Убедитесь в герметичности топливных магистралей</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Утечки топлива -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+              <h3 class="card-title mb-0">Утечки топлива</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Запах бензина в салоне или возле автомобиля</li>
+                <li>Пятна топлива под автомобилем</li>
+                <li>Быстрое снижение уровня топлива</li>
+                <li>Повышенный расход топлива</li>
+              </ul>
+              <p><strong>Возможные места утечек:</strong></p>
+              <ul>
+                <li>Топливные магистрали</li>
+                <li>Соединения и хомуты</li>
+                <li>Топливный фильтр</li>
+                <li>Крышка топливного бака</li>
+                <li>Форсунки и их уплотнители</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Визуально осмотрите все топливные магистрали</li>
+                <li>Проверьте затяжку хомутов</li>
+                <li>Замените повреждённые шланги</li>
+                <li>Проверьте герметичность крышки топливного бака</li>
+                <li>При необходимости замените уплотнительные кольца форсунок</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Засорение форсунок -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h3 class="card-title mb-0">Засорение форсунок</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Троение двигателя</li>
+                <li>Рывки при разгоне</li>
+                <li>Повышенный расход топлива</li>
+                <li>Чёрный дым из выхлопной трубы</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Использование некачественного топлива</li>
+                <li>Длительный простой автомобиля</li>
+                <li>Естественный износ</li>
+                <li>Отложения в топливной системе</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Проведите диагностику форсунок на стенде</li>
+                <li>Выполните ультразвуковую очистку форсунок</li>
+                <li>Используйте специальные очистители топливной системы</li>
+                <li>При сильном засорении замените форсунки</li>
+                <li>Заправляйтесь на проверенных АЗС</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 4: Проблемы с карбюратором (для карбюраторных моделей) -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-primary text-white">
+              <h3 class="card-title mb-0">Проблемы с карбюратором</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Неустойчивый холостой ход</li>
+                <li>Заливание свечей</li>
+                <li>Резкие провалы при нажатии на газ</li>
+                <li>Трудности с запуском горячего двигателя</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Засорение жиклёров</li>
+                <li>Нарушение регулировки холостого хода</li>
+                <li>Износ игольчатого клапана</li>
+                <li>Подсос воздуха через прокладки</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Очистите карбюратор специальным очистителем</li>
+                <li>Замените топливные и воздушные жиклёры</li>
+                <li>Отрегулируйте холостой ход винтами качества и количества</li>
+                <li>Замените изношенные прокладки и диафрагмы</li>
+                <li>Проверьте уровень топлива в поплавковой камере</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <div class="mt-5">
+        <h3>Рекомендации по обслуживанию топливной системы:</h3>
+        <ul>
+          <li><strong>Регулярная замена топливного фильтра:</strong> каждые 20–30 тыс. км или при первых признаках снижения мощности. При эксплуатации в условиях повышенной запылённости или использовании топлива сомнительного качества интервал следует сократить до 15–20 тыс. км.</li>
+          <li><strong>Использование качественного топлива:</strong> заправляйтесь только на проверенных АЗС с гарантированным качеством бензина. Отдавайте предпочтение брендам, предлагающим топливо с моющими присадками.</li>
+          <li><strong>Профилактика засорения:</strong> периодически (каждые 5–10 тыс. км) используйте специализированные очистители топливной системы, предназначенные для Lada Samara. Выбирайте составы, одобренные автопроизводителем.</li>
+          <li><strong>Контроль давления топлива:</strong> проверяйте давление в топливной рампе при каждом плановом ТО. Нормальное давление для Lada Samara — $2{,}8–3{,}2\ \text{бар}$. При отклонениях проводите диагностику насоса и регулятора давления.</li>
+          <li><strong>Осмотр топливных магистралей:</strong> регулярно (каждые 10–15 тыс. км) проверяйте шланги и соединения на предмет трещин, вздутий и утечек. Особое внимание уделите местам соединений и участкам возле хомутов.</li>
+          <li><strong>Обслуживание карбюратора (для карбюраторных моделей):</strong> проводите полную очистку и регулировку каждые 30–40 тыс. км. Включайте в обслуживание:
+            <ul>
+              <li>очистку жиклёров и каналов;</li>
+              <li>проверку и регулировку уровня топлива в поплавковой камере;</li>
+              <li>замену изношенных прокладок и диафрагм;</li>
+              <li>регулировку холостого хода винтами качества и количества.</li>
+            </ul>
+          </li>
+          <li><strong>Проверка форсунок (для инжекторных моделей):</strong> диагностику и очистку проводите каждые 60–80 тыс. км. При появлении симптомов засорения (троение, рывки, повышенный расход) выполняйте внеплановую проверку.</li>
+          <li><strong>Герметичность системы:</strong> следите за состоянием прокладок, уплотнительных колец и соединений. Проверяйте отсутствие подсоса воздуха во впускном тракте.</li>
+          <li><strong>Состояние топливного бака:</strong> периодически осматривайте бак на предмет коррозии и загрязнений. При признаках скопления отложений проводите промывку.</li>
+          <li><strong>Работа топливного насоса:</strong> прислушивайтесь к звуку работы насоса при включении зажигания. Гул, треск или прерывистая работа сигнализируют о необходимости проверки или замены.</li>
+          <li><strong>Сезонные проверки:</strong> перед зимой убедитесь в исправности всех элементов топливной системы, особенно если автомобиль эксплуатируется в условиях низких температур. Проверьте состояние электрических соединений топливного насоса.</li>
+        </ul>
+      </div>
+
+      <div class="alert alert-success mt-4" role="alert">
+        <strong>Совет:</strong> ведите журнал технического обслуживания топливной системы с указанием дат, выполненных работ и использованных материалов. Это поможет отслеживать интервалы обслуживания и вовремя выявлять повторяющиеся проблемы.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Топливная система Lada Samara: неисправности и обслуживание",
+  "description": "Подробное руководство по распространённым проблемам топливной системы Lada Samara, способам их устранения и рекомендациям по регулярному обслуживанию. Охватывает диагностику форсунок, карбюратора, топливного насоса, магистралей и других компонентов.",
+  "datePublished": "2024-03-25T10:00:00+03:00",
+  "dateModified": "2024-03-27T15:30:00+03:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "url": "https://lada-aym.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lada-aym.github.io/lada-samara/assets/images/lada.webp",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#fuel-system"
+  },
+  "wordCount": "1150",
+  "timeRequired": "PT18M",
+  "articleSection": "Диагностика и устранение неисправностей",
+  "articleBody": "Распространённые проблемы топливной системы Lada Samara включают низкое давление топлива, утечки, засорение форсунок и неисправности карбюратора. Низкое давление топлива проявляется затруднённым запуском двигателя, провалами при разгоне и потерей мощности. Причины: износ топливного насоса, засорение фильтра, неисправность регулятора давления. Утечки топлива сопровождаются запахом бензина, пятнами под автомобилем и повышенным расходом. Места утечек: магистрали, соединения, фильтр, крышка бака, форсунки. Засорение форсунок вызывает троение двигателя, рывки при разгоне, чёрный дым из выхлопной трубы. Причины: некачественное топливо, длительный простой, отложения. Проблемы карбюратора (для карбюраторных моделей): неустойчивый холостой ход, заливание свечей, провалы при нажатии на газ. Обслуживание топливной системы включает регулярную замену фильтра (каждые 20–30 тыс. км), использование качественного топлива, профилактику засорения, контроль давления (2,8–3,2 бар), осмотр магистралей, обслуживание карбюратора и форсунок, проверку герметичности системы и состояния топливного бака.",
+  "keywords": [
+    "топливная система Lada Samara",
+    "низкое давление топлива",
+    "утечки топлива",
+    "засорение форсунок",
+    "проблемы с карбюратором",
+    "обслуживание топливной системы",
+    "замена топливного фильтра",
+    "диагностика форсунок",
+    "регулировка карбюратора",
+    "давление топлива Lada Samara",
+    "очистка топливной системы"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Lada Samara",
+      "description": "Модель автомобиля, для которой предназначено данное руководство"
+    },
+    {
+      "@type": "Thing",
+      "name": "Топливная система",
+      "description": "Комплекс компонентов, обеспечивающих подачу топлива в двигатель: бак, насос, магистрали, фильтры, форсунки или карбюратор"
+    },
+    {
+      "@type": "Thing",
+      "name": "Топливный насос",
+      "description": "Устройство, создающее необходимое давление в топливной системе"
+    },
+    {
+      "@type": "Thing",
+      "name": "Форсунки",
+      "description": "Элементы инжекторной системы, отвечающие за распыление топлива в цилиндры"
+    },
+    {
+      "@type": "Thing",
+      "name": "Карбюратор",
+      "description": "Устройство смесеобразования в двигателях старых моделей Lada Samara"
+    }
+  ],
+  "genre": "Automotive Troubleshooting Guide",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Руководство по диагностике и устранению неисправностей Lada Samara",
+    "author": "Lada Samara Guide"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Раздел 6.2. Топливная система",
+    "url": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#fuel-system"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide"
+  },
+  "copyrightYear": 2024,
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "typicalAgeRange": "18+",
+  "learningResourceType": "Maintenance Guide"
+}
+</script>
+
+<!-- 6.3. Электрооборудование -->
+<div id="electrical-system" class="accordion-item">
+  <h2 class="accordion-header">
+    <button id="heading63" class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse63"
+            aria-expanded="false"
+            aria-controls="collapse63">
+      6.3. Электрооборудование
+    </button>
+  </h2>
+  <div id="collapse63" class="accordion-collapse collapse"
+       data-bs-parent="#mainAccordion"
+       role="region"
+       aria-labelledby="heading63">
+    <div class="accordion-body">
+      <p class="mb-4">Подробное описание типичных проблем с электрооборудованием Lada Samara и способы их устранения:</p>
+
+      <div class="alert alert-warning mt-3" role="alert">
+        <strong>Важно:</strong> перед началом работ с электрооборудованием обязательно отключите минусовую клемму аккумулятора. Используйте инструменты с изолированными ручками. При отсутствии опыта сложных электротехнических работ рекомендуется обратиться к специалисту.
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Карточка 1: Разряженный аккумулятор -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <h3 class="card-title mb-0">Разряженный аккумулятор</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Медленное вращение стартера при запуске</li>
+                <li>Тусклое свечение приборной панели</li>
+                <li>Щелчки реле при попытке запуска</li>
+                <li>Индикатор зарядки аккумулятора на приборной панели</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Естественный износ аккумулятора (срок службы 3–5 лет)</li>
+                <li>Окисление клемм аккумулятора</li>
+                <li>Неисправность генератора</li>
+                <li>Утечка тока в бортовой сети</li>
+                <li>Длительный простой автомобиля</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Проверьте напряжение аккумулятора (норма: 12,6 В при выключенном двигателе, 13,8–14,5 В при работающем)</li>
+                <li>Очистите клеммы от окислов</li>
+                <li>Проверьте работу генератора</li>
+                <li>Измерьте ток утечки (норма до 50 мА)</li>
+                <li>При необходимости замените аккумулятор</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Не работает освещение -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h3 class="card-title mb-0">Не работает освещение</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Не горят фары головного света</li>
+                <li>Не работают габаритные огни</li>
+                <li>Не горит подсветка приборной панели</li>
+                <li>Не работают стоп‑сигналы или поворотники</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Перегоревшие лампы</li>
+                <li>Сгоревшие предохранители</li>
+                <li>Окисление контактов в разъёмах</li>
+                <li>Неисправность переключателя освещения</li>
+                <li>Обрыв проводки</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Замените перегоревшие лампы</li>
+                <li>Проверьте и замените предохранители</li>
+                <li>Осмотрите и зачистите контакты</li>
+                <li>Проверьте переключатель освещения</li>
+                <li>Прозвоните проводку мультиметром</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Проблемы со стартером -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+              <h3 class="card-title mb-0">Проблемы со стартером</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Стартер не крутит при повороте ключа</li>
+                <li>Характерный щелчок, но стартер не запускается</li>
+                <li>Стартер крутит, но двигатель не запускается</li>
+                <li>Скрип или скрежет при работе стартера</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Неисправно втягивающее реле</li>
+                <li>Износ щёток стартера</li>
+                <li>Окисление силовых контактов</li>
+                <li>Заклинивание бендикса</li>
+                <li>Обрыв обмотки стартера</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Проверьте втягивающее реле</li>
+                <li>Осмотрите и при необходимости замените щётки</li>
+                <li>Зачистите силовые контакты</li>
+                <li>Проверьте состояние бендикса и венца маховика</li>
+                <li>При серьёзных неисправностях замените стартер</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 4: Неисправность генератора -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-success text-white">
+              <h3 class="card-title mb-0">Неисправность генератора</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Горит индикатор зарядки аккумулятора</li>
+                <li>Тухнет приборная панель при включении фар</li>
+                <li>Свист ремня генератора</li>
+                <li>Быстрый разряд аккумулятора</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Износ ремня генератора</li>
+                <li>Неисправность регулятора напряжения</li>
+                <li>Износ щёток генератора</li>
+                <li>Обрыв или замыкание обмоток статора</li>
+                <li>Выход из строя диодного моста</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Проверьте натяжение и состояние ремня генератора</li>
+                <li>Замерьте напряжение на выходе генератора</li>
+                <li>Осмотрите регулятор напряжения</li>
+                <li>Проверьте диодный мост мультиметром</li>
+                <li>При необходимости отремонтируйте или замените генератор</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <div class="mt-5">
+        <h3>Рекомендации по обслуживанию электрооборудования:</h3>
+        <ul>
+          <li><strong>Аккумулятор:</strong>
+            <ul>
+              <li>регулярно очищайте клеммы от окислов и смазывайте специальной смазкой;</li>
+              <li>проверяйте уровень электролита (для обслуживаемых АКБ) и при необходимости доливайте дистиллированную воду;</li>
+              <li>контролируйте напряжение (норма: 12,6 В при выключенном двигателе, 13,8–14,5 В при работающем);</li>
+              <li>при длительном простое (более 2 недель) отключайте минусовую клемму;</li>
+              <li>периодически проверяйте крепление аккумулятора — он должен быть надёжно зафиксирован.</li>
+            </ul>
+          </li>
+
+          <li><strong>Освещение:</strong>
+            <ul>
+              <li>периодически проверяйте все лампы (фары, габариты, стоп‑сигналы, поворотники, подсветку приборной панели и салона);</li>
+              <li>очищайте фары от загрязнений и проверяйте их регулировку;</li>
+              <li>следите за герметичностью фар (во избежание попадания влаги и окисления контактов);</li>
+              <li>используйте лампы строго рекомендованной мощности.</li>
+            </ul>
+          </li>
+
+          <li><strong>Предохранители:</strong>
+            <ul>
+              <li>всегда имейте запасной набор предохранителей номиналов, используемых в автомобиле;</li>
+              <li>заменяйте перегоревшие предохранители только на аналоги с таким же номиналом тока;</li>
+              <li>при частом перегорании предохранителя проверьте цепь на наличие короткого замыкания.</li>
+            </ul>
+          </li>
+
+          <li><strong>Генератор:</strong>
+            <ul>
+              <li>проверяйте натяжение и состояние ремня генератора каждые 10–15 тыс. км;</li>
+              <li>осматривайте контакты генератора на предмет окисления;</li>
+              <li>контролируйте работу регулятора напряжения;</li>
+              <li>при появлении свиста ремня отрегулируйте его натяжение или замените.</li>
+            </ul>
+          </li>
+
+          <li><strong>Стартер:</strong>
+            <ul>
+              <li>периодически осматривайте силовые провода стартера на предмет повреждений;</li>
+              <li>проверяйте надёжность крепления стартера;</li>
+              <li>при затруднённом запуске двигателя проверьте состояние щёток и втягивающего реле.</li>
+            </ul>
+          </li>
+
+          <li><strong>Проводка:</strong>
+            <ul>
+              <li>визуально осматривайте основные жгуты проводки на предмет повреждений изоляции;</li>
+              <li>проверяйте состояние разъёмов — очищайте окисленные контакты;</li>
+              <li>убедитесь, что провода не касаются горячих или движущихся частей;</li>
+              <li>при установке дополнительного оборудования используйте предохранители и реле.</li>
+            </ul>
+          </li>
+
+          <li><strong>Система зажигания (для карбюраторных моделей):</strong>
+            <ul>
+              <li>проверяйте зазор свечей зажигания (норма: 0,7–0,8 мм);</li>
+              <li>заменяйте свечи каждые 15–20 тыс. км или при появлении пропусков зажигания;</li>
+              <li>осматривайте высоковольтные провода на предмет трещин и пробоев;</li>
+              <li>проверяйте крышку трамблёра и бегунок на наличие трещин и следов пробоя.</li>
+            </ul>
+          </li>
+
+          <li><strong>Общие рекомендации:</strong>
+            <ul>
+              <li>проводите полную диагностику электрооборудования при каждом ТО (каждые 10–15 тыс. км);</li>
+              <li>не допускайте попадания воды на электрические компоненты;</li>
+              <li>при мойке двигателя защищайте электрооборудование от влаги;</li>
+              <li>используйте качественные запчасти и расходные материалы;</li>
+              <li>при возникновении сложных неисправностей обращайтесь к квалифицированным автоэлектрикам.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="alert alert-success mt-4" role="alert">
+        <strong>Совет:</strong> ведите журнал обслуживания электрооборудования с указанием дат, выполненных работ и заменённых компонентов. Это поможет отслеживать интервалы обслуживания и вовремя выявлять повторяющиеся проблемы.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Электрооборудование Lada Samara: неисправности и обслуживание",
+  "description": "Руководство по типичным проблемам электрооборудования Lada Samara, способам их диагностики и устранения. Охватывает аккумулятор, освещение, стартер, генератор и общую проводку. Содержит рекомендации по регулярному обслуживанию.",
+  "datePublished": "2024-03-25T10:00:00+03:00",
+  "dateModified": "2024-03-27T15:30:00+03:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "url": "https://lada-aym.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lada-aym.github.io/lada-samara/assets/images/lada.webp",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#electrical-system"
+  },
+  "wordCount": "1200",
+  "timeRequired": "PT20M",
+  "articleSection": "Диагностика и устранение неисправностей электрооборудования",
+  "articleBody": "Типичные проблемы электрооборудования Lada Samara включают разряженный аккумулятор, неисправности освещения, проблемы со стартером и генератором. Разряженный аккумулятор проявляется медленным вращением стартера, тусклым свечением приборной панели и индикатором зарядки. Причины: износ аккумулятора, окисление клемм, неисправность генератора, утечка тока. Неисправности освещения: перегоревшие лампы, сгоревшие предохранители, окисление контактов, обрыв проводки. Проблемы со стартером: неисправное втягивающее реле, износ щёток, окисление контактов, заклинивание бендикса. Неисправность генератора: износ ремня, неисправность регулятора напряжения, износ щёток, обрыв обмоток статора, выход из строя диодного моста. Обслуживание включает регулярную очистку клемм аккумулятора, проверку напряжения, замену предохранителей, осмотр проводки, контроль натяжения ремня генератора и замену свечей зажигания.",
+  "keywords": [
+    "электрооборудование Lada Samara",
+    "разряженный аккумулятор",
+    "не работает освещение",
+    "проблемы со стартером",
+    "неисправность генератора",
+    "обслуживание электрооборудования",
+    "проверка аккумулятора",
+    "диагностика стартера",
+    "напряжение генератора",
+    "замена предохранителей",
+    "окисление клемм аккумулятора"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Lada Samara",
+      "description": "Модель автомобиля, для которой предназначено данное руководство"
+    },
+    {
+      "@type": "Thing",
+      "name": "Электрооборудование автомобиля",
+      "description": "Комплекс электрических систем автомобиля: аккумулятор, освещение, стартер, генератор, проводка, предохранители"
+    },
+    {
+      "@type": "Thing",
+      "name": "Аккумулятор",
+      "description": "Источник питания бортовой сети и стартера"
+    },
+    {
+      "@type": "Thing",
+      "name": "Стартер",
+      "description": "Устройство для запуска двигателя"
+    },
+    {
+      "@type": "Thing",
+      "name": "Генератор",
+      "description": "Устройство, обеспечивающее питание бортовой сети при работающем двигателе и зарядку аккумулятора"
+    }
+  ],
+  "genre": "Automotive Troubleshooting Guide",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Руководство по диагностике и устранению неисправностей Lada Samara",
+    "author": "Lada Samara Guide"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Раздел 6.3. Электрооборудование",
+    "url": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#electrical-system"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide"
+  },
+  "copyrightYear": 2024,
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "typicalAgeRange": "18+",
+  "learningResourceType": "Maintenance Guide"
+}
+</script>
+
+<!-- 6.4. Трансмиссия -->
+<div id="transmission" class="accordion-item">
+  <h2 class="accordion-header">
+    <button id="heading64" class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse64-transmission"
+            aria-expanded="false"
+            aria-controls="collapse64-transmission">
+      6.4. Трансмиссия
+    </button>
+  </h2>
+  <div id="collapse64-transmission" class="accordion-collapse collapse"
+       data-bs-parent="#mainAccordion"
+       role="region"
+       aria-labelledby="heading64">
+    <div class="accordion-body">
+      <p class="mb-4">Подробное описание типичных проблем с трансмиссией Lada Samara и способы их устранения:</p>
+
+      <div class="alert alert-warning mt-3" role="alert">
+        <strong>Важно:</strong> перед началом работ с трансмиссией убедитесь, что автомобиль надёжно зафиксирован (стояночный тормоз, упоры под колёса). Работы проводите на ровной поверхности или подъёмнике. При отсутствии опыта сложных ремонтных работ рекомендуется обратиться к квалифицированному механику.
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Карточка 1: Шум при переключении передач -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <h3 class="card-title mb-0">Шум при переключении передач</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Гул или вой при движении на определённых передачах</li>
+                <li>Стук или треск при переключении</li>
+                <li>Повышенный шум на нейтральной передаче</li>
+                <li>Шум усиливается с ростом скорости</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Низкий уровень масла в КПП</li>
+                <li>Износ подшипников КПП</li>
+                <li>Износ синхронизаторов</li>
+                <li>Использование некачественного масла</li>
+                <li>Износ шестерён передач</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Проверьте уровень и состояние масла в КПП (норма: 3,3 л, вязкость 75W‑90)</li>
+                <li>Замените масло на рекомендованное производителем</li>
+                <li>При необходимости отремонтируйте или замените КПП</li>
+                <li>Проверьте состояние подшипников и синхронизаторов</li>
+                <li>Осмотрите шестерни на предмет износа</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Пробуксовка сцепления -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+              <h3 class="card-title mb-0">Пробуксовка сцепления</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Двигатель набирает обороты, но автомобиль не ускоряется</li>
+                <li>Запах гари при интенсивном разгоне</li>
+                <li>Трудности с переключением передач</li>
+                <li>Вибрация при трогании с места</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Износ фрикционных накладок диска сцепления</li>
+                <li>Повреждение корзины сцепления</li>
+                <li>Неисправность выжимного подшипника</li>
+                <li>Утечка в гидравлической системе сцепления</li>
+                <li>Завоздушивание гидропривода</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Проверьте свободный ход педали сцепления</li>
+                <li>Осмотрите диск сцепления на износ</li>
+                <li>Замените изношенные компоненты сцепления</li>
+                <li>Прокачайте гидропривод сцепления</li>
+                <li>Устраните утечки в системе</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Утечка масла -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h3 class="card-title mb-0">Утечка масла из трансмиссии</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Пятна масла под автомобилем</li>
+                <li>Снижение уровня масла в КПП</li>
+                <li>Масляные подтёки на корпусе КПП</li>
+                <li>Загрязнение наружных поверхностей трансмиссии</li>
+              </ul>
+              <p><strong>Возможные места утечек:</strong></p>
+              <ul>
+                <li>Сальник первичного вала</li>
+                <li>Сальник полуоси</li>
+                <li>Прокладка крышки КПП</li>
+                <li>Датчик заднего хода</li>
+                <li>Место соединения КПП с двигателем</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Визуально осмотрите КПП на наличие подтёков</li>
+                <li>Замените изношенные сальники</li>
+                <li>Замените прокладку крышки КПП</li>
+                <li>Проверьте затяжку всех болтов крепления</li>
+                <li>Долейте масло до нормального уровня после устранения утечки</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 4: Затруднённое переключение передач -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-secondary text-white">
+              <h3 class="card-title mb-0">Затруднённое переключение передач</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Необходимость прилагать усилие для включения передачи</li>
+                <li>Хруст при переключении</li>
+                <li>Передача не включается с первого раза</li>
+                <li>Самопроизвольное выключение передачи</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Неправильная регулировка привода переключения</li>
+                <li>Износ механизма переключения передач</li>
+                <li>Деформация или повреждение тяг привода</li>
+                <li>Недостаток смазки в механизме переключения</li>
+                <li>Износ вилок переключения</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Отрегулируйте привод переключения передач</li>
+                <li>Проверьте и смажьте шарниры привода</li>
+                <li>Осмотрите тяги на предмет деформации</li>
+                <li>Замените изношенные вилки переключения</li>
+                <li>При необходимости разберите и отремонтируйте механизм переключения</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <!-- Рекомендации по обслуживанию трансмиссии -->
+      <div class="mt-5">
+        <h3>Рекомендации по обслуживанию трансмиссии:</h3>
+        <ul>
+          <li><strong>Коробка передач:</strong>
+            <ul>
+              <li>регулярно проверяйте уровень масла в КПП;</li>
+              <li>меняйте масло каждые 60–80 тыс. км или согласно регламенту ТО;</li>
+              <li>используйте масло с рекомендованной вязкостью (75W‑90);</li>
+              <li>осматривайте КПП на предмет утечек масла;</li>
+              <li>проверяйте состояние сальников и прокладок;</li>
+              <li>контролируйте затяжку болтов крепления КПП к двигателю.</li>
+            </ul>
+          </li>
+
+          <li><strong>Сцепление:</strong>
+            <ul>
+              <li>контролируйте свободный ход педали сцепления (норма: 120–130 мм);</li>
+              <li>избегайте длительной пробуксовки сцепления;</li>
+              <li>проверяйте герметичность гидропривода сцепления;</li>
+              <li>прокачивайте систему сцепления при появлении «мягкой» педали;</li>
+              <li>следите за состоянием выжимного подшипника — при появлении посторонних шумов замените его;</li>
+              <li>при замене сцепления используйте оригинальные или сертифицированные запчасти.</li>
+            </ul>
+          </li>
+
+          <li><strong>Привод переключения передач:</strong>
+            <ul>
+              <li>периодически смазывайте шарниры и тяги привода;</li>
+              <li>проверяйте целостность тяг и рычагов;</li>
+              <li>регулируйте механизм переключения при затруднённом включении передач;</li>
+              <li>осматривайте пыльники на предмет повреждений — они защищают механизм от грязи и влаги.</li>
+            </ul>
+          </li>
+
+          <li><strong>Полуоси и ШРУСы:</strong>
+            <ul>
+              <li>проверяйте состояние защитных пыльников ШРУСов — разрывы приводят к выходу шарниров из строя;</li>
+              <li>при обнаружении повреждений пыльников замените их и обновите смазку;</li>
+              <li>осматривайте полуоси на наличие люфтов и деформаций;</li>
+              <li>затягивайте ступичные гайки с рекомендованным моментом (обычно 220–250 Н·м).</li>
+            </ul>
+          </li>
+
+          <li><strong>Общие рекомендации:</strong>
+            <ul>
+              <li>проводите диагностику трансмиссии при каждом плановом ТО (каждые 10–15 тыс. км);</li>
+              <li>обращайте внимание на посторонние шумы, вибрации и запахи — это первые признаки проблем;</li>
+              <li>не допускайте перегрузок трансмиссии — избегайте резких стартов и буксировки тяжёлых прицепов;</li>
+              <li>при движении в сложных условиях (грязь, вода, песок) проверяйте трансмиссию на наличие загрязнений;</li>
+              <li>после преодоления глубоких луж или бродов проверяйте масло в КПП на наличие эмульсии (признак попадания воды);</li>
+              <li>используйте только качественные запчасти и расходные материалы;</li>
+              <li>при возникновении сложных неисправностей обращайтесь в специализированный сервис.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="alert alert-success mt-4" role="alert">
+        <strong>Совет:</strong> ведите журнал обслуживания трансмиссии с указанием дат, выполненных работ и заменённых компонентов. Это поможет отслеживать интервалы обслуживания, вовремя выявлять повторяющиеся проблемы и планировать затраты на ремонт.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Трансмиссия Lada Samara: неисправности и обслуживание",
+  "description": "Руководство по типичным проблемам трансмиссии Lada Samara, способам их диагностики и устранения. Охватывает коробку передач, сцепление, привод переключения, полуоси и ШРУСы. Содержит рекомендации по регулярному обслуживанию и профилактике.",
+  "datePublished": "2024-03-25T10:00:00+03:00",
+  "dateModified": "2024-03-27T15:30:00+03:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "url": "https://lada-aym.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lada-aym.github.io/lada-samara/assets/images/lada.webp",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#transmission"
+  },
+  "wordCount": "1500",
+  "timeRequired": "PT25M",
+  "articleSection": "Диагностика и устранение неисправностей трансмиссии",
+  "articleBody": "Типичные проблемы трансмиссии Lada Samara включают шум при переключении передач, пробуксовку сцепления, утечки масла и затруднённое переключение передач. Шум может быть вызван низким уровнем масла, износом подшипников, синхронизаторов или шестерён. Пробуксовка сцепления проявляется в наборе оборотов двигателя без ускорения автомобиля, сопровождается запахом гари и вибрацией. Утечки масла возникают из‑за изношенных сальников, прокладок или ослабления креплений. Затруднённое переключение связано с неправильной регулировкой привода, износом механизма или недостатком смазки. Обслуживание включает регулярную проверку уровня масла в КПП (норма: 3,3 л, вязкость 75W‑90), контроль свободного хода педали сцепления (120–130 мм), осмотр пыльников ШРУСов, затяжку ступичных гаек (220–250 Н·м) и диагностику при каждом ТО (каждые 10–15 тыс. км).",
+  "keywords": [
+    "трансмиссия Lada Samara",
+    "шум при переключении передач",
+    "пробуксовка сцепления",
+    "утечка масла КПП",
+    "затруднённое переключение передач",
+    "обслуживание трансмиссии",
+    "проверка уровня масла КПП",
+    "износ синхронизаторов",
+    "состояние сальников КПП",
+    "диагностика сцепления",
+    "пыльники ШРУСов"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Lada Samara",
+      "description": "Модель автомобиля, для которой предназначено данное руководство"
+    },
+    {
+      "@type": "Thing",
+      "name": "Трансмиссия автомобиля",
+      "description": "Комплекс механических систем автомобиля: коробка передач, сцепление, привод переключения, полуоси, ШРУСы"
+    },
+    {
+      "@type": "Thing",
+      "name": "Коробка передач (КПП)",
+      "description": "Механизм для изменения передаточного числа, обеспечивающий передачу крутящего момента от двигателя к колёсам"
+    },
+    {
+      "@type": "Thing",
+      "name": "Сцепление",
+      "description": "Устройство для плавного соединения и разъединения двигателя с трансмиссией"
+    },
+    {
+      "@type": "Thing",
+      "name": "ШРУСы (шарниры равных угловых скоростей)",
+      "description": "Элементы привода, передающие крутящий момент под изменяющимися углами"
+    },
+    {
+      "@type": "Thing",
+      "name": "Привод переключения передач",
+      "description": "Механизм управления выбором и включением передач в КПП"
+    }
+  ],
+  "genre": "Automotive Troubleshooting Guide",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Руководство по диагностике и устранению неисправностей Lada Samara",
+    "author": "Lada Samara Guide"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Раздел 6.4. Трансмиссия",
+    "url": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#transmission"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide"
+  },
+  "copyrightYear": 2024,
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "typicalAgeRange": "18+",
+  "learningResourceType": "Maintenance Guide"
+}
+</script>
+
+<!-- 6.5. Ходовая часть -->
+<div id="suspension" class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse65"
+            aria-expanded="false"
+            aria-controls="collapse65">
+      6.5. Ходовая часть
+    </button>
+  </h2>
+  <div id="collapse65" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+    <div class="accordion-body">
+      <p class="mb-4">Подробное описание типичных проблем ходовой части Lada Samara и способы их устранения:</p>
+
+      <div class="alert alert-warning mt-3" role="alert">
+        <strong>Важно:</strong> перед началом работ с ходовой частью убедитесь, что автомобиль надёжно зафиксирован (стояночный тормоз, упоры под колёса). Работы проводите на ровной поверхности или подъёмнике. При отсутствии опыта сложных ремонтных работ рекомендуется обратиться к квалифицированному механику.
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Карточка 1: Стук в подвеске -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <h3 class="card-title mb-0">Стук в подвеске</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Стук при проезде неровностей</li>
+                <li>Глухие удары на мелких кочках</li>
+                <li>Металлический лязг при резких поворотах</li>
+                <li>Посторонние звуки при торможении</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Износ амортизаторов</li>
+                <li>Разрушение сайлентблоков рычагов</li>
+                <li>Износ шаровых опор</li>
+                <li>Ослабление креплений подвески</li>
+                <li>Износ стоек стабилизатора</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Проверьте амортизаторы на утечку масла и амортизирующие свойства</li>
+                <li>Осмотрите сайлентблоки на наличие трещин и деформаций</li>
+                <li>Проверьте люфт шаровых опор</li>
+                <li>Затяните все крепёжные элементы подвески с требуемым моментом</li>
+                <li>Замените изношенные детали</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Увод автомобиля в сторону -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h3 class="card-title mb-0">Увод автомобиля в сторону</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Автомобиль отклоняется от прямой траектории</li>
+                <li>Руль поворачивается сам при движении</li>
+                <li>Необходимость постоянно подруливать</li>
+                <li>Неравномерный износ шин</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Нарушены углы установки колёс (сход‑развал)</li>
+                <li>Разное давление в шинах</li>
+                <li>Деформация рычагов подвески</li>
+                <li>Износ рулевых тяг и наконечников</li>
+                <li>Заклинивание тормозных механизмов</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Проверьте и отрегулируйте давление в шинах (норма: 2,0 атм передние, 1,8 атм задние)</li>
+                <li>Выполните диагностику и регулировку углов установки колёс</li>
+                <li>Осмотрите рычаги подвески на предмет деформаций</li>
+                <li>Проверьте состояние рулевых тяг</li>
+                <li>Убедитесь в исправности тормозной системы</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Вибрация на руле -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+              <h3 class="card-title mb-0">Вибрация на руле</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Дрожание руля на скорости 60–80 км/ч</li>
+                <li>Пульсация при торможении</li>
+                <li>Вибрация усиливается с ростом скорости</li>
+                <li>Биение руля при проезде неровностей</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Дисбаланс колёс</li>
+                <li>Деформация колёсных дисков</li>
+                <li>Износ рулевых наконечников</li>
+                <li>Люфт в подшипниках ступиц</li>
+                <li>Износ шаровой опоры</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Выполните балансировку колёс</li>
+                <li>Проверьте геометрию колёсных дисков</li>
+                <li>Осмотрите рулевые наконечники на наличие люфта</li>
+                <li>Проверьте подшипники ступиц</li>
+                <li>Замените изношенные компоненты рулевого управления</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 4: Быстрый износ шин -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-secondary text-white">
+              <h3 class="card-title mb-0">Быстрый износ шин</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Неравномерный износ протектора</li>
+                <li>Выпуклости или «грыжи» на боковинах</li>
+                <li>Быстрый износ внутренних или внешних краёв</li>
+                <li>Пятнистый износ протектора</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Неправильное давление в шинах</li>
+                <li>Нарушение углов установки колёс</li>
+                <li>Износ элементов подвески</li>
+                <li>Эксплуатация с перегрузом</li>
+                <li>Агрессивный стиль вождения</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Поддерживайте рекомендованное давление в шинах</li>
+                <li>Регулярно проверяйте и корректируйте сход‑развал</li>
+                <li>Своевременно заменяйте изношенные детали подвески</li>
+                <li>Соблюдайте допустимую нагрузку на автомобиль</li>
+                <li>Используйте шины рекомендованного размера и типа</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <!-- Рекомендации по обслуживанию ходовой части -->
+      <div class="mt-5">
+        <h3>Рекомендации по обслуживанию ходовой части:</h3>
+        <ul>
+          <li><strong>Амортизаторы:</strong>
+            <ul>
+              <li>проверяйте состояние каждые 10–15 тыс. км;</li>
+              <li>замените при обнаружении утечек масла или потере амортизирующих свойств;</li>
+              <li>оценивайте износ по поведению автомобиля на неровностях;</li>
+              <li>проверяйте крепление амортизаторов к кузову и подвеске.</li>
+            </ul>
+          </li>
+
+          <li><strong>Сайлентблоки и шаровые опоры:</strong>
+            <ul>
+              <li>осматривайте на наличие трещин, разрывов и деформаций;</li>
+              <li>проверяйте люфт (допустимый люфт — не более 1–2 мм);</li>
+              <li>заменяйте при первых признаках износа;</li>
+              <li>контролируйте момент затяжки крепёжных болтов (согласно спецификации производителя).</li>
+            </ul>
+          </li>
+
+          <li><strong>Рулевое управление:</strong>
+            <ul>
+              <li>регулярно проверяйте состояние рулевых тяг и наконечников;</li>
+              <li>оценивайте люфт рулевого колеса (норма: не более 10°);</li>
+              <li>проверяйте герметичность защитных чехлов рулевых механизмов;</li>
+              <li>смазывайте шарниры при каждом ТО, если это предусмотрено конструкцией;</li>
+              <li>проводите диагностику гидроусилителя руля (при наличии).</li>
+            </ul>
+          </li>
+
+          <li><strong>Колёса и шины:</strong>
+            <ul>
+              <li>поддерживайте давление в шинах согласно норме: 2,0 атм передние, 1,8 атм задние;</li>
+              <li>выполняйте балансировку колёс каждые 15–20 тыс. км или после ремонта;</li>
+              <li>проверяйте износ протектора (минимальная глубина — 1,6 мм);</li>
+              <li>меняйте шины местами каждые 10 тыс. км для равномерного износа;</li>
+              <li>визуально осматривайте шины на наличие грыж, порезов и неравномерного износа.</li>
+            </ul>
+          </li>
+
+          <li><strong>Углы установки колёс (сход‑развал):</strong>
+            <ul>
+              <li>проверяйте и корректируйте углы после замены элементов подвески;</li>
+              <li>выполняйте регулировку каждые 20–30 тыс. км;</li>
+              <li>обязательно проверяйте сход‑развал после попадания в глубокую яму или ДТП;</li>
+              <li>обращайте внимание на неравномерный износ шин — это признак нарушения углов.</li>
+            </ul>
+          </li>
+
+          <li><strong>Тормозная система:</strong>
+            <ul>
+              <li>проверяйте толщину тормозных дисков и колодок (минимальная толщина — согласно спецификации);</li>
+              <li>осматривайте тормозные шланги на наличие трещин и вздутий;</li>
+              <li>контролируйте уровень тормозной жидкости;</li>
+              <li>убедитесь в отсутствии утечек в тормозной системе;</li>
+              <li>проверяйте работу стояночного тормоза.</li>
+            </ul>
+          </li>
+
+          <li><strong>Общие рекомендации:</strong>
+            <ul>
+              <li>проводите полную диагностику ходовой части каждые 30 тыс. км;</li>
+              <li>после преодоления сложных участков дороги (глубокие ямы, бездорожье) проверяйте подвеску на наличие повреждений;</li>
+              <li>избегайте перегруза автомобиля — это ускоряет износ элементов ходовой;</li>
+              <li>при появлении посторонних звуков или изменении управляемости сразу проводите диагностику;</li>
+              <li>используйте оригинальные или сертифицированные запчасти при замене деталей;</li>
+              <li>соблюдайте регламент технического обслуживания, рекомендованный производителем.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="alert alert-success mt-4" role="alert">
+        <strong>Совет:</strong> ведите журнал обслуживания ходовой части с указанием дат, выполненных работ и заменённых компонентов. Это поможет отслеживать интервалы обслуживания, вовремя выявлять повторяющиеся проблемы и планировать затраты на ремонт. Особое внимание уделяйте записям после поездок по плохим дорогам или в сложных условиях эксплуатации.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Ходовая часть Lada Samara: неисправности и обслуживание",
+  "description": "Руководство по типичным проблемам ходовой части Lada Samara, способам их диагностики и устранения. Охватывает амортизаторы, сайлентблоки, рулевое управление, колёса, шины, тормозную систему и углы установки колёс. Содержит подробные рекомендации по регулярному обслуживанию и профилактике.",
+  "datePublished": "2024-03-25T10:00:00+03:00",
+  "dateModified": "2024-03-27T15:30:00+03:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "url": "https://lada-aym.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lada-aym.github.io/lada-samara/assets/images/lada.webp",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#suspension"
+  },
+  "wordCount": "1800",
+  "timeRequired": "PT30M",
+  "articleSection": "Диагностика и устранение неисправностей ходовой части",
+  "articleBody": "Типичные проблемы ходовой части Lada Samara включают стук в подвеске, увод автомобиля в сторону, вибрацию на руле и быстрый износ шин. Стук может быть вызван износом амортизаторов, разрушением сайлентблоков, износом шаровых опор или стоек стабилизатора. Увод автомобиля связан с нарушением углов установки колёс, разным давлением в шинах, деформацией рычагов подвески или износом рулевых тяг. Вибрация на руле возникает из‑за дисбаланса колёс, деформации дисков, износа рулевых наконечников или люфта в подшипниках ступиц. Быстрый износ шин провоцируют неправильное давление, нарушение схода‑развала, износ элементов подвески, перегруз или агрессивный стиль вождения. Обслуживание включает проверку амортизаторов каждые 10–15 тыс. км, контроль люфта шаровых опор (до 1–2 мм), проверку давления в шинах (2,0 атм передние, 1,8 атм задние), балансировку колёс каждые 15–20 тыс. км и регулировку углов установки колёс каждые 20–30 тыс. км.",
+  "keywords": [
+    "ходовая часть Lada Samara",
+    "стук в подвеске",
+    "увод автомобиля в сторону",
+    "вибрация на руле",
+    "быстрый износ шин",
+    "обслуживание ходовой части",
+    "проверка амортизаторов",
+    "износ сайлентблоков",
+    "состояние шаровых опор",
+    "сход‑развал",
+    "балансировка колёс",
+    "тормозная система",
+    "рулевое управление",
+    "давление в шинах",
+    "диагностика подвески"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Lada Samara",
+      "description": "Модель автомобиля, для которой предназначено данное руководство"
+    },
+    {
+      "@type": "Thing",
+      "name": "Ходовая часть автомобиля",
+      "description": "Комплекс механических систем автомобиля: подвеска, рулевое управление, колёса и шины, тормозная система"
+    },
+    {
+      "@type": "Thing",
+      "name": "Амортизаторы",
+      "description": "Элементы подвески, гасящие колебания кузова и обеспечивающие контакт колёс с дорогой"
+    },
+    {
+      "@type": "Thing",
+      "name": "Сайлентблоки",
+      "description": "Резинометаллические шарниры, обеспечивающие подвижность и амортизацию соединений подвески"
+    },
+    {
+      "@type": "Thing",
+      "name": "Шаровые опоры",
+      "description": "Шарниры, обеспечивающие подвижность рычагов подвески и колёс"
+    },
+    {
+      "@type": "Thing",
+      "name": "Рулевое управление",
+      "description": "Система, обеспечивающая изменение направления движения автомобиля"
+    },
+    {
+      "@type": "Thing",
+      "name": "Тормозная система",
+      "description": "Комплекс механизмов для замедления и остановки автомобиля"
+    }
+  ],
+  "genre": "Automotive Troubleshooting Guide",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Руководство по диагностике и устранению неисправностей Lada Samara",
+    "author": "Lada Samara Guide"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Раздел 6.5. Ходовая часть",
+    "url": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#suspension"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide"
+  },
+  "copyrightYear": 2024,
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "typicalAgeRange": "18+",
+  "learningResourceType": "Maintenance Guide"
+}
+</script>
+
+<!-- 6.6. Тормозная система -->
+<div id="brake-system" class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse66"
+            aria-expanded="false"
+            aria-controls="collapse66">
+      6.6. Тормозная система
+    </button>
+  </h2>
+  <div id="collapse66" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+    <div class="accordion-body">
+      <p class="mb-4">Подробное описание типичных проблем тормозной системы Lada Samara и способы их устранения:</p>
+
+      <div class="alert alert-danger mt-3" role="alert">
+        <strong>Внимание!</strong> При обнаружении любых проблем с тормозной системой немедленно прекратите эксплуатацию автомобиля. Неисправные тормоза представляют серьёзную угрозу безопасности движения.
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Карточка 1: Увеличенный ход и мягкость педали тормоза -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <h3 class="card-title mb-0">Увеличенный ход и мягкость педали тормоза</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Педаль тормоза проваливается глубже обычного</li>
+                <li>Требуется несколько нажатий для эффективного торможения</li>
+                <li>Снижение эффективности торможения</li>
+                <li>Мягкость или проваливание педали при нажатии</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Низкий уровень тормозной жидкости</li>
+                <li>Наличие воздуха в тормозной системе</li>
+                <li>Износ тормозных колодок</li>
+                <li>Утечка тормозной жидкости</li>
+                <li>Неисправность главного тормозного цилиндра</li>
+                <li>Неисправность вакуумного усилителя тормозов</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Проверьте уровень тормозной жидкости в бачке (норма — между отметками MIN и MAX)</li>
+                <li>Осмотрите все тормозные магистрали на предмет утечек</li>
+                <li>Прокачайте тормозную систему для удаления воздуха</li>
+                <li>Замените изношенные тормозные колодки</li>
+                <li>При необходимости замените главный тормозной цилиндр или вакуумный усилитель</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Скрип при торможении -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h3 class="card-title mb-0">Скрип при торможении</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Металлический скрип или свист при торможении</li>
+                <li>Посторонние звуки на малых скоростях</li>
+                <li>Периодический скрип, усиливающийся при нагрузке</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Износ тормозных колодок до металлического основания</li>
+                <li>Попадание песка и грязи между колодкой и диском</li>
+                <li>Коррозия тормозных дисков</li>
+                <li>Несовместимость материалов колодки и диска</li>
+                <li>Отсутствие противоскрипных пластин</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Осмотрите тормозные колодки на износ (минимальная толщина фрикционного слоя — 2 мм)</li>
+                <li>Очистите тормозные механизмы от загрязнений</li>
+                <li>Отшлифуйте или замените тормозные диски при наличии борозд</li>
+                <li>Установите противоскрипные пластины</li>
+                <li>Используйте качественные тормозные колодки рекомендованного типа</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Увод автомобиля в сторону при торможении -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+              <h3 class="card-title mb-0">Увод автомобиля в сторону при торможении</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Автомобиль отклоняется влево или вправо при торможении</li>
+                <li>Неравномерное замедление колёс</li>
+                <li>Вибрация руля при торможении</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Заклинивание тормозного суппорта с одной стороны</li>
+                <li>Разный износ тормозных колодок на одной оси</li>
+                <li>Загрязнение или замасливание одной колодки</li>
+                <li>Нарушение герметичности тормозного шланга</li>
+                <li>Проблемы с подвеской или сход‑развалом</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Проверьте подвижность поршней тормозных суппортов</li>
+                <li>Осмотрите состояние тормозных колодок и дисков на обеих сторонах</li>
+                <li>Замените повреждённые тормозные шланги</li>
+                <li>Убедитесь в исправности подвески и правильности углов установки колёс</li>
+                <li>При необходимости отремонтируйте или замените тормозной суппорт</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+                <!-- Карточка 4: Неэффективное торможение -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-primary text-white">
+              <h3 class="card-title mb-0">Неэффективное торможение</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Увеличение тормозного пути</li>
+                <li>Необходимость сильнее давить на педаль</li>
+                <li>Отсутствие резкого замедления</li>
+                <li>Перегрев тормозных механизмов (запах гари)</li>
+                <li>Вибрация при торможении</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Сильный износ тормозных дисков и колодок</li>
+                <li>Замасливание тормозных поверхностей</li>
+                <li>Неисправность вакуумного усилителя</li>
+                <li>Засорение тормозных шлангов</li>
+                <li>Коррозия или закисание направляющих суппортов</li>
+                <li>Использование некачественной тормозной жидкости</li>
+                <li>Нарушение работы регулятора тормозных сил (колдуна)</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Проверьте толщину тормозных дисков (минимальная толщина — 9 мм для передних)</li>
+                <li>Осмотрите тормозные колодки (минимальная толщина фрикционного слоя — 2 мм)</li>
+                <li>Очистите тормозные механизмы от масла и загрязнений</li>
+                <li>Проверьте работу вакуумного усилителя (на заглушённом двигателе нажмите 5–6 раз на педаль тормоза, затем заведите двигатель — педаль должна «провалиться»)</li>
+                <li>Замените тормозные шланги при наличии трещин или вздутий</li>
+                <li>Разберите и очистите направляющие суппортов, нанесите специальную высокотемпературную смазку</li>
+                <li>Замените тормозную жидкость на свежую (DOT 4, каждые 2 года)</li>
+                <li>Отрегулируйте или замените регулятор тормозных сил</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 5: Вибрация при торможении -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-success text-white">
+              <h3 class="card-title mb-0">Вибрация при торможении</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Биение руля при торможении</li>
+                <li>Пульсация педали тормоза</li>
+                <li>Дрожание кузова при замедлении</li>
+                <li>Усиление вибрации на высоких скоростях</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Деформация тормозных дисков</li>
+                <li>Неравномерный износ тормозных дисков</li>
+                <li>Ослабление крепления колёсных дисков</li>
+                <li>Износ ступичного подшипника</li>
+                <li>Заклинивание поршня тормозного суппорта</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Проверьте биение тормозных дисков (допуск — не более 0,05 мм)</li>
+                <li>При превышении допустимого биения проточите или замените диски</li>
+                <li>Убедитесь в правильной затяжке колёсных болтов/гаек (момент затяжки — 80–90 Н·м)</li>
+                <li>Проверьте состояние ступичных подшипников</li>
+                <li>Осмотрите и при необходимости отремонтируйте тормозные суппорты</li>
+                <li>Проверьте балансировку колёс</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <h4>Рекомендации по обслуживанию тормозной системы:</h4>
+        <ol>
+          <li>Регулярно проверяйте уровень тормозной жидкости (не реже 1 раза в месяц)</li>
+          <li>Меняйте тормозную жидкость каждые 2 года или согласно регламенту ТО</li>
+          <li>Контролируйте износ тормозных колодок и дисков при каждом ТО (минимальная толщина передних колодок — 2 мм, передних дисков — 9 мм)</li>
+          <li>Проверяйте состояние тормозных шлангов и трубок (не должно быть трещин, вздутий, следов утечки)</li>
+          <li>Периодически очищайте тормозные механизмы от грязи и коррозии</li>
+          <li>Смазывайте направляющие суппортов специальной высокотемпературной смазкой каждые 20 000 км</li>
+          <li>Проверяйте работу вакуумного усилителя тормозов при каждом обслуживании</li>
+          <li>После замены тормозных дисков или колодок выполняйте их правильную обкатку (первые 200 км избегайте резких торможений)</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Тормозная система Lada Samara: неисправности и обслуживание",
+  "description": "Руководство по диагностике и устранению типичных проблем тормозной системы Lada Samara. Описывает симптомы, причины и способы устранения увеличенного хода педали тормоза, скрипа, увода автомобиля в сторону, неэффективного торможения и вибрации при торможении. Содержит рекомендации по регулярному обслуживанию тормозной системы.",
+  "datePublished": "2024-03-25T10:00:00+03:00",
+  "dateModified": "2024-03-27T15:30:00+03:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "url": "https://lada-aym.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lada-aym.github.io/lada-samara/assets/images/lada.webp",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#brake-system"
+  },
+  "wordCount": "1600",
+  "timeRequired": "PT25M",
+  "articleSection": "Диагностика и устранение неисправностей тормозной системы",
+  "articleBody": "Типичные проблемы тормозной системы Lada Samara включают увеличенный ход педали тормоза, скрип при торможении, увод автомобиля в сторону при торможении, неэффективное торможение и вибрацию при торможении. Увеличенный ход и мягкость педали могут быть вызваны низким уровнем тормозной жидкости, наличием воздуха в системе, износом колодок или неисправностью главного тормозного цилиндра. Скрип возникает из‑за износа колодок до металла, загрязнения механизмов или коррозии дисков. Увод в сторону связан с заклиниванием суппорта, разным износом колодок или проблемами с подвеской. Неэффективное торможение провоцируют сильный износ дисков и колодок, замасливание поверхностей, неисправность вакуумного усилителя или засорение шлангов. Вибрация при торможении возникает из‑за деформации дисков, ослабления крепления колёс или износа ступичных подшипников. Обслуживание включает регулярную проверку уровня тормозной жидкости (не реже 1 раза в месяц), замену жидкости каждые 2 года, контроль износа колодок (мин. 2 мм) и дисков (мин. 9 мм), проверку шлангов и смазку направляющих суппортов каждые 20 000 км.",
+  "keywords": [
+    "тормозная система Lada Samara",
+    "увеличенный ход педали тормоза",
+    "скрип при торможении",
+    "увод автомобиля в сторону при торможении",
+    "неэффективное торможение",
+    "вибрация при торможении",
+    "обслуживание тормозной системы",
+    "проверка тормозных колодок",
+    "износ тормозных дисков",
+    "вакуумный усилитель тормозов",
+    "прокачка тормозной системы",
+    "замена тормозной жидкости",
+    "регулировка тормозных сил",
+    "смазка направляющих суппортов"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Lada Samara",
+      "description": "Модель автомобиля, для которой предназначено данное руководство"
+    },
+    {
+      "@type": "Thing",
+      "name": "Тормозная система автомобиля",
+      "description": "Комплекс механизмов для замедления и остановки автомобиля: тормозные диски, колодки, суппорты, шланги, главный тормозной цилиндр, вакуумный усилитель"
+    },
+    {
+      "@type": "Thing",
+      "name": "Тормозные колодки",
+      "description": "Элементы тормозной системы, создающие трение с тормозным диском для замедления колеса"
+    },
+    {
+      "@type": "Thing",
+      "name": "Тормозные диски",
+      "description": "Вращающиеся элементы тормозной системы, к которым прижимаются колодки для создания трения"
+    },
+    {
+      "@type": "Thing",
+      "name": "Вакуумный усилитель тормозов",
+      "description": "Устройство, облегчающее нажатие на педаль тормоза за счёт разрежения"
+    },
+    {
+      "@type": "Thing",
+      "name": "Главный тормозной цилиндр",
+      "description": "Компонент тормозной системы, преобразующий усилие с педали в давление жидкости"
+    },
+    {
+      "@type": "Thing",
+      "name": "Тормозные шланги",
+      "description": "Гибкие соединения, передающие тормозную жидкость от магистрали к суппортам"
+    }
+  ],
+  "genre": "Automotive Troubleshooting Guide",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Руководство по диагностике и устранению неисправностей Lada Samara",
+    "author": "Lada Samara Guide"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Раздел 6.6. Тормозная система",
+    "url": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#brake-system"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide"
+  },
+  "copyrightYear": 2024,
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "typicalAgeRange": "18+",
+  "learningResourceType": "Maintenance Guide"
+}
+</script>
+
+<!-- 6.7. Система охлаждения и отопления -->
+<div id="cooling-heating" class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse67"
+            aria-expanded="false"
+            aria-controls="collapse67">
+      6.7. Система охлаждения и отопления
+    </button>
+  </h2>
+  <div id="collapse67" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+    <div class="accordion-body">
+      <p class="mb-4">Подробное описание типичных проблем системы охлаждения и отопления Lada Samara и способы их устранения:</p>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Карточка 1: Перегрев двигателя -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+              <h3 class="card-title mb-0">Перегрев двигателя</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Стрелка указателя температуры в красной зоне</li>
+                <li>Индикатор перегрева на приборной панели</li>
+                <li>Пар из-под капота</li>
+                <li>Потеря мощности двигателя</li>
+                <li>Кипение охлаждающей жидкости в расширительном бачке</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Низкий уровень охлаждающей жидкости</li>
+                <li>Засорение радиатора</li>
+                <li>Неисправность термостата</li>
+                <li>Отказ вентилятора охлаждения</li>
+                <li>Пробуксовка или обрыв ремня привода помпы</li>
+                <li>Воздушная пробка в системе охлаждения</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Остановите автомобиль и дайте двигателю остыть</li>
+                <li>Проверьте уровень охлаждающей жидкости (норма — между MIN и MAX)</li>
+                <li>Осмотрите радиатор на предмет засорения и очистите его</li>
+                <li>Проверьте термостат (температура открытия — 80–85 °C)</li>
+                <li>Убедитесь в работе вентилятора охлаждения</li>
+                <li>Проверьте натяжение и состояние ремня привода помпы</li>
+                <li>Удалите воздушные пробки из системы</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Не работает отопление салона -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h3 class="card-title mb-0">Не работает отопление салона</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Из дефлекторов дует холодный воздух</li>
+                <li>Слабый поток воздуха из отопителя</li>
+                <li>Неравномерный прогрев салона</li>
+                <li>Шум при работе вентилятора печки</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Низкий уровень охлаждающей жидкости</li>
+                <li>Заклинивание крана отопителя</li>
+                <li>Воздушная пробка в радиаторе отопителя</li>
+                <li>Засорение радиатора печки</li>
+                <li>Неисправность электродвигателя вентилятора</li>
+                <li>Поломка регулятора скорости вентилятора</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Проверьте уровень охлаждающей жидкости и долейте при необходимости</li>
+                <li>Осмотрите кран отопителя, при необходимости замените</li>
+                <li>Удалите воздушную пробку из системы отопления</li>
+                <li>Промойте или замените радиатор отопителя</li>
+                <li>Проверьте работу электродвигателя вентилятора</li>
+                <li>Замените регулятор скорости вентилятора при неисправности</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Утечка охлаждающей жидкости -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <h3 class="card-title mb-0">Утечка охлаждающей жидкости</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Пятна охлаждающей жидкости под автомобилем</li>
+                <li>Снижение уровня жидкости в расширительном бачке</li>
+                <li>Запах антифриза в салоне</li>
+                <li>Перегрев двигателя из‑за недостатка жидкости</li>
+              </ul>
+              <p><strong>Возможные места утечек:</strong></p>
+              <ul>
+                <li>Патрубки и соединения системы</li>
+                <li>Радиатор охлаждения</li>
+                <li>Расширительный бачок</li>
+                <li>Водяной насос (помпа)</li>
+                <li>Прокладка головки блока цилиндров</li>
+                <li>Кран отопителя</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Визуально осмотрите все патрубки и соединения</li>
+                <li>Замените повреждённые патрубки</li>
+                <li>Проверьте радиатор на наличие течей, при необходимости запаяйте или замените</li>
+                <li>Осмотрите расширительный бачок на трещины</li>
+                <li>Проверьте состояние водяного насоса</li>
+                <li>При утечке через прокладку ГБЦ обратитесь в сервис для ремонта</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 4: Нестабильная работа указателя температуры -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-secondary text-white">
+              <h3 class="card-title mb-0">Нестабильная работа указателя температуры</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Стрелка прыгает или дёргается</li>
+                <li>Показания не соответствуют реальной температуре</li>
+                <li>Стрелка остаётся в одном положении при прогреве</li>
+                <li>Индикаторы работают некорректно</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Неисправен датчик температуры</li>
+                <li>Плохой контакт в разъёмах датчика</li>
+                <li>Обрыв или замыкание проводки</li>
+                <li>Проблемы с приборной панелью</li>
+                <li>Низкий уровень охлаждающей жидкости</li>
+                            </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Проверьте датчик температуры мультиметром</li>
+                <li>Очистите контакты разъёмов датчика</li>
+                <li>Прозвоните проводку от датчика к приборной панели</li>
+                <li>Проверьте уровень охлаждающей жидкости (норма — между отметками MIN и MAX)</li>
+                <li>При необходимости замените датчик температуры на новый</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 5: Слабый поток воздуха отопителя -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-success text-white">
+              <h3 class="card-title mb-0">Слабый поток воздуха отопителя</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Слабое дуновение из дефлекторов</li>
+                <li>Неэффективный обогрев салона</li>
+                <li>Шум или свист при работе вентилятора</li>
+                <li>Изменение интенсивности потока при переключении режимов</li>
+                <li>Замедленный отклик на изменение скорости вентилятора</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Засорение салонного фильтра</li>
+                <li>Засорение воздуховодов системы отопления</li>
+                <li>Неисправность электродвигателя вентилятора</li>
+                <li>Износ или загрязнение лопастей вентилятора</li>
+                <li>Неисправность резистора (регулятора скорости) вентилятора</li>
+                <li>Проблемы с заслонками распределения воздуха</li>
+                <li>Ослабление крепления вентилятора</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Замените салонный фильтр (рекомендуется менять каждые 10–15 тыс. км или раз в год)</li>
+                <li>Очистите воздуховоды от пыли и загрязнений</li>
+                <li>Проверьте работу электродвигателя вентилятора (подайте питание напрямую от АКБ)</li>
+                <li>Осмотрите лопасти вентилятора на предмет повреждений и загрязнений, очистите их</li>
+                <li>Проверьте резистор вентилятора мультиметром, при необходимости замените</li>
+                <li>Убедитесь в правильной работе воздушных заслонок, проверьте тросовый привод или сервоприводы</li>
+                <li>Проверьте крепление вентилятора, подтяните крепления при необходимости</li>
+                <li>При обнаружении повреждений проводки вентилятора — восстановите соединения</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 6: Переохлаждение двигателя -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-primary text-white">
+              <h3 class="card-title mb-0">Переохлаждение двигателя</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Стрелка указателя температуры не поднимается до рабочей зоны</li>
+                <li>Двигатель долго прогревается</li>
+                <li>Отопитель слабо греет даже после прогрева</li>
+                <li>Снижение мощности двигателя</li>
+                <li>Повышенный расход топлива</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Заклинивший в открытом положении термостат</li>
+                <li>Неправильная установка термостата</li>
+                <li>Утечка охлаждающей жидкости</li>
+                <li>Воздушная пробка в системе охлаждения</li>
+                <li>Использование неподходящей охлаждающей жидкости</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Проверьте термостат (температура открытия — 80–85 °C)</li>
+                <li>При необходимости замените термостат на новый</li>
+                <li>Убедитесь в отсутствии утечек охлаждающей жидкости</li>
+                <li>Удалите воздушные пробки из системы охлаждения</li>
+                <li>Замените охлаждающую жидкость на рекомендованную производителем</li>
+                <li>Проверьте работу системы отопления после устранения проблемы</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <h4>Рекомендации по обслуживанию системы охлаждения и отопления:</h4>
+        <ol>
+          <li>Проверяйте уровень охлаждающей жидкости каждые 2 недели (норма — между отметками MIN и MAX)</li>
+          <li>Меняйте охлаждающую жидкость каждые 2 года или каждые 60 000 км пробега</li>
+          <li>Регулярно очищайте радиатор от грязи и насекомых (минимум 1 раз в год)</li>
+          <li>Меняйте салонный фильтр каждые 10–15 тыс. км или ежегодно</li>
+          <li>Перед зимним сезоном проверяйте работу отопителя и прогрев двигателя</li>
+          <li>Контролируйте состояние патрубков и хомутов (не должно быть трещин и подтёков)</li>
+          <li>Проверяйте работу термостата при сезонном обслуживании</li>
+          <li>Периодически проверяйте работу вентилятора охлаждения и отопителя (обращайте внимание на посторонние шумы и неравномерность вращения)</li>
+          <li>Следите за герметичностью системы — отсутствие подтёков и запаха антифриза в салоне</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Система охлаждения и отопления Lada Samara: неисправности и обслуживание",
+  "description": "Руководство по диагностике и устранению типичных проблем системы охлаждения и отопления Lada Samara. Описывает симптомы, причины и способы устранения перегрева двигателя, утечки охлаждающей жидкости, нестабильной работы указателя температуры, слабого потока воздуха отопителя и переохлаждения двигателя. Содержит рекомендации по регулярному обслуживанию системы.",
+  "datePublished": "2024-03-25T11:00:00+03:00",
+  "dateModified": "2024-03-27T16:30:00+03:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "url": "https://lada-aym.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lada-aym.github.io/lada-samara/assets/images/lada.webp",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#cooling-heating"
+  },
+  "wordCount": "1800",
+  "timeRequired": "PT30M",
+  "articleSection": "Диагностика и устранение неисправностей системы охлаждения и отопления",
+  "articleBody": "Типичные проблемы системы охлаждения и отопления Lada Samara включают перегрев двигателя, утечку охлаждающей жидкости, нестабильную работу указателя температуры, слабый поток воздуха отопителя и переохлаждение двигателя. Перегрев может быть вызван низким уровнем охлаждающей жидкости, засорением радиатора, неисправностью термостата или вентилятора охлаждения. Утечки возникают в патрубках, радиаторе, расширительном бачке, помпе или из‑за прокладки ГБЦ. Нестабильная работа указателя температуры связана с неисправностью датчика, плохим контактом, обрывом проводки или проблемами приборной панели. Слабый поток воздуха отопителя провоцируют засорение салонного фильтра, воздуховодов, неисправность вентилятора или его резистора. Переохлаждение двигателя возникает из‑за заклинившего термостата, утечки жидкости или воздушной пробки. Обслуживание включает регулярную проверку уровня охлаждающей жидкости (каждые 2 недели), замену жидкости каждые 2 года или 60 000 км, очистку радиатора (1 раз в год), замену салонного фильтра каждые 10–15 тыс. км, контроль состояния патрубков и хомутов, проверку термостата и вентилятора перед зимним сезоном.",
+  "keywords": [
+    "система охлаждения Lada Samara",
+    "перегрев двигателя",
+    "утечка охлаждающей жидкости",
+    "нестабильная работа указателя температуры",
+    "слабый поток воздуха отопителя",
+    "переохлаждение двигателя",
+    "обслуживание системы охлаждения",
+    "замена охлаждающей жидкости",
+    "проверка термостата",
+    "очистка радиатора",
+    "замена салонного фильтра",
+    "вентилятор охлаждения",
+    "датчик температуры двигателя",
+    "кран отопителя",
+    "воздушная пробка в системе охлаждения"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Lada Samara",
+      "description": "Модель автомобиля, для которой предназначено данное руководство"
+    },
+    {
+      "@type": "Thing",
+      "name": "Система охлаждения двигателя",
+      "description": "Комплекс механизмов для поддержания оптимальной температуры двигателя: радиатор, термостат, вентилятор, помпа, патрубки, расширительный бачок"
+    },
+    {
+      "@type": "Thing",
+      "name": "Система отопления салона",
+      "description": "Комплекс компонентов для обогрева салона: радиатор отопителя, вентилятор, заслонки распределения воздуха, кран отопителя, салонный фильтр"
+    },
+    {
+      "@type": "Thing",
+      "name": "Охлаждающая жидкость (антифриз)",
+      "description": "Жидкость для отвода тепла от двигателя и обогрева салона, требующая периодической замены"
+    },
+    {
+      "@type": "Thing",
+      "name": "Термостат",
+      "description": "Устройство, регулирующее поток охлаждающей жидкости через радиатор (температура открытия — 80–85 °C)"
+    },
+    {
+      "@type": "Thing",
+      "name": "Салонный фильтр",
+      "description": "Элемент системы отопления, очищающий поступающий в салон воздух, требующий замены каждые 10–15 тыс. км"
+    },
+    {
+      "@type": "Thing",
+      "name": "Датчик температуры двигателя",
+      "description": "Сенсор, передающий данные о температуре охлаждающей жидкости на приборную панель"
+    }
+  ],
+  "genre": "Automotive Troubleshooting Guide",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Руководство по диагностике и устранению неисправностей Lada Samara",
+    "author": "Lada Samara Guide"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Раздел 6.7. Система охлаждения и отопления",
+    "url": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#cooling-heating"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide"
+  },
+  "copyrightYear": 2024,
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "typicalAgeRange": "18+",
+  "learningResourceType": "Maintenance Guide"
+}
+</script>
+
+<!-- 6.8. Кузов и салон -->
+<div id="body-interior" class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse68"
+            aria-expanded="false"
+            aria-controls="collapse68">
+      6.8. Кузов и салон
+    </button>
+  </h2>
+  <div id="collapse68" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+    <div class="accordion-body">
+      <p class="mb-4">Подробное описание типичных проблем кузова и салона Lada Samara и способы их устранения:</p>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Карточка 1: Коррозия кузова -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+              <h3 class="card-title mb-0">Коррозия кузова</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Рыжие пятна на поверхности кузова</li>
+                <li>Вздутие краски</li>
+                <li>Сколы с признаками ржавчины</li>
+                <li>Коррозия по кромкам дверей и колёсных арок</li>
+                <li>Следы коррозии на сварных швах</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Воздействие дорожных реагентов</li>
+                <li>Механические повреждения ЛКП</li>
+                <li>Отсутствие антикоррозийной защиты</li>
+                <li>Скопление влаги в скрытых полостях</li>
+                <li>Естественный износ покрытия</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Очистите поражённый участок от ржавчины металлической щёткой</li>
+                <li>Обработайте преобразователем ржавчины</li>
+                <li>Отшлифуйте поверхность до гладкого состояния</li>
+                <li>Обезжирьте участок уайт‑спиритом или аналогичным средством</li>
+                <li>Нанесите грунтовку</li>
+                <li>Покрасьте участок в цвет кузова</li>
+                <li>Выполните антикоррозийную обработку скрытых полостей</li>
+                <li>Нанесите защитное покрытие на уязвимые зоны</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Скрипы в салоне -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <h3 class="card-title mb-0">Скрипы в салоне</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Скрип при проезде неровностей</li>
+                <li>Дребезжание пластиковых панелей</li>
+                <li>Посторонние звуки при открывании/закрывании дверей</li>
+                <li>Скрип сидений при перемещении</li>
+                <li>Звуки трения в районе приборной панели</li>
+              </ul>
+              <p><strong>Возможные источники:</strong></p>
+              <ul>
+                <li>Трение пластиковых панелей друг о друга</li>
+                <li>Ослабление креплений элементов салона</li>
+                <li>Износ уплотнителей</li>
+                <li>Проседание пружин сидений</li>
+                <li>Люфт механизмов регулировки</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Определите источник скрипа</li>
+                <li>Разберите соответствующий элемент салона</li>
+                <li>Установите антискрипные материалы (фетр, войлок) в местах трения</li>
+                <li>Подтяните крепления и фиксаторы</li>
+                <li>Смажьте трущиеся механизмы силиконовой смазкой</li>
+                <li>Замените изношенные уплотнители</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Неплотное закрытие дверей -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h3 class="card-title mb-0">Неплотное закрытие дверей</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Щель между дверью и кузовом</li>
+                <li>Свист ветра на скорости</li>
+                <li>Проникновение влаги в салон</li>
+                <li>Трудности с закрыванием двери</li>
+                <li>Некорректная работа замка</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Ослабление петель двери</li>
+                <li>Износ уплотнителей</li>
+                <li>Деформация кузова или двери</li>
+                <li>Неправильная регулировка замка</li>
+                <li>Оседание двери из‑за износа петель</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Проверьте состояние петель и подтяните крепления</li>
+                <li>Замените изношенные уплотнители</li>
+                <li>Отрегулируйте положение двери относительно кузова</li>
+                <li>Отрегулируйте замок двери</li>
+                <li>При деформации — выправьте дверь или кузов</li>
+                <li>Проверьте работу фиксатора замка</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 4: Проблемы с остеклением -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-secondary text-white">
+              <h3 class="card-title mb-0">Проблемы с остеклением</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Стекло не поднимается/не опускается</li>
+                <li>Медленная работа стеклоподъёмника</li>
+                <li>Перекос стекла в проёме</li>
+                <li>Трещины или сколы на стекле</li>
+                <li>Шум при работе механизма</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Износ механизма стеклоподъёмника</li>
+                <li>Обрыв троса стеклоподъёмника</li>
+                <li>Заклинивание стекла в уплотнителях</li>
+                <li>Неисправность электродвигателя</li>
+                <li>Повреждение стекла</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                                <li>Снимите обшивку двери для доступа к механизму</li>
+                <li>Проверьте целостность троса стеклоподъёмника</li>
+                <li>Осмотрите направляющие и ролики на предмет износа или повреждений</li>
+                <li>Смажьте направляющие и уплотнители силиконовой смазкой</li>
+                <li>Проверьте работу электродвигателя (подайте питание напрямую от АКБ)</li>
+                <li>При повреждении стекла — замените его</li>
+                <li>Отрегулируйте положение стекла в проёме</li>
+                <li>Убедитесь, что стекло плотно фиксируется в верхнем и нижнем положениях</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Карточка 5: Неисправности освещения салона -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-success text-white">
+              <h3 class="card-title mb-0">Неисправности освещения салона</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Не горит плафон освещения</li>
+                <li>Мерцание ламп</li>
+                <li>Не работает подсветка приборов</li>
+                <li>Не горят лампы в дверях</li>
+                <li>Периодические отключения освещения</li>
+                <li>Слабое свечение ламп</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Перегоревшие лампы</li>
+                <li>Окисление контактов в патронах</li>
+                <li>Обрыв проводки</li>
+                <li>Неисправность выключателей или кнопок</li>
+                <li>Проблемы с предохранителями</li>
+                <li>Плохое заземление</li>
+                <li>Неисправность регулятора яркости</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Перед началом работ отключите минусовую клемму аккумулятора</li>
+                <li>Замените перегоревшие лампы на новые (убедитесь, что мощность соответствует спецификации)</li>
+                <li>Очистите контакты в патронах от окисления с помощью контактной смазки или мелкой наждачной бумаги</li>
+                <li>Проверьте целостность проводки мультиметром</li>
+                <li>Осмотрите выключатели и кнопки, при необходимости замените</li>
+                <li>Проверьте предохранители в блоке предохранителей, замените перегоревшие</li>
+                <li>Убедитесь в надёжности заземления элементов освещения</li>
+                <li>При неисправности регулятора яркости — замените его</li>
+                <li>Проверьте соединения в монтажных колодках и разъёмах</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 6: Повреждения обивки салона -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-primary text-white">
+              <h3 class="card-title mb-0">Повреждения обивки салона</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong></p>
+              <ul>
+                <li>Потёртости на сиденьях</li>
+                <li>Разрывы ткани или кожи</li>
+                <li>Пятна и загрязнения</li>
+                <li>Отслоение обивки от основы</li>
+                <li>Потеря эластичности материала</li>
+              </ul>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Естественный износ при длительной эксплуатации</li>
+                <li>Механические повреждения (когти животных, острые предметы)</li>
+                <li>Воздействие солнечных лучей</li>
+                <li>Химическое воздействие (пролитые жидкости)</li>
+                <li>Неправильная чистка</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ol>
+                <li>Для небольших потёртостей используйте специальные восстанавливающие составы</li>
+                <li>Мелкие разрывы можно зашить или заклеить специальным клеем для ткани/кожи</li>
+                <li>Удалите пятна с помощью специализированных чистящих средств</li>
+                <li>При значительных повреждениях — перетяните сиденья или замените обивку</li>
+                <li>Установите защитные чехлы для предотвращения дальнейшего износа</li>
+                <li>Используйте защитные спреи для кожи и ткани</li>
+                <li>Регулярно ухаживайте за обивкой согласно типу материала (кожа, ткань, велюр)</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <h4>Рекомендации по обслуживанию кузова и салона:</h4>
+        <ol>
+          <li>Регулярно мойте кузов и наносите защитное восковое покрытие</li>
+          <li>Проводите антикоррозийную обработку скрытых полостей каждые 2–3 года</li>
+          <li>Проверяйте состояние уплотнителей дверей и окон, смазывайте их силиконовой смазкой дважды в год</li>
+          <li>Очищайте дренажные отверстия в дверях и порогах от загрязнений (особенно весной и осенью)</li>
+          <li>Поддерживайте чистоту салона, используйте защитные накидки на сиденья</li>
+          <li>Периодически проверяйте и очищайте контакты электрооборудования салона</li>
+          <li>Своевременно устраняйте мелкие повреждения ЛКП для предотвращения коррозии</li>
+          <li>Перед зимой обрабатывайте резиновые уплотнители специальными составами против замерзания</li>
+          <li>Контролируйте состояние креплений элементов салона и при необходимости подтягивайте их</li>
+          <li>Избегайте использования агрессивных чистящих средств на обивке и пластиковых элементах салона</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Кузов и салон Lada Samara: неисправности и обслуживание",
+  "description": "Руководство по диагностике и устранению типичных проблем кузова и салона Lada Samara. Описывает симптомы, причины и способы устранения коррозии кузова, скрипов в салоне, неплотного закрытия дверей, проблем с остеклением, неисправностей освещения салона и повреждений обивки. Содержит рекомендации по регулярному обслуживанию кузова и салона.",
+  "datePublished": "2024-03-25T11:00:00+03:00",
+  "dateModified": "2024-03-27T16:30:00+03:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "url": "https://lada-aym.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lada-aym.github.io/lada-samara/assets/images/lada.webp",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#body-interior"
+  },
+  "wordCount": "1650",
+  "timeRequired": "PT25M",
+  "articleSection": "Диагностика и устранение неисправностей кузова и салона",
+  "articleBody": "Типичные проблемы кузова и салона Lada Samara включают коррозию, скрипы, неплотное закрытие дверей, неисправности остекления, освещения и повреждения обивки. Коррозия возникает из‑за воздействия реагентов, механических повреждений ЛКП, отсутствия защиты или скопления влаги. Скрипы вызываются трением панелей, ослаблением креплений, износом уплотнителей. Неплотное закрытие дверей связано с ослаблением петель, износом уплотнителей, деформацией кузова или неправильной регулировкой замка. Проблемы с остеклением провоцируют износ механизма стеклоподъёмника, обрыв троса, заклинивание стекла или неисправность электродвигателя. Неисправности освещения возникают из‑за перегоревших ламп, окисления контактов, обрывов проводки или проблем с предохранителями. Повреждения обивки происходят вследствие естественного износа, механических воздействий, ультрафиолета или неправильной чистки. Обслуживание включает регулярную мойку кузова с нанесением воска, антикоррозийную обработку каждые 2–3 года, смазку уплотнителей, очистку дренажных отверстий, уход за обивкой и контроль креплений элементов салона.",
+  "keywords": [
+    "кузов Lada Samara",
+    "салон Lada Samara",
+    "коррозия кузова",
+    "антикоррозийная обработка",
+    "скрип в салоне автомобиля",
+    "неплотное закрытие дверей",
+    "регулировка дверей автомобиля",
+    "проблемы со стеклоподъёмниками",
+    "освещение салона автомобиля",
+    "повреждения обивки салона",
+    "уход за обивкой сидений",
+    "обслуживание уплотнителей",
+    "дренажные отверстия автомобиля",
+    "защита кузова от коррозии",
+    "восстановление обивки салона"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Lada Samara",
+      "description": "Модель автомобиля, для которой предназначено данное руководство"
+    },
+    {
+      "@type": "Thing",
+      "name": "Кузов автомобиля",
+      "description": "Металлическая конструкция автомобиля, подверженная коррозии и механическим повреждениям"
+    },
+    {
+      "@type": "Thing",
+      "name": "Салон автомобиля",
+      "description": "Внутреннее пространство автомобиля с элементами отделки, обивкой, освещением и механизмами управления"
+    },
+    {
+      "@type": "Thing",
+      "name": "Лакокрасочное покрытие (ЛКП)",
+      "description": "Защитный слой на кузове, предотвращающий коррозию и придающий эстетический вид"
+    },
+    {
+      "@type": "Thing",
+      "name": "Уплотнители дверей и окон",
+      "description": "Резиновые элементы, обеспечивающие герметичность и шумоизоляцию салона"
+    },
+    {
+      "@type": "Thing",
+      "name": "Стеклоподъёмник",
+      "description": "Механизм для подъёма и опускания боковых стёкол автомобиля"
+    },
+    {
+      "@type": "Thing",
+      "name": "Обивка салона",
+      "description": "Материалы отделки сидений, панелей и других элементов интерьера (ткань, кожа, велюр)"
+    },
+    {
+      "@type": "Thing",
+      "name": "Освещение салона",
+      "description": "Система внутреннего освещения автомобиля, включающая плафоны, подсветку приборов и дверей"
+    }
+  ],
+  "genre": "Automotive Troubleshooting Guide",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Руководство по диагностике и устранению неисправностей Lada Samara",
+    "author": "Lada Samara Guide"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Раздел 6.8. Кузов и салон",
+    "url": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#body-interior"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide"
+  },
+  "copyrightYear": 2024,
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "typicalAgeRange": "18+",
+  "learningResourceType": "Maintenance Guide"
+}
+</script>
+
+<!-- 6.9. Общие рекомендации -->
+<div id="general-advice" class="accordion-item">
+  <h2 class="accordion-header">
+    <button id="heading69" class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse69"
+            aria-expanded="false"
+            aria-controls="collapse69">
+      6.9. Общие рекомендации
+    </button>
+  </h2>
+  <div id="collapse69" class="accordion-collapse collapse"
+       data-bs-parent="#mainAccordion"
+       role="region"
+       aria-labelledby="heading69">
+    <div class="accordion-body">
+      <p class="mb-4">Подробные рекомендации по диагностике, профилактике и обслуживанию автомобиля:</p>
+
+      <div class="alert alert-info mt-3" role="alert">
+        <strong>Совет:</strong> При появлении первых признаков неисправности проведите первичную диагностику самостоятельно. Простые проблемы можно устранить своими силами, что сэкономит время и деньги.
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Карточка 1: Визуальный осмотр -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-primary text-white">
+              <h3 class="card-title mb-0">Регулярный визуальный осмотр</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Что проверять:</strong></p>
+              <ul>
+                <li>Уровень жидкостей (масло, тормозная, охлаждающая, омыватель)</li>
+                <li>Состояние шин (износ, давление, повреждения)</li>
+                <li>Наличие подтёков жидкостей под автомобилем</li>
+                <li>Целостность световых приборов</li>
+                <li>Состояние ремней привода</li>
+                <li>Коррозионные повреждения кузова</li>
+              </ul>
+              <p><strong>Периодичность:</strong> перед каждой поездкой (быстрый осмотр), раз в неделю — детальный осмотр.</p>
+              <p><strong>Инструменты:</strong> фонарик, манометр для шин, щуп для проверки масла.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Регламент ТО -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-success text-white">
+              <h3 class="card-title mb-0">Соблюдение регламента ТО</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Ключевые интервалы обслуживания:</strong></p>
+              <ul>
+                <li>Масло и масляный фильтр — каждые 10 000 км или раз в год</li>
+                <li>Воздушный фильтр — каждые 15 000 км</li>
+                <li>Салонный фильтр — каждые 15 000 км или ежегодно</li>
+                <li>Тормозная жидкость — каждые 2 года</li>
+                <li>Охлаждающая жидкость — каждые 2–3 года</li>
+                <li>Свечи зажигания — каждые 30 000 км</li>
+                <li>Ремни и ролики ГРМ — каждые 60 000–90 000 км</li>
+              </ul>
+              <p><strong>Важно:</strong> сокращайте интервалы при тяжёлых условиях эксплуатации (городские пробки, пыльные дороги, короткие поездки).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Качественные запчасти -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <h3 class="card-title mb-0">Использование качественных запчастей</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>На что обратить внимание:</strong></p>
+              <ul>
+                <li>Оригинальность или надёжные аналоги с сертификатами</li>
+                <li>Соответствие спецификации автомобиля</li>
+                <li>Репутация производителя</li>
+                <li>Гарантия на запчасти</li>
+                <li>Правильная упаковка и маркировка</li>
+              </ul>
+              <p><strong>Риски использования некачественных запчастей:</strong></p>
+              <ul>
+                <li>Сокращение срока службы узла</li>
+                <li>Повреждение сопряжённых деталей</li>
+                <li>Ухудшение работы систем автомобиля</li>
+                <li>Опасность для безопасности движения</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 4: Обращение к специалистам -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+              <h3 class="card-title mb-0">Обращение к квалифицированным специалистам</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Когда необходимо:</strong></p>
+              <ul>
+                <li>При сложных электрических неисправностях</li>
+                <li>При проблемах с двигателем (стуки, потери мощности)</li>
+                <li>При неисправностях трансмиссии</li>
+                <li>После ДТП или серьёзных ударов</li>
+                <li>При необходимости специализированного оборудования</li>
+                <li>Для гарантийного обслуживания</li>
+              </ul>
+              <p><strong>Как выбрать сервис:</strong></p>
+              <ul>
+                <li>Отзывы и репутация</li>
+                <li>Наличие сертифицированных специалистов</li>
+                <li>Современное оборудование</li>
+                <li>Гарантия на работы</li>
+                <li>Прозрачная система ценообразования</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 5: Журнал ТО -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h3 class="card-title mb-0">Ведение журнала технического обслуживания</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Что фиксировать:</strong></p>
+              <ul>
+                <li>Дата и пробег при каждом обслуживании</li>
+                <li>Выполненные работы</li>
+                <li>Заменённые детали и их номера</li>
+                <li>Использованные расходные материалы</li>
+                <li>Результаты диагностики</li>
+                <li>Замечания и рекомендации</li>
+                <li>Стоимость работ и запчастей</li>
+              </ul>
+              <p><strong>Преимущества:</strong></p>
+              <ul>
+                <li>Контроль интервалов обслуживания</li>
+                <li>История ремонтов при продаже авто</li>
+                <li>Быстрое выявление повторяющихся проблем</li>
+                <li>Обоснованные претензии к сервису</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 6: Раннее обнаружение проблем -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-secondary text-white">
+              <h3 class="card-title mb-0">Раннее обнаружение неисправностей</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>На какие сигналы обращать внимание:</strong></p>
+              <ul>
+                <li>Необычные звуки (стуки, скрипы, гул)</li>
+                <li>Изменения в управляемости</li>
+                <li>Увеличение расхода топлива</li>
+                <li>Запах гари или технических жидкостей в салоне</li>
+                <li>Индикаторы неисправностей на приборной панели</li>
+                <li>Вибрации при движении</li>
+                <li>Изменение цвета выхлопных газов</li>
+              </ul>
+              <p><strong>Действия:</strong> при обнаружении любого из признаков — проведите диагностику или обратитесь в сервис.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <div class="mt-4">
+        <h3>Дополнительные рекомендации:</h3>
+        <ol>
+          <li><strong>Хранение автомобиля:</strong> по возможности используйте гараж или навес, особенно зимой. При длительном простое (более 2 недель) рекомендуется:
+            <ul>
+              <li>снять клеммы с аккумулятора;</li>
+              <li>проверить уровень заряда аккумулятора;</li>
+              <li>накрыть автомобиль защитным чехлом;</li>
+              <li>увеличить давление в шинах на 0,2–0,3 бар;</li>
+              <li>обработать резиновые уплотнители силиконовой смазкой.</li>
+            </ul>
+          </li>
+
+          <li><strong>Мойка:</strong> регулярно мойте кузов, уделяя внимание аркам и днищу для предотвращения коррозии. Правила безопасной мойки:
+            <ul>
+              <li>не используйте агрессивные моющие средства;</li>
+              <li>избегайте мойки двигателя под высоким давлением;</li>
+              <li>после мойки продуйте сжатым воздухом замки и дренажные отверстия;</li>
+              <li>просушивайте тормозные диски после мойки перед поездкой.</li>
+            </ul>
+          </li>
+
+          <li><strong>Эксплуатация в зимний период:</strong>
+            <ul>
+              <li>замените летние шины на зимние при устойчивой температуре ниже +7 °C;</li>
+              <li>используйте незамерзающую жидкость с соответствующей температурой замерзания;</li>
+              <li>проверьте плотность электролита в аккумуляторе;</li>
+              <li>перед поездкой очищайте автомобиль от снега и наледи;</li>
+              <li>прогревайте двигатель 2–3 минуты перед началом движения.</li>
+            </ul>
+          </li>
+
+          <li><strong>Эксплуатация в летний период:</strong>
+            <ul>
+              <li>контролируйте уровень охлаждающей жидкости;</li>
+              <li>проверяйте давление в шинах (жара может вызвать его повышение);</li>
+              <li>очищайте радиатор системы охлаждения от насекомых и мусора;</li>
+              <li>защищайте салон от выгорания с помощью солнцезащитных экранов;</li>
+              <li>регулярно проверяйте состояние приводных ремней.</li>
+            </ul>
+          </li>
+
+          <li><strong>Подготовка к дальним поездкам:</strong> перед путешествием обязательно:
+            <ul>
+              <li>проверьте уровни всех технических жидкостей;</li>
+              <li>осмотрите состояние шин и проверьте давление;</li>
+              <li>убедитесь в исправности световых приборов;</li>
+              <li>возьмите с собой набор инструментов и запаску;</li>
+              <li>проверьте работу кондиционера или отопителя;</li>
+              <li>зарядите аккумулятор и проверьте клеммы;</li>
+              <li>укомплектуйте автомобиль аптечкой, огнетушителем и знаком аварийной остановки.</li>
+            </ul>
+          </li>
+
+          <li><strong>Безопасность при самостоятельном ремонте:</strong> соблюдайте меры предосторожности:
+            <ul>
+              <li>работайте только на ровной, устойчивой поверхности;</li>
+              <li>используйте упоры при поднятии автомобиля домкратом;</li>
+              <li>надевайте защитные очки при работе с жидкостями;</li>
+              <li>обеспечьте хорошую вентиляцию при работе с химическими веществами;</li>
+              <li>отключайте аккумулятор перед работами с электрооборудованием.</li>
+            </ul>
+          </li>
+
+          <li><strong>Экономия ресурсов:</strong> способы снизить расход топлива и износ деталей:
+            <ul>
+              <li>плавный стиль вождения без резких ускорений и торможений;</li>
+              <li>своевременное переключение передач;</li>
+              <li>оптимальная загрузка автомобиля;</li>
+              <li>использование круиз‑контроля на трассе;</li>
+              <li>поддержание правильного давления в шинах;</li>
+              <li>удаление лишнего веса из багажника.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      <div class="alert alert-success mt-4" role="alert">
+        <strong>Важно:</strong> регулярное выполнение этих рекомендаций позволит:
+        <ul class="mb-0">
+          <li>значительно продлить срок службы автомобиля;</li>
+          <li>снизить вероятность внезапных поломок;</li>
+          <li>сократить расходы на ремонт;</li>
+          <li>обеспечить безопасность движения;</li>
+          <li>сохранить товарный вид автомобиля.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Рекламный блок Яндекс -->
+<div class="ad-container my-4 text-center">
+  <div id="adfox_173934500594834357"></div>
+  <script>
+    window.yaContextCb.push(() => {
+      Ya.adfoxCode.create({
+        ownerId: 322697,
+        containerId: 'adfox_173934500594834357',
+        params: {
+          pp: 'i',
+          ps: 'ivjz',
+          p2: 'gqqu'
+        }
+      });
+    });
+  </script>
+</div>
+<!-- Конец рекламного блока -->
+</div> <!-- ЗАКРЫВАЮЩИЙ ТЕГ ОБЩЕГО КОНТЕЙНЕРА СТРАНИЦЫ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Общие рекомендации по диагностике, профилактике и обслуживанию автомобиля",
+  "description": "Подробные рекомендации по регулярной диагностике, профилактике и обслуживанию автомобиля. Включают правила визуального осмотра, соблюдение регламента ТО, использование качественных запчастей, обращение к специалистам, ведение журнала ТО и раннее обнаружение неисправностей. Содержат дополнительные советы по хранению, мойке, эксплуатации в разных сезонах, подготовке к дальним поездкам, безопасности при ремонте и экономии ресурсов.",
+  "datePublished": "2024-04-15T10:00:00+03:00",
+  "dateModified": "2024-04-15T10:00:00+03:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "url": "https://lada-aym.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lada-aym.github.io/lada-samara/assets/images/logo.webp",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#general-advice"
+  },
+  "wordCount": "1200",
+  "timeRequired": "PT20M",
+  "articleSection": "Техническое обслуживание автомобиля",
+  "articleBody": "Рекомендации включают регулярный визуальный осмотр (уровни жидкостей, состояние шин, подтёки, световые приборы, ремни привода, коррозия кузова), соблюдение регламента ТО (замена масла каждые 10 000 км, воздушного фильтра — каждые 15 000 км и т. д.), использование качественных запчастей, своевременное обращение к специалистам и ведение журнала ТО. Дополнительные рекомендации охватывают правила хранения автомобиля, мойки, эксплуатации в зимний и летний периоды, подготовку к дальним поездкам, безопасность при самостоятельном ремонте и способы экономии ресурсов.",
+  "keywords": [
+    "обслуживание автомобиля",
+    "диагностика автомобиля",
+    "регламент ТО",
+    "визуальный осмотр автомобиля",
+    "качественные запчасти",
+    "журнал технического обслуживания",
+    "раннее обнаружение неисправностей",
+    "хранение автомобиля",
+    "мойка автомобиля",
+    "эксплуатация зимой",
+    "эксплуатация летом",
+    "подготовка к дальним поездкам",
+    "безопасность при ремонте",
+    "экономия топлива"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Техническое обслуживание автомобиля",
+      "description": "Комплекс мероприятий по поддержанию автомобиля в исправном состоянии"
+    },
+    {
+      "@type": "Thing",
+      "name": "Визуальный осмотр",
+      "description": "Первичная проверка состояния автомобиля без специального оборудования"
+    },
+    {
+      "@type": "Thing",
+      "name": "Регламент ТО",
+      "description": "Установленные производителем интервалы и виды технического обслуживания"
+    },
+    {
+      "@type": "Thing",
+      "name": "Качественные запчасти",
+      "description": "Оригинальные или сертифицированные аналоги, соответствующие спецификациям автомобиля"
+    },
+    {
+      "@type": "Thing",
+      "name": "Журнал ТО",
+      "description": "Документ для фиксации всех выполненных работ и заменённых деталей"
+    },
+    {
+      "@type": "Thing",
+      "name": "Раннее обнаружение неисправностей",
+      "description": "Выявление проблем на начальной стадии для предотвращения серьёзных поломок"
+    },
+    {
+      "@type": "Thing",
+      "name": "Эксплуатация автомобиля зимой",
+      "description": "Особенности использования автомобиля в холодное время года: шины, жидкости, прогрев"
+    },
+    {
+      "@type": "Thing",
+      "name": "Подготовка к дальним поездкам",
+      "description": "Чек‑лист проверок перед путешествием: шины, жидкости, инструменты, безопасность"
+    }
+  ],
+  "genre": "Automotive Technical Guide",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Полное руководство по обслуживанию Lada Samara",
+    "author": "Lada Samara Guide"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Раздел 6.9. Общие рекомендации",
+    "url": "https://lada-aym.github.io/lada-samara/malfunctions-solutions.html#general-advice"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "Lada Samara Guide"
+  },
+  "copyrightYear": 2024,
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "typicalAgeRange": "18+",
+  "learningResourceType": "Technical Guide"
+}
+</script>
+
+<footer class="footer mt-5">
+  <div class="container">
+    <p class="mb-0 text-center">
+      &copy; <span id="current-year"></span> lada-aym.github.io. Все права защищены.
+    </p>
+    <p class="small mb-0 text-center">
+      Руководство по эксплуатации и обслуживанию Lada Samara.
+    </p>
+    <div class="row mt-3">
+      <div class="col-12 text-center">
+        <ul class="list-inline d-inline-block">
+          <li class="list-inline-item"><a href="/lada-samara/body-interior.html" class="text-muted">Кузов и салон</a></li>
+          <li class="list-inline-item"><a href="/lada-samara/controls-instruments.html" class="text-muted">Органы управления</a></li>
+          <li class="list-inline-item"><a href="/lada-samara/operation.html" class="text-muted">Эксплуатация</a></li>
+          <li class="list-inline-item"><a href="/lada-samara/maintenance.html" class="text-muted">Обслуживание</a></li>
+          <li class="list-inline-item"><a href="/lada-samara/technical-specs.html" class="text-muted">Характеристики</a></li>
+          <li class="list-inline-item"><a href="/lada-samara/malfunctions-solutions.html" class="text-muted">Неисправности</a></li>
+          <li class="list-inline-item"><a href="/lada-samara/applications.html" class="text-muted">Приложения</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- Yandex.RTB floorAd (оптимизированная версия) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Отложенный рендер floorAd — ждём скролла пользователя
+      const handleScroll = () => {
+        if (window.scrollY > 100) { // Показываем после скролла на 100px
+          window.removeEventListener('scroll', handleScroll);
+
+          const deviceType = getDeviceType();
+          const blockId = deviceType === 'touch' ? 'R-A-537370-36' : 'R-A-537370-44';
+
+          window.yaContextCb.push(() => {
+            try {
+              Ya.Context.AdvManager.render({
+                blockId: blockId,
+                type: 'floorAd',
+                platform: deviceType
+              });
+              console.log(`floorAd rendered: ${blockId} (${deviceType})`);
+            } catch (error) {
+              console.error('Failed to render floorAd:', error);
+            }
+          });
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+    });
+  </script>
+
+  <!-- Yandex.RTB inImage (оптимизированная версия) -->
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const MAX_ADS = 3;
+  const MIN_IMAGE_WIDTH = 300;
+  const MIN_IMAGE_HEIGHT = 250;
+  let adCount = 0;
+
+  const isImageLargeEnough = (image) => {
+    // Для загруженных изображений проверяем naturalWidth/naturalHeight
+    if (image.complete) {
+      return image.naturalWidth >= MIN_IMAGE_WIDTH &&
+             image.naturalHeight >= MIN_IMAGE_HEIGHT;
+    }
+    // Если изображение ещё не загружено, проверяем атрибуты width/height
+    const width = parseInt(image.getAttribute('width') || image.style.width || 0);
+    const height = parseInt(image.getAttribute('height') || image.style.height || 0);
+    return width >= MIN_IMAGE_WIDTH && height >= MIN_IMAGE_HEIGHT;
+  };
+
+  const renderInImageAd = (image) => {
+    if (adCount >= MAX_ADS) return;
+    if (!isImageLargeEnough(image)) {
+      console.log(`Image too small: ${image.src} (${image.naturalWidth}×${image.naturalHeight})`);
+      return;
+    }
+
+    const imageId = `yandex_rtb_R-A-537370-42_${Math.random().toString(16).slice(2)}`;
+    image.id = imageId;
+    image.setAttribute('data-ad-rendered', 'true');
+
+    window.yaContextCb.push(() => {
+      try {
+        Ya.Context.AdvManager.render({
+          renderTo: imageId,
+          blockId: 'R-A-537370-42',
+          type: 'inImage'
+        });
+        adCount++;
+        console.log(`inImage ad rendered: ${imageId}`);
+      } catch (error) {
+        console.warn('Failed to render inImage ad:', error);
+      }
+    });
+  };
+
+  const processImages = (images) => {
+    images.forEach(image => {
+      if (adCount >= MAX_ADS) return;
+
+      if (image.complete) {
+        renderInImageAd(image);
+      } else {
+        image.addEventListener('load', () => renderInImageAd(image), { once: true });
+      }
+    });
+  };
+
+  const images = Array.from(document.querySelectorAll('img:not([data-ad-rendered])'));
+  processImages(images);
+});
+</script>
+<!-- Bootstrap 5.3 JS Bundle (с Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+<script src="/lada-samara/assets/js/main.js"></script>
+</body>
+</html>
