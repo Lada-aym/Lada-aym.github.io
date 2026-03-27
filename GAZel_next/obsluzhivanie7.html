@@ -1,6 +1,72 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="auto"> 
 <head>
+
+    <script>
+  // Инициализируем массивы для работы с рекламой
+  window.yaContextCb = window.yaContextCb || [];
+  window.APExceptionBlocks = window.APExceptionBlocks || [];
+
+  // Функция определения типа устройства
+  const getDeviceType = () => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    return 'ontouchstart' in window ||
+           navigator.maxTouchPoints > 0 ||
+           /android|iphone|ipad|mobile/i.test(userAgent)
+      ? 'touch'
+      : 'desktop';
+  };
+
+  // Отложенная загрузка скриптов Яндекс.Рекламы (через 2 с)
+  setTimeout(() => {
+    // Объявляем блоки ДО загрузки скриптов
+    if (window.APExceptionBlocks.length === 0) {
+      window.APExceptionBlocks = [
+        {
+          blockId: 'R-A-537370-42',
+          ownerId: 537370,
+          type: 'inImage',
+          containerId: null
+        },
+        {
+          blockId: 'C-A-537370-46', // замените на реальный ID из AdFox
+          ownerId: 322697,
+          type: 'adfox',
+          containerId: 'adfox_173934500594834357',
+          params: {
+            pp: 'i',
+            ps: 'ivjz',
+            p2: 'gqqu'
+          }
+        }
+      ];
+    }
+
+    // Загружаем context.js
+    const script = document.createElement('script');
+    script.src = 'https://yandex.ru/ads/system/context.js'; // Исправьте на https://
+    script.async = true;
+
+    script.onload = () => {
+      console.log('Yandex ads script loaded');
+
+      // После загрузки context.js загружаем ap-loader.js
+      const apScript = document.createElement('script');
+      apScript.src = 'https://yandex.ru/ads/system/ap-loader.js'; // Исправьте на https://
+      apScript.async = true;
+      apScript.setAttribute('data-page-id', '537370');
+
+      apScript.onload = () => console.log('AP loader script loaded');
+      apScript.onerror = () => console.error('Failed to load AP loader script');
+
+      document.body.appendChild(apScript);
+    };
+
+    script.onerror = () => console.error('Failed to load Yandex ads script');
+    document.body.appendChild(script);
+  }, 2000);
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="assets/images/ci-141-82x34.png" type="image/x-icon">
@@ -9,6 +75,8 @@
 <meta name="keywords" content="предохранители газель next, реле газель next, блок предохранителей газель next, блок реле газель next, моторный отсек газель next, панель приборов газель next, схема предохранителей газель next, замена предохранителей газель next">
 <link rel="canonical" href="https://lada-aym.github.io/GAZel_next/obsluzhivanie7.html">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+
 <link href="assets/css/cheatsheet.css" rel="stylesheet">
 <style>.bd-placeholder-img{font-size:1.125rem;text-anchor:middle;-webkit-user-select:none;-moz-user-select:none;user-select:none}@media (min-width: 768px){.bd-placeholder-img-lg{font-size:3.5rem}}.b-example-divider{width:100%;height:3rem;background-color:#0000001a;border:solid rgba(0,0,0,.15);border-width:1px 0;box-shadow:inset 0 .5em 1.5em #0000001a,inset 0 .125em .5em #00000026}.b-example-vr{flex-shrink:0;width:1.5rem;height:100vh}.bi{vertical-align:-.125em;fill:currentColor}.nav-scroller{position:relative;z-index:2;height:2.75rem;overflow-y:hidden}.nav-scroller .nav{display:flex;flex-wrap:nowrap;padding-bottom:1rem;margin-top:-1px;overflow-x:auto;text-align:center;white-space:nowrap;-webkit-overflow-scrolling:touch}.btn-bd-primary{--bd-violet-bg: #712cf9;--bd-violet-rgb: 112.520718, 44.062154, 249.437846;--bs-btn-font-weight: 600;--bs-btn-color: var(--bs-white);--bs-btn-bg: var(--bd-violet-bg);--bs-btn-border-color: var(--bd-violet-bg);--bs-btn-hover-color: var(--bs-white);--bs-btn-hover-bg: #6528e0;--bs-btn-hover-border-color: #6528e0;--bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);--bs-btn-active-color: var(--bs-btn-hover-color);--bs-btn-active-bg: #5a23c8;--bs-btn-active-border-color: #5a23c8}.bd-mode-toggle{z-index:1500}.bd-mode-toggle .bi{width:1em;height:1em}.bd-mode-toggle .dropdown-menu .active .bi{display:block!important}
 </style>
@@ -19,29 +87,6 @@
 <meta property="og:url" content="https://lada-aym.github.io/GAZel_next/obsluzhivanie7.html">
 <meta property="og:image" content="/GAZel_next/assets/images/GAZel-next-cover.avif">
 <meta property="og:description" content="Где находятся блоки предохранителей и реле ГАЗель Next: в моторном отделении и на панели приборов. Схема, номиналы, порядок замены предохранителей. Описание функций основных реле. Руководство по диагностике неисправностей электрооборудования.">
-<script>
-  window.APExceptionBlocks = [
-    // Блок типа inImage
-    {
-      blockId: 'R-A-537370-42',
-      ownerId: 537370,
-      type: 'inImage', 
-      containerId: null
-    },
-
-    {
-      blockId: null,
-      ownerId: 322697,
-      type: 'adfox',
-      containerId: 'adfox_173934500594834357',
-      params: {
-        pp: 'i', 
-        ps: 'ivjz', 
-        p2: 'gqqu'
-      }
-    }
-  ];
-</script>
 <!-- Google Tag Manager -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -55,14 +100,7 @@
     });
 </script>
 <!-- Google Tag Manager (noscript) -->
-<script>
-    setTimeout(function() {
-        var script = document.createElement('script');
-        script.src = 'https://yandex.ru/ads/system/context.js';
-        document.body.appendChild(script);
-    }, 2000);
-</script>
-<script>window.yaContextCb=window.yaContextCb||[]</script>
+
 </head>
 <body class="bg-body-tertiary fw-bold fst-italic "> <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
     <!-- Google Tag Manager (noscript) -->
@@ -197,71 +235,41 @@ Auto
     })
 </script> </div> </div> </div></div>
 <div class="card-footer text-muted text-center">РУКОВОДСТВО ПО ЭКСПЛУАТАЦИИ</br>2017 г.</div></div></article></section>
-</main><!--  -->
+</main>
 <!--  -->
-<!-- Yandex.RTB inImage (оптимизированная версия) -->
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const MAX_ADS = 3;
-  const MIN_IMAGE_WIDTH = 300;
-  const MIN_IMAGE_HEIGHT = 250;
-  let adCount = 0;
-
-  const isImageLargeEnough = (image) => {
-    // Для загруженных изображений проверяем naturalWidth/naturalHeight
-    if (image.complete) {
-      return image.naturalWidth >= MIN_IMAGE_WIDTH &&
-             image.naturalHeight >= MIN_IMAGE_HEIGHT;
+<!-- Yandex.RTB R-A-537370-42 -->
+<script>
+window.addEventListener("load", () => {
+    const render = (imageId) => {
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                "renderTo": imageId,
+                "blockId": "R-A-537370-42",
+                "type": "inImage"
+            })
+        })
     }
-    // Если изображение ещё не загружено, проверяем атрибуты width/height
-    const width = parseInt(image.getAttribute('width') || image.style.width || 0);
-    const height = parseInt(image.getAttribute('height') || image.style.height || 0);
-    return width >= MIN_IMAGE_WIDTH && height >= MIN_IMAGE_HEIGHT;
-  };
-
-  const renderInImageAd = (image) => {
-    if (adCount >= MAX_ADS) return;
-    if (!isImageLargeEnough(image)) {
-      console.log(`Image too small: ${image.src} (${image.naturalWidth}×${image.naturalHeight})`);
-      return;
+    const renderInImage = (images) => {
+        if (!images.length) {
+            return
+        }
+        const image = images.shift()
+        image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
+        if (image.tagName === "IMG" && !image.complete) {
+            image.addEventListener("load", () => {
+                render(image.id)
+            }, { once: true })
+        } else {
+            render(image.id)
+        }
+        renderInImage(images)
     }
-
-    const imageId = `yandex_rtb_R-A-537370-42_${Math.random().toString(16).slice(2)}`;
-    image.id = imageId;
-    image.setAttribute('data-ad-rendered', 'true');
-
-    window.yaContextCb.push(() => {
-      try {
-        Ya.Context.AdvManager.render({
-          renderTo: imageId,
-          blockId: 'R-A-537370-42',
-          type: 'inImage'
-        });
-        adCount++;
-        console.log(`inImage ad rendered: ${imageId}`);
-      } catch (error) {
-        console.warn('Failed to render inImage ad:', error);
-      }
-    });
-  };
-
-  const processImages = (images) => {
-    images.forEach(image => {
-      if (adCount >= MAX_ADS) return;
-
-      if (image.complete) {
-        renderInImageAd(image);
-      } else {
-        image.addEventListener('load', () => renderInImageAd(image), { once: true });
-      }
-    });
-  };
-
-  const images = Array.from(document.querySelectorAll('img:not([data-ad-rendered])'));
-  processImages(images);
-});
+    renderInImage(Array.from(document.querySelectorAll("img")))
+}, { once: true })
 </script>
-<script src="assets/js/color-modes.js"></script>
+<!--  -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+<script src="assets/js/color-modes.js"></script>
+
 </body>
 </html>
