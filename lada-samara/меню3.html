@@ -1,3 +1,154 @@
+не запускается блок adfox (банер)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title>InImage Ads Integration</title>
+  
+</head>
+<body>
+
+<!-- Ваши изображения -->
+
+        <!-- Карточка с изображением крышки багажника (ВАЗ-2115) -->
+        <div class="mb-image-block">
+          <div class="image-card image-card--limited">
+            <figure>
+              <img src="/lada-samara/assets/images/lada-samara-kryshka-bagazhnika.webp"
+                   alt="Крышка багажника ВАЗ-2115 с замком и ключом"
+                   class="img-fluid"
+                   loading="lazy"
+                   decoding="async">
+              <figcaption class="image-caption">
+                <strong>Рис. 16.</strong> Крышка багажника (для ВАЗ‑2115 и модификаций)
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        
+        <div class="col"> <div class="card h-100"> <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img src="/GAZel_next/assets/images/GAZel_next-image73.webp" class="img-fluid card-img-end img-thumbnail" alt="Блок силовых предохранителей в моторном отделении в автомобиле GAZel Next с дизельным двигателем" itemprop="url"><p class="caption text-center">Рис.73. Блок силовых предохранителей в моторном отделении в автомобиле с дизельным двигателем</p><meta itemprop="description" content="Блок силовых предохранителей в моторном отделении в автомобиле GAZel Next с дизельным двигателем"> <meta itemprop="thumbnail" content="https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image73.webp"></div> <div class="card-body">
+ <table class="table caption-top table-sm table-striped table-warning">
+ <caption itemprop="about">Автомобиль с дизельным двигателем</caption> <thead class="table-secondary"><tr> <th scope="col">№ Предохранителя (сила тока, А)</th> <th scope="col">Защищаемые цепи</th> </tr> </thead>
+     <tbody> <tr> <th scope="row">1 (125А)</th> <td>Предпусковой подогреватель воздуха</td> </tr> 
+     <tr> <th scope="row">2 (90А)</th> <td>Общая плюсовая цепь автомобиля</td></tr>
+     <tr> <th scope="row">3 (40А)</th> <td>Резерв</td> </tr> 
+     <tr> <th scope="row">4 (30A)</th> <td>Система управления двигателем</td></tr> </tbody> </table></div> </div> </div><!--  -->
+
+<!-- Рекламный блок Яндекс -->
+<div class="ad-container my-4 text-center">
+  <div id="adfox_173934500594834357"></div>
+  <script>
+    window.yaContextCb.push(() => {
+      Ya.adfoxCode.create({
+        ownerId: 322697,
+        containerId: 'adfox_173934500594834357',
+        params: {
+          pp: 'i',
+          ps: 'ivjz',
+          p2: 'gqqu'
+        }
+      });
+    });
+  </script>
+</div></div>
+<script>
+  // Инициализация необходимых переменных
+  window.APExceptionBlocks = window.APExceptionBlocks || [
+    'adfox_173934500594834357', // AdFox
+    'R-A-537370-42' // Yandex InImage
+  ];
+
+  // Константы
+  const MAX_ADS = 3;           // Максимальное число объявлений
+  const MIN_IMAGE_WIDTH = 300; // Минимальная ширина изображения
+  const MIN_IMAGE_HEIGHT = 250;// Минимальная высота изображения
+
+  // Начальное значение счетчика объявлений
+  let adCount = 0;
+
+  // Проверка размеров изображения
+  const isImageLargeEnough = (image) => {
+    if (image.complete) {
+      return image.naturalWidth >= MIN_IMAGE_WIDTH && image.naturalHeight >= MIN_IMAGE_HEIGHT;
+    }
+    const width = parseInt(image.getAttribute('width') || image.style.width || 0);
+    const height = parseInt(image.getAttribute('height') || image.style.height || 0);
+    return width >= MIN_IMAGE_WIDTH && height >= MIN_IMAGE_HEIGHT;
+  };
+
+  // Проверка перекрытия рекламы
+  const hasNearbyAd = (image) => {
+    const rect = image.getBoundingClientRect();
+    const ads = document.querySelectorAll('[data-adfox],[data-yandex]');
+
+    for (let ad of ads) {
+      const adRect = ad.getBoundingClientRect();
+      const overlap =
+        !(rect.right <= adRect.left || rect.left >= adRect.right ||
+          rect.bottom <= adRect.top || rect.top >= adRect.bottom);
+
+      if (overlap) return true;
+    }
+    return false;
+  };
+
+  // Функция создания объявления
+  const renderInImageAd = (image, index) => {
+    if (adCount >= MAX_ADS) return;
+    if (!isImageLargeEnough(image)) return;
+    if (hasNearbyAd(image)) return;
+
+    const imageId = `yandex_rtb_R-A-537370-42_${Date.now()}_${index}`;
+    image.id = imageId;
+    image.setAttribute('data-ad-rendered', 'true');
+
+    window.yaContextCb.push(() => {
+      try {
+        Ya.Context.AdvManager.render({
+          renderTo: imageId,
+          blockId: 'R-A-537370-42',
+          type: 'inImage'
+        });
+        adCount++;
+        console.log(`✅ Rendered inImage ad: ${imageId}`);
+      } catch (err) {
+        console.error('❌ Error rendering inImage ad:', err.message);
+      }
+    });
+  };
+
+  // Инициализация рекламы
+  const initInImageAds = () => {
+    const images = Array.from(document.querySelectorAll('img:not([data-ad-rendered]):not(.ad-ignore)'));
+
+    images.forEach((image, index) => {
+      if (adCount >= MAX_ADS) return;
+
+      if (image.complete) {
+        renderInImageAd(image, index);
+      } else {
+        image.addEventListener('load', () => renderInImageAd(image, index), {once: true});
+      }
+    });
+  };
+
+  // Загрузка библиотеки Yandex Context
+  const contextScript = document.createElement('script');
+  contextScript.src = 'https://yandex.ru/ads/system/context.js';
+  contextScript.async = true;
+  document.head.appendChild(contextScript);
+
+  // Сразу инициируем контекст
+  window.yaContextCb = window.yaContextCb || [];
+  window.yaContextCb.push(initInImageAds);
+</script>
+
+<!-- Yandex Autoplacement 537370 -->
+<script data-page-id="537370" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
+</body>
+</html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
