@@ -89,6 +89,25 @@
         }, 5000);
     });
 </script>
+<style>
+    <style>
+  /* Визуальная метка для отладки */
+  img[data-ad-rendered] {
+    border: 2px solid #0f0 !important;
+    outline: 1px dashed #00f !important;
+  }
+  .yandex-ad, [class*="rtb"] {
+    border: 1px solid #f00 !important; /* Красная рамка для контейнеров рекламы */
+  }
+  /* Убираем скрытые стили, если они есть */
+  .ad-ignore, [data-ad-rendered].hidden {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+</style>
+
+</style>
 <!-- Google Tag Manager -->
 </head>
 <body>
@@ -2501,9 +2520,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </footer>
-
 <script>
-  // Шаг 3: Улучшенный скрипт inImage с защитой от авторекламы
   const initInImageAds = () => {
     const MAX_ADS = 3;
     const MIN_IMAGE_WIDTH = 300;
@@ -2521,14 +2538,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     };
 
     const renderInImageAd = (image, index) => {
-      // Защита от авторекламы: проверяем, не занята ли область
       if (adCount >= MAX_ADS) return;
       if (!isImageLargeEnough(image)) {
         console.log(`Image too small: ${image.src} (${image.naturalWidth}×${image.naturalHeight})`);
         return;
       }
 
-      // Ключевая проверка: если рядом уже есть реклама, пропускаем
+      // Проверка на наличие рекламы рядом
       const nearbyAds = image.closest('[data-adfox]') ||
                      image.closest('.yandex-ad') ||
                      image.getAttribute('data-ad-rendered');
@@ -2550,6 +2566,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           });
           adCount++;
           console.log(`✅ inImage ad rendered: ${imageId}`);
+
+          // Дополнительная проверка видимости через 1 с
+          setTimeout(() => {
+            const adContainer = document.querySelector(`[id^="yandex_rtb"][id*="${imageId}"]`);
+            if (!adContainer) {
+              console.warn(`❌ Ad container not found for: ${imageId}`);
+            } else if (adContainer.offsetWidth === 0 || adContainer.offsetHeight === 0) {
+              console.warn(`⚠️ Ad container is hidden (0 size): ${imageId}`);
+            }
+          }, 1000);
         } catch (error) {
           console.warn('❌ Failed to render inImage ad:', error);
         }
@@ -2577,6 +2603,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     window.yaContextCb.push(initInImageAds);
   }
 </script>
+
 <!-- Bootstrap 5.3 JS Bundle (с Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 <script src="/lada-samara/assets/js/main.js"></script>
