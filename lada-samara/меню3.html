@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+  // Инициализируем глобальные переменные ДО всего остального
+  window.yaContextCb = window.yaContextCb || [];
+  window.APExceptionBlocks = window.APExceptionBlocks || [
+    'adfox_17393450594834357'
+  ];
+</script>
+
   <meta charset="UTF-8">
   <title>InImage Ads Integration</title>
-  <style>
-    /* Для отладки: выделяем обработанные изображения */
-    img[data-ad-rendered] {
-      border: 3px solid green;
-    }
-  </style>
+  
 </head>
 <body>
 
@@ -38,6 +41,23 @@
      <tr> <th scope="row">3 (40А)</th> <td>Резерв</td> </tr> 
      <tr> <th scope="row">4 (30A)</th> <td>Система управления двигателем</td></tr> </tbody> </table></div> </div> </div><!--  -->
 
+<!-- Рекламный блок Яндекс -->
+<div class="ad-container my-4 text-center">
+  <div id="adfox_173934500594834357"></div>
+  <script>
+    window.yaContextCb.push(() => {
+      Ya.adfoxCode.create({
+        ownerId: 322697,
+        containerId: 'adfox_173934500594834357',
+        params: {
+          pp: 'i',
+          ps: 'ivjz',
+          p2: 'gqqu'
+        }
+      });
+    });
+  </script>
+</div></div>
 <script>
   // Инициализация необходимых переменных
   window.APExceptionBlocks = window.APExceptionBlocks || [
