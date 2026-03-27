@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <script>
-    // Шаг 1: объявляем исключения ДО любых рекламных скриптов
-    window.APExceptionBlocks = [
-      'adfox_173934500594834357', // для Adfox
-      {
-        blockId: 'R-A-537370-42', // для inImage
-        type: 'inImage'
-      }
-    ];
-  </script>
-        <script>
+<script>
   // Инициализируем массивы для работы с рекламой
   window.yaContextCb = window.yaContextCb || [];
   window.APExceptionBlocks = window.APExceptionBlocks || [];
@@ -26,34 +16,20 @@
       : 'desktop';
   };
 
+  // Шаг 1: объявляем исключения ДО любых рекламных скриптов (без таймера)
+  window.APExceptionBlocks = [
+    'adfox_173934500594834357', // для Adfox — через containerId
+    {
+      blockId: 'R-A-537370-42', // для inImage — через blockId и type
+      type: 'inImage'
+    }
+  ];
+
   // Отложенная загрузка скриптов Яндекс.Рекламы (через 2 с)
   setTimeout(() => {
-    // Объявляем блоки ДО загрузки скриптов
-    if (window.APExceptionBlocks.length === 0) {
-      window.APExceptionBlocks = [
-        {
-          blockId: 'R-A-537370-42',
-          ownerId: 537370,
-          type: 'inImage',
-          containerId: null
-        },
-        {
-          blockId: 'C-A-537370-46', // замените на реальный ID из AdFox
-          ownerId: 322697,
-          type: 'adfox',
-          containerId: 'adfox_173934500594834357',
-          params: {
-            pp: 'i',
-            ps: 'ivjz',
-            p2: 'gqqu'
-          }
-        }
-      ];
-    }
-
     // Загружаем context.js
     const script = document.createElement('script');
-    script.src = 'https://yandex.ru/ads/system/context.js'; // Исправьте на https://
+    script.src = 'https://yandex.ru/ads/system/context.js'; // ОБЯЗАТЕЛЬНО исправьте на https://
     script.async = true;
 
     script.onload = () => {
@@ -61,7 +37,7 @@
 
       // После загрузки context.js загружаем ap-loader.js
       const apScript = document.createElement('script');
-      apScript.src = 'https://yandex.ru/ads/system/ap-loader.js'; // Исправьте на https://
+      apScript.src = 'https://yandex.ru/ads/system/ap-loader.js'; // ОБЯЗАТЕЛЬНО исправьте на https://
       apScript.async = true;
       apScript.setAttribute('data-page-id', '537370');
 
@@ -75,6 +51,7 @@
     document.body.appendChild(script);
   }, 2000);
 </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
