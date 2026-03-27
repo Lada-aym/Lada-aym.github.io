@@ -1,66 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
-  <title>InImage Ads Integration</title>
-  
+  <title>AdFox Fix</title>
 </head>
 <body>
-
-<!-- Ваши изображения -->
-
-        <!-- Карточка с изображением крышки багажника (ВАЗ-2115) -->
-        <div class="mb-image-block">
-          <div class="image-card image-card--limited">
-            <figure>
-              <img src="/lada-samara/assets/images/lada-samara-kryshka-bagazhnika.webp"
-                   alt="Крышка багажника ВАЗ-2115 с замком и ключом"
-                   class="img-fluid"
-                   loading="lazy"
-                   decoding="async">
-              <figcaption class="image-caption">
-                <strong>Рис. 16.</strong> Крышка багажника (для ВАЗ‑2115 и модификаций)
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-        
-        <div class="col"> <div class="card h-100"> <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img src="/GAZel_next/assets/images/GAZel_next-image73.webp" class="img-fluid card-img-end img-thumbnail" alt="Блок силовых предохранителей в моторном отделении в автомобиле GAZel Next с дизельным двигателем" itemprop="url"><p class="caption text-center">Рис.73. Блок силовых предохранителей в моторном отделении в автомобиле с дизельным двигателем</p><meta itemprop="description" content="Блок силовых предохранителей в моторном отделении в автомобиле GAZel Next с дизельным двигателем"> <meta itemprop="thumbnail" content="https://lada-aym.github.io/GAZel_next/assets/images/GAZel_next-image73.webp"></div> <div class="card-body">
- <table class="table caption-top table-sm table-striped table-warning">
- <caption itemprop="about">Автомобиль с дизельным двигателем</caption> <thead class="table-secondary"><tr> <th scope="col">№ Предохранителя (сила тока, А)</th> <th scope="col">Защищаемые цепи</th> </tr> </thead>
-     <tbody> <tr> <th scope="row">1 (125А)</th> <td>Предпусковой подогреватель воздуха</td> </tr> 
-     <tr> <th scope="row">2 (90А)</th> <td>Общая плюсовая цепь автомобиля</td></tr>
-     <tr> <th scope="row">3 (40А)</th> <td>Резерв</td> </tr> 
-     <tr> <th scope="row">4 (30A)</th> <td>Система управления двигателем</td></tr> </tbody> </table></div> </div> </div><!--  -->
-
-<!-- Рекламный блок Яндекс -->
+  <!-- Карточка с изображением пробки топливного бака -->
+<div class="mb-image-block">
+  <div class="image-card image-card--limited">
+    <figure>
+      <img src="/lada-samara/assets/images/lada-samara-probka-toplivnogo-baka.webp"
+           alt="Пробка топливного бака с крышкой"
+           class="img-fluid"
+           loading="lazy"
+           decoding="async">
+      <figcaption class="image-caption">
+        <strong>Рис. 18.</strong> Пробка топливного бака
+      </figcaption>
+    </figure>
+  </div>
+</div>
+<!-- Рекламный блок AdFox -->
 <div class="ad-container my-4 text-center">
   <div id="adfox_173934500594834357"></div>
-  <script>
-    window.yaContextCb.push(() => {
-      Ya.adfoxCode.create({
-        ownerId: 322697,
-        containerId: 'adfox_173934500594834357',
-        params: {
-          pp: 'i',
-          ps: 'ivjz',
-          p2: 'gqqu'
-        }
-      });
-    });
-  </script>
-</div></div>
+</div>
+
 <script>
-  // Правильно ставим зависимость и ожидаем события DOMContentLoaded
+  // Оборачиваем всю логику в событие DOMContentLoaded
   document.addEventListener('DOMContentLoaded', () => {
-    // Инициализация необходимых переменных
-    window.APExceptionBlocks = window.APExceptionBlocks || [
-      'adfox_173934500594834357', // AdFox
-      'R-A-537370-42' // Yandex InImage
-    ];
+    // Предварительно инициализируем window.yaContextCb, если его нет
+    window.yaContextCb = window.yaContextCb || [];
 
-    // Инициализация AdFox
+    // Добавляем функцию инициализации AdFox
     window.yaContextCb.push(() => {
       Ya.adfoxCode.create({
         ownerId: 322697,
@@ -73,7 +44,7 @@
       });
     });
 
-    // Настройки
+    // Остальная логика
     const MAX_ADS = 3;
     const MIN_IMAGE_WIDTH = 300;
     const MIN_IMAGE_HEIGHT = 250;
@@ -152,7 +123,6 @@
     document.head.appendChild(contextScript);
 
     // Регистрация нашей функции инициализации
-    window.yaContextCb = window.yaContextCb || [];
     window.yaContextCb.push(initInImageAds);
   });
 </script>
