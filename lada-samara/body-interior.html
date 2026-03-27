@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <script>
+    // Шаг 1: объявляем исключения ДО любых рекламных скриптов
+    window.APExceptionBlocks = [
+      'adfox_173934500594834357', // для Adfox
+      {
+        blockId: 'R-A-537370-42', // для inImage
+        type: 'inImage'
+      }
+    ];
+  </script>
         <script>
   // Инициализируем массивы для работы с рекламой
   window.yaContextCb = window.yaContextCb || [];
