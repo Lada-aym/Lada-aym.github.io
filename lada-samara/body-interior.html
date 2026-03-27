@@ -156,28 +156,6 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRQ33NW3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-  <!-- Yandex.RTB fullscreen (оптимизированная версия) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        const deviceType = getDeviceType();
-        const blockId = deviceType === 'touch' ? 'R-A-537370-35' : 'R-A-537370-43';
-
-        window.yaContextCb.push(() => {
-          try {
-            Ya.Context.AdvManager.render({
-              blockId: blockId,
-              type: 'fullscreen',
-              platform: deviceType
-            });
-            console.log(`fullscreen ad rendered: ${blockId} (${deviceType})`);
-          } catch (error) {
-            console.error('Failed to render fullscreen ad:', error);
-          }
-        });
-      }, 2000); // Показываем через 2 секунды после загрузки DOM
-    });
-  </script>
 
 
     <!-- Горизонтальное прокручиваемое меню -->
@@ -2583,98 +2561,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </footer>
-
-  <!-- Yandex.RTB floorAd (оптимизированная версия) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Отложенный рендер floorAd — ждём скролла пользователя
-      const handleScroll = () => {
-        if (window.scrollY > 100) { // Показываем после скролла на 100px
-          window.removeEventListener('scroll', handleScroll);
-
-          const deviceType = getDeviceType();
-          const blockId = deviceType === 'touch' ? 'R-A-537370-36' : 'R-A-537370-44';
-
-          window.yaContextCb.push(() => {
-            try {
-              Ya.Context.AdvManager.render({
-                blockId: blockId,
-                type: 'floorAd',
-                platform: deviceType
-              });
-              console.log(`floorAd rendered: ${blockId} (${deviceType})`);
-            } catch (error) {
-              console.error('Failed to render floorAd:', error);
-            }
-          });
+<!-- Yandex.RTB R-A-537370-42 -->
+<script>
+window.addEventListener("load", () => {
+    const render = (imageId) => {
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                "renderTo": imageId,
+                "blockId": "R-A-537370-42",
+                "type": "inImage"
+            })
+        })
+    }
+    const renderInImage = (images) => {
+        if (!images.length) {
+            return
         }
-      };
-
-      window.addEventListener('scroll', handleScroll, { passive: true });
-    });
-  </script>
-
-  <!-- Yandex.RTB inImage (оптимизированная версия) -->
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const MAX_ADS = 3;
-  const MIN_IMAGE_WIDTH = 300;
-  const MIN_IMAGE_HEIGHT = 250;
-  let adCount = 0;
-
-  const isImageLargeEnough = (image) => {
-    // Для загруженных изображений проверяем naturalWidth/naturalHeight
-    if (image.complete) {
-      return image.naturalWidth >= MIN_IMAGE_WIDTH &&
-             image.naturalHeight >= MIN_IMAGE_HEIGHT;
+        const image = images.shift()
+        image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`
+        if (image.tagName === "IMG" && !image.complete) {
+            image.addEventListener("load", () => {
+                render(image.id)
+            }, { once: true })
+        } else {
+            render(image.id)
+        }
+        renderInImage(images)
     }
-    // Если изображение ещё не загружено, проверяем атрибуты width/height
-    const width = parseInt(image.getAttribute('width') || image.style.width || 0);
-    const height = parseInt(image.getAttribute('height') || image.style.height || 0);
-    return width >= MIN_IMAGE_WIDTH && height >= MIN_IMAGE_HEIGHT;
-  };
-
-  const renderInImageAd = (image) => {
-    if (adCount >= MAX_ADS) return;
-    if (!isImageLargeEnough(image)) {
-      console.log(`Image too small: ${image.src} (${image.naturalWidth}×${image.naturalHeight})`);
-      return;
-    }
-
-    const imageId = `yandex_rtb_R-A-537370-42_${Math.random().toString(16).slice(2)}`;
-    image.id = imageId;
-    image.setAttribute('data-ad-rendered', 'true');
-
-    window.yaContextCb.push(() => {
-      try {
-        Ya.Context.AdvManager.render({
-          renderTo: imageId,
-          blockId: 'R-A-537370-42',
-          type: 'inImage'
-        });
-        adCount++;
-        console.log(`inImage ad rendered: ${imageId}`);
-      } catch (error) {
-        console.warn('Failed to render inImage ad:', error);
-      }
-    });
-  };
-
-  const processImages = (images) => {
-    images.forEach(image => {
-      if (adCount >= MAX_ADS) return;
-
-      if (image.complete) {
-        renderInImageAd(image);
-      } else {
-        image.addEventListener('load', () => renderInImageAd(image), { once: true });
-      }
-    });
-  };
-
-  const images = Array.from(document.querySelectorAll('img:not([data-ad-rendered])'));
-  processImages(images);
-});
+    renderInImage(Array.from(document.querySelectorAll("img")))
+}, { once: true })
 </script>
 <!-- Bootstrap 5.3 JS Bundle (с Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
