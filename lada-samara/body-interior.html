@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <style>
+    /* Отладочные стили для inImage */
+    img[data-ad-rendered] {
+      border: 3px solid #0f0 !important;
+      outline: 2px dashed #00f !important;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5) !important;
+    }
+    .yandex-ad, [class*="rtb"], [id*="yandex_rtb"] {
+      border: 2px solid #f00 !important;
+      min-height: 50px !important;
+      background-color: rgba(255, 0, 0, 0.1) !important;
+    }
+    /* Защита от скрытия */
+    [data-ad-rendered].hidden,
+    [data-ad-rendered][style*="display: none"],
+    [data-ad-rendered][style*="visibility: hidden"] {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+  </style>
 <script>
   window.yaContextCb = window.yaContextCb || [];
   window.APExceptionBlocks = [
@@ -13,6 +34,14 @@
     }
   ];
 </script>
+<style>
+  .ad-ignore {
+    display: none !important;
+  }
+  img[data-ad-rendered] {
+    border: 2px solid #0f0 !important; /* Визуальная метка для отладки */
+  }
+</style>
 
 
     <meta charset="UTF-8">
