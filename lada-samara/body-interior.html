@@ -285,7 +285,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <img src="/lada-samara/assets/images/lada-samara-komplekt-klyuchey.webp"
                    alt="Комплект ключей для автомобиля Lada Samara: ключ с пластмассовой головкой для зажигания и ключ с металлической головкой для замков дверей и багажника"
                    class="img-fluid"
-                   loading=""
+                   loading="lazy"
                    decoding="async">
               <figcaption class="image-caption">
                 <strong>Рис. 1.</strong> Комплект ключей для автомобиля Lada Samara
@@ -2501,8 +2501,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </footer>
+
 <script>
-  // Улучшенная версия inImage с проверкой на авторекламу
+  // Шаг 3: Улучшенный скрипт inImage с защитой от авторекламы
   const initInImageAds = () => {
     const MAX_ADS = 3;
     const MIN_IMAGE_WIDTH = 300;
@@ -2519,20 +2520,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       return width >= MIN_IMAGE_WIDTH && height >= MIN_IMAGE_HEIGHT;
     };
 
-    const renderInImageAd = (image) => {
+    const renderInImageAd = (image, index) => {
+      // Защита от авторекламы: проверяем, не занята ли область
       if (adCount >= MAX_ADS) return;
       if (!isImageLargeEnough(image)) {
         console.log(`Image too small: ${image.src} (${image.naturalWidth}×${image.naturalHeight})`);
         return;
       }
 
-      // Проверяем, не занята ли область авторекламой
-      if (image.closest('[data-ad-rendered]') ||
-          image.getAttribute('data-ad-rendered')) {
-        return; // Пропускаем, если здесь уже есть реклама
+      // Ключевая проверка: если рядом уже есть реклама, пропускаем
+      const nearbyAds = image.closest('[data-adfox]') ||
+                     image.closest('.yandex-ad') ||
+                     image.getAttribute('data-ad-rendered');
+      if (nearbyAds) {
+        console.log(`Skipping image near existing ad: ${image.src}`);
+        return;
       }
 
-      const imageId = `yandex_rtb_R-A-537370-42_${Math.random().toString(16).slice(2)}`;
+      const imageId = `yandex_rtb_R-A-537370-42_${Date.now()}_${index}`;
       image.id = imageId;
       image.setAttribute('data-ad-rendered', 'true');
 
@@ -2544,39 +2549,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             type: 'inImage'
           });
           adCount++;
-          console.log(`inImage ad rendered: ${imageId}`);
+          console.log(`✅ inImage ad rendered: ${imageId}`);
         } catch (error) {
-          console.warn('Failed to render inImage ad:', error);
+          console.warn('❌ Failed to render inImage ad:', error);
         }
       });
     };
 
-    const processImages = (images) => {
-      images.forEach(image => {
-        if (adCount >= MAX_ADS) return;
+    // Получаем все подходящие изображения
+    const images = Array.from(document.querySelectorAll('img:not([data-ad-rendered]):not(.ad-ignore)'));
 
-        if (image.complete) {
-          renderInImageAd(image);
-        } else {
-          image.addEventListener('load', () => renderInImageAd(image), { once: true });
-        }
-      });
-    };
+    images.forEach((image, index) => {
+      if (adCount >= MAX_ADS) return;
 
-    // Запускаем сразу, не дожидаясь DOMContentLoaded
-    const images = Array.from(document.querySelectorAll('img:not([data-ad-rendered])'));
-    processImages(images);
+      if (image.complete) {
+        renderInImageAd(image, index);
+      } else {
+        image.addEventListener('load', () => renderInImageAd(image, index), { once: true });
+      }
+    });
   };
 
   // Запускаем inImage сразу после загрузки контекста
   if (window.Ya && window.Ya.Context && window.Ya.Context.AdvManager) {
     initInImageAds();
   } else {
-    // Если контекст ещё не загружен, ждём его инициализации
     window.yaContextCb.push(initInImageAds);
   }
 </script>
-
 <!-- Bootstrap 5.3 JS Bundle (с Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 <script src="/lada-samara/assets/js/main.js"></script>
