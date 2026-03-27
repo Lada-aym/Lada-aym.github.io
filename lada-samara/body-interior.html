@@ -1,6 +1,70 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+        <script>
+  // Инициализируем массивы для работы с рекламой
+  window.yaContextCb = window.yaContextCb || [];
+  window.APExceptionBlocks = window.APExceptionBlocks || [];
+
+  // Функция определения типа устройства
+  const getDeviceType = () => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    return 'ontouchstart' in window ||
+           navigator.maxTouchPoints > 0 ||
+           /android|iphone|ipad|mobile/i.test(userAgent)
+      ? 'touch'
+      : 'desktop';
+  };
+
+  // Отложенная загрузка скриптов Яндекс.Рекламы (через 2 с)
+  setTimeout(() => {
+    // Объявляем блоки ДО загрузки скриптов
+    if (window.APExceptionBlocks.length === 0) {
+      window.APExceptionBlocks = [
+        {
+          blockId: 'R-A-537370-42',
+          ownerId: 537370,
+          type: 'inImage',
+          containerId: null
+        },
+        {
+          blockId: 'C-A-537370-46', // замените на реальный ID из AdFox
+          ownerId: 322697,
+          type: 'adfox',
+          containerId: 'adfox_173934500594834357',
+          params: {
+            pp: 'i',
+            ps: 'ivjz',
+            p2: 'gqqu'
+          }
+        }
+      ];
+    }
+
+    // Загружаем context.js
+    const script = document.createElement('script');
+    script.src = 'https://yandex.ru/ads/system/context.js'; // Исправьте на https://
+    script.async = true;
+
+    script.onload = () => {
+      console.log('Yandex ads script loaded');
+
+      // После загрузки context.js загружаем ap-loader.js
+      const apScript = document.createElement('script');
+      apScript.src = 'https://yandex.ru/ads/system/ap-loader.js'; // Исправьте на https://
+      apScript.async = true;
+      apScript.setAttribute('data-page-id', '537370');
+
+      apScript.onload = () => console.log('AP loader script loaded');
+      apScript.onerror = () => console.error('Failed to load AP loader script');
+
+      document.body.appendChild(apScript);
+    };
+
+    script.onerror = () => console.error('Failed to load Yandex ads script');
+    document.body.appendChild(script);
+  }, 2000);
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -36,6 +100,7 @@
           crossorigin="anonymous">
           
           <link rel="stylesheet" href="/lada-samara/assets/css/styles.css">
+         
     
 <script type="application/ld+json">
 {
@@ -75,32 +140,6 @@
     });
 </script>
 <!-- Google Tag Manager -->
-  <script>
-    // Инициализируем массив для отложенных вызовов
-    window.yaContextCb = window.yaContextCb || [];
-
-    // Функция определения типа устройства
-    const getDeviceType = () => {
-      const userAgent = navigator.userAgent.toLowerCase();
-      return 'ontouchstart' in window ||
-             navigator.maxTouchPoints > 0 ||
-             /android|iphone|ipad|mobile/i.test(userAgent)
-        ? 'touch'
-        : 'desktop';
-    };
-
-    // Отложенная загрузка скрипта Яндекс.Рекламы
-    setTimeout(() => {
-      const script = document.createElement('script');
-      script.src = 'https://yandex.ru/ads/system/context.js';
-      script.async = true;
-
-      script.onload = () => console.log('Yandex ads script loaded');
-      script.onerror = () => console.error('Failed to load Yandex ads script');
-
-      document.body.appendChild(script);
-    }, 2000);
-  </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -2627,8 +2666,6 @@ document.addEventListener('DOMContentLoaded', () => {
   processImages(images);
 });
 </script>
-
-
 <!-- Bootstrap 5.3 JS Bundle (с Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 <script src="/lada-samara/assets/js/main.js"></script>
