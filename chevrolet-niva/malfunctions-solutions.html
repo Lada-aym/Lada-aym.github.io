@@ -1,0 +1,2533 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Глава 6. Неисправности и методы их устранения — Chevrolet Niva</title>
+    <meta name="description" content="Руководство по поиску и устранению неисправностей Chevrolet Niva: двигатель, трансмиссия, электрика, тормоза и другие системы.">
+    <meta name="keywords" content="Chevrolet Niva, неисправности, ремонт, диагностика, устранение проблем">
+    <meta name="author" content="ЗАО «GM–AVTOVAZ»">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="/chevrolet-niva/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://lada-aym.github.io/chevrolet-niva/malfunctions-solutions.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Глава 6. Неисправности Chevrolet Niva">
+    <meta property="og:description" content="Практическое руководство по поиску и устранению неисправностей автомобиля Chevrolet Niva">
+    <meta property="og:url" content="https://lada-aym.github.io/chevrolet-niva/malfunctions-solutions.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://lada-aym.github.io/chevrolet-niva/assets/images/og-preview.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Глава 6. Неисправности Chevrolet Niva">
+    <meta name="twitter:description" content="Поиск и устранение неисправностей Chevrolet Niva: пошаговые инструкции">
+    <meta name="twitter:image" content="https://lada-aym.github.io/chevrolet-niva/images/twitter-preview.webp">
+    <meta name="twitter:image:alt" content="Chevrolet Niva: диагностика неисправностей">
+
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/chevrolet-niva/assets/css/styles.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://lada-aym.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Chevrolet Niva",
+      "item": "https://lada-aym.github.io/chevrolet-niva/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Неисправности"
+    }
+  ]
+}
+</script>
+<!-- Google Tag Manager -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PRQ33NW3');
+        }, 5000);
+    });
+</script>
+<!-- Google Tag Manager -->
+  <script>
+    // Инициализируем массив для отложенных вызовов
+    window.yaContextCb = window.yaContextCb || [];
+
+    // Функция определения типа устройства
+    const getDeviceType = () => {
+      const userAgent = navigator.userAgent.toLowerCase();
+      return 'ontouchstart' in window ||
+             navigator.maxTouchPoints > 0 ||
+             /android|iphone|ipad|mobile/i.test(userAgent)
+        ? 'touch'
+        : 'desktop';
+    };
+
+    // Отложенная загрузка скрипта Яндекс.Рекламы
+    setTimeout(() => {
+      const script = document.createElement('script');
+      script.src = 'https://yandex.ru/ads/system/context.js';
+      script.async = true;
+
+      script.onload = () => console.log('Yandex ads script loaded');
+      script.onerror = () => console.error('Failed to load Yandex ads script');
+
+      document.body.appendChild(script);
+    }, 5000);
+  </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRQ33NW3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <!-- Yandex.RTB fullscreen (оптимизированная версия) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const deviceType = getDeviceType();
+        const blockId = deviceType === 'touch' ? 'R-A-537370-35' : 'R-A-537370-43';
+
+        window.yaContextCb.push(() => {
+          try {
+            Ya.Context.AdvManager.render({
+              blockId: blockId,
+              type: 'fullscreen',
+              platform: deviceType
+            });
+            console.log(`fullscreen ad rendered: ${blockId} (${deviceType})`);
+          } catch (error) {
+            console.error('Failed to render fullscreen ad:', error);
+          }
+        });
+      }, 5000); // Показываем через 2 секунды после загрузки DOM
+    });
+  </script>
+<!-- Горизонтальное прокручиваемое меню -->
+<div class="horizontal-menu">
+  <div class="container-fluid">
+    <div class="menu-scroller">
+      <ul class="menu-items">
+        <li><a href="/" class="menu-item">Главная</a></li>
+        <li><a href="/LADA_Granta/" class="menu-item">LADA Granta</a></li>
+        <li><a href="/LADA_Vesta/" class="menu-item">LADA Vesta</a></li>
+        <li><a href="/LADA_XRAY/" class="menu-item">LADA XRAY</a></li>
+        <li><a href="/LADA_Largus/" class="menu-item">LADA Largus</a></li>
+        <li><a href="/Lada4x4/" class="menu-item">LADA Niva Legend</a></li>
+        <li><a href="/LADA_Priora/" class="menu-item">LADA Priora</a></li>
+        <li><a href="/LADA_Kalina/" class="menu-item">LADA Kalina</a></li>
+        <li><a href="/lada-samara/" class="menu-item">LADA Samara</a></li>
+        <li><a href="/chevrolet-niva/" class="menu-item">Chevrolet Niva</a></li>
+        <li><a href="/GAZel_next/" class="menu-item">ГАЗели NEXT</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Липкое меню -->
+<nav class="navbar navbar-light bg-white" id="sticky-navbar">
+      <div class="container-fluid">
+          <a class="navbar-brand d-flex align-items-center" href="/chevrolet-niva/">
+              <img src="/chevrolet-niva/assets/images/ci-141-82x34.png" width="30" height="30" class="me-2"    alt="Логотип Chevrolet Niva Guide">
+              <span class="fw-bold">Chevrolet Niva Guide</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-expanded="false" aria-label="Переключить меню">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+      </div>
+</nav>
+
+<!-- Offcanvas справа -->
+<div class="offcanvas offcanvas-end"
+     tabindex="-1"
+     id="sidebarOffcanvas"
+     role="dialog"
+     aria-labelledby="sidebarOffcanvasLabel"
+     aria-modal="true">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="sidebarOffcanvasLabel">Меню</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav nav-pills flex-column w-100">
+                 <!-- Раздел 1: Кузов и салон -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="body-interior.html" role="button" data-bs-toggle="dropdown">Кузов и салон</a>
+                    <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="body-interior.html#key-system">Ключи</a></li>
+                <li><a class="dropdown-item" href="body-interior.html#door-system">Двери</a></li>
+                <li><a class="dropdown-item" href="body-interior.html#seats-system">Сиденья</a></li>
+                <li><a class="dropdown-item" href="body-interior.html#safety-system">Ремни и подушки</a></li>
+                <li><a class="dropdown-item" href="body-interior.html#cabin-features">Оборудование салона</a></li>
+                <li><a class="dropdown-item" href="body-interior.html#hood-section">Капот</a></li>
+                <li><a class="dropdown-item" href="body-interior.html#fuel-cap">Пробка бака</a></li>
+            </ul>
+        </li>
+
+                <!-- Раздел 2: Органы управления и приборы -->
+                <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="controls-instruments.html" role="button" data-bs-toggle="dropdown">Органы управления</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="controls-instruments.html#panel-instruments">Панель приборов</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#instrument-combo">Комбинация приборов</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#steering-adjust">Регулировка руля</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#ignition-switch">Замок зажигания</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#immobilizer-info">Иммобилайзер</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#steering-column-switches">Подрулевые переключатели</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#key-switches">Клавиши управления</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#regulators">Регуляторы</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#onboard-monitoring">Бортовая диагностика</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#mirror-control">Зеркала</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#transmission-controls">Рычаги управления трансмиссией</a></li>
+                <li><a class="dropdown-item" href="controls-instruments.html#ventilation-heating">Климат‑контроль</a></li>
+            </ul>
+        </li>
+
+                <!-- Раздел 3: Эксплуатация автомобиля -->
+                <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="operation.html" role="button" data-bs-toggle="dropdown">Эксплуатация</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="operation.html#license-plates">Номера</a></li>
+                <li><a class="dropdown-item" href="operation.html#safe-operation">Безопасность</a></li>
+                <li><a class="dropdown-item" href="operation.html#engine-start">Запуск двигателя</a></li>
+                <li><a class="dropdown-item" href="operation.html#vehicle-movement">Движение</a></li>
+                <li><a class="dropdown-item" href="operation.html#braking-parking">Торможение и стоянка</a></li>
+                <li><a class="dropdown-item" href="operation.html#towing">Буксировка</a></li>
+                <li><a class="dropdown-item" href="operation.html#full-drive">Полный привод</a></li>
+            </ul>
+        </li>
+
+
+                <!-- Раздел 4: Техническое обслуживание -->
+                <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="maintenance.html" role="button" data-bs-toggle="dropdown">Обслуживание</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="maintenance.html#lubrication-system">Смазка двигателя</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#cooling-system">Охлаждение</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#braking-system">Тормоза</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#clutch-hydraulics">Гидропривод сцепления</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#power-steering">Гидроусилитель рулевого управления</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#battery">Аккумулятор</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#washing-liquids">Омыватели</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#spark-plugs">Свечи</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#tires">Шины</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#wheel-replacement">Замена колёс</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#lamp-replacement">Замена ламп</a></li>
+                <li><a class="dropdown-item" href="maintenance.html#fuse-replacement">Замена предохранителей</a></li>
+            </ul>
+        </li>
+
+                                <!-- Раздел 5: Техническая характеристика автомобиля -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="technical-specs.html" role="button" data-bs-toggle="dropdown">Характеристики</a>
+                    <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="technical-specs.html#heading-basic-dimensions">Габариты</a></li>
+                <li><a class="dropdown-item" href="technical-specs.html#filling-volumes">Заправочные объёмы</a></li>
+                <li><a class="dropdown-item" href="technical-specs.html#adjustment-parameters">Регулировки</a></li>
+                <li><a class="dropdown-item" href="technical-specs.html#passport-data">Паспортные данные</a></li>
+            </ul>
+        </li>
+
+         <!-- Раздел 6: Неисправности и методы их устранения -->
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="malfunctions-solutions.html" role="button" data-bs-toggle="dropdown">Неисправности</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="malfunctions-solutions.html#engine-issues">Двигатель</a></li>
+    <li><a class="dropdown-item" href="malfunctions-solutions.html#fuel-system">Топливная система</a></li>
+    <li><a class="dropdown-item" href="malfunctions-solutions.html#electrical-system">Электрооборудование</a></li>
+    <li><a class="dropdown-item" href="malfunctions-solutions.html#transmission">Трансмиссия</a></li>
+    <li><a class="dropdown-item" href="malfunctions-solutions.html#suspension">Ходовая часть</a></li>
+    <li><a class="dropdown-item" href="malfunctions-solutions.html#brake-system">Тормозная система</a></li>
+    <li><a class="dropdown-item" href="malfunctions-solutions.html#cooling-heating">Система охлаждения и отопления</a></li>
+    <li><a class="dropdown-item" href="malfunctions-solutions.html#body-interior">Кузов и салон</a></li>
+  </ul>
+</li>
+
+        <!-- Раздел 7: Приложения -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="applications.html" role="button" data-bs-toggle="dropdown">Приложения</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="applications.html#fuel-lubricants-app">ГСМ</a></li>
+                <li><a class="dropdown-item" href="applications.html#car-lamps-app">Лампы</a></li>
+            </ul>
+        </li>
+          </ul>
+      </div>
+</div>
+    <!--  -->
+
+<div class="container my-4">
+  <h1 class="text-center" aria-label="Глава 6: неисправности и методы их устранения для Chevrolet Niva">Глава 6. Неисправности и методы их устранения</h1>
+  <p class="lead text-center mb-5">Практическое руководство по поиску и устранению неисправностей Chevrolet Niva</p>
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb justify-content-center">
+      <li class="breadcrumb-item"><a href="/">Главная</a></li>
+      <li class="breadcrumb-item"><a href="/chevrolet-niva/">Chevrolet Niva</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Неисправности</li>
+    </ol>
+  </nav>
+
+  <div class="accordion" id="mainAccordion">
+    <!-- 6.1. Неисправности двигателя -->
+    <div id="engine-issues" class="accordion-item">
+      <h2 class="accordion-header">
+        <button id="heading61" class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse61-unique"
+                aria-expanded="false"
+                aria-controls="collapse61-unique">
+          6.1. Неисправности двигателя
+        </button>
+      </h2>
+      <div id="collapse61-unique" class="accordion-collapse collapse"
+           data-bs-parent="#mainAccordion"
+           role="region"
+           aria-labelledby="heading61">
+        <div class="accordion-body">
+          <p class="mb-4">Описание распространённых неисправностей двигателя Chevrolet Niva и способы их устранения:</p>
+
+          <div class="alert alert-warning mt-3" role="alert">
+            <strong>Важно:</strong> при обнаружении серьёзных неисправностей рекомендуется обратиться в специализированный сервис. Самостоятельный ремонт без необходимых навыков может усугубить проблему.
+          </div>
+
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <!-- Карточка 1: Двигатель не запускается -->
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-header bg-danger text-white">
+                  <h3 class="card-title mb-0">Двигатель не запускается</h3>
+                </div>
+                <div class="card-body">
+                  <p><strong>Возможные причины:</strong></p>
+                  <ul>
+                    <li>Разряжен аккумулятор</li>
+            <li>Неисправность стартера</li>
+            <li>Проблемы с топливной системой</li>
+            <li>Отсутствие искры в свечах зажигания</li>
+            <li>Засорение топливного фильтра</li>
+            <li>Неисправность датчика положения коленвала</li>
+          </ul>
+          <p><strong>Способы устранения:</strong></p>
+          <ul>
+            <li>Проверьте заряд аккумулятора</li>
+            <li>Осмотрите клеммы аккумулятора на предмет окисления</li>
+            <li>Проверьте подачу топлива</li>
+            <li>Осмотрите свечи зажигания и высоковольтные провода</li>
+            <li>Убедитесь в исправности стартера</li>
+            <li>Проведите диагностику датчиков</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Карточка 2: Двигатель работает неустойчиво -->
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-header bg-warning text-dark">
+          <h3 class="card-title mb-0">Двигатель работает неустойчиво</h3>
+        </div>
+        <div class="card-body">
+          <p><strong>Симптомы:</strong> троение, плавающие обороты, рывки при разгоне.</p>
+          <p><strong>Вероятные причины:</strong></p>
+          <ul>
+            <li>Неисправные свечи зажигания</li>
+            <li>Подсос воздуха во впускном тракте</li>
+            <li>Загрязнение форсунок</li>
+            <li>Проблемы с катушкой зажигания</li>
+            <li>Низкое давление топлива</li>
+            <li>Неисправность ДМРВ (датчика массового расхода воздуха)</li>
+          </ul>
+          <p><strong>Диагностика:</strong> проверка системы зажигания, топливной системы, герметичности впуска, компьютерная диагностика.</p>
+        </div>
+      </div>
+    </div>
+
+        <!-- Карточка 3: Повышенный расход масла -->
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-header bg-info text-white">
+          <h3 class="card-title mb-0">Повышенный расход масла</h3>
+        </div>
+        <div class="card-body">
+          <p><strong>Признаки:</strong> заметное снижение уровня масла между заменами, сизый дым из выхлопной трубы, масляные пятна под автомобилем.</p>
+          <p><strong>Причины:</strong></p>
+          <ul>
+            <li>Износ поршневых колец</li>
+            <li>Износ маслосъёмных колпачков</li>
+            <li>Утечки масла через сальники и прокладки</li>
+            <li>Засорение системы вентиляции картера</li>
+            <li>Повреждение или износ цилиндров</li>
+            <li>Использование масла неподходящей вязкости</li>
+          </ul>
+          <p><strong>Способы устранения:</strong></p>
+          <ul>
+            <li>Замена поршневых колец при капитальном ремонте двигателя</li>
+            <li>Замена маслосъёмных колпачков</li>
+            <li>Проверка и замена сальников (коленвала, распредвала и т. д.)</li>
+            <li>Очистка системы вентиляции картера</li>
+            <li>Контроль уровня и качества масла</li>
+            <li>Использование масла с рекомендованной вязкостью</li>
+          </ul>
+          <p><strong>Рекомендации:</strong> при обнаружении повышенного расхода масла проведите полную диагностику двигателя. Игнорирование проблемы может привести к серьёзным повреждениям.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Карточка 4: Перегрев двигателя -->
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-header bg-secondary text-white">
+          <h3 class="card-title mb-0">Перегрев двигателя</h3>
+        </div>
+        <div class="card-body">
+          <p><strong>Симптомы:</strong> стрелка температуры в красной зоне, пар из‑под капота, снижение мощности, запах антифриза.</p>
+          <p><strong>Основные причины:</strong></p>
+          <ul>
+            <li>Недостаток охлаждающей жидкости</li>
+            <li>Неисправный термостат</li>
+            <li>Поломка вентилятора охлаждения</li>
+            <li>Засорение радиатора</li>
+            <li>Пробой прокладки ГБЦ</li>
+            <li>Воздушная пробка в системе охлаждения</li>
+            <li>Неисправность помпы</li>
+          </ul>
+          <p><strong>Немедленные действия:</strong></p>
+          <ul>
+            <li>Немедленно остановите автомобиль</li>
+            <li>Дайте двигателю остыть</li>
+            <li>Проверьте уровень охлаждающей жидкости</li>
+            <li>Осмотрите радиатор и шланги на предмет утечек</li>
+            <li>Проверьте работу вентилятора охлаждения</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Карточка 5: Стуки в двигателе -->
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-header bg-dark text-white">
+          <h3 class="card-title mb-0">Стуки в двигателе</h3>
+        </div>
+        <div class="card-body">
+          <p><strong>Характер звуков:</strong> металлические стуки различной частоты и интенсивности.</p>
+          <p><strong>Возможные источники:</strong></p>
+          <ul>
+            <li>Износ коренных или шатунных подшипников</li>
+            <li>Увеличение зазоров в клапанном механизме</li>
+            <li>Детонация из‑за некачественного топлива</li>
+            <li>Износ поршней или цилиндров</li>
+            <li>Ослабление креплений деталей двигателя</li>
+          </ul>
+          <p><strong>Действия:</strong></p>
+          <ul>
+            <li>Немедленно проведите диагностику</li>
+            <li>Избегайте высоких нагрузок до устранения проблемы</li>
+            <li>Проверьте качество используемого топлива</li>
+            <li>Проверьте уровень и состояние моторного масла</li>
+            <li>При необходимости обратитесь в сервис для капитального ремонта</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Карточка 6: Потеря мощности -->
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-header bg-warning text-dark">
+          <h3 class="card-title mb-0">Потеря мощности двигателя</h3>
+        </div>
+        <div class="card-body">
+          <p><strong>Проявления:</strong> ухудшение динамики разгона, трудности при подъёме в гору, замедленный отклик на нажатие педали газа.</p>
+          <p><strong>Распространённые причины:</strong></p>
+          <ul>
+            <li>Засорение воздушного фильтра</li>
+            <li>Неисправность датчика массового расхода воздуха (ДМРВ)</li>
+            <li>Проблемы с топливным насосом или форсунками</li>
+            <li>Нагар на клапанах или в камере сгорания</li>
+            <li>Снижение компрессии в цилиндрах</li>
+            <li>Подсос воздуха во впускном тракте</li>
+            <li>Некорректная работа системы зажигания</li>
+            <li>Засорение катализатора</li>
+          </ul>
+          <p><strong>Диагностика:</strong></p>
+          <ul>
+            <li>Компьютерная диагностика (чтение кодов ошибок)</li>
+            <li>Проверка компрессии в цилиндрах</li>
+            <li>Осмотр и замена воздушного фильтра</li>
+            <li>Диагностика топливного насоса и давления в топливной рампе</li>
+            <li>Проверка состояния свечей зажигания и высоковольтных проводов</li>
+            <li>Очистка или замена ДМРВ при необходимости</li>
+            <li>Проверка катализатора</li>
+          </ul>
+          <p><strong>Рекомендации:</strong> при первых признаках потери мощности проведите диагностику. Игнорирование проблемы может привести к более серьёзным повреждениям двигателя.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="mt-4">
+    <h3>Рекомендации по профилактике неисправностей двигателя:</h3>
+    <ul>
+      <li>Соблюдайте интервалы ТО согласно регламенту производителя автомобиля</li>
+      <li>Используйте качественные ГСМ и расходные материалы, соответствующие спецификациям автопроизводителя</li>
+      <li>Регулярно проверяйте уровни всех технических жидкостей</li>
+      <li>Своевременно заменяйте фильтры (воздушный, масляный, топливный, салонный)</li>
+      <li>Следите за состоянием ремней ГРМ, генератора и шлангов системы охлаждения</li>
+      <li>Контролируйте состояние свечей зажигания и высоковольтных проводов</li>
+      <li>Поддерживайте чистоту двигателя</li>
+      <li>Проверяйте герметичность систем (впускного тракта, охлаждения, топливной)</li>
+      <li>Обращайте внимание на посторонние звуки, запахи и изменения в работе двигателя</li>
+      <li>Избегайте длительного движения на предельно высоких оборотах</li>
+      <li>В холодное время года прогревайте двигатель перед поездкой</li>
+    </ul>
+  </div>
+
+  <div class="alert alert-success mt-4" role="alert">
+    <strong>Помните:</strong> регулярное техническое обслуживание и своевременная диагностика — лучший способ избежать серьёзных поломок двигателя и дорогостоящего ремонта. Профилактические меры обходятся значительно дешевле, чем устранение последствий запущенных неисправностей.
+  </div>
+</div>
+</div>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Неисправности двигателя Chevrolet Niva: причины, диагностика и рекомендации",
+  "description": "Подробное руководство по распространённым неисправностям двигателя Chevrolet Niva, включая методы диагностики, возможные причины и способы устранения, а также рекомендации по профилактике поломок для поддержания исправного состояния двигателя и избежания дорогостоящего ремонта.",
+  "datePublished": "2024-03-25T10:00:00+03:00",
+  "dateModified": "2024-04-01T12:00:00+03:00",
+  "author": {
+    "@type": "Organization",
+    "name": "GM-АВТОВАЗ",
+    "url": "https://www.gm-avtovaz.ru"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "lada-aym.github.io",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lada-aym.github.io/chevrolet-niva/assets/images/logo.webp",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lada-aym.github.io/chevrolet-niva/maintenance.html#engine-issues"
+  },
+  "wordCount": "650",
+  "timeRequired": "PT9M",
+  "articleSection": "Диагностика и ремонт двигателя автомобиля",
+  "articleBody": "Раздел описывает распространённые неисправности двигателя Chevrolet Niva, методы диагностики, возможные причины и способы устранения, а также рекомендации по профилактике поломок для поддержания исправного состояния двигателя и избежания дорогостоящего ремонта.",
+  "keywords": [
+    "неисправности двигателя Chevrolet Niva",
+    "симптомы поломки двигателя Chevrolet Niva",
+    "диагностика двигателя Chevrolet Niva",
+    "замена масла Chevrolet Niva",
+    "термостат Chevrolet Niva",
+    "стучащий двигатель Chevrolet Niva",
+    "перегрев двигателя Chevrolet Niva",
+    "потеря мощности Chevrolet Niva",
+    "регламент ТО Chevrolet Niva",
+    "технический осмотр Chevrolet Niva"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Chevrolet Niva",
+      "description": "Автомобиль Chevrolet Niva (ВАЗ-2123), для которого приводятся рекомендации по диагностике и устранению неисправностей двигателя."
+    },
+    {
+      "@type": "Thing",
+      "name": "Диагностика и обслуживание двигателя",
+      "description": "Комплексное руководство по диагностике, устранению и профилактике неисправностей двигателя Chevrolet Niva. Включает: распространённые симптомы (потеря мощности, перегрев, стуки, нестабильная работа, повышенный расход масла/топлива), пошаговую диагностику (проверка уровня и качества масла, состояния свечей зажигания, работы системы охлаждения, давления в цилиндрах, компьютерной диагностики с расшифровкой кодов ошибок), типичные причины неисправностей (износ деталей, засорение фильтров, утечка охлаждающей жидкости, неисправность датчиков). Описаны способы устранения распространённых проблем, рекомендации по регулярному техническому обслуживанию (соблюдение регламента ТО, своевременная замена масла и фильтров, контроль состояния ремней и шлангов), меры профилактики (использование качественных ГСМ, избегание перегрузок двигателя, прогрев перед поездкой). Приведены указания по безопасной самостоятельной диагностике и признаки, при которых необходимо обратиться в сервисный центр."
+    }
+  ],
+  "genre": "Automotive Technical Guide",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Руководство по эксплуатации и техническому обслуживанию Chevrolet Niva",
+    "author": "GM-АВТОВАЗ"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Раздел 6.1. Неисправности двигателя Chevrolet Niva",
+    "url": "https://lada-aym.github.io/chevrolet-niva/maintenance.html#engine-issues"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "GM-АВТОВАЗ"
+  },
+  "copyrightYear": 2024,
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- 6.2. Топливная система -->
+<div id="fuel-system" class="accordion-item">
+  <h2 class="accordion-header">
+    <button id="heading62" class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse62"
+            aria-expanded="false"
+            aria-controls="collapse62">
+      6.2. Топливная система
+    </button>
+  </h2>
+  <div id="collapse62" class="accordion-collapse collapse"
+       data-bs-parent="#mainAccordion"
+       role="region"
+       aria-labelledby="heading62">
+    <div class="accordion-body">
+      <p class="mb-4">Описание распространённых неисправностей топливной системы Chevrolet Niva и способы их устранения:</p>
+
+      <div class="alert alert-warning mt-3" role="alert">
+        <strong>Важно:</strong> работы с топливной системой требуют особой осторожности. Перед началом ремонта убедитесь, что поблизости нет источников открытого огня. Отключите аккумулятор перед проведением работ.
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Карточка 1: Затруднённый запуск двигателя -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+              <h3 class="card-title mb-0">Затруднённый запуск двигателя</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> долгий запуск, необходимость многократного прокручивания стартера.</p>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Низкое давление топлива</li>
+                <li>Засорение топливного фильтра</li>
+                <li>Неисправность топливного насоса</li>
+                <li>Замерзание влаги в топливной магистрали (зимой)</li>
+                <li>Загрязнение форсунок</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ul>
+                <li>Проверьте давление в топливной рампе</li>
+                <li>Замените топливный фильтр</li>
+                <li>Проверьте работу топливного насоса</li>
+                <li>Используйте антигель для топлива в зимний период</li>
+                <li>Проведите очистку или замену форсунок</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Повышенный расход топлива -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <h3 class="card-title mb-0">Повышенный расход топлива</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> заметное увеличение расхода топлива по сравнению с нормой.</p>
+              <p><strong>Вероятные причины:</strong></p>
+              <ul>
+                <li>Засорение воздушного фильтра</li>
+                <li>Неисправность ДМРВ (датчика массового расхода воздуха)</li>
+                <li>Износ или загрязнение топливных форсунок</li>
+                <li>Неправильные настройки системы впрыска</li>
+                <li>Проблемы с кислородным датчиком (лямбда‑зондом)</li>
+                <li>Низкое давление в шинах</li>
+              </ul>
+              <p><strong>Диагностика и устранение:</strong></p>
+              <ul>
+                <li>Проверьте и замените воздушный фильтр</li>
+                <li>Проведите компьютерную диагностику</li>
+                <li>Очистите или замените топливные форсунки</li>
+                <li>Проверьте кислородный датчик</li>
+                <li>Отрегулируйте давление в шинах</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Провалы и рывки при разгоне -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h3 class="card-title mb-0">Провалы и рывки при разгоне</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> неравномерная работа двигателя, рывки при нажатии на педаль газа.</p>
+              <p><strong>Причины:</strong></p>
+              <ul>
+                <li>Засорение топливных форсунок</li>
+                <li>Недостаточное давление топлива</li>
+                <li>Загрязнение топливного фильтра</li>
+                <li>Неисправность регулятора давления топлива</li>
+                <li>Проблемы с системой зажигания</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ul>
+                <li>Очистите или замените форсунки</li>
+                <li>Проверьте давление топлива в рампе</li>
+                <li>Замените топливный фильтр</li>
+                <li>Проверьте регулятор давления топлива</li>
+                <li>Осмотрите систему зажигания</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 4: Запах бензина в салоне -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-secondary text-white">
+              <h3 class="card-title mb-0">Запах бензина в салоне</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> отчётливый запах бензина внутри автомобиля.</p>
+              <p><strong>Основные причины:</strong></p>
+              <ul>
+                <li>Утечка топлива из топливных магистралей</li>
+                <li>Повреждение топливного бака</li>
+                <li>Негерметичность крышки топливного бака</li>
+                <li>Проблемы с адсорбером системы улавливания паров топлива</li>
+                <li>Утечки в районе форсунок или топливной рампы</li>
+              </ul>
+              <p><strong>Немедленные действия:</strong></p>
+              <ul>
+                <li>Остановите автомобиль в безопасном месте</li>
+                <li>Выключите зажигание</li>
+                <li>Визуально осмотрите топливную систему на предмет утечек</li>
+                <li>Проверьте герметичность крышки топливного бака</li>
+                <li>Обратитесь в сервис для диагностики</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <h3>Рекомендации по обслуживанию топливной системы:</h3>
+        <ul>
+          <li>Регулярно заменяйте топливный фильтр (каждые 20–30 тыс. км)</li>
+          <li>Используйте качественное топливо с проверенных АЗС</li>
+          <li>Периодически проводите очистку топливных форсунок</li>
+          <li>Проверяйте состояние топливных магистралей и соединений</li>
+          <li>Следите за герметичностью крышки топливного бака</li>
+          <li>В зимний период используйте антигелевые присадки</li>
+          <li>При появлении признаков неисправности проводите компьютерную диагностику</li>
+        </ul>
+      </div>
+
+      <div class="alert alert-success mt-4" role="alert">
+        <strong>Помните:</strong> своевременное обслуживание топливной системы не только улучшает работу двигателя, но и снижает расход топлива, а также предотвращает опасные ситуации, связанные с утечкой бензина.
+      </div>
+    </div>
+  </div>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Неисправности топливной системы Chevrolet Niva: причины, диагностика и рекомендации",
+  "description": "Подробное руководство по распространённым неисправностям топливной системы Chevrolet Niva, включая методы диагностики, возможные причины и способы устранения, а также рекомендации по обслуживанию топливной системы для поддержания её исправного состояния и снижения риска возникновения опасных ситуаций.",
+  "datePublished": "2024-03-25T10:00:00+03:00",
+  "dateModified": "2024-04-01T12:00:00+03:00",
+  "author": {
+    "@type": "Organization",
+    "name": "GM-АВТОВАЗ",
+    "url": "https://www.gm-avtovaz.ru"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "lada-aym.github.io",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lada-aym.github.io/chevrolet-niva/assets/images/logo.webp",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lada-aym.github.io/chevrolet-niva/maintenance.html#fuel-system"
+  },
+  "wordCount": "650",
+  "timeRequired": "PT9M",
+  "articleSection": "Диагностика и ремонт топливной системы автомобиля",
+  "articleBody": "Раздел описывает распространённые неисправности топливной системы Chevrolet Niva, методы диагностики, возможные причины и способы устранения, а также рекомендации по обслуживанию топливной системы для поддержания её исправного состояния и снижения риска возникновения опасных ситуаций.",
+  "keywords": [
+    "неисправности топливной системы Chevrolet Niva",
+    "топливная система Chevrolet Niva",
+    "запуск двигателя Chevrolet Niva",
+    "расход топлива Chevrolet Niva",
+    "провалы в двигателе Chevrolet Niva",
+    "запах бензина Chevrolet Niva",
+    "компьютерная диагностика Chevrolet Niva",
+    "топливный фильтр Chevrolet Niva",
+    "форсунки Chevrolet Niva",
+    "техническое обслуживание Chevrolet Niva"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Chevrolet Niva",
+      "description": "Автомобиль Chevrolet Niva (ВАЗ-2123), для которого приводятся рекомендации по диагностике и устранению неисправностей топливной системы."
+    },
+    {
+      "@type": "Thing",
+      "name": "Топливная система и её обслуживание",
+      "description": "Комплексное руководство по диагностике, устранению и профилактике неисправностей топливной системы Chevrolet Niva. Включает: распространённые симптомы (затруднённый запуск двигателя, повышенный расход топлива, провалы и рывки при разгоне, запах бензина в салоне, неустойчивая работа на холостом ходу), пошаговую диагностику (проверка топливного фильтра, форсунок, давления топлива в рампе, герметичности топливной магистрали, состояния топливного насоса, компьютерной диагностики с расшифровкой кодов ошибок), типичные причины неисправностей (засорение фильтра, износ форсунок, падение давления из‑за неисправности насоса, утечки топлива, загрязнение дроссельного узла). Описаны способы устранения распространённых проблем, рекомендации по регулярному обслуживанию (своевременная замена топливного фильтра, использование качественного топлива, промывка форсунок, контроль герметичности соединений), меры профилактики (регулярная диагностика, избегание эксплуатации с почти пустым баком, применение топливных присадок при необходимости). Приведены указания по безопасной самостоятельной диагностике и признаки, при которых необходимо срочно обратиться в сервисный центр (сильная утечка топлива, стойкий запах бензина, невозможность запуска двигателя)."
+    }
+  ],
+  "genre": "Automotive Technical Guide",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Руководство по эксплуатации и техническому обслуживанию Chevrolet Niva",
+    "author": "GM-АВТОВАЗ"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Раздел 6.2. Топливная система Chevrolet Niva",
+    "url": "https://lada-aym.github.io/chevrolet-niva/maintenance.html#fuel-system"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "GM-АВТОВАЗ"
+  },
+  "copyrightYear": 2024,
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- 6.3. Электрооборудование -->
+<div id="electrical-system" class="accordion-item">
+  <h2 class="accordion-header">
+    <button id="heading63" class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse63"
+            aria-expanded="false"
+            aria-controls="collapse63">
+      6.3. Электрооборудование
+    </button>
+  </h2>
+  <div id="collapse63" class="accordion-collapse collapse"
+       data-bs-parent="#mainAccordion"
+       role="region"
+       aria-labelledby="heading63">
+    <div class="accordion-body">
+      <p class="mb-4">Описание распространённых неисправностей электрооборудования Chevrolet Niva и способы их устранения:</p>
+
+      <div class="alert alert-warning mt-3" role="alert">
+        <strong>Важно:</strong> перед проведением любых работ с электрооборудованием обязательно отключите минусовую клемму аккумулятора. Соблюдайте осторожность при работе с электрическими цепями.
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Карточка 1: Разряженный аккумулятор -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+              <h3 class="card-title mb-0">Разряженный аккумулятор</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> затруднённый запуск двигателя, тусклый свет фар, медленная работа стеклоподъёмников.</p>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Естественный износ аккумулятора</li>
+                <li>Окисление клемм аккумулятора</li>
+                <li>Неисправность генератора</li>
+                <li>Утечка тока в бортовой сети</li>
+                <li>Длительный простой автомобиля</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ul>
+                <li>Проверьте напряжение аккумулятора (норма: 12,6–12,8 В)</li>
+                <li>Очистите клеммы от окислов</li>
+                <li>Проверьте работу генератора</li>
+                <li>Выявите и устраните утечку тока</li>
+                <li>При необходимости замените аккумулятор</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Не работает освещение -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <h3 class="card-title mb-0">Не работает освещение</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> не горят фары, габаритные огни, стоп‑сигналы или поворотники.</p>
+              <p><strong>Вероятные причины:</strong></p>
+              <ul>
+                <li>Перегоревшие лампы</li>
+                <li>Сгоревшие предохранители</li>
+                <li>Окисление контактов</li>
+                <li>Неисправность реле</li>
+                <li>Обрыв проводки</li>
+              </ul>
+              <p><strong>Диагностика и устранение:</strong></p>
+              <ul>
+                <li>Замените перегоревшие лампы</li>
+                <li>Проверьте и замените предохранители</li>
+                <li>Осмотрите и зачистите контакты</li>
+                <li>Проверьте реле</li>
+                <li>Прозвоните проводку мультиметром</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Не заряжается аккумулятор -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h3 class="card-title mb-0">Не заряжается аккумулятор</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> индикатор зарядки на приборной панели горит, напряжение бортовой сети ниже 13,8 В.</p>
+              <p><strong>Причины:</strong></p>
+              <ul>
+                <li>Износ щёток генератора</li>
+                <li>Повреждение диодного моста</li>
+                <li>Обрыв или проскальзывание ремня генератора</li>
+                <li>Неисправность регулятора напряжения</li>
+                <li>Ослабление крепления проводов генератора</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ul>
+                <li>Проверьте натяжение ремня генератора</li>
+                <li>Осмотрите щёточный узел</li>
+                <li>Проверьте диодный мост и регулятор напряжения</li>
+                <li>Убедитесь в надёжности крепления проводов</li>
+                <li>При необходимости отремонтируйте или замените генератор</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 4: Не работают электроприборы -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-secondary text-white">
+              <h3 class="card-title mb-0">Не работают электроприборы</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> не работают стеклоподъёмники, центральный замок, обогрев заднего стекла и т. д.</p>
+              <p><strong>Основные причины:</strong></p>
+              <ul>
+                <li>Сгоревший предохранитель</li>
+                <li>Неисправный мотор-редуктор</li>
+                <li>Обрыв проводки</li>
+                <li>Окисление разъёмов</li>
+                <li>Неисправность кнопки управления</li>
+              </ul>
+              <p><strong>Немедленные действия:</strong></p>
+              <ul>
+                <li>Проверьте соответствующие предохранители</li>
+                <li>Осмотрите разъёмы и провода</li>
+                <li>Проверьте кнопки управления</li>
+                <li>При необходимости замените мотор-редукторы</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 5: Мигание приборов на панели -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+              <h3 class="card-title mb-0">Мигание приборов на панели</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> мерцание индикаторов, скачки показаний приборов.</p>
+              <p><strong>Вероятные источники:</strong></p>
+              <ul>
+                <li>Плохой контакт массы</li>
+                <li>Нестабильная работа генератора</li>
+                <li>Проблемы с проводкой приборной панели</li>
+                <li>Неисправность регулятора напряжения</li>
+              </ul>
+              <p><strong>Действия:</strong></p>
+              <ul>
+                <li>Проверьте массу приборной панели</li>
+                <li>Диагностируйте генератор</li>
+                <li>Осмотрите проводку к приборной панели</li>
+                <li>Проверьте регулятор напряжения</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <h3>Рекомендации по обслуживанию электрооборудования:</h3>
+        <ul>
+          <li>Регулярно проверяйте состояние аккумулятора и его клемм</li>
+          <li>Следите за натяжением ремня генератора</li>
+          <li>Периодически проверяйте предохранители и заменяйте перегоревшие</li>
+          <li>Осматривайте проводку на предмет повреждений и окисления</li>
+          <li>Проверяйте работу всех световых приборов</li>
+          <li>При появлении признаков неисправности проводите диагностику мультиметром</li>
+          <li>Используйте только предохранители номиналом, указанным в руководстве</li>
+        </ul>
+      </div>
+
+      <div class="alert alert-success mt-4" role="alert">
+        <strong>Помните:</strong> регулярное обслуживание электрооборудования предотвращает внезапные отказы в дороге и обеспечивает надёжную работу всех систем автомобиля. При сложных неисправностях рекомендуется обращаться к квалифицированным автоэлектрикам.
+      </div>
+    </div>
+    </div>
+    </div>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Неисправности электрооборудования Chevrolet Niva: причины, диагностика и рекомендации",
+  "description": "Подробное руководство по распространённым неисправностям электрооборудования Chevrolet Niva, включая методы диагностики, возможные причины и способы устранения, а также рекомендации по обслуживанию электрооборудования для поддержания его исправного состояния и предотвращения внезапных отказов.",
+  "datePublished": "2024-03-25T10:00:00+03:00",
+  "dateModified": "2024-04-01T12:00:00+03:00",
+  "author": {
+    "@type": "Organization",
+    "name": "GM-АВТОВАЗ",
+    "url": "https://www.gm-avtovaz.ru"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "lada-aym.github.io",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lada-aym.github.io/chevrolet-niva/assets/images/logo.webp",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lada-aym.github.io/chevrolet-niva/maintenance.html#electrical-system"
+  },
+  "wordCount": "650",
+  "timeRequired": "PT9M",
+  "articleSection": "Диагностика и ремонт электрооборудования автомобиля",
+  "articleBody": "Раздел описывает распространённые неисправности электрооборудования Chevrolet Niva, методы диагностики, возможные причины и способы устранения, а также рекомендации по обслуживанию электрооборудования для поддержания его исправного состояния и предотвращения внезапных отказов.",
+  "keywords": [
+    "неисправности электрооборудования Chevrolet Niva",
+    "электрооборудование Chevrolet Niva",
+    "аккумулятор Chevrolet Niva",
+    "освещение Chevrolet Niva",
+    "генератор Chevrolet Niva",
+    "электроприборы Chevrolet Niva",
+    "панель приборов Chevrolet Niva",
+    "предохранители Chevrolet Niva",
+    "электрическая цепь Chevrolet Niva",
+    "компьютерная диагностика Chevrolet Niva"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Chevrolet Niva",
+      "description": "Автомобиль Chevrolet Niva (ВАЗ-2123), для которого приводятся рекомендации по диагностике и устранению неисправностей электрооборудования."
+    },
+    {
+      "@type": "Thing",
+      "name": "Электрооборудование и его обслуживание",
+      "description": "Комплексное руководство по диагностике, устранению и профилактике неисправностей электрооборудования Chevrolet Niva. Включает: распространённые симптомы (разряженный аккумулятор, неработающее освещение, мигание приборов, неработоспособность отдельных устройств, самопроизвольное срабатывание сигнализации, проблемы с запуском двигателя), пошаговую диагностику (проверка аккумулятора и клемм, генератора и регулятора напряжения, предохранителей и реле, целостности проводки и контактов, работы датчиков и панели приборов, компьютерной диагностики с расшифровкой кодов ошибок), типичные причины неисправностей (окисление контактов, обрыв проводов, износ щёток генератора, выход из строя регулятора напряжения, короткое замыкание, перегрузка цепи). Описаны способы устранения распространённых проблем, рекомендации по регулярному обслуживанию (очистка клемм аккумулятора, проверка натяжения ремня генератора, контроль состояния проводки, замена изношенных предохранителей), меры профилактики (регулярная проверка электросистемы, избегание подключения мощных неоригинальных устройств, защита контактов от коррозии). Приведены указания по безопасной самостоятельной диагностике (отключение аккумулятора перед работами, использование мультиметра) и признаки, при которых необходимо срочно обратиться в сервисный центр (искрение, запах гари, полная потеря электропитания)."
+    }
+  ],
+  "genre": "Automotive Technical Guide",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Руководство по эксплуатации и техническому обслуживанию Chevrolet Niva",
+    "author": "GM-АВТОВАЗ"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Раздел 6.3. Электрооборудование Chevrolet Niva",
+    "url": "https://lada-aym.github.io/chevrolet-niva/maintenance.html#electrical-system"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "GM-АВТОВАЗ"
+  },
+  "copyrightYear": 2024,
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+    <!-- 6.4. Трансмиссия -->
+<div id="transmission" class="accordion-item">
+  <h2 class="accordion-header">
+    <button id="heading64" class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse64"
+            aria-expanded="false"
+            aria-controls="collapse64">
+      6.4. Трансмиссия
+    </button>
+  </h2>
+  <div id="collapse64" class="accordion-collapse collapse"
+       data-bs-parent="#mainAccordion"
+       role="region"
+       aria-labelledby="heading64">
+    <div class="accordion-body">
+      <p class="mb-4">Описание распространённых неисправностей трансмиссии Chevrolet Niva и способы их устранения:</p>
+
+      <div class="alert alert-warning mt-3" role="alert">
+        <strong>Важно:</strong> при появлении посторонних шумов или проблем с переключением передач рекомендуется прекратить эксплуатацию автомобиля до устранения неисправности. Это поможет избежать более серьёзных повреждений трансмиссии.
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Карточка 1: Шум в коробке передач -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+              <h3 class="card-title mb-0">Шум в коробке передач</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> гул, вой или стук при движении, усиливающийся с ростом скорости.</p>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Низкий уровень масла в КПП</li>
+                <li>Износ подшипников</li>
+                <li>Износ шестерён</li>
+                <li>Использование масла неподходящей вязкости</li>
+                <li>Ослабление креплений КПП</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ul>
+                <li>Проверьте уровень и качество масла</li>
+                <li>Замените масло при необходимости</li>
+                <li>Осмотрите крепления КПП</li>
+                <li>При серьёзном износе — ремонт или замена КПП</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Затруднённое переключение передач -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <h3 class="card-title mb-0">Затруднённое переключение передач</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> тугой ход рычага, необходимость прилагать усилия для включения передачи.</p>
+              <p><strong>Вероятные причины:</strong></p>
+              <ul>
+                <li>Неисправность сцепления</li>
+                <li>Проблемы с механизмом переключения</li>
+                <li>Загрязнение или загустение трансмиссионного масла</li>
+                <li>Износ синхронизаторов</li>
+                <li>Деформация или повреждение тяг привода</li>
+              </ul>
+              <p><strong>Диагностика и устранение:</strong></p>
+              <ul>
+                <li>Проверьте состояние сцепления</li>
+                <li>Осмотрите механизм переключения</li>
+                <li>Замените трансмиссионное масло</li>
+                <li>При необходимости замените синхронизаторы</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Самопроизвольное выключение передачи -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h3 class="card-title mb-0">Самопроизвольное выключение передачи</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> передача выключается во время движения, особенно под нагрузкой.</p>
+              <p><strong>Причины:</strong></p>
+              <ul>
+                <li>Износ вилок переключения</li>
+                <li>Износ шлицев муфты или шестерни</li>
+                <li>Ослабление пружин фиксаторов</li>
+                <li>Износ подшипников валов</li>
+                <li>Неправильная регулировка привода переключения</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ul>
+                <li>Проверьте и отрегулируйте привод переключения</li>
+                <li>Замените изношенные вилки</li>
+                <li>Осмотрите и при необходимости замените подшипники</li>
+                <li>Произведите ремонт КПП при серьёзном износе деталей</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 4: Вибрация и удары при включении полного привода -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-secondary text-white">
+              <h3 class="card-title mb-0">Вибрация и удары при включении полного привода</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> вибрация, стук или удар при включении режима 4×4.</p>
+              <p><strong>Основные причины:</strong></p>
+              <ul>
+                <li>Износ карданных шарниров</li>
+                <li>Дисбаланс карданного вала</li>
+                <li>Износ крестовин</li>
+                <li>Люфт в раздаточной коробке</li>
+                <li>Неправильное подключение переднего моста</li>
+              </ul>
+              <p><strong>Немедленные действия:</strong></p>
+              <ul>
+                <li>Осмотрите карданные валы и шарниры</li>
+                <li>Проверьте крестовины на наличие люфта</li>
+                <li>Убедитесь в правильной работе раздаточной коробки</li>
+                <li>При обнаружении дефектов — замените изношенные детали</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Карточка 5: Утечка масла из КПП или раздатки -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+              <h3 class="card-title mb-0">Утечка масла из КПП или раздаточной коробки</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> пятна масла под автомобилем, снижение уровня масла в агрегатах.</p>
+              <p><strong>Вероятные источники:</strong></p>
+              <ul>
+                <li>Износ сальников валов</li>
+                <li>Повреждение прокладок</li>
+                <li>Ослабление крепления крышек</li>
+                <li>Трещина в корпусе агрегата</li>
+                <li>Засорение сапуна</li>
+              </ul>
+              <p><strong>Действия:</strong></p>
+              <ul>
+                <li>Осмотрите сальники и замените изношенные</li>
+                <li>Проверьте состояние прокладок и при необходимости замените</li>
+                <li>Затяните крепления крышек и болтов</li>
+                <li>Очистите сапун от загрязнений</li>
+                <li>При обнаружении трещин — ремонт или замена корпуса</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <div class="mt-4">
+        <h3>Рекомендации по обслуживанию трансмиссии:</h3>
+        <ul>
+          <li>Регулярно проверяйте уровень и состояние трансмиссионного масла (каждые 10–15 тыс. км или перед длительными поездками)</li>
+          <li>Меняйте масло согласно регламенту ТО (обычно каждые 45–60 тыс. км; в тяжёлых условиях — каждые 30–40 тыс. км)</li>
+          <li>Используйте масло, рекомендованное производителем (по вязкости и классу API, например GL‑4 для КПП и GL‑5 для раздатки и мостов)</li>
+          <li>Периодически осматривайте карданные валы, крестовины и шарниры на наличие люфтов и повреждений</li>
+          <li>Проверяйте крепления КПП, раздаточной коробки и промежуточных опор карданных валов — при необходимости подтягивайте болты и гайки</li>
+          <li>Следите за состоянием сальников и прокладок: при обнаружении подтёков сразу заменяйте изношенные детали</li>
+          <li>Очищайте сапуны КПП и раздаточной коробки от грязи — это предотвращает повышение давления и утечки масла</li>
+          <li>При эксплуатации в тяжёлых условиях (бездорожье, буксировка прицепа, езда по горным дорогам) сокращайте интервалы обслуживания на 30–50 %</li>
+          <li>После преодоления глубоких водных преград проверяйте масло на наличие воды (эмульсии) — при обнаружении сразу заменяйте</li>
+          <li>Своевременно устраняйте выявленные неисправности (шумы, вибрации, затруднённое переключение) — это предотвратит более серьёзные поломки</li>
+          <li>Перед зимним сезоном проверяйте состояние тросов и механизмов переключения — при необходимости смазывайте их морозостойкой смазкой</li>
+          <li>Не допускайте длительной работы с включённым полным приводом на твёрдом покрытии — это приводит к ускоренному износу раздаточной коробки и трансмиссии в целом</li>
+          <li>Контролируйте состояние пыльников ШРУСов и приводов — повреждённые пыльники приводят к попаданию грязи и выходу шарниров из строя</li>
+        </ul>
+      </div>
+
+      <div class="alert alert-success mt-4" role="alert">
+        <strong>Помните:</strong> грамотное обслуживание трансмиссии значительно продлевает срок её службы и обеспечивает надёжную работу в любых условиях. При появлении первых признаков неисправности (шумов, вибраций, проблем с переключением) не откладывайте диагностику. В сложных случаях обращайтесь к квалифицированным специалистам — самостоятельный ремонт без опыта и инструментов может усугубить проблему.
+      </div>
+    </div>
+  </div>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Неисправности трансмиссии Chevrolet Niva: причины, диагностика и рекомендации",
+  "description": "Подробное руководство по распространённым неисправностям трансмиссии Chevrolet Niva, включая методы диагностики, возможные причины и способы устранения, а также рекомендации по обслуживанию трансмиссии для поддержания её исправного состояния и предотвращения дорогостоящего ремонта.",
+  "datePublished": "2024-03-25T10:00:00+03:00",
+  "dateModified": "2024-04-01T12:00:00+03:00",
+  "author": {
+    "@type": "Organization",
+    "name": "GM-АВТОВАЗ",
+    "url": "https://www.gm-avtovaz.ru"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "lada-aym.github.io",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lada-aym.github.io/chevrolet-niva/assets/images/logo.webp",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lada-aym.github.io/chevrolet-niva/maintenance.html#transmission"
+  },
+  "wordCount": "650",
+  "timeRequired": "PT9M",
+  "articleSection": "Диагностика и ремонт трансмиссии автомобиля",
+  "articleBody": "Раздел описывает распространённые неисправности трансмиссии Chevrolet Niva, методы диагностики, возможные причины и способы устранения, а также рекомендации по обслуживанию трансмиссии для поддержания её исправного состояния и предотвращения дорогостоящего ремонта.",
+  "keywords": [
+    "неисправности трансмиссии Chevrolet Niva",
+    "трансмиссия Chevrolet Niva",
+    "шум в КПП Chevrolet Niva",
+    "самопроизвольное выключение передач Chevrolet Niva",
+    "затруднённое переключение передач Chevrolet Niva",
+    "утечка масла Chevrolet Niva",
+    "карданы Chevrolet Niva",
+    "масло в трансмиссии Chevrolet Niva",
+    "сальник Chevrolet Niva",
+    "срок службы трансмиссии Chevrolet Niva"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Chevrolet Niva",
+      "description": "Автомобиль Chevrolet Niva (ВАЗ-2123), для которого приводятся рекомендации по диагностике и устранению неисправностей трансмиссии."
+    },
+    {
+      "@type": "Thing",
+      "name": "Трансмиссия и её обслуживание",
+      "description": "Комплексное руководство по диагностике, устранению и профилактике неисправностей трансмиссии Chevrolet Niva. Включает: распространённые симптомы (шум в КПП, самопроизвольное выключение передач, затруднённое переключение, вибрации при движении, утечка масла, посторонние стуки в районе карданного вала), пошаговую диагностику (проверка уровня и качества трансмиссионного масла, осмотр сальников и уплотнителей, проверка состояния карданных валов и крестовин, диагностика раздаточной коробки, проверка люфтов в узлах трансмиссии, компьютерная диагностика электронных компонентов системы полного привода), типичные причины неисправностей (износ шестерён и синхронизаторов, повреждение подшипников, ослабление креплений, износ крестовин кардана, утечка масла из‑за повреждения сальников, загрязнение или старение трансмиссионной жидкости). Описаны способы устранения распространённых проблем, рекомендации по регулярному обслуживанию (своевременная замена масла в КПП и раздаточной коробке, контроль состояния карданных валов, проверка креплений узлов трансмиссии, смазка шлицевых соединений), меры профилактики (избегание перегрузок и буксировки тяжёлых прицепов, плавное переключение передач, избегание длительного буксования). Приведены указания по безопасной самостоятельной диагностике (проверка уровня масла, осмотр на предмет утечек) и признаки, при которых необходимо срочно обратиться в сервисный центр (сильная вибрация, скрежет при переключении, полная потеря передачи крутящего момента)."
+    }
+  ],
+  "genre": "Automotive Technical Guide",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Руководство по эксплуатации и техническому обслуживанию Chevrolet Niva",
+    "author": "GM-АВТОВАЗ"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Раздел 6.4. Трансмиссия Chevrolet Niva",
+    "url": "https://lada-aym.github.io/chevrolet-niva/maintenance.html#transmission"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "GM-АВТОВАЗ"
+  },
+  "copyrightYear": 2024,
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- 6.5. Ходовая часть -->
+<div id="suspension" class="accordion-item">
+  <h2 class="accordion-header">
+    <button id="heading65" class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse65"
+            aria-expanded="false"
+            aria-controls="collapse65">
+      6.5. Ходовая часть
+    </button>
+  </h2>
+  <div id="collapse65" class="accordion-collapse collapse"
+       data-bs-parent="#mainAccordion"
+       role="region"
+       aria-labelledby="heading65">
+    <div class="accordion-body">
+      <p class="mb-4">Описание распространённых неисправностей ходовой части Chevrolet Niva и способы их устранения:</p>
+
+      <div class="alert alert-warning mt-3" role="alert">
+        <strong>Важно:</strong> неисправности ходовой части напрямую влияют на безопасность движения. При появлении первых признаков проблем (стуков, вибраций, увода автомобиля в сторону) необходимо провести диагностику. Эксплуатация автомобиля с неисправной ходовой может привести к аварии.
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Карточка 1: Стуки в подвеске -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+              <h3 class="card-title mb-0">Стуки в подвеске</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> посторонние звуки при проезде неровностей, на поворотах или при торможении.</p>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Износ шаровых опор</li>
+                <li>Ослабление креплений рычагов</li>
+                <li>Износ сайлентблоков</li>
+                <li>Поломка пружин или амортизаторов</li>
+                <li>Люфт ступичного подшипника</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ul>
+                <li>Проверьте и замените изношенные шаровые опоры</li>
+                <li>Затяните крепления рычагов подвески</li>
+                <li>Замените сайлентблоки при обнаружении трещин или деформации</li>
+                <li>Осмотрите амортизаторы и пружины, замените неисправные детали</li>
+                <li>При люфте ступичного подшипника — замените подшипник</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Увод автомобиля в сторону -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <h3 class="card-title mb-0">Увод автомобиля в сторону</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> автомобиль отклоняется от прямолинейного движения без воздействия руля.</p>
+              <p><strong>Вероятные причины:</strong></p>
+              <ul>
+                <li>Неправильное схождение колёс</li>
+                <li>Разный износ шин</li>
+                <li>Деформация рычагов подвески</li>
+                <li>Проблемы с тормозной системой (подклинивание суппорта)</li>
+                <li>Неравномерное давление в шинах</li>
+              </ul>
+              <p><strong>Диагностика и устранение:</strong></p>
+              <ul>
+                <li>Проверьте углы установки колёс (развал‑схождение)</li>
+                <li>Осмотрите шины на предмет неравномерного износа</li>
+                <li>Проверьте давление в шинах</li>
+                <li>Осмотрите рычаги подвески на наличие деформаций</li>
+                <li>Проверьте работу тормозных механизмов</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Вибрация руля -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h3 class="card-title mb-0">Вибрация руля</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> дрожание рулевого колеса при движении, особенно на скорости.</p>
+              <p><strong>Причины:</strong></p>
+              <ul>
+                <li>Дисбаланс колёс</li>
+                <li>Деформация дисков</li>
+                <li>Износ рулевых наконечников</li>
+                <li>Люфт в рулевой рейке</li>
+                <li>Износ ступичного подшипника</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ul>
+                <li>Проведите балансировку колёс</li>
+                <li>Осмотрите диски на наличие деформаций</li>
+                <li>Замените изношенные рулевые наконечники</li>
+                <li>Проверьте состояние рулевой рейки</li>
+                <li>При необходимости замените ступичный подшипник</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 4: Быстрый износ шин -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-secondary text-white">
+              <h3 class="card-title mb-0">Быстрый износ шин</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> неравномерный или ускоренный износ протектора.</p>
+              <p><strong>Основные причины:</strong></p>
+              <ul>
+                <li>Неправильные углы установки колёс</li>
+                <li>Некорректное давление в шинах</li>
+                <li>Износ элементов подвески</li>
+                <li>Нарушение геометрии кузова</li>
+                <li>Агрессивный стиль вождения</li>
+              </ul>
+              <p><strong>Немедленные действия:</strong></p>
+              <ul>
+                <li>Проверьте давление в шинах и доведите до нормы</li>
+                <li>Выполните регулировку углов установки колёс</li>
+                <li>Осмотрите подвеску на наличие изношенных деталей</li>
+                <li>При подозрении на нарушение геометрии — проведите диагностику на стенде</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 5: Проседание кузова -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+              <h3 class="card-title mb-0">Проседание кузова</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> снижение дорожного просвета, особенно при нагрузке.</p>
+              <p><strong>Вероятные источники:</strong></p>
+              <ul>
+                <li>Проседание пружин</li>
+                <li>Утечка масла из амортизаторов</li>
+                <li>Износ резиновых опор подвески</li>
+                <li>Перегрузка автомобиля</li>
+              </ul>
+              <p><strong>Действия:</strong></p>
+              <ul>
+                <li>Осмотрите пружины на наличие трещин и проседания</li>
+                <li>Проверьте амортизаторы на утечки и эффективность работы</li>
+                <li>Замените изношенные резиновые опоры</li>
+                <li>Соблюдайте допустимую грузоподъёмность автомобиля</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+            <div class="mt-4">
+        <h3>Рекомендации по обслуживанию ходовой части:</h3>
+        <ul>
+          <li>Регулярно проводите визуальный осмотр подвески (каждые 10–15 тыс. км или перед длительными поездками)</li>
+          <li>Проверяйте состояние пыльников ШРУСов и шаровых опор — при повреждении сразу заменяйте, чтобы предотвратить попадание грязи и влаги к рабочим элементам</li>
+          <li>Контролируйте давление в шинах и их износ, соблюдайте рекомендованные производителем параметры (проверяйте минимум раз в месяц и перед дальними поездками)</li>
+          <li>После езды по плохим дорогам, бездорожью или преодоления глубоких луж обязательно осматривайте подвеску на наличие повреждений и следов коррозии</li>
+          <li>Своевременно регулируйте углы установки колёс (развал‑схождение) — минимум раз в год или после замены элементов подвески, ударов по колёсам или изменения клиренса</li>
+          <li>При замене амортизаторов меняйте их парами (на одной оси), чтобы обеспечить равномерную работу подвески</li>
+          <li>Следите за состоянием сайлентблоков — при обнаружении трещин, отслоения резины или люфтов сразу заменяйте</li>
+          <li>Периодически проверяйте состояние ступичных подшипников: наличие гула, хруста или люфта требует немедленной диагностики и замены детали</li>
+          <li>Осматривайте пружины подвески на предмет трещин, коррозии и проседания — изношенные пружины ухудшают управляемость и комфорт</li>
+          <li>Не превышайте допустимую грузоподъёмность автомобиля: перегрузка ускоряет износ всех элементов ходовой части</li>
+          <li>Обращайте внимание на состояние тормозных шлангов и трубок вблизи элементов подвески — они не должны тереться о детали ходовой</li>
+          <li>Смазывайте резьбовые соединения (при наличии точек смазки) морозостойкой смазкой раз в год, чтобы избежать закисания</li>
+          <li>При появлении стуков, скрипов или вибраций не откладывайте диагностику — раннее выявление проблемы сэкономит время и деньги на ремонт</li>
+          <li>Используйте оригинальные или сертифицированные запчасти при замене деталей ходовой — это гарантирует соответствие характеристик и долгий срок службы</li>
+          <li>После серьёзного ремонта подвески (замена рычагов, амортизаторов, пружин) обязательно выполните регулировку углов установки колёс</li>
+        </ul>
+      </div>
+
+      <div class="alert alert-success mt-4" role="alert">
+        <strong>Помните:</strong> исправная ходовая часть — залог безопасности, комфорта и управляемости автомобиля. Регулярное обслуживание позволяет выявить проблемы на ранней стадии и избежать дорогостоящего ремонта. Если вы не уверены в своих навыках диагностики или ремонта, доверьте работу профессионалам. Особенно это касается операций, требующих специального оборудования (балансировка колёс, регулировка развал‑схождения, диагностика подвески на стенде).
+      </div>
+    </div>
+  </div>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Неисправности ходовой части Chevrolet Niva: причины, диагностика и рекомендации",
+  "description": "Подробное руководство по распространённым неисправностям ходовой части Chevrolet Niva, включая методы диагностики, возможные причины и способы устранения, а также рекомендации по обслуживанию ходовой части для поддержания её исправного состояния и предотвращения быстрого износа и поломок.",
+  "datePublished": "2024-03-25T10:00:00+03:00",
+  "dateModified": "2024-04-01T12:00:00+03:00",
+  "author": {
+    "@type": "Organization",
+    "name": "GM-АВТОВАЗ",
+    "url": "https://www.gm-avtovaz.ru"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "lada-aym.github.io",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lada-aym.github.io/chevrolet-niva/assets/images/logo.webp",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lada-aym.github.io/chevrolet-niva/maintenance.html#suspension"
+  },
+  "wordCount": "650",
+  "timeRequired": "PT9M",
+  "articleSection": "Диагностика и ремонт ходовой части автомобиля",
+  "articleBody": "Раздел описывает распространённые неисправности ходовой части Chevrolet Niva, методы диагностики, возможные причины и способы устранения, а также рекомендации по обслуживанию ходовой части для поддержания её исправного состояния и предотвращения быстрого износа и поломок.",
+  "keywords": [
+    "неисправности ходовой части Chevrolet Niva",
+    "ходовая часть Chevrolet Niva",
+    "стуки в подвеске Chevrolet Niva",
+    "проседание кузова Chevrolet Niva",
+    "вибрации Chevrolet Niva",
+    "износ шин Chevrolet Niva",
+    "развал‑схождение Chevrolet Niva",
+    "рессоры Chevrolet Niva",
+    "стойки стабилизатора Chevrolet Niva",
+    "шаровые опоры Chevrolet Niva"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Chevrolet Niva",
+      "description": "Автомобиль Chevrolet Niva (ВАЗ-2123), для которого приводятся рекомендации по диагностике и устранению неисправностей ходовой части."
+    },
+    {
+      "@type": "Thing",
+      "name": "Ходовая часть и её обслуживание",
+      "description": "Комплексное руководство по диагностике, устранению и профилактике неисправностей ходовой части Chevrolet Niva. Включает: распространённые симптомы (стуки и скрипы при проезде неровностей, вибрации на руле и кузове, неравномерный износ шин, проседание кузова, увод автомобиля в сторону при движении, увеличение крена в поворотах), пошаговую диагностику (визуальный осмотр амортизаторов, пружин, сайлентблоков, шаровых опор, рулевых наконечников, стоек стабилизатора, проверка люфтов в шарнирных соединениях, контроль состояния рессор и креплений подвески, проверка углов развала‑схождения, диагностика ступичных подшипников), типичные причины неисправностей (износ сайлентблоков и шаровых опор, утечка масла из амортизаторов, деформация рычагов, ослабление креплений, износ ступичных подшипников, коррозия элементов подвески). Описаны способы устранения распространённых проблем, рекомендации по регулярному обслуживанию (регулярная диагностика подвески, своевременная замена изношенных деталей, контроль углов развала‑схождения после ремонта подвески, смазка резьбовых соединений), меры профилактики (избегание резких ударов при проезде ям, контроль нагрузки на автомобиль, избегание длительной стоянки с перегрузом, использование качественных запчастей при замене компонентов). Приведены указания по безопасной самостоятельной диагностике (осмотр подвески на подъёмнике или эстакаде, проверка люфтов) и признаки, при которых необходимо срочно обратиться в сервисный центр (резкое ухудшение управляемости, сильный стук при движении, заметное проседание одной стороны кузова, заклинивание колеса)."
+    }
+  ],
+  "genre": "Automotive Technical Guide",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Руководство по эксплуатации и техническому обслуживанию Chevrolet Niva",
+    "author": "GM-АВТОВАЗ"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Раздел 6.5. Ходовая часть Chevrolet Niva",
+    "url": "https://lada-aym.github.io/chevrolet-niva/maintenance.html#suspension"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "GM-АВТОВАЗ"
+  },
+  "copyrightYear": 2024,
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- 6.6. Тормозная система -->
+<div id="brake-system" class="accordion-item">
+  <h2 class="accordion-header">
+    <button id="heading66" class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse66"
+            aria-expanded="false"
+            aria-controls="collapse66">
+      6.6. Тормозная система
+    </button>
+  </h2>
+  <div id="collapse66" class="accordion-collapse collapse"
+       data-bs-parent="#mainAccordion"
+       role="region"
+       aria-labelledby="heading66">
+    <div class="accordion-body">
+      <p class="mb-4">Описание распространённых неисправностей тормозной системы Chevrolet Niva и способы их устранения:</p>
+
+      <div class="alert alert-warning mt-3" role="alert">
+        <strong>Важно:</strong> неисправности тормозной системы напрямую влияют на безопасность движения. При первых признаках проблем (увеличенный ход педали, снижение эффективности торможения, посторонние звуки) необходимо немедленно провести диагностику. Эксплуатация автомобиля с неисправными тормозами запрещена.
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Карточка 1: Увеличенный ход педали тормоза -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+              <h3 class="card-title mb-0">Увеличенный ход педали тормоза</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> педаль проваливается, требуется несколько нажатий для эффективного торможения.</p>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Наличие воздуха в тормозной системе</li>
+                <li>Износ тормозных колодок</li>
+                <li>Утечка тормозной жидкости</li>
+                <li>Неисправность главного тормозного цилиндра</li>
+                <li>Износ рабочих цилиндров</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ul>
+                <li>Прокачайте тормозную систему для удаления воздуха</li>
+                <li>Замените изношенные тормозные колодки</li>
+                <li>Проверьте и устраните утечки жидкости</li>
+                <li>Осмотрите и при необходимости замените главный тормозной цилиндр</li>
+                <li>Проверьте рабочие цилиндры, замените при износе</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Снижение эффективности торможения -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <h3 class="card-title mb-0">Снижение эффективности торможения</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> увеличение тормозного пути, необходимость сильнее нажимать на педаль.</p>
+              <p><strong>Вероятные причины:</strong></p>
+              <ul>
+                <li>Замасливание тормозных колодок или дисков</li>
+                <li>Износ тормозных дисков или барабанов</li>
+                <li>Неисправность вакуумного усилителя</li>
+                <li>Засорение тормозных шлангов</li>
+                <li>Использование некачественной тормозной жидкости</li>
+              </ul>
+              <p><strong>Диагностика и устранение:</strong></p>
+              <ul>
+                <li>Очистите или замените замасленные колодки и диски</li>
+                <li>Замените изношенные диски или барабаны</li>
+                <li>Проверьте работу вакуумного усилителя</li>
+                <li>Замените засоренные тормозные шланги</li>
+                <li>Замените тормозную жидкость на рекомендованную производителем</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Биение при торможении -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h3 class="card-title mb-0">Биение при торможении</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> вибрация руля или кузова при нажатии на педаль тормоза.</p>
+              <p><strong>Причины:</strong></p>
+              <ul>
+                <li>Деформация тормозных дисков</li>
+                <li>Неравномерный износ тормозных барабанов</li>
+                <li>Ослабление крепления колёсных подшипников</li>
+                <li>Нарушение балансировки колёс</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ul>
+                <li>Отремонтируйте или замените деформированные тормозные диски</li>
+                <li>Замените или проточите тормозные барабаны</li>
+                <li>Проверьте и затяните крепления ступичных подшипников</li>
+                <li>Выполните балансировку колёс</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 4: Подклинивание тормозных механизмов -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-secondary text-white">
+              <h3 class="card-title mb-0">Подклинивание тормозных механизмов</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> колёса не полностью растормаживаются, нагрев тормозных дисков, повышенный расход топлива.</p>
+              <p><strong>Основные причины:</strong></p>
+              <ul>
+                <li>Заклинивание направляющих суппортов</li>
+                <li>Разбухание резиновых уплотнителей в цилиндрах</li>
+                <li>Коррозия поршней тормозных цилиндров</li>
+                <li>Засорение компенсационного отверстия в главном цилиндре</li>
+              </ul>
+              <p><strong>Немедленные действия:</strong></p>
+              <ul>
+                <li>Разоберите и очистите направляющие суппортов, смажьте специальной смазкой</li>
+                <li>Замените резиновые уплотнители</li>
+                <li>Очистите поршни от коррозии</li>
+                <li>Прочистите компенсационное отверстие главного цилиндра</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 5: Утечка тормозной жидкости -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+              <h3 class="card-title mb-0">Утечка тормозной жидкости</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> пятна жидкости под автомобилем, снижение уровня в бачке, ухудшение работы тормозов.</p>
+              <p><strong>Вероятные источники:</strong></p>
+              <ul>
+                <li>Повреждение тормозных шлангов</li>
+                <li>Износ уплотнительных колец в цилиндрах</li>
+                <li>Трещины в тормозных трубках</li>
+                <li>Негерметичность соединений</li>
+              </ul>
+              <p><strong>Действия:</strong></p>
+              <ul>
+                <li>Осмотрите тормозные шланги, замените повреждённые</li>
+                <li>Замените уплотнительные кольца в цилиндрах</li>
+                <li>Замените тормозные трубки с трещинами</li>
+                <li>Проверьте и подтяните все соединения</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <div class="mt-4">
+        <h3>Рекомендации по обслуживанию тормозной системы:</h3>
+        <ul>
+          <li>Регулярно проверяйте уровень тормозной жидкости (минимум раз в месяц) — он должен находиться между отметками «MIN» и «MAX» на бачке</li>
+          <li>Меняйте тормозную жидкость каждые 2 года или каждые 40–60 тыс. км пробега (в зависимости от того, что наступит раньше), используя только рекомендованную производителем марку и тип жидкости</li>
+          <li>Проверяйте толщину тормозных колодок при каждом ТО: заменяйте их, если остаточная толщина фрикционного слоя менее 3 мм</li>
+          <li>Осматривайте тормозные диски на наличие глубоких борозд, трещин или деформации; при необходимости проточите или замените диски</li>
+          <li>Контролируйте состояние тормозных шлангов и трубок: заменяйте при обнаружении трещин, вздутий, следов утечки или старения резины</li>
+          <li>Следите за состоянием направляющих суппортов — очищайте их от грязи и коррозии, смазывайте высокотемпературной смазкой (специальной для тормозных механизмов), не допускайте заклинивания</li>
+          <li>Периодически проверяйте работу вакуумного усилителя: на заглушённом двигателе нажмите на педаль тормоза несколько раз, затем запустите двигатель — педаль должна «провалиться» при работающем моторе</li>
+          <li>После замены тормозных колодок или дисков обязательно выполните несколько плавных торможений на малой скорости для их притирки</li>
+          <li>Проверяйте состояние пыльников тормозных цилиндров и суппортов — повреждённые пыльники нужно сразу заменить, чтобы предотвратить попадание грязи и влаги внутрь механизма</li>
+          <li>Контролируйте работу стояночного тормоза: проверяйте ход рычага (обычно 4–6 щелчков до фиксации) и эффективность удержания автомобиля на уклоне</li>
+          <li>При замене деталей тормозной системы используйте только оригинальные или сертифицированные запчасти — это гарантирует совместимость и надёжность работы</li>
+          <li>Регулярно осматривайте тормозные барабаны (если установлены) на износ внутренней поверхности и наличие трещин</li>
+          <li>Проверяйте индикатор ABS на приборной панели: если он горит постоянно, проведите диагностику системы с использованием сканера</li>
+          <li>Избегайте агрессивного стиля вождения с резкими торможениями — это значительно ускоряет износ компонентов тормозной системы</li>
+          <li>Не допускайте попадания на тормозные механизмы масла, смазки или технических жидкостей — они снижают эффективность торможения</li>
+          <li>Перед зимним сезоном проверьте систему на герметичность и замените жидкость при наличии признаков влаги (помутнение, осадок)</li>
+        </ul>
+      </div>
+
+
+      <div class="alert alert-success mt-4" role="alert">
+        <strong>Помните:</strong> тормозная система — ключевой элемент безопасности автомобиля. Даже незначительные неисправности могут привести к серьёзным последствиям на дороге. При обнаружении любых отклонений в работе тормозов (увеличенный ход педали, посторонние звуки, вибрации, снижение эффективности) немедленно проводите диагностику. Сложные работы по ремонту и настройке тормозной системы лучше доверить квалифицированным специалистам с соответствующим оборудованием.
+      </div>
+    </div>
+  </div>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Неисправности тормозной системы Chevrolet Niva: причины, диагностика и рекомендации",
+  "description": "Подробное руководство по распространённым неисправностям тормозной системы Chevrolet Niva, включая методы диагностики, возможные причины и способы устранения, а также рекомендации по обслуживанию тормозной системы для поддержания её исправного состояния и предотвращения дорогого ремонта.",
+  "datePublished": "2024-03-25T10:00:00+03:00",
+  "dateModified": "2024-04-01T12:00:00+03:00",
+  "author": {
+    "@type": "Organization",
+    "name": "GM-АВТОВАЗ",
+    "url": "https://www.gm-avtovaz.ru"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "lada-aym.github.io",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lada-aym.github.io/chevrolet-niva/assets/images/logo.webp",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lada-aym.github.io/chevrolet-niva/maintenance.html#brake-system"
+  },
+  "wordCount": "650",
+  "timeRequired": "PT9M",
+  "articleSection": "Диагностика и ремонт тормозной системы автомобиля",
+  "articleBody": "Раздел описывает распространённые неисправности тормозной системы Chevrolet Niva, методы диагностики, возможные причины и способы устранения, а также рекомендации по обслуживанию тормозной системы для поддержания её исправного состояния и предотвращения дорогого ремонта.",
+  "keywords": [
+    "неисправности тормозной системы Chevrolet Niva",
+    "тормозная система Chevrolet Niva",
+    "педаль тормоза Chevrolet Niva",
+    "биение тормозов Chevrolet Niva",
+    "замена тормозных колодок Chevrolet Niva",
+    "тормозная жидкость Chevrolet Niva",
+    "тормозные диски Chevrolet Niva",
+    "тормозные барабаны Chevrolet Niva",
+    "ABS Chevrolet Niva",
+    "стояночный тормоз Chevrolet Niva"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Chevrolet Niva",
+      "description": "Автомобиль Chevrolet Niva (ВАЗ-2123), для которого приводятся рекомендации по диагностике и устранению неисправностей тормозной системы."
+    },
+    {
+      "@type": "Thing",
+      "name": "Тормозная система и её обслуживание",
+      "description": "Комплексное руководство по диагностике, устранению и профилактике неисправностей тормозной системы Chevrolet Niva. Включает: распространённые симптомы (увеличение хода педали тормоза, биение при торможении, увод автомобиля в сторону, скрип и посторонние шумы, утечка тормозной жидкости, загорание индикатора ABS, недостаточная эффективность торможения, подклинивание тормозов), пошаговую диагностику (проверка уровня и состояния тормозной жидкости, осмотр тормозных дисков и барабанов на износ и деформацию, проверка состояния тормозных колодок, осмотр шлангов и магистралей на утечки, диагностика вакуумного усилителя тормозов, проверка работы ABS и датчиков, контроль состояния стояночного тормоза), типичные причины неисправностей (износ тормозных колодок и дисков, деформация тормозных дисков, утечка жидкости из‑за повреждения шлангов или цилиндров, завоздушивание системы, неисправность вакуумного усилителя, загрязнение или окисление контактов датчиков ABS, коррозия тросов стояночного тормоза). Описаны способы устранения распространённых проблем, рекомендации по регулярному обслуживанию (своевременная замена тормозной жидкости, контроль износа колодок и дисков, очистка тормозных механизмов, проверка герметичности системы), меры профилактики (избегание резких торможений, контроль нагрузки на автомобиль, избегание езды по глубоким лужам после активного торможения, использование качественных запчастей при замене компонентов). Приведены указания по безопасной самостоятельной диагностике (проверка уровня тормозной жидкости, визуальный осмотр компонентов) и признаки, при которых необходимо срочно обратиться в сервисный центр (резкое ухудшение эффективности торможения, полная потеря тормозной эффективности, появление нехарактерных шумов или вибраций, загорание нескольких индикаторов на приборной панели)."
+    }
+  ],
+  "genre": "Automotive Technical Guide",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Руководство по эксплуатации и техническому обслуживанию Chevrolet Niva",
+    "author": "GM-АВТОВАЗ"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Раздел 6.6. Тормозная система Chevrolet Niva",
+    "url": "https://lada-aym.github.io/chevrolet-niva/maintenance.html#brake-system"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "GM-АВТОВАЗ"
+  },
+  "copyrightYear": 2024,
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- 6.7. Система охлаждения и отопления -->
+<div id="cooling-heating" class="accordion-item">
+  <h2 class="accordion-header">
+    <button id="heading67" class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse67"
+            aria-expanded="false"
+            aria-controls="collapse67">
+      6.7. Система охлаждения и отопления
+    </button>
+  </h2>
+  <div id="collapse67" class="accordion-collapse collapse"
+       data-bs-parent="#mainAccordion"
+       role="region"
+       aria-labelledby="heading67">
+    <div class="accordion-body">
+      <p class="mb-4">Описание распространённых неисправностей системы охлаждения и отопления Chevrolet Niva и способы их устранения:</p>
+
+      <div class="alert alert-warning mt-3" role="alert">
+        <strong>Важно:</strong> перегрев двигателя может привести к серьёзным повреждениям силового агрегата. При первых признаках неисправности системы охлаждения (рост температуры выше нормы, утечка жидкости) остановите автомобиль и проведите диагностику. Эксплуатация с перегревом запрещена.
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Карточка 1: Перегрев двигателя -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+              <h3 class="card-title mb-0">Перегрев двигателя</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> стрелка указателя температуры в красной зоне, пар из-под капота, снижение мощности.</p>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Низкий уровень охлаждающей жидкости</li>
+                <li>Неисправность термостата</li>
+                <li>Засорение радиатора охлаждения</li>
+                <li>Отказ вентилятора охлаждения</li>
+                <li>Пробуксовка или обрыв ремня привода помпы</li>
+                <li>Неисправность помпы</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ul>
+                <li>Проверьте уровень ОЖ в расширительном бачке</li>
+                <li>Осмотрите термостат, при необходимости замените</li>
+                <li>Очистите радиатор от грязи и насекомых</li>
+                <li>Проверьте работу вентилятора и его датчика</li>
+                <li>Осмотрите ремень привода помпы</li>
+                <li>При подозрении на неисправность помпы — замените</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Недостаточный прогрев двигателя -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <h3 class="card-title mb-0">Недостаточный прогрев двигателя</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> двигатель долго прогревается, печка дует холодным воздухом.</p>
+              <p><strong>Вероятные причины:</strong></p>
+              <ul>
+                <li>Заклинивание термостата в открытом положении</li>
+                <li>Воздушная пробка в системе охлаждения</li>
+                <li>Низкая производительность помпы</li>
+                <li>Утечка охлаждающей жидкости</li>
+              </ul>
+              <p><strong>Диагностика и устранение:</strong></p>
+              <ul>
+                <li>Проверьте и замените термостат</li>
+                <li>Удалите воздушную пробку (прокачайте систему)</li>
+                <li>Осмотрите помпу на предмет износа</li>
+                <li>Найдите и устраните утечки ОЖ</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Утечка охлаждающей жидкости -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h3 class="card-title mb-0">Утечка охлаждающей жидкости</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> пятна под автомобилем, снижение уровня ОЖ, белый дым из выхлопной трубы.</p>
+              <p><strong>Основные причины:</strong></p>
+              <ul>
+                <li>Повреждение патрубков</li>
+                <li>Износ прокладок термостата или помпы</li>
+                <li>Трещина в радиаторе</li>
+                <li>Разгерметизация расширительного бачка</li>
+                <li>Пробой прокладки ГБЦ</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ul>
+                <li>Осмотрите все патрубки и соединения</li>
+                <li>Замените изношенные патрубки и хомуты</li>
+                <li>Проверьте радиатор на герметичность</li>
+                <li>Осмотрите расширительный бачок</li>
+                <li>При подозрении на пробой прокладки ГБЦ — обратитесь в сервис</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 4: Не работает отопление (печка) -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-secondary text-white">
+              <h3 class="card-title mb-0">Не работает отопление (печка)</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> из дефлекторов дует холодный воздух даже при прогретом двигателе.</p>
+              <p><strong>Основные причины:</strong></p>
+              <ul>
+                <li>Воздушная пробка в радиаторе отопителя</li>
+                <li>Засорение радиатора печки</li>
+                <li>Неисправность крана отопителя</li>
+                <li>Проблемы с приводом заслонок</li>
+                <li>Недостаточный уровень ОЖ</li>
+              </ul>
+              <p><strong>Немедленные действия:</strong></p>
+              <ul>
+                <li>Удалите воздушную пробку</li>
+                <li>Промойте или замените радиатор печки</li>
+                <li>Проверьте кран отопителя, при необходимости замените</li>
+                <li>Осмотрите привод заслонок и тяги</li>
+                <li>Долейте охлаждающую жидкость до нормы</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 5: Шум помпы -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+              <h3 class="card-title mb-0">Шум помпы</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> гул, свист или скрежет из района помпы при работе двигателя.</p>
+              <p><strong>Вероятные источники:</strong></p>
+              <ul>
+                <li>Износ подшипника помпы</li>
+                <li>Люфт вала помпы</li>
+                <li>Кавитация или коррозия крыльчатки</li>
+              </ul>
+              <p><strong>Действия:</strong></p>
+              <ul>
+                <li>Осмотрите помпу на наличие люфта</li>
+                <li>Проверьте состояние крыльчатки</li>
+                <li>При обнаружении шума — замените помпу</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+            <div class="mt-4">
+        <h3>Рекомендации по обслуживанию системы охлаждения и отопления:</h3>
+        <ul>
+          <li>Регулярно проверяйте уровень охлаждающей жидкости (минимум раз в месяц и перед дальними поездками) — он должен находиться между отметками MIN и MAX на расширительном бачке</li>
+          <li>Используйте только рекомендованную производителем охлаждающую жидкость (антифриз) с нужным индексом защиты от замерзания; не смешивайте разные типы ОЖ</li>
+          <li>Меняйте охлаждающую жидкость каждые 2–3 года или каждые 60–90 тыс. км пробега, в зависимости от того, что наступит раньше</li>
+          <li>Периодически очищайте радиатор охлаждения от грязи, пыли, насекомых и пуха (особенно перед летним сезоном), используя мягкую щётку или струю воды под небольшим давлением</li>
+          <li>Проверяйте состояние и натяжение ремня привода помпы, заменяйте при появлении трещин, расслоения или износа</li>
+          <li>Осматривайте патрубки системы охлаждения на наличие трещин, вздутий, следов подтекания; проверяйте надёжность хомутов крепления — при обнаружении дефектов сразу заменяйте детали</li>
+          <li>Контролируйте работу термостата: при прогреве нижний патрубок радиатора должен оставаться холодным до достижения рабочей температуры, затем нагреваться</li>
+          <li>Проверяйте герметичность соединений и прокладок (помпы, термостата, радиатора), устраняйте утечки сразу после обнаружения</li>
+          <li>Регулярно осматривайте расширительный бачок и его крышку: трещины, деформации или неисправность клапана давления могут привести к нарушению работы системы</li>
+          <li>Следите за работой вентиляторов охлаждения: проверяйте их включение при достижении критической температуры (около 95–100 °C) и состояние датчиков включения</li>
+          <li>При замене ОЖ обязательно удаляйте воздушные пробки: для этого прогрейте двигатель с открытой крышкой расширительного бачка, дайте поработать на холостых, периодически повышая обороты до 2000–2500 об/мин</li>
+          <li>Проверяйте работу отопителя (печки) перед началом холодного сезона: убедитесь, что радиатор печки прогревается, заслонки корректно управляют потоками воздуха, вентилятор работает на всех режимах</li>
+          <li>Очищайте радиатор отопителя от загрязнений — при снижении эффективности обогрева салона рассмотрите возможность промывки или замены радиатора печки</li>
+          <li>Проверяйте кран отопителя на герметичность и плавность хода; при заедании или утечках замените деталь</li>
+          <li>Поддерживайте чистоту салонного фильтра: забитый фильтр снижает интенсивность воздушного потока и эффективность отопления</li>
+          <li>После ремонта или замены элементов системы охлаждения обязательно проверьте герметичность всех соединений и выполните полную прокачку системы для удаления воздуха</li>
+          <li>В зимний период следите за состоянием дренажных отверстий в районе отопителя — их засорение может привести к попаданию воды в салон</li>
+        </ul>
+      </div>
+
+      <div class="alert alert-success mt-4" role="alert">
+        <strong>Помните:</strong> исправная система охлаждения предотвращает перегрев двигателя и продлевает его ресурс, а система отопления обеспечивает комфорт и безопасность вождения в холодное время года. При появлении первых признаков неисправности (рост температуры, утечка ОЖ, слабый обогрев салона) незамедлительно проводите диагностику. Для сложных работ (замена помпы, радиатора, промывка системы) рекомендуется обращаться к квалифицированным специалистам.
+      </div>
+    </div>
+  </div>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Неисправности системы охлаждения и отопления Chevrolet Niva: причины, диагностика и рекомендации",
+  "description": "Подробное руководство по распространённым неисправностям системы охлаждения и отопления Chevrolet Niva, включая методы диагностики, возможные причины и способы устранения, а также рекомендации по обслуживанию системы для поддержания её исправного состояния и предотвращения дорогого ремонта.",
+  "datePublished": "2024-03-25T10:00:00+03:00",
+  "dateModified": "2024-04-01T12:00:00+03:00",
+  "author": {
+    "@type": "Organization",
+    "name": "GM-АВТОВАЗ",
+    "url": "https://www.gm-avtovaz.ru"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "lada-aym.github.io",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lada-aym.github.io/chevrolet-niva/assets/images/logo.webp",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lada-aym.github.io/chevrolet-niva/maintenance.html#cooling-heating"
+  },
+  "wordCount": "650",
+  "timeRequired": "PT9M",
+  "articleSection": "Диагностика и ремонт системы охлаждения и отопления автомобиля",
+  "articleBody": "Раздел описывает распространённые неисправности системы охлаждения и отопления Chevrolet Niva, методы диагностики, возможные причины и способы устранения, а также рекомендации по обслуживанию системы для поддержания её исправного состояния и предотвращения дорого ремонта.",
+  "keywords": [
+    "неисправности системы охлаждения Chevrolet Niva",
+    "охлаждающая жидкость Chevrolet Niva",
+    "перегрев двигателя Chevrolet Niva",
+    "отопление Chevrolet Niva",
+    "вентиляторы охлаждения Chevrolet Niva",
+    "радиатор Chevrolet Niva",
+    "помпа Chevrolet Niva",
+    "патрубки Chevrolet Niva",
+    "печка Chevrolet Niva",
+    "антифриз Chevrolet Niva"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Chevrolet Niva",
+      "description": "Автомобиль Chevrolet Niva (ВАЗ-2123), для которого приводятся рекомендации по диагностике и устранению неисправностей системы охлаждения и отопления."
+    },
+    {
+      "@type": "Thing",
+      "name": "Система охлаждения и отопления и её обслуживание",
+      "description": "Комплексное руководство по диагностике, устранению и профилактике неисправностей системы охлаждения и отопления Chevrolet Niva. Включает: распространённые симптомы (перегрев двигателя, недостаточный прогрев салона, утечка охлаждающей жидкости, шум работы помпы, неравномерный обогрев салона, отсутствие тёплого воздуха из печки, запах антифриза в салоне), пошаговую диагностику (проверка уровня и состояния охлаждающей жидкости, осмотр патрубков на трещины и подтёки, проверка радиатора на засорение и утечки, диагностика работы помпы и термостата, проверка вентиляторов охлаждения, контроль состояния отопителя и заслонки рециркуляции, проверка герметичности системы), типичные причины неисправностей (утечка жидкости из‑за повреждения патрубков или радиатора, износ помпы, заклинивание термостата, засорение радиатора отопителя, неисправность электродвигателя вентилятора печки, воздушная пробка в системе охлаждения, старение и потеря свойств антифриза). Описаны способы устранения распространённых проблем, рекомендации по регулярному обслуживанию (своевременная замена охлаждающей жидкости согласно регламенту, промывка системы охлаждения при замене антифриза, очистка радиатора от загрязнений, проверка состояния патрубков и хомутов, контроль работы термостата и помпы), меры профилактики (использование качественного антифриза, избегание смешивания разных типов охлаждающих жидкостей, регулярный визуальный осмотр системы, контроль температуры двигателя по приборной панели). Приведены указания по безопасной самостоятельной диагностике (проверка уровня антифриза на холодном двигателе, осмотр патрубков и радиатора) и признаки, при которых необходимо срочно обратиться в сервисный центр (резкий перегрев двигателя, обильная утечка жидкости, полное отсутствие обогрева салона при исправном двигателе, появление густого белого дыма из‑под капота)."
+    }
+  ],
+  "genre": "Automotive Technical Guide",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Руководство по эксплуатации и техническому обслуживанию Chevrolet Niva",
+    "author": "GM-АВТОВАЗ"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Раздел 6.7. Система охлаждения и отопления Chevrolet Niva",
+    "url": "https://lada-aym.github.io/chevrolet-niva/maintenance.html#cooling-heating"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "GM-АВТОВАЗ"
+  },
+  "copyrightYear": 2024,
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- 6.8. Кузов и салон -->
+<div id="body-interior" class="accordion-item">
+  <h2 class="accordion-header">
+    <button id="heading68" class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse68"
+            aria-expanded="false"
+            aria-controls="collapse68">
+      6.8. Кузов и салон
+    </button>
+  </h2>
+  <div id="collapse68" class="accordion-collapse collapse"
+       data-bs-parent="#mainAccordion"
+       role="region"
+       aria-labelledby="heading68">
+    <div class="accordion-body">
+      <p class="mb-4">Описание распространённых неисправностей кузова и салона Chevrolet Niva и способы их устранения:</p>
+
+      <div class="alert alert-warning mt-3" role="alert">
+        <strong>Важно:</strong> своевременное обслуживание кузова предотвращает развитие коррозии, а уход за салоном сохраняет комфорт и эстетику автомобиля. При обнаружении повреждений лакокрасочного покрытия или элементов интерьера принимайте меры как можно скорее.
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Карточка 1: Коррозия кузова -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+              <h3 class="card-title mb-0">Коррозия кузова</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> рыжие пятна, вздутие краски, сквозные отверстия в металле.</p>
+              <p><strong>Возможные причины:</strong></p>
+              <ul>
+                <li>Повреждение лакокрасочного покрытия</li>
+                <li>Воздействие дорожных реагентов и соли</li>
+                <li>Скопление влаги в скрытых полостях</li>
+                <li>Отсутствие антикоррозийной обработки</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ul>
+                <li>Очистите очаг коррозии от ржавчины</li>
+                <li>Обработайте преобразователем ржавчины</li>
+                <li>Нанесите грунтовку и краску</li>
+                <li>Выполните антикоррозийную обработку скрытых полостей</li>
+                <li>Установите защитные накладки на подверженные ударам участки</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Проблемы с дверями и замками -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+              <h3 class="card-title mb-0">Проблемы с дверями и замками</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> тугое открывание/закрывание, скрип, не фиксируется замок, дверь провисает.</p>
+              <p><strong>Вероятные причины:</strong></p>
+              <ul>
+                <li>Износ петель дверей</li>
+                <li>Загрязнение или коррозия механизмов замка</li>
+                <li>Ослабление креплений</li>
+                <li>Деформация дверного проёма</li>
+              </ul>
+              <p><strong>Диагностика и устранение:</strong></p>
+              <ul>
+                <li>Смажьте петли и механизмы замка специальной смазкой</li>
+                <li>Отрегулируйте положение двери</li>
+                <li>При необходимости замените изношенные петли</li>
+                <li>Очистите и смажьте замки</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Повреждения ЛКП -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white">
+              <h3 class="card-title mb-0">Повреждения лакокрасочного покрытия</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> царапины, сколы, потёртости, потеря блеска.</p>
+              <p><strong>Основные причины:</strong></p>
+              <ul>
+                <li>Механические повреждения (камни, ветки)</li>
+                <li>Воздействие химических реагентов</li>
+                <li>Неправильная мойка</li>
+                <li>Старение покрытия</li>
+              </ul>
+              <p><strong>Способы устранения:</strong></p>
+              <ul>
+                <li>Мелкие царапины устраните полировкой</li>
+                <li>Сколы подкрасьте специальным карандашом или краской</li>
+                <li>Для глубоких повреждений выполните локальную окраску</li>
+                <li>Нанесите защитное покрытие (воск, керамику)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 4: Неисправности элементов салона -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-secondary text-white">
+              <h3 class="card-title mb-0">Неисправности элементов салона</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> скрипы, заедание механизмов, износ обивки, неработающие электроприводы.</p>
+              <p><strong>Основные причины:</strong></p>
+              <ul>
+                <li>Естественный износ</li>
+                <li>Механические повреждения</li>
+                <li>Попадание влаги</li>
+                <li>Окисление контактов</li>
+              </ul>
+              <p><strong>Немедленные действия:</strong></p>
+              <ul>
+                <li>Устраните скрипы с помощью антискрипов</li>
+                <li>Очистите и смажьте подвижные механизмы</li>
+                <li>Замените изношенные элементы обивки</li>
+                <li>Проверьте и восстановите электрические соединения</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка 5: Запотевание стёкол -->
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header bg-dark text-white">
+              <h3 class="card-title mb-0">Запотевание стёкол</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Симптомы:</strong> конденсат на внутренней поверхности стёкол, ухудшение видимости.</p>
+              <p><strong>Вероятные источники:</strong></p>
+              <ul>
+                <li>Высокая влажность в салоне</li>
+                <li>Засорение салонного фильтра</li>
+                <li>Нарушение циркуляции воздуха</li>
+                <li>Протечки воды в салон</li>
+              </ul>
+              <p><strong>Действия:</strong></p>
+              <ul>
+                <li>Замените салонный фильтр</li>
+                <li>Проверьте дренажные отверстия</li>
+                <li>Используйте осушители воздуха</li>
+                <li>Обеспечьте проветривание салона</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <div class="mt-4">
+        <h3>Рекомендации по обслуживанию кузова и салона:</h3>
+        <ul>
+          <li>Регулярно мойте кузов, особенно в зимний период, чтобы удалить соль и реагенты; используйте мягкие шампуни и губки, не повреждающие ЛКП</li>
+          <li>Раз в 6–12 месяцев выполняйте антикоррозийную обработку кузова, уделяя внимание скрытым полостям, порогам, аркам колёс и местам под уплотнительными резинками</li>
+          <li>Наносите защитные покрытия на ЛКП (воск, полироль, керамику) для сохранения блеска и защиты от царапин и воздействия внешней среды</li>
+          <li>Проверяйте состояние уплотнителей дверей и окон — при износе или повреждении заменяйте их, чтобы избежать протечек и сквозняков</li>
+          <li>Периодически смазывайте петли, замки и ограничители дверей специальной морозостойкой смазкой для предотвращения скрипа и коррозии</li>
+          <li>Следите за чистотой дренажных отверстий в дверях и порогах — их засорение приводит к скоплению влаги и ускоренной коррозии; прочищайте отверстия при каждом ТО</li>
+          <li>Поддерживайте чистоту салона: регулярно пылесосьте, чистите обивку и пластиковые панели; используйте защитные средства для пластика, чтобы предотвратить выцветание и трещины</li>
+          <li>Меняйте салонный фильтр каждые 10–15 тыс. км или раз в год для обеспечения чистоты воздуха в салоне и предотвращения запотевания стёкол</li>
+          <li>Обрабатывайте кожаные элементы салона кондиционерами для кожи — это предотвращает высыхание, трещины и сохраняет внешний вид</li>
+          <li>При обнаружении сколов или царапин на кузове сразу подкрашивайте их, чтобы предотвратить развитие коррозии</li>
+          <li>Осматривайте колёсные арки и днище на наличие повреждений антикоррозийного покрытия; при обнаружении дефектов восстанавливайте защиту</li>
+          <li>В летний период защищайте салон от выгорания: используйте солнцезащитные экраны на лобовое стекло, паркуйте автомобиль в тени</li>
+          <li>Проверяйте работу стеклоподъёмников и механизмов регулировки сидений; при заедании разбирайте, очищайте и смазывайте механизмы</li>
+          <li>Очищайте и обрабатывайте резиновые уплотнители силиконовой смазкой — это продлит срок их службы и улучшит герметичность</li>
+          <li>Контролируйте состояние ковролина и шумоизоляции в салоне: при попадании влаги просушивайте, чтобы избежать появления плесени и неприятного запаха</li>
+          <li>После поездок по бездорожью осматривайте нижнюю часть кузова и защиту двигателя на наличие повреждений; устраняйте дефекты антикоррозийного слоя сразу</li>
+          <li>Используйте защитные накладки на пороги и кромки дверей в зонах повышенного износа</li>
+        </ul>
+      </div>
+
+      <div class="alert alert-success mt-4" role="alert">
+        <strong>Помните:</strong> регулярное обслуживание кузова и салона не только сохраняет внешний вид автомобиля, но и предотвращает дорогостоящий ремонт в будущем. Особое внимание уделяйте профилактике коррозии — она развивается незаметно, но может серьёзно повлиять на прочность и безопасность кузова. При сложных повреждениях ЛКП или коррозии лучше обращаться к профессионалам: качественная подготовка и окраска требуют специального оборудования и навыков.
+      </div>
+    </div>
+  </div>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Неисправности кузова и салона Chevrolet Niva: причины, диагностика и рекомендации",
+  "description": "Подробное руководство по распространённым неисправностям кузова и салона Chevrolet Niva, включая методы диагностики, возможные причины и способы устранения, а также рекомендации по обслуживанию кузова и салона для поддержания их исправного состояния и предотвращения значительных ремонтных затрат.",
+  "datePublished": "2024-03-25T10:00:00+03:00",
+  "dateModified": "2024-04-01T12:00:00+03:00",
+  "author": {
+    "@type": "Organization",
+    "name": "GM-АВТОВАЗ",
+    "url": "https://www.gm-avtovaz.ru"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "lada-aym.github.io",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lada-aym.github.io/chevrolet-niva/assets/images/logo.webp",
+      "width": 30,
+      "height": 30
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lada-aym.github.io/chevrolet-niva/maintenance.html#body-interior"
+  },
+  "wordCount": "650",
+  "timeRequired": "PT9M",
+  "articleSection": "Диагностика и ремонт кузова и салона автомобиля",
+  "articleBody": "Раздел описывает распространённые неисправности кузова и салона Chevrolet Niva, методы диагностики, возможные причины и способы устранения, а также рекомендации по обслуживанию кузова и салона для поддержания их исправного состояния и предотвращения значительных ремонтных затрат.",
+  "keywords": [
+    "неисправности кузова Chevrolet Niva",
+    "салон Chevrolet Niva",
+    "коррозия кузова Chevrolet Niva",
+    "двери Chevrolet Niva",
+    "замки Chevrolet Niva",
+    "ЛКП Chevrolet Niva",
+    "элементы салона Chevrolet Niva",
+    "запотевание стёкол Chevrolet Niva",
+    "антикоррозийная обработка Chevrolet Niva",
+    "салонный фильтр Chevrolet Niva"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Chevrolet Niva",
+      "description": "Автомобиль Chevrolet Niva (ВАЗ-2123), для которого приводятся рекомендации по диагностике и устранению неисправностей кузова и салона."
+    },
+    {
+      "@type": "Thing",
+      "name": "Кузов и салон и их обслуживание",
+      "description": "Комплексное руководство по диагностике, устранению и профилактике неисправностей кузова и салона Chevrolet Niva. Включает: распространённые симптомы (коррозия кузовных элементов, повреждения лакокрасочного покрытия, скрипы и стуки в салоне, заедание замков дверей, запотевание стёкол, неприятный запах в салоне, проблемы с уплотнителями, износ обивки и элементов отделки), пошаговую диагностику (визуальный осмотр кузова на наличие очагов коррозии и повреждений ЛКП, проверка состояния дренажных отверстий, осмотр уплотнителей дверей и стёкол, проверка работы замков и петель дверей, оценка состояния элементов салона — обивки, пластика, ковролина, проверка салонного фильтра и системы вентиляции), типичные причины неисправностей (воздействие агрессивных реагентов зимой, высокая влажность, механические повреждения при эксплуатации, естественный износ материалов, отсутствие антикоррозийной обработки, засорение дренажных каналов, старение уплотнителей). Описаны способы устранения распространённых проблем (локальная обработка очагов коррозии, восстановление ЛКП, замена уплотнителей, регулировка замков и петель, очистка дренажных отверстий, замена салонного фильтра), рекомендации по регулярному обслуживанию (регулярная мойка кузова с удалением реагентов, нанесение защитных покрытий, антикоррозийная обработка скрытых полостей, своевременная замена салонного фильтра, очистка и кондиционирование элементов салона), меры профилактики (избегание парковки под деревьями и рядом с источниками агрессивных веществ, регулярный осмотр кузова, поддержание чистоты дренажных систем, использование защитных средств для пластика и обивки). Приведены указания по безопасной самостоятельной диагностике (осмотр кузова при хорошем освещении, проверка работы механизмов дверей и замков, оценка микроклимата в салоне) и признаки, при которых необходимо срочно обратиться в сервисный центр (активное распространение коррозии, серьёзные повреждения несущих элементов кузова, полная потеря герметичности уплотнителей, появление запаха топлива или выхлопных газов в салоне)."
+    }
+  ],
+  "genre": "Automotive Technical Guide",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Руководство по эксплуатации и техническому обслуживанию Chevrolet Niva",
+    "author": "GM-АВТОВАЗ"
+  },
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "Раздел 6.8. Кузов и салон Chevrolet Niva",
+    "url": "https://lada-aym.github.io/chevrolet-niva/maintenance.html#body-interior"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "GM-АВТОВАЗ"
+  },
+  "copyrightYear": 2024,
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- Рекламный блок Яндекс -->
+<div class="ad-container my-4 text-center">
+  <div id="adfox_173934500594834357"></div>
+  <script>
+    window.yaContextCb.push(() => {
+      Ya.adfoxCode.create({
+        ownerId: 322697,
+        containerId: 'adfox_173934500594834357',
+        params: {
+          pp: 'i',
+          ps: 'ivjz',
+          p2: 'gqqu'
+        }
+      });
+    });
+  </script>
+</div>
+</div>
+<!-- Конец рекламного блока -->
+</div> <!-- ЗАКРЫВАЮЩИЙ ТЕГ ОБЩЕГО КОНТЕЙНЕРА СТРАНИЦЫ -->
+<footer class="footer mt-5">
+  <div class="container">
+    <p class="mb-0 text-center">
+      &copy; <span id="current-year"></span> lada-aym.github.io. Все права защищены.
+    </p>
+    <p class="small mb-0 text-center">
+      Руководство по эксплуатации и обслуживанию Chevrolet Niva.
+    </p>
+    <p class="small text-center">
+      Сайт не является официальным ресурсом производителя
+    </p>
+    <div class="row mt-3">
+      <div class="col-12 text-center">
+        <ul class="list-inline d-inline-block">
+          <li class="list-inline-item"><a href="/chevrolet-niva/body-interior.html" class="text-muted">Кузов и салон</a></li>
+          <li class="list-inline-item"><a href="/chevrolet-niva/controls-instruments.html" class="text-muted">Органы управления</a></li>
+          <li class="list-inline-item"><a href="/chevrolet-niva/operation.html" class="text-muted">Эксплуатация</a></li>
+          <li class="list-inline-item"><a href="/chevrolet-niva/maintenance.html" class="text-muted">Обслуживание</a></li>
+          <li class="list-inline-item"><a href="/chevrolet-niva/technical-specs.html" class="text-muted">Характеристики</a></li>
+          <li class="list-inline-item"><a href="/chevrolet-niva/malfunctions-solutions.html" class="text-muted">Неисправности</a></li>
+          <li class="list-inline-item"><a href="/chevrolet-niva/applications.html" class="text-muted">Приложения</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- Yandex.RTB floorAd (оптимизированная версия) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Отложенный рендер floorAd — ждём скролла пользователя
+      const handleScroll = () => {
+        if (window.scrollY > 100) { // Показываем после скролла на 100px
+          window.removeEventListener('scroll', handleScroll);
+
+          const deviceType = getDeviceType();
+          const blockId = deviceType === 'touch' ? 'R-A-537370-36' : 'R-A-537370-44';
+
+          window.yaContextCb.push(() => {
+            try {
+              Ya.Context.AdvManager.render({
+                blockId: blockId,
+                type: 'floorAd',
+                platform: deviceType
+              });
+              console.log(`floorAd rendered: ${blockId} (${deviceType})`);
+            } catch (error) {
+              console.error('Failed to render floorAd:', error);
+            }
+          });
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+    });
+  </script>
+
+  <!-- Yandex.RTB inImage (оптимизированная версия) -->
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const MAX_ADS = 3;
+  const MIN_IMAGE_WIDTH = 300;
+  const MIN_IMAGE_HEIGHT = 250;
+  let adCount = 0;
+
+  const isImageLargeEnough = (image) => {
+    // Для загруженных изображений проверяем naturalWidth/naturalHeight
+    if (image.complete) {
+      return image.naturalWidth >= MIN_IMAGE_WIDTH &&
+             image.naturalHeight >= MIN_IMAGE_HEIGHT;
+    }
+    // Если изображение ещё не загружено, проверяем атрибуты width/height
+    const width = parseInt(image.getAttribute('width') || image.style.width || 0);
+    const height = parseInt(image.getAttribute('height') || image.style.height || 0);
+    return width >= MIN_IMAGE_WIDTH && height >= MIN_IMAGE_HEIGHT;
+  };
+
+  const renderInImageAd = (image) => {
+    if (adCount >= MAX_ADS) return;
+    if (!isImageLargeEnough(image)) {
+      console.log(`Image too small: ${image.src} (${image.naturalWidth}×${image.naturalHeight})`);
+      return;
+    }
+
+    const imageId = `yandex_rtb_R-A-537370-42_${Math.random().toString(16).slice(2)}`;
+    image.id = imageId;
+    image.setAttribute('data-ad-rendered', 'true');
+
+    window.yaContextCb.push(() => {
+      try {
+        Ya.Context.AdvManager.render({
+          renderTo: imageId,
+          blockId: 'R-A-537370-42',
+          type: 'inImage'
+        });
+        adCount++;
+        console.log(`inImage ad rendered: ${imageId}`);
+      } catch (error) {
+        console.warn('Failed to render inImage ad:', error);
+      }
+    });
+  };
+
+  const processImages = (images) => {
+    images.forEach(image => {
+      if (adCount >= MAX_ADS) return;
+
+      if (image.complete) {
+        renderInImageAd(image);
+      } else {
+        image.addEventListener('load', () => renderInImageAd(image), { once: true });
+      }
+    });
+  };
+
+  const images = Array.from(document.querySelectorAll('img:not([data-ad-rendered])'));
+  processImages(images);
+});
+</script>
+<!-- Bootstrap 5.3 JS Bundle (с Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+<script src="/lada-samara/assets/js/main.js"></script>
+</body>
+</html>
