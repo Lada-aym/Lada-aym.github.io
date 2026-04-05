@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Индексные ссылки на все sitemap-файлы -->
+  <sitemap>
+    <loc>https://lada-aym.github.io/lada-samara/sitemap_lada_samara.xml</loc>
+    <lastmod>2026-04-04T11:22:01+03:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://lada-aym.github.io/chevrolet-niva/sitemap_chevrolet_niva.xml</loc>
+    <lastmod>2026-04-04T11:22:01+03:00</lastmod>
+  </sitemap>
+  <!-- Другие sitemap-файлы -->
+
+</sitemapindex>
