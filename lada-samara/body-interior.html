@@ -62,6 +62,94 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Какими бывают ключи для автомобилей Lada Samara?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Каждый автомобиль комплектуется двумя наборами ключей: один с пластиковой головкой для зажигания, второй с металлической головкой для замков дверей и багажника. Для автомобилей с иммобилайзером дополнительно предоставляются три кодовых ключа: два черных для повседневной эксплуатации и один красный обучающий ключ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как правильно открывать и закрывать двери Lada Samara?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Двери открываются нажатием на клавишу или поворотом ручек. Блокировка замков передней двери производится ключом или кнопкой. Задняя дверь можно заблокировать нажатием кнопки или переводом рычажка в нижнее положение. Будьте осторожны с электростеклоподъемниками, чтобы избежать травм."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как регулировать сиденья в Lada Samara?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Передние сиденья регулируются по длине и углу наклона спинки. Подголовники можно поднимать и опускать. Задние сиденья складываются для увеличения пространства багажника. При трансформации убедитесь, что в салоне нет посторонних предметов."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как правильно пристегивать ремни безопасности в Lada Samara?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Вставьте язычок ремня в замок до щелчка, избегая перекручивания лямок. Для задних пассажиров используйте поясной ремень. Среднему пассажиру доступен только поясной ремень. Не пристегивайте ребенка на коленях взрослого!"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как работает подушка безопасности в Lada Samara?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Подушка безопасности срабатывает при фронтальном столкновении, защищая пристегнутого водителя. Устройство одноразового использования, не требует обслуживания. После срабатывания заменяется вместе с ремнями безопасности."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как пользоваться оборудованием салона Lada Samara?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Наружные зеркала регулируются вручную или электроприводом. Внутреннее зеркало можно наклонять для защиты от бликов. Освещение салона включается автоматически или вручную. Вещевые ящики и пепельница имеют удобные механизмы открывания и подсветку."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как правильно открывать и закрывать капот Lada Samara?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Потяните рукоятку в салоне, приподнимите капот и отожмите предохранительный крючок. Закрывайте капот аккуратно, отпуская его с высоты около 20 см. Убедитесь, что замок надежно зафиксировался."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как открывается и закрывается багажник Lada Samara?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Для ВАЗ-2115: поверните ключ и поднимите крышку. Для ВАЗ-2113/2114: отоприте замок ключом, нажмите кнопку и откиньте полку. Багажное отделение освещается при включенном наружном освещении."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как правильно обращаться с пробкой топливного бака Lada Samara?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Откручивайте пробку против часовой стрелки, закручивайте до щелчков. В некоторых моделях пробка крепится гибким поводком, исключающим её потерю. Регулярно проверяйте состояние уплотнительного кольца."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие меры безопасности важны при эксплуатации Lada Samara?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Всегда пристегивайтесь ремнями безопасности. Не оставляйте детей без присмотра в автомобиле. При использовании электростеклоподъемников будьте осторожны, чтобы избежать травм. Регулярно проверяйте состояние всех механизмов и уплотнений."
+      }
+    }
+  ]
+}
+</script>
 <!-- Google Tag Manager -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -75,14 +163,60 @@
     });
 </script>
 <!-- Google Tag Manager -->
+  <script>
+    // Инициализируем массив для отложенных вызовов
+    window.yaContextCb = window.yaContextCb || [];
+
+    // Функция определения типа устройства
+    const getDeviceType = () => {
+      const userAgent = navigator.userAgent.toLowerCase();
+      return 'ontouchstart' in window ||
+             navigator.maxTouchPoints > 0 ||
+             /android|iphone|ipad|mobile/i.test(userAgent)
+        ? 'touch'
+        : 'desktop';
+    };
+
+    // Отложенная загрузка скрипта Яндекс.Рекламы
+    setTimeout(() => {
+      const script = document.createElement('script');
+      script.src = 'https://yandex.ru/ads/system/context.js';
+      script.async = true;
+
+      script.onload = () => console.log('Yandex ads script loaded');
+      script.onerror = () => console.error('Failed to load Yandex ads script');
+
+      document.body.appendChild(script);
+    }, 5000);
+  </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRQ33NW3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+  <!-- Yandex.RTB fullscreen (оптимизированная версия) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const deviceType = getDeviceType();
+        const blockId = deviceType === 'touch' ? 'R-A-537370-35' : 'R-A-537370-43';
 
-
+        window.yaContextCb.push(() => {
+          try {
+            Ya.Context.AdvManager.render({
+              blockId: blockId,
+              type: 'fullscreen',
+              platform: deviceType
+            });
+            console.log(`fullscreen ad rendered: ${blockId} (${deviceType})`);
+          } catch (error) {
+            console.error('Failed to render fullscreen ad:', error);
+          }
+        });
+      }, 5000); // Показываем через 5 секунд после загрузки DOM
+    });
+  </script>
     <!-- Горизонтальное прокручиваемое меню -->
 <div class="horizontal-menu">
   <div class="container-fluid">
@@ -2488,66 +2622,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </footer>
-<!-- Bootstrap 5.3 JS Bundle (с Popper) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-<script src="/lada-samara/assets/js/main.js"></script>
-<script>
-  // Инициализация необходимого окружения
-  window.APExceptionBlocks = window.APExceptionBlocks || [
-    'adfox_173934500594834357', // AdFox
-    'R-A-537370-42' // Yandex InImage
-  ];
+  <!-- Yandex.RTB floorAd (оптимизированная версия) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Отложенный рендер floorAd — ждём скролла пользователя
+      const handleScroll = () => {
+        if (window.scrollY > 100) { // Показываем после скролла на 100px
+          window.removeEventListener('scroll', handleScroll);
 
-  // Основные константы
-  const MAX_ADS = 10;
+          const deviceType = getDeviceType();
+          const blockId = deviceType === 'touch' ? 'R-A-537370-36' : 'R-A-537370-44';
+
+          window.yaContextCb.push(() => {
+            try {
+              Ya.Context.AdvManager.render({
+                blockId: blockId,
+                type: 'floorAd',
+                platform: deviceType
+              });
+              console.log(`floorAd rendered: ${blockId} (${deviceType})`);
+            } catch (error) {
+              console.error('Failed to render floorAd:', error);
+            }
+          });
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+    });
+  </script>
+
+  <!-- Yandex.RTB inImage (оптимизированная версия) -->
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const MAX_ADS = 3;
   const MIN_IMAGE_WIDTH = 300;
   const MIN_IMAGE_HEIGHT = 250;
-
-  // Счётчик объявлений
   let adCount = 0;
 
-  // Проверка размера изображения
   const isImageLargeEnough = (image) => {
+    // Для загруженных изображений проверяем naturalWidth/naturalHeight
     if (image.complete) {
-      return image.naturalWidth >= MIN_IMAGE_WIDTH && image.naturalHeight >= MIN_IMAGE_HEIGHT;
+      return image.naturalWidth >= MIN_IMAGE_WIDTH &&
+             image.naturalHeight >= MIN_IMAGE_HEIGHT;
     }
+    // Если изображение ещё не загружено, проверяем атрибуты width/height
     const width = parseInt(image.getAttribute('width') || image.style.width || 0);
     const height = parseInt(image.getAttribute('height') || image.style.height || 0);
     return width >= MIN_IMAGE_WIDTH && height >= MIN_IMAGE_HEIGHT;
   };
 
-  // Проверка перекрытия рекламы
-  const hasNearbyAd = (image) => {
-    const rect = image.getBoundingClientRect();
-    const ads = document.querySelectorAll('[data-adfox],[data-yandex]');
-
-    for (let ad of ads) {
-      const adRect = ad.getBoundingClientRect();
-      const overlap =
-        !(rect.right <= adRect.left || rect.left >= adRect.right ||
-          rect.bottom <= adRect.top || rect.top >= adRect.bottom);
-
-      if (overlap) return true;
-    }
-    return false;
-  };
-
-  // Создание объявления
-  const renderInImageAd = (image, index) => {
-    if (adCount >= MAX_ADS) {
-      console.log('❌ Достигнут лимит объявлений (MAX_ADS)');
-      return;
-    }
+  const renderInImageAd = (image) => {
+    if (adCount >= MAX_ADS) return;
     if (!isImageLargeEnough(image)) {
-      console.log(`❌ Изображение слишком мало: ${image.src}`);
-      return;
-    }
-    if (hasNearbyAd(image)) {
-      console.log(`❌ Рядом с изображением ${image.src} уже есть реклама`);
+      console.log(`Image too small: ${image.src} (${image.naturalWidth}×${image.naturalHeight})`);
       return;
     }
 
-    const imageId = `yandex_rtb_R-A-537370-42_${Date.now()}_${index}`;
+    const imageId = `yandex_rtb_R-A-537370-42_${Math.random().toString(16).slice(2)}`;
     image.id = imageId;
     image.setAttribute('data-ad-rendered', 'true');
 
@@ -2559,40 +2691,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           type: 'inImage'
         });
         adCount++;
-        console.log(`✅ Rendered inImage ad: ${imageId}`);
-      } catch (err) {
-        console.error('❌ Error rendering inImage ad:', err.message);
+        console.log(`inImage ad rendered: ${imageId}`);
+      } catch (error) {
+        console.warn('Failed to render inImage ad:', error);
       }
     });
   };
 
-  // Инициализация рекламы
-  const initInImageAds = () => {
-    const images = Array.from(document.querySelectorAll('img:not([data-ad-rendered]):not(.ad-ignore)'));
-
-    images.forEach((image, index) => {
+  const processImages = (images) => {
+    images.forEach(image => {
       if (adCount >= MAX_ADS) return;
 
       if (image.complete) {
-        renderInImageAd(image, index);
+        renderInImageAd(image);
       } else {
-        image.addEventListener('load', () => renderInImageAd(image, index), {once: true});
+        image.addEventListener('load', () => renderInImageAd(image), { once: true });
       }
     });
   };
 
-  // Загрузка библиотеки Yandex Context
-  const contextScript = document.createElement('script');
-  contextScript.src = 'https://yandex.ru/ads/system/context.js';
-  contextScript.async = true;
-  document.head.appendChild(contextScript);
-
-  // Регистрация нашей функции инициализации
-  window.yaContextCb = window.yaContextCb || []; // Гарантируем инициализацию
-  window.yaContextCb.push(initInImageAds);
+  const images = Array.from(document.querySelectorAll('img:not([data-ad-rendered])'));
+  processImages(images);
+});
 </script>
-<!-- Yandex Autoplacement 537370 -->
-<script data-page-id="537370" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
+
+<!-- Bootstrap 5.3 JS Bundle (с Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+<script src="/lada-samara/assets/js/main.js"></script>
 
 </body>
 </html>
