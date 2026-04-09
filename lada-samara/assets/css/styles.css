@@ -1,9 +1,9 @@
 /* Общие стили */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  color: #343a40;
-  padding-top: 50px; /* Увеличен отступ под два меню: горизонтальное (50 px) + липкое (70 px) */
+  background-color: #fafafa; /* Сделаем фон чуть светлее */
+  color: #212529; /* Темнее базовый цвет текста */
+  padding-top: 50px; /* Увеличен отступ под два меню: горизонтальное (50 px) + липкое (70 px) */
   margin: 0;
 }
 
@@ -17,20 +17,20 @@ body {
 h1 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  color: #343a40;
+  color: #212529; /* Темнее заголовки */
   text-align: center;
 }
 
 h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #343a40;
+  color: #212529; /* Темнее заголовки */
 }
 
 .lead {
   font-size: 1.25rem;
   margin-bottom: 2rem;
-  color: #6c757d;
+  color: #495057; /* Темнее оттенок для лучшего контраста */
   text-align: center;
 }
 
@@ -44,7 +44,7 @@ h2 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   padding: 0;
-  background-color: #fff;
+  background-color: #ffffff; /* Белоснежный фон */
 }
 
 .horizontal-menu .container-fluid {
@@ -81,7 +81,7 @@ h2 {
 .horizontal-menu .site-title {
   font-weight: bold;
   font-size: 1.1rem;
-  color: #000;
+  color: #212529; /* Темнее текст */
   white-space: nowrap;
 }
 
@@ -102,7 +102,7 @@ h2 {
 
 .horizontal-menu .menu-item {
   text-decoration: none;
-  color: #343a40;
+  color: #212529; /* Темнее текст ссылок */
   font-size: 0.9rem;
   padding: 0.5rem 0.75rem;
   transition: color 0.3s ease, background-color 0.3s ease;
@@ -112,15 +112,15 @@ h2 {
 
 .horizontal-menu .menu-item:hover,
 .horizontal-menu .menu-item:focus {
-  color: #007bff;
+  color: #0056b3; /* Темнее активный цвет */
   background-color: #f8f9fa;
-  outline: 2px solid #007bff;
+  outline: 2px solid #0056b3;
   outline-offset: 2px;
 }
 
 .horizontal-menu .menu-item.active {
   color: #fff;
-  background-color: #007bff;
+  background-color: #0056b3; /* Темнее активный цвет */
   border-radius: 4px;
 }
 
@@ -133,13 +133,13 @@ h2 {
 }
 
 nav.navbar {
-  background-color: #fff;
+  background-color: #ffffff; /* Белоснежный фон */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 .navbar-light .navbar-brand {
-  color: #000;
+  color: #212529; /* Темнее текст бренда */
 }
 
 /* Анимация меню */
@@ -182,10 +182,10 @@ nav.navbar.hidden {
 /* Стили для аккордеона */
 .accordion-button {
   font-weight: 500;
-  border: 1px solid #dee2e6;
+  border: 1px solid #ced4da; /* Немного темнее граница */
   border-radius: 0.375rem;
   transition: all 0.2s ease;
-  background-color: #fff;
+  background-color: #ffffff; /* Белоснежный фон */
   padding: 1rem 1.25rem;
 }
 
@@ -198,11 +198,11 @@ nav.navbar.hidden {
 .accordion-body {
   padding: 1rem;
   margin-bottom: 0.5rem;
-  border: 1px solid #dee2e6;
+  border: 1px solid #ced4da; /* Немного темнее граница */
   border-top: none;
   border-bottom-left-radius: 0.375rem;
   border-bottom-right-radius: 0.375rem;
-  background-color: #fff;
+  background-color: #ffffff; /* Белоснежный фон */
 }
 
 /* Стили для футера */
@@ -214,38 +214,38 @@ nav.navbar.hidden {
 }
 
 .footer p {
-  color: #6c757d;
+  color: #6c757d; /* Сохраняем текущий цвет */
   margin: 0.5rem 0;
 }
 
 /* Offcanvas */
 .offcanvas {
   z-index: 1200 !important; /* выше, чем у липкого меню (1100) */
-  background-color: #fafafa;
+  background-color: #fafafa; /* Светлее фон */
   padding: 1rem;
 }
 
 .offcanvas .nav-link {
-  color: #333;
+  color: #212529; /* Темнее текст */
   font-weight: 500;
 }
 
 .offcanvas .nav-link.active {
-  color: #007bff;
+  color: #0056b3; /* Темнее активный цвет */
 }
 
 .offcanvas .dropdown-menu {
-  background-color: #ffffff;
-  border: 1px solid #dee2e6;
+  background-color: #ffffff; /* Белоснежный фон */
+  border: 1px solid #ced4da; /* Немного темнее граница */
   border-radius: 0.375rem;
 }
 
 .offcanvas .dropdown-item {
-  color: #333;
+  color: #212529; /* Темнее текст */
 }
 
 .offcanvas .dropdown-item.active {
-  color: #007bff;
+  color: #0056b3; /* Темнее активный цвет */
 }
 
 /* Базовый стиль для карточек с изображениями */
@@ -255,7 +255,7 @@ nav.navbar.hidden {
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #fff;
+  background-color: #ffffff; /* Белоснежный фон */
 }
 
 .image-card:hover {
@@ -277,7 +277,7 @@ nav.navbar.hidden {
   padding: 1rem;
   text-align: center;
   font-size: 0.9rem;
-  color: #6c757d;
+  color: #495057; /* Темнее подпись */
   background-color: #f8f9fa;
   border-top: 1px solid #e9ecef;
 }
@@ -382,11 +382,13 @@ ul li {
 /* Улучшение читаемости текста в карточках */
 .card-text {
   line-height: 1.5;
+  color: #212529; /* Темнее текст */
 }
 
 /* Стили для выделенных элементов в карточках индикаторов */
 .badge {
   font-size: 0.875em;
+  color: #212529; /* Темнее текст */
 }
 
 /* Фиксация заголовка при прокрутке */
