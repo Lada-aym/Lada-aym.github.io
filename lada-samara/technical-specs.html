@@ -194,7 +194,7 @@
       script.onerror = () => console.error('Failed to load Yandex ads script');
 
       document.body.appendChild(script);
-    }, 2000);
+    }, 5000);
   </script>
 </head>
 <body>
@@ -221,7 +221,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             console.error('Failed to render fullscreen ad:', error);
           }
         });
-      }, 2000); // Показываем через 2 секунды после загрузки DOM
+      }, 5000); // Показываем через 2 секунды после загрузки DOM
     });
   </script>
     <!-- Горизонтальное прокручиваемое меню -->
