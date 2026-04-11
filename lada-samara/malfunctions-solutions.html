@@ -30,10 +30,18 @@
     <meta name="twitter:image" content="https://lada-aym.github.io/lada-samara/images/twitter-preview.webp">
     <meta name="twitter:image:alt" content="Lada Samara: диагностика неисправностей">
     <!-- Bootstrap 5.3 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-          crossorigin="anonymous">
+    <link rel="preload"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous">
+<noscript>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+        crossorigin="anonymous">
+</noscript>
     <link rel="stylesheet" href="/lada-samara/assets/css/styles.css">
     <script type="application/ld+json">
 {
@@ -56,6 +64,86 @@
       "@type": "ListItem",
       "position": 6,
       "name": "Неисправности"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Какие неисправности двигателя часто встречаются на Lada Samara?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Основные проблемы включают: отказ запуска (проверьте АКБ и систему зажигания), неустойчивую работу (свечи и впуск), повышенный расход масла (колпачки и кольца), перегрев (термостат и радиатор) и потерю мощности."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как устранить проблемы в топливной системе?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "При низком давлении проверьте фильтр и бензонасос. При утечках осмотрите топливопроводы. Если засорены форсунки или карбюратор, требуется их промывка или регулировка холостого хода."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что чаще всего ломается в электрооборудовании?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Типичные проблемы: разряд аккумулятора (проверьте ремень генератора), неисправности освещения (предохранители), отказ стартера (втягивающее реле) или генератора (износ щеток)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как диагностировать неисправности трансмиссии?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Шум при переключении указывает на низкий уровень масла или износ синхронизаторов. Пробуксовка требует регулировки сцепления. Утечки масла лечатся заменой сальников, а проблемы с переключением — регулировкой кулисы."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Причины стуков в подвеске и ходовой части",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Стуки обычно вызваны износом шаровых опор, сайлентблоков или амортизаторов. Увод машины в сторону требует проверки развала-схождения, а вибрация на руле — балансировки колес."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Основные проблемы тормозной системы Lada Samara",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Увеличенный ход педали говорит о воздухе в системе. Скрип указывает на износ колодок. Увод в сторону при торможении вызван неисправностью цилиндров, а вибрация — деформацией тормозных дисков."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Неисправности системы охлаждения и отопителя",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Перегрев связан с радиатором или вентилятором. Утечки ищите в патрубках и печке. Если отопитель дует слабо — проверьте заслонки, а если двигатель не прогревается — замените термостат."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Проблемы кузова и салона: на что обратить внимание?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Главные враги — коррозия порогов и арок. Скрипы в салоне устраняются проклейкой панелей. Проблемы с дверями и окнами решаются регулировкой замков и смазкой механизмов стеклоподъемников."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Общие рекомендации по обслуживанию Lada Samara",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Для долгой службы авто важны: регулярный осмотр уровней жидкостей, строгое соблюдение регламента ТО (замена масла и ГРМ), использование качественных запчастей и ведение журнала обслуживания."
+      }
     }
   ]
 }
@@ -97,7 +185,7 @@
       script.onerror = () => console.error('Failed to load Yandex ads script');
 
       document.body.appendChild(script);
-    }, 2000);
+    }, 5000);
   </script>
 </head>
 <body>
@@ -124,7 +212,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             console.error('Failed to render fullscreen ad:', error);
           }
         });
-      }, 2000); // Показываем через 2 секунды после загрузки DOM
+      }, 5000); // Показываем через 5 секунд после загрузки DOM
     });
   </script>
     <!-- Горизонтальное прокручиваемое меню -->
@@ -283,6 +371,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
     <!--  -->
 <div class="container my-4">
+    <main>
   <h1 class="text-center" aria-label="Глава 6: неисправности и методы их устранения для Lada Samara">Глава 6. Неисправности и методы их устранения</h1>
   <p class="lead text-center mb-5">Практическое руководство по поиску и устранению неисправностей Lada Samara</p>
 
@@ -3242,6 +3331,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 </div>
+</main>
 <!-- Рекламный блок Яндекс -->
 <div class="ad-container my-4 text-center">
   <div id="adfox_173934500594834357"></div>
