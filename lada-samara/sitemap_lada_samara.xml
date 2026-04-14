@@ -1,52 +1,328 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
+  <!-- Главная страница -->
+  <url>
+    <loc>https://lada-aym.github.io/lada-samara/</loc>
+    <lastmod>2024-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/ci-141-82x34.png</image:loc>
+      <image:caption>Логотип Lada Samara Guide</image:caption>
+    </image:image>
+  </url>
 
-<url>
-  <loc>https://lada-aym.github.io/lada-samara/</loc>
-  <lastmod>2026-04-05T06:17:42+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/lada-samara/body-interior.html</loc>
-  <lastmod>2026-04-05T06:17:42+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+  <!-- Глава 1: Кузов и салон -->
+  <url>
+    <loc>https://lada-aym.github.io/lada-samara/body-interior.html</loc>
+    <lastmod>2024-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-komplekt-klyuchey.webp</image:loc>
+      <image:caption>Комплект ключей для автомобиля Lada Samara</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-door-opening.webp</image:loc>
+      <image:caption>Механизм открывания дверей Lada Samara</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-door-front.webp</image:loc>
+      <image:caption>Передняя дверь автомобиля Lada Samara</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-door-rear.webp</image:loc>
+      <image:caption>Задняя дверь</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-seat-front.webp</image:loc>
+      <image:caption>Переднее сиденье автомобиля Lada Samara</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-seat-rear.webp</image:loc>
+      <image:caption>Переднее сиденье ВАЗ‑2113</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-seats-layout.webp</image:loc>
+      <image:caption>Схема раскладки сидений ВАЗ‑2113/2114/2115</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-remni-bezopasnosti.webp</image:loc>
+      <image:caption>Ремни безопасности Lada Samara</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-regulirovka-zerkala.webp</image:loc>
+      <image:caption>Регулировка положения наружного зеркала</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-vspomogatelnoe-oborudovanie.webp</image:loc>
+      <image:caption>Внутреннее зеркало, противосолнечные козырьки и плафон освещения салона</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-plafon-osveshcheniya.webp</image:loc>
+      <image:caption>Плафон индивидуального освещения</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-veshchevoy-yashchik.webp</image:loc>
+      <image:caption>Вещевой ящик с подсветкой и механизмом открывания</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-pepelnitsa.webp</image:loc>
+      <image:caption>Передняя пепельница с механизмом очистки и подсветкой</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-rukoiatka-zamka-kapota.webp</image:loc>
+      <image:caption>Рукоятка привода замка капота</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-kapot-dvigatelya.webp</image:loc>
+      <image:caption>Капот двигателя с упором и предохранительным крючком</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-kryshka-bagazhnika.webp</image:loc>
+      <image:caption>Крышка багажника ВАЗ-2115 с замком и ключом</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-dver-zadka.webp</image:loc>
+      <image:caption>Дверь задка ВАЗ-2113/2114 с кнопкой замка и упорами</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-probka-toplivnogo-baka.webp</image:loc>
+      <image:caption>Пробка топливного бака с крышкой</image:caption>
+    </image:image>
+  </url>
+<!-- Глава 2: Органы управления и приборы -->
 <url>
   <loc>https://lada-aym.github.io/lada-samara/controls-instruments.html</loc>
-  <lastmod>2026-04-05T06:17:42+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-05-01</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-panel-priborov.webp</image:loc>
+    <image:caption>Панель приборов Lada Samara</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-combo-priborov.webp</image:loc>
+    <image:caption>Комбинация приборов Lada Samara</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/dashboard-left-turn-indicator.webp</image:loc>
+    <image:caption>Левый указатель поворота</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/dashboard-right-turn-indicator.webp</image:loc>
+    <image:caption>Правый указатель поворота</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/dashboard-fuel-reserve-lamp.webp</image:loc>
+    <image:caption>Резерв топлива: оранжевый индикатор</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/dashboard-parking-light-lamp.webp</image:loc>
+    <image:caption>Габаритные огни: зелёный индикатор</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/dashboard-brake-system-warning.webp</image:loc>
+    <image:caption>Тормозная система: красный индикатор</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/dashboard-high-beam-lamp.webp</image:loc>
+    <image:caption>Дальний свет: синий индикатор</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/dashboard-check-engine-lamp.webp</image:loc>
+    <image:caption>Проверьте двигатель: оранжевый индикатор</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/dashboard-hazard-lamp.webp</image:loc>
+    <image:caption>Аварийная сигнализация: красный мигающий индикатор</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/dashboard-battery-charge-lamp.webp</image:loc>
+    <image:caption>Заряд АКБ: красный индикатор</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/dashboard-handbrake.webp</image:loc>
+    <image:caption>Стояночный тормоз: красный индикатор</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/dashboard-oil-pressure.webp</image:loc>
+    <image:caption>Давление масла: красный индикатор</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/dashboard‑choke‑lamp.webp</image:loc>
+    <image:caption>Воздушная заслонка карбюратора / резерв: оранжевый индикатор</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-steering-adjust.webp</image:loc>
+    <image:caption>Рукоятка регулировки положения рулевой колонки Lada Samara</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-ignition-switch.webp</image:loc>
+    <image:caption>Положения ключа в выключателе зажигания Lada Samara</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-immobilizer.webp</image:loc>
+    <image:caption>Панель приборов Lada Samara с индикатором противоугонной системы</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-steering-switches.webp</image:loc>
+    <image:caption>Подрулевые переключатели Lada Samara</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/switch-parking-lights.webp</image:loc>
+    <image:caption>Выключатель габаритных огней</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/switch-headlights.webp</image:loc>
+    <image:caption>Выключатель света фар</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/switch-fog-lights-front.webp</image:loc>
+    <image:caption>Выключатель противотуманных фар</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/switch-fog-lights-rear.webp</image:loc>
+    <image:caption>Выключатель задних противотуманных огней</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/switch-rear-window-heat.webp</image:loc>
+    <image:caption>Выключатель обогрева заднего стекла</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/switch-headlight-clean.webp</image:loc>
+    <image:caption>Выключатель фароочистки</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/switch-seat-heat.webp</image:loc>
+<image:caption>Выключатель обогрева передних сидений</image:caption>
+</image:image>
+<image:image>
+  <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-bortovaya-sistema-kontrolya.webp</image:loc>
+  <image:caption>Блок контрольных ламп Lada Samara</image:caption>
+</image:image>
+<image:image>
+  <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-mirror-control.webp</image:loc>
+  <image:caption>Блоки управления наружными зеркалами Lada Samara</image:caption>
+</image:image>
+<image:image>
+  <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-trip-computer.webp</image:loc>
+  <image:caption>Маршрутный компьютер Lada Samara</image:caption>
+</image:image>
+<image:image>
+  <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-ventilation-control.webp</image:loc>
+  <image:caption>Пульт управления системой вентиляции и отоплением салона</image:caption>
+</image:image>
+<image:image>
+  <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-ventilation-organs.webp</image:loc>
+  <image:caption>Органы управления системой вентиляции и отоплением салона</image:caption>
+</image:image>
 </url>
+<!-- Глава 3: Эксплуатация автомобиля -->
 <url>
   <loc>https://lada-aym.github.io/lada-samara/operation.html</loc>
-  <lastmod>2026-04-05T06:17:42+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-05-01</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/installation-license-plate-vaz-2115.webp</image:loc>
+    <image:caption>Схема крепления переднего и заднего номерных знаков на ВАЗ-2115</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/installation-license-plate-vaz-2113-2114.webp</image:loc>
+    <image:caption>Схема установки переднего и заднего номерных знаков на ВАЗ-2113 и ВАЗ-2114</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-buksirovka.webp</image:loc>
+    <image:caption>Проушины для буксировки автомобиля Lada Samara</image:caption>
+  </image:image>
 </url>
+<!-- Глава 4: Техническое обслуживание -->
 <url>
   <loc>https://lada-aym.github.io/lada-samara/maintenance.html</loc>
-  <lastmod>2026-04-05T06:17:42+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-05-01</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-dvigatel-fragment.webp</image:loc>
+    <image:caption>Фрагмент двигателя Lada Samara с указателем уровня масла</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-rasshiritelnyj-bachok.webp</image:loc>
+    <image:caption>Расширительный бачок с уровнем охлаждающей жидкости</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-bachok-gidroprivoda.webp</image:loc>
+    <image:caption>Бачок гидропривода тормозов Lada Samara</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-akkumulyator.webp</image:loc>
+    <image:caption>Аккумуляторная батарея Lada Samara</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-omyvayushchaya-zhidkost.webp</image:loc>
+    <image:caption>Бачок омывающей жидкости Lada Samara</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-svecha-zazhiganiya.webp</image:loc>
+    <image:caption>Свеча зажигания Lada Samara</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-shema-perestanovki-koles.webp</image:loc>
+    <image:caption>Схема перестановки колес Lada Samara</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-mesta-ukladki-instrumenta.webp</image:loc>
+    <image:caption>Места укладки инструмента Lada Samara</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-raspolozhenie-zapasnogo-kolesa.webp</image:loc>
+    <image:caption>Расположение запасного колеса Lada Samara</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-podem-avtomobilya.webp</image:loc>
+    <image:caption>Подъём автомобиля Lada Samara при замене колёс</image:caption>
+  </image:image>
 </url>
+<!-- Глава 5: Технические характеристики -->
 <url>
   <loc>https://lada-aym.github.io/lada-samara/technical-specs.html</loc>
-  <lastmod>2026-04-05T06:17:42+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-05-01</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.8</priority>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/vaz-2113-dimensions.webp</image:loc>
+    <image:caption>Габаритные размеры автомобиля ВАЗ-2113</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/vaz-2114-dimensions.webp</image:loc>
+    <image:caption>Габаритные размеры автомобиля ВАЗ-2114</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/vaz-2115-dimensions.webp</image:loc>
+    <image:caption>Габаритные размеры автомобиля ВАЗ-2115</image:caption>
+  </image:image>
+  <image:image>
+    <image:loc>https://lada-aym.github.io/lada-samara/assets/images/lada-samara-passport-plate.webp</image:loc>
+    <image:caption>Паспортная табличка автомобиля Lada Samara</image:caption>
+  </image:image>
 </url>
+<!-- Глава 6: Неисправности и методы их устранения -->
 <url>
   <loc>https://lada-aym.github.io/lada-samara/malfunctions-solutions.html</loc>
-  <lastmod>2026-04-05T06:17:42+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-05-01</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
 </url>
+
+<!-- Глава 7: Приложения -->
 <url>
   <loc>https://lada-aym.github.io/lada-samara/applications.html</loc>
-  <lastmod>2026-04-05T06:17:42+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-05-01</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.7</priority>
 </url>
-
-
 </urlset>
