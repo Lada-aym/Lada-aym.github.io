@@ -6,7 +6,7 @@
   <!-- Главная страница -->
   <url>
     <loc>https://lada-aym.github.io/lada-samara/</loc>
-    <lastmod>2024-05-01</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -18,7 +18,7 @@
   <!-- Глава 1: Кузов и салон -->
   <url>
     <loc>https://lada-aym.github.io/lada-samara/body-interior.html</loc>
-    <lastmod>2024-05-01</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -97,7 +97,7 @@
 <!-- Глава 2: Органы управления и приборы -->
 <url>
   <loc>https://lada-aym.github.io/lada-samara/controls-instruments.html</loc>
-  <lastmod>2024-05-01</lastmod>
+  <lastmod>2026-04-14</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.9</priority>
   <image:image>
@@ -224,7 +224,7 @@
 <!-- Глава 3: Эксплуатация автомобиля -->
 <url>
   <loc>https://lada-aym.github.io/lada-samara/operation.html</loc>
-  <lastmod>2024-05-01</lastmod>
+  <lastmod>2026-04-14</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.9</priority>
   <image:image>
@@ -243,7 +243,7 @@
 <!-- Глава 4: Техническое обслуживание -->
 <url>
   <loc>https://lada-aym.github.io/lada-samara/maintenance.html</loc>
-  <lastmod>2024-05-01</lastmod>
+  <lastmod>2026-04-14</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.9</priority>
   <image:image>
@@ -290,7 +290,7 @@
 <!-- Глава 5: Технические характеристики -->
 <url>
   <loc>https://lada-aym.github.io/lada-samara/technical-specs.html</loc>
-  <lastmod>2024-05-01</lastmod>
+  <lastmod>2026-04-14</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.8</priority>
   <image:image>
@@ -313,7 +313,7 @@
 <!-- Глава 6: Неисправности и методы их устранения -->
 <url>
   <loc>https://lada-aym.github.io/lada-samara/malfunctions-solutions.html</loc>
-  <lastmod>2024-05-01</lastmod>
+  <lastmod>2026-04-14</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.9</priority>
 </url>
@@ -321,7 +321,7 @@
 <!-- Глава 7: Приложения -->
 <url>
   <loc>https://lada-aym.github.io/lada-samara/applications.html</loc>
-  <lastmod>2024-05-01</lastmod>
+  <lastmod>2026-04-14</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.7</priority>
 </url>
