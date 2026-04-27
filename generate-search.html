@@ -11,7 +11,7 @@
 <script>
 async function generate(){
 
-  const res = await fetch('/sitemap.xml');
+  const res = await fetch('https://lada-aym.github.io/sitemap.xml');
   const xmlText = await res.text();
   const xml = new DOMParser().parseFromString(xmlText, "text/xml");
 
