@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Search Generator 2.0</title>
+</head>
+<body>
+
+<button onclick="generate()">Сгенерировать search.json</button>
+
+<script>
+async function generate(){
+
+  const res = await fetch('/sitemap.xml');
+  const xmlText = await res.text();
+  const xml = new DOMParser().parseFromString(xmlText, "text/xml");
+
+  const urls = [...xml.querySelectorAll('loc')].map(n => n.textContent);
+
+  let pages = [];
+
+  for (let url of urls){
+
+    try{
+
+      const r = await fetch(url);
+      const html = await r.text();
+
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+
+      const title = doc.title || url;
+
+      const clean = (t)=>t.replace(/\s+/g,' ').trim();
+
+      const bodyText = clean(doc.body.innerText).toLowerCase().slice(0,1000);
+
+      const model = url.split('/')[3] || '';
+
+      // === 1. страница ===
+      pages.push({
+        title: title,
+        model,
+        url: url.replace(location.origin, ''),
+        text: bodyText,
+        type: "page"
+      });
+
+      // === 2. якоря (h1,h2) ===
+      doc.querySelectorAll('h1, h2').forEach(h => {
+
+        if (!h.id) return;
+
+        pages.push({
+          title: h.textContent.trim(),
+          model,
+          url: url.replace(location.origin, '') + '#' + h.id,
+          text: bodyText.slice(0,300),
+          type: "section"
+        });
+
+      });
+
+      console.log('OK:', url);
+
+    }catch(e){
+      console.warn('FAIL:', url);
+    }
+
+  }
+
+  const blob = new Blob(
+    [JSON.stringify({pages}, null, 2)],
+    {type:'application/json'}
+  );
+
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'search.json';
+  a.click();
+
+}
+</script>
+
+</body>
+</html>
