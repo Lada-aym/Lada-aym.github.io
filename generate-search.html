@@ -2,11 +2,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Search Generator 2.0</title>
+<title>Search Generator (Optimized)</title>
 </head>
 <body>
 
 <button onclick="generate()">Сгенерировать search.json</button>
+
 <script>
 async function generate(){
 
@@ -29,10 +30,10 @@ async function generate(){
 
       const doc = new DOMParser().parseFromString(html, 'text/html');
 
-      const clean = t => t.replace(/\s+/g,' ').trim();
+      const clean = t => t.replace(/\s+/g,' ').trim().toLowerCase();
 
-      // 🔥 нормальный текст (НЕ режем слишком сильно)
-      const bodyText = clean(doc.body.innerText).toLowerCase();
+      // 🔥 лёгкий текст (важно)
+      const bodyText = clean(doc.body.innerText).slice(0, 800);
 
       // 🔥 title
       const title =
@@ -40,8 +41,10 @@ async function generate(){
         doc.title ||
         url;
 
-      // 🔥 модель из URL (надёжно)
+      // 🔥 путь
       const path = new URL(url).pathname;
+
+      // 🔥 модель
       const model = path.split('/')[1] || '';
 
       // === 1. СТРАНИЦА ===
@@ -49,12 +52,12 @@ async function generate(){
         title,
         model,
         url: path,
-        text: bodyText.slice(0, 5000),
+        text: bodyText,
         type: "page"
       });
 
-      // === 2. ЯКОРЯ (h1–h3 лучше) ===
-      doc.querySelectorAll('h1, h2, h3').forEach(h => {
+      // === 2. ЯКОРЯ (только важные) ===
+      doc.querySelectorAll('h1, h2').forEach(h => {
 
         if (!h.id) return;
 
@@ -62,7 +65,7 @@ async function generate(){
           title: h.textContent.trim(),
           model,
           url: path + '#' + h.id,
-          text: bodyText.slice(0, 500),
+          text: bodyText.slice(0, 200),
           type: "section"
         });
 
@@ -75,6 +78,14 @@ async function generate(){
     }
 
   }
+
+  // 🔥 удаляем дубли (иногда бывают)
+  const seen = new Set();
+  pages = pages.filter(p => {
+    if (seen.has(p.url)) return false;
+    seen.add(p.url);
+    return true;
+  });
 
   // 🔥 сохраняем
   const blob = new Blob(
