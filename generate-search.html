@@ -7,11 +7,12 @@
 <body>
 
 <button onclick="generate()">Сгенерировать search.json</button>
-
 <script>
 async function generate(){
 
-  const res = await fetch('https://lada-aym.github.io/sitemap.xml');
+  const BASE = 'https://lada-aym.github.io';
+
+  const res = await fetch(BASE + '/sitemap.xml');
   const xmlText = await res.text();
   const xml = new DOMParser().parseFromString(xmlText, "text/xml");
 
@@ -28,39 +29,46 @@ async function generate(){
 
       const doc = new DOMParser().parseFromString(html, 'text/html');
 
-      const title = doc.title || url;
+      const clean = t => t.replace(/\s+/g,' ').trim();
 
-      const clean = (t)=>t.replace(/\s+/g,' ').trim();
+      // 🔥 нормальный текст (НЕ режем слишком сильно)
+      const bodyText = clean(doc.body.innerText).toLowerCase();
 
-      const bodyText = clean(doc.body.innerText).toLowerCase().slice(0,1000);
+      // 🔥 title
+      const title =
+        doc.querySelector('h1')?.textContent.trim() ||
+        doc.title ||
+        url;
 
-      const model = url.split('/')[3] || '';
+      // 🔥 модель из URL (надёжно)
+      const path = new URL(url).pathname;
+      const model = path.split('/')[1] || '';
 
-      // === 1. страница ===
+      // === 1. СТРАНИЦА ===
       pages.push({
-        title: title,
+        title,
         model,
-        url: url.replace(location.origin, ''),
-        text: bodyText,
+        url: path,
+        text: bodyText.slice(0, 5000),
         type: "page"
       });
 
-      // === 2. якоря (h1,h2) ===
-      doc.querySelectorAll('h1, h2').forEach(h => {
+      // === 2. ЯКОРЯ (h1–h3 лучше) ===
+      doc.querySelectorAll('h1, h2, h3').forEach(h => {
 
         if (!h.id) return;
 
         pages.push({
           title: h.textContent.trim(),
           model,
-          url: url.replace(location.origin, '') + '#' + h.id,
-          text: bodyText.slice(0,300),
+          url: path + '#' + h.id,
+          text: bodyText.slice(0, 500),
           type: "section"
         });
 
       });
 
-      console.log('OK:', url);
+      console.log('OK:', path);
 
     }catch(e){
       console.warn('FAIL:', url);
@@ -68,6 +76,7 @@ async function generate(){
 
   }
 
+  // 🔥 сохраняем
   const blob = new Blob(
     [JSON.stringify({pages}, null, 2)],
     {type:'application/json'}
