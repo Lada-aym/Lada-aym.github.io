@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Search Generator (Optimized)</title>
+<title>Search Generator PRO</title>
 </head>
 <body>
 
@@ -11,9 +11,7 @@
 <script>
 async function generate(){
 
-  const BASE = 'https://lada-aym.github.io';
-
-  const res = await fetch(BASE + '/sitemap.xml');
+  const res = await fetch('https://lada-aym.github.io/sitemap.xml');
   const xmlText = await res.text();
   const xml = new DOMParser().parseFromString(xmlText, "text/xml");
 
@@ -30,48 +28,83 @@ async function generate(){
 
       const doc = new DOMParser().parseFromString(html, 'text/html');
 
-      const clean = t => t.replace(/\s+/g,' ').trim().toLowerCase();
+      // ===========================
+      // 🔥 ЧИСТКА МУСОРА
+      // ===========================
+      doc.querySelectorAll('script, style, noscript').forEach(el => el.remove());
 
-      // 🔥 лёгкий текст (важно)
-      const bodyText = clean(doc.body.innerText).slice(0, 800);
+      // убираем JSON-LD и прочее
+      doc.querySelectorAll('[type="application/ld+json"]').forEach(el => el.remove());
 
-      // 🔥 title
-      const title =
-        doc.querySelector('h1')?.textContent.trim() ||
-        doc.title ||
-        url;
+      // ===========================
+      // 📄 TITLE
+      // ===========================
+      const title = (doc.title || '').trim();
 
-      // 🔥 путь
-      const path = new URL(url).pathname;
+      // ===========================
+      // 🧠 ЧИСТЫЙ ТЕКСТ
+      // ===========================
+      const clean = (t)=> t
+        .replace(/\s+/g,' ')
+        .replace(/[{}[\]@"]/g,'')   // 🔥 убираем мусор типа "@context"
+        .trim()
+        .toLowerCase();
 
-      // 🔥 модель
-      const model = path.split('/')[1] || '';
+      const bodyText = clean(doc.body.innerText).slice(0, 2000);
 
-      // === 1. СТРАНИЦА ===
+      const model = url.split('/')[3] || '';
+
+      const path = url.replace(location.origin, '');
+
+      // ===========================
+      // 📦 СТРАНИЦА
+      // ===========================
       pages.push({
         title,
-        model,
         url: path,
         text: bodyText,
         type: "page"
       });
 
-      // === 2. ЯКОРЯ (только важные) ===
-      doc.querySelectorAll('h1, h2').forEach(h => {
+      // ===========================
+      // 🔹 ЗАГОЛОВКИ (h1–h3)
+      // ===========================
+      doc.querySelectorAll('h1, h2, h3').forEach(h => {
 
         if (!h.id) return;
 
+        const t = clean(h.textContent);
+
+        if (t.length < 3) return;
+
         pages.push({
-          title: h.textContent.trim(),
-          model,
+          title: t,
           url: path + '#' + h.id,
-          text: bodyText.slice(0, 200),
+          text: bodyText.slice(0, 300),
           type: "section"
         });
 
       });
 
-      console.log('OK:', path);
+      // ===========================
+      // 📊 ТАБЛИЦЫ
+      // ===========================
+      doc.querySelectorAll('table').forEach((table, i) => {
+
+        const text = clean(table.innerText).slice(0, 400);
+
+        if (text.length < 20) return;
+
+        pages.push({
+          title: "Таблица",
+          url: path,
+          text: text,
+          type: "table"
+        });
+
+      });
+
+      console.log('OK:', url);
 
     }catch(e){
       console.warn('FAIL:', url);
@@ -79,17 +112,25 @@ async function generate(){
 
   }
 
-  // 🔥 удаляем дубли (иногда бывают)
+  // ===========================
+  // 🔥 УДАЛЯЕМ ДУБЛИ
+  // ===========================
+  const unique = [];
   const seen = new Set();
-  pages = pages.filter(p => {
-    if (seen.has(p.url)) return false;
-    seen.add(p.url);
-    return true;
-  });
 
-  // 🔥 сохраняем
+  for (let p of pages){
+    const key = p.url + p.title;
+    if (!seen.has(key)){
+      seen.add(key);
+      unique.push(p);
+    }
+  }
+
+  // ===========================
+  // 💾 СКАЧИВАНИЕ
+  // ===========================
   const blob = new Blob(
-    [JSON.stringify({pages}, null, 2)],
+    [JSON.stringify({pages: unique}, null, 2)],
     {type:'application/json'}
   );
 
@@ -98,6 +139,7 @@ async function generate(){
   a.download = 'search.json';
   a.click();
 
+  console.log('ГОТОВО 🔥 страниц:', unique.length);
 }
 </script>
 
