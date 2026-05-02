@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>Search Generator PRO</title>
@@ -11,136 +11,108 @@
 <script>
 async function generate(){
 
-  const res = await fetch('https://lada-aym.github.io/sitemap.xml');
+  const res = await fetch('/sitemap.xml');
   const xmlText = await res.text();
   const xml = new DOMParser().parseFromString(xmlText, "text/xml");
 
-  const urls = [...xml.querySelectorAll('loc')].map(n => n.textContent);
+  const urls = [...xml.querySelectorAll("loc")].map(el => el.textContent);
 
-  let pages = [];
+  const results = [];
 
-  for (let url of urls){
+  for(const url of urls){
 
     try{
+      const page = await fetch(url);
+      const html = await page.text();
+      const doc = new DOMParser().parseFromString(html, "text/html");
 
-      const r = await fetch(url);
-      const html = await r.text();
+      // =========================
+      // TITLE
+      // =========================
+      const title = doc.querySelector("title")?.innerText || "";
 
-      const doc = new DOMParser().parseFromString(html, 'text/html');
+      // =========================
+      // SECTION (ВАЖНО!)
+      // =========================
+      let section = "other";
 
-      // ===========================
-      // 🔥 ЧИСТКА МУСОРА
-      // ===========================
-      doc.querySelectorAll('script, style, noscript').forEach(el => el.remove());
+      if(url.includes("opisanie")) section = "opisanie";
+      else if(url.includes("ekspluatatsiya")) section = "ekspluatatsiya";
+      else if(url.includes("obsluzhivanie")) section = "obsluzhivanie";
+      else if(url.includes("tehnicheskaya")) section = "harakteristika";
+      else if(url.includes("prilozheniya")) section = "prilozheniya";
 
-      // убираем JSON-LD и прочее
-      doc.querySelectorAll('[type="application/ld+json"]').forEach(el => el.remove());
+      // =========================
+      // ЧИСТИМ МУСОР
+      // =========================
+      doc.querySelectorAll(`
+        script,
+        style,
+        nav,
+        header,
+        footer,
+        amp-sidebar,
+        .navbar,
+        .menu,
+        .dropdown,
+        .nav-dropdown
+      `).forEach(el => el.remove());
 
-      // ===========================
-      // 📄 TITLE
-      // ===========================
-      const title = (doc.title || '').trim();
+      // =========================
+      // КОНТЕНТ (ТОЛЬКО СТАТЬЯ)
+      // =========================
+      let content = "";
 
-      // ===========================
-      // 🧠 ЧИСТЫЙ ТЕКСТ
-      // ===========================
-      const clean = (t)=> t
-        .replace(/\s+/g,' ')
-        .replace(/[{}[\]@"]/g,'')   // 🔥 убираем мусор типа "@context"
+      // приоритет — articleBody
+      const article = doc.querySelector('[itemprop="articleBody"]');
+
+      if(article){
+        content = article.innerText;
+      } else {
+        // fallback — все текстовые блоки
+        const blocks = doc.querySelectorAll('p, h1, h2, h3, h4');
+        content = [...blocks].map(el => el.innerText).join(" ");
+      }
+
+      // =========================
+      // ЧИСТКА ТЕКСТА
+      // =========================
+      content = content
+        .replace(/\s+/g, " ")
+        .replace(/[\n\r]/g, " ")
         .trim()
-        .toLowerCase();
+        .slice(0, 500); // ограничение
 
-      const bodyText = clean(doc.body.innerText).slice(0, 2000);
+      // если пусто — пропускаем
+      if(!content) continue;
 
-      const model = url.split('/')[3] || '';
-
-      const path = url.replace(location.origin, '');
-
-      // ===========================
-      // 📦 СТРАНИЦА
-      // ===========================
-      pages.push({
+      results.push({
         title,
-        url: path,
-        text: bodyText,
-        type: "page"
+        url,
+        content,
+        section
       });
 
-      // ===========================
-      // 🔹 ЗАГОЛОВКИ (h1–h3)
-      // ===========================
-      doc.querySelectorAll('h1, h2, h3').forEach(h => {
-
-        if (!h.id) return;
-
-        const t = clean(h.textContent);
-
-        if (t.length < 3) return;
-
-        pages.push({
-          title: t,
-          url: path + '#' + h.id,
-          text: bodyText.slice(0, 300),
-          type: "section"
-        });
-
-      });
-
-      // ===========================
-      // 📊 ТАБЛИЦЫ
-      // ===========================
-      doc.querySelectorAll('table').forEach((table, i) => {
-
-        const text = clean(table.innerText).slice(0, 400);
-
-        if (text.length < 20) return;
-
-        pages.push({
-          title: "Таблица",
-          url: path,
-          text: text,
-          type: "table"
-        });
-
-      });
-
-      console.log('OK:', url);
-
-    }catch(e){
-      console.warn('FAIL:', url);
+    } catch(e){
+      console.warn("Ошибка:", url);
     }
 
   }
 
-  // ===========================
-  // 🔥 УДАЛЯЕМ ДУБЛИ
-  // ===========================
-  const unique = [];
-  const seen = new Set();
-
-  for (let p of pages){
-    const key = p.url + p.title;
-    if (!seen.has(key)){
-      seen.add(key);
-      unique.push(p);
-    }
-  }
-
-  // ===========================
-  // 💾 СКАЧИВАНИЕ
-  // ===========================
+  // =========================
+  // СОХРАНЕНИЕ
+  // =========================
   const blob = new Blob(
-    [JSON.stringify({pages: unique}, null, 2)],
-    {type:'application/json'}
+    [JSON.stringify(results, null, 2)],
+    { type: "application/json" }
   );
 
-  const a = document.createElement('a');
+  const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
-  a.download = 'search.json';
+  a.download = "search.json";
   a.click();
-
-  console.log('ГОТОВО 🔥 страниц:', unique.length);
 }
+
 </script>
 
 </body>
