@@ -2,11 +2,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Search Generator PRO</title>
+<title>OS Search Generator PRO</title>
 </head>
 <body>
 
-<button onclick="generate()">Сгенерировать search.json</button>
+<button onclick="generate()">Generate search.json</button>
 
 <script>
 async function generate(){
@@ -29,78 +29,70 @@ async function generate(){
       // =========================
       // TITLE
       // =========================
-      const title = doc.querySelector("title")?.innerText || "";
+      const title = doc.querySelector("title")?.innerText?.trim() || "Untitled";
 
       // =========================
-      // SECTION (ВАЖНО!)
-      // =========================
-      let section = "other";
-
-      if(url.includes("opisanie")) section = "opisanie";
-      else if(url.includes("ekspluatatsiya")) section = "ekspluatatsiya";
-      else if(url.includes("obsluzhivanie")) section = "obsluzhivanie";
-      else if(url.includes("tehnicheskaya")) section = "harakteristika";
-      else if(url.includes("prilozheniya")) section = "prilozheniya";
-
-      // =========================
-      // ЧИСТИМ МУСОР
+      // REMOVE NOISE
       // =========================
       doc.querySelectorAll(`
-        script,
-        style,
-        nav,
-        header,
-        footer,
-        amp-sidebar,
-        .navbar,
-        .menu,
-        .dropdown,
-        .nav-dropdown
+        script, style, nav, header, footer,
+        .menu, .navbar, .sidebar, .dropdown
       `).forEach(el => el.remove());
 
       // =========================
-      // КОНТЕНТ (ТОЛЬКО СТАТЬЯ)
+      // SMART CONTENT EXTRACTION
       // =========================
-      let content = "";
+      const article =
+        doc.querySelector("article") ||
+        doc.querySelector('[itemprop="articleBody"]') ||
+        doc.body;
 
-      // приоритет — articleBody
-      const article = doc.querySelector('[itemprop="articleBody"]');
+      let text = article.innerText || "";
 
-      if(article){
-        content = article.innerText;
-      } else {
-        // fallback — все текстовые блоки
-        const blocks = doc.querySelectorAll('p, h1, h2, h3, h4');
-        content = [...blocks].map(el => el.innerText).join(" ");
-      }
-
-      // =========================
-      // ЧИСТКА ТЕКСТА
-      // =========================
-      content = content
+      text = text
         .replace(/\s+/g, " ")
-        .replace(/[\n\r]/g, " ")
-        .trim()
-        .slice(0, 500); // ограничение
+        .trim();
 
-      // если пусто — пропускаем
-      if(!content) continue;
+      if(text.length < 30) continue;
+
+      // =========================
+      // SMART TAGS (OS FEATURE)
+      // =========================
+      const section =
+        url.includes("engine") ? "engine" :
+        url.includes("repair") ? "repair" :
+        url.includes("manual") ? "manual" :
+        "general";
+
+      // =========================
+      // SCORE PREPARATION (for OS search)
+      // =========================
+      const importance =
+        title.includes("Engine") ? 5 :
+        title.includes("Repair") ? 4 :
+        3;
 
       results.push({
         title,
         url,
-        content,
-        section
+        content: text.slice(0, 600),
+        section,
+        importance
       });
 
     } catch(e){
-      console.warn("Ошибка:", url);
+      console.warn("skip:", url);
     }
 
   }
 
   // =========================
-  // СОХРАНЕНИЕ
+  // SORT (OS RANKING)
+  // =========================
+  results.sort((a,b)=>b.importance - a.importance);
+
+  // =========================
+  // DOWNLOAD
   // =========================
   const blob = new Blob(
     [JSON.stringify(results, null, 2)],
@@ -111,6 +103,8 @@ async function generate(){
   a.href = URL.createObjectURL(blob);
   a.download = "search.json";
   a.click();
+
+  console.log("OS INDEX GENERATED:", results.length);
 }
 
 </script>
