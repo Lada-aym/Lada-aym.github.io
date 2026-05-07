@@ -1,110 +1,309 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>OS Search Generator PRO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OS Search Generator</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f5f5f5;
+  padding:40px;
+}
+
+button{
+  height:48px;
+  padding:0 24px;
+  border:none;
+  border-radius:12px;
+  background:#0d6efd;
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:.9;
+}
+
+pre{
+  margin-top:20px;
+  padding:20px;
+  background:#111;
+  color:#0f0;
+  border-radius:12px;
+  overflow:auto;
+  max-height:500px;
+}
+</style>
 </head>
 <body>
 
-<button onclick="generate()">Generate search.json</button>
+<h1>OS Search Generator</h1>
+
+<button onclick="generate()">
+  Generate search.json
+</button>
+
+<pre id="log"></pre>
 
 <script>
+
+const logEl = document.getElementById("log");
+
+function log(...args){
+
+  console.log(...args);
+
+  logEl.textContent +=
+    args.join(" ") + "\n";
+}
+
+// =========================
+// NORMALIZE URL
+// =========================
+function normalizeUrl(url){
+
+  try{
+
+    const u = new URL(url);
+
+    return u.pathname
+      .replace(/index\.html$/i, "")
+      .replace(/\/+$/, "/");
+
+  }catch{
+
+    return url;
+  }
+}
+
+// =========================
+// MODEL DETECTION
+// =========================
+function detectModel(path){
+
+  const parts = path
+    .split("/")
+    .filter(Boolean);
+
+  if(!parts.length) return null;
+
+  return parts[0];
+}
+
+// =========================
+// CLEAN TEXT
+// =========================
+function cleanText(text){
+
+  return text
+    .replace(/\s+/g, " ")
+    .replace(/[ ]+/g, " ")
+    .trim();
+}
+
+// =========================
+// PAGE TITLE
+// =========================
+function getTitle(doc){
+
+  return (
+    doc.querySelector("h1")?.innerText?.trim() ||
+    doc.querySelector("title")?.innerText?.trim() ||
+    "Untitled"
+  );
+}
+
+// =========================
+// GENERATE
+// =========================
 async function generate(){
 
-  const res = await fetch('/sitemap.xml');
+  logEl.textContent = "";
+
+  log("Loading sitemap...");
+
+  // =========================
+  // SITEMAP
+  // =========================
+  const res = await fetch("/sitemap.xml");
   const xmlText = await res.text();
-  const xml = new DOMParser().parseFromString(xmlText, "text/xml");
 
-  const urls = [...xml.querySelectorAll("loc")].map(el => el.textContent);
+  const xml = new DOMParser()
+    .parseFromString(xmlText, "text/xml");
 
-  const results = [];
+  const urls = [
+    ...xml.querySelectorAll("loc")
+  ].map(el => el.textContent);
 
+  log("Pages:", urls.length);
+
+  // =========================
+  // MODELS
+  // =========================
+  const modelsMap = {};
+
+  // =========================
+  // PARSE PAGES
+  // =========================
   for(const url of urls){
 
     try{
+
+      log("Index:", url);
+
       const page = await fetch(url);
       const html = await page.text();
-      const doc = new DOMParser().parseFromString(html, "text/html");
 
-      // =========================
-      // TITLE
-      // =========================
-      const title = doc.querySelector("title")?.innerText?.trim() || "Untitled";
+      const doc = new DOMParser()
+        .parseFromString(html, "text/html");
 
-      // =========================
+      // =====================
       // REMOVE NOISE
-      // =========================
+      // =====================
       doc.querySelectorAll(`
-        script, style, nav, header, footer,
-        .menu, .navbar, .sidebar, .dropdown
+        script,
+        style,
+        nav,
+        header,
+        footer,
+        noscript,
+        iframe,
+        .sidebar,
+        .dropdown,
+        .search-float,
+        .os-overlay,
+        .menu-scroll,
+        .nav-actions
       `).forEach(el => el.remove());
 
-      // =========================
-      // SMART CONTENT EXTRACTION
-      // =========================
-      const article =
+      // =====================
+      // TITLE
+      // =====================
+      const title = getTitle(doc);
+
+      // =====================
+      // CONTENT
+      // =====================
+      const main =
+        doc.querySelector("main") ||
         doc.querySelector("article") ||
-        doc.querySelector('[itemprop="articleBody"]') ||
         doc.body;
 
-      let text = article.innerText || "";
+      let content =
+        cleanText(main.innerText || "");
 
-      text = text
-        .replace(/\s+/g, " ")
-        .trim();
+      if(content.length < 20){
+        continue;
+      }
 
-      if(text.length < 30) continue;
+      // =====================
+      // URL
+      // =====================
+      const path = normalizeUrl(url);
 
-      // =========================
-      // SMART TAGS (OS FEATURE)
-      // =========================
-      const section =
-        url.includes("engine") ? "engine" :
-        url.includes("repair") ? "repair" :
-        url.includes("manual") ? "manual" :
-        "general";
+      // =====================
+      // MODEL
+      // =====================
+      const modelId =
+        detectModel(path);
 
-      // =========================
-      // SCORE PREPARATION (for OS search)
-      // =========================
-      const importance =
-        title.includes("Engine") ? 5 :
-        title.includes("Repair") ? 4 :
-        3;
+      // главная сайта
+      if(!modelId){
 
-      results.push({
+        if(!modelsMap.root){
+
+          modelsMap.root = {
+            id: "root",
+            title: "Главная",
+            url: "/",
+            items: []
+          };
+        }
+
+        modelsMap.root.items.push({
+          title,
+          url: path,
+          content: content.slice(0, 400)
+        });
+
+        continue;
+      }
+
+      // =====================
+      // MODEL INIT
+      // =====================
+      if(!modelsMap[modelId]){
+
+        modelsMap[modelId] = {
+
+          id: modelId.toLowerCase(),
+
+          title: modelId
+            .replace(/_/g, " ")
+            .replace(/\b\w/g, s => s.toUpperCase()),
+
+          url: `/${modelId}/`,
+
+          items: []
+        };
+      }
+
+      // =====================
+      // ITEM
+      // =====================
+      modelsMap[modelId].items.push({
+
         title,
-        url,
-        content: text.slice(0, 600),
-        section,
-        importance
+
+        url: path,
+
+        content: content.slice(0, 400)
       });
 
-    } catch(e){
-      console.warn("skip:", url);
-    }
+    }catch(e){
 
+      console.warn("SKIP:", url, e);
+
+    }
   }
 
   // =========================
-  // SORT (OS RANKING)
+  // RESULT
   // =========================
-  results.sort((a,b)=>b.importance - a.importance);
+  const result = {
+    models: Object.values(modelsMap)
+  };
 
   // =========================
   // DOWNLOAD
   // =========================
   const blob = new Blob(
-    [JSON.stringify(results, null, 2)],
+    [JSON.stringify(result, null, 2)],
     { type: "application/json" }
   );
 
   const a = document.createElement("a");
+
   a.href = URL.createObjectURL(blob);
   a.download = "search.json";
+
   a.click();
 
-  console.log("OS INDEX GENERATED:", results.length);
+  log("");
+  log("DONE");
+  log("Models:", result.models.length);
+
+  let pages = 0;
+
+  result.models.forEach(m => {
+    pages += m.items.length;
+  });
+
+  log("Pages:", pages);
 }
 
 </script>
