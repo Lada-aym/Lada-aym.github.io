@@ -1,309 +1,235 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>OS Search Generator</title>
+<title>OS Search Generator</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      padding: 40px;
-    }
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f5f5f5;
+  padding:40px;
+}
 
-    button {
-      height: 48px;
-      padding: 0 24px;
-      border: none;
-      border-radius: 12px;
-      background: #0d6efd;
-      color: #fff;
-      font-size: 16px;
-      cursor: pointer;
-    }
+button{
+  height:48px;
+  padding:0 24px;
+  border:none;
+  border-radius:12px;
+  background:#0d6efd;
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+  margin-right:10px;
+}
 
-    button:hover {
-      opacity: .9;
-    }
+button:hover{ opacity:.9; }
 
-    pre {
-      margin-top: 20px;
-      padding: 20px;
-      background: #111;
-      color: #0f0;
-      border-radius: 12px;
-      overflow: auto;
-      max-height: 500px;
-    }
-  </style>
+pre{
+  margin-top:20px;
+  padding:20px;
+  background:#111;
+  color:#0f0;
+  border-radius:12px;
+  overflow:auto;
+  max-height:500px;
+}
+</style>
 </head>
 <body>
 
 <h1>OS Search Generator</h1>
 
-<button onclick="generate()">
-  Generate search.json
-</button>
+<button onclick="generate()">Generate search.json</button>
+<button onclick="checkSitemap()">Check sitemap</button>
 
 <pre id="log"></pre>
 
 <script>
+
 const logEl = document.getElementById("log");
 
-function log(...args) {
+function log(...args){
   console.log(...args);
   logEl.textContent += args.join(" ") + "\n";
 }
 
-// =========================
-// NORMALIZE URL
-// =========================
-function normalizeUrl(url) {
+/* =========================
+   URL NORMALIZE
+========================= */
+function normalizeUrl(url){
   try {
-    const u = new URL(url, window.location.href);
-    let pathname = u.pathname;
-
-    // Убираем index.html и завершающие слэши
-    pathname = pathname
+    const u = new URL(url, location.href);
+    return u.pathname
       .replace(/index\.html$/i, "")
-      .replace(/\/+$/, "");
-
-    return pathname || "/";
+      .replace(/\/+$/, "") || "/";
   } catch {
     return url;
   }
 }
 
-// =========================
-// MODEL DETECTION
-// =========================
-function detectModel(path) {
-  const parts = path
-    .split("/")
-    .filter(Boolean);
-
-  if (!parts.length) return null;
-
-  return parts[0];
+/* =========================
+   DETECT SECTION
+========================= */
+function detectSection(path){
+  const parts = path.split("/").filter(Boolean);
+  return parts.length ? parts[0] : null;
 }
 
-// =========================
-// CLEAN TEXT
-// =========================
-function cleanText(text) {
-  return text
+/* =========================
+   CLEAN TEXT
+========================= */
+function clean(text){
+  return (text || "")
     .replace(/\s+/g, " ")
-    .replace(/[ ]+/g, " ")
+    .replace(/\u00a0/g, " ")
     .trim();
 }
 
-// =========================
-// PAGE TITLE
-// =========================
-function getTitle(doc) {
-  // Сначала ищем h1 в основном контенте
-  const h1 = doc.querySelector("main h1, article h1, .content h1");
-  if (h1) return cleanText(h1.innerText);
+/* =========================
+   TITLE EXTRACTION
+========================= */
+function getTitle(doc){
 
-  // Затем заголовок страницы
-  const titleEl = doc.querySelector("title");
-  if (titleEl) {
-    let title = cleanText(titleEl.innerText);
-    // Убираем название сайта из заголовка
-    title = title.replace(/\s*\|\s*[^|]*$/, "").trim();
-    return title || "Untitled";
-  }
+  const h1 =
+    doc.querySelector("main h1") ||
+    doc.querySelector("article h1") ||
+    doc.querySelector("h1");
 
-  return "Untitled";
+  if (h1) return clean(h1.innerText);
+
+  let t = doc.querySelector("title")?.innerText || "";
+  t = clean(t).replace(/\s*\|.*$/, "");
+
+  return t || "Untitled";
 }
 
-// =========================
-// EXTRACT CONTENT
-// =========================
-function extractContent(doc) {
-  // Удаляем шумные элементы
-  doc.querySelectorAll(`
-    script,
-    style,
-    nav,
-    header,
-    footer,
-    noscript,
-    iframe,
-    .sidebar,
-    .dropdown,
-    .search-float,
-    .os-overlay,
-    .menu-scroll,
-    .nav-actions,
-    .ads,
-    .comments
-  `).forEach(el => el.remove());
+/* =========================
+   CONTENT EXTRACTION
+========================= */
+function getContent(doc){
 
-  // Ищем основной контент
+  doc.querySelectorAll(`
+    script,style,nav,header,footer,noscript,
+    iframe,.sidebar,.dropdown,.search-float,
+    .os-overlay,.menu-scroll,.nav-actions,
+    .ads,.comments
+  `).forEach(e => e.remove());
+
   const main =
     doc.querySelector("main") ||
     doc.querySelector("article") ||
-    doc.querySelector(".content") ||
-    doc.querySelector(".page-content") ||
     doc.body;
 
-  let content = cleanText(main.innerText || "");
+  let text = clean(main.innerText);
 
-  // Если контента мало, пробуем найти другой источник
-  if (content.length < 20) {
-    const paragraphs = Array.from(doc.querySelectorAll("p"))
-      .map(p => cleanText(p.innerText))
-      .filter(text => text.length > 10);
+  if (text.length < 100){
+    const ps = [...doc.querySelectorAll("p")]
+      .map(p => clean(p.innerText))
+      .filter(t => t.length > 20);
 
-    content = paragraphs.slice(0, 3).join(" ");
+    text = ps.join(" ");
   }
 
-  return content;
+  return text;
 }
 
-// =========================
-// GENERATE
-// =========================
-async function generate() {
-  logEl.textContent = "";
+/* =========================
+   FILTER RULES
+========================= */
+const BAD_URL_PARTS = [
+  "tag","category","search","login","register",
+  "404","feed","amp","admin","wp-","?","#"
+];
 
+function isBadUrl(url){
+  return BAD_URL_PARTS.some(x =>
+    url.toLowerCase().includes(x)
+  );
+}
+
+function isBadTitle(title){
+  return /menu|footer|header|navigation/i.test(title);
+}
+
+/* =========================
+   GENERATE
+========================= */
+async function generate(){
+
+  logEl.textContent = "";
   log("Loading sitemap...");
 
   try {
-    // =========================
-    // SITEMAP
-    // =========================
+
     const res = await fetch("/sitemap.xml");
-
-    if (!res.ok) {
-      throw new Error(`Sitemap load failed: ${res.status}`);
-    }
-
-    const xmlText = await res.text();
     const xml = new DOMParser()
-      .parseFromString(xmlText, "text/xml");
+      .parseFromString(await res.text(), "text/xml");
 
-    const urls = [
-      ...xml.querySelectorAll("loc")
-    ].map(el => el.textContent.trim())
-      .filter(url => url); // Убираем пустые URL
+    let urls = [...xml.querySelectorAll("loc")]
+      .map(x => x.textContent.trim())
+      .filter(Boolean);
 
-    log("Pages found in sitemap:", urls.length);
+    log("Pages:", urls.length);
 
-    // =========================
-    // MODELS
-    // =========================
-    const modelsMap = {};
+    const map = {};
+    const seen = new Set();
 
-    // =========================
-    // PARSE PAGES
-    // =========================
-    for (const url of urls) {
+    for (const url of urls){
+
+      if (isBadUrl(url)) continue;
+      if (seen.has(url)) continue;
+      seen.add(url);
+
       try {
-        log("Processing:", url);
 
         const page = await fetch(url);
+        if (!page.ok) continue;
 
-        if (!page.ok) {
-          log("SKIP (HTTP error):", url, page.status);
-          continue;
-        }
-
-        const html = await page.text();
         const doc = new DOMParser()
-          .parseFromString(html, "text/html");
+          .parseFromString(await page.text(), "text/html");
 
-        // =====================
-        // TITLE
-        // =====================
         const title = getTitle(doc);
+        if (!title || isBadTitle(title)) continue;
 
-        // =====================
-        // CONTENT
-        // =====================
-        let content = extractContent(doc);
+        const content = getContent(doc);
+        if (!content || content.length < 120) continue;
 
-        if (content.length < 20) {
-          log("SKIP (no content):", url);
-          continue;
-        }
-
-        // =====================
-        // URL
-        // =====================
         const path = normalizeUrl(url);
+        const section = detectSection(path);
 
-        // =====================
-        // MODEL
-        // =====================
-        const modelId = detectModel(path);
+        if (!section) continue;
 
-        // Главная сайта
-        if (!modelId) {
-          if (!modelsMap.root) {
-            modelsMap.root = {
-              id: "root",
-              title: "Главная",
-              url: "/",
-              items: []
-            };
-          }
-
-          modelsMap.root.items.push({
-            title,
-            url: path,
-            content: content.slice(0, 400)
-          });
-
-          continue;
-        }
-
-        // =====================
-        // MODEL INIT
-        // =====================
-        if (!modelsMap[modelId]) {
-          modelsMap[modelId] = {
-            id: modelId.toLowerCase(),
-            title: modelId
-              .replace(/_/g, " ")
-              .replace(/\b\w/g, s => s.toUpperCase()),
-            url: `/${modelId}/`,
+        if (!map[section]){
+          map[section] = {
+            id: section,
+            title: section.replace(/_/g," ").replace(/\b\w/g,s=>s.toUpperCase()),
+            url: "/" + section + "/",
             items: []
           };
         }
 
-        // =====================
-        // ITEM
-        // =====================
-        modelsMap[modelId].items.push({
+        // дедуп по title
+        if (map[section].items.some(i => i.title === title)) continue;
+
+        map[section].items.push({
           title,
           url: path,
-          content: content.slice(0, 400)
+          content: content.slice(0, 300)
         });
-      } catch (e) {
-        console.warn("SKIP:", url, e);
-        log("SKIP (error):", url, e.message);
+
+      } catch (e){
+        log("skip:", url);
       }
     }
 
-    // =========================
-    // RESULT
-    // =========================
     const result = {
-      models: Object.values(modelsMap)
+      models: Object.values(map)
+        .filter(m => m.items.length)
     };
 
-    // Валидация результата
-    if (result.models.length === 0) {
-      throw new Error("No valid models found. Check your sitemap and page structure.");
-    }
-
-        // =========================
-    // DOWNLOAD
-    // =========================
     const blob = new Blob(
       [JSON.stringify(result, null, 2)],
       { type: "application/json" }
@@ -312,71 +238,43 @@ async function generate() {
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
     a.download = "search.json";
-    document.body.appendChild(a); // Добавляем элемент в DOM перед кликом
     a.click();
-    document.body.removeChild(a); // Удаляем элемент после скачивания
-    URL.revokeObjectURL(a.href); // Освобождаем память
 
     log("");
-    log("✅ DONE — search.json generated successfully");
+    log("DONE");
     log("Models:", result.models.length);
 
     let pages = 0;
-    result.models.forEach(m => {
-      pages += m.items.length;
-    });
+    result.models.forEach(m => pages += m.items.length);
 
-    log("Pages indexed:", pages);
+    log("Pages:", pages);
 
-    // Дополнительная информация о сгенерированном файле
-    log("\n--- Generated search.json structure ---");
-    result.models.forEach(model => {
-      log(`Model: ${model.title} (${model.id}) - ${model.items.length} items`);
-    });
-    log("----------------------------------------");
-
-  } catch (error) {
-    log("❌ ERROR:", error.message);
-    console.error("Generator error:", error);
-
-    // Более информативное сообщение об ошибке
-    if (error.message.includes("Sitemap")) {
-      log("💡 Hint: Make sure /sitemap.xml exists and is accessible");
-    } else if (error.message.includes("No valid models")) {
-      log("💡 Hint: Check that your pages have proper content and titles");
-    }
+  } catch (e){
+    log("ERROR:", e.message);
   }
 }
 
-// =========================
-// UTILITY FUNCTIONS
-// =========================
+/* =========================
+   CHECK SITEMAP
+========================= */
+async function checkSitemap(){
 
-// Функция для ручной проверки sitemap
-async function checkSitemap() {
   try {
+
     const res = await fetch("/sitemap.xml");
-    if (!res.ok) throw new Error(`Sitemap not found: ${res.status}`);
+    const xml = new DOMParser()
+      .parseFromString(await res.text(), "text/xml");
 
-    const xmlText = await res.text();
-    const xml = new DOMParser().parseFromString(xmlText, "text/xml");
-    const urls = [...xml.querySelectorAll("loc")].map(el => el.textContent);
+    const urls = [...xml.querySelectorAll("loc")]
+      .map(x => x.textContent);
 
-    log(`Sitemap loaded successfully. Found ${urls.length} URLs:`);
-    urls.forEach((url, i) => log(`${i + 1}. ${url}`));
-  } catch (e) {
-    log("Sitemap check failed:", e.message);
+    log("Sitemap OK:", urls.length);
+    urls.forEach(u => log(u));
+
+  } catch(e){
+    log("Sitemap error:", e.message);
   }
 }
-
-// Кнопка для проверки sitemap (опционально)
-document.addEventListener("DOMContentLoaded", () => {
-  const checkBtn = document.createElement("button");
-  checkBtn.textContent = "Check sitemap.xml";
-  checkBtn.style.marginTop = "10px";
-  checkBtn.onclick = checkSitemap;
-  document.querySelector("button").parentNode.appendChild(checkBtn);
-});
 
 </script>
 
