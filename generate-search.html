@@ -57,12 +57,21 @@ function log(...args){
 }
 
 // =========================
+// CLEAN TEXT
+// =========================
+function cleanText(text){
+  return text
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// =========================
 // NORMALIZE URL
 // =========================
 function normalizeUrl(url){
   try {
     const u = new URL(url);
-    return u.pathname.replace(/index\.html$/i, "").replace(/\/+$/, "/");
+    return u.pathname.replace(/index\.html$/i, "").replace(/\/+$/, "");
   } catch {
     return url;
   }
@@ -100,7 +109,8 @@ async function generate(){
   const res = await fetch("/sitemap.xml");
   const xmlText = await res.text();
 
-  const xml = new DOMParser().parseFromString(xmlText, "text/xml");
+  const xml = new DOMParser()
+    .parseFromString(xmlText, "text/xml");
 
   const urls = [...xml.querySelectorAll("loc")]
     .map(el => el.textContent);
@@ -121,7 +131,8 @@ async function generate(){
       const page = await fetch(url);
       const html = await page.text();
 
-      const doc = new DOMParser().parseFromString(html, "text/html");
+      const doc = new DOMParser()
+        .parseFromString(html, "text/html");
 
       // remove noise
       doc.querySelectorAll(`
@@ -131,6 +142,16 @@ async function generate(){
       `).forEach(el => el.remove());
 
       const title = getTitle(doc);
+
+      const main =
+        doc.querySelector("main") ||
+        doc.querySelector("article") ||
+        doc.body;
+
+      const content = cleanText(main.innerText || "");
+
+      if (content.length < 20) continue;
+
       const path = normalizeUrl(url);
 
       const modelId = detectModel(path);
@@ -140,7 +161,7 @@ async function generate(){
       const id = modelId.toLowerCase();
 
       // =========================
-      // MODEL (FLAT STRUCTURE)
+      // MODEL INIT
       // =========================
       if (!modelsMap[id]) {
 
@@ -149,9 +170,19 @@ async function generate(){
           title: modelId
             .replace(/_/g, " ")
             .replace(/\b\w/g, s => s.toUpperCase()),
-          url: `/${modelId}/`
+          url: `/${modelId}/`,
+          items: []
         };
       }
+
+      // =========================
+      // PUSH PAGE
+      // =========================
+      modelsMap[id].items.push({
+        title,
+        url: path,
+        content: content.slice(0, 400)
+      });
 
     } catch (e) {
       console.warn("SKIP:", url, e);
@@ -159,7 +190,7 @@ async function generate(){
   }
 
   // =========================
-  // OUTPUT (NEW FORMAT)
+  // OUTPUT
   // =========================
   const result = {
     models: Object.values(modelsMap)
