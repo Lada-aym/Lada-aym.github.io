@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>OS Search Generator</title>
+  <title>OS Search Generator</title>
 
-<style>
-body {
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
-  padding: 40px;
-}
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 40px;
+    }
 
-button {
-  height: 48px;
-  padding: 0 24px;
-  border: none;
-  border-radius: 12px;
-  background: #0d6efd;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-}
+    button {
+      height: 48px;
+      padding: 0 24px;
+      border: none;
+      border-radius: 12px;
+      background: #0d6efd;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-button:hover {
-  opacity: .9;
-}
+    button:hover {
+      opacity: .9;
+    }
 
-pre {
-  margin-top: 20px;
-  padding: 20px;
-  background: #111;
-  color: #0f0;
-  border-radius: 12px;
-  overflow: auto;
-  max-height: 500px;
-}
-</style>
+    pre {
+      margin-top: 20px;
+      padding: 20px;
+      background: #111;
+      color: #0f0;
+      border-radius: 12px;
+      overflow: auto;
+      max-height: 500px;
+    }
+  </style>
 </head>
 <body>
 
@@ -50,7 +50,6 @@ pre {
 <pre id="log"></pre>
 
 <script>
-
 const logEl = document.getElementById("log");
 
 function log(...args) {
@@ -104,11 +103,20 @@ function cleanText(text) {
 // PAGE TITLE
 // =========================
 function getTitle(doc) {
-  return (
-    doc.querySelector("h1")?.innerText?.trim() ||
-    doc.querySelector("title")?.innerText?.trim() ||
-    "Untitled"
-  );
+  // Сначала ищем h1 в основном контенте
+  const h1 = doc.querySelector("main h1, article h1, .content h1");
+  if (h1) return cleanText(h1.innerText);
+
+  // Затем заголовок страницы
+  const titleEl = doc.querySelector("title");
+  if (titleEl) {
+    let title = cleanText(titleEl.innerText);
+    // Убираем название сайта из заголовка
+    title = title.replace(/\s*\|\s*[^|]*$/, "").trim();
+    return title || "Untitled";
+  }
+
+  return "Untitled";
 }
 
 // =========================
@@ -129,7 +137,9 @@ function extractContent(doc) {
     .search-float,
     .os-overlay,
     .menu-scroll,
-    .nav-actions
+    .nav-actions,
+    .ads,
+    .comments
   `).forEach(el => el.remove());
 
   // Ищем основной контент
@@ -178,9 +188,10 @@ async function generate() {
 
     const urls = [
       ...xml.querySelectorAll("loc")
-    ].map(el => el.textContent);
+    ].map(el => el.textContent.trim())
+      .filter(url => url); // Убираем пустые URL
 
-    log("Pages:", urls.length);
+    log("Pages found in sitemap:", urls.length);
 
     // =========================
     // MODELS
@@ -192,7 +203,7 @@ async function generate() {
     // =========================
     for (const url of urls) {
       try {
-        log("Index:", url);
+        log("Processing:", url);
 
         const page = await fetch(url);
 
@@ -230,7 +241,7 @@ async function generate() {
         // =====================
         const modelId = detectModel(path);
 
-        // главная сайта
+        // Главная сайта
         if (!modelId) {
           if (!modelsMap.root) {
             modelsMap.root = {
@@ -285,7 +296,12 @@ async function generate() {
       models: Object.values(modelsMap)
     };
 
-    // =========================
+    // Валидация результата
+    if (result.models.length === 0) {
+      throw new Error("No valid models found. Check your sitemap and page structure.");
+    }
+
+        // =========================
     // DOWNLOAD
     // =========================
     const blob = new Blob(
@@ -296,10 +312,13 @@ async function generate() {
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
     a.download = "search.json";
+    document.body.appendChild(a); // Добавляем элемент в DOM перед кликом
     a.click();
+    document.body.removeChild(a); // Удаляем элемент после скачивания
+    URL.revokeObjectURL(a.href); // Освобождаем память
 
     log("");
-    log("DONE");
+    log("✅ DONE — search.json generated successfully");
     log("Models:", result.models.length);
 
     let pages = 0;
@@ -308,11 +327,56 @@ async function generate() {
     });
 
     log("Pages indexed:", pages);
+
+    // Дополнительная информация о сгенерированном файле
+    log("\n--- Generated search.json structure ---");
+    result.models.forEach(model => {
+      log(`Model: ${model.title} (${model.id}) - ${model.items.length} items`);
+    });
+    log("----------------------------------------");
+
   } catch (error) {
-    log("ERROR:", error.message);
+    log("❌ ERROR:", error.message);
     console.error("Generator error:", error);
+
+    // Более информативное сообщение об ошибке
+    if (error.message.includes("Sitemap")) {
+      log("💡 Hint: Make sure /sitemap.xml exists and is accessible");
+    } else if (error.message.includes("No valid models")) {
+      log("💡 Hint: Check that your pages have proper content and titles");
+    }
   }
 }
+
+// =========================
+// UTILITY FUNCTIONS
+// =========================
+
+// Функция для ручной проверки sitemap
+async function checkSitemap() {
+  try {
+    const res = await fetch("/sitemap.xml");
+    if (!res.ok) throw new Error(`Sitemap not found: ${res.status}`);
+
+    const xmlText = await res.text();
+    const xml = new DOMParser().parseFromString(xmlText, "text/xml");
+    const urls = [...xml.querySelectorAll("loc")].map(el => el.textContent);
+
+    log(`Sitemap loaded successfully. Found ${urls.length} URLs:`);
+    urls.forEach((url, i) => log(`${i + 1}. ${url}`));
+  } catch (e) {
+    log("Sitemap check failed:", e.message);
+  }
+}
+
+// Кнопка для проверки sitemap (опционально)
+document.addEventListener("DOMContentLoaded", () => {
+  const checkBtn = document.createElement("button");
+  checkBtn.textContent = "Check sitemap.xml";
+  checkBtn.style.marginTop = "10px";
+  checkBtn.onclick = checkSitemap;
+  document.querySelector("button").parentNode.appendChild(checkBtn);
+});
 
 </script>
 
