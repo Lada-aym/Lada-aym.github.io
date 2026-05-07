@@ -50,260 +50,104 @@ pre{
 <pre id="log"></pre>
 
 <script>
+async function generateSearchJSON() {
 
-const logEl = document.getElementById("log");
-
-function log(...args){
-
-  console.log(...args);
-
-  logEl.textContent +=
-    args.join(" ") + "\n";
-}
-
-// =========================
-// NORMALIZE URL
-// =========================
-function normalizeUrl(url){
-
-  try{
-
-    const u = new URL(url);
-
-    return u.pathname
-      .replace(/index\.html$/i, "")
-      .replace(/\/+$/, "/");
-
-  }catch{
-
-    return url;
-  }
-}
-
-// =========================
-// MODEL DETECTION
-// =========================
-function detectModel(path){
-
-  const parts = path
-    .split("/")
-    .filter(Boolean);
-
-  if(!parts.length) return null;
-
-  return parts[0];
-}
-
-// =========================
-// CLEAN TEXT
-// =========================
-function cleanText(text){
-
-  return text
-    .replace(/\s+/g, " ")
-    .replace(/[ ]+/g, " ")
-    .trim();
-}
-
-// =========================
-// PAGE TITLE
-// =========================
-function getTitle(doc){
-
-  return (
-    doc.querySelector("h1")?.innerText?.trim() ||
-    doc.querySelector("title")?.innerText?.trim() ||
-    "Untitled"
-  );
-}
-
-// =========================
-// GENERATE
-// =========================
-async function generate(){
-
-  logEl.textContent = "";
-
-  log("Loading sitemap...");
-
-  // =========================
-  // SITEMAP
-  // =========================
   const res = await fetch("/sitemap.xml");
   const xmlText = await res.text();
 
-  const xml = new DOMParser()
-    .parseFromString(xmlText, "text/xml");
+  const xml = new DOMParser().parseFromString(xmlText, "text/xml");
 
-  const urls = [
-    ...xml.querySelectorAll("loc")
-  ].map(el => el.textContent);
+  const urls = [...xml.querySelectorAll("url > loc")]
+    .map(el => el.textContent.trim())
+    .filter(Boolean);
 
-  log("Pages:", urls.length);
+  const models = [];
 
-  // =========================
-  // MODELS
-  // =========================
-  const modelsMap = {};
+  for (const url of urls) {
 
-  // =========================
-  // PARSE PAGES
-  // =========================
-  for(const url of urls){
+    const clean = new URL(url);
 
-    try{
+    const parts = clean.pathname
+      .split("/")
+      .filter(Boolean);
 
-      log("Index:", url);
+    if (parts.length === 0) continue;
 
-      const page = await fetch(url);
-      const html = await page.text();
+    // =========================
+    // MODEL DETECTION
+    // =========================
+    const modelId = parts[0];
 
-      const doc = new DOMParser()
-        .parseFromString(html, "text/html");
+    // title = last segment or folder
+    const title = parts.length > 1
+      ? parts[parts.length - 1].replace(/[-_]/g, " ")
+      : modelId.replace(/[-_]/g, " ");
 
-      // =====================
-      // REMOVE NOISE
-      // =====================
-      doc.querySelectorAll(`
-        script,
-        style,
-        nav,
-        header,
-        footer,
-        noscript,
-        iframe,
-        .sidebar,
-        .dropdown,
-        .search-float,
-        .os-overlay,
-        .menu-scroll,
-        .nav-actions
-      `).forEach(el => el.remove());
+    // =========================
+    // FIND MODEL OR CREATE
+    // =========================
+    let model = models.find(m => m.id === modelId);
 
-      // =====================
-      // TITLE
-      // =====================
-      const title = getTitle(doc);
+    if (!model) {
 
-      // =====================
-      // CONTENT
-      // =====================
-      const main =
-        doc.querySelector("main") ||
-        doc.querySelector("article") ||
-        doc.body;
+      model = {
+        id: modelId,
+        title: capitalize(modelId),
+        url: "/" + modelId + "/"
+      };
 
-      let content =
-        cleanText(main.innerText || "");
-
-      if(content.length < 20){
-        continue;
-      }
-
-      // =====================
-      // URL
-      // =====================
-      const path = normalizeUrl(url);
-
-      // =====================
-      // MODEL
-      // =====================
-      const modelId =
-        detectModel(path);
-
-      // главная сайта
-      if(!modelId){
-
-        if(!modelsMap.root){
-
-          modelsMap.root = {
-            id: "root",
-            title: "Главная",
-            url: "/",
-            items: []
-          };
-        }
-
-        modelsMap.root.items.push({
-          title,
-          url: path,
-          content: content.slice(0, 400)
-        });
-
-        continue;
-      }
-
-      // =====================
-      // MODEL INIT
-      // =====================
-      if(!modelsMap[modelId]){
-
-        modelsMap[modelId] = {
-
-          id: modelId.toLowerCase(),
-
-          title: modelId
-            .replace(/_/g, " ")
-            .replace(/\b\w/g, s => s.toUpperCase()),
-
-          url: `/${modelId}/`,
-
-          items: []
-        };
-      }
-
-      // =====================
-      // ITEM
-      // =====================
-      modelsMap[modelId].items.push({
-
-        title,
-
-        url: path,
-
-        content: content.slice(0, 400)
-      });
-
-    }catch(e){
-
-      console.warn("SKIP:", url, e);
-
+      models.push(model);
     }
+
+    // =========================
+    // (OPTIONAL) store pages info for search boost
+    // =========================
+    if (!model._pages) model._pages = [];
+
+    model._pages.push({
+      title: title,
+      url: clean.pathname
+    });
   }
 
   // =========================
-  // RESULT
+  // CLEAN OUTPUT (IMPORTANT)
   // =========================
-  const result = {
-    models: Object.values(modelsMap)
+  const output = {
+    models: models.map(m => ({
+      id: m.id,
+      title: m.title,
+      url: m.url
+    }))
   };
 
-  // =========================
-  // DOWNLOAD
-  // =========================
+  console.log("SEARCH JSON:", output);
+
+  downloadJSON(output, "search.json");
+}
+
+// =========================
+// HELPERS
+// =========================
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function downloadJSON(data, filename) {
+
   const blob = new Blob(
-    [JSON.stringify(result, null, 2)],
+    [JSON.stringify(data, null, 2)],
     { type: "application/json" }
   );
 
+  const url = URL.createObjectURL(blob);
+
   const a = document.createElement("a");
-
-  a.href = URL.createObjectURL(blob);
-  a.download = "search.json";
-
+  a.href = url;
+  a.download = filename;
   a.click();
 
-  log("");
-  log("DONE");
-  log("Models:", result.models.length);
-
-  let pages = 0;
-
-  result.models.forEach(m => {
-    pages += m.items.length;
-  });
-
-  log("Pages:", pages);
+  URL.revokeObjectURL(url);
 }
 
 </script>
