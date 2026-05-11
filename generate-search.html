@@ -1,251 +1,733 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>OS Search Generator</title>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    OS Search Generator
+  </title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      padding: 40px;
+
+    *{
+      box-sizing:border-box;
     }
 
-    button {
-      height: 48px;
-      padding: 0 24px;
-      border: none;
-      border-radius: 12px;
-      background: #0d6efd;
-      color: #fff;
-      font-size: 16px;
-      cursor: pointer;
+    body{
+
+      margin:0;
+
+      padding:40px;
+
+      background:#f5f5f5;
+
+      color:#111;
+
+      font-family:
+        Arial,
+        sans-serif;
     }
 
-    button:hover {
-      opacity: .9;
+    h1{
+
+      margin-top:0;
+
+      margin-bottom:20px;
+
+      font-size:32px;
     }
 
-    pre {
-      margin-top: 20px;
-      padding: 20px;
-      background: #111;
-      color: #0f0;
-      border-radius: 12px;
-      overflow: auto;
-      max-height: 500px;
+    .actions{
+
+      display:flex;
+
+      gap:12px;
+
+      flex-wrap:wrap;
+
+      margin-bottom:20px;
     }
+
+    button{
+
+      height:48px;
+
+      padding:0 24px;
+
+      border:none;
+
+      border-radius:12px;
+
+      background:#0d6efd;
+
+      color:#fff;
+
+      font-size:16px;
+
+      font-weight:600;
+
+      cursor:pointer;
+
+      transition:.15s ease;
+    }
+
+    button:hover{
+      opacity:.92;
+    }
+
+    button:active{
+      transform:scale(.98);
+    }
+
+    pre{
+
+      margin:0;
+
+      padding:20px;
+
+      border-radius:16px;
+
+      background:#111;
+
+      color:#00ff88;
+
+      overflow:auto;
+
+      max-height:70vh;
+
+      white-space:pre-wrap;
+
+      line-height:1.5;
+    }
+
+    .muted{
+      color:#666;
+    }
+
   </style>
+
 </head>
 <body>
 
-<h1>OS Search Generator</h1>
+<h1>
+  🚀 OS Search Generator
+</h1>
 
-<button onclick="generate()">
-  Generate search.json
-</button>
+<p class="muted">
+  Генерация search.json из sitemap.xml
+</p>
+
+<div class="actions">
+
+  <button id="generateBtn">
+    Generate search.json
+  </button>
+
+</div>
 
 <pre id="log"></pre>
 
 <script>
-const logEl = document.getElementById("log");
+
+/* =========================================================
+   LOG
+========================================================= */
+
+const logEl =
+  document.getElementById(
+    "log"
+  );
 
 function log(...args){
+
   console.log(...args);
-  logEl.textContent += args.join(" ") + "\n";
+
+  logEl.textContent +=
+    args.join(" ") + "\n";
+
+  logEl.scrollTop =
+    logEl.scrollHeight;
 }
 
-// =========================
-// URL NORMALIZE
-// =========================
+/* =========================================================
+   CLEAN TEXT
+========================================================= */
+
+function clean(text){
+
+  return (text || "")
+
+    .replace(/\u00a0/g, " ")
+
+    .replace(/\s+/g, " ")
+
+    .trim();
+}
+
+/* =========================================================
+   NORMALIZE URL
+========================================================= */
+
 function normalizeUrl(url){
+
   try {
-    const u = new URL(url, location.href);
-    return u.pathname
-      .replace(/index\.html$/i, "")
-      .replace(/\/+$/, "") || "/";
+
+    const u =
+      new URL(
+        url,
+        window.location.origin
+      );
+
+    return (
+      u.pathname
+
+        .replace(
+          /index\.html$/i,
+          ""
+        )
+
+        .replace(
+          /\/+$/,
+          ""
+        ) || "/"
+    );
+
   } catch {
+
     return url;
   }
 }
 
-// =========================
-// SECTION DETECT
-// =========================
-function detectSection(path){
-  const parts = path.split("/").filter(Boolean);
-  return parts.length ? parts[0] : null;
-}
+/* =========================================================
+   TITLE EXTRACT
+========================================================= */
 
-// =========================
-// CLEAN TEXT
-// =========================
-function clean(text){
-  return (text || "")
-    .replace(/\s+/g, " ")
-    .replace(/\u00a0/g, " ")
-    .trim();
-}
-
-// =========================
-// TITLE (ROBUST)
-// =========================
 function getTitle(doc){
 
   const h1 =
-    doc.querySelector("main h1") ||
-    doc.querySelector("article h1") ||
-    doc.querySelector("h1");
 
-  if (h1) return clean(h1.innerText);
+    doc.querySelector(
+      "main h1"
+    ) ||
 
-  let t = doc.querySelector("title")?.innerText || "";
-  t = clean(t).replace(/\s*\|.*$/, "");
+    doc.querySelector(
+      "article h1"
+    ) ||
 
-  return t || "Untitled";
+    doc.querySelector(
+      ".content h1"
+    ) ||
+
+    doc.querySelector(
+      "h1"
+    );
+
+  if (h1){
+
+    const txt =
+      clean(
+        h1.textContent
+      );
+
+    if (txt){
+      return txt;
+    }
+  }
+
+  let title =
+
+    doc.querySelector(
+      "title"
+    )?.textContent || "";
+
+  title = clean(title);
+
+  title = title.replace(
+    /\s*\|.*$/,
+    ""
+  );
+
+  if (title){
+    return title;
+  }
+
+  return "Untitled";
 }
 
-// =========================
-// CONTENT (VERY SAFE)
-// =========================
+/* =========================================================
+   DESCRIPTION EXTRACT
+========================================================= */
+
+function getDescription(doc){
+
+  const meta =
+
+    doc.querySelector(
+      'meta[name="description"]'
+    ) ||
+
+    doc.querySelector(
+      'meta[property="og:description"]'
+    );
+
+  const content =
+    clean(
+      meta?.content || ""
+    );
+
+  return content.slice(0, 240);
+}
+
+/* =========================================================
+   REMOVE NOISE
+========================================================= */
+
+function removeNoise(doc){
+
+  doc.querySelectorAll(`
+
+    script,
+    style,
+    noscript,
+    iframe,
+    svg,
+    canvas,
+
+    nav,
+    header,
+    footer,
+
+    .sidebar,
+    .menu,
+    .dropdown,
+    .search,
+    .search-float,
+    .search-overlay,
+
+    .nav-actions,
+    .menu-scroll,
+
+    .ads,
+    .comments,
+    .banner,
+    .cookie,
+    .popup,
+    .modal
+
+  `).forEach(el => {
+    el.remove();
+  });
+}
+
+/* =========================================================
+   CONTENT EXTRACT
+========================================================= */
+
 function getContent(doc){
 
-  // remove noise
-  doc.querySelectorAll(`
-    script,style,nav,header,footer,noscript,
-    iframe,.sidebar,.dropdown,.search-float,
-    .os-overlay,.menu-scroll,.nav-actions,
-    .ads,.comments
-  `).forEach(e => e.remove());
+  removeNoise(doc);
 
-  // 🔥 главный fallback — schema.org + body
   const candidates = [
-    doc.querySelector('[itemprop="articleBody"]'),
-    doc.querySelector('[itemprop="text"]'),
-    doc.querySelector("main"),
-    doc.querySelector("article"),
+
+    doc.querySelector(
+      '[itemprop="articleBody"]'
+    ),
+
+    doc.querySelector(
+      '[itemprop="text"]'
+    ),
+
+    doc.querySelector(
+      "main"
+    ),
+
+    doc.querySelector(
+      "article"
+    ),
+
+    doc.querySelector(
+      ".content"
+    ),
+
     doc.body
+
   ].filter(Boolean);
 
   let best = "";
 
   for (const el of candidates){
-    const txt = clean(el.innerText);
-    if (txt.length > best.length) best = txt;
+
+    const text =
+      clean(
+        el.innerText ||
+        el.textContent ||
+        ""
+      );
+
+    if (
+      text.length >
+      best.length
+    ){
+      best = text;
+    }
   }
 
-  // fallback из <p>
-  if (best.length < 80){
-    const ps = [...doc.querySelectorAll("p")]
-      .map(p => clean(p.innerText))
-      .filter(t => t.length > 20);
+  if (best.length < 120){
 
-    best = ps.join(" ");
+    const paragraphs =
+      [...doc.querySelectorAll("p")]
+
+        .map(p =>
+          clean(
+            p.innerText ||
+            p.textContent
+          )
+        )
+
+        .filter(
+          t => t.length > 30
+        );
+
+    best =
+      paragraphs.join(" ");
   }
 
   return best;
 }
 
-// =========================
-// GENERATOR
-// =========================
+/* =========================================================
+   KEYWORDS
+========================================================= */
+
+function buildKeywords(text){
+
+  const words =
+
+    clean(text)
+
+      .toLowerCase()
+
+      .replace(
+        /[^a-zа-яё0-9\s]/gi,
+        " "
+      )
+
+      .split(/\s+/)
+
+      .filter(w =>
+        w.length > 3
+      );
+
+  const unique =
+    [...new Set(words)];
+
+  return unique
+    .slice(0, 60)
+    .join(" ");
+}
+
+/* =========================================================
+   PARSE PAGE
+========================================================= */
+
+async function parsePage(url){
+
+  const response =
+    await fetch(url);
+
+  if (!response.ok){
+
+    throw new Error(
+      "HTTP " +
+      response.status
+    );
+  }
+
+  const html =
+    await response.text();
+
+  const doc =
+    new DOMParser()
+      .parseFromString(
+        html,
+        "text/html"
+      );
+
+  const title =
+    getTitle(doc);
+
+  const description =
+    getDescription(doc);
+
+  const content =
+    getContent(doc);
+
+  const keywords =
+    buildKeywords(
+      title +
+      " " +
+      description +
+      " " +
+      content
+    );
+
+  return {
+
+    title,
+
+    description,
+
+    content,
+
+    keywords
+  };
+}
+
+/* =========================================================
+   DOWNLOAD FILE
+========================================================= */
+
+function downloadJSON(data){
+
+  const blob =
+    new Blob(
+
+      [
+        JSON.stringify(
+          data,
+          null,
+          2
+        )
+      ],
+
+      {
+        type:
+          "application/json"
+      }
+    );
+
+  const a =
+    document.createElement(
+      "a"
+    );
+
+  a.href =
+    URL.createObjectURL(
+      blob
+    );
+
+  a.download =
+    "search.json";
+
+  document.body.appendChild(a);
+
+  a.click();
+
+  a.remove();
+
+  URL.revokeObjectURL(
+    a.href
+  );
+}
+
+/* =========================================================
+   GENERATE
+========================================================= */
+
 async function generate(){
 
   logEl.textContent = "";
-  log("Loading sitemap...");
+
+  log(
+    "🚀 Loading sitemap..."
+  );
 
   try {
 
-    const res = await fetch("/sitemap.xml");
-    const xml = new DOMParser()
-      .parseFromString(await res.text(), "text/xml");
+    const sitemapResponse =
+      await fetch(
+        "/sitemap.xml"
+      );
 
-    const urls = [...xml.querySelectorAll("loc")]
-      .map(x => x.textContent.trim())
+    if (
+      !sitemapResponse.ok
+    ){
+
+      throw new Error(
+        "sitemap.xml HTTP " +
+        sitemapResponse.status
+      );
+    }
+
+    const sitemapText =
+      await sitemapResponse.text();
+
+    const sitemap =
+      new DOMParser()
+        .parseFromString(
+          sitemapText,
+          "text/xml"
+        );
+
+    const urls =
+
+      [
+        ...sitemap.querySelectorAll(
+          "loc"
+        )
+      ]
+
+      .map(
+        x =>
+          x.textContent.trim()
+      )
+
       .filter(Boolean);
 
-    log("Pages found:", urls.length);
+    log(
+      "📄 Pages found:",
+      urls.length
+    );
 
-    const map = {};
-    let ok = 0;
+    const result = {
+      generatedAt:
+        new Date()
+          .toISOString(),
+
+      version: 1,
+
+      items: []
+    };
+
+    let indexed = 0;
+    let skipped = 0;
 
     for (const url of urls){
 
       try {
 
-        log("Index:", url);
+        log(
+          "🔍 Index:",
+          url
+        );
 
-        const page = await fetch(url);
-        if (!page.ok) continue;
+        const page =
+          await parsePage(
+            url
+          );
 
-        const doc = new DOMParser()
-          .parseFromString(await page.text(), "text/html");
+        if (
+          !page.content ||
+          page.content.length < 30
+        ){
 
-        const title = getTitle(doc);
-        const content = getContent(doc);
+          skipped++;
 
-        // 🔥 НЕ УБИВАЕМ СЛИШКОМ ЖЁСТКО
-        if (content.length < 30) continue;
+          log(
+            "⚠ skipped (small content)"
+          );
 
-        const path = normalizeUrl(url);
-        const section = detectSection(path);
-
-        if (!section) continue;
-
-        if (!map[section]){
-          map[section] = {
-            id: section,
-            title: section
-              .replace(/_/g," ")
-              .replace(/\b\w/g,s=>s.toUpperCase()),
-            url: "/" + section + "/",
-            items: []
-          };
+          continue;
         }
 
-        map[section].items.push({
-          title,
-          url: path,
-          content: content.slice(0, 300)
+        const normalizedUrl =
+          normalizeUrl(url);
+
+        result.items.push({
+
+          title:
+            page.title,
+
+          url:
+            normalizedUrl,
+
+          description:
+            page.description,
+
+          content:
+            page.content
+              .slice(0, 5000),
+
+          keywords:
+            page.keywords
         });
 
-        ok++;
+        indexed++;
 
       } catch (e){
-        log("skip:", url);
+
+        skipped++;
+
+        log(
+          "❌ skip:",
+          url,
+          "|",
+          e.message
+        );
       }
     }
 
-    const result = {
-      models: Object.values(map).filter(m => m.items.length)
-    };
+    result.total =
+      result.items.length;
 
-    const blob = new Blob(
-      [JSON.stringify(result, null, 2)],
-      { type: "application/json" }
-    );
-
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "search.json";
-    a.click();
+    downloadJSON(result);
 
     log("");
-    log("DONE");
-    log("OK pages:", ok);
-    log("Models:", result.models.length);
+    log(
+      "=============================="
+    );
 
-    let pages = 0;
-    result.models.forEach(m => pages += m.items.length);
+    log(
+      "✅ DONE"
+    );
 
-    log("Total items:", pages);
+    log(
+      "📦 Indexed:",
+      indexed
+    );
+
+    log(
+      "⚠ Skipped:",
+      skipped
+    );
+
+    log(
+      "🧠 Search items:",
+      result.items.length
+    );
+
+    log(
+      "=============================="
+    );
 
   } catch (e){
-    log("ERROR:", e.message);
+
+    log(
+      "💥 ERROR:",
+      e.message
+    );
   }
 }
+
+/* =========================================================
+   EVENTS
+========================================================= */
+
+document
+  .getElementById(
+    "generateBtn"
+  )
+  .addEventListener(
+    "click",
+    generate
+  );
+
 </script>
 
 </body>
