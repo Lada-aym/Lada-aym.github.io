@@ -210,38 +210,9 @@ function normalizeUrl(url){
 
 function getTitle(doc){
 
-  const h1 =
-
-    doc.querySelector(
-      "main h1"
-    ) ||
-
-    doc.querySelector(
-      "article h1"
-    ) ||
-
-    doc.querySelector(
-      ".content h1"
-    ) ||
-
-    doc.querySelector(
-      "h1"
-    );
-
-  if (h1){
-
-    const txt =
-      clean(
-        h1.textContent
-      );
-
-    if (txt){
-      return txt;
-    }
-  }
+  // ❌ H1 БОЛЬШЕ НЕ ИСПОЛЬЗУЕМ
 
   let title =
-
     doc.querySelector(
       "title"
     )?.textContent || "";
@@ -255,6 +226,25 @@ function getTitle(doc){
 
   if (title){
     return title;
+  }
+
+  // fallback только meta
+  const og =
+    doc.querySelector(
+      'meta[property="og:title"]'
+    )?.content;
+
+  if (og){
+    return clean(og);
+  }
+
+  const metaTitle =
+    doc.querySelector(
+      'meta[name="title"]'
+    )?.content;
+
+  if (metaTitle){
+    return clean(metaTitle);
   }
 
   return "Untitled";
