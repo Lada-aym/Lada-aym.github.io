@@ -1,0 +1,64 @@
+{
+  "models": [
+    {
+      "id": "chevrolet_niva",
+      "name": "Chevrolet Niva",
+      "brand": "Chevrolet",
+      "folder": "/Chevrolet_NIVA/"
+    },
+    {
+      "id": "gazel_next",
+      "name": "GAZel Next",
+      "brand": "GAZ",
+      "folder": "/GAZel_next/"
+    },
+    {
+      "id": "lada_granta",
+      "name": "LADA Granta",
+      "brand": "LADA",
+      "folder": "/LADA_Granta/"
+    },
+    {
+      "id": "lada_kalina",
+      "name": "LADA Kalina",
+      "brand": "LADA",
+      "folder": "/LADA_Kalina/"
+    },
+    {
+      "id": "lada_largus",
+      "name": "LADA Largus",
+      "brand": "LADA",
+      "folder": "/LADA_Largus/"
+    },
+    {
+      "id": "lada_priora",
+      "name": "LADA Priora",
+      "brand": "LADA",
+      "folder": "/LADA_Priora/"
+    },
+    {
+      "id": "lada_vesta",
+      "name": "LADA Vesta",
+      "brand": "LADA",
+      "folder": "/LADA_Vesta/"
+    },
+    {
+      "id": "lada_xray",
+      "name": "LADA XRAY",
+      "brand": "LADA",
+      "folder": "/LADA_XRAY/"
+    },
+    {
+      "id": "lada_4x4",
+      "name": "Lada 4x4",
+      "brand": "LADA",
+      "folder": "/Lada4x4/"
+    },
+    {
+      "id": "lada_samara",
+      "name": "LADA Samara",
+      "brand": "LADA",
+      "folder": "/Lada_Samara/"
+    }
+  ]
+}
