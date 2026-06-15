@@ -37,16 +37,33 @@ function initLazyScripts() {
   window.adsInitialized = false;
 
   setTimeout(() => {
-    // Инициализация Google Tag Manager & Яндекс.Метрики
+    // =========================================================================
+    // 📊 ИНИЦИАЛИЗАЦИЯ GOOGLE TAG MANAGER (ОТКАЗОУСТОЙЧИВАЯ СБОРКА)
+    // =========================================================================
     if (!window.gtmInitialized) {
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-PRQ33NW3');
+      // 1. Создаем и инициализируем массив dataLayer, если его еще нет
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+
+      // 2. Создаем тег скрипта для загрузки основного контейнера GTM
+      const gtmScript = document.createElement('script');
+      gtmScript.async = true;
+      // Явно прописываем ваш ID (GTM-PRQ33NW3) прямо в ссылку, чтобы не было сбоев
+      gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PRQ33NW3';
+      
+      // 3. Внедряем скрипт в документ
+      const firstScript = document.getElementsByTagName('script')[0];
+      if (firstScript && firstScript.parentNode) {
+        firstScript.parentNode.insertBefore(gtmScript, firstScript);
+      } else {
+        document.head.appendChild(gtmScript);
+      }
       
       window.gtmInitialized = true;
-      console.log('LazyLoad: GTM и Метрика успешно запущены.');
+      console.log('LazyLoad: GTM (GTM-PRQ33NW3) успешно запущен.');
     }
 
     // =========================================================================
