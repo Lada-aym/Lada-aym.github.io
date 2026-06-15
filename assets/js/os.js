@@ -4,77 +4,55 @@
 let osModelFolder = '/';
 let isGitHubPages = false;
 let cachedMenuData = null; 
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. Определяем окружение (Локальный сервер Android или GitHub Pages)
+  // 1. Сразу запускаем ленивую загрузку метрик и рекламы (НЕЗАВИСИМО от наличия меню)
+  initLazyScripts();
 
+  // 2. Определяем окружение (Локальный сервер Android или GitHub Pages)
   const startPath = window.location.pathname.toLowerCase();
-
   const pathSegments = window.location.pathname.split('/').filter(Boolean);
 
-  
-
   if (pathSegments.length > 0 && startPath.includes('/' + pathSegments[0].toLowerCase() + '/')) {
-
     osModelFolder = `/${pathSegments[0]}/`;
-
     isGitHubPages = true;
-
   } else {
-
     osModelFolder = '/';
-
     isGitHubPages = false;
-
   }
 
-  
-
   console.log("[OSApp] Окружение зафиксировано. Корень модели: " + osModelFolder + ", GitHub Pages: " + isGitHubPages);
-  // 2. Инициализируем модули ядра
-
+  
+  // 3. Инициализируем модули ядра (если элементы присутствуют на странице)
   initMobileMenu();
-
   initPWARouter();
-
-  initLazyScripts();
 });
+
 /* -------------------------------------------------------------------------
    ⏱️ ЛЕНИВАЯ ЗАГРУЗКА (Lazy Loading — Срабатывает строго через 5 секунд)
    ------------------------------------------------------------------------- */
 function initLazyScripts() {
-
   window.gtmInitialized = false;
-
   window.adsInitialized = false;
-  setTimeout(() => {
 
+  setTimeout(() => {
     // Инициализация Google Tag Manager & Яндекс.Метрики
     if (!window.gtmInitialized) {
-
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-
       })(window,document,'script','dataLayer','GTM-PRQ33NW3');
-
       
-
       window.gtmInitialized = true;
-
       console.log('LazyLoad: GTM и Метрика успешно запущены.');
-
     }
 
     // =========================================================================
     // 🌟 ПОДКЛЮЧЕНИЕ АВТОРАССТАНОВКИ ЯНДЕКСА (ID: 537370) С ЛЕНИВЫМ СТАРТОМ
     // =========================================================================
     if (!window.adsInitialized) {
-
       // 1. Подключаем базовый контекстный скрипт Яндекса
       const yandexContext = document.createElement('script');
       yandexContext.async = true;
@@ -89,14 +67,10 @@ function initLazyScripts() {
       document.head.appendChild(yandexLoader);
 
       window.adsInitialized = true;
-
       console.log('LazyLoad: Авторасстановка Яндекса 537370 успешно запущена.');
-
     }
     // =========================================================================
-
   }, 5000);
-
 }
 /* -------------------------------------------------------------------------
 
