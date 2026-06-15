@@ -1,0 +1,86 @@
+[
+  {
+    "title": "ВАШЕМУ ВНИМАНИЮ!",
+    "items": [
+      {"title": "Перед началом эксплуатации", "path": "introduction/pered-nachalom-ekspluatacii.html"},
+      {"title": "Обязанности владельца", "path": "introduction/obyazannosti-vladelca.html"}
+    ]
+  },
+  {
+    "title": "ОПИСАНИЕ АВТОМОБИЛЯ — I. Кузов и салон",
+    "items": [
+      {"title": "Ключи для автомобиля", "path": "body-and-interior/keys.html"},
+      {"title": "Двери", "path": "body-and-interior/doors.html"},
+      {"title": "Сиденья", "path": "body-and-interior/seats.html"},
+      {"title": "Ремни и подушка безопасности", "path": "body-and-interior/safety-belts.html"},
+      {"title": "Оборудование салона", "path": "body-and-interior/interior-equipment.html"},
+      {"title": "Капот", "path": "body-and-interior/hood.html"},
+      {"title": "Крышка багажника (дверь задка)", "path": "body-and-interior/trunk.html"},
+      {"title": "Пробка топливного бака", "path": "body-and-interior/fuel-cap.html"}
+    ]
+  },
+  {
+    "title": "ОПИСАНИЕ АВТОМОБИЛЯ — II. Органы управления и приборы",
+    "items": [
+      {"title": "Панель приборов", "path": "controls-and-instruments/dashboard.html"},
+      {"title": "Комбинация приборов", "path": "controls-and-instruments/instrument-cluster.html"},
+      {"title": "Выключатель зажигания", "path": "controls-and-instruments/ignition.html"},
+      {"title": "Электронная противоугонная система", "path": "controls-and-instruments/aps-4.html"},
+      {"title": "Подрулевые переключатели", "path": "controls-and-instruments/steering-switches.html"},
+      {"title": "Клавишные выключатели", "path": "controls-and-instruments/rocker-switches.html"},
+      {"title": "Бортовая система контроля", "path": "controls-and-instruments/onboard-monitoring.html"},
+      {"title": "Блок управления наружными зеркалами", "path": "controls-and-instruments/mirror-control.html"},
+      {"title": "Маршрутный компьютер", "path": "controls-and-instruments/trip-computer.html"},
+      {"title": "Органы управления вентиляцией и отоплением салона", "path": "controls-and-instruments/heating-control.html"}
+    ]
+  },
+  {
+    "title": "ЭКСПЛУАТАЦИЯ АВТОМОБИЛЯ",
+    "items": [
+      {"title": "Установка номерных знаков", "path": "car-operation/license-plates.html"},
+      {"title": "Основы безопасной эксплуатации автомобиля", "path": "car-operation/safety-basics.html"},
+      {"title": "Пуск двигателя", "path": "car-operation/engine-start.html"},
+      {"title": "Движение автомобиля", "path": "car-operation/driving.html"},
+      {"title": "Торможение и стоянка", "path": "car-operation/braking-and-parking.html"},
+      {"title": "Буксирование автомобиля", "path": "car-operation/towing.html"},
+      {"title": "Особенности эксплуатации системы впрыска топлива", "path": "car-operation/fuel-injection.html"}
+    ]
+  },
+  {
+    "title": "ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ И РЕМОНТ",
+    "items": [
+      {"title": "Система смазки двигателя", "path": "maintenance/lubrication-system.html"},
+      {"title": "Система охлаждения двигателя", "path": "maintenance/cooling-system.html"},
+      {"title": "Тормозная система", "path": "maintenance/braking-system.html"},
+      {"title": "Аккумуляторная батарея и ее зарядка", "path": "maintenance/battery-charge.html"},
+      {"title": "Омывающие жидкости", "path": "maintenance/washer-fluids.html"},
+      {"title": "Свечи зажигания", "path": "maintenance/spark-plugs.html"},
+      {"title": "Шины", "path": "maintenance/tires.html"},
+      {"title": "Замена колес", "path": "maintenance/wheel-change.html"},
+      {"title": "Замена плавких предохранителей", "path": "maintenance/fuse-replacement.html"},
+      {"title": "Замена ламп", "path": "maintenance/lamp-replacement.html"},
+      {"title": "Кузов", "path": "maintenance/body.html"},
+      {"title": "Хранение автомобиля", "path": "maintenance/storage.html"}
+    ]
+  },
+  {
+    "title": "ТЕХНИЧЕСКАЯ ХАРАКТЕРИСТИКА АВТОМОБИЛЯ",
+    "items": [
+      {"title": "Основные параметры и размеры", "path": "specifications/dimensions.html"},
+      {"title": "Основные параметры и характеристики двигателя", "path": "specifications/engine-specs.html"},
+      {"title": "Топливоскоростные характеристики автомобиля", "path": "specifications/performance.html"},
+      {"title": "Номинальные значения заправочных объемов", "path": "specifications/capacities.html"},
+      {"title": "Основные регулировочные и контрольные параметры", "path": "specifications/settings.html"},
+      {"title": "Паспортные данные", "path": "specifications/vehicle-id.html"}
+    ]
+  },
+  {
+  "title": "ПРИЛОЖЕНИЯ",
+  "items": [
+    {"title": "1. Рекомендуемые горюче-смазочные материалы", "path": "appendices/recommended-fluids.html"},
+    {"title": "2. Лампы, применяемые на автомобиле", "path": "appendices/lamps-list.html"},
+    {"title": "3. Изделия, содержащие драгоценные металлы", "path": "appendices/precious-metals.html"},
+    {"title": "4. Возможные неисправности и методы их устранения", "path": "appendices/troubleshooting.html"}
+  ]
+}
+]
