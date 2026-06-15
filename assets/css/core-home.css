@@ -1,0 +1,268 @@
+/* =========================================================================
+   🚗 OSApp CORE HOME STYLE SHEET — PC WIDE OVERHAUL + GLOBAL SEARCH
+   ========================================================================= */
+
+body {
+  background-color: var(--os-bg) !important;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  height: 100vh !important;
+  overflow-y: auto !important;
+}
+
+/* 🔥 ШИРОКИЙ КОНТЕЙНЕР ДЛЯ ПК БАЗЫ */
+.core-home-container {
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto;
+  padding: 24px 16px;
+  box-sizing: border-box;
+}
+
+/* ГЕРОЙСКИЙ БАННЕР С ФОНОМ */
+.core-hero {
+  position: relative;
+  width: 100%;
+  min-height: 180px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 1px solid var(--os-border);
+  display: flex;
+  align-items: flex-end;
+  background-image: url('/assets/img/hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+.core-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.2) 100%);
+  z-index: 1;
+}
+
+.core-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.core-hero h1 {
+  font-size: 26px !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  margin: 0 0 8px 0 !important;
+  letter-spacing: -0.01em;
+}
+
+.core-hero p {
+  margin: 0 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+  font-weight: 400;
+  max-width: 700px;
+}
+
+.core-badge {
+  display: inline-block;
+  background: var(--os-accent);
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+
+/* ПОЛЕ ОБЩЕГО ПОИСКА (КНОПКА-ШЛЮЗ ДЛЯ КЛИКА) */
+.core-search-trigger {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: var(--os-surface);
+  border: 1px solid var(--os-border);
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+  cursor: pointer; /* Показываем, что блок кликабелен */
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.core-search-trigger:hover {
+  border-color: var(--os-accent);
+  background: var(--os-surface-hover, var(--os-surface));
+}
+
+.core-search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--os-sub);
+  width: 20px;
+  height: 20px;
+  margin-right: 14px;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.core-search-trigger:hover .core-search-icon {
+  color: var(--os-accent);
+}
+
+.core-search-icon svg { 
+  width: 100%; 
+  height: 100%; 
+}
+
+.core-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--os-text);
+  padding: 0;
+  cursor: pointer; /* Наследуем указатель */
+  pointer-events: none; /* Защищает от ручного фокуса мобильной клавиатуры до открытия оверлея */
+}
+
+/* СЕТКА ПО УМОЛЧАНИЮ (ДЛЯ ДЕСКТОПОВ И ПЛАНШЕТОВ — ШИРОКАЯ И СВОБОДНАЯ) */
+.core-cars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 16px;
+}
+
+/* КАРТОЧКА АВТОМОБИЛЯ / ЭЛЕМЕНТ ВЫДАЧИ */
+.car-card, .search-result-item {
+  background: var(--os-surface);
+  border: 1px solid var(--os-border);
+  border-radius: 14px;
+  padding: 18px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  min-height: 125px;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.1s ease, background-color 0.2s;
+}
+
+.car-card:active, .search-result-item:active {
+  background: var(--os-surface-hover);
+  transform: scale(0.99);
+}
+
+.car-info {
+  flex: 1;
+}
+
+.car-brand {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--os-accent);
+  margin-bottom: 4px;
+  letter-spacing: 0.04em;
+}
+
+.car-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--os-text);
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
+
+.car-action {
+  font-size: 13px;
+  color: var(--os-sub);
+  font-weight: 600;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.car-arrow {
+  font-size: 16px;
+  color: var(--os-accent);
+  transition: transform 0.2s;
+}
+
+/* ХОВЕРЫ ДЛЯ КОМПЬЮТЕРОВ */
+@media (min-width: 1024px) {
+  .core-hero { min-height: 240px; }
+  .core-hero h1 { font-size: 32px !important; }
+  
+  .car-card:hover, .search-result-item:hover {
+    border-color: var(--os-accent);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+    background: var(--os-surface-hover, var(--os-surface));
+  }
+  .car-card:hover .car-arrow, .search-result-item:hover .car-arrow {
+    transform: translateX(4px);
+  }
+}
+
+/* 🔥 ЖЕСТКИЙ ПЕРЕХОД НА 2 КАРТОЧКИ В РЯД ДЛЯ СМАРТФОНОВ */
+@media (max-width: 767px) {
+  .core-home-container {
+    padding: 16px 12px;
+  }
+  
+  .core-hero { min-height: 170px; margin-bottom: 14px; }
+  .core-hero-content { padding: 16px; }
+  .core-hero h1 { font-size: 22px !important; }
+  .core-hero p { font-size: 12px !important; }
+  
+  .core-search-trigger { padding: 12px 14px; margin-bottom: 16px; border-radius: 12px; }
+  .core-search-input { font-size: 14px; }
+  
+  /* Перестраиваем сетку строго на 2 колонки */
+  .core-cars-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
+  }
+  
+  .car-card, .search-result-item {
+    padding: 12px;
+    min-height: 100px;
+    border-radius: 12px;
+  }
+  .car-brand { font-size: 9px; }
+  .car-title { font-size: 13px; margin-bottom: 6px; }
+  .car-action { font-size: 11px; }
+  .car-arrow { font-size: 12px; }
+}
+
+/* СЕРВИСНЫЕ СТИЛИ */
+.core-loading {
+  color: var(--os-sub); 
+  padding: 40px; 
+  grid-column: 1 / -1; 
+  text-align: center; 
+  font-size: 14px;
+}
+
+.core-error {
+  color: var(--os-accent); 
+  background: var(--os-accent-transparent); 
+  border: 1px dashed var(--os-accent);
+  padding: 20px; 
+  border-radius: 12px; 
+  grid-column: 1 / -1; 
+  text-align: center; 
+  font-size: 13px; 
+  font-weight: 700;
+}
