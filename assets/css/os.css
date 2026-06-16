@@ -1,1288 +1,676 @@
 /* =========================================================================
-   🚗 OSApp SYSTEM PRODUCTION MONOLITH CSS — ALL FEATURES + FIXES COMPLETE
+   📦 OSApp CORE SYSTEM — GLOBAL PRODUCTION MONOLITH JAVASCRIPT
    ========================================================================= */
+let osModelFolder = '/';
+let isGitHubPages = false;
+let cachedMenuData = null; 
 
-/* ☀️ СВЕТЛАЯ ТЕМА (ПО УМОЛЧАНИЮ ДЛЯ СИСТЕМЫ) */
-:root {
-  --os-bg: #f4f4f6;                  /* Светлый фон страницы */
-  --os-surface: #ffffff;             /* Белые плашки (шапка, сайдбар, карточки) */
-  --os-surface-hover: #eaeaea;       /* Цвет при клике/наведении */
-  --os-border: rgba(0, 0, 0, 0.08);  /* Темная тонкая граница */
-  --os-text: #1c1c1e;                /* Почти черный text для читаемости */
-  --os-sub: #636366;                 /* Серый вспомогательный текст */
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Сразу запускаем ленивую загрузку сквозных метрик и рекламы (через 5 секунд)
+  initLazyScripts();
+
+  // 2. Определяем окружение (Локальный сервер Android или GitHub Pages)
+  const startPath = window.location.pathname.toLowerCase();
+  const pathSegments = window.location.pathname.split('/').filter(Boolean);
   
-  --os-accent: #d93025;              /* Фирменный красный акцент */
-  --os-accent-transparent: rgba(217, 48, 37, 0.08); /* Фон активных ссылок */
-  
-  --os-info: #2563eb;
-  --os-warning: #f39c12;
-  
-  --os-header-height: 56px;
-  --os-nav-height: 62px;
+  if (pathSegments.length > 0 && startPath.includes('/' + pathSegments[0].toLowerCase() + '/')) {
+    osModelFolder = `/${pathSegments[0]}/`;
+    isGitHubPages = true;
+  } else {
+    osModelFolder = '/';
+    isGitHubPages = false;
+  }
+  console.log("[OSApp] Окружение зафиксировано. Корень модели: " + osModelFolder + ", GitHub Pages: " + isGitHubPages);
+
+  // 3. Инициализируем модули ядра
+  initMobileMenu();
+  initPWARouter();
+});
+
+/* -------------------------------------------------------------------------
+   ⏱️ ЛЕНИВАЯ ЗАГРУЗКА (Lazy Loading — Срабатывает строго через 5 секунд)
+   ------------------------------------------------------------------------- */
+function initLazyScripts() {
+  window.gtmInitialized = false;
+  window.adsInitialized = false;
+
+  setTimeout(() => {
+    // =========================================================================
+    // 📊 ИНИЦИАЛИЗАЦИЯ GOOGLE TAG MANAGER
+    // =========================================================================
+    if (!window.gtmInitialized) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+
+      const gtmScript = document.createElement('script');
+      gtmScript.async = true;
+      gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PRQ33NW3';
+      
+      const firstScript = document.getElementsByTagName('script')[0];
+      if (firstScript && firstScript.parentNode) {
+        firstScript.parentNode.insertBefore(gtmScript, firstScript);
+      } else {
+        document.head.appendChild(gtmScript);
+      }
+      window.gtmInitialized = true;
+      console.log('LazyLoad: GTM успешно запущен.');
+    }
+
+    // =========================================================================
+    // 🌟 ПОДКЛЮЧЕНИЕ РЕАЛЬНЫХ ФИКСИРОВАННЫХ БЛОКОВ РСЯ (БЕЗ AUTO-PLACEMENT)
+    // =========================================================================
+    if (!window.adsInitialized) {
+      window.yaContextCb = window.yaContextCb || [];
+
+      if (!document.getElementById('yandex-context-script')) {
+        const yandexContext = document.createElement('script');
+        yandexContext.id = 'yandex-context-script';
+        yandexContext.async = true;
+        yandexContext.src = "https://yandex.ru/ads/system/context.js";
+        
+        yandexContext.onload = () => {
+          console.log('[OSApp РСЯ] Базовый контекст загружен. Запускаем первый рендер рекламы...');
+          window.adsInitialized = true;
+          
+          renderGlobalAds();
+          initInImageAds();
+        };
+        document.head.appendChild(yandexContext);
+      } else {
+        window.adsInitialized = true;
+        renderGlobalAds();
+        initInImageAds();
+      }
+    }
+  }, 5000);
 }
 
-/* 🌙 ТЁМНАЯ ТЕМА (ВКЛЮЧАЕТСЯ АВТОМАТИЧЕСКИ В НАСТРОЙКАХ УСТРОЙСТВА) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --os-bg: #121214;                /* Глубокий тёмный фон */
-    --os-surface: #1e1e24;           /* Тёмно-серые плашки */
-    --os-surface-hover: #2a2a32;     /* Цвет при клике в тёмной теме */
-    --os-border: rgba(255, 255, 255, 0.08); /* Светлая тонкая граница */
-    --os-text: #ffffff;              /* Белый текст */
-    --os-sub: #a0a0aa;               /* Светло-серый текст */
+/* -------------------------------------------------------------------------
+   🚀 ПЕРЕЗАПУСК СКВОЗНЫХ БЛОКОВ РСЯ (FloorAd и Fullscreen) ПРИ СМЕНЕ СТРАНИЦ
+   ------------------------------------------------------------------------- */
+function renderGlobalAds() {
+  if (!window.Ya || !window.Ya.Context) return;
+
+  console.log('[OSApp РСЯ] Перезапуск сквозных форматов для текущего URL...');
+
+  window.yaContextCb.push(() => {
+    // 1. FloorAd для мобильных
+    Ya.Context.AdvManager.render({ "blockId": "R-A-537370-36", "type": "floorAd", "platform": "touch" });
+    // 2. FloorAd для ПК
+    Ya.Context.AdvManager.render({ "blockId": "R-A-537370-44", "type": "floorAd", "platform": "desktop" });
+    // 3. Fullscreen для мобильных
+    Ya.Context.AdvManager.render({ "blockId": "R-A-537370-35", "type": "fullscreen", "platform": "touch" });
+    // 4. Fullscreen для ПК
+    Ya.Context.AdvManager.render({ "blockId": "R-A-537370-43", "type": "fullscreen", "platform": "desktop" });
+  });
+}
+
+/* -------------------------------------------------------------------------
+   🖼️ СИСТЕМА ИНТЕГРАЦИИ РЕКЛАМЫ В ИЗОБРАЖЕНИЯ (InImage Блок: R-A-537370-42)
+   ------------------------------------------------------------------------- */
+function initInImageAds() {
+  if (!window.Ya || !window.Ya.Context) return;
+
+  const render = (imageId) => {
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        "renderTo": imageId,
+        "blockId": "R-A-537370-42",
+        "type": "inImage"
+      });
+    });
+  };
+
+  const renderInImage = (images) => {
+    if (!images.length) return;
+    const image = images.shift();
+
+    if (image.id && image.id.startsWith('yandex_rtb_R-A-537370-42-')) {
+      renderInImage(images);
+      return;
+    }
+
+    if (image.hasAttribute('loading') && image.getAttribute('loading') === 'lazy') {
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`;
+            render(image.id);
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+      observer.observe(image);
+    } else {
+      image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`;
+      if (image.tagName === "IMG" && !image.complete) {
+        image.addEventListener("load", () => {
+          render(image.id);
+        }, { once: true });
+      } else {
+        render(image.id);
+      }
+    }
+    renderInImage(images);
+  };
+
+  const stage = document.getElementById('appMainStage');
+  if (stage) {
+    renderInImage(Array.from(stage.querySelectorAll("img")));
+  }
+}
+
+/* -------------------------------------------------------------------------
+   1. УПРАВЛЕНИЕ МОБИЛЬНЫМ МЕНЮ (БУРГЕР, ШТОРКА И ОВЕРЛЕЙ)
+   ------------------------------------------------------------------------- */
+function initMobileMenu() {
+  const burgerBtn = document.getElementById('menuToggleBtn');
+  const sidebar = document.getElementById('appSidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+
+  if (!burgerBtn || !sidebar || !overlay) return;
+
+  burgerBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    burgerBtn.classList.toggle('open');
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('active');
+    document.body.classList.toggle('os-lock');
+  });
+
+  overlay.addEventListener('click', () => {
+    burgerBtn.classList.remove('open');
+    sidebar.classList.remove('open');
+    overlay.classList.remove('active');
+    document.body.classList.remove('os-lock');
+  });
+
+  sidebar.addEventListener('click', (e) => {
+    if (e.target.closest('a')) {
+      burgerBtn.classList.remove('open');
+      sidebar.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.classList.remove('os-lock');
+    }
+  });
+}
+
+/* -------------------------------------------------------------------------
+   2. SPA-РОУТЕР, АВТО-ШАПКА И ДИНАМИЧЕСКАЯ СБОРКА КАРКАСА ИЗ JSON
+   ------------------------------------------------------------------------- */
+function initPWARouter() {
+  const accordionMenu = document.getElementById('accordionMenu');
+  const headerTitleContainer = document.getElementById('headerModelTitle');
+
+  if (!accordionMenu) return;
+
+  function ensureAbsolute(path) {
+    let clean = ('/' + osModelFolder + '/' + path).replace(/\/+/g, '/');
+    const segments = window.location.pathname.split('/').filter(Boolean);
     
-    --os-accent: #ff4d4d;            /* Яркий красный контрастный цвет */
-    --os-accent-transparent: rgba(255, 77, 77, 0.15);
+    if (!isGitHubPages && segments.length > 0 && clean.toLowerCase().startsWith('/' + segments[0].toLowerCase() + '/')) {
+      clean = clean.replace(new RegExp('^\\/' + segments[0], 'i'), '').replace(/\/+/g, '/');
+    }
+    return clean;
+  }
+
+  const pathSegments = window.location.pathname.split('/').filter(Boolean);
+  const currentFolderFromUrl = pathSegments.length > 0 ? pathSegments[0].toLowerCase() : '';
+
+  fetch('/assets/data/site-data.json')
+    .then(res => res.ok ? res.json() : null)
+    .then(siteData => {
+      if (!siteData || !siteData.models) return;
+      
+      const currentModel = siteData.models.find(m => m.folder.toLowerCase().includes(currentFolderFromUrl));
+      
+      if (currentModel && headerTitleContainer) {
+        headerTitleContainer.textContent = currentModel.name;
+        const currentPath = window.location.pathname.toLowerCase().replace(/\/+/g, '/');
+        const modelFolderClean = osModelFolder.toLowerCase().replace(/\/+/g, '/');
+        if (currentPath === modelFolderClean || currentPath === '/' || currentPath === '/index.html') {
+          renderModelHome();
+        }
+      }
+    })
+    .catch(err => console.warn('Предупреждение чтения site-data.json:', err));
+
+  const menuJsonUrl = ensureAbsolute('assets/data/menu.json');
+  
+  fetch(menuJsonUrl)
+    .then(response => {
+      if (!response.ok) throw new Error('Не найден menu.json');
+      return response.json();
+    })
+    .then(menuData => {
+      cachedMenuData = menuData;
+      let menuHtml = '';
+
+      menuData.forEach((section, sIdx) => {
+        const sectionTitle = section.title || `Раздел ${sIdx + 1}`;
+        menuHtml += `
+          <div class="sidebar-item" data-index="${sIdx}">
+            <button class="sidebar-toggle">${sectionTitle}</button>
+            <div class="sidebar-content">
+        `;
+        if (section.items && section.items.length > 0) {
+          section.items.forEach(item => {
+            const webPath = ('/' + osModelFolder + '/' + item.path).replace(/\/+/g, '/');
+            menuHtml += `<a href="${webPath}">${item.title}</a>`;
+          });
+        }
+        menuHtml += `
+            </div>
+          </div>
+        `;
+      });
+
+      accordionMenu.innerHTML = menuHtml;
+      initAccordionLogic();
+      bindSPALinks();
+      routeCurrentPath();
+    })
+    .catch(error => {
+      console.error('Критическая ошибка построения меню:', error);
+      accordionMenu.innerHTML = `<div style="color:#ff4d4d; padding:16px; font-size:12px;">Ошибка карты мануала</div>`;
+    });
+
+  function initAccordionLogic() {
+    const toggles = accordionMenu.querySelectorAll('.sidebar-toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const currentItem = toggle.closest('.sidebar-item');
+        const isActive = currentItem.classList.contains('active');
+
+        accordionMenu.querySelectorAll('.sidebar-item').forEach(item => {
+          item.classList.remove('active');
+        });
+
+        if (!isActive) {
+          currentItem.classList.add('active');
+        }
+      });
+    });
+  }
+
+  function bindSPALinks() {
+    document.body.addEventListener('click', (e) => {
+      const targetLink = e.target.closest('a');
+      if (!targetLink) return;
+
+      const href = targetLink.getAttribute('href');
+      if (!href || href.startsWith('http') || href.startsWith('#')) return;
+
+      const cleanHref = href.toLowerCase().trim();
+      const linkText = targetLink.textContent.toLowerCase().trim();
+      
+      if (
+        cleanHref === '/' || 
+        cleanHref === '/index.html' || 
+        cleanHref.startsWith('/?') || 
+        cleanHref.includes('garage') ||
+        linkText === 'главная' || 
+        targetLink.classList.contains('sidebar-back-btn')
+      ) {
+        return; 
+      }
+
+      e.preventDefault();
+      loadPage(href);
+      history.pushState({ path: href }, '', href);
+    });
+  }
+
+  function renderModelHome() {
+    const mainStage = document.getElementById('appMainStage');
+    if (!mainStage || !cachedMenuData) return;
+
+    let gridHtml = '';
+    cachedMenuData.forEach((section, index) => {
+      const sectionTitle = section.title || `Раздел ${index + 1}`;
+      const itemsCount = section.items ? section.items.length : 0;
+      const firstItemPath = itemsCount > 0 ? ('/' + osModelFolder + '/' + section.items[0].path).replace(/\/+/g, '/') : '#';
+
+      let titleFontSize = '15px';
+      let badgeFontSize = '10px';
+      let infoFontSize = '11px';
+
+      if (sectionTitle.length > 55) {
+        titleFontSize = '13px'; badgeFontSize = '9px'; infoFontSize = '10px';
+      } else if (sectionTitle.length > 38) {
+        titleFontSize = '14px';
+      }
+
+      gridHtml += `
+        <a href="${firstItemPath}" class="car-card section-card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 125px; padding: 14px; text-decoration: none; box-sizing: border-box;">
+          <div style="flex: 1;">
+            <div style="font-size: ${badgeFontSize}; text-transform: uppercase; color: var(--os-accent); font-weight: 700; margin-bottom: 4px; letter-spacing: 0.03em;">
+              Раздел ${index + 1}
+            </div>
+            <h2 style="font-size: ${titleFontSize}; font-weight: 700; color: var(--os-text); margin: 0 0 6px 0; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+              ${sectionTitle}
+            </h2> 
+          </div>
+          <div style="font-size: ${infoFontSize}; color: var(--os-sub); font-weight: 500; display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 4px;">
+            <span>Статей: ${itemsCount}</span>
+            <span style="color: var(--os-accent); font-weight: bold; font-size: 14px;">→</span>
+          </div>
+        </a>
+      `;
+    });
+
+    const modelName = headerTitleContainer && headerTitleContainer.textContent ? headerTitleContainer.textContent : 'Руководство';
+    mainStage.innerHTML = `
+      <div class="section-home-main">
+        <div class="section-hero-pwa">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <span class="section-badge">Interactive Manual</span>
+            <h1 class="hero-title">${modelName}</h1>
+            <p class="hero-subtitle">Полное интерактивное руководство по эксплуатации, техническому обслуживанию и ремонту автомобиля.</p>
+          </div>
+        </div>
+        <div class="section-grid" id="modelSectionsGrid">
+          ${gridHtml}
+        </div>
+      </div>
+    `;
+
+    document.title = `${modelName} — Бортовое Руководство`;
+    highlightActiveLink(window.location.pathname);
+
+    if (window.OSSearch && typeof window.OSSearch.init === 'function') {
+      window.OSSearch.init();
+    }
+  }
+
+  function routeCurrentPath() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetPage = urlParams.get('page');
+
+    if (targetPage) {
+      console.log("[OSApp Router] Переход по прямой ссылке. Загружаю:", targetPage);
+      window.history.replaceState({}, '', targetPage);
+      loadPage(targetPage);
+      return;
+    }
+
+    const currentPath = window.location.pathname.toLowerCase().replace(/\/+/g, '/');
+    const modelFolderClean = osModelFolder.toLowerCase().replace(/\/+/g, '/');
     
-    --os-info: #60a5fa;              /* Облегченный синий для темной темы */
-    --os-warning: #fbbf24;           /* Чистый желтый для темной темы */
+    const isHome = currentPath === modelFolderClean || 
+                   currentPath === `${modelFolderClean}index.html` || 
+                   currentPath === '/' || 
+                   currentPath === '/index.html';
+
+    if (isHome) {
+      renderModelHome();
+    } else {
+      loadPage(window.location.pathname);
+    }
   }
+
+  window.addEventListener('popstate', routeCurrentPath);
+  window.routeCurrentPath = routeCurrentPath;
 }
 
 /* -------------------------------------------------------------------------
-   1. СБРОС СТИЛЕЙ И ЖЕСТКАЯ БЛОКИРОВКА ОКНА БРАУЗЕРА
+   3. АСИНХРОННАЯ ЗАГРУЗКА, АВТО-СКРОЛЛ И ОБНОВЛЕНИЕ SEO-МЕТАДАННЫХ СТАТЬИ
    ------------------------------------------------------------------------- */
-* {
-  box-sizing: border-box;
-}
+async function loadPage(url) {
+  const mainStage = document.getElementById('appMainStage');
+  if (!mainStage) return;
 
-html, body {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: var(--os-bg);
-  color: var(--os-text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  
-  /* 🔒 БЛОКИРОВКА СКРОЛЛА ОКНА БРАУЗЕРА ДЛЯ PWA */
-  height: 100vh !important;
-  overflow: hidden !important; 
-  position: relative;
-}
+  let cleanUrl = url.replace(/\/+/g, '/');
+  let fetchUrl = cleanUrl;
+  const segments = window.location.pathname.split('/').filter(Boolean);
 
-/* Переключатель блокировки из JS */
-body.os-lock {
-  overflow: hidden !important;
-}
-
-/* Глобальный запрет на выделение элементов UI (интерфейса) */
-.site-header, .sidebar, .bottom-nav, .search-card-trigger, .burger-btn, .sidebar-toggle, .bottom-nav-item {
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* -------------------------------------------------------------------------
-   2. СТРУКТУРА ИНТЕРФЕЙСА (LAYOUT В СТИЛЕ ПРИЛОЖЕНИЯ)
-   ------------------------------------------------------------------------- */
-.app-layout {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-}
-
-/* ФИКСИРОВАННАЯ ШАПКА */
-.site-header {
-  position: fixed;
-  top: 0; 
-  left: 0; 
-  width: 100%;
-  height: var(--os-header-height);
-  background: var(--os-surface);
-  border-bottom: 1px solid var(--os-border);
-  z-index: 3000;
-}
-
-.header-container {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 16px;
-  gap: 16px;
-}
-
-.site-logo {
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--os-text);
-  text-transform: uppercase;
-}
-
-/* КНОПКА БУРГЕРА С ПЛАВНОЙ АНИМАЦИЕЙ В КРЕСТИК */
-.burger-btn {
-  background: transparent;
-  border: none;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  position: relative;
-  gap: 5px;
-}
-
-.burger-btn span {
-  display: block;
-  width: 20px;
-  height: 2px;
-  background: var(--os-text);
-  border-radius: 2px;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, background-color 0.3s ease;
-  transform-origin: center;
-}
-
-.burger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); background-color: var(--os-accent); }
-.burger-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.burger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); background-color: var(--os-accent); }
-
-/* 🔥 ГАРАНТИЯ СКРОЛЛА: ЦЕНТРАЛЬНАЯ СЦЕНА И СЦЕНА СТАТЬИ */
-.app-content, #appMainStage {
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  overflow-y: auto !important;
-  -webkit-overflow-scrolling: touch !important;
-}
-
-.app-content {
-  padding-top: calc(var(--os-header-height) + 16px);
-  padding-bottom: calc(var(--os-nav-height) + 20px);
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-/* НИЖНИЙ ТАБ-БАР */
-.bottom-nav {
-  position: fixed;
-  bottom: 0; left: 0; width: 100%;
-  height: var(--os-nav-height);
-  background: var(--os-surface);
-  border-top: 1px solid var(--os-border);
-  display: flex;
-  z-index: 1000;
-}
-
-.bottom-nav-item {
-  flex: 1;
-  background: transparent;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--os-sub);
-  font-size: 11px;
-  font-weight: 600;
-  gap: 4px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.bottom-nav-item svg { width: 20px; height: 20px; stroke: currentColor; fill: none; }
-.bottom-nav-item.is-active, .bottom-nav-item:active { color: var(--os-accent); }
-
-/* -------------------------------------------------------------------------
-   3. МОБИЛЬНЫЙ САЙДБАР-АККОРДЕОН (МЕНЮ)
-   ------------------------------------------------------------------------- */
-.sidebar-overlay {
-  position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1899;
-  display: none;
-}
-.sidebar-overlay.active { display: block; }
-
-.sidebar {
-  position: fixed;
-  background: var(--os-surface);
-  border-right: 1px solid var(--os-border);
-  z-index: 2500;
-  width: 290px;
-  transform: translateX(-100%);
-  transition: transform 0.25s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  top: var(--os-header-height) !important;
-  bottom: 0 !important;
-  height: calc(100vh - var(--os-header-height)) !important;
-  overflow: hidden !important;
-}
-.sidebar.open { transform: translateX(0) !important; }
-
-.sidebar-header-title {
-  padding: 16px 20px 8px 20px;
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--os-sub);
-  opacity: 0.8;
-  text-align: center;
-}
-
-.sidebar-back-btn {
-  display: none;
-  align-items: center;
-  padding: 14px 20px;
-  background: transparent;
-  color: var(--os-sub);
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  border-bottom: 1px solid var(--os-border);
-  transition: background 0.2s, color 0.2s;
-  gap: 10px;
-}
-.sidebar-back-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; transition: transform 0.2s; }
-.sidebar-back-btn:hover { background: var(--os-surface-hover); color: var(--os-accent); }
-.sidebar-back-btn:hover svg { transform: translateX(-3px); }
-
-.sidebar-nav {
-  flex: 1;
-  height: 100%;
-  overflow-y: auto !important;
-  -webkit-overflow-scrolling: touch !important;
-  padding-bottom: 40px; 
-}
-
-.sidebar-content {
-  max-height: 0;
-  overflow: hidden;
-  background: rgba(0, 0, 0, 0.02);
-  transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.sidebar-item.active .sidebar-content { max-height: 1200px; }
-
-.sidebar-toggle {
-  width: 100%; padding: 16px 20px; background: transparent;
-  border: none; border-bottom: 1px solid var(--os-border);
-  color: var(--os-text); text-align: left; font-weight: 700; font-size: 14px;
-  cursor: pointer; display: flex; justify-content: space-between; align-items: center;
-}
-.sidebar-toggle::after { content: '▼'; font-size: 10px; color: var(--os-sub); transition: transform 0.2s; }
-.sidebar-item.active .sidebar-toggle::after { transform: rotate(180deg); color: var(--os-accent); }
-
-.sidebar-content a {
-  display: block; padding: 12px 20px 12px 30px;
-  color: var(--os-sub); text-decoration: none; font-size: 13px; font-weight: 500;
-  border-bottom: 1px solid var(--os-border);
-  transition: background 0.15s, color 0.15s;
-}
-.sidebar-content a:active { background: var(--os-surface-hover); }
-.sidebar-content a.active { color: var(--os-text); background: var(--os-accent-transparent); font-weight: 700; }
-
-/* -------------------------------------------------------------------------
-   4. ГЛАВНАЯ СТРАНИЦА ВИТРИНЫ (КОРЕНЬ САЙТА С МАШИНАМИ)
-   ------------------------------------------------------------------------- */
-.core-home-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 16px; }
-.core-hero { background: var(--os-surface); border: 1px solid var(--os-border); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
-.core-badge { display: inline-block; background: var(--os-accent-transparent); color: var(--os-accent); padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
-.core-cars-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
-
-/* -------------------------------------------------------------------------
-   5. ВНУТРЕННЯЯ ГЛАВНАЯ СТРАНИЦА МОДЕЛИ (HERO + ПОИСК + СЕТКА 2 В РЯД)
-   ------------------------------------------------------------------------- */
-.section-home-main { width: 100%; max-width: 800px; margin: 0 auto; }
-.section-hero-pwa {
-  position: relative; width: 100%; min-height: 180px; border-radius: 16px; margin-bottom: 16px; overflow: hidden; border: 1px solid var(--os-border); display: flex; align-items: flex-end;
-  background-image: url('/assets/img/hero.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;
-}
-.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.2) 100%); z-index: 1; }
-.hero-content { position: relative; z-index: 2; padding: 20px; width: 100%; }
-.section-badge { display: inline-block; background: var(--os-accent); color: #ffffff; padding: 4px 10px; border-radius: 50px; font-size: 10px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.05em; }
-.hero-title { margin: 0 0 6px 0 !important; font-size: 24px !important; font-weight: 900 !important; color: #ffffff !important; letter-spacing: 0.02em; }
-.hero-subtitle { margin: 0 !important; color: rgba(255, 255, 255, 0.8) !important; font-size: 13px !important; line-height: 1.4 !important; font-weight: 400; }
-
-/* ИНТЕРАКТИВНАЯ КАРТОЧКА ПОИСКА */
-.search-card-trigger { display: flex; align-items: center; width: 100%; background: var(--os-surface); border: 1px solid var(--os-border); border-radius: 12px; padding: 14px 16px; margin-bottom: 20px; cursor: pointer; transition: background 0.15s ease, transform 0.1s ease; }
-.search-card-trigger:active { background: var(--os-surface-hover); transform: scale(0.99); }
-.search-card-icon { display: flex; align-items: center; justify-content: center; color: var(--os-sub); width: 20px; height: 20px; margin-right: 12px; flex-shrink: 0; }
-.search-card-icon svg { width: 100%; height: 100%; }
-.search-card-placeholder { color: var(--os-sub); font-size: 14px; font-weight: 500; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.search-card-badge { background: var(--os-accent-transparent); color: var(--os-accent); padding: 6px 14px; border-radius: 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.02em; transition: background 0.2s; }
-.search-card-trigger:active .search-card-badge { background: var(--os-accent); color: #ffffff; }
-
-/* СЕТКА КАРТОЧЕК */
-.section-grid { display: grid; grid-template-columns: repeat(2, 1fr) !important; gap: 12px; }
-.section-card { background: var(--os-surface); border: 1px solid var(--os-border); border-radius: 12px; transition: background 0.2s; text-decoration: none; }
-.section-card:active { background: var(--os-surface-hover); }
-
-/* -------------------------------------------------------------------------
-   6. ОФОРМЛЕНИЕ СТАТЕЙ (АДАПТИВНЫЕ ЦВЕТА И ПРИНУДИТЕЛЬНОЕ ВЫДЕЛЕНИЕ)
-   ------------------------------------------------------------------------- */
-.os-main, .os-main p, .os-main td, .os-main th, .os-main li, .os-main h1, .os-main h2, .os-main strong, .os-note, .os-main span {
-  -webkit-user-select: text !important;
-  -moz-user-select: text !important;
-  -ms-user-select: text !important;
-  user-select: text !important;
-  cursor: text;
-}
-.os-main {
-  width: 100%; max-width: 800px; margin: 0 auto; line-height: 1.6; font-size: 16px; color: var(--os-text);
-  padding-bottom: 60px;
-}
-.os-main h1 { font-size: 24px; font-weight: 800; margin-top: 0; margin-bottom: 16px; line-height: 1.2; color: var(--os-text); }
-.os-main h2 { font-size: 18px; font-weight: 700; margin-top: 28px; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--os-border); color: var(--os-text); }
-.os-main p { margin: 0 0 16px 0; color: var(--os-text); opacity: 0.9; font-size: 15.5px; }
-
-/* ГАРАЖНЫЕ ПРИМЕЧАНИЯ */
-.os-note {
-  background: var(--os-surface); border-left: 4px solid var(--os-accent); padding: 14px 16px; border-radius: 8px; margin: 22px 0;
-  border-top: 1px solid var(--os-border); border-right: 1px solid var(--os-border); border-bottom: 1px solid var(--os-border);
-}
-.os-note strong { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--os-accent); }
-.os-note p { margin: 0; font-size: 14px; line-height: 1.45; color: var(--os-text); }
-
-/* ГАРАЖНЫЕ ТАБЛИЦЫ */
-.os-main table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--os-surface); border-radius: 8px; overflow: hidden; border: 1px solid var(--os-border); }
-.os-main th { background: var(--os-surface-hover); padding: 12px; font-weight: 700; text-align: left; font-size: 14px; color: var(--os-text); }
-.os-main td { padding: 12px; border-top: 1px solid var(--os-border); font-size: 14px; color: var(--os-text); }
-
-/* БЛОКИ УВЕДОМЛЕНИЙ */
-.os-notice-block {
-  background: var(--os-surface); padding: 14px 16px; border-radius: 8px; margin: 20px 0;
-  border-top: 1px solid var(--os-border); border-right: 1px solid var(--os-border); border-bottom: 1px solid var(--os-border);
-}
-.os-notice-block .notice-title { display: block; margin-bottom: 4px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
-.os-notice-block .notice-text { font-size: 14px; line-height: 1.4; color: var(--os-text); opacity: 0.95; }
-
-.os-notice-block.accent { border-left: 4px solid var(--os-accent); }
-.os-notice-block.accent .notice-title { color: var(--os-accent); }
-.os-notice-block.info { border-left: 4px solid var(--os-info); }
-.os-notice-block.info .notice-title { color: var(--os-info); }
-.os-notice-block.warning { border-left: 4px solid var(--os-warning); }
-.os-notice-block.warning .notice-title { color: var(--os-warning); }
-.os-notice-block.danger { border-left: 4px solid #d93025; }
-.os-notice-block.danger .notice-title { color: #d93025; }
-
-/* -------------------------------------------------------------------------
-   7. АДАПТИВНОСТЬ ПОД ЭКРАНЫ ПК (MEDIA QUERIES)
-   ------------------------------------------------------------------------- */
-@media (min-width: 1024px) {
-  .site-header { left: 0; width: 100%; }
-  .burger-btn { display: none !important; } 
-  
-  .sidebar { 
-    top: var(--os-header-height) !important;
-    height: calc(100vh - var(--os-header-height)) !important;
-    transform: translateX(0) !important; 
+  if (!isGitHubPages && segments.length > 0 && fetchUrl.toLowerCase().startsWith('/' + segments[0].toLowerCase() + '/')) {
+    fetchUrl = fetchUrl.replace(new RegExp('^\\/' + segments[0], 'i'), '').replace(/\/+/g, '/');
   }
-  .sidebar-overlay { display: none !important; }
-  .sidebar-back-btn { display: flex; }
-  .sidebar-header-title { padding: 14px 20px 6px 20px; }
-  
-  .app-content { padding-left: calc(290px + 32px); padding-right: 32px; }
-  .bottom-nav { display: none !important; }
-  
-  .section-hero-pwa { min-height: 220px; }
-  .hero-title { font-size: 28px !important; }
-  .hero-subtitle { font-size: 14px !important; }
-  
-  .search-card-trigger { padding: 16px 20px; margin-bottom: 24px; }
-  .search-card-placeholder { font-size: 15px; }
-  .section-grid { grid-template-columns: repeat(2, 1fr) !important; }
-}
 
-@media (max-width: 1023px) {
-  .sidebar {
-    top: var(--os-header-height) !important;
-    bottom: 0 !important;
-    height: calc(100vh - var(--os-header-height)) !important;
-  }
-}
+  mainStage.style.opacity = '0.4';
 
-@media (max-width: 768px) {
-  .core-cars-grid { grid-template-columns: 1fr; }
-}
-
-/* =========================================================================
-   🔍 СОВРЕМЕННЫЕ СТИЛИ ДЛЯ ИНТЕГРИРОВАННОГО ПОИСКА (OSSearch)
-   ========================================================================= */
-
-/* Мобильная кнопка в нижнем таббаре */
-.nav-item-search {
-  background: none;
-  border: none;
-  color: inherit;
-  cursor: pointer;
-  flex: 1;
-  text-align: center;
-  padding: 6px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.nav-item-search .tabbar-icon {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2px;
-  color: inherit;
-}
-.nav-item-search .tabbar-label {
-  font-size: 10px;
-  display: block;
-}
-
-/* Десктопная кнопка в шапке сайдбара */
-.sidebar-search-trigger {
-  width: 100%;
-  padding: 10px 16px;
-  box-sizing: border-box;
-}
-.sidebar-search-btn {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  padding: 8px 12px;
-  background: var(--os-surface-hover);
-  border: 1px solid var(--os-border);
-  border-radius: 8px;
-  cursor: pointer;
-  color: var(--os-text);
-  box-sizing: border-box;
-  transition: background 0.15s, border-color 0.15s;
-}
-.sidebar-search-btn:hover {
-  background: var(--os-border);
-  border-color: var(--os-sub);
-}
-.sidebar-search-btn span {
-  font-size: 13px;
-  font-weight: 500;
-  opacity: 0.8;
-}
-
-/* Оверлей и модалка поиска */
-.os-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
-  display: none;
-  justify-content: center;
-  align-items: flex-start;
-  z-index: 9999;
-  padding: 20px;
-  box-sizing: border-box;
-}
-.os-overlay.active {
-  display: flex;
-}
-
-.os-modal {
-  background: var(--os-surface);
-  width: 100%;
-  max-width: 600px;
-  margin-top: 8vh;
-  border-radius: 12px;
-  border: 1px solid var(--os-border);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  max-height: 75vh;
-}
-
-.os-bar {
-  display: flex;
-  align-items: center;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--os-border);
-  background: var(--os-surface);
-}
-.os-bar-icon {
-  font-size: 18px;
-  margin-right: 10px;
-}
-#osInput {
-  flex: 1;
-  border: none;
-  background: transparent;
-  font-size: 16px;
-  color: var(--os-text);
-  outline: none;
-  padding: 4px 0;
-}
-
-.os-btn-action {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  color: var(--os-sub);
-  padding: 8px;
-  margin-left: 4px;
-  display: flex;
-  align-items: center;
-}
-.os-btn-action:hover {
-  color: var(--os-text);
-}
-.os-mic-icon {
-  width: 20px;
-  height: 20px;
-}
-#osCloseMobile {
-  margin-left: 8px;
-  font-size: 11px;
-  font-weight: 800;
-  color: var(--os-accent);
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: none;
-}
-
-/* Результаты поиска */
-.os-results {
-  overflow-y: auto;
-  flex: 1;
-  background: var(--os-surface);
-  -webkit-overflow-scrolling: touch;
-}
-.os-group {
-  padding: 12px 16px 6px;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: var(--os-accent);
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  border-bottom: 1px solid var(--os-border);
-}
-.os-item {
-  padding: 14px 16px;
-  border-bottom: 1px solid var(--os-border);
-  cursor: pointer;
-  transition: background 0.15s;
-}
-.os-item:hover, .os-item.active {
-  background: var(--os-surface-hover);
-}
-.os-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 4px;
-}
-.os-title {
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--os-text);
-}
-.os-title mark, .os-desc mark {
-  background: var(--os-accent-transparent);
-  color: var(--os-accent);
-  padding: 0 2px;
-  border-radius: 2px;
-}
-.os-type {
-  font-size: 10px;
-  text-transform: uppercase;
-  background: var(--os-surface-hover);
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: var(--os-sub);
-  border: 1px solid var(--os-border);
-}
-.os-desc {
-  font-size: 12px;
-  color: var(--os-sub);
-  line-height: 1.4;
-}
-
-/* Предложения и заглушки */
-.os-suggestion {
-  margin: 12px;
-  padding: 12px 16px;
-  background: var(--os-accent-transparent);
-  border-left: 4px solid var(--os-accent);
-  border-radius: 4px;
-  text-align: left;
-  font-size: 14px;
-  color: var(--os-text);
-}
-.os-go-suggest {
-  color: var(--os-info);
-  text-decoration: underline;
-  cursor: pointer;
-  margin-left: 4px;
-}
-.os-empty {
-  padding: 40px 15px;
-  text-align: center;
-  color: var(--os-sub);
-}
-.os-empty-icon {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-/* Лоадер ИИ */
-.os-ai-loader {
-  padding: 40px;
-  text-align: center;
-  color: var(--os-info);
-}
-.os-ai-spin {
-  display: inline-block;
-  animation: osAILoaderSpin 1s linear infinite;
-  margin-bottom: 12px;
-  font-size: 28px;
-}
-@keyframes osAILoaderSpin {
-  100% { transform: rotate(360deg); }
-}
-
-/* Адаптивность для мобильных экранов */
-@media (max-width: 1023px) {
-  .os-overlay {
-    padding: 0;
-  }
-  .os-modal {
-    margin-top: 0;
-    border-radius: 0;
-    height: 100vh;
-    max-height: 100vh;
-  }
-  .os-bar {
-    padding-top: 12px;
-  }
-  #osCloseMobile {
-    display: block;
-  }
-}
-/* =========================================================================
-   🔍 СИСТЕМНЫЕ СТИЛИ ДЛЯ ИНТЕГРИРОВАННОГО ПОИСКА (OSSearch)
-   ========================================================================= */
-
-/* --- Стили триггеров (Кнопок вызова поиска) --- */
-
-/* Мобильная кнопка в нижнем таббаре */
-.nav-item-search {
-  background: none;
-  border: none;
-  color: inherit;
-  cursor: pointer;
-  flex: 1;
-  text-align: center;
-  padding: 6px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.nav-item-search .tabbar-icon {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2px;
-  color: inherit;
-}
-.nav-item-search .tabbar-label {
-  font-size: 10px;
-  display: block;
-}
-
-/* Десктопная кнопка в шапке сайдбара (вместо надписи "Меню") */
-.sidebar-search-trigger {
-  width: 100%;
-  padding: 10px 16px;
-  box-sizing: border-box;
-}
-.sidebar-search-btn {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  padding: 8px 12px;
-  background: var(--os-surface-hover);
-  border: 1px solid var(--os-border);
-  border-radius: 8px;
-  cursor: pointer;
-  color: var(--os-text);
-  box-sizing: border-box;
-  transition: background 0.15s, border-color 0.15s;
-}
-.sidebar-search-btn:hover {
-  background: var(--os-border);
-  border-color: var(--os-sub);
-}
-.sidebar-search-btn span {
-  font-size: 13px;
-  font-weight: 500;
-  opacity: 0.8;
-}
-
-/* --- Оверлей и модальное окно поиска --- */
-.os-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
-  display: none;
-  justify-content: center;
-  align-items: flex-start;
-  z-index: 9999;
-  padding: 20px;
-  box-sizing: border-box;
-}
-.os-overlay.active {
-  display: flex;
-}
-
-.os-modal {
-  background: var(--os-surface);
-  width: 100%;
-  max-width: 600px;
-  margin-top: 8vh;
-  border-radius: 12px;
-  border: 1px solid var(--os-border);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  max-height: 75vh;
-}
-
-/* Поисковая строка внутри модалки */
-.os-bar {
-  display: flex;
-  align-items: center;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--os-border);
-  background: var(--os-surface);
-}
-.os-bar-icon {
-  font-size: 18px;
-  margin-right: 10px;
-}
-#osInput {
-  flex: 1;
-  border: none;
-  background: transparent;
-  font-size: 16px;
-  color: var(--os-text);
-  outline: none;
-  padding: 4px 0;
-}
-
-/* Кнопки действий (Микрофон, Сброс, Закрыть) */
-.os-btn-action {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  color: var(--os-sub);
-  padding: 8px;
-  margin-left: 4px;
-  display: flex;
-  align-items: center;
-}
-.os-btn-action:hover {
-  color: var(--os-text);
-}
-.os-mic-icon {
-  width: 20px;
-  height: 20px;
-}
-#osCloseMobile {
-  margin-left: 8px;
-  font-size: 11px;
-  font-weight: 800;
-  color: var(--os-accent);
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: none; /* По умолчанию скрыта на ПК */
-}
-
-/* --- Список результатов --- */
-.os-results {
-  overflow-y: auto;
-  flex: 1;
-  background: var(--os-surface);
-  -webkit-overflow-scrolling: touch;
-}
-.os-group {
-  padding: 12px 16px 6px;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: var(--os-accent);
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  border-bottom: 1px solid var(--os-border);
-}
-.os-item {
-  padding: 14px 16px;
-  border-bottom: 1px solid var(--os-border);
-  cursor: pointer;
-  transition: background 0.15s;
-}
-.os-item:hover, .os-item.active {
-  background: var(--os-surface-hover);
-}
-.os-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 4px;
-}
-.os-title {
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--os-text);
-}
-.os-title mark, .os-desc mark {
-  background: var(--os-accent-transparent);
-  color: var(--os-accent);
-  padding: 0 2px;
-  border-radius: 2px;
-}
-.os-type {
-  font-size: 10px;
-  text-transform: uppercase;
-  background: var(--os-surface-hover);
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: var(--os-sub);
-  border: 1px solid var(--os-border);
-}
-.os-desc {
-  font-size: 12px;
-  color: var(--os-sub);
-  line-height: 1.4;
-}
-
-/* Пустой результат и предложения исправлений */
-.os-suggestion {
-  margin: 12px;
-  padding: 12px 16px;
-  background: var(--os-accent-transparent);
-  border-left: 4px solid var(--os-accent);
-  border-radius: 4px;
-  text-align: left;
-  font-size: 14px;
-  color: var(--os-text);
-}
-.os-go-suggest {
-  color: var(--os-info);
-  text-decoration: underline;
-  cursor: pointer;
-  margin-left: 4px;
-}
-.os-empty {
-  padding: 40px 15px;
-  text-align: center;
-  color: var(--os-sub);
-}
-.os-empty-icon {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-/* Анимация загрузки ИИ */
-.os-ai-loader {
-  padding: 40px;
-  text-align: center;
-  color: var(--os-info);
-}
-.os-ai-spin {
-  display: inline-block;
-  animation: osAILoaderSpin 1s linear infinite;
-  margin-bottom: 12px;
-  font-size: 28px;
-}
-@keyframes osAILoaderSpin {
-  100% { transform: rotate(360deg); }
-}
-
-/* --- АДАПТИВНОСТЬ ПОД ОСОБЕННОСТИ МОБИЛОК --- */
-@media (max-width: 1023px) {
-  .os-overlay {
-    padding: 0; /* На мобилках модалка прижимается к экрану */
-  }
-  .os-modal {
-    margin-top: 0;
-    border-radius: 0;
-    height: 100vh; /* На весь экран */
-    max-height: 100vh;
-  }
-  .os-bar {
-    padding: var(--os-header-height) 16px 12px 16px; /* Учитываем верхнюю системную плашку, если нужно */
-    padding-top: 12px;
-  }
-  #osCloseMobile {
-    display: block; /* Показываем текстовую кнопку закрытия */
-  }
-}
-/* =========================================================================
-   🚗 СТИЛИ ДЛЯ АДАПТИВНЫХ ИЗОБРАЖЕНИЙ И СХЕМ РЕМОНТА В СТАТЬЯХ
-   ========================================================================= */
-.os-figure, 
-.os-figure-bordered,
-.os-img-wrapper {
-  margin: 10px auto !important;
-  padding: 0;
-  box-sizing: border-box !important;
-}
-
-/* Обертка для картинок, требующих рамки */
-.os-figure-bordered .figure-wrapper {
-  border: 1px solid var(--os-text, #000) !important;
-  padding: 10px !important;
-  background: var(--os-surface, #ffffff) !important;
-  box-sizing: border-box !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-
-/* Сама картинка */
-.os-figure img, 
-.os-figure-bordered img,
-.os-img-wrapper img {
-  display: block !important;
-  /* Убираем жесткий width: 100%, заменяя его на адаптивный max-width */
-  width: auto; 
-  max-width: 100% !important;
-  height: auto !important;
-  object-fit: contain !important;
-}
-
-/* Подписи чертежей по центру */
-.os-figure figcaption, 
-.os-figure-bordered figcaption,
-.os-img-caption {
-  margin-top: 8px !important;
-  font-size: 13px !important;
-  text-align: center !important;
-  line-height: 1.4 !important;
-  display: block !important;
-  width: 100% !important;
-  color: var(--os-text, #000) !important;
-  font-weight: bold !important;
-}
-
-/* =========================================================================
-   🖼️ ИДЕАЛЬНОЕ ОБТЕКАНИЕ В ОДНУ КОЛОНКУ (ДЛЯ ПК И ПЛАНШЕТОВ)
-   ========================================================================= */
-@media screen and (min-width: 769px) {
-  
-  /* Картинка уходит вправо, текст обтекает СЛЕВА */
-  .os-float-right {
-    float: right !important;
-    width: 280px !important;       /* Оптимальная ширина иллюстрации на десктопе */
-    margin-top: 4px !important;
-    margin-left: 28px !important;  /* Свободный отступ, чтобы текст не лип */
-    margin-bottom: 16px !important;
-    margin-right: 0 !important;
-  }
-  
-  /* Картинка уходит влево, текст обтекает СПРАВА */
-  .os-float-left {
-    float: left !important;
-    width: 280px !important;
-    margin-top: 4px !important;
-    margin-right: 28px !important; /* Свободный отступ справа */
-    margin-bottom: 16px !important;
-    margin-left: 0 !important;
-  }
-}
-
-/* Технологический сброс float */
-.os-clear {
-  clear: both !important;
-  display: block !important;
-  height: 0 !important;
-  visibility: hidden !important;
-}
-
-/* Оформление основного текста в одну колонку */
-.os-single-page-content p {
-  text-align: justify !important;
-  text-justify: inter-word !important;
-  margin-top: 0 !important;
-  margin-bottom: 14px !important;
-  line-height: 1.6 !important;
-  font-size: 16px !important;
-}
-
-/* =========================================================================
-   📖 ПОСТРАНИЧНАЯ НАВИГАЦИЯ ДЛЯ КНИЖНОГО РЕЖИМА (КНОПКИ НАЗАД / ВПЕРЕД)
-   ========================================================================= */
-.page-footer-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 32px;
-  padding-top: 16px;
-  border-top: 1px solid var(--os-border);
-  user-select: none;
-}
-
-.page-nav-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--os-surface);
-  border: 1px solid var(--os-border);
-  color: var(--os-text);
-  text-decoration: none;
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  transition: background 0.15s ease, border-color 0.15s ease;
-}
-
-.page-nav-btn:hover {
-  background: var(--os-surface-hover);
-  border-color: var(--os-sub);
-}
-
-.page-nav-btn:active {
-  background: var(--os-border);
-}
-
-/* Класс для отключения кнопки (например, "Назад" на самой первой странице) */
-.page-nav-btn.disabled {
-  opacity: 0.35;
-  pointer-events: none;
-  cursor: default;
-}
-
-/* =========================================================================
-   📱 АДАПТАЦИЯ ДЛЯ СМАРТФОНОВ (Экран менее 768px)
-   ========================================================================= */
-@media screen and (max-width: 768px) {
-  
-  /* На мобилках отменяем обтекание. Картинка центруется и масштабируется адекватно */
-  .os-float-left, 
-  .os-float-right {
-    float: none !important;
-    display: block !important;
+  try {
+    const response = await fetch(fetchUrl);
+    if (!response.ok) throw new Error(`Статья не найдена (${response.status})`);
     
-    /* Идеальный размер для мобильного экрана */
-    width: 85% !important;         /* Занимает большую часть ширины экрана */
-    max-width: 340px !important;   /* Но не становится гигантской на планшетах */
+    const htmlText = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlText, 'text/html');
+    const incomingContent = doc.querySelector('.os-main') || doc.querySelector('.section-home-main');
     
-    margin: 20px auto !important;  /* Выравнивание по центру */
+    if (incomingContent) {
+      mainStage.innerHTML = '';
+      mainStage.appendChild(incomingContent.cloneNode(true));
+      
+      const currentFullUrl = window.location.href; 
+      const baseDomain = window.location.origin;   
+
+      // 1. Поисковый канонический тег
+      const canonicalTag = document.querySelector('.os-canonical-tag') || document.querySelector('link[rel="canonical"]');
+      if (canonicalTag) canonicalTag.setAttribute('href', currentFullUrl);
+
+      // 2. Open Graph
+      const ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl) ogUrl.setAttribute('content', currentFullUrl);
+      const ogImage = document.querySelector('meta[property="og:image"]');
+      if (ogImage && ogImage.getAttribute('content') === 'https://github.io') {
+        ogImage.setAttribute('content', (baseDomain + osModelFolder + 'assets/img/og-preview.jpg').replace(/\/+/g, '/'));
+      }
+
+      // 3. Twitter Cards
+      const twitterUrl = document.querySelector('meta[name="twitter:url"]');
+      if (twitterUrl) twitterUrl.setAttribute('content', currentFullUrl);
+      const twitterImage = document.querySelector('meta[name="twitter:image"]');
+      if (twitterImage && twitterImage.getAttribute('content') === 'https://github.io') {
+        twitterImage.setAttribute('content', (baseDomain + osModelFolder + 'assets/img/og-preview.jpg').replace(/\/+/g, '/'));
+      }
+
+      // Навигационные кнопки внизу статьи
+      const singlePageContent = mainStage.querySelector('.os-single-page-content') || mainStage.querySelector('.os-article-layout');
+      if (singlePageContent) {
+        let currentRelativePath = fetchUrl.replace(/^\//, '');
+        const cleanFolder = osModelFolder.replace(/\/+/g, '');
+
+        if (cleanFolder && cleanFolder !== '/' && currentRelativePath.toLowerCase().startsWith(cleanFolder.toLowerCase())) {
+          currentRelativePath = currentRelativePath.substring(cleanFolder.length).replace(/^\//, '');
+        }
+
+        const buttonsHtml = generateFooterNavigation(currentRelativePath);
+        singlePageContent.insertAdjacentHTML('beforeend', buttonsHtml);
+
+        singlePageContent.querySelectorAll('.page-footer-nav [data-pwa-link]').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetHref = btn.getAttribute('href');
+            if (targetHref && targetHref !== '#') {
+              loadPage(targetHref);
+              history.pushState({ path: targetHref }, '', targetHref); // Ошибка с href исправлена
+            }
+          });
+        });
+      }
+
+      mainStage.scrollTop = 0;
+      window.scrollTo(0, 0); 
+      document.body.classList.remove('os-lock');
+
+      if (doc.title) document.title = doc.title;
+
+      if (typeof generateDynamicBreadcrumbs === 'function') {
+        generateDynamicBreadcrumbs(cleanUrl, doc.title || "Статья");
+      }
+
+      if (window.OSSearch && typeof window.OSSearch.init === 'function') {
+        window.OSSearch.init();
+      }
+
+      // ⚡ РЕИНЖЕКТ ВСЕЙ РЕКЛАМЫ РСЯ ПРИ SPA-ПЕРЕХОДЕ
+      if (window.adsInitialized) {
+        setTimeout(() => {
+          renderGlobalAds(); // Перезапуск сквозных FloorAd и Fullscreen
+          initInImageAds();  // Поиск картинок на новой странице
+        }, 200); // 200мс — оптимально для завершения перестроения DOM
+      }
+
+    } else {
+      mainStage.innerHTML = `<div class="os-main" style="padding:16px;">${doc.body.innerHTML}</div>`;
+      if (doc.title) document.title = doc.title;
+    }
+
+    if (typeof highlightActiveLink === 'function') {
+      highlightActiveLink(cleanUrl);
+    }
+
+  } catch (error) {
+    console.error('Ошибка навигации роутера:', error);
+    mainStage.innerHTML = `
+      <div style="color: #ff4d4d; padding: 40px 16px; text-align: center; font-weight: 600;">
+        ⚠️ Ошибка загрузки материала.<br>
+        <span style="font-size:13px; font-weight:400; color:var(--os-sub);">Файл по пути <b>${cleanUrl}</b> отсутствует.</span>
+      </div>
+    `;
+  } finally {
+    mainStage.style.opacity = '1';
   }
+}
+
+/* -------------------------------------------------------------------------
+   4. СИНХРОНИЗАЦИЯ СЛЕЖЕНИЯ И АВТОМАТИЧЕСКАЯ ПОДСВЕТКА ССЫЛОК В МЕНЮ
+   ------------------------------------------------------------------------- */
+function highlightActiveLink(url) {
+  const accordionMenu = document.getElementById('accordionMenu');
+  if (!accordionMenu) return;
+
+  accordionMenu.querySelectorAll('a').forEach(a => a.classList.remove('active'));
+  let lookupPath = url.replace(window.location.origin, '').replace(/\/+/g, '/');
+
+  const segments = window.location.pathname.split('/').filter(Boolean);
+  const currentModelFolder = segments.length > 0 ? segments[0] : '';
+  const normalizedLookup = lookupPath.replace(new RegExp('^\\/' + currentModelFolder, 'i'), '').replace(/\/+/g, '/');
   
-  /* Остальные стили (текст, кнопки) оставляем без изменений... */
-  .os-single-page-content p {
-    text-align: left !important;
-    font-size: 16px !important;    
-    line-height: 1.65 !important;
-    margin-bottom: 16px !important;
+  if (normalizedLookup === '/' || normalizedLookup === '/index.html' || normalizedLookup === '') {
+    accordionMenu.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
+    return; 
   }
-  .page-footer-nav {
-    gap: 12px;
-    padding-top: 20px;
-    margin-top: 24px;
-  }
-  .page-nav-btn {
-    flex: 1;
-    padding: 12px 16px !important;
-    font-size: 15px !important;
-    text-align: center;
-  }
-}
-/* Контейнер для фиксации блока: текст не прыгает, картинка справа */
-.os-content-row {
-  display: block;
-  margin-bottom: 24px;
-}
 
-/* Очистка контекста форматирования, чтобы блоки не наползали друг на друга */
-.os-content-row::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Стили для картинок внутри строк */
-.os-content-row .os-img-wrapper.os-float-right {
-  float: right;
-  margin: 0 0 12px 20px;
-  max-width: 40%; /* Картинка займет не больше 40% ширины экрана */
-  box-sizing: border-box;
-}
-
-/* На мобильных экранах (меньше 768px) выстраиваем всё в один столбец */
-@media (max-width: 768px) {
-  .os-content-row .os-img-wrapper.os-float-right {
-    float: none;
-    max-width: 100%;
-    margin: 12px auto;
-    display: block;
-    text-align: center;
-  }
-}
-/* =========================================================================
-   🖼️ АДАПТИВНАЯ ДВУХКОЛОНОЧНАЯ СЕТКА И ЦЕНТРАЛЬНЫЕ СХЕМЫ
-   ========================================================================= */
-
-/* 1. Двухколоночная сетка для карточек (рис. 22 и 23) */
-.os-images-grid {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 16px;
-  width: 100%;
-  max-width: 720px;
-  margin: 0 auto 25px auto;
-  box-sizing: border-box;
-}
-
-.os-grid-card {
-  width: 50%;
-  background: var(--os-bg-card, #ffffff);
-  border: 1px solid var(--os-border, #e3e3e3);
-  border-radius: 8px;
-  padding: 12px;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-.os-grid-card img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: 140px;
-  display: block;
-  margin: 0 auto;
-  object-fit: contain;
-}
-
-/* 2. Крупные центральные схемы (Панель приборов, рис. 19) */
-.os-content-full-width {
-  display: block;
-  width: 100%;
-}
-
-.os-img-center {
-  float: none !important;
-  max-width: 100%;
-  margin: 0 auto 20px auto;
-  text-align: center;
-}
-
-.os-img-center img {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-/* 📱 Мобильная адаптивность для обоих типов графики (экраны менее 768px) */
-@media (max-width: 768px) {
-  /* Сетка карточек перестраивается в один вертикальный ряд */
-  .os-images-grid {
-    flex-direction: column;
-    gap: 12px;
-  }
-  .os-grid-card {
-    width: 100%;
-  }
-}
-/* 🎛️ Специальный класс для вертикальных схем подрулевых переключателей (формат 5:4) */
-.os-img-steering-levers img {
-  max-width: 380px !important; /* Делает вертикальную картинку аккуратной на ПК */
-}
-
-/* 📱 Сброс ограничения на мобильных устройствах */
-@media (max-width: 768px) {
-  .os-img-steering-levers img {
-    max-width: 100% !important; /* На смартфонах разворачивает во всю ширину */
-  }
-}
-/* 🎛️ Строка-контейнер для одного выключателя (картинка слева, текст справа) */
-.os-switch-row {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 16px;
-  background: var(--os-bg-card, #ffffff);
-  border: 1px solid var(--os-border, #e3e3e3);
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 16px;
-  box-sizing: border-box;
-}
-.os-switch-thumb {
-  width: 100px;
-  flex-shrink: 0;
-  text-align: center;
-}
-.os-switch-thumb img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.os-switch-desc {
-  flex-grow: 1;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-/* 📱 Складывание в одну колонку на телефонах */
-@media (max-width: 576px) {
-  .os-switch-row {
-    flex-direction: column;
-    align-items: center;
-  }
-  .os-switch-thumb {
-    margin-bottom: 10px;
-  }
-}
-/* =========================================================================
-   📸 УВЕЛИЧЕНИЕ ИЗОБРАЖЕНИЙ С ОБТЕКАНИЕМ ДЛЯ БОЛЬШИХ ЭКРАНОВ (ПК И ПЛАНШЕТЫ)
-   ========================================================================= */
-@media screen and (min-width: 769px) {
-  /* Увеличиваем ширину контейнеров с обтеканием до 350px (вместо исходных 280px) */
-  .os-single-page-content .os-float-right {
-    width: 350px !important;
-    margin-left: 32px !important;  /* Увеличенный отступ, чтобы текст не лип к картинке */
-    margin-right: 0 !important;
-  }
+  let targetLink = null;
+  const allLinks = accordionMenu.querySelectorAll('a');
   
-  .os-single-page-content .os-float-left {
-    width: 350px !important;
-    margin-right: 32px !important; /* Увеличенный отступ справа */
-    margin-left: 0 !important;
+  for (let a of allLinks) {
+    const aHref = a.getAttribute('href').replace(new RegExp('^\\/' + currentModelFolder, 'i'), '').replace(/\/+/g, '/');
+    if (aHref === normalizedLookup || normalizedLookup.includes(aHref) || aHref.includes(normalizedLookup)) {
+      targetLink = a;
+      break;
+    }
   }
 
-  /* Заставляем внутренние изображения корректно заполнять новые 350px */
-  .os-single-page-content .os-float-right img,
-  .os-single-page-content .os-float-left img {
-    width: 100% !important;
-    max-width: 350px !important;
-    height: auto !important;
+  if (targetLink) {
+    targetLink.classList.add('active');
+    const parentSection = targetLink.closest('.sidebar-item');
+    if (parentSection) {
+      accordionMenu.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
+      parentSection.classList.add('active'); 
+    }
   }
 }
 
-/* Корректное отображение обычных независимых картинок по центру (без обтекания) */
-.os-single-page-content .os-figure:not(.os-float-right):not(.os-float-left) img,
-.os-single-page-content .os-figure-bordered:not(.os-float-right):not(.os-float-left) img,
-.os-single-page-content .os-img-wrapper:not(.os-float-right):not(.os-float-left) img {
-  max-width: 100% !important;
-  height: auto !important;
-  margin: 15px auto !important;
+/* -------------------------------------------------------------------------
+   5. ДИНАМИЧЕСКАЯ ГЕНЕРАЦИЯ МИКРОРАЗМЕТКИ BREADCRUMBLIST (SCHEMA.ORG)
+   ------------------------------------------------------------------------- */
+function generateDynamicBreadcrumbs(currentUrl, articleTitle) {
+  const oldScript = document.getElementById('os-dynamic-breadcrumbs');
+  if (oldScript) oldScript.remove();
+
+  const baseOrigin = window.location.origin;
+  const segments = window.location.pathname.split('/').filter(Boolean);
+  const currentModelFolder = segments.length > 0 ? segments[0] : '';
+  const normalizedUrl = currentUrl.replace(new RegExp('^\\/' + currentModelFolder, 'i'), '').replace(/\/+/g, '/');
+
+  if (normalizedUrl === '/' || normalizedUrl === '/index.html' || normalizedUrl === '') {
+    return; 
+  }
+
+  let parentSectionTitle = "Раздел";
+  
+  if (cachedMenuData) {
+    for (let section of cachedMenuData) {
+      if (section.items) {
+        const hasItem = section.items.some(item => {
+          const itemPath = ('/' + item.path).replace(/\/+/g, '/');
+          return normalizedUrl.includes(itemPath) || itemPath.includes(normalizedUrl);
+        });
+        if (hasItem) {
+          parentSectionTitle = section.title;
+          break;
+        }
+      }
+    }
+  }
+
+  const headerTitleContainer = document.getElementById('headerModelTitle');
+  const modelName = headerTitleContainer && headerTitleContainer.textContent ? headerTitleContainer.textContent : "Бортовое Руководство";
+  const modelRoot = currentModelFolder ? `/${currentModelFolder}/` : '/';
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Главная", "item": `${baseOrigin}/` },
+      { "@type": "ListItem", "position": 2, "name": modelName, "item": `${baseOrigin}${modelRoot}` },
+      { "@type": "ListItem", "position": 3, "name": parentSectionTitle },
+      { "@type": "ListItem", "position": 4, "name": articleTitle.split('—')[0].trim() }
+    ]
+  };
+
+  const script = document.createElement('script');
+  script.id = 'os-dynamic-breadcrumbs';
+  script.type = 'application/ld+json';
+  script.innerHTML = JSON.stringify(breadcrumbData, null, 2);
+  document.head.appendChild(script);
+}
+
+/* =========================================================================
+   🔄 АВТОМАТИЧЕСКАЯ ГЕНЕРАЦИЯ КНОПОК ПОСТРАНИЧНОЙ НАВИГАЦИИ
+   ========================================================================= */
+function generateFooterNavigation(currentPath) {
+  if (!cachedMenuData) return ''; 
+
+  let flatArticles = [];
+  cachedMenuData.forEach(section => {
+    if (section.items && section.items.length > 0) {
+      section.items.forEach(item => {
+        flatArticles.push(item);
+      });
+    }
+  });
+
+  const cleanCurrent = currentPath.replace(/^\//, '').toLowerCase();
+  const currentIndex = flatArticles.findIndex(item => item.path.replace(/^\//, '').toLowerCase() === cleanCurrent);
+
+  if (currentIndex === -1) return '';
+
+  const prevArticle = flatArticles[currentIndex - 1];
+  const nextArticle = flatArticles[currentIndex + 1];
+
+  let footerHtml = `<div class="page-footer-nav">`;
+
+  if (prevArticle) {
+    const prevLink = ('/' + osModelFolder + '/' + prevArticle.path).replace(/\/+/g, '/');
+    footerHtml += `<a href="${prevLink}" class="page-nav-btn" data-pwa-link>◀ ${prevArticle.title}</a>`;
+  } else {
+    footerHtml += `<a href="#" class="page-nav-btn disabled">◀ Назад</a>`;
+  }
+
+  if (nextArticle) {
+    const nextLink = ('/' + osModelFolder + '/' + nextArticle.path).replace(/\/+/g, '/');
+    footerHtml += `<a href="${nextLink}" class="page-nav-btn" data-pwa-link>${nextArticle.title} ▶</a>`;
+  } else {
+    footerHtml += `<a href="#" class="page-nav-btn disabled">Вперед ▶</a>`;
+  }
+
+  footerHtml += `</div>`;
+  return footerHtml;
 }
