@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  
+  <title>Маршрутный компьютер — LADA Samara</title>
+  <meta name="description" content="Инструкция по эксплуатации и настройке 15 функций маршрутного компьютера европанели LADA Samara. Описание групп кнопок, тарирования бака и спецификаций.">
+  <meta name="keywords" content="lada samara, маршрутный компьютер ваз 2114, бк ваз 2115, функции мк самара, тарирование бака ваз, европанель, коды кнопок">
+
+  <link class="os-canonical-tag" rel="canonical" href="https://lada-aym.github.io/Lada_Samara/controls-and-instruments/trip-computer.html">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://lada-aym.github.io/Lada_Samara/controls-and-instruments/trip-computer.html">
+  <meta property="og:title" content="Маршрутный компьютер — LADA Samara">
+  <meta property="og:description" content="Электронное руководство LADA Samara. Описание функций расхода топлива, времени в пути, калибровки датчика бака и кодов ошибок бортового компьютера.">
+  <meta property="og:image" content="https://lada-aym.github.io/Lada_Samara/assets/img/og-preview.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Маршрутный компьютер — LADA Samara">
+  <meta name="twitter:description" content="Электронное руководство по эксплуатации LADA Samara.">
+  <meta name="twitter:image" content="https://lada-aym.github.io/Lada_Samara/assets/img/og-preview.jpg">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <link rel="stylesheet" href="/assets/css/os.css">
+  
+  <script>
+    if (window === window.self && !document.getElementById('appMainStage') && window.location.pathname !== '/' && !window.location.pathname.endsWith('index.html')) {
+      const isBot = /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i.test(navigator.userAgent);
+      if (!isBot) {
+        const currentPath = window.location.pathname;
+        window.location.replace(window.location.origin + '/Lada_Samara/index.html?page=' + encodeURIComponent(currentPath));
+      }
+    }
+  </script>
+  <script src="/assets/js/os-search.js" defer></script>
+</head>
+
+<body>
+  <main class="os-main">
+    <div class="os-article-layout">
+      
+      <div class="os-page-header">
+        <h1>ОПИСАНИЕ АВТОМОБИЛЯ</h1>
+        <div class="os-book-model-tag">II. ОРГАНЫ УПРАВЛЕНИЯ И ПРИБОРЫ</div>
+      </div>
+      
+      <h2 class="os-page-title">Маршрутный компьютер</h2>
+      
+      <div class="os-single-page-content">
+        
+        <div class="os-content-full-width">
+          <div class="os-img-wrapper os-img-center">
+            <img src="/Lada_Samara/assets/img/lada-samara-route-computer.webp" alt="Внешний вид маршрутного компьютера европанели">
+            <span class="os-img-caption">Рис. 33. Маршрутный компьютер</span>
+          </div>
+        </div>
+        
+        <p>Маршрутный компьютер (МК) устанавливается на часть выпускаемых автомобилей семейства LADA Samara в вариантном исполнении. МК имеет 15 функций, разбитых на 7 целевых групп. Семь кнопок панели управления служат для быстрого перехода к нужной группе параметров и последовательного выбора подфункций внутри них. Клавиши имеют следующие обозначения: «Т», «КМ/Н», «КМ», «L», «L/100», «МОМ.», «Н».</p>
+        
+        <p>Перебор функций внутри группы производится циклически («по кольцу»). При выключенном зажигании компьютер автоматически переходит в экономичный режим индикации «Текущее время», при этом основные функции управления кнопками аппаратно заблокированы. Кратковременное нажатие на любую клавишу при выключенном зажигании активирует внутреннюю ночную подсветку ЖК-дисплея, а кнопка «START» служит для оперативного отключения звукового сигнала будильника.</p>
+        
+        <p>Для полного обнуления всех накопленных статистических параметров («Время в пути», «Время в пути с остановками», «Общий расход», «Пробег поездки») необходимо нажать и удерживать сервисную кнопку «START» более 4 секунд до подачи встроенным зуммером характерного двухтонального звукового сигнала.</p>
+        
+        <h3 class="os-section-subtitle">Таблица 1. Функции маршрутного компьютера</h3>
+        
+        <div class="os-table-responsive">
+          <table class="os-table">
+            <thead>
+              <tr>
+                <th>Кнопка</th>
+                <th>Группа функций</th>
+                <th>Отображаемые параметры и подфункции</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Т</strong></td>
+                <td><strong>ВРЕМЯ В ПУТИ</strong></td>
+                <td>Время в пути; Время в пути с учетом остановок; Температура окружающего воздуха за бортом</td>
+              </tr>
+              <tr>
+                <td><strong>КМ/Н</strong></td>
+                <td><strong>СКОРОСТЬ</strong></td>
+                <td>Средняя скорость поездки; Мгновенная скорость автомобиля</td>
+              </tr>
+              <tr>
+                <td><strong>КМ</strong></td>
+                <td><strong>ПУТЬ</strong></td>
+                <td>Текущий пробег за поездку; Расчетный прогноз пробега на остатке топлива в баке</td>
+              </tr>
+              <tr>
+                <td><strong>L</strong></td>
+                <td><strong>УРОВЕНЬ ТОПЛИВА</strong></td>
+                <td>Фактический уровень топлива в бензобаке; Общий расход топлива за поездку</td>
+              </tr>
+              <tr>
+                <td><strong>L/100</strong></td>
+                <td><strong>СРЕДНИЙ РАСХОД</strong></td>
+                <td>Средний интегральный расход топлива на 100 км пробега</td>
+              </tr>
+              <tr>
+                <td><strong>МОМ.</strong></td>
+                <td><strong>МГНОВЕННЫЙ РАСХОД</strong></td>
+                <td>Текущий мгновенный расход топлива; Текущее напряжение бортовой электросети</td>
+              </tr>
+              <tr>
+                <td><strong>Н</strong></td>
+                <td><strong>ТЕКУЩЕЕ ВРЕМЯ</strong></td>
+                <td>Текущее время; Календарь (дата/месяц); Статус и время будильника</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="os-section-subtitle">Корректировка функций компьютера</h3>
+        
+        <div class="os-description-list">
+          <p><strong>Коррекция хода часов:</strong> В режиме индикации «Текущее время» кратковременно нажать клавишу <strong>«START»</strong>. По шестому сигналу точного времени радиостанции нажать кнопку <strong>«Н»</strong> — произойдет автоматическое обнуление разрядов минут, показания часов скорректируются до ближайшего целого значения, а внутренний отсчет секунд начнется строго с нуля.</p>
+          <p><strong>Установка текущего времени / календаря:</strong> В режиме «Текущее время» (или «Календарь») нажать кнопку <strong>«START»</strong>. Клавишами <strong>«+»</strong> и <strong>«-»</strong> выставить нужное значение часов (или дня месяца). Повторно нажать <strong>«START»</strong> и кнопками <strong>«+»</strong> / <strong>«-»</strong> задать показание минут (или порядкового номера месяца). Нажать <strong>«START»</strong> для сохранения изменений и фиксации данных.</p>
+          <p><strong>Установка будильника:</strong> В режиме «Будильник» нажать кнопку <strong>«START»</strong>. Кнопками <strong>«+»</strong> / <strong>«-»</strong> задать час срабатывания, нажать <strong>«START»</strong> и кнопками <strong>«+»</strong> / <strong>«-»</strong> скорректировать минуты. Финализировать настройку нажатием кнопки <strong>«START»</strong>. В главном режиме часов загорится пиктограмма колокольчика (будильник активен). Для отключения будильника зайдите в его режим, нажмите <strong>«START»</strong>, затем нажмите <strong>«Н»</strong> — на дисплее отобразятся символы <em>--.--</em>, пиктограмма погаснет.</p>
+          <p><strong>Регулировка яркости подсветки дисплея:</strong> При активированных габаритных огнях яркость экрана МК привязана к положению штатного реостата панели приборов. При выключенных габаритах доступна ручная программная калибровка: в режиме дисплея «Время в пути с остановками» нажмите <strong>«START»</strong>, кнопками <strong>«+»</strong> / <strong>«-»</strong> подберите оптимальный уровень свечения и сохраните его нажатием кнопки <strong>«START»</strong>.</p>
+          <p><strong>Установка сигнализатора превышения скорости:</strong> Находясь в режиме отображения «Средняя скорость», нажмите кнопку <strong>«START»</strong>. Клавишами <strong>«+»</strong> / <strong>«-»</strong> задайте желаемый предел скорости в диапазоне от 20 до 200 км/ч. Нажмите <strong>«START»</strong> для выхода. В случае превышения лимита во время движения МК подаст предупреждающий звуковой сигнал, а на панели замигает пиктограмма колокольчика.</p>
+        </div>
+
+        <h3 class="os-section-subtitle">Тарирование датчика уровня топлива</h3>
+        <p>Для исключения погрешностей и калибровки системы под фактическую геометрию бака выполните процедуру строго по шагам:</p>
+        
+        <ol class="os-numbered-list">
+          <li>Полностью слейте весь бензин из топливного бака автомобиля.</li>
+          <li>Переведите маршрутный компьютер в режим отображения <strong>«Уровень топлива»</strong> и удерживайте кнопку <strong>«START»</strong> нажатой более 2 секунд. На индикаторе замигает цифра 0.</li>
+          <li>Нажмите и удерживайте кнопку <strong>«L»</strong> в течение 1 секунды до характерного писка зуммера — на экране появится мигающая цифра 3.</li>
+          <li>Залейте в бензобак с помощью калиброванной мерной тары ровно 3 литра топлива. Подождите 30–60 секунд для стабильной фиксации поплавка датчика.</li>
+          <li>Нажмите и удерживайте кнопку <strong>«L»</strong> 1 секунду до подтверждающего звукового сигнала. На дисплее отобразится следующая целевая метка литража.</li>
+          <li>Повторяйте процедуру долива порциями по 3 литра и подтверждения кнопкой <strong>«L»</strong> вплоть до достижения максимального расчетного объема в 39 литров. После этого компьютер автоматически зафиксирует таблицу калибровки в энергонезависимой памяти и выйдет в рабочий режим.</li>
+        </ol>
+
+        <h3 class="os-section-subtitle">Точность и предельные значения функций</h3>
+        
+        <div class="os-table-responsive">
+          <table class="os-table">
+            <tbody>
+              <tr>
+                <td>Диапазон показаний встроенных часов</td>
+                <td><strong>0 ч 00 м – 23 ч 59 м</strong></td>
+              </tr>
+              <tr>
+                <td>Уход хода часов за календарные сутки при температуре (25±10) °С, не более</td>
+                <td><strong>± 3 с</strong></td>
+              </tr>
+              <tr>
+                <td>Диапазон измерения и отображения внешней температуры</td>
+                <td><strong>от –40 °С до +60 °С</strong></td>
+              </tr>
+              <tr>
+                <td>Максимальное регистрируемое значение времени в пути</td>
+                <td><strong>999 ч 50 м</strong></td>
+              </tr>
+              <tr>
+                <td>Максимальное регистрируемое значение времени в пути с остановками</td>
+                <td><strong>999 ч 50 м</strong></td>
+              </tr>
+              <tr>
+                <td>Максимальный порог подсчета общего расхода топлива</td>
+                <td><strong>9999 л</strong></td>
+              </tr>
+              <tr>
+                <td>Максимальный порог подсчета общего пробега за поездку</td>
+                <td><strong>9999 км</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="os-notice-block warning">
+          <strong class="notice-title">⚠️ ПРИМЕЧАНИЕ К НАКОПЛЕНИЮ ДАННЫХ:</strong>
+          <p class="notice-text">При достижении аппаратного предела или переполнении разрядности любого из вышеуказанных параметров компьютер инициирует автоматический сброс всего массива накапливаемой статистики («Время в пути», «Время в пути с остановками», «Общий расход», «Пробег поездки») с одновременным выводом двухтонального предупреждающего аудиосигнала.</p>
+        </div>
+        
+        <div class="os-clear"></div>
+      </div> 
+    </div>
+  </main>
+</body>
+</html>

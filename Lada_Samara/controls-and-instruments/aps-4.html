@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  
+  <title>Электронная противоугонная система — LADA Samara</title>
+  <meta name="description" content="Инструкция по эксплуатации иммобилизатора АПС-4 на автомобилях LADA Samara. Расшифровка сигналов индикатора, назначение рабочих и обучающего ключей.">
+  <meta name="keywords" content="lada samara, иммобилизатор апс-4 ваз, электронная противоугонная система ваз 2114, красный ключ ваз 2115, переобучение ключей самара, бск">
+
+  <link class="os-canonical-tag" rel="canonical" href="https://lada-aym.github.io/Lada_Samara/controls-and-instruments/aps-4.html">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://lada-aym.github.io/Lada_Samara/controls-and-instruments/aps-4.html">
+  <meta property="og:title" content="Электронная противоугонная система — LADA Samara">
+  <meta property="og:description" content="Электронное руководство LADA Samara. Принцип работы противоугонной системы АПС-4, сигналы светодиода состояния и действия при утере рабочих ключей.">
+  <meta property="og:image" content="https://lada-aym.github.io/Lada_Samara/assets/img/og-preview.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Электронная противоугонная система — LADA Samara">
+  <meta name="twitter:description" content="Электронное руководство по эксплуатации LADA Samara.">
+  <meta name="twitter:image" content="https://lada-aym.github.io/Lada_Samara/assets/img/og-preview.jpg">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <link rel="stylesheet" href="/assets/css/os.css">
+  
+  <script>
+    if (window === window.self && !document.getElementById('appMainStage') && window.location.pathname !== '/' && !window.location.pathname.endsWith('index.html')) {
+      const isBot = /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i.test(navigator.userAgent);
+      if (!isBot) {
+        const currentPath = window.location.pathname;
+        window.location.replace(window.location.origin + '/Lada_Samara/index.html?page=' + encodeURIComponent(currentPath));
+      }
+    }
+  </script>
+  <script src="/assets/js/os-search.js" defer></script>
+</head>
+
+<body>
+  <main class="os-main">
+    <div class="os-article-layout">
+      
+      <div class="os-page-header">
+        <h1>ОПИСАНИЕ АВТОМОБИЛЯ</h1>
+        <div class="os-book-model-tag">II. ОРГАНЫ УПРАВЛЕНИЯ И ПРИБОРЫ</div>
+      </div>
+      
+      <h2 class="os-page-title">Электронная противоугонная система</h2>
+      
+      <div class="os-single-page-content">
+        
+        <p>Электронная противоугонная система (иммобилизатор АПС-4) предназначена для предотвращения несанкционированного пуска двигателя автомобиля. Система осуществляет блокировку цепей запуска электроники двигателя на программном уровне, обмениваясь секретным кодом с контроллером (электронным блоком управления) впрыска топлива.</p>
+        
+        <p>В комплект системы АПС-4, выдаваемый при покупке нового автомобиля, в обязательном порядке входят:</p>
+        
+        <ul class="os-bullets-list">
+          <li><strong>Один обучающий кодовый ключ (красного цвета)</strong>, предназначенный для инициализации, изменения режимов и кодирования (обучения) компонентов системы;</li>
+          <li><strong>Два рабочих кодовых ключа (черного цвета)</strong>, непосредственно используемых владельцем для снятия системы с режима охраны перед каждым пуском двигателя.</li>
+        </ul>
+        
+        <h3 class="os-section-subtitle">Сигналы индикатора состояния системы</h3>
+        
+        <p>Светодиодный сигнализатор (индикатор) системы АПС-4, расположенный на панели приборов, наглядно информирует водителя о текущем режиме работы противоугонной защиты:</p>
+        
+        <ul class="os-bullets-list">
+          <li><strong>Индикатор не горит</strong> — система полностью деблокирована (пусковой код успешно считан), запуск двигателя разрешен в штатном режиме.</li>
+          <li><strong>Мигает с частотой 1 раз в секунду</strong> — система находится в режиме охраны, запуск двигателя заблокирован на уровне контроллера впрыска.</li>
+          <li><strong>Мигает с удвоенной частотой (2 раза в секунду)</strong> — иммобилизатор находится в режиме ожидания считывания кодового ключа (активируется на 30 секунд после открытия двери или кратковременного включения зажигания).</li>
+          <li><strong>Загорается непрерывно на 2 секунды и гаснет</strong> — рабочий кодовый ключ (черный) успешно считан и полностью опознан системой.</li>
+        </ul>
+        
+        <div class="os-notice-block danger">
+          <strong class="notice-title">⚠️ ВАЖНОЕ ПРЕДУПРЕЖДЕНИЕ!</strong>
+          <p class="notice-text"><strong>Обучающий (красный) ключ является критически важным элементом противоугонного комплекса. Категорически запрещается использовать красный ключ для повседневных поездок!</strong></p>
+          <p class="notice-text">Он должен храниться отдельно в надежном месте. Безвозвратная утеря обучающего ключа сделает технически невозможным программирование новых рабочих ключей в случае их поломки или потери. Данная ситуация повлечет за собой необходимость полной одновременной замены дорогостоящего блока иммобилизатора и контроллера системы впрыска за счет владельца.</p>
+        </div>
+        
+        <h3 class="os-section-subtitle">Действия при утере или неисправности рабочих ключей</h3>
+        
+        <p>Если один из рабочих (черных) кодовых ключей утерян или перестал корректно считываться ферромагнитным датчиком, систему можно оперативно перепрограммировать на новые заготовки ключей, используя сохранившийся оригинальный обучающий (красный) ключ.</p>
+        
+        <p>Процедура переобучения выполняется на специализированных станциях технического обслуживания (ПССС) и включает в себя перезапись и генерацию обновленного секретного кода как в самом блоке иммобилизатора, так и в энергонезависимой памяти контроллера управления двигателем.</p>
+        
+        <p>В случае аппаратной замены неисправного блока управления двигателем (ЭБУ) или самого салонного блока АПС-4, на СТО также в обязательном порядке производится процедура повторного взаимного обучения всей электронной связки компонентов с использованием штатного красного ключа.</p>
+        
+        <div class="os-clear"></div>
+      </div> 
+    </div>
+  </main>
+</body>
+</html>
