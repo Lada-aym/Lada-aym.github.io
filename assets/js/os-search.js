@@ -301,14 +301,21 @@ window.OSSearch = (() => {
     if (aiExtractor || isAiLoading) return;
     isAiLoading = true;
     try {
-      const { pipeline } = await import('https://jsdelivr.net');
+      // Подключаем полноценный рабочий CDN для веб-нейросети
+      const { pipeline } = await import('https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2');
+      
+      // Инициализируем легковесную модель для работы с русским языком
       aiExtractor = await pipeline('feature-extraction', 'Xenova/rubert-tiny2');
+      
+      log("🤖 Нейросеть ИИ успешно загружена в браузер!");
+
       for (const [id, item] of INDEX.entries()) {
         const textToAnalyze = `${item.title}. ${item.description}`;
         const output = await aiExtractor(textToAnalyze, { pooling: 'mean', normalize: true });
         aiVectors.set(id, Array.from(output.data));
       }
     } catch (e) {
+      console.error("Ошибка инициализации ИИ:", e);
       aiExtractor = null;
     } finally {
       isAiLoading = false;
