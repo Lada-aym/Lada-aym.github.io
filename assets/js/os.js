@@ -6,7 +6,7 @@ let isGitHubPages = false;
 let cachedMenuData = null; 
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Сразу запускаем ленивую загрузку метрик и рекламы (НЕЗАВИСИМО от наличия меню)
+  // 1. Сразу запускаем ленивую загрузку сквозных метрик и рекламы (через 5 секунд)
   initLazyScripts();
 
   // 2. Определяем окружение (Локальный сервер Android или GitHub Pages)
@@ -22,42 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   console.log("[OSApp] Окружение зафиксировано. Корень модели: " + osModelFolder + ", GitHub Pages: " + isGitHubPages);
 
-  // 3. Инициализируем модули ядра (если элементы присутствуют на странице)
+  // 3. Инициализируем модули ядра
   initMobileMenu();
   initPWARouter();
-  
-  // 4. Внедряем защитные стили против гигантской рекламы
-  injectAntiBadAdsStyles();
 });
-
-/* -------------------------------------------------------------------------
-   🛡️ ЗАЩИТА ОТ АГРЕССИВНОЙ РЕКЛАМЫ (Ограничение размеров баннеров РСЯ)
-   ------------------------------------------------------------------------- */
-function injectAntiBadAdsStyles() {
-  if (document.getElementById('os-anti-ads-style')) return;
-  const style = document.createElement('style');
-  style.id = 'os-anti-ads-style';
-  style.innerHTML = `
-    /* Ограничиваем авто-блоки Яндекса, чтобы они не перекрывали контент */
-    div[id^="yandex_rtb_"], 
-    .ya-page-placement, 
-    div[class*="ya-partner"] {
-      max-height: 280px !important;
-      overflow: hidden !important;
-      margin: 15px auto !important;
-      clear: both !important;
-    }
-    /* Адаптивность для мобильных версий */
-    @media (max-width: 768px) {
-      div[id^="yandex_rtb_"], .ya-page-placement {
-        max-height: 120px !important; /* Компактный мобильный баннер */
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-    }
-  `;
-  document.head.appendChild(style);
-}
 
 /* -------------------------------------------------------------------------
    ⏱️ ЛЕНИВАЯ ЗАГРУЗКА (Lazy Loading — Срабатывает строго через 5 секунд)
@@ -68,14 +36,11 @@ function initLazyScripts() {
 
   setTimeout(() => {
     // =========================================================================
-    // 📊 ИНИЦИАЛИЗАЦИЯ GOOGLE TAG MANAGER (ОТКАЗОУСТОЙЧИВАЯ СБОРКА)
+    // 📊 ИНИЦИАЛИЗАЦИЯ GOOGLE TAG MANAGER
     // =========================================================================
     if (!window.gtmInitialized) {
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
+      window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
 
       const gtmScript = document.createElement('script');
       gtmScript.async = true;
@@ -87,47 +52,107 @@ function initLazyScripts() {
       } else {
         document.head.appendChild(gtmScript);
       }
-      
       window.gtmInitialized = true;
-      console.log('LazyLoad: GTM (GTM-PRQ33NW3) успешно запущен.');
+      console.log('LazyLoad: GTM успешно запущен.');
     }
 
     // =========================================================================
-    // 🌟 ПОДКЛЮЧЕНИЕ АВТОРАССТАНОВКИ ЯНДЕКСА (ID: 537370) С ЛЕНИВЫМ СТАРТОМ
+    // 🌟 ПОДКЛЮЧЕНИЕ РЕАЛЬНЫХ ФИКСИРОВАННЫХ БЛОКОВ РСЯ (БЕЗ AUTO-PLACEMENT)
     // =========================================================================
     if (!window.adsInitialized) {
+      window.yaContextCb = window.yaContextCb || [];
+
       if (!document.getElementById('yandex-context-script')) {
         const yandexContext = document.createElement('script');
         yandexContext.id = 'yandex-context-script';
         yandexContext.async = true;
         yandexContext.src = "https://yandex.ru/ads/system/context.js";
-        document.head.appendChild(yandexContext);
-      }
-
-      if (!document.getElementById('yandex-ap-loader')) {
-        const yandexLoader = document.createElement('script');
-        yandexLoader.id = 'yandex-ap-loader';
-        yandexLoader.async = true;
-        yandexLoader.setAttribute('data-page-id', '537370');
-        yandexLoader.src = "https://yandex.ru/ads/system/ap-loader.js";
         
-        // Перехватываем событие загрузки скрипта для мгновенного рендеринга на мобилках
-        yandexLoader.onload = () => {
-          setTimeout(() => {
-            if (window.Ya && window.Ya.Autoplacement) {
-              window.Ya.Autoplacement.render();
-              console.log('[OSApp РСЯ] Первичный рендеринг авторасстановки выполнен.');
-            }
-          }, 200);
+        yandexContext.onload = () => {
+          console.log('[OSApp РСЯ] Базовый контекст загружен. Инициализируем сквозные форматы...');
+          
+          // 1. FloorAd для мобильных
+          window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({ "blockId": "R-A-537370-36", "type": "floorAd", "platform": "touch" });
+          });
+          // 2. FloorAd для ПК
+          window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({ "blockId": "R-A-537370-44", "type": "floorAd", "platform": "desktop" });
+          });
+          // 3. Fullscreen для мобильных
+          window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({ "blockId": "R-A-537370-35", "type": "fullscreen", "platform": "touch" });
+          });
+          // 4. Fullscreen для ПК
+          window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({ "blockId": "R-A-537370-43", "type": "fullscreen", "platform": "desktop" });
+          });
+
+          // Помечаем, что ядро рекламы готово. Сканирование картинок произойдет автоматически через loadPage
+          window.adsInitialized = true;
+          console.log('LazyLoad: Сквозные форматы РСЯ зарегистрированы.');
         };
-        
-        document.head.appendChild(yandexLoader);
+        document.head.appendChild(yandexContext);
+      } else {
+        window.adsInitialized = true;
       }
-
-      window.adsInitialized = true;
-      console.log('LazyLoad: Авторасстановка Яндекса 537370 успешно запущена.');
     }
   }, 5000);
+}
+
+/* -------------------------------------------------------------------------
+   🖼️ СИСТЕМА ИНТЕГРАЦИИ РЕКЛАМЫ В ИЗОБРАЖЕНИЯ (InImage Блок: R-A-537370-42)
+   ------------------------------------------------------------------------- */
+function initInImageAds() {
+  if (!window.Ya || !window.Ya.Context) return;
+
+  const render = (imageId) => {
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        "renderTo": imageId,
+        "blockId": "R-A-537370-42",
+        "type": "inImage"
+      });
+    });
+  };
+
+  const renderInImage = (images) => {
+    if (!images.length) return;
+    const image = images.shift();
+
+    if (image.id && image.id.startsWith('yandex_rtb_R-A-537370-42-')) {
+      renderInImage(images);
+      return;
+    }
+
+    if (image.hasAttribute('loading') && image.getAttribute('loading') === 'lazy') {
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`;
+            render(image.id);
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+      observer.observe(image);
+    } else {
+      image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`;
+      if (image.tagName === "IMG" && !image.complete) {
+        image.addEventListener("load", () => {
+          render(image.id);
+        }, { once: true });
+      } else {
+        render(image.id);
+      }
+    }
+    renderInImage(images);
+  };
+
+  const stage = document.getElementById('appMainStage');
+  if (stage) {
+    renderInImage(Array.from(stage.querySelectorAll("img")));
+  }
 }
 
 /* -------------------------------------------------------------------------
@@ -223,7 +248,6 @@ function initPWARouter() {
             <button class="sidebar-toggle">${sectionTitle}</button>
             <div class="sidebar-content">
         `;
-
         if (section.items && section.items.length > 0) {
           section.items.forEach(item => {
             const webPath = ('/' + osModelFolder + '/' + item.path).replace(/\/+/g, '/');
@@ -272,7 +296,6 @@ function initPWARouter() {
 
       const href = targetLink.getAttribute('href');
       if (!href || href.startsWith('http') || href.startsWith('#')) return;
-
       const cleanHref = href.toLowerCase().trim();
       const linkText = targetLink.textContent.toLowerCase().trim();
       
@@ -286,6 +309,7 @@ function initPWARouter() {
       ) {
         return; 
       }
+
       e.preventDefault();
       loadPage(href);
       history.pushState({ path: href }, '', href);
@@ -346,9 +370,10 @@ function initPWARouter() {
         </div>
       </div>
     `;
-    document.title = `${modelName} — Бортовое Руководство`;
 
+    document.title = `${modelName} — Бортовое Руководство`;
     highlightActiveLink(window.location.pathname);
+
     if (window.OSSearch && typeof window.OSSearch.init === 'function') {
       window.OSSearch.init();
     }
@@ -393,8 +418,8 @@ async function loadPage(url) {
 
   let cleanUrl = url.replace(/\/+/g, '/');
   let fetchUrl = cleanUrl;
-
   const segments = window.location.pathname.split('/').filter(Boolean);
+
   if (!isGitHubPages && segments.length > 0 && fetchUrl.toLowerCase().startsWith('/' + segments[0].toLowerCase() + '/')) {
     fetchUrl = fetchUrl.replace(new RegExp('^\\/' + segments[0], 'i'), '').replace(/\/+/g, '/');
   }
@@ -456,7 +481,7 @@ async function loadPage(url) {
             const targetHref = btn.getAttribute('href');
             if (targetHref && targetHref !== '#') {
               loadPage(targetHref);
-              history.pushState({ path: targetHref }, '', targetHref);
+              history.pushState({ path: href }, '', targetHref);
             }
           });
         });
@@ -476,18 +501,11 @@ async function loadPage(url) {
         window.OSSearch.init();
       }
 
-      // Корректный перезапуск РСЯ для SPA на десктопах и мобилках
+      // ⚡ РЕИНЖЕКТ РЕКЛАМЫ INIMAGE ПРИ SPA-ПЕРЕХОДЕ
       if (window.adsInitialized) {
         setTimeout(() => {
-          if (window.Ya && window.Ya.Autoplacement) {
-            try {
-              window.Ya.Autoplacement.render(); 
-              console.log('[OSApp РСЯ] Рекламная сетка пересчитана для новой страницы.');
-            } catch (yandexErr) {
-              console.warn('[OSApp РСЯ] Ошибка рендеринга:', yandexErr);
-            }
-          }
-        }, 300); // Немного увеличили таймаут для медленных мобильных процессоров
+          initInImageAds();
+        }, 150);
       }
     } else {
       mainStage.innerHTML = `<div class="os-main" style="padding:16px;">${doc.body.innerHTML}</div>`;
@@ -497,7 +515,6 @@ async function loadPage(url) {
     if (typeof highlightActiveLink === 'function') {
       highlightActiveLink(cleanUrl);
     }
-
   } catch (error) {
     console.error('Ошибка навигации роутера:', error);
     mainStage.innerHTML = `
@@ -519,7 +536,6 @@ function highlightActiveLink(url) {
   if (!accordionMenu) return;
 
   accordionMenu.querySelectorAll('a').forEach(a => a.classList.remove('active'));
-
   let lookupPath = url.replace(window.location.origin, '').replace(/\/+/g, '/');
   const segments = window.location.pathname.split('/').filter(Boolean);
   const currentModelFolder = segments.length > 0 ? segments[0] : '';
@@ -611,8 +627,8 @@ function generateDynamicBreadcrumbs(currentUrl, articleTitle) {
    ========================================================================= */
 function generateFooterNavigation(currentPath) {
   if (!cachedMenuData) return ''; 
-
   let flatArticles = [];
+
   cachedMenuData.forEach(section => {
     if (section.items && section.items.length > 0) {
       section.items.forEach(item => {
@@ -625,7 +641,6 @@ function generateFooterNavigation(currentPath) {
   const currentIndex = flatArticles.findIndex(item => item.path.replace(/^\//, '').toLowerCase() === cleanCurrent);
 
   if (currentIndex === -1) return '';
-
   const prevArticle = flatArticles[currentIndex - 1];
   const nextArticle = flatArticles[currentIndex + 1];
 
