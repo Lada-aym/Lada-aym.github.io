@@ -80,11 +80,93 @@ window.OSSearch = (() => {
     if (!document.getElementById("osOverlay")) {
       const container = document.createElement("div");
       container.innerHTML = `
+        <style>
+          .os-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 999999;
+            display: none;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+          }
+          .os-overlay.active { display: block; }
+          .os-modal {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: #121214;
+          }
+          .os-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            border-bottom: 1px solid #27272a;
+            box-sizing: border-box;
+            width: 100%;
+          }
+          .os-bar-icon { font-size: 18px; flex-shrink: 0; }
+          
+          /* 🔥 КЛЮЧЕВОЕ ИСПРАВЛЕНИЕ ДЛЯ ИНПУТА */
+          #osInput {
+            flex: 1;
+            min-width: 0;
+            background: #1e1e22;
+            border: 1px solid #3f3f46;
+            color: #f4f4f5;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            box-sizing: border-box;
+          }
+          #osInput:focus { border-color: var(--os-accent, #ff4d4d); }
+          
+          .os-btn-action {
+            background: none;
+            border: none;
+            color: #a1a1aa;
+            cursor: pointer;
+            padding: 8px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+          }
+          .os-mic-icon { width: 20px; height: 20px; color: #a1a1aa; }
+          .os-btn-action.listening .os-mic-icon { color: #ef4444; animation: os-pulse 1.5s infinite; }
+          
+          /* 🔥 КЛЮЧЕВОЕ ИСПРАВЛЕНИЕ ДЛЯ КНОПКИ ЗАКРЫТЬ */
+          #osCloseMobile {
+            background: #27272a;
+            border: none;
+            color: #f4f4f5;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            flex-shrink: 0;
+            white-space: nowrap;
+          }
+          
+          @keyframes os-pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+          }
+        </style>
         <div id="osOverlay" class="os-overlay">
           <div class="os-modal">
             <div class="os-bar">
               <span class="os-bar-icon">🔍</span>
-              <input id="osInput" type="text" autocomplete="off" placeholder="Что вы ищете?..." />
+              <input id="osInput" type="text" autocomplete="off" placeholder="Поиск мануала..." />
               <button id="osVoiceBtn" class="os-btn-action" type="button" title="Голосовой поиск">
                 <svg class="os-mic-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 14C13.66 14 15 12.66 15 11V5C15 3.34 13.66 2 12 2C10.34 2 9 3.34 9 5V11C9 12.66 10.34 14 12 14Z" fill="currentColor"/>
@@ -101,7 +183,7 @@ window.OSSearch = (() => {
       appContainer.appendChild(container);
       document.getElementById("osCloseMobile")?.addEventListener("click", close);
     }
-  }
+  } /* <--- ЭТА СКОБКА ТЕПЕРЬ НА МЕСТЕ, ФУНКЦИЯ ЗАКРЫТА КОРРЕКТНО */
 
   function cache() {
     els.openBtn = document.getElementById("osIntegratedSearchBtn");
@@ -179,7 +261,6 @@ window.OSSearch = (() => {
     if (!query) return null;
     const cleanQuery = query.toLowerCase().trim().replace(/ё/g, "е");
     if (cleanQuery.length < 3) return null;
-
     const AUTO_FIX_MAP = {
       "двигатиль": "двигатель", "двигател": "двигатель", "двиготель": "двигатель",
       "мсло": "масло", "масла": "масло", "маслом": "масло", "мтр": "мотор", "матоp": "мотор",
@@ -190,13 +271,11 @@ window.OSSearch = (() => {
       "диагностика": "диагностика", "деогностика": "диагностика",
       "электрика": "электрика", "иликтрика": "электрика", "кузов": "кузов", "кузав": "кузов"
     };
-
     if (AUTO_FIX_MAP[cleanQuery]) return AUTO_FIX_MAP[cleanQuery];
-    const CORE_WORDS = ["двигатель", "мотор", "масло", "смазка", "предохранитель", "тормоза", "аккумулятор", "диагностика", "подвеска", "коробка", "генератор", "стартер", "радиатор"];
 
+    const CORE_WORDS = ["двигатель", "мотор", "масло", "смазка", "предохранитель", "тормоза", "аккумулятор", "диагностика", "подвеска", "коробка", "генератор", "стартер", "радиатор"];
     let bestMatch = null;
     let minDistance = 3;
-
     for (const word of CORE_WORDS) {
       if (Math.abs(word.length - cleanQuery.length) <= 2) {
         const distance = lev(cleanQuery, word);
@@ -246,7 +325,6 @@ window.OSSearch = (() => {
       
       const path = window.location.pathname.toLowerCase().replace(/\/+/g, '/');
       const isAbsoluteHome = path === "/" || path === "" || path === "/index.html" || document.body.classList.contains("home-page");
-
       for (const [id, itemVector] of aiVectors.entries()) {
         const similarity = cosineSimilarity(queryVector, itemVector);
         if (similarity > 0.65) {
@@ -332,11 +410,9 @@ window.OSSearch = (() => {
         }
       });
     });
-
     const path = window.location.pathname.toLowerCase().replace(/\/+/g, '/');
     const isAbsoluteHome = path === "/" || path === "" || path === "/index.html" || (document.body.classList.contains("home-page") && !path.split("/").filter(Boolean).length);
     const currentSection = getFirstUrlSegment();
-
     let results = [...matchedIds].map(id => {
       const item = INDEX.get(id);
       return { ...item, score: advancedScore(item, q) };
@@ -349,7 +425,6 @@ window.OSSearch = (() => {
       }
       return true;
     });
-
     results.sort((a, b) => b.score - a.score);
     results = results.slice(0, 20);
     QUERY_CACHE.set(q, results);
@@ -436,6 +511,7 @@ window.OSSearch = (() => {
     if (active) { active.classList.add("active"); active.scrollIntoView({ block: "nearest" }); }
   }
 
+  // Обновлен рендеринг саджестов
   function renderSuggestions() {
     if (!els.results) return;
     const history = getHistory();
@@ -514,14 +590,12 @@ window.OSSearch = (() => {
     
     // 🔥 СВЯЗУЮЩИЙ ИНТЕРФЕЙСНЫЙ ШЛЮЗ ДЛЯ КОРНЯ ГЛАВНОЙ СТРАНИЦЫ
     document.querySelector('.core-search-trigger')?.addEventListener('click', open);
-
     document.querySelector('.bottom-nav, .tabbar, .nav-panel')?.addEventListener('click', e => {
       if (e.target.closest('#osIntegratedSearchBtn')) open();
     });
     document.querySelector('#appSidebar')?.addEventListener('click', e => {
       if (e.target.closest('#osIntegratedSearchBtn')) open();
     });
-
     els.overlay?.addEventListener("click", e => { if (e.target === els.overlay) close(); });
     els.input?.addEventListener("input", run);
     els.clear?.addEventListener("click", () => { if (els.input) { els.input.value = ""; els.input.focus(); } renderSuggestions(); });
@@ -581,7 +655,6 @@ window.OSSearch = (() => {
       });
     }
   }
-
   return { init, open, close };
 })();
 
