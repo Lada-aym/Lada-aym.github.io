@@ -1,205 +1,93 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-
   <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
-  <title>
-    OS Search Generator
-  </title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OS Search Generator</title>
   <style>
-
-    *{
-      box-sizing:border-box;
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 40px;
+      background: #f5f5f5;
+      color: #111;
+      font-family: Arial, sans-serif;
     }
-
-    body{
-
-      margin:0;
-
-      padding:40px;
-
-      background:#f5f5f5;
-
-      color:#111;
-
-      font-family:
-        Arial,
-        sans-serif;
+    h1 { margin-top: 0; margin-bottom: 20px; font-size: 32px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+    button {
+      height: 48px;
+      padding: 0 24px;
+      border: none;
+      border-radius: 12px;
+      background: #0d6efd;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: .15s ease;
     }
-
-    h1{
-
-      margin-top:0;
-
-      margin-bottom:20px;
-
-      font-size:32px;
+    button:hover { opacity: .92; }
+    button:active { transform: scale(.98); }
+    pre {
+      margin: 0;
+      padding: 20px;
+      border-radius: 16px;
+      background: #111;
+      color: #00ff88;
+      overflow: auto;
+      max-height: 70vh;
+      white-space: pre-wrap;
+      line-height: 1.5;
     }
-
-    .actions{
-
-      display:flex;
-
-      gap:12px;
-
-      flex-wrap:wrap;
-
-      margin-bottom:20px;
-    }
-
-    button{
-
-      height:48px;
-
-      padding:0 24px;
-
-      border:none;
-
-      border-radius:12px;
-
-      background:#0d6efd;
-
-      color:#fff;
-
-      font-size:16px;
-
-      font-weight:600;
-
-      cursor:pointer;
-
-      transition:.15s ease;
-    }
-
-    button:hover{
-      opacity:.92;
-    }
-
-    button:active{
-      transform:scale(.98);
-    }
-
-    pre{
-
-      margin:0;
-
-      padding:20px;
-
-      border-radius:16px;
-
-      background:#111;
-
-      color:#00ff88;
-
-      overflow:auto;
-
-      max-height:70vh;
-
-      white-space:pre-wrap;
-
-      line-height:1.5;
-    }
-
-    .muted{
-      color:#666;
-    }
-
+    .muted { color: #666; }
   </style>
-
 </head>
 <body>
 
-<h1>
-  🚀 OS Search Generator
-</h1>
-
-<p class="muted">
-  Генерация search.json из sitemap.xml
-</p>
+<h1>🚀 OS Search Generator</h1>
+<p class="muted">Генерация точечного search.json из контента мануалов (блоки main и section.content2)</p>
 
 <div class="actions">
-
-  <button id="generateBtn">
-    Generate search.json
-  </button>
-
+  <button id="generateBtn">Generate search.json</button>
 </div>
 
 <pre id="log"></pre>
 
 <script>
-
 /* =========================================================
    LOG
 ========================================================= */
+const logEl = document.getElementById("log");
 
-const logEl =
-  document.getElementById(
-    "log"
-  );
-
-function log(...args){
-
+function log(...args) {
   console.log(...args);
-
-  logEl.textContent +=
-    args.join(" ") + "\n";
-
-  logEl.scrollTop =
-    logEl.scrollHeight;
+  logEl.textContent += args.join(" ") + "\n";
+  logEl.scrollTop = logEl.scrollHeight;
 }
 
 /* =========================================================
    CLEAN TEXT
 ========================================================= */
-
-function clean(text){
-
+function clean(text) {
   return (text || "")
-
     .replace(/\u00a0/g, " ")
-
     .replace(/\s+/g, " ")
-
     .trim();
 }
 
 /* =========================================================
    NORMALIZE URL
 ========================================================= */
-
-function normalizeUrl(url){
-
+function normalizeUrl(url) {
   try {
-
-    const u =
-      new URL(
-        url,
-        window.location.origin
-      );
-
+    const u = new URL(url, window.location.origin);
     return (
       u.pathname
-
-        .replace(
-          /index\.html$/i,
-          ""
-        )
-
-        .replace(
-          /\/+$/,
-          ""
-        ) || "/"
+        .replace(/index\.html$/i, "")
+        .replace(/\/+$/, "") || "/"
     );
-
   } catch {
-
     return url;
   }
 }
@@ -207,45 +95,16 @@ function normalizeUrl(url){
 /* =========================================================
    TITLE EXTRACT
 ========================================================= */
-
-function getTitle(doc){
-
-  // ❌ H1 БОЛЬШЕ НЕ ИСПОЛЬЗУЕМ
-
-  let title =
-    doc.querySelector(
-      "title"
-    )?.textContent || "";
-
+function getTitle(doc) {
+  let title = doc.querySelector("title")?.textContent || "";
   title = clean(title);
+  title = title.replace(/\s*—\s*LADA\s*Samara.*/i, ""); // Отсекаем хвост бренда
+  title = title.replace(/\s*\|.*$/, "");
 
-  title = title.replace(
-    /\s*\|.*$/,
-    ""
-  );
+  if (title) return title;
 
-  if (title){
-    return title;
-  }
-
-  // fallback только meta
-  const og =
-    doc.querySelector(
-      'meta[property="og:title"]'
-    )?.content;
-
-  if (og){
-    return clean(og);
-  }
-
-  const metaTitle =
-    doc.querySelector(
-      'meta[name="title"]'
-    )?.content;
-
-  if (metaTitle){
-    return clean(metaTitle);
-  }
+  const og = doc.querySelector('meta[property="og:title"]')?.content;
+  if (og) return clean(og);
 
   return "Untitled";
 }
@@ -253,471 +112,178 @@ function getTitle(doc){
 /* =========================================================
    DESCRIPTION EXTRACT
 ========================================================= */
-
-function getDescription(doc){
-
-  const meta =
-
-    doc.querySelector(
-      'meta[name="description"]'
-    ) ||
-
-    doc.querySelector(
-      'meta[property="og:description"]'
-    );
-
-  const content =
-    clean(
-      meta?.content || ""
-    );
-
+function getDescription(doc) {
+  const meta = doc.querySelector('meta[name="description"]') || doc.querySelector('meta[property="og:description"]');
+  const content = clean(meta?.content || "");
   return content.slice(0, 240);
 }
 
 /* =========================================================
-   REMOVE NOISE
+   REMOVE NOISE (Чистим мусор внутри контента перед парсингом)
 ========================================================= */
-
-function removeNoise(doc){
-
-  doc.querySelectorAll(`
-
-    script,
-    style,
-    noscript,
-    iframe,
-    svg,
-    canvas,
-
-    nav,
-    header,
-    footer,
-
-    .sidebar,
-    .menu,
-    .dropdown,
-    .search,
-    .search-float,
-    .search-overlay,
-
-    .nav-actions,
-    .menu-scroll,
-
-    .ads,
-    .comments,
-    .banner,
-    .cookie,
-    .popup,
-    .modal
-
-  `).forEach(el => {
-    el.remove();
-  });
+function removeNoise(targetElement) {
+  if (!targetElement) return;
+  
+  // Удаляем интерактивные элементы, картинки и скрипты конкретно из блока статьи
+  targetElement.querySelectorAll(`
+    script, style, noscript, iframe, svg, canvas,
+    .os-img-caption, span[class*="caption"], 
+    .os-book-model-tag, .os-page-header,
+    button, .badge, .alert-close
+  `).forEach(el => el.remove());
 }
 
 /* =========================================================
-   CONTENT EXTRACT
+   CONTENT EXTRACT (Фильтрация под твою архитектуру)
 ========================================================= */
-
-function getContent(doc){
-
-  removeNoise(doc);
-
-  const candidates = [
-
-    doc.querySelector(
-      '[itemprop="articleBody"]'
-    ),
-
-    doc.querySelector(
-      '[itemprop="text"]'
-    ),
-
-    doc.querySelector(
-      "main"
-    ),
-
-    doc.querySelector(
-      "article"
-    ),
-
-    doc.querySelector(
-      ".content"
-    ),
-
-    doc.body
-
-  ].filter(Boolean);
-
-  let best = "";
-
-  for (const el of candidates){
-
-    const text =
-      clean(
-        el.innerText ||
-        el.textContent ||
-        ""
-      );
-
-    if (
-      text.length >
-      best.length
-    ){
-      best = text;
-    }
+function getContent(doc) {
+  // 1. Ищем новые страницы (основной тег main)
+  let target = doc.querySelector("main");
+  
+  // 2. Если не нашли, ищем старые страницы по селектору класса
+  if (!target) {
+    target = doc.querySelector("section.content2");
   }
 
-  if (best.length < 120){
-
-    const paragraphs =
-      [...doc.querySelectorAll("p")]
-
-        .map(p =>
-          clean(
-            p.innerText ||
-            p.textContent
-          )
-        )
-
-        .filter(
-          t => t.length > 30
-        );
-
-    best =
-      paragraphs.join(" ");
+  // Если целевой блок с чистым контентом найден
+  if (target) {
+    // Клонируем элемент, чтобы не портить исходный DOM при удалении шума
+    const clonedTarget = target.cloneNode(true);
+    removeNoise(clonedTarget);
+    
+    return clean(clonedTarget.innerText || clonedTarget.textContent || "");
   }
 
-  return best;
+  // ❌ Если на странице нет ни <main>, ни <section class="content2">, 
+  // значит это системный файл (или мусор). Возвращаем пустоту, чтобы скрипт её пропустил.
+  return "";
 }
 
 /* =========================================================
    KEYWORDS
 ========================================================= */
+function buildKeywords(text) {
+  const words = clean(text)
+    .toLowerCase()
+    .replace(/[^a-zа-яё0-9\s]/gi, " ")
+    .split(/\s+/)
+    .filter(w => w.length > 3);
 
-function buildKeywords(text){
-
-  const words =
-
-    clean(text)
-
-      .toLowerCase()
-
-      .replace(
-        /[^a-zа-яё0-9\s]/gi,
-        " "
-      )
-
-      .split(/\s+/)
-
-      .filter(w =>
-        w.length > 3
-      );
-
-  const unique =
-    [...new Set(words)];
-
-  return unique
-    .slice(0, 60)
-    .join(" ");
-}
-
-/* =========================================================
-   PARSE PAGE
-========================================================= */
-
-async function parsePage(url){
-
-  const response =
-    await fetch(url);
-
-  if (!response.ok){
-
-    throw new Error(
-      "HTTP " +
-      response.status
-    );
-  }
-
-  const html =
-    await response.text();
-
-  const doc =
-    new DOMParser()
-      .parseFromString(
-        html,
-        "text/html"
-      );
-
-  const title =
-    getTitle(doc);
-
-  const description =
-    getDescription(doc);
-
-  const content =
-    getContent(doc);
-
-  const keywords =
-    buildKeywords(
-      title +
-      " " +
-      description +
-      " " +
-      content
-    );
-
-  return {
-
-    title,
-
-    description,
-
-    content,
-
-    keywords
-  };
+  const unique = [...new Set(words)];
+  return unique.slice(0, 60).join(" ");
 }
 
 /* =========================================================
    DOWNLOAD FILE
 ========================================================= */
-
-function downloadJSON(data){
-
-  const blob =
-    new Blob(
-
-      [
-        JSON.stringify(
-          data,
-          null,
-          2
-        )
-      ],
-
-      {
-        type:
-          "application/json"
-      }
-    );
-
-  const a =
-    document.createElement(
-      "a"
-    );
-
-  a.href =
-    URL.createObjectURL(
-      blob
-    );
-
-  a.download =
-    "search.json";
-
+function downloadJSON(data) {
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "search.json";
   document.body.appendChild(a);
-
   a.click();
-
   a.remove();
-
-  URL.revokeObjectURL(
-    a.href
-  );
+  URL.revokeObjectURL(a.href);
 }
 
 /* =========================================================
    GENERATE
 ========================================================= */
-
-async function generate(){
-
+async function generate() {
   logEl.textContent = "";
-
-  log(
-    "🚀 Loading sitemap..."
-  );
+  log("🚀 Загрузка sitemap.xml...");
 
   try {
+    const sitemapResponse = await fetch("/sitemap.xml");
 
-    const sitemapResponse =
-      await fetch(
-        "/sitemap.xml"
-      );
-
-    if (
-      !sitemapResponse.ok
-    ){
-
-      throw new Error(
-        "sitemap.xml HTTP " +
-        sitemapResponse.status
-      );
+    if (!sitemapResponse.ok) {
+      throw new Error("sitemap.xml HTTP " + sitemapResponse.ok);
     }
 
-    const sitemapText =
-      await sitemapResponse.text();
+    const sitemapText = await sitemapResponse.text();
+    const sitemap = new DOMParser().parseFromString(sitemapText, "text/xml");
+    const urls = [...sitemap.querySelectorAll("loc")].map(x => x.textContent.trim()).filter(Boolean);
 
-    const sitemap =
-      new DOMParser()
-        .parseFromString(
-          sitemapText,
-          "text/xml"
-        );
-
-    const urls =
-
-      [
-        ...sitemap.querySelectorAll(
-          "loc"
-        )
-      ]
-
-      .map(
-        x =>
-          x.textContent.trim()
-      )
-
-      .filter(Boolean);
-
-    log(
-      "📄 Pages found:",
-      urls.length
-    );
+    log("📄 Страниц обнаружено в sitemap:", urls.length);
 
     const result = {
-      generatedAt:
-        new Date()
-          .toISOString(),
-
+      generatedAt: new Date().toISOString(),
       version: 1,
-
       items: []
     };
 
     let indexed = 0;
     let skipped = 0;
 
-    for (const url of urls){
-
+    for (const url of urls) {
       try {
-
-        log(
-          "🔍 Index:",
-          url
-        );
-
-        const page =
-          await parsePage(
-            url
-          );
-
-        if (
-          !page.content ||
-          page.content.length < 30
-        ){
-
+        // Пропускаем главный index.html (оболочку SPA), если она есть в ситмапе
+        if (url.endsWith('/index.html') || url === window.location.origin + '/') {
           skipped++;
-
-          log(
-            "⚠ skipped (small content)"
-          );
-
+          log("🦘 Пропущена главная страница-фреймворк:", url);
           continue;
         }
 
-        const normalizedUrl =
-          normalizeUrl(url);
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("HTTP " + response.status);
+        }
+
+        const html = await response.text();
+        const doc = new DOMParser().parseFromString(html, "text/html");
+
+        const title = getTitle(doc);
+        const description = getDescription(doc);
+        const content = getContent(doc);
+
+        // Если контент пустой (страница не подошла под фильтры <main> или .content2)
+        if (!content || content.length < 40) {
+          skipped++;
+          log(`⚠ Пропущена (нет целевого контента main/.content2): ${url}`);
+          continue;
+        }
+
+        const normalizedUrl = normalizeUrl(url);
+        const keywords = buildKeywords(title + " " + description + " " + content);
 
         result.items.push({
-
-          title:
-            page.title,
-
-          url:
-            normalizedUrl,
-
-          description:
-            page.description,
-
-          content:
-            page.content
-              .slice(0, 5000),
-
-          keywords:
-            page.keywords
+          title: title,
+          url: normalizedUrl,
+          description: description,
+          content: content.slice(0, 4000), // Ограничение длины статьи, чтобы search.json не весил тонну
+          keywords: keywords
         });
 
         indexed++;
+        log(`✓ Индексировано: ${normalizedUrl} [${title}]`);
 
-      } catch (e){
-
+      } catch (e) {
         skipped++;
-
-        log(
-          "❌ skip:",
-          url,
-          "|",
-          e.message
-        );
+        log("❌ Ошибка парсинга:", url, "|", e.message);
       }
     }
 
-    result.total =
-      result.items.length;
-
+    result.total = result.items.length;
     downloadJSON(result);
 
     log("");
-    log(
-      "=============================="
-    );
+    log("==================================================");
+    log("✅ ИНДЕКСАЦИЯ ЗАВЕРШЕНА");
+    log("📦 Успешно добавлено страниц:", indexed);
+    log("🗑️ Отфильтровано/пропущено:", skipped);
+    log("🧠 Всего записей в итоговом поиске:", result.items.length);
+    log("==================================================");
 
-    log(
-      "✅ DONE"
-    );
-
-    log(
-      "📦 Indexed:",
-      indexed
-    );
-
-    log(
-      "⚠ Skipped:",
-      skipped
-    );
-
-    log(
-      "🧠 Search items:",
-      result.items.length
-    );
-
-    log(
-      "=============================="
-    );
-
-  } catch (e){
-
-    log(
-      "💥 ERROR:",
-      e.message
-    );
+  } catch (e) {
+    log("💥 КРИТИЧЕСКАЯ ОШИБКА:", e.message);
   }
 }
 
 /* =========================================================
    EVENTS
 ========================================================= */
-
-document
-  .getElementById(
-    "generateBtn"
-  )
-  .addEventListener(
-    "click",
-    generate
-  );
-
+document.getElementById("generateBtn").addEventListener("click", generate);
 </script>
 
 </body>
