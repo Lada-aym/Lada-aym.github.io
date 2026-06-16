@@ -69,35 +69,40 @@ function initLazyScripts() {
         yandexContext.src = "https://yandex.ru/ads/system/context.js";
         
         yandexContext.onload = () => {
-          console.log('[OSApp РСЯ] Базовый контекст загружен. Инициализируем сквозные форматы...');
-          
-          // 1. FloorAd для мобильных
-          window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.render({ "blockId": "R-A-537370-36", "type": "floorAd", "platform": "touch" });
-          });
-          // 2. FloorAd для ПК
-          window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.render({ "blockId": "R-A-537370-44", "type": "floorAd", "platform": "desktop" });
-          });
-          // 3. Fullscreen для мобильных
-          window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.render({ "blockId": "R-A-537370-35", "type": "fullscreen", "platform": "touch" });
-          });
-          // 4. Fullscreen для ПК
-          window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.render({ "blockId": "R-A-537370-43", "type": "fullscreen", "platform": "desktop" });
-          });
-
-          // Помечаем, что ядро рекламы готово. Сканирование картинок произойдет автоматически через loadPage
+          console.log('[OSApp РСЯ] Базовый контекст загружен. Запускаем первый рендер рекламы...');
           window.adsInitialized = true;
-          console.log('LazyLoad: Сквозные форматы РСЯ зарегистрированы.');
+          
+          renderGlobalAds();
+          initInImageAds();
         };
         document.head.appendChild(yandexContext);
       } else {
         window.adsInitialized = true;
+        renderGlobalAds();
+        initInImageAds();
       }
     }
   }, 5000);
+}
+
+/* -------------------------------------------------------------------------
+   🚀 ПЕРЕЗАПУСК СКВОЗНЫХ БЛОКОВ РСЯ (FloorAd и Fullscreen) ПРИ СМЕНЕ СТРАНИЦ
+   ------------------------------------------------------------------------- */
+function renderGlobalAds() {
+  if (!window.Ya || !window.Ya.Context) return;
+
+  console.log('[OSApp РСЯ] Перезапуск сквозных форматов для текущего URL...');
+
+  window.yaContextCb.push(() => {
+    // 1. FloorAd для мобильных
+    Ya.Context.AdvManager.render({ "blockId": "R-A-537370-36", "type": "floorAd", "platform": "touch" });
+    // 2. FloorAd для ПК
+    Ya.Context.AdvManager.render({ "blockId": "R-A-537370-44", "type": "floorAd", "platform": "desktop" });
+    // 3. Fullscreen для мобильных
+    Ya.Context.AdvManager.render({ "blockId": "R-A-537370-35", "type": "fullscreen", "platform": "touch" });
+    // 4. Fullscreen для ПК
+    Ya.Context.AdvManager.render({ "blockId": "R-A-537370-43", "type": "fullscreen", "platform": "desktop" });
+  });
 }
 
 /* -------------------------------------------------------------------------
@@ -296,6 +301,7 @@ function initPWARouter() {
 
       const href = targetLink.getAttribute('href');
       if (!href || href.startsWith('http') || href.startsWith('#')) return;
+
       const cleanHref = href.toLowerCase().trim();
       const linkText = targetLink.textContent.toLowerCase().trim();
       
@@ -462,7 +468,7 @@ async function loadPage(url) {
         twitterImage.setAttribute('content', (baseDomain + osModelFolder + 'assets/img/og-preview.jpg').replace(/\/+/g, '/'));
       }
 
-      // Навигационные кнопки
+      // Навигационные кнопки внизу статьи
       const singlePageContent = mainStage.querySelector('.os-single-page-content') || mainStage.querySelector('.os-article-layout');
       if (singlePageContent) {
         let currentRelativePath = fetchUrl.replace(/^\//, '');
@@ -481,7 +487,7 @@ async function loadPage(url) {
             const targetHref = btn.getAttribute('href');
             if (targetHref && targetHref !== '#') {
               loadPage(targetHref);
-              history.pushState({ path: href }, '', targetHref);
+              history.pushState({ path: targetHref }, '', targetHref); // Ошибка с href исправлена
             }
           });
         });
@@ -501,12 +507,14 @@ async function loadPage(url) {
         window.OSSearch.init();
       }
 
-      // ⚡ РЕИНЖЕКТ РЕКЛАМЫ INIMAGE ПРИ SPA-ПЕРЕХОДЕ
+      // ⚡ РЕИНЖЕКТ ВСЕЙ РЕКЛАМЫ РСЯ ПРИ SPA-ПЕРЕХОДЕ
       if (window.adsInitialized) {
         setTimeout(() => {
-          initInImageAds();
-        }, 150);
+          renderGlobalAds(); // Перезапуск сквозных FloorAd и Fullscreen
+          initInImageAds();  // Поиск картинок на новой странице
+        }, 200); // 200мс — оптимально для завершения перестроения DOM
       }
+
     } else {
       mainStage.innerHTML = `<div class="os-main" style="padding:16px;">${doc.body.innerHTML}</div>`;
       if (doc.title) document.title = doc.title;
@@ -515,6 +523,7 @@ async function loadPage(url) {
     if (typeof highlightActiveLink === 'function') {
       highlightActiveLink(cleanUrl);
     }
+
   } catch (error) {
     console.error('Ошибка навигации роутера:', error);
     mainStage.innerHTML = `
@@ -537,6 +546,7 @@ function highlightActiveLink(url) {
 
   accordionMenu.querySelectorAll('a').forEach(a => a.classList.remove('active'));
   let lookupPath = url.replace(window.location.origin, '').replace(/\/+/g, '/');
+
   const segments = window.location.pathname.split('/').filter(Boolean);
   const currentModelFolder = segments.length > 0 ? segments[0] : '';
   const normalizedLookup = lookupPath.replace(new RegExp('^\\/' + currentModelFolder, 'i'), '').replace(/\/+/g, '/');
@@ -627,8 +637,8 @@ function generateDynamicBreadcrumbs(currentUrl, articleTitle) {
    ========================================================================= */
 function generateFooterNavigation(currentPath) {
   if (!cachedMenuData) return ''; 
-  let flatArticles = [];
 
+  let flatArticles = [];
   cachedMenuData.forEach(section => {
     if (section.items && section.items.length > 0) {
       section.items.forEach(item => {
@@ -641,6 +651,7 @@ function generateFooterNavigation(currentPath) {
   const currentIndex = flatArticles.findIndex(item => item.path.replace(/^\//, '').toLowerCase() === cleanCurrent);
 
   if (currentIndex === -1) return '';
+
   const prevArticle = flatArticles[currentIndex - 1];
   const nextArticle = flatArticles[currentIndex + 1];
 
