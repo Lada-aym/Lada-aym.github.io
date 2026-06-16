@@ -25,7 +25,39 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Инициализируем модули ядра (если элементы присутствуют на странице)
   initMobileMenu();
   initPWARouter();
+  
+  // 4. Внедряем защитные стили против гигантской рекламы
+  injectAntiBadAdsStyles();
 });
+
+/* -------------------------------------------------------------------------
+   🛡️ ЗАЩИТА ОТ АГРЕССИВНОЙ РЕКЛАМЫ (Ограничение размеров баннеров РСЯ)
+   ------------------------------------------------------------------------- */
+function injectAntiBadAdsStyles() {
+  if (document.getElementById('os-anti-ads-style')) return;
+  const style = document.createElement('style');
+  style.id = 'os-anti-ads-style';
+  style.innerHTML = `
+    /* Ограничиваем авто-блоки Яндекса, чтобы они не перекрывали контент */
+    div[id^="yandex_rtb_"], 
+    .ya-page-placement, 
+    div[class*="ya-partner"] {
+      max-height: 280px !important;
+      overflow: hidden !important;
+      margin: 15px auto !important;
+      clear: both !important;
+    }
+    /* Адаптивность для мобильных версий */
+    @media (max-width: 768px) {
+      div[id^="yandex_rtb_"], .ya-page-placement {
+        max-height: 120px !important; /* Компактный мобильный баннер */
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+}
 
 /* -------------------------------------------------------------------------
    ⏱️ ЛЕНИВАЯ ЗАГРУЗКА (Lazy Loading — Срабатывает строго через 5 секунд)
@@ -39,19 +71,16 @@ function initLazyScripts() {
     // 📊 ИНИЦИАЛИЗАЦИЯ GOOGLE TAG MANAGER (ОТКАЗОУСТОЙЧИВАЯ СБОРКА)
     // =========================================================================
     if (!window.gtmInitialized) {
-      // 1. Создаем и инициализируем массив dataLayer, если его еще нет
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         'gtm.start': new Date().getTime(),
         event: 'gtm.js'
       });
 
-      // 2. Создаем тег скрипта для загрузки основного контейнера GTM
       const gtmScript = document.createElement('script');
       gtmScript.async = true;
       gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PRQ33NW3';
       
-      // 3. Внедряем скрипт в документ
       const firstScript = document.getElementsByTagName('script')[0];
       if (firstScript && firstScript.parentNode) {
         firstScript.parentNode.insertBefore(gtmScript, firstScript);
@@ -67,7 +96,6 @@ function initLazyScripts() {
     // 🌟 ПОДКЛЮЧЕНИЕ АВТОРАССТАНОВКИ ЯНДЕКСА (ID: 537370) С ЛЕНИВЫМ СТАРТОМ
     // =========================================================================
     if (!window.adsInitialized) {
-      // Проверяем, вдруг скрипты уже есть в DOM, чтобы не дублировать контекст
       if (!document.getElementById('yandex-context-script')) {
         const yandexContext = document.createElement('script');
         yandexContext.id = 'yandex-context-script';
@@ -82,6 +110,17 @@ function initLazyScripts() {
         yandexLoader.async = true;
         yandexLoader.setAttribute('data-page-id', '537370');
         yandexLoader.src = "https://yandex.ru/ads/system/ap-loader.js";
+        
+        // Перехватываем событие загрузки скрипта для мгновенного рендеринга на мобилках
+        yandexLoader.onload = () => {
+          setTimeout(() => {
+            if (window.Ya && window.Ya.Autoplacement) {
+              window.Ya.Autoplacement.render();
+              console.log('[OSApp РСЯ] Первичный рендеринг авторасстановки выполнен.');
+            }
+          }, 200);
+        };
+        
         document.head.appendChild(yandexLoader);
       }
 
@@ -355,7 +394,6 @@ async function loadPage(url) {
   let cleanUrl = url.replace(/\/+/g, '/');
   let fetchUrl = cleanUrl;
 
-  // Исправленная фильтрация папок-дубликатов при fetch-запросе
   const segments = window.location.pathname.split('/').filter(Boolean);
   if (!isGitHubPages && segments.length > 0 && fetchUrl.toLowerCase().startsWith('/' + segments[0].toLowerCase() + '/')) {
     fetchUrl = fetchUrl.replace(new RegExp('^\\/' + segments[0], 'i'), '').replace(/\/+/g, '/');
@@ -376,9 +414,6 @@ async function loadPage(url) {
       mainStage.innerHTML = '';
       mainStage.appendChild(incomingContent.cloneNode(true));
       
-      // =========================================================================
-      // 🔥 АВТОМАТИЧЕСКАЯ КОРРЕКЦИЯ МИКРОРАЗМЕТКИ И ЗАГЛУШЕК СОЦСЕТЕЙ (БЕЗ РУЧНОЙ ПРАВКИ HTML)
-      // =========================================================================
       const currentFullUrl = window.location.href; 
       const baseDomain = window.location.origin;   
 
@@ -386,7 +421,7 @@ async function loadPage(url) {
       const canonicalTag = document.querySelector('.os-canonical-tag') || document.querySelector('link[rel="canonical"]');
       if (canonicalTag) canonicalTag.setAttribute('href', currentFullUrl);
 
-      // 2. Open Graph (Telegram, ВКонтакте, Viber, WhatsApp)
+      // 2. Open Graph
       const ogUrl = document.querySelector('meta[property="og:url"]');
       if (ogUrl) ogUrl.setAttribute('content', currentFullUrl);
       const ogImage = document.querySelector('meta[property="og:image"]');
@@ -394,7 +429,7 @@ async function loadPage(url) {
         ogImage.setAttribute('content', (baseDomain + osModelFolder + 'assets/img/og-preview.jpg').replace(/\/+/g, '/'));
       }
 
-      // 3. Twitter Cards микроразметка
+      // 3. Twitter Cards
       const twitterUrl = document.querySelector('meta[name="twitter:url"]');
       if (twitterUrl) twitterUrl.setAttribute('content', currentFullUrl);
       const twitterImage = document.querySelector('meta[name="twitter:image"]');
@@ -402,8 +437,7 @@ async function loadPage(url) {
         twitterImage.setAttribute('content', (baseDomain + osModelFolder + 'assets/img/og-preview.jpg').replace(/\/+/g, '/'));
       }
 
-      // =========================================================================
-      // 🚀 БЕЗОПАСНАЯ АВТОМАТИЗАЦИЯ КНОПОК НАВИГАЦИИ
+      // Навигационные кнопки
       const singlePageContent = mainStage.querySelector('.os-single-page-content') || mainStage.querySelector('.os-article-layout');
       if (singlePageContent) {
         let currentRelativePath = fetchUrl.replace(/^\//, '');
@@ -413,12 +447,9 @@ async function loadPage(url) {
           currentRelativePath = currentRelativePath.substring(cleanFolder.length).replace(/^\//, '');
         }
 
-        console.log("[OSApp Navigation] Поиск кнопок для пути:", currentRelativePath);
         const buttonsHtml = generateFooterNavigation(currentRelativePath);
-        
         singlePageContent.insertAdjacentHTML('beforeend', buttonsHtml);
 
-        // Назначаем обработчики кликов для PWA перехода
         singlePageContent.querySelectorAll('.page-footer-nav [data-pwa-link]').forEach(btn => {
           btn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -445,22 +476,20 @@ async function loadPage(url) {
         window.OSSearch.init();
       }
 
-      // Перезапускаем авторасстановку Яндекса на новой SPA-странице с задержкой,
-      // чтобы DOM гарантированно обновился и стал доступен для инжекции рекламы
+      // Корректный перезапуск РСЯ для SPA на десктопах и мобилках
       if (window.adsInitialized) {
         setTimeout(() => {
           if (window.Ya && window.Ya.Autoplacement) {
             try {
               window.Ya.Autoplacement.render(); 
-              console.log('[OSApp РСЯ] Рекламные блоки авторасстановки обновлены для SPA.');
+              console.log('[OSApp РСЯ] Рекламная сетка пересчитана для новой страницы.');
             } catch (yandexErr) {
-              console.warn('[OSApp РСЯ] Ошибка обновления авторасстановки:', yandexErr);
+              console.warn('[OSApp РСЯ] Ошибка рендеринга:', yandexErr);
             }
           }
-        }, 150);
+        }, 300); // Немного увеличили таймаут для медленных мобильных процессоров
       }
     } else {
-      console.warn('Контент не найден. Применен резервный фолбек.');
       mainStage.innerHTML = `<div class="os-main" style="padding:16px;">${doc.body.innerHTML}</div>`;
       if (doc.title) document.title = doc.title;
     }
@@ -474,7 +503,7 @@ async function loadPage(url) {
     mainStage.innerHTML = `
       <div style="color: #ff4d4d; padding: 40px 16px; text-align: center; font-weight: 600;">
         ⚠️ Ошибка загрузки материала.<br>
-        <span style="font-size:13px; font-weight:400; color:var(--os-sub);">Файл по пути <b>${cleanUrl}</b> отсутствует или структура повреждена.</span>
+        <span style="font-size:13px; font-weight:400; color:var(--os-sub);">Файл по пути <b>${cleanUrl}</b> отсутствует.</span>
       </div>
     `;
   } finally {
@@ -575,8 +604,6 @@ function generateDynamicBreadcrumbs(currentUrl, articleTitle) {
   script.type = 'application/ld+json';
   script.innerHTML = JSON.stringify(breadcrumbData, null, 2);
   document.head.appendChild(script);
-  
-  console.log("[OSApp SEO] Микроразметка обновлена:", articleTitle);
 }
 
 /* =========================================================================
@@ -604,7 +631,6 @@ function generateFooterNavigation(currentPath) {
 
   let footerHtml = `<div class="page-footer-nav">`;
 
-  // Кнопка НАЗАД с чистым формированием путей без дублирования слэшей
   if (prevArticle) {
     const prevLink = ('/' + osModelFolder + '/' + prevArticle.path).replace(/\/+/g, '/');
     footerHtml += `<a href="${prevLink}" class="page-nav-btn" data-pwa-link>◀ ${prevArticle.title}</a>`;
@@ -612,7 +638,6 @@ function generateFooterNavigation(currentPath) {
     footerHtml += `<a href="#" class="page-nav-btn disabled">◀ Назад</a>`;
   }
 
-  // Кнопка ВПЕРЕД
   if (nextArticle) {
     const nextLink = ('/' + osModelFolder + '/' + nextArticle.path).replace(/\/+/g, '/');
     footerHtml += `<a href="${nextLink}" class="page-nav-btn" data-pwa-link>${nextArticle.title} ▶</a>`;
