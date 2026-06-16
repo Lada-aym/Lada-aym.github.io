@@ -1252,3 +1252,37 @@ body.os-lock {
     margin-bottom: 10px;
   }
 }
+/* =========================================================================
+   📸 УВЕЛИЧЕНИЕ ИЗОБРАЖЕНИЙ С ОБТЕКАНИЕМ ДЛЯ БОЛЬШИХ ЭКРАНОВ (ПК И ПЛАНШЕТЫ)
+   ========================================================================= */
+@media screen and (min-width: 769px) {
+  /* Увеличиваем ширину контейнеров с обтеканием до 350px (вместо исходных 280px) */
+  .os-single-page-content .os-float-right {
+    width: 350px !important;
+    margin-left: 32px !important;  /* Увеличенный отступ, чтобы текст не лип к картинке */
+    margin-right: 0 !important;
+  }
+  
+  .os-single-page-content .os-float-left {
+    width: 350px !important;
+    margin-right: 32px !important; /* Увеличенный отступ справа */
+    margin-left: 0 !important;
+  }
+
+  /* Заставляем внутренние изображения корректно заполнять новые 350px */
+  .os-single-page-content .os-float-right img,
+  .os-single-page-content .os-float-left img {
+    width: 100% !important;
+    max-width: 350px !important;
+    height: auto !important;
+  }
+}
+
+/* Корректное отображение обычных независимых картинок по центру (без обтекания) */
+.os-single-page-content .os-figure:not(.os-float-right):not(.os-float-left) img,
+.os-single-page-content .os-figure-bordered:not(.os-float-right):not(.os-float-left) img,
+.os-single-page-content .os-img-wrapper:not(.os-float-right):not(.os-float-left) img {
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 15px auto !important;
+}
