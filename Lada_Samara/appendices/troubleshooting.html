@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  
+  <title>Неисправности в пути и методы их устранения — LADA Samara</title>
+  <meta name="description" content="Руководство по поиску и устранению типовых неисправностей двигателя, электрооборудования и тормозной системы автомобилей LADA SAMARA (ВАЗ 2113, 2114, 2115).">
+  <meta name="keywords" content="мануал лада самара, неисправности ваз 2114, не заводится ваз 2115, троит двигатель самара, горит чек ваз, ремонт в пути ваз">
+  <link class="os-canonical-tag" rel="canonical" href="https://lada-aym.github.io/Lada_Samara/appendices/troubleshooting.html">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://lada-aym.github.io/Lada_Samara/appendices/troubleshooting.html">
+  <meta property="og:title" content="Неисправности в пути и методы их устранения — LADA Samara">
+  <meta property="og:description" content="Таблицы диагностики: причины сбоев инжектора, системы зажигания и электроники LADA SAMARA с методами ремонта.">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="stylesheet" href="/assets/css/os.css">
+  
+  <script>
+    if (window === window.self && !document.getElementById('appMainStage') && window.location.pathname !== '/' && !window.location.pathname.endsWith('index.html')) {
+      const isBot = /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i.test(navigator.userAgent);
+      if (!isBot) {
+        const currentPath = window.location.pathname;
+        window.location.replace(window.location.origin + '/Lada_Samara/index.html?page=' + encodeURIComponent(currentPath));
+      }
+    }
+  </script>
+  <script src="/assets/js/os-search.js" defer></script>
+</head>
+<body>
+  <main class="os-main">
+    <div class="os-article-layout">
+      
+      <div class="os-page-header">
+        <h1>ПРИЛОЖЕНИЯ</h1>
+        <div class="os-book-model-tag">Практическое руководство</div>
+      </div>
+      
+      <h2 class="os-page-title">НЕИСПРАВНОСТИ В ПУТИ, ИХ ПРИЧИНЫ И МЕТОДЫ УСТРАНЕНИЯ</h2>
+      
+      <div class="os-single-page-content">
+
+        <!-- ================= БЛОК ИНТЕРАКТИВНОГО ПОИСКА ================= -->
+        <div class="os-trouble-search-box" style="background: var(--os-bg-secondary, #f5f5f7); padding: 15px; border-radius: 8px; margin-bottom: 25px; border: 1px solid var(--os-border-color, #e5e5ea);">
+          <label for="troubleInput" style="display: block; font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">Быстрый поиск по симптомам или деталям:</label>
+          <input type="text" id="troubleInput" placeholder="Например: троит, бензонасос, искра, чек..." style="width: 100%; padding: 12px; border: 1px solid var(--os-border-input, #ccc); border-radius: 6px; font-size: 1rem; box-sizing: border-box; -webkit-appearance: none;">
+          <div id="searchCounter" style="margin-top: 8px; font-size: 0.85rem; color: var(--os-text-muted, #666); display: none;"></div>
+        </div>
+        
+        <div class="os-notice-block warning">
+          <strong class="notice-title">Важное предупреждение по безопасности:</strong>
+          <p class="notice-text">Любые работы по проверке электрооборудования ЭСУД (инжектора) и топливной системы выполняйте только при выключенном зажигании. Запрещается проверять наличие искры «на искра-зазор» путем поднесения высоковольтного провода к кузову автомобиля — это мгновенно выводит из строя модуль/катушку зажигания или сам ЭБУ.</p>
+        </div>
+
+        <!-- ================= ТАБЛИЦА 1 ================= -->
+        <div class="os-table-section">
+          <div class="os-table-title-container">
+            <h3>Двигатель не заводится (стартер вращается)</h3>
+            <span class="os-table-number">Таблица 1</span>
+          </div>
+          
+          <div class="os-table-responsive" style="width: 100%; overflow-x: auto; margin-bottom: 25px; -webkit-overflow-scrolling: touch;">
+            <table class="os-table table-troubles">
+              <thead>
+                <tr>
+                  <th style="width: 35%;">Причина неисправности</th>
+                  <th style="width: 65%;">Метод обнаружения и устранения</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Отсутствует подача топлива в рампу</strong></td>
+                  <td>Проверьте предохранитель бензонасоса (в консоли панели приборов) и реле. Послушайте, жужжит ли насос 2–3 секунды при включении зажигания. Проверьте давление в рампе через золотник. Поврежденный насос или забитый фильтр замените.</td>
+                </tr>
+                <tr>
+                  <td><strong>Отказ датчика положения коленчатого вала (ДПКВ)</strong></td>
+                  <td>Это единственный датчик, без которого инжекторный двигатель ВАЗ принципиально не заведется. Осмотрите разъем ДПКВ возле шкива генератора, очистите контакты. При обрыве обмотки датчика — замените его.</td>
+                </tr>
+                <tr>
+                  <td><strong>Выход из строя модуля/катушки зажигания</strong></td>
+                  <td>Проверьте надежность посадки высоковольтных проводов и жгута низковольтного разъема. Если искра отсутствует одновременно на парах цилиндров (1-4 или 2-3), замените модуль/катушку.</td>
+                </tr>
+                <tr>
+                  <td><strong>Обильное «заливание» свечей зажигания</strong></td>
+                  <td>Выкрутите свечи. Если они мокрые от бензина, просушите их. Запустите режим «продувки цилиндров»: выжмите педаль акселератора до упора в пол и прокрутите стартер 5–7 секунд (ЭБУ отключит подачу топлива).</td>
+                </tr>
+                <tr>
+                  <td><strong>Сбой иммобилайзера АПС-4 / АПС-6</strong></td>
+                  <td>Если штатный индикатор иммобилайзера часто мигает и звучат зуммеры, система заблокировала цепи пуска. Попробуйте воспользоваться обучающим (красным) ключом.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ================= ТАБЛИЦА 2 ================= -->
+        <div class="os-table-section">
+          <div class="os-table-title-container" style="margin-top: 30px;">
+            <h3>Двигатель работает неустойчиво, «троит», теряет мощность</h3>
+            <span class="os-table-number">Таблица 2</span>
+          </div>
+          
+          <div class="os-table-responsive" style="width: 100%; overflow-x: auto; margin-bottom: 25px; -webkit-overflow-scrolling: touch;">
+            <table class="os-table table-troubles">
+              <thead>
+                <tr>
+                  <th style="width: 35%;">Причина неисправности</th>
+                  <th style="width: 65%;">Метод обнаружения и устранения</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Прогар или дефект свечи зажигания</strong></td>
+                  <td>Поочередно отключайте разъемы от форсунок или катушек на заведенном моторе. Если при отключении цилиндра характер работы не изменился — цилиндр не работает. Выкрутите свечу, замените на исправную (А17ДВРМ).</td>
+                </tr>
+                <tr>
+                  <td><strong>Повреждение высоковольтных проводов (для 8-кл.)</strong></td>
+                  <td>Осмотрите провода в темноте на предмет видимого пробивания искры («прошивания» на блок). Измерьте сопротивление мультиметром (должно быть в пределах 3.5–10 кОм). Поврежденный провод замените.</td>
+                </tr>
+                <tr>
+                  <td><strong>Подсос неучтенного воздуха (обеднение смеси)</strong></td>
+                  <td>Проверьте целостность резинового гофрированного патрубка от ДМРВ к дроссельному узлу, а также заглушки на ресивере. Трещины и неплотности затяжки хомутов устраните.</td>
+                </tr>
+                <tr>
+                  <td><strong>Неисправность датчика массового расхода воздуха (ДМРВ)</strong></td>
+                  <td>Двигатель вяло реагирует на педаль газа, горит лампа «Check Engine» (чек). Отключите фишку ДМРВ. ЭБУ перейдет в аварийный режим по таблицам. Если работа мотора выровнялась, а обороты поднялись до 1500 об/мин — датчик подлежит замене.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ================= ТАБЛИЦА 3 ================= -->
+        <div class="os-table-section">
+          <div class="os-table-title-container" style="margin-top: 30px;">
+            <h3>Сбои бортовой электрики и системы зарядки</h3>
+            <span class="os-table-number">Таблица 3</span>
+          </div>
+          
+          <div class="os-table-responsive" style="width: 100%; overflow-x: auto; margin-bottom: 25px; -webkit-overflow-scrolling: touch;">
+            <table class="os-table table-troubles">
+              <thead>
+                <tr>
+                  <th style="width: 35%;">Причина неисправности</th>
+                  <th style="width: 65%;">Метод обнаружения и устранения</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Горит лампа АКБ (нет зарядки с генератора)</strong></td>
+                  <td>Проверьте натяжение и целостность ремня генератора. Проверьте надежность крепления провода «массы» двигателя и клемм АКБ. Осмотрите щеточный узел регулятора напряжения (при износе щеток менее 5 мм — замените узел).</td>
+                </tr>
+                <tr>
+                  <td><strong>Хаотичные ложные срабатывания ламп на приборной панели</strong></td>
+                  <td>Классическая проблема Самар — окисление или плохой контакт плат задних фонарей в багажнике (пропадает «масса»). Очистите концевики, подогните контакты разъема, обеспечьте надежный контакт минусового провода с кузовом.</td>
+                </tr>
+                <tr>
+                  <td><strong>Не включается вентилятор охлаждения двигателя</strong></td>
+                  <td>Если температура растет выше 101–105°C, а вентилятор молчит: проверьте предохранитель под консолью, реле вентилятора, либо временно скиньте фишку с датчика температуры охлаждающей жидкости (ДТОЖ) возле термостата — ЭБУ обязан запустить вентилятор в аварийном режиме непрерывно.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="os-notice-block info">
+          <strong class="notice-title">Подсказка по поиску:</strong>
+          <p class="notice-text">Поиск работает в режиме реального времени. Если таблица или раздел полностью скрылись — значит, совпадений по данному узлу не найдено.</p>
+        </div>
+
+      </div> 
+    </div>
+  </main>
+
+  <!-- ================= СКРИПТ ЛОКАЛЬНОЙ ФИЛЬТРАЦИИ ================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('troubleInput');
+      const counterDiv = document.getElementById('searchCounter');
+      const tables = document.querySelectorAll('.table-troubles');
+      const sections = document.querySelectorAll('.os-table-section');
+
+      searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        let totalMatches = 0;
+
+        if (query === '') {
+          // Если поле пустое — показываем всё обратно
+          tables.forEach(table => {
+            const rows = table.querySelectorAll('tbody tr');
+            rows.forEach(row => row.style.display = '');
+          });
+          sections.forEach(section => section.style.display = '');
+          counterDiv.style.display = 'none';
+          return;
+        }
+
+        // Фильтрация строк
+        sections.forEach(section => {
+          const table = section.querySelector('.table-troubles');
+          const rows = table.querySelectorAll('tbody tr');
+          let visibleRowsInSection = 0;
+
+          rows.forEach(row => {
+            const text = row.textContent.toLowerCase();
+            if (text.includes(query)) {
+              row.style.display = '';
+              visibleRowsInSection++;
+              totalMatches++;
+            } else {
+              row.style.display = 'none';
+            }
+          });
+
+          // Если в секции/таблице нет совпадений — скрываем всю секцию целиком вместе с заголовком
+          if (visibleRowsInSection === 0) {
+            section.style.display = 'none';
+          } else {
+            section.style.display = '';
+          }
+        });
+
+        // Вывод счетчика результатов
+        counterDiv.style.display = 'block';
+        counterDiv.textContent = `Найдено строк: ${totalMatches}`;
+      });
+    });
+  </script>
+</body>
+</html>
