@@ -84,7 +84,6 @@ function initLazyScripts() {
     }
   }, 5000);
 }
-
 /* -------------------------------------------------------------------------
    🚀 ПЕРЕЗАПУСК СКВОЗНЫХ БЛОКОВ РСЯ (FloorAd, Fullscreen и ЛЕНТА после закрытия)
    ------------------------------------------------------------------------- */
@@ -95,7 +94,7 @@ function renderGlobalAds() {
 
   window.yaContextCb.push(() => {
     
-    // Функция-триггер для ленивого рендера РСЯ ЛЕНТЫ
+    // Функция-триггер для ленивого и красивого рендера РСЯ ЛЕНТЫ
     const initYandexFeed = () => {
       const contentContainer = document.querySelector('.os-single-page-content');
       if (!contentContainer) return;
@@ -104,25 +103,39 @@ function renderGlobalAds() {
       const oldFeed = document.getElementById('yandex_rtb_feed');
       if (oldFeed) oldFeed.remove();
 
-      // Создаем новый чистый контейнер
-      const feedDiv = document.createElement('div');
-      feedDiv.id = 'yandex_rtb_feed';
-      feedDiv.style.marginTop = '24px';
-      feedDiv.style.width = '100%';
+      // Создаем красивый нативный контейнер-виджет под стиль мануала
+      const feedWrapper = document.createElement('div');
+      feedWrapper.id = 'yandex_rtb_feed';
+      feedWrapper.style.cssText = `
+        margin: 30px 0 15px 0;
+        padding: 15px;
+        border-top: 1px solid var(--os-border);
+        background: var(--os-surface);
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      `;
+
+      // Добавляем аккуратный текстовый заголовок над будущей лентой
+      feedWrapper.innerHTML = `
+        <div style="font-size: 13px; font-weight: bold; color: var(--os-sub); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; letter-spacing: 0.5px;">
+          <span>💡</span> РЕКОМЕНДУЕМЫЕ МАТЕРИАЛЫ
+        </div>
+        <div id="yandex_feed_target"></div>
+      `;
       
-      // Вставляем перед кнопками навигации футера, если они есть
+      // Ищем кнопки навигации "Назад / Вперед", чтобы вставить строго перед ними
       const footerNav = contentContainer.querySelector('.page-footer-nav');
       if (footerNav) {
-        contentContainer.insertBefore(feedDiv, footerNav);
+        contentContainer.insertBefore(feedWrapper, footerNav);
       } else {
-        contentContainer.appendChild(feedDiv);
+        contentContainer.appendChild(feedWrapper);
       }
 
-      // Рендерим блок Ленты
+      // Рендерим РСЯ внутрь нашего подготовленного красивого виджета
       console.log('[OSApp РСЯ] FloorAd закрыт. Активация РСЯ ЛЕНТЫ...');
       Ya.Context.AdvManager.render({
         "blockId": "R-A-537370-80", // СЮДА ВСТАВИТЬ РЕАЛЬНЫЙ ID ЛЕНТЫ ИЗ ЛК РСЯ
-        "renderTo": "yandex_rtb_feed",
+        "renderTo": "yandex_feed_target",
         "type": "feed"
       });
     };
@@ -154,6 +167,7 @@ function renderGlobalAds() {
     Ya.Context.AdvManager.render({ "blockId": "R-A-537370-43", "type": "fullscreen", "platform": "desktop" });
   });
 }
+
 
 /* -------------------------------------------------------------------------
    🖼️ СИСТЕМА ИНТЕГРАЦИИ РЕКЛАМЫ В ИЗОБРАЖЕНИЯ (InImage Блок: R-A-537370-42)
