@@ -85,7 +85,7 @@ function initLazyScripts() {
   }, 5000);
 }
 /* -------------------------------------------------------------------------
-   🚀 ПЕРЕЗАПУСК СКВОЗНЫХ БЛОКОВ РСЯ (FloorAd, Fullscreen и ЛЕНТА после закрытия)
+   🚀 ПЕРЕЗАПУСК СКВОЗНЫХ БЛОКОВ РСЯ (FloorAd, Fullscreen и АВТО-БАННЕР В СТАТЬЕ)
    ------------------------------------------------------------------------- */
 function renderGlobalAds() {
   if (!window.Ya || !window.Ya.Context) return;
@@ -94,80 +94,67 @@ function renderGlobalAds() {
 
   window.yaContextCb.push(() => {
     
-    // Функция-триггер для ленивого и красивого рендера РСЯ ЛЕНТЫ
-    const initYandexFeed = () => {
+    // 1. Автоматическое создание и рендер баннера внутри контента
+    const injectInPageBanner = () => {
       const contentContainer = document.querySelector('.os-single-page-content');
       if (!contentContainer) return;
 
-      // Удаляем старый контейнер ленты, если он остался от предыдущей SPA-страницы
-      const oldFeed = document.getElementById('yandex_rtb_feed');
-      if (oldFeed) oldFeed.remove();
+      // Удаляем старый баннер, если он остался от предыдущей SPA-страницы
+      const oldBanner = document.getElementById('yandex_rtb_banner_box');
+      if (oldBanner) oldBanner.remove();
 
-      // Создаем красивый нативный контейнер-виджет под стиль мануала
-      const feedWrapper = document.createElement('div');
-      feedWrapper.id = 'yandex_rtb_feed';
-      feedWrapper.style.cssText = `
-        margin: 30px 0 15px 0;
-        padding: 15px;
-        border-top: 1px solid var(--os-border);
+      // Создаем красивую рамку-карточку под стиль приложения
+      const bannerWrapper = document.createElement('div');
+      bannerWrapper.id = 'yandex_rtb_banner_box';
+      bannerWrapper.style.cssText = `
+        margin: 35px auto 15px auto;
+        padding: 10px;
+        border: 1px solid var(--os-border);
         background: var(--os-surface);
         border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        max-width: 100%;
+        box-sizing: border-box;
       `;
 
-      // Добавляем аккуратный текстовый заголовок над будущей лентой
-      feedWrapper.innerHTML = `
-        <div style="font-size: 13px; font-weight: bold; color: var(--os-sub); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; letter-spacing: 0.5px;">
-          <span>💡</span> РЕКОМЕНДУЕМЫЕ МАТЕРИАЛЫ
+      // Нативная подпись "Реклама" и чистый контейнер под код РСЯ
+      bannerWrapper.innerHTML = `
+        <div style="font-size: 10px; color: var(--os-sub); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; padding-left: 5px;">
+          Реклама
         </div>
-        <div id="yandex_feed_target"></div>
+        <div id="yandex_rtb_banner_target" style="width: 100%; min-height: 250px;"></div>
       `;
       
-      // Ищем кнопки навигации "Назад / Вперед", чтобы вставить строго перед ними
+      // Находим кнопки навигации внизу статьи, чтобы вставиться прямо перед ними
       const footerNav = contentContainer.querySelector('.page-footer-nav');
       if (footerNav) {
-        contentContainer.insertBefore(feedWrapper, footerNav);
+        contentContainer.insertBefore(bannerWrapper, footerNav);
       } else {
-        contentContainer.appendChild(feedWrapper);
+        contentContainer.appendChild(bannerWrapper);
       }
 
-      // Рендерим РСЯ внутрь нашего подготовленного красивого виджета
-      console.log('[OSApp РСЯ] FloorAd закрыт. Активация РСЯ ЛЕНТЫ...');
+      // Вызываем рендер баннера РСЯ внутри созданного контейнера
       Ya.Context.AdvManager.render({
-        "blockId": "R-A-537370-80", // СЮДА ВСТАВИТЬ РЕАЛЬНЫЙ ID ЛЕНТЫ ИЗ ЛК РСЯ
-        "renderTo": "yandex_feed_target",
-        "type": "feed"
+        "blockId": "R-A-537370-81", // СЮДА ВСТАВИТЬ ВАШ ID БАННЕРА
+        "renderTo": "yandex_rtb_banner_target"
       });
     };
 
-    // 1. FloorAd для мобильных с отслеживанием закрытия
-    Ya.Context.AdvManager.render({ 
-      "blockId": "R-A-537370-36", 
-      "type": "floorAd", 
-      "platform": "touch",
-      "onClose": () => {
-        initYandexFeed();
-      }
-    });
+    // Запускаем инжект баннера сразу (он не ждет закрытия FloorAd)
+    injectInPageBanner();
 
-    // 2. FloorAd для ПК с отслеживанием закрытия
-    Ya.Context.AdvManager.render({ 
-      "blockId": "R-A-537370-44", 
-      "type": "floorAd", 
-      "platform": "desktop",
-      "onClose": () => {
-        initYandexFeed();
-      }
-    });
+    // 2. FloorAd для мобильных
+    Ya.Context.AdvManager.render({ "blockId": "R-A-537370-36", "type": "floorAd", "platform": "touch" });
 
-    // 3. Fullscreen для мобильных
+    // 3. FloorAd для ПК
+    Ya.Context.AdvManager.render({ "blockId": "R-A-537370-44", "type": "floorAd", "platform": "desktop" });
+
+    // 4. Fullscreen для мобильных
     Ya.Context.AdvManager.render({ "blockId": "R-A-537370-35", "type": "fullscreen", "platform": "touch" });
     
-    // 4. Fullscreen для ПК
+    // 5. Fullscreen для ПК
     Ya.Context.AdvManager.render({ "blockId": "R-A-537370-43", "type": "fullscreen", "platform": "desktop" });
   });
 }
-
 
 /* -------------------------------------------------------------------------
    🖼️ СИСТЕМА ИНТЕГРАЦИИ РЕКЛАМЫ В ИЗОБРАЖЕНИЯ (InImage Блок: R-A-537370-42)
