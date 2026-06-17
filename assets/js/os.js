@@ -86,7 +86,7 @@ function initLazyScripts() {
 }
 
 /* -------------------------------------------------------------------------
-   🚀 ПЕРЕЗАПУСК СКВОЗНЫХ БЛОКОВ РСЯ (FloorAd и Fullscreen) ПРИ СМЕНЕ СТРАНИЦ
+   🚀 ПЕРЕЗАПУСК СКВОЗНЫХ БЛОКОВ РСЯ (FloorAd, Fullscreen и ЛЕНТА после закрытия)
    ------------------------------------------------------------------------- */
 function renderGlobalAds() {
   if (!window.Ya || !window.Ya.Context) return;
@@ -94,12 +94,62 @@ function renderGlobalAds() {
   console.log('[OSApp РСЯ] Перезапуск сквозных форматов для текущего URL...');
 
   window.yaContextCb.push(() => {
-    // 1. FloorAd для мобильных
-    Ya.Context.AdvManager.render({ "blockId": "R-A-537370-36", "type": "floorAd", "platform": "touch" });
-    // 2. FloorAd для ПК
-    Ya.Context.AdvManager.render({ "blockId": "R-A-537370-44", "type": "floorAd", "platform": "desktop" });
+    
+    // Функция-триггер для ленивого рендера РСЯ ЛЕНТЫ
+    const initYandexFeed = () => {
+      const contentContainer = document.querySelector('.os-single-page-content');
+      if (!contentContainer) return;
+
+      // Удаляем старый контейнер ленты, если он остался от предыдущей SPA-страницы
+      const oldFeed = document.getElementById('yandex_rtb_feed');
+      if (oldFeed) oldFeed.remove();
+
+      // Создаем новый чистый контейнер
+      const feedDiv = document.createElement('div');
+      feedDiv.id = 'yandex_rtb_feed';
+      feedDiv.style.marginTop = '24px';
+      feedDiv.style.width = '100%';
+      
+      // Вставляем перед кнопками навигации футера, если они есть
+      const footerNav = contentContainer.querySelector('.page-footer-nav');
+      if (footerNav) {
+        contentContainer.insertBefore(feedDiv, footerNav);
+      } else {
+        contentContainer.appendChild(feedDiv);
+      }
+
+      // Рендерим блок Ленты
+      console.log('[OSApp РСЯ] FloorAd закрыт. Активация РСЯ ЛЕНТЫ...');
+      Ya.Context.AdvManager.render({
+        "blockId": "R-A-537370-80", // СЮДА ВСТАВИТЬ РЕАЛЬНЫЙ ID ЛЕНТЫ ИЗ ЛК РСЯ
+        "renderTo": "yandex_rtb_feed",
+        "type": "feed"
+      });
+    };
+
+    // 1. FloorAd для мобильных с отслеживанием закрытия
+    Ya.Context.AdvManager.render({ 
+      "blockId": "R-A-537370-36", 
+      "type": "floorAd", 
+      "platform": "touch",
+      "onClose": () => {
+        initYandexFeed();
+      }
+    });
+
+    // 2. FloorAd для ПК с отслеживанием закрытия
+    Ya.Context.AdvManager.render({ 
+      "blockId": "R-A-537370-44", 
+      "type": "floorAd", 
+      "platform": "desktop",
+      "onClose": () => {
+        initYandexFeed();
+      }
+    });
+
     // 3. Fullscreen для мобильных
     Ya.Context.AdvManager.render({ "blockId": "R-A-537370-35", "type": "fullscreen", "platform": "touch" });
+    
     // 4. Fullscreen для ПК
     Ya.Context.AdvManager.render({ "blockId": "R-A-537370-43", "type": "fullscreen", "platform": "desktop" });
   });
