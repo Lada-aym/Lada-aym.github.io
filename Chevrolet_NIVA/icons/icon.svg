@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#0f0f10"/>
+  <path d="M83 224h98l28-42h94l28 42h98v64h-98l-28 42h-94l-28-42H83z" fill="#f2b21b"/>
+  <path d="M112 242h94l24-36h52l24 36h94v28h-94l-24 36h-52l-24-36h-94z" fill="#ffd56a"/>
+  <text x="256" y="392" text-anchor="middle" font-family="Arial, sans-serif" font-size="64" font-weight="900" fill="#ffffff">NIVA</text>
+</svg>
