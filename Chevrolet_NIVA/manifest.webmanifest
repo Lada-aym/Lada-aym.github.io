@@ -1,0 +1,20 @@
+{
+  "name": "Chevrolet Niva — руководство по эксплуатации",
+  "short_name": "Niva Manual",
+  "description": "Офлайн PWA-руководство по эксплуатации Chevrolet Niva",
+  "lang": "ru",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f0f10",
+  "theme_color": "#151515",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

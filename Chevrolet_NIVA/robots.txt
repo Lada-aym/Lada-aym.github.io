@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lada-aym.github.io/Chevrolet_NIVA/sitemap.xml
