@@ -142,6 +142,7 @@ window.OSSearch = (() => {
           .os-btn-action.listening .os-mic-icon { color: #ef4444; animation: os-pulse 1.5s infinite; }
           
           /* 🔥 КЛЮЧЕВОЕ ИСПРАВЛЕНИЕ ДЛЯ КНОПКИ ЗАКРЫТЬ */
+          @media(max-width:768px){.os-bar{flex-wrap:wrap}#osCloseMobile{display:none!important}.os-btn-action{padding:10px!important}}
           #osCloseMobile {
             background: var(--panel-2, #222326);
             border: none;
@@ -543,16 +544,102 @@ window.OSSearch = (() => {
     render(res, query);
   }, 120);
 
+  function showVoiceHint(msg) {
+    var old = document.getElementById("osVoiceHint");
+    if (old) old.remove();
+    var hint = document.createElement("div");
+    hint.id = "osVoiceHint";
+    hint.style.cssText = "padding:10px 14px;background:var(--accent-glow,rgba(242,178,27,.18));border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text,#f4f4f5);text-align:center";
+    hint.textContent = msg;
+    if (els.results) els.results.insertBefore(hint, els.results.firstChild);
+    setTimeout(function(){ if(hint.parentNode) hint.remove(); }, 3500);
+  }
+
   function initVoiceSearch() {
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!SpeechRecognition || !els.voiceBtn) return;
-    const recognition = new SpeechRecognition();
-    recognition.lang = 'ru-RU'; recognition.interimResults = false; recognition.maxAlternatives = 1;
-    els.voiceBtn.addEventListener("click", () => { if (isListening) { recognition.stop(); } else { try { recognition.start(); } catch(e){} } });
-    recognition.addEventListener("start", () => { isListening = true; els.voiceBtn.classList.add("listening"); });
-    recognition.addEventListener("result", (e) => { if (els.input && e.results && e.results.length > 0) { const transcript = e.results[0][0].transcript; if (transcript) { els.input.value = transcript; run(); } } });
-    recognition.addEventListener("end", () => { isListening = false; els.voiceBtn.classList.remove("listening"); });
-    recognition.addEventListener("error", () => { isListening = false; els.voiceBtn.classList.remove("listening"); });
+    var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    
+    // Проверяем поддержку
+    if (!SpeechRecognition) {
+      if (els.voiceBtn) {
+        els.voiceBtn.style.opacity = "0.4";
+        els.voiceBtn.title = "Голосовой поиск не поддерживается этим браузером";
+        els.voiceBtn.addEventListener("click", function(){
+          showVoiceHint("Голосовой поиск не поддерживается в этом браузере. Используйте Chrome или Яндекс.");
+        });
+      }
+      return;
+    }
+
+    // Проверяем HTTPS (требование для микрофона на мобильных)
+    if (window.location.protocol !== "https:" && window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1") {
+      if (els.voiceBtn) {
+        els.voiceBtn.addEventListener("click", function(){
+          showVoiceHint("Для голосового поиска нужен HTTPS.");
+        });
+        return;
+      }
+    }
+
+    var recognition = new SpeechRecognition();
+    recognition.lang = "ru-RU";
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+    recognition.continuous = false;
+
+    els.voiceBtn.addEventListener("click", function() {
+      if (isListening) {
+        recognition.stop();
+      } else {
+        try {
+          recognition.start();
+        } catch(e) {
+          if (e.name === "not-allowed" || e.name === "service-not-allowed") {
+            showVoiceHint("Доступ к микрофону запрещён. Разрешите доступ в настройках браузера.");
+          } else if (e.name === "network") {
+            showVoiceHint("Ошибка сети при распознавании речи.");
+          } else {
+            showVoiceHint("Не удалось запустить микрофон. Попробуйте ещё раз.");
+          }
+        }
+      }
+    });
+
+    recognition.addEventListener("start", function() {
+      isListening = true;
+      els.voiceBtn.classList.add("listening");
+      showVoiceHint("Говорите...");
+    });
+
+    recognition.addEventListener("result", function(e) {
+      if (els.input && e.results && e.results.length > 0) {
+        var transcript = e.results[0][0].transcript;
+        if (transcript) {
+          els.input.value = transcript;
+          run();
+        }
+      }
+    });
+
+    recognition.addEventListener("end", function() {
+      isListening = false;
+      els.voiceBtn.classList.remove("listening");
+    });
+
+    recognition.addEventListener("error", function(e) {
+      isListening = false;
+      els.voiceBtn.classList.remove("listening");
+      if (e.error === "not-allowed" || e.error === "service-not-allowed") {
+        showVoiceHint("Доступ к микрофону запрещён. Разрешите доступ в настройках браузера.");
+      } else if (e.error === "network") {
+        showVoiceHint("Ошибка сети при распознавании речи.");
+      } else if (e.error === "no-speech") {
+        showVoiceHint("Речь не распознана. Попробуйте ещё раз.");
+      } else if (e.error === "aborted") {
+        // Пользователь отменил — тихо
+      } else {
+        showVoiceHint("Ошибка: " + e.error);
+      }
+    });
   }
 
   function navigateTo(targetUrl) {
