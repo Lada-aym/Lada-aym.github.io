@@ -1926,14 +1926,13 @@ function refreshAds() {
   if (adRefreshTimer) clearTimeout(adRefreshTimer);
 
   adRefreshTimer = setTimeout(() => {
-    window.yaContextCb = window.yaContextCb || [];
-
     // 1. Перезапуск рекомендательного виджета Adfox
     const adfoxContainer = document.getElementById('adfox_173934500594834357');
     if (adfoxContainer) {
       adfoxContainer.innerHTML = '';
-      window.yaContextCb.push(() => {
-        if (window.Ya && Ya.adfoxCode) {
+
+      const renderAdfox = () => {
+        if (window.Ya && window.Ya.adfoxCode) {
           Ya.adfoxCode.create({
             ownerId: 322697,
             containerId: 'adfox_173934500594834357',
@@ -1943,8 +1942,14 @@ function refreshAds() {
               p2: 'gqqu'
             }
           });
+          console.log('[Adfox] Отрисован');
+        } else {
+          // Если библиотека ещё не загружена — ставим в очередь
+          window.yaContextCb = window.yaContextCb || [];
+          window.yaContextCb.push(renderAdfox);
         }
-      });
+      };
+      renderAdfox();
     }
 
     // 2. Инициализация блока inImage для картинок новой статьи
