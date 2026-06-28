@@ -1917,6 +1917,47 @@ function onScrollSpy() {
 }
 
 /* ---------------------------------------------------------------------------
+   Реклама: Перезапуск Adfox и InImage при смене раздела (с задержкой 3 сек)
+   --------------------------------------------------------------------------- */
+let adRefreshTimer = null;
+
+function refreshAds() {
+  // Отменяем предыдущий таймер, если пользователь быстро сменил раздел
+  if (adRefreshTimer) clearTimeout(adRefreshTimer);
+
+  adRefreshTimer = setTimeout(() => {
+    window.yaContextCb = window.yaContextCb || [];
+
+    // 1. Перезапуск рекомендательного виджета Adfox
+    const adfoxContainer = document.getElementById('adfox_173934500594834357');
+    if (adfoxContainer) {
+      adfoxContainer.innerHTML = '';
+      window.yaContextCb.push(() => {
+        if (window.Ya && Ya.adfoxCode) {
+          Ya.adfoxCode.create({
+            ownerId: 322697,
+            containerId: 'adfox_173934500594834357',
+            params: {
+              pp: 'i',
+              ps: 'ivjz',
+              p2: 'gqqu'
+            }
+          });
+        }
+      });
+    }
+
+    // 2. Инициализация блока inImage для картинок новой статьи
+    window.adCountInImage = 0;
+    if (typeof window.initInImageAds === 'function') {
+      window.initInImageAds();
+    }
+
+    adRefreshTimer = null;
+  }, 3000);
+}
+
+/* ---------------------------------------------------------------------------
    Главный рендер.
    --------------------------------------------------------------------------- */
 function render() {
@@ -1943,27 +1984,28 @@ function render() {
     if (el) el.scrollIntoView({ block: "start", behavior: "smooth" });
   }
 
-  // Мобильный пейджер prev/next
-  const pager = document.getElementById("mobilePager");
-  if (pager) {
-    // Показываем только когда выбран конкретный раздел
-    if (state.path) {
-      const idx = SECTIONS.findIndex(s => s.path === state.path);
-      const prev = idx > 0 ? SECTIONS[idx - 1] : null;
-      const next = idx < SECTIONS.length - 1 ? SECTIONS[idx + 1] : null;
-      const prevHtml = prev
-        ? `<a class="prev" data-path="${esc(prev.path)}" href="#${esc(prev.path)}"><span class="pl">← Предыдущий</span><span class="pt">${esc(prev.title)}</span></a>`
-        : "";
-      const nextHtml = next
-        ? `<a class="next" data-path="${esc(next.path)}" href="#${esc(next.path)}"><span class="pl">Следующий →</span><span class="pt">${esc(next.title)}</span></a>`
-        : "";
-      pager.innerHTML = prevHtml + nextHtml;
-      pager.style.display = "flex";
-    } else {
-      pager.innerHTML = "";
-      pager.style.display = "none";
-    }
+  // Мобильный пейджер prev/next (рендерится внутри #manualRoot)
+  if (state.path) {
+    const idx = SECTIONS.findIndex(s => s.path === state.path);
+    const prev = idx > 0 ? SECTIONS[idx - 1] : null;
+    const next = idx < SECTIONS.length - 1 ? SECTIONS[idx + 1] : null;
+    const prevHtml = prev
+      ? `<a class="prev" data-path="${esc(prev.path)}" href="#${esc(prev.path)}"><span class="pl">← Предыдущий</span><span class="pt">${esc(prev.title)}</span></a>`
+      : "";
+    const nextHtml = next
+      ? `<a class="next" data-path="${esc(next.path)}" href="#${esc(next.path)}"><span class="pl">Следующий →</span><span class="pt">${esc(next.title)}</span></a>`
+      : "";
+    
+    // Создаём контейнер и добавляем в конец #manualRoot
+    const pagerDiv = document.createElement("nav");
+    pagerDiv.className = "mobile-pager";
+    pagerDiv.style.display = "flex";
+    pagerDiv.innerHTML = prevHtml + nextHtml;
+    root.appendChild(pagerDiv);
   }
+
+  // === ПЕРЕЗАПУСК РЕКЛАМНЫХ БЛОКОВ ПОСЛЕ СМЕНЫ СТАТЬИ ===
+  refreshAds();
 
   // Подсветка кнопок «Все разделы» / «Закладки»
   const allActive = !state.favoritesOnly && !state.category && !state.path && !state.query;
@@ -2040,3 +2082,81 @@ if ("serviceWorker" in navigator) {
    --------------------------------------------------------------------------- */
 syncFromHash();
 render();
+
+/* === ЛОГИКА INIMAGE ДЛЯ КАРТИНОК В СТАТЬЯХ CHEVROLET NIVA === */
+
+// Глобальный счетчик для отслеживания лимита внутри текущей статьи
+window.adCountInImage = 0;
+
+const MAX_ADS = 10;
+const MIN_IMAGE_WIDTH = 300;
+const MIN_IMAGE_HEIGHT = 250;
+
+// Проверка размера изображения
+const isImageLargeEnough = (image) => {
+  if (image.complete) {
+    return image.naturalWidth >= MIN_IMAGE_WIDTH && image.naturalHeight >= MIN_IMAGE_HEIGHT;
+  }
+  const width = parseInt(image.getAttribute('width') || image.style.width || 0);
+  const height = parseInt(image.getAttribute('height') || image.style.height || 0);
+  return width >= MIN_IMAGE_WIDTH && height >= MIN_IMAGE_HEIGHT;
+};
+
+// Проверка перекрытия рекламы
+const hasNearbyAd = (image) => {
+  const rect = image.getBoundingClientRect();
+  const ads = document.querySelectorAll('[data-adfox],[data-yandex]');
+
+  for (let ad of ads) {
+    const adRect = ad.getBoundingClientRect();
+    const overlap =
+      !(rect.right <= adRect.left || rect.left >= adRect.right ||
+        rect.bottom <= adRect.top || rect.top >= adRect.bottom);
+
+    if (overlap) return true;
+  }
+  return false;
+};
+
+// Создание объявления inImage
+const renderInImageAd = (image, index) => {
+  if (window.adCountInImage >= MAX_ADS) return;
+  if (!isImageLargeEnough(image)) return;
+  if (hasNearbyAd(image)) return;
+
+  const imageId = `yandex_rtb_R-A-537370-42_${Date.now()}_${index}`;
+  image.id = imageId;
+  image.setAttribute('data-ad-rendered', 'true');
+
+  window.yaContextCb.push(() => {
+    try {
+      if (window.Ya && Ya.Context) {
+        Ya.Context.AdvManager.render({
+          renderTo: imageId,
+          blockId: 'R-A-537370-42',
+          type: 'inImage'
+        });
+        window.adCountInImage++;
+        console.log(`✅ Rendered inImage ad: ${imageId}`);
+      }
+    } catch (err) {
+      console.error('❌ Error rendering inImage ad:', err.message);
+    }
+  });
+};
+
+// Экспортируемая функция инициализации (вызывается роутером при каждой смене хэша)
+window.initInImageAds = function() {
+  // Находим картинки только в блоке статьи, исключая те, что уже размечены или имеют класс игнорирования
+  const images = Array.from(document.querySelectorAll('#manualRoot img:not([data-ad-rendered]):not(.ad-ignore)'));
+
+  images.forEach((image, index) => {
+    if (window.adCountInImage >= MAX_ADS) return;
+
+    if (image.complete) {
+      renderInImageAd(image, index);
+    } else {
+      image.addEventListener('load', () => renderInImageAd(image, index), { once: true });
+    }
+  });
+};
