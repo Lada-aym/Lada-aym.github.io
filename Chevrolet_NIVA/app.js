@@ -1927,29 +1927,33 @@ function refreshAds() {
 
   adRefreshTimer = setTimeout(() => {
     // 1. Перезапуск рекомендательного виджета Adfox
-    const adfoxContainer = document.getElementById('adfox_173934500594834357');
-    if (adfoxContainer) {
-      adfoxContainer.innerHTML = '';
-
-      const renderAdfox = () => {
-        if (window.Ya && window.Ya.adfoxCode) {
-          Ya.adfoxCode.create({
-            ownerId: 322697,
-            containerId: 'adfox_173934500594834357',
-            params: {
-              pp: 'i',
-              ps: 'ivjz',
-              p2: 'gqqu'
+    const wrapper = document.getElementById('adfoxWrapper');
+    if (wrapper) {
+      // Полностью сносим старый div и создаем чистый заново
+      wrapper.innerHTML = '<div id="adfox_173934500594834357" data-yandex="true" style="width: 100%; height: auto;"></div>';
+      
+      // Даем SPA-движку 100 миллисекунд, чтобы полностью отрисовать DOM,
+      // и только потом безопасно запрашиваем виджет Adfox
+      setTimeout(() => {
+        window.yaContextCb.push(() => {
+          if (window.Ya && Ya.adfoxCode) {
+            try {
+              Ya.adfoxCode.create({
+                ownerId: 322697,
+                containerId: 'adfox_173934500594834357',
+                params: {
+                  pp: 'i',
+                  ps: 'ivjz',
+                  p2: 'gqqu'
+                }
+              });
+              console.log("✅ Виджет Adfox успешно перезапущен");
+            } catch (e) {
+              console.error("❌ Ошибка инициализации Adfox:", e.message);
             }
-          });
-          console.log('[Adfox] Отрисован');
-        } else {
-          // Если библиотека ещё не загружена — ставим в очередь
-          window.yaContextCb = window.yaContextCb || [];
-          window.yaContextCb.push(renderAdfox);
-        }
-      };
-      renderAdfox();
+          }
+        });
+      }, 100);
     }
 
     // 2. Инициализация блока inImage для картинок новой статьи
