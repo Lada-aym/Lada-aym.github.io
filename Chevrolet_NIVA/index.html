@@ -33,8 +33,9 @@
 <body>
   <!-- GTM noscript -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRQ33NW3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
   <header class="app-header">
-    <button id="burgerBtn" class="burger-btn" title="Меню" aria-label="Меню">
+    <button id="burgerBtn" class="burger-btn" title="Menu" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
     <div class="brand">
@@ -94,11 +95,11 @@
       <!-- Динамический контент статей (сюда app.js вставляет текст, картинки и кнопки Вперед/Назад) -->
       <div id="manualRoot"></div>
       
-      <!-- ИДЕАЛЬНЫЙ КОНТЕЙНЕР ДЛЯ ADFOX (без ограничений по высоте) -->
-<div id="adfoxWrapper" style="margin: 20px auto; width: 100%; height: auto; clear: both;">
-  <div id="adfox_173934500594834357" style="width: 100%; height: auto;"></div>
-</div>
-
+      <!-- ЗАЩИЩЕННЫЙ КОНТЕЙНЕР ДЛЯ ADFOX (Строго под кнопками навигации статьи) -->
+      <div id="adfoxWrapper" style="margin: 20px auto; width: 100%; height: auto; clear: both;" data-ad-ignore="true">
+        <!-- Атрибут data-yandex сообщает авторекламе, что блок занят и стирать его нельзя -->
+        <div id="adfox_173934500594834357" data-yandex="true" style="width: 100%; height: auto; min-height: 50px;"></div>
+      </div>
     </section>
   </main>
 
@@ -112,16 +113,25 @@
     </p>
   </footer>
 
-  <!-- Скрипты авторекламы Яндекса (Загружаются асинхронно один раз для всего SPA) -->
+  <!-- Глобальные асинхронные скрипты рекламной сети Яндекса и автоплейсмента -->
   <script src="https://yandex.ru/ads/system/context.js" async></script>
   <script data-page-id="537370" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
 
-  <!-- Инициализируем массив исключений для авторекламы, чтобы она не терла inImage -->
+  <!-- Критические исключения для авторекламы (Выполняются строго ДО инициализации баннеров) -->
   <script>
-    window.APExceptionBlocks = window.APExceptionBlocks || ['R-A-537370-42'];
     window.yaContextCb = window.yaContextCb || [];
+    window.APExceptionBlocks = window.APExceptionBlocks || [];
+    
+    // Блокируем авторекламе доступ к стиранию inImage и рекомендательного виджета Adfox
+    if (!window.APExceptionBlocks.includes('R-A-537370-42')) {
+      window.APExceptionBlocks.push('R-A-537370-42');
+    }
+    if (!window.APExceptionBlocks.includes('adfox_173934500594834357')) {
+      window.APExceptionBlocks.push('adfox_173934500594834357');
+    }
   </script>
 
+  <!-- Подключение основных модулей PWA приложения -->
   <script src="app.js"></script>
   <script src="os-search.js"></script>
 </body>
