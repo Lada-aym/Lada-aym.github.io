@@ -142,7 +142,7 @@ window.OSSearch = (() => {
           .os-btn-action.listening .os-mic-icon { color: #ef4444; animation: os-pulse 1.5s infinite; }
           
           /* 🔥 КЛЮЧЕВОЕ ИСПРАВЛЕНИЕ ДЛЯ КНОПКИ ЗАКРЫТЬ */
-          @media(max-width:768px){.os-bar{flex-wrap:wrap}#osCloseMobile{display:none!important}.os-btn-action{padding:10px!important}}
+          @media(max-width:768px){.os-bar{flex-wrap:wrap;gap:6px}.os-btn-action{padding:10px}#osInput{font-size:16px}}
           #osCloseMobile {
             background: var(--panel-2, #222326);
             border: none;
