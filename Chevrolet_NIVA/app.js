@@ -1998,9 +1998,6 @@ function render() {
     const pagerDiv = document.createElement("nav");
     pagerDiv.className = "mobile-pager";
     pagerDiv.style.display = "flex";
-    // Защита от авторекламы Яндекса (скрипт будет думать, что здесь уже есть баннер)
-    pagerDiv.setAttribute('data-yandex', 'true');
-    pagerDiv.setAttribute('data-ad-ignore', 'true');
     pagerDiv.innerHTML = prevHtml + nextHtml;
     root.appendChild(pagerDiv);
   }
@@ -2010,8 +2007,8 @@ function render() {
 
   // Подсветка кнопок «Все разделы» / «Закладки»
   const allActive = !state.favoritesOnly && !state.category && !state.path && !state.query;
-  showAllBtn.classList.toggle("active-btn", allActive);
-  showFavBtn.classList.toggle("active-btn", state.favoritesOnly);
+  showAllBtn?.classList.toggle("active-btn", allActive);
+  showFavBtn?.classList.toggle("active-btn", state.favoritesOnly);
 
   // Запускаем scroll spy для навигации при просмотре списка
   setupScrollSpy();
