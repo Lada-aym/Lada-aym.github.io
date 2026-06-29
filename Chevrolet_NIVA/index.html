@@ -4,38 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#151515" />
-  <meta name="description" content="Интерактивное руководство по эксплуатации Chevrolet Niva: органы управления, обслуживание, характеристики, предохранители и лампы." />
+  <meta name="description" content="Офлайн PWA-руководство по эксплуатации Chevrolet Niva" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
-  <link rel="canonical" href="https://lada-aym.github.io/Chevrolet_NIVA/" />
-  <meta property="og:title" content="Chevrolet Niva — руководство по эксплуатации" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="ru_RU" />
-  <meta property="og:url" content="https://lada-aym.github.io/Chevrolet_NIVA/" />
   <link rel="stylesheet" href="styles.css" />
   <title>Chevrolet Niva — руководство</title>
-
-  <!-- Google Tag Manager (ленивая загрузка) -->
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  (function(w,d,s,l){
-    function loadGTM(){
-      w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-PRQ33NW3'+dl;
-      f.parentNode.insertBefore(j,f);
-    }
-    if(requestIdleCallback){requestIdleCallback(loadGTM,{timeout:3000});}else{setTimeout(loadGTM,2000);}
-  })(window,document,'script','dataLayer');
-  </script>
 </head>
 <body>
-  <!-- GTM noscript -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRQ33NW3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  
   <header class="app-header">
-    <button id="burgerBtn" class="burger-btn" title="Menu" aria-label="Menu">
+    <button id="burgerBtn" class="burger-btn" title="Меню" aria-label="Меню">
       <span></span><span></span><span></span>
     </button>
     <div class="brand">
@@ -46,9 +23,6 @@
       </div>
     </div>
     <div style="display:flex;gap:.5rem;align-items:center">
-      <button id="headerSearchBtn" class="header-search-btn" title="Поиск" aria-label="Поиск">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-      </button>
       <button id="themeToggle" class="theme-toggle" title="Сменить тему"></button>
       <button id="installBtn" class="install-btn" hidden>Установить</button>
     </div>
@@ -65,22 +39,17 @@
     </div>
     <div class="hero-card">
       <strong>Важно</strong>
-      <span>Двигатель рассчитан на неэтилированный бензин АИ-95.</span>
-      <span>Эксплуатация: от -40 до +45 °C.</span>
+      <span>Двигатель рассчитан на неэтилированный бензин АИ‑95.</span>
+      <span>Эксплуатация: от −40 до +45 °C.</span>
     </div>
   </section>
 
   <div id="sidebarOverlay" class="sidebar-overlay"></div>
 
   <main class="layout">
-    <aside class="sidebar" id="appSidebar">
-      <div class="sidebar-header" id="sidebarHeader">
-        <div class="sidebar-search-trigger">
-          <button class="sidebar-search-btn" type="button" id="osIntegratedSearchBtn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <span>Поиск по мануалу...</span>
-          </button>
-        </div>
+    <aside class="sidebar">
+      <div class="search-wrap">
+        <input id="searchInput" type="search" placeholder="Поиск: масло, шины, ABS..." autocomplete="off" />
       </div>
       <nav id="categoryNav" class="category-nav"></nav>
       <div class="side-actions">
@@ -91,15 +60,7 @@
 
     <section class="content">
       <div id="statusLine" class="status-line"></div>
-      
-      <!-- Динамический контент статей (сюда app.js вставляет текст, картинки и кнопки Вперед/Назад) -->
       <div id="manualRoot"></div>
-      
-      <!-- ЗАЩИЩЕННЫЙ КОНТЕЙНЕР ДЛЯ ADFOX (Строго под кнопками навигации статьи) -->
-      <div id="adfoxWrapper" style="margin: 20px auto; width: 100%; height: auto; clear: both;" data-ad-ignore="true">
-        <!-- Атрибут data-yandex сообщает авторекламе, что блок занят и стирать его нельзя -->
-        <div id="adfox_173934500594834357" data-yandex="true" style="width: 100%; height: auto; min-height: 50px;"></div>
-      </div>
     </section>
   </main>
 
@@ -107,32 +68,12 @@
 
   <footer class="footer">
     <p>
-      Руководство по эксплуатации Chevrolet Niva.
+      PWA-версия подготовлена по предоставленному тексту заводского руководства.
       Для юридически значимых данных сверяйтесь с оригинальным руководством и
       сервисной книжкой.
     </p>
   </footer>
 
-  <!-- Глобальные асинхронные скрипты рекламной сети Яндекса и автоплейсмента -->
-  <script src="https://yandex.ru/ads/system/context.js" async></script>
-  <script data-page-id="537370" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
-
-  <!-- Критические исключения для авторекламы (Выполняются строго ДО инициализации баннеров) -->
-  <script>
-    window.yaContextCb = window.yaContextCb || [];
-    window.APExceptionBlocks = window.APExceptionBlocks || [];
-    
-    // Блокируем авторекламе доступ к стиранию inImage и рекомендательного виджета Adfox
-    if (!window.APExceptionBlocks.includes('R-A-537370-42')) {
-      window.APExceptionBlocks.push('R-A-537370-42');
-    }
-    if (!window.APExceptionBlocks.includes('adfox_173934500594834357')) {
-      window.APExceptionBlocks.push('adfox_173934500594834357');
-    }
-  </script>
-
-  <!-- Подключение основных модулей PWA приложения -->
   <script src="app.js"></script>
-  <script src="os-search.js"></script>
 </body>
 </html>
