@@ -4,10 +4,22 @@
    7 категорий, 52 раздела, каждый со своим path (для навигации/глубоких ссылок).
    ========================================================================= */
 
+/* --- Безопасный localStorage (защита от SecurityError в режиме инкогнито) --- */
+const safeStorage = {
+  get(key) {
+    try { return localStorage.getItem(key); }
+    catch (e) { return null; }
+  },
+  set(key, val) {
+    try { localStorage.setItem(key, val); }
+    catch (e) { /* игнорируем */ }
+  }
+};
+
 /* --- Переключатель темы (тёмная/светлая/авто) --- */
 (function initTheme() {
   const root = document.documentElement;
-  const saved = localStorage.getItem("nivaTheme");
+  const saved = safeStorage.get("nivaTheme");
   if (saved) root.dataset.theme = saved;
   function syncBtn() {
     const btn = document.getElementById("themeToggle");
@@ -27,10 +39,10 @@
       const effective = cur || (isLightSys ? "light" : "dark");
       if (effective === "dark") {
         root.dataset.theme = "light";
-        localStorage.setItem("nivaTheme", "light");
+        safeStorage.set("nivaTheme", "light");
       } else {
         root.dataset.theme = "dark";
-        localStorage.setItem("nivaTheme", "dark");
+        safeStorage.set("nivaTheme", "dark");
       }
       syncBtn();
     });
@@ -1539,44 +1551,50 @@ const MENU = buildMenu();
 /* ---------------------------------------------------------------------------
    Выдвижной сайдбар (бургер) для мобильных.
    --------------------------------------------------------------------------- */
-const burgerBtn = document.getElementById("burgerBtn");
-const sidebarEl = document.querySelector(".sidebar");
-const sidebarOverlay = document.getElementById("sidebarOverlay");
-
-function openSidebar() {
-  sidebarEl.classList.add("open");
-  sidebarOverlay.classList.add("show");
-  burgerBtn.classList.add("open");
-  document.body.style.overflow = "hidden";
-}
-function closeSidebar() {
-  sidebarEl.classList.remove("open");
-  sidebarOverlay.classList.remove("show");
-  burgerBtn.classList.remove("open");
-  document.body.style.overflow = "";
-}
 function isMobile() {
   return window.matchMedia("(max-width: 860px)").matches;
 }
 
-burgerBtn.addEventListener("click", () => {
-  if (sidebarEl.classList.contains("open")) closeSidebar();
-  else openSidebar();
-});
+// Оборачиваем в DOMContentLoaded, чтобы элементы успели создаться в DOM
+document.addEventListener("DOMContentLoaded", () => {
+  const burgerBtn = document.getElementById("burgerBtn");
+  const sidebarEl = document.querySelector(".sidebar");
+  const sidebarOverlay = document.getElementById("sidebarOverlay");
 
-// Кнопка поиска в шапке — открывает os-search
-document.getElementById("headerSearchBtn")?.addEventListener("click", () => {
-  if (window.OSSearch) window.OSSearch.open();
-});
+  if (!burgerBtn || !sidebarEl || !sidebarOverlay) return;
 
-sidebarOverlay.addEventListener("click", closeSidebar);
-
-// Закрытие при выборе пункта меню (только на мобильных)
-document.addEventListener("click", (e) => {
-  if (!isMobile()) return;
-  if (e.target.closest(".menu-item") || e.target.closest(".side-actions button")) {
-    closeSidebar();
+  function openSidebar() {
+    sidebarEl.classList.add("open");
+    sidebarOverlay.classList.add("show");
+    burgerBtn.classList.add("open");
+    document.body.style.overflow = "hidden";
   }
+  function closeSidebar() {
+    sidebarEl.classList.remove("open");
+    sidebarOverlay.classList.remove("show");
+    burgerBtn.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  burgerBtn.addEventListener("click", () => {
+    if (sidebarEl.classList.contains("open")) closeSidebar();
+    else openSidebar();
+  });
+
+  // Кнопка поиска в шапке — открывает os-search
+  document.getElementById("headerSearchBtn")?.addEventListener("click", () => {
+    if (window.OSSearch) window.OSSearch.open();
+  });
+
+  sidebarOverlay.addEventListener("click", closeSidebar);
+
+  // Закрытие при выборе пункта меню (только на мобильных)
+  document.addEventListener("click", (e) => {
+    if (!isMobile()) return;
+    if (e.target.closest(".menu-item") || e.target.closest(".side-actions button")) {
+      closeSidebar();
+    }
+  });
 });
 
 /* ---------------------------------------------------------------------------
@@ -1588,7 +1606,7 @@ const state = {
   query: "",         // поисковый запрос (перекрывает выбор)
   favoritesOnly: false,
   expanded: new Set(),
-  favorites: new Set(JSON.parse(localStorage.getItem("nivaFavorites") || "[]"))
+  favorites: new Set(JSON.parse(safeStorage.get("nivaFavorites") || "[]"))
 };
 
 const root = document.getElementById("manualRoot");
@@ -1617,7 +1635,7 @@ function slug(path) {
 }
 
 function saveFavorites() {
-  localStorage.setItem("nivaFavorites", JSON.stringify([...state.favorites]));
+  safeStorage.set("nivaFavorites", JSON.stringify([...state.favorites]));
 }
 
 function sectionText(section) {
@@ -1679,6 +1697,7 @@ function filteredSections() {
    Рендер иерархического меню (аккордеон).
    --------------------------------------------------------------------------- */
 function renderMenu() {
+  if (!nav) return;
   nav.innerHTML = MENU.map(group => {
     const open = state.expanded.has(group.title);
     const headActive = state.category === group.title && !state.path && !state.query && !state.favoritesOnly;
@@ -1926,42 +1945,11 @@ function refreshAds() {
   if (adRefreshTimer) clearTimeout(adRefreshTimer);
 
   adRefreshTimer = setTimeout(() => {
-    // 1. Перезапуск рекомендательного виджета Adfox
-    const wrapper = document.getElementById('adfoxWrapper');
-    if (wrapper) {
-      // Полностью сносим старый div и создаем чистый заново
-      wrapper.innerHTML = '<div id="adfox_173934500594834357" data-yandex="true" style="width: 100%; height: auto;"></div>';
-      
-      // Даем SPA-движку 100 миллисекунд, чтобы полностью отрисовать DOM,
-      // и только потом безопасно запрашиваем виджет Adfox
-      setTimeout(() => {
-        window.yaContextCb.push(() => {
-          if (window.Ya && Ya.adfoxCode) {
-            try {
-              Ya.adfoxCode.create({
-                ownerId: 322697,
-                containerId: 'adfox_173934500594834357',
-                params: {
-                  pp: 'i',
-                  ps: 'ivjz',
-                  p2: 'gqqu'
-                }
-              });
-              console.log("✅ Виджет Adfox успешно перезапущен");
-            } catch (e) {
-              console.error("❌ Ошибка инициализации Adfox:", e.message);
-            }
-          }
-        });
-      }, 100);
-    }
-
-    // 2. Инициализация блока inImage для картинок новой статьи
+    // Инициализация блока inImage для картинок новой статьи
     window.adCountInImage = 0;
     if (typeof window.initInImageAds === 'function') {
       window.initInImageAds();
     }
-
     adRefreshTimer = null;
   }, 3000);
 }
@@ -1970,6 +1958,7 @@ function refreshAds() {
    Главный рендер.
    --------------------------------------------------------------------------- */
 function render() {
+  if (!root) return;
   renderMenu();
   const items = filteredSections();
   renderStatus(items);
@@ -2009,6 +1998,9 @@ function render() {
     const pagerDiv = document.createElement("nav");
     pagerDiv.className = "mobile-pager";
     pagerDiv.style.display = "flex";
+    // Защита от авторекламы Яндекса (скрипт будет думать, что здесь уже есть баннер)
+    pagerDiv.setAttribute('data-yandex', 'true');
+    pagerDiv.setAttribute('data-ad-ignore', 'true');
     pagerDiv.innerHTML = prevHtml + nextHtml;
     root.appendChild(pagerDiv);
   }
@@ -2032,7 +2024,7 @@ function render() {
    --------------------------------------------------------------------------- */
 // searchInput удалён — нейронный поиск os-search.js обрабатывается отдельно
 
-showAllBtn.addEventListener("click", () => {
+showAllBtn?.addEventListener("click", () => {
   state.category = null;
   state.path = null;
   state.query = "";
@@ -2041,7 +2033,7 @@ showAllBtn.addEventListener("click", () => {
   render();
 });
 
-showFavBtn.addEventListener("click", () => {
+showFavBtn?.addEventListener("click", () => {
   state.favoritesOnly = true;
   state.category = null;
   state.path = null;
@@ -2056,11 +2048,11 @@ window.addEventListener("hashchange", () => {
 });
 
 window.addEventListener("scroll", () => {
-  toTopBtn.classList.toggle("visible", window.scrollY > 500);
+  toTopBtn?.classList.toggle("visible", window.scrollY > 500);
   onScrollSpy();
 }, { passive: true });
 
-toTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+toTopBtn?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
 /* ---------------------------------------------------------------------------
    Установка PWA.
@@ -2069,15 +2061,15 @@ let deferredPrompt;
 window.addEventListener("beforeinstallprompt", event => {
   event.preventDefault();
   deferredPrompt = event;
-  installBtn.hidden = false;
+  if (installBtn) installBtn.hidden = false;
 });
 
-installBtn.addEventListener("click", async () => {
+installBtn?.addEventListener("click", async () => {
   if (!deferredPrompt) return;
   deferredPrompt.prompt();
   await deferredPrompt.userChoice;
   deferredPrompt = null;
-  installBtn.hidden = true;
+  if (installBtn) installBtn.hidden = true;
 });
 
 if ("serviceWorker" in navigator) {
@@ -2089,8 +2081,15 @@ if ("serviceWorker" in navigator) {
 /* ---------------------------------------------------------------------------
    Инициализация.
    --------------------------------------------------------------------------- */
-syncFromHash();
-render();
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
+    syncFromHash();
+    render();
+  });
+} else {
+  syncFromHash();
+  render();
+}
 
 /* === ЛОГИКА INIMAGE ДЛЯ КАРТИНОК В СТАТЬЯХ CHEVROLET NIVA === */
 
