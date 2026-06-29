@@ -612,6 +612,20 @@ tr:last-child td { border-bottom: 0; }
 }
 .theme-toggle:hover { border-color: var(--accent); }
 
+/* Блокировка рекламы ниже кнопок навигации (после щита navShield) и в футере */
+#navShield ~ div,
+#navShield ~ div[id^="yandex_rtb_"],
+#navShield ~ div[class^="ya-"],
+.footer div[id^="yandex_rtb_"],
+.footer div[class^="ya-"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+}
+
 /* Кнопка поиска в шапке */
 .header-search-btn {
   border: 1px solid var(--line);
