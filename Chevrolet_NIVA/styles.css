@@ -616,6 +616,8 @@ tr:last-child td { border-bottom: 0; }
 #navShield ~ div,
 #navShield ~ div[id^="yandex_rtb_"],
 #navShield ~ div[class^="ya-"],
+.footer ~ div[id^="id-"],
+.footer ~ div[class*="ya-"],
 .footer div[id^="yandex_rtb_"],
 .footer div[class^="ya-"] {
   display: none !important;
