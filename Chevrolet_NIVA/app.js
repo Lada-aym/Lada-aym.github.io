@@ -2094,17 +2094,13 @@ if (document.readyState === "loading") {
 window.adCountInImage = 0;
 
 const MAX_ADS = 10;
-const MIN_IMAGE_WIDTH = 300;
-const MIN_IMAGE_HEIGHT = 250;
 
-// Проверка размера изображения
+// Проверка размера изображения (только по реальным пикселям, без учёта CSS-масштабирования на мобилке)
 const isImageLargeEnough = (image) => {
   if (image.complete) {
-    return image.naturalWidth >= MIN_IMAGE_WIDTH && image.naturalHeight >= MIN_IMAGE_HEIGHT;
+    return image.naturalWidth >= 300;
   }
-  const width = parseInt(image.getAttribute('width') || image.style.width || 0);
-  const height = parseInt(image.getAttribute('height') || image.style.height || 0);
-  return width >= MIN_IMAGE_WIDTH && height >= MIN_IMAGE_HEIGHT;
+  return true; // Если картинка ещё не загрузилась, даём ей шанс
 };
 
 // Проверка перекрытия рекламы
