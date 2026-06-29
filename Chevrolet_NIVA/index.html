@@ -4,13 +4,35 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#151515" />
-  <meta name="description" content="Офлайн PWA-руководство по эксплуатации Chevrolet Niva" />
+  <meta name="description" content="Интерактивное руководство по эксплуатации Chevrolet Niva: органы управления, обслуживание, характеристики, предохранители и лампы." />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://lada-aym.github.io/Chevrolet_NIVA/" />
+  <meta property="og:title" content="Chevrolet Niva — руководство по эксплуатации" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:url" content="https://lada-aym.github.io/Chevrolet_NIVA/" />
   <link rel="stylesheet" href="styles.css" />
   <title>Chevrolet Niva — руководство</title>
+
+  <!-- Google Tag Manager (ленивая загрузка) -->
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(w,d,s,l){
+    function loadGTM(){
+      w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-PRQ33NW3'+dl;
+      f.parentNode.insertBefore(j,f);
+    }
+    if(requestIdleCallback){requestIdleCallback(loadGTM,{timeout:3000});}else{setTimeout(loadGTM,2000);}
+  })(window,document,'script','dataLayer');
+  </script>
 </head>
 <body>
+  <!-- GTM noscript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRQ33NW3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <header class="app-header">
     <button id="burgerBtn" class="burger-btn" title="Меню" aria-label="Меню">
       <span></span><span></span><span></span>
@@ -23,6 +45,9 @@
       </div>
     </div>
     <div style="display:flex;gap:.5rem;align-items:center">
+      <button id="headerSearchBtn" class="header-search-btn" title="Поиск" aria-label="Поиск">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
       <button id="themeToggle" class="theme-toggle" title="Сменить тему"></button>
       <button id="installBtn" class="install-btn" hidden>Установить</button>
     </div>
@@ -39,17 +64,22 @@
     </div>
     <div class="hero-card">
       <strong>Важно</strong>
-      <span>Двигатель рассчитан на неэтилированный бензин АИ‑95.</span>
-      <span>Эксплуатация: от −40 до +45 °C.</span>
+      <span>Двигатель рассчитан на неэтилированный бензин АИ-95.</span>
+      <span>Эксплуатация: от -40 до +45 °C.</span>
     </div>
   </section>
 
   <div id="sidebarOverlay" class="sidebar-overlay"></div>
 
   <main class="layout">
-    <aside class="sidebar">
-      <div class="search-wrap">
-        <input id="searchInput" type="search" placeholder="Поиск: масло, шины, ABS..." autocomplete="off" />
+    <aside class="sidebar" id="appSidebar">
+      <div class="sidebar-header" id="sidebarHeader">
+        <div class="sidebar-search-trigger">
+          <button class="sidebar-search-btn" type="button" id="osIntegratedSearchBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <span>Поиск по мануалу...</span>
+          </button>
+        </div>
       </div>
       <nav id="categoryNav" class="category-nav"></nav>
       <div class="side-actions">
@@ -60,13 +90,19 @@
 
     <section class="content">
       <div id="statusLine" class="status-line"></div>
+      
+      <!-- Динамический контент статей (сюда app.js вставляет текст, картинки и кнопки Вперед/Назад) -->
       <div id="manualRoot"></div>
+      
+      <!-- НЕВИДИМЫЙ ЩИТ ОТ АВТОРЕКЛАМЫ (Ставится строго ниже кнопок, закрывая всю нижнюю зону) -->
+      <div id="navShield" style="width: 100%; height: 1px; margin: 0; padding: 0; clear: both;" data-ad-ignore="true"></div>
     </section>
   </main>
 
   <button id="toTopBtn" class="to-top" title="Наверх">↑</button>
 
-  <footer class="footer">
+  <!-- ЗАЩИЩЕННЫЙ ФУТЕР -->
+  <footer class="footer ad-ignore" data-ad-ignore="true">
     <p>
       PWA-версия подготовлена по предоставленному тексту заводского руководства.
       Для юридически значимых данных сверяйтесь с оригинальным руководством и
@@ -74,6 +110,27 @@
     </p>
   </footer>
 
+  <!-- Глобальное объявление isMobile для предотвращения ошибок -->
+  <script>
+    window.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  </script>
+
+  <!-- Скрипты авторекламы Яндекса -->
+  <script src="https://yandex.ru/ads/system/context.js" async></script>
+  <script data-page-id="537370" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
+
+  <!-- Исключения для авторекламы (Защищаем только inImage, нижний щит и футер) -->
+  <script>
+    window.yaContextCb = window.yaContextCb || [];
+    window.APExceptionBlocks = window.APExceptionBlocks || [];
+    
+    if (!window.APExceptionBlocks.includes('R-A-537370-42')) window.APExceptionBlocks.push('R-A-537370-42');
+    if (!window.APExceptionBlocks.includes('navShield')) window.APExceptionBlocks.push('navShield');
+    if (!window.APExceptionBlocks.includes('footer')) window.APExceptionBlocks.push('footer');
+    if (!window.APExceptionBlocks.includes('.footer')) window.APExceptionBlocks.push('.footer');
+  </script>
+
   <script src="app.js"></script>
-</body>
+  <script src="os-search.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a133639b2e693b91',t:'MTc4MjcxOTkzNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
