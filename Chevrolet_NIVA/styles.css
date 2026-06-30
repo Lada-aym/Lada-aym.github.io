@@ -34,6 +34,7 @@
   --logo-shadow: rgba(255,255,255,.35);
   --theme-btn: "🌙";
 }
+
 /* Светлая тема — ручной выбор */
 :root[data-theme="light"] {
   color-scheme: light;
@@ -702,14 +703,14 @@ tr:last-child td { border-bottom: 0; }
   .burger-btn { width: 36px; height: 36px; }
   .card { scroll-margin-top: 76px; }
   
-  /* 🔥 ИСПРАВЛЕННЫЙ БЛОК: Безопасная отмена обтекания на планшетах и телефонах */
+/* 🔥 ИСПРАВЛЕННЫЙ БЛОК: Безопасная отмена обтекания на планшетах и телефонах */
   .figure,
   .figure.float-left {
     float: none !important;
     width: var(--figure-min-width) !important; /* ЖЕСТКАЯ ФИКСАЦИЯ НА 320PX ДЛЯ ЯНДЕКС.РЕКЛАМЫ */
     min-width: var(--figure-min-width) !important;
     max-width: 100% !important;
-    margin: .85rem auto !important;
+    margin: .85rem auto !important; /* Центрирование */
     clear: both !important;
   }
 
@@ -720,9 +721,9 @@ tr:last-child td { border-bottom: 0; }
   .figure-text-block > .figure {
     width: var(--figure-min-width) !important; /* ЖЕСТКАЯ ФИКСАЦИЯ НА 320PX ДЛЯ ЯНДЕКС.РЕКЛАМЫ */
     min-width: var(--figure-min-width) !important;
-    margin: 0 auto;
+    margin: 0 auto !important; /* Центрирование внутри текстовых блоков */
   }
-}
+} /* Конец блока @media (max-width: 860px) */
 
 @media (max-width: 520px) {
   .category-nav { grid-template-columns: 1fr; }
