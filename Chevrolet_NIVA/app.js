@@ -15,7 +15,6 @@ const safeStorage = {
     catch (e) { /* игнорируем */ }
   }
 };
-
 /* Совместимость со старыми кэшированными сборками/внешними вставками: если где-то ещё
    остался вызов yaContextCb.push/APExceptionBlocks.push, он не должен ломать приложение. */
 window.yaContextCb = Array.isArray(window.yaContextCb) ? window.yaContextCb : [];
