@@ -3,6 +3,40 @@
    Структура данных приведена в соответствие с меню каталога:
    7 категорий, 52 раздела, каждый со своим path (для навигации/глубоких ссылок).
    ========================================================================= */
+   
+/* =========================================================================
+   Блокировщик нежелательного рекламного блока R-A-537370-71
+   Перехватывает push в yaContextCb и отменяет рендеринг этого ID
+   ========================================================================= */
+(function() {
+  const FORBIDDEN_ID = 'R-A-537370-71';
+  
+  // Инициализируем массив, если его ещё нет
+  window.yaContextCb = window.yaContextCb || [];
+  
+  // Оригинальная функция push
+  const originalPush = window.yaContextCb.push;
+  
+  // Переопределяем метод push для фильтрации данных
+  window.yaContextCb.push = function(...args) {
+    const filteredArgs = args.filter(item => {
+      // Если элемент массива — это функция (колбэк), разрешаем её исполнение
+      if (typeof item === 'function') return true;
+      
+      // Если это объект конфигурации рекламы и в нём указан запрещенный ID
+      if (item && (item.renderTo === FORBIDDEN_ID || item.blockId === FORBIDDEN_ID)) {
+        console.warn(`[РСЯ Блокировщик] Запрос на установку блока ${FORBIDDEN_ID} заблокирован.`);
+        return false; // Удаляем этот вызов
+      }
+      return true;
+    });
+    
+    if (filteredArgs.length > 0) {
+      return originalPush.apply(this, filteredArgs);
+    }
+    return window.yaContextCb.length;
+  };
+})();
 
 /* --- Безопасный localStorage (защита от SecurityError в режиме инкогнито) --- */
 const safeStorage = {
@@ -15,6 +49,7 @@ const safeStorage = {
     catch (e) { /* игнорируем */ }
   }
 };
+
 /* Совместимость со старыми кэшированными сборками/внешними вставками: если где-то ещё
    остался вызов yaContextCb.push/APExceptionBlocks.push, он не должен ломать приложение. */
 window.yaContextCb = Array.isArray(window.yaContextCb) ? window.yaContextCb : [];
