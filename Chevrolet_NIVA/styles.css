@@ -34,7 +34,6 @@
   --logo-shadow: rgba(255,255,255,.35);
   --theme-btn: "🌙";
 }
-
 /* Светлая тема — ручной выбор */
 :root[data-theme="light"] {
   color-scheme: light;
