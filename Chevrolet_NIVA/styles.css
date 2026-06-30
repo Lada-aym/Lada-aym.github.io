@@ -1,4 +1,5 @@
 :root {
+  color-scheme: dark;
   --bg: #0f0f10;
   --panel: #18191b;
   --panel-2: #222326;
@@ -11,6 +12,8 @@
   --ok: #4fd18b;
   --shadow: 0 16px 40px rgba(0,0,0,.28);
   --radius: 18px;
+  --figure-min-width: 320px;
+  --figure-max-width: 340px;
   --on-accent: #151515;
   --header-bg: rgba(15,15,16,.86);
   --sidebar-bg: rgba(24,25,27,.78);
@@ -34,6 +37,7 @@
 
 /* Светлая тема — ручной выбор */
 :root[data-theme="light"] {
+  color-scheme: light;
   --bg: #f0f1f4;
   --panel: #ffffff;
   --panel-2: #e5e6ea;
@@ -45,7 +49,7 @@
   --danger: #d63838;
   --ok: #1a9c52;
   --shadow: 0 8px 24px rgba(0,0,0,.1);
-  --on-accent: #ffffff;
+  --on-accent: #151515;
   --header-bg: rgba(255,255,255,.9);
   --sidebar-bg: rgba(255,255,255,.82);
   --card-bg: #ffffff;
@@ -69,6 +73,7 @@
 /* Авто: светлая тема по системным настройкам, если нет ручного выбора */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
+    color-scheme: light;
     --bg: #f0f1f4;
     --panel: #ffffff;
     --panel-2: #e5e6ea;
@@ -80,7 +85,7 @@
     --danger: #d63838;
     --ok: #1a9c52;
     --shadow: 0 8px 24px rgba(0,0,0,.1);
-    --on-accent: #ffffff;
+    --on-accent: #151515;
     --header-bg: rgba(255,255,255,.9);
     --sidebar-bg: rgba(255,255,255,.82);
     --card-bg: #ffffff;
@@ -111,10 +116,25 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: radial-gradient(circle at top left, var(--accent-glow), transparent 35rem), var(--bg);
   color: var(--text);
-  overflow-x: clip; /* Предотвращает горизонтальную прокрутку, но НЕ ломает position: sticky */
+  overflow-x: hidden;
+  overflow-x: clip; 
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 button, input { font: inherit; }
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: .6;
+}
 
 .app-header {
   position: sticky;
@@ -127,6 +147,7 @@ button, input { font: inherit; }
   padding: .85rem clamp(1rem, 3vw, 2rem);
   background: var(--header-bg);
   border-bottom: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }
 
@@ -159,17 +180,18 @@ button, input { font: inherit; }
 
 /* Заслонка под сайдбаром */
 .sidebar-overlay {
-  display: none;
+  display: block;
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,.5);
   z-index: 28;
   opacity: 0;
+  pointer-events: none;
   transition: opacity .25s ease;
 }
 .sidebar-overlay.show {
-  display: block;
   opacity: 1;
+  pointer-events: auto;
 }
 
 .brand { display: flex; gap: .85rem; align-items: center; }
@@ -189,6 +211,13 @@ button, input { font: inherit; }
 
 h1, h2, h3 { margin: 0; line-height: 1.15; }
 
+.header-actions {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .brand h1 { font-size: 1.1rem; }
 .brand p { margin: .15rem 0 0; color: var(--muted); font-size: .85rem; }
 
@@ -198,6 +227,7 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   background: var(--panel-2);
   border-radius: 999px;
   cursor: pointer;
+  transition: border-color .15s ease, background-color .15s ease, color .15s ease, filter .15s ease, transform .15s ease;
 }
 
 .install-btn {
@@ -253,6 +283,9 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   background: var(--sidebar-bg);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  overscroll-behavior: contain;
 }
 
 .search-wrap input,
@@ -320,15 +353,25 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
 
 /* Список пунктов внутри группы */
 .menu-items {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: .12rem;
-  padding: .25rem 0 .4rem .55rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  padding: 0 0 0 .55rem;
   border-left: 2px solid var(--line);
   margin-left: .35rem;
+  transition: max-height .24s ease, opacity .18s ease, padding .24s ease;
 }
 
-.menu-group.open .menu-items { display: flex; }
+.menu-group.open .menu-items {
+  max-height: 1400px;
+  opacity: 1;
+  pointer-events: auto;
+  padding: .25rem 0 .4rem .55rem;
+}
 .menu-group.open { margin-bottom: .35rem; }
 
 .menu-item {
@@ -360,7 +403,8 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   background: var(--accent);
   color: var(--on-accent);
   border-color: var(--accent);
-  font-weight: 600;
+  font-weight: 700;
+  box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
 .menu-item-text { flex: 1 1 auto; }
@@ -391,7 +435,9 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
 
 .status-line { color: var(--muted); margin-bottom: .85rem; }
 
-#manualRoot { display: grid; gap: 1rem; }
+.lazy-load-sentinel { width: 100%; height: 1px; pointer-events: none; }
+
+#manualRoot { display: grid; gap: 1rem; min-width: 0; }
 
 .card {
   border: 1px solid var(--line);
@@ -399,6 +445,7 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   background: var(--card-bg);
   box-shadow: var(--shadow);
   overflow: hidden;
+  scroll-margin-top: 96px;
 }
 
 .card-head {
@@ -433,27 +480,59 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   border-color: var(--accent);
 }
 
-.card-body { padding: 1rem; }
+.card-body { padding: 1rem; overflow-wrap: break-word; }
+.card-body::after { content: ""; display: block; clear: both; }
 
 .card-body p { margin: 0 0 .85rem; color: var(--body-text); }
 .card-body ul { margin: 0 0 1rem; padding-left: 1.2rem; color: var(--body-text); }
+.card-body p,
+.card-body ul,
+.note,
+.warning {
+  max-width: none;
+}
 .card-body li { margin: .35rem 0; }
 
+/* 🔥 ИСПРАВЛЕННЫЙ БЛОК: Безопасное и красивое обтекание картинок на ПК */
 .figure {
   float: right;
-  width: clamp(180px, 38%, 320px);
-  margin: .5rem 0 .85rem 1.2rem;
+  width: clamp(320px, 38%, var(--figure-max-width));
+  min-width: var(--figure-min-width); /* ЖЕСТКАЯ ФИКСАЦИЯ НА 320PX ДЛЯ ЯНДЕКС.РЕКЛАМЫ */
+  max-width: 100%;
+  margin: .5rem 0 1.2rem 1.5rem;
   text-align: center;
-  clear: right;
 }
+
+.figure.float-left {
+  float: left;
+  margin: .5rem 1.5rem 1.2rem 0;
+}
+
 .figure img {
+  display: block;
   max-width: 100%;
   height: auto;
   border-radius: 14px;
   border: 1px solid var(--line);
   background: var(--figure-bg);
 }
+.figure:not(.wide) img { width: 100%; }
+
+.figure + .figure {
+  clear: right;
+}
+
+.figure.float-left + .figure {
+  clear: left;
+}
+
+.figure.wide + .figure,
+.figure + .figure.wide {
+  clear: both;
+}
+
 .figure figcaption {
+  overflow-wrap: break-word;
   margin-top: .45rem;
   font-size: .78rem;
   color: var(--muted);
@@ -461,10 +540,37 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   line-height: 1.3;
 }
 
-/* Полноразмерные рисунки — не обтекаются */
+/* Рисунок + поясняющий текст */
+.figure-text-block {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 38%);
+  gap: 1rem 1.5rem;
+  align-items: start;
+  clear: both;
+  margin: .65rem 0 1rem;
+}
+
+.figure-text-block > p {
+  margin-top: 0;
+}
+
+.figure-text-block > .figure {
+  float: none;
+  width: 100%;
+  min-width: var(--figure-min-width); /* ЖЕСТКАЯ ФИКСАЦИЯ НА 320PX ДЛЯ ЯНДЕКС.РЕКЛАМЫ */
+  max-width: none;
+  margin: 0;
+  clear: none;
+}
+
+.figure-text-block > .figure img {
+  width: 100%;
+}
+
 .figure.wide {
   float: none;
   width: auto;
+  min-width: 0;
   max-width: 100%;
   margin: .85rem auto;
   clear: both;
@@ -484,7 +590,9 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
 .warning strong { color: var(--danger); }
 
 .table-scroll {
+  clear: both;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   margin: .8rem 0 1rem;
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -532,6 +640,22 @@ tr:last-child td { border-bottom: 0; }
 
 .to-top.visible { display: block; }
 
+.install-btn:hover,
+.fav-btn:hover,
+.to-top:hover,
+.side-actions button:hover,
+.burger-btn:hover {
+  filter: brightness(1.06);
+}
+
+.install-btn:active,
+.fav-btn:active,
+.to-top:active,
+.side-actions button:active,
+.burger-btn:active {
+  transform: translateY(1px);
+}
+
 .footer {
   max-width: 1320px;
   margin: 0 auto;
@@ -544,7 +668,6 @@ tr:last-child td { border-bottom: 0; }
   .hero { grid-template-columns: 1fr; }
   .layout { grid-template-columns: 1fr; }
 
-  /* Бургер видим */
   .burger-btn { display: flex; }
 
   /* Сайдбар — выдвижной drawer */
@@ -561,7 +684,7 @@ tr:last-child td { border-bottom: 0; }
     border-right: 1px solid var(--line);
     transform: translateX(-100%);
     transition: transform .28s ease;
-    padding: 4rem 1rem 1rem;
+    padding: max(4rem, calc(1rem + env(safe-area-inset-top))) 1rem max(1rem, env(safe-area-inset-bottom));
     box-shadow: var(--shadow);
   }
   .sidebar.open {
@@ -578,12 +701,27 @@ tr:last-child td { border-bottom: 0; }
   .install-btn { padding: .5rem .7rem; font-size: .8rem; }
   .theme-toggle, .header-search-btn { width: 36px; height: 36px; font-size: 1.1rem; }
   .burger-btn { width: 36px; height: 36px; }
-  .figure {
-    float: none;
-    width: auto;
-    max-width: 100%;
-    margin: .85rem auto;
-    clear: both;
+  .card { scroll-margin-top: 76px; }
+  
+  /* 🔥 ИСПРАВЛЕННЫЙ БЛОК: Безопасная отмена обтекания на планшетах и телефонах */
+  .figure,
+  .figure.float-left {
+    float: none !important;
+    width: var(--figure-min-width) !important; /* ЖЕСТКАЯ ФИКСАЦИЯ НА 320PX ДЛЯ ЯНДЕКС.РЕКЛАМЫ */
+    min-width: var(--figure-min-width) !important;
+    max-width: 100% !important;
+    margin: .85rem auto !important;
+    clear: both !important;
+  }
+
+  .figure-text-block {
+    grid-template-columns: 1fr;
+  }
+
+  .figure-text-block > .figure {
+    width: var(--figure-min-width) !important; /* ЖЕСТКАЯ ФИКСАЦИЯ НА 320PX ДЛЯ ЯНДЕКС.РЕКЛАМЫ */
+    min-width: var(--figure-min-width) !important;
+    margin: 0 auto;
   }
 }
 
@@ -591,7 +729,9 @@ tr:last-child td { border-bottom: 0; }
   .category-nav { grid-template-columns: 1fr; }
   .brand h1 { font-size: 1rem; }
   .logo { width: 50px; }
-  /* Скрываем текст под логотипом, оставляем только иконку NIVA */
+  .install-btn { padding: .45rem .55rem; font-size: .72rem; }
+  table { min-width: 480px; }
+  th, td { padding: .6rem; font-size: .9rem; }
   .brand > div:last-child { display: none; }
 }
 
@@ -612,22 +752,6 @@ tr:last-child td { border-bottom: 0; }
 }
 .theme-toggle:hover { border-color: var(--accent); }
 
-/* Блокировка рекламы ниже кнопок навигации (после щита navShield) и в футере */
-#navShield ~ div,
-#navShield ~ div[id^="yandex_rtb_"],
-#navShield ~ div[class^="ya-"],
-.footer ~ div[id^="id-"],
-.footer ~ div[class*="ya-"],
-.footer div[id^="yandex_rtb_"],
-.footer div[class^="ya-"] {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  opacity: 0 !important;
-}
-
 /* Кнопка поиска в шапке */
 .header-search-btn {
   border: 1px solid var(--line);
@@ -646,9 +770,10 @@ tr:last-child td { border-bottom: 0; }
 
 /* Мобильная навигация prev/next */
 .mobile-pager {
-  display: none;
+  display: flex;
   margin: 1.5rem 0 .5rem;
   gap: .75rem;
+  clear: both;
 }
 .mobile-pager a {
   flex: 1;
@@ -666,8 +791,117 @@ tr:last-child td { border-bottom: 0; }
 .mobile-pager a:hover { border-color: var(--accent); }
 .mobile-pager a .pl { font-size: .75rem; color: var(--muted); }
 .mobile-pager a .pt { font-size: .85rem; font-weight: 600; line-height: 1.3; }
+.mobile-pager a.prev { text-align: left; }
 .mobile-pager a.next { text-align: right; }
+.mobile-pager a:only-child { max-width: 50%; }
+
+@media (max-width: 520px) {
+  .mobile-pager { flex-direction: column; }
+  .mobile-pager a:only-child { max-width: none; }
+}
 
 @media (max-width: 860px) {
   .mobile-pager { display: flex; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media print {
+  :root {
+    --bg: #ffffff;
+    --text: #000000;
+    --body-text: #000000;
+    --card-bg: #ffffff;
+    --line: #cccccc;
+    --shadow: none;
+  }
+
+  .app-header,
+  .hero,
+  .sidebar,
+  .sidebar-overlay,
+  .to-top,
+  .mobile-pager,
+  .fav-btn,
+  .footer {
+    display: none !important;
+  }
+
+  body { background: #ffffff; color: #000000; }
+  .layout { display: block; max-width: none; padding: 0; }
+  .card { break-inside: avoid; box-shadow: none; border-color: #cccccc; }
+  .figure { float: none; width: auto; max-width: 70%; margin: .75rem auto; }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .5rem;
+  flex: 0 0 auto;
+}
+
+.header-actions button {
+  flex: 0 0 auto;
+}
+
+.brand {
+  min-width: 0;
+}
+
+.brand > div:last-child {
+  min-width: 0;
+}
+
+@media (max-width: 860px) {
+  .app-header .theme-toggle,
+  .app-header .header-search-btn,
+  .app-header .burger-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .app-header .install-btn {
+    min-height: 36px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 420px) {
+  .app-header .install-btn {
+    display: none;
+  }
+}
+
+.app-header {
+  min-width: 0;
+}
+
+.app-header .brand {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.app-header > .header-actions,
+.app-header > div:last-child:not(.brand) {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: .5rem !important;
+  flex: 0 0 auto !important;
+  min-width: max-content;
+}
+
+.app-header > .header-actions > button,
+.app-header > div:last-child:not(.brand) > button {
+  flex: 0 0 auto !important;
 }
