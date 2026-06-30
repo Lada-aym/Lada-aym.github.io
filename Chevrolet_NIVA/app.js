@@ -16,38 +16,55 @@ const safeStorage = {
   }
 };
 
+/* Совместимость со старыми кэшированными сборками/внешними вставками: если где-то ещё
+   остался вызов yaContextCb.push/APExceptionBlocks.push, он не должен ломать приложение. */
+window.yaContextCb = Array.isArray(window.yaContextCb) ? window.yaContextCb : [];
+window.APExceptionBlocks = Array.isArray(window.APExceptionBlocks) ? window.APExceptionBlocks : [];
+
 /* --- Переключатель темы (тёмная/светлая/авто) --- */
 (function initTheme() {
   const root = document.documentElement;
+
+  function systemTheme() {
+    return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+  }
+
+  function currentTheme() {
+    return safeStorage.get("nivaTheme") || root.dataset.theme || systemTheme();
+  }
+
   const saved = safeStorage.get("nivaTheme");
   if (saved) root.dataset.theme = saved;
+
   function syncBtn() {
     const btn = document.getElementById("themeToggle");
     if (!btn) return;
-    const isLight = saved
-      ? saved === "light"
-      : window.matchMedia("(prefers-color-scheme: light)").matches;
-    btn.textContent = isLight ? "☀️" : "🌙";
+    btn.textContent = currentTheme() === "light" ? "☀️" : "🌙";
+    btn.setAttribute("aria-label", currentTheme() === "light" ? "Включить тёмную тему" : "Включить светлую тему");
   }
-  document.addEventListener("DOMContentLoaded", syncBtn);
-  setTimeout(function() {
+
+  function bindThemeButton() {
     const btn = document.getElementById("themeToggle");
-    if (!btn) return;
+    if (!btn || btn.dataset.themeBound === "true") {
+      syncBtn();
+      return;
+    }
+
+    btn.dataset.themeBound = "true";
     btn.addEventListener("click", function() {
-      const cur = root.dataset.theme;
-      const isLightSys = window.matchMedia("(prefers-color-scheme: light)").matches;
-      const effective = cur || (isLightSys ? "light" : "dark");
-      if (effective === "dark") {
-        root.dataset.theme = "light";
-        safeStorage.set("nivaTheme", "light");
-      } else {
-        root.dataset.theme = "dark";
-        safeStorage.set("nivaTheme", "dark");
-      }
+      const next = currentTheme() === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      safeStorage.set("nivaTheme", next);
       syncBtn();
     });
     syncBtn();
-  }, 0);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bindThemeButton);
+  } else {
+    bindThemeButton();
+  }
 })();
 
 const SECTIONS = [
@@ -138,7 +155,7 @@ const SECTIONS = [
     path: "body-and-interior/seats.html",
     tags: ["сиденья", "подголовник", "заднее сиденье", "продольная регулировка", "спинка"],
     blocks: [
-      { t: "p", v: "Передние сиденья. Для регулировки передних сидений в продольном направлении потяните блокирующий рычаг вверх. После установки сиденья в удобное положение опустите рычаг и, небольшим смещением сиденья вперёд-назад, добейтесь его надёжной фиксации." },
+      { t: "p", v: "Перед сиденья. Для регулировки передних сидений в продольном направлении потяните блокирующий рычаг вверх. После установки сиденья в удобное положение опустите рычаг и, небольшим смещением сиденья вперёд-назад, добейтесь его надёжной фиксации." },
       { t: "figure", src: "images/figures/fig-06-seats.webp", alt: "Сиденья", caption: "Рис. 6. Сиденья", class: "wide" },
       { t: "p", v: "Наклон спинки сиденья регулируется бесступенчато вращением рукоятки." },
       { t: "p", v: "Подголовники регулируются по высоте и по наклону. Оптимальное положение подголовника — когда его верхняя кромка находится на одном уровне с верхней частью головы. Для людей очень высокого роста необходимо поднять подголовник в крайнее верхнее положение, а для людей очень низкого роста — опустить в крайнее нижнее положение." },
@@ -231,8 +248,7 @@ const SECTIONS = [
       { t: "p", v: "Внутреннее зеркало регулируется поворотом вокруг шарнирной головки. Для предотвращения ослепления светом фар движущегося сзади транспорта рычажком можно изменить угол наклона зеркала." },
       { t: "p", v: "Противосолнечные козырьки в зависимости от направления лучей солнца можно установить в одно из трёх положений." },
       { t: "p", v: "Лампа плафона внутреннего освещения при закрытых дверях включается и выключается нажатием на переднюю и заднюю кромки рассеивателя плафона. Плафоны индивидуального освещения обеспечивают направленную подсветку отдельных предметов. Включение и выключение плафонов осуществляется нажатием на кромки клавиш." },
-      { t: "p", v: "Чтобы открыть крышку вещевого ящика, потяните на себя ручку и откиньте крышку вниз. При открытой крышке внутренняя часть вещевого ящика освещается лампой, если включено зажигание." }
-      ,
+      { t: "p", v: "Чтобы открыть крышку вещевого ящика, потяните на себя ручку и откиньте крышку вниз. При открытой крышке внутренняя часть вещевого ящика освещается лампой, если включено зажигание." },
       { t: "figure", src: "images/figures/fig-12-glovebox.webp", alt: "Вещевой ящик", caption: "Рис. 12. Вещевой ящик" }
     ]
   },
@@ -266,7 +282,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ОПИСАНИЕ АВТОМОБИЛЯ — II. Органы управления и приборы",
     title: "Панель приборов",
     path: "controls-and-instruments/dashboard.html",
@@ -314,7 +330,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ОПИСАНИЕ АВТОМОБИЛЯ — II. Органы управления и приборы",
     title: "Комбинация приборов",
     path: "controls-and-instruments/instrument-cluster.html",
@@ -322,53 +338,39 @@ const SECTIONS = [
     blocks: [
       { t: "p", v: "Комбинация приборов показана на рисунке 17. При включении наружного освещения включается подсветка приборов." },
       { t: "figure", src: "images/figures/fig-17-combo.webp", alt: "Комбинация приборов", caption: "Рис. 17. Комбинация приборов", class: "wide" },
-
       { t: "p", v: "1. Указатель температуры охлаждающей жидкости." },
       { t: "warning", v: "Переход стрелки в красную зону шкалы указывает на перегрев охлаждающей жидкости двигателя. В этом случае запрещается дальнейшее движение автомобиля. Автомобиль должен быть доставлен к официальному дилеру для определения и устранения причины перегрева охлаждающей жидкости." },
-
       { t: "p", v: "2. Тахометр. Указывает частоту вращения коленчатого вала двигателя." },
       { t: "warning", v: "Красная зона шкалы со штриховкой обозначает режим работы двигателя с повышенной частотой вращения коленчатого вала, сплошная красная зона шкалы — опасный для двигателя скоростной режим, превышать который запрещается." },
-
       { t: "p", v: "3. Контрольная лампа включения указателей поворота по левому борту. Загорается зелёным мигающим светом при включении сигнала левого поворота." },
       { t: "p", v: "4. Контрольная лампа включения указателей поворота по правому борту. Загорается зелёным мигающим светом при включении сигнала правого поворота." },
       { t: "p", v: "5. Спидометр." },
       { t: "p", v: "6. Указатель уровня топлива." },
       { t: "p", v: "7. Контрольная лампа резерва топлива. Загорается оранжевым светом, если в топливном баке осталось от 4 до 6,5 л бензина." },
       { t: "p", v: "8. Контрольная лампа включения габаритного света. Загорается зелёным светом при включении наружного освещения." },
-
       { t: "p", v: "9. Контрольная лампа аварийного состояния рабочей тормозной системы. Загорается красным светом при понижении уровня жидкости в бачке гидропривода тормозов ниже метки «MIN», а также в момент включения стартера для контроля исправности самой лампы." },
       { t: "warning", v: "Запрещается эксплуатация автомобиля при постоянно горящей контрольной лампе аварийного состояния рабочей тормозной системы." },
-
       { t: "p", v: "10. Контрольная лампа включения дальнего света фар. Загорается синим светом при включении дальнего света фар." },
-
       { t: "p", v: "11. Кнопка сброса показаний счётчика суточного пробега, переключения индикации времени и температуры окружающего воздуха." },
-
       { t: "p", v: "12. Индикатор пробега. Верхняя строка индикатора указывает суммарный пробег автомобиля, а нижняя — является суточным счётчиком пройденного пути. Сброс показаний суточного счётчика проводите удержанием кнопки 11 в нажатом положении более 3 секунд на остановленном автомобиле. Обнуление показаний суточного счётчика происходит так же и при снятии клеммы с аккумуляторной батареи." },
-
       { t: "p", v: "13. Контрольная лампа включения аварийной сигнализации. Загорается красным мигающим светом при включении аварийной сигнализации." },
-
       { t: "p", v: "14. Контрольная лампа «ПРОВЕРЬТЕ ДВИГАТЕЛЬ». Кратковременное загорание лампы при включении зажигания свидетельствует о самотестировании системы. При отсутствии неисправности лампа гаснет после пуска двигателя." },
       { t: "warning", v: "В случае обнаружения какого-либо дефекта в системе, лампа горит постоянно. О том, что необходимо предпринять в случае загорания лампы, изложено в разделе «Эксплуатация автомобиля»." },
-
       { t: "p", v: "15. Индикатор времени и температуры. Переключение между индикацией времени и индикацией температуры окружающего воздуха осуществляется кратковременным нажатием на кнопку 11." },
       { t: "p", v: "При включении зажигания при температуре окружающего воздуха выше +2 °С всегда появляется индикация часов. При понижении температуры окружающей среды до +2 °С индикатор в течение 3 секунд высвечивает показания часов, а затем переходит на индикацию температуры, показания которой первые 10 секунд происходит в мигающем режиме." },
       { t: "p", v: "При повышении температуры наружного воздуха выше +3 °С и повторном её снижении до +2 °С: в случае индикации часов индикатор автоматически переключается на индикацию температуры, показания которой первые 10 секунд высвечиваются в мигающем режиме; в случае индикации температуры её обычный режим прерывается десятисекундным мигающим режимом." },
       { t: "p", v: "Установка часов и минут производится в режиме индикации времени путём вращения кнопки 11 в сторону знаков «h» — часы и «m» — минуты." },
       { t: "note", v: "После снятия клеммы с аккумуляторной батареи и последующего восстановления соединения отсчёт времени производится от нулевого значения." },
-
       { t: "p", v: "16. Контрольная лампа заряда аккумуляторной батареи. Загорается красным светом при включении зажигания и гаснет после пуска двигателя." },
       { t: "warning", v: "Свечение лампы при работающем двигателе означает нарушение нормальной работы системы электропитания автомобиля и указывает на неисправность системы зарядки аккумулятора, слабое натяжение или обрыв ремня привода генератора или неисправность самого генератора. В этом случае необходимо обратиться к дилеру ЗАО «Джи Эм-АВТОВАЗ»." },
-
       { t: "p", v: "17. Контрольная лампа включения стояночного тормоза. Загорается красным светом при включении стояночного тормоза." },
-
       { t: "p", v: "18. Контрольная лампа недостаточного давления масла. Загорается красным светом при включении зажигания и гаснет после пуска двигателя." },
       { t: "warning", v: "При работающем двигателе горящая постоянным светом контрольная лампа указывает на недостаточное давление в системе смазки двигателя. Дальнейшая эксплуатация автомобиля с горящей контрольной лампой приведёт к выходу двигателя из строя. В этом случае необходимо обратиться к дилеру ЗАО «Джи Эм-АВТОВАЗ»." },
-
       { t: "p", v: "19. Резерв." }
     ]
   },
 
-{
+  {
     category: "ОПИСАНИЕ АВТОМОБИЛЯ — II. Органы управления и приборы",
     title: "Кнопочные выключатели",
     path: "controls-and-instruments/buttons.html",
@@ -393,7 +395,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ОПИСАНИЕ АВТОМОБИЛЯ — II. Органы управления и приборы",
     title: "Регуляторы",
     path: "controls-and-instruments/regulators.html",
@@ -416,7 +418,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ОПИСАНИЕ АВТОМОБИЛЯ — II. Органы управления и приборы",
     title: "Блок контрольных ламп",
     path: "controls-and-instruments/warning-lamps.html",
@@ -448,7 +450,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ОПИСАНИЕ АВТОМОБИЛЯ — II. Органы управления и приборы",
     title: "Подрулевые переключатели",
     path: "controls-and-instruments/steering-switches.html",
@@ -488,7 +490,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ОПИСАНИЕ АВТОМОБИЛЯ — II. Органы управления и приборы",
     title: "Выключатель зажигания",
     path: "controls-and-instruments/ignition.html",
@@ -512,7 +514,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ОПИСАНИЕ АВТОМОБИЛЯ — II. Органы управления и приборы",
     title: "Электронная противоугонная система",
     path: "controls-and-instruments/aps-system.html",
@@ -537,7 +539,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ОПИСАНИЕ АВТОМОБИЛЯ — II. Органы управления и приборы",
     title: "Управление включением (выключением) задних противотуманных огней",
     path: "controls-and-instruments/rear-fog-lights.html",
@@ -550,7 +552,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ОПИСАНИЕ АВТОМОБИЛЯ — II. Органы управления и приборы",
     title: "Управление электростеклоподъемниками",
     path: "controls-and-instruments/power-windows.html",
@@ -568,7 +570,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ОПИСАНИЕ АВТОМОБИЛЯ — II. Органы управления и приборы",
     title: "Управление задержкой выключения плафона внутреннего освещения",
     path: "controls-and-instruments/interior-light-delay.html",
@@ -581,7 +583,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ОПИСАНИЕ АВТОМОБИЛЯ — II. Органы управления и приборы",
     title: "Рычаги управления трансмиссией",
     path: "controls-and-instruments/transmission-levers.html",
@@ -608,7 +610,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ОПИСАНИЕ АВТОМОБИЛЯ — II. Органы управления и приборы",
     title: "Управление вентиляцией салона",
     path: "controls-and-instruments/ventilation-control.html",
@@ -628,18 +630,18 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ЭКСПЛУАТАЦИЯ АВТОМОБИЛЯ",
     title: "Установка номерных знаков",
     path: "car-operation/license-plates.html",
     tags: ["номерные знаки", "регистрация", "бамперы", "винты"],
     blocks: [
-      { t: "p", v: "Номерные знаки крепятся непосредственно к переднему и заднему бамперам при помощи самонарезающих винтов с шайбами." },
+      { t: "p", v: "Номерные знаки крепятся непосредственно к перед и заднему бамперам при помощи самонарезающих винтов с шайбами." },
       { t: "figure", src: "images/figures/fig-25-license-plates.webp", alt: "Крепление номерных знаков", caption: "Рис. 25. Крепление номерных знаков" }
     ]
   },
 
-{
+  {
     category: "ЭКСПЛУАТАЦИЯ АВТОМОБИЛЯ",
     title: "Основы безопасной эксплуатации автомобиля",
     path: "car-operation/safety-basics.html",
@@ -692,7 +694,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ЭКСПЛУАТАЦИЯ АВТОМОБИЛЯ",
     title: "Пуск двигателя",
     path: "car-operation/engine-start.html",
@@ -728,7 +730,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ЭКСПЛУАТАЦИЯ АВТОМОБИЛЯ",
     title: "Движение автомобиля",
     path: "car-operation/driving.html",
@@ -768,7 +770,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ЭКСПЛУАТАЦИЯ АВТОМОБИЛЯ",
     title: "Торможение и стоянка",
     path: "car-operation/braking-and-parking.html",
@@ -791,7 +793,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ЭКСПЛУАТАЦИЯ АВТОМОБИЛЯ",
     title: "Буксирование автомобиля",
     path: "car-operation/towing.html",
@@ -805,7 +807,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ И ТЕКУЩИЙ РЕМОНТ АВТОМОБИЛЯ",
     title: "Система смазки двигателя",
     path: "maintenance/lubrication-system.html",
@@ -815,11 +817,11 @@ const SECTIONS = [
       { t: "figure", src: "images/figures/fig-27-oil-check.webp", alt: "Проверка уровня масла", caption: "Рис. 27. Проверка уровня масла в картере двигателя" },
       { t: "warning", v: "Периодически необходимо проверять состояние защитных резиновых чехлов шарниров приводов передних колёс, шаровых опор, а также защитных колпачков шарниров рулевых тяг. Если чехол или колпачок повреждён или скручен, то в шарнир будут проникать пыль, вода и грязь, что вызовет их усиленный износ и разрушение. Поэтому повреждённый чехол или колпачок должен быть заменён новым, а скрученный — поправлен." },
       { t: "p", v: "Уровень масла проверяйте на холодном неработающем двигателе и при необходимости доливайте масло. Уровень масла должен находиться между метками «MIN» и «MAX» указателя. Свежее масло доливайте через горловину, закрываемую пробкой." },
-      { t: "warning", v: "Уровень масла не должен превышать метки «MAX» указателя. В противном случае масло через систему вентиляции картера будет попадать в камеру сгорания и вместе с отработавшими газами выбрасываться в атмосферу. На автомобилях, оснащённых каталитическим нейтрализатором, продукты сгорания масла могут вывести нейтрализатор из строя." }
+      { t: "warning", v: "Уровень масла не должен превышать метки «MAX» указателя. В противном случае масло через систему вентиляции картера будет попадать в камеру сгорания и вместе с отработавшими газами выбрасываться в атмосферу. На автомобилях, оснащён ক্ষমতায় каталитическим нейтрализатором, продукты сгорания масла могут вывести нейтрализатор из строя." }
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ И ТЕКУЩИЙ РЕМОНТ АВТОМОБИЛЯ",
     title: "Система охлаждения двигателя",
     path: "maintenance/cooling-system.html",
@@ -834,7 +836,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ И ТЕКУЩИЙ РЕМОНТ АВТОМОБИЛЯ",
     title: "Тормозная система",
     path: "maintenance/braking-system.html",
@@ -851,7 +853,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ И ТЕКУЩИЙ РЕМОНТ АВТОМОБИЛЯ",
     title: "Гидропривод выключения сцепления",
     path: "maintenance/clutch-hydraulic.html",
@@ -865,7 +867,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ И ТЕКУЩИЙ РЕМОНТ АВТОМОБИЛЯ",
     title: "Гидроусилитель рулевого управления",
     path: "maintenance/power-steering.html",
@@ -878,7 +880,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ И ТЕКУЩИЙ РЕМОНТ АВТОМОБИЛЯ",
     title: "Аккумуляторная батарея",
     path: "maintenance/battery.html",
@@ -892,7 +894,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ И ТЕКУЩИЙ РЕМОНТ АВТОМОБИЛЯ",
     title: "Свечи зажигания",
     path: "maintenance/spark-plugs.html",
@@ -903,7 +905,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ И ТЕКУЩИЙ РЕМОНТ АВТОМОБИЛЯ",
     title: "Омывающая жидкость",
     path: "maintenance/washer-fluid.html",
@@ -915,7 +917,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ И ТЕКУЩИЙ РЕМОНТ АВТОМОБИЛЯ",
     title: "Уход за шинами",
     path: "maintenance/tires.html",
@@ -950,7 +952,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ И ТЕКУЩИЙ РЕМОНТ АВТОМОБИЛЯ",
     title: "Замена колес",
     path: "maintenance/wheel-change.html",
@@ -977,7 +979,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ И ТЕКУЩИЙ РЕМОНТ АВТОМОБИЛЯ",
     title: "Замена плавких предохранителей",
     path: "maintenance/fuse-replacement.html",
@@ -1017,7 +1019,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ И ТЕКУЩИЙ РЕМОНТ АВТОМОБИЛЯ",
     title: "Замена ламп",
     path: "maintenance/lamp-replacement.html",
@@ -1041,7 +1043,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ И ТЕКУЩИЙ РЕМОНТ АВТОМОБИЛЯ",
     title: "Уход за кузовом",
     path: "maintenance/body-care.html",
@@ -1062,7 +1064,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ И ТЕКУЩИЙ РЕМОНТ АВТОМОБИЛЯ",
     title: "Хранение автомобиля",
     path: "maintenance/storage.html",
@@ -1097,7 +1099,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКАЯ ХАРАКТЕРИСТИКА АВТОМОБИЛЯ",
     title: "Основные параметры и размеры",
     path: "specifications/dimensions.html",
@@ -1141,7 +1143,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКАЯ ХАРАКТЕРИСТИКА АВТОМОБИЛЯ",
     title: "Заправочные объемы",
     path: "specifications/capacities.html",
@@ -1171,7 +1173,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКАЯ ХАРАКТЕРИСТИКА АВТОМОБИЛЯ",
     title: "Основные регулировочные и контрольные параметры",
     path: "specifications/settings.html",
@@ -1204,7 +1206,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ТЕХНИЧЕСКАЯ ХАРАКТЕРИСТИКА АВТОМОБИЛЯ",
     title: "Паспортные данные",
     path: "specifications/vehicle-id.html",
@@ -1220,7 +1222,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ПРИЛОЖЕНИЯ",
     title: "Приложение 1. Горюче-смазочные материалы и эксплуатационные жидкости",
     path: "appendices/recommended-fluids.html",
@@ -1284,7 +1286,7 @@ const SECTIONS = [
     ]
   },
 
-{
+  {
     category: "ПРИЛОЖЕНИЯ",
     title: "Приложение 2. Лампы, применяемые на автомобиле",
     path: "appendices/lamps-list.html",
@@ -1357,7 +1359,7 @@ const SECTIONS = [
           ["Повышенный расход масла", "Износ маслосъёмных колпачков", "Замените маслосъёмные колпачки."],
           ["", "Износ поршневых колец", "Замените поршневые кольца."],
           ["", "Течь масла через сальники коленчатого вала", "Замените сальники."],
-          ["", "Засорена система вентиляции картера", "Прочистите систему вентиляции картера."],
+          ["", "Засорена система вентиляции картера", "Прочистите система вентиляции картера."],
           ["Двигатель детонирует (стук при разгоне)", "Низкое октановое число бензина", "Используйте бензин АИ-95, рекомендованный заводом-изготовителем."],
           ["", "Нагар в камерах сгорания", "Очистите камеры сгорания от нагара."],
           ["", "Неисправен датчик детонации", "Замените датчик детонации."],
@@ -1567,12 +1569,14 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebarEl.classList.add("open");
     sidebarOverlay.classList.add("show");
     burgerBtn.classList.add("open");
+    burgerBtn.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden";
   }
   function closeSidebar() {
     sidebarEl.classList.remove("open");
     sidebarOverlay.classList.remove("show");
     burgerBtn.classList.remove("open");
+    burgerBtn.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
   }
 
@@ -1600,23 +1604,44 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ---------------------------------------------------------------------------
    Состояние приложения.
    --------------------------------------------------------------------------- */
+function loadFavorites() {
+  try {
+    const parsed = JSON.parse(safeStorage.get("nivaFavorites") || "[]");
+    return Array.isArray(parsed) ? new Set(parsed) : new Set();
+  } catch (e) {
+    return new Set();
+  }
+}
+
 const state = {
   path: null,        // выбран конкретный раздел (по path) → глубокая ссылка
   category: null,    // выбрана категория → показать все разделы категории
   query: "",         // поисковый запрос (перекрывает выбор)
   favoritesOnly: false,
   expanded: new Set(),
-  favorites: new Set(JSON.parse(safeStorage.get("nivaFavorites") || "[]"))
+  favorites: loadFavorites()
 };
 
-const root = document.getElementById("manualRoot");
-const nav = document.getElementById("categoryNav");
-const statusLine = document.getElementById("statusLine");
-const showAllBtn = document.getElementById("showAllBtn");
-const showFavBtn = document.getElementById("showFavBtn");
-const toTopBtn = document.getElementById("toTopBtn");
-const installBtn = document.getElementById("installBtn");
-// searchInput больше не нужен — os-search.js обрабатывает поиск через #osIntegratedSearchBtn
+let root;
+let nav;
+let statusLine;
+let showAllBtn;
+let showFavBtn;
+let toTopBtn;
+let installBtn;
+let staticEventsBound = false;
+
+function cacheDomElements() {
+  root = document.getElementById("manualRoot");
+  nav = document.getElementById("categoryNav");
+  statusLine = document.getElementById("statusLine");
+  showAllBtn = document.getElementById("showAllBtn");
+  showFavBtn = document.getElementById("showFavBtn");
+  toTopBtn = document.getElementById("toTopBtn");
+  installBtn = document.getElementById("installBtn");
+}
+
+cacheDomElements();
 
 /* ---------------------------------------------------------------------------
    Утилиты.
@@ -1628,6 +1653,12 @@ function esc(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function cssAttr(value) {
+  return String(value)
+    .replaceAll("\\", "\\\\")
+    .replaceAll('"', '\"');
 }
 
 function slug(path) {
@@ -1643,17 +1674,33 @@ function sectionText(section) {
 }
 
 function sectionByPath(path) {
-  return SECTIONS.find(s => s.path === path);
+  return SECTIONS.find(s => s.path === path || s.path.replace(/^\//, "") === path);
 }
 
 /* ---------------------------------------------------------------------------
    Глубокие ссылки через location.hash (#/path/section.html)
    --------------------------------------------------------------------------- */
 function syncFromHash() {
-  const hash = decodeURIComponent(location.hash.replace(/^#\/?/, ""));
-  if (hash && sectionByPath(hash)) {
+  let hash = "";
+  try {
+    hash = decodeURIComponent(location.hash.replace(/^#\/?/, ""));
+  } catch (e) {
+    hash = "";
+  }
+
+  if (hash === "fav-list-view" || hash === "favoritesOnly") {
+    state.favoritesOnly = true;
+    safeStorage.set("nivaNavFilter", "fav");
+    location.hash = "";
+    return;
+  }
+
+  const sec = hash ? sectionByPath(hash) : null;
+  if (sec) {
     state.path = hash;
-    const sec = sectionByPath(hash);
+    state.category = null;
+    state.query = "";
+    state.favoritesOnly = false;
     state.expanded.add(sec.category);
   } else {
     state.path = null;
@@ -1662,7 +1709,18 @@ function syncFromHash() {
 
 function goToPath(path) {
   if (path) {
-    location.hash = "/" + path;   // вызывает hashchange → render
+    state.category = null;
+    state.query = "";
+    state.favoritesOnly = false;
+    safeStorage.set("nivaNavFilter", "all");
+
+    const nextHash = "#/" + path.replace(/^#\/?/, "");
+    if (location.hash === nextHash) {
+      state.path = path.replace(/^#\/?/, "");
+      render();
+    } else {
+      location.hash = "/" + path.replace(/^#\/?/, "");   // вызывает hashchange → render
+    }
   } else {
     history.replaceState(null, "", location.pathname + location.search);
     state.path = null;
@@ -1712,7 +1770,7 @@ function renderMenu() {
 
     return `
       <div class="menu-group ${open ? "open" : ""}">
-        <button class="menu-group-head ${headActive ? "active" : ""}" data-category="${esc(group.title)}">
+        <button class="menu-group-head ${headActive ? "active" : ""}" data-category="${esc(group.title)}" aria-expanded="${open ? "true" : "false"}">
           <span class="menu-caret">▸</span>
           <span class="menu-group-title">${esc(group.title)}</span>
         </button>
@@ -1724,17 +1782,21 @@ function renderMenu() {
   nav.querySelectorAll(".menu-group-head").forEach(btn => {
     btn.addEventListener("click", () => {
       const cat = btn.dataset.category;
-      // разворачиваем/сворачиваем + выбираем категорию
-      if (state.expanded.has(cat) && state.category === cat && !state.path) {
+      const wasOpen = state.expanded.has(cat);
+
+      if (wasOpen) {
         state.expanded.delete(cat);
+        if (state.category === cat) state.category = null;
       } else {
         state.expanded.add(cat);
+        state.category = cat;
       }
-      state.category = cat;
+
       state.path = null;
       state.query = "";
       state.favoritesOnly = false;
-          history.replaceState(null, "", location.pathname + location.search);
+      scrollSpySuppressedUntil = Date.now() + 1200;
+      history.replaceState(null, "", location.pathname + location.search);
       render();
     });
   });
@@ -1766,7 +1828,14 @@ function renderBlock(block) {
     return `<div class="note"><strong>Примечание:</strong><br>${esc(block.v)}</div>`;
   }
   if (block.t === "figure") {
-    return `<figure class="figure${block.class ? " " + esc(block.class) : ""}"><img src="${esc(block.src)}" alt="${esc(block.alt || block.caption || "")}" loading="lazy">${block.caption ? `<figcaption>${esc(block.caption)}</figcaption>` : ""}</figure>`;
+    const isWide = block.class === "wide";
+    const classes = `figure${block.class ? " " + esc(block.class) : ""}`;
+    const minWidth = isWide ? "" : ' style="--figure-min-width:320px"';
+
+    return `<figure class="${classes}"${minWidth}>` +
+      `<img src="${esc(block.src)}" alt="${esc(block.alt || block.caption || "")}" loading="lazy" decoding="async">` +
+      `${block.caption ? `<figcaption>${esc(block.caption)}</figcaption>` : ""}` +
+      `</figure>`;
   }
   if (block.t === "table") {
     return `
@@ -1787,6 +1856,25 @@ function renderBlock(block) {
   return "";
 }
 
+function renderBlocks(blocks) {
+  const html = [];
+
+  for (let i = 0; i < blocks.length; i++) {
+    const block = blocks[i];
+    const next = blocks[i + 1];
+
+    if (block.t === "figure" && block.class !== "wide" && next && next.t === "p") {
+      html.push(`<div class="figure-text-block">${renderBlock(next)}${renderBlock(block)}</div>`);
+      i++;
+      continue;
+    }
+
+    html.push(renderBlock(block));
+  }
+
+  return html.join("");
+}
+
 function renderSection(section) {
   const fav = state.favorites.has(section.path);
   return `
@@ -1799,12 +1887,12 @@ function renderSection(section) {
             ${section.tags.map(tag => `<span class="tag">${esc(tag)}</span>`).join("")}
           </div>
         </div>
-        <button class="fav-btn ${fav ? "active" : ""}" data-fav="${esc(section.path)}" title="В закладки">
+        <button class="fav-btn ${fav ? "active" : ""}" data-fav="${esc(section.path)}" title="${fav ? "Удалить из закладок" : "В закладки"}" aria-label="${fav ? "Удалить из закладок" : "Добавить в закладки"}">
           ${fav ? "★" : "☆"}
         </button>
       </div>
       <div class="card-body">
-        ${section.blocks.map(renderBlock).join("")}
+        ${renderBlocks(section.blocks)}
       </div>
     </article>
   `;
@@ -1828,7 +1916,9 @@ function renderStatus(items) {
   } else {
     label = `Все разделы — ${items.length}`;
   }
-  statusLine.textContent = label;
+  if (statusLine) {
+    statusLine.textContent = label;
+  }
 }
 
 /* ---------------------------------------------------------------------------
@@ -1836,17 +1926,33 @@ function renderStatus(items) {
    --------------------------------------------------------------------------- */
 let scrollSpyActive = false;
 let scrollSpyRaf = null;
+let scrollSpySuppressedUntil = 0;
+
+function isScrollSpySuppressed() {
+  return Date.now() < scrollSpySuppressedUntil;
+}
 
 function setupScrollSpy() {
-  // Отключаем при одиночном разделе, поиске или закладках
+  if (isScrollSpySuppressed()) {
+    scrollSpyActive = false;
+    return;
+  }
+
+  if (!root || !nav) {
+    scrollSpyActive = false;
+    return;
+  }
+
   if (state.path || state.query || state.favoritesOnly) {
     scrollSpyActive = false;
+    clearScrollSpyHighlight();
     return;
   }
 
   const cards = root.querySelectorAll(".card");
   if (!cards.length || cards.length < 2) {
     scrollSpyActive = false;
+    clearScrollSpyHighlight();
     return;
   }
 
@@ -1854,12 +1960,12 @@ function setupScrollSpy() {
 }
 
 function updateScrollSpy() {
-  if (!scrollSpyActive) return;
+  if (isScrollSpySuppressed()) return;
+  if (!scrollSpyActive || !root || !nav) return;
 
   const cards = root.querySelectorAll(".card");
   if (!cards.length) return;
 
-  // Целевая линия: 25% высоты окна сверху
   const targetLine = window.innerHeight * 0.25;
   let activeId = null;
   let minDistance = Infinity;
@@ -1869,13 +1975,10 @@ function updateScrollSpy() {
     const cardTop = rect.top;
     const cardBottom = rect.bottom;
 
-    // Кард виден и его верхняя часть выше целевой линии
     if (cardTop <= targetLine && cardBottom > targetLine) {
-      // Карточка пересекает целевую линию — это она
       activeId = card.id;
       minDistance = 0;
     } else if (minDistance > 0) {
-      // Иначе ищем ближайшую сверху
       const distance = Math.abs(cardTop - targetLine);
       if (cardTop < targetLine && distance < minDistance) {
         minDistance = distance;
@@ -1885,7 +1988,6 @@ function updateScrollSpy() {
   });
 
   if (!activeId) {
-    // Если ничего не нашли — берём последнюю карточку выше линии
     for (let i = cards.length - 1; i >= 0; i--) {
       if (cards[i].getBoundingClientRect().top < targetLine) {
         activeId = cards[i].id;
@@ -1896,26 +1998,25 @@ function updateScrollSpy() {
   if (!activeId && cards.length) activeId = cards[0].id;
   if (!activeId) return;
 
-  // Снимаем старую подсветку
   nav.querySelectorAll(".menu-item.scroll-active").forEach(el =>
     el.classList.remove("scroll-active"));
 
-  // Подсвечиваем новый пункт
   const section = SECTIONS.find(s => slug(s.path) === activeId);
   if (!section) return;
 
-  const menuItem = nav.querySelector(`.menu-item[data-path="${CSS.escape(section.path)}"]`);
+  const menuItem = nav.querySelector(`.menu-item[data-path="${cssAttr(section.path)}"]`);
   if (!menuItem) return;
 
   menuItem.classList.add("scroll-active");
 
-  // Раскрываем родительскую группу
-  const group = menuItem.closest(".menu-group");
-  if (group && !group.classList.contains("open")) {
-    group.classList.add("open");
-  }
+  state.expanded = new Set([section.category]);
+  nav.querySelectorAll(".menu-group").forEach(groupEl => {
+    const isCurrentGroup = groupEl.contains(menuItem);
+    groupEl.classList.toggle("open", isCurrentGroup);
+    const head = groupEl.querySelector(".menu-group-head");
+    if (head) head.setAttribute("aria-expanded", isCurrentGroup ? "true" : "false");
+  });
 
-  // Прокручиваем сайдбар к активному пункту (без jitter)
   const sidebar = document.querySelector(".sidebar");
   if (sidebar && !isMobile()) {
     const r = menuItem.getBoundingClientRect();
@@ -1936,108 +2037,257 @@ function onScrollSpy() {
 }
 
 /* ---------------------------------------------------------------------------
-   Реклама: Перезапуск Adfox и InImage при смене раздела (с задержкой 3 сек)
+   Реклама Яндекс inImage (Вызов после добавления контента)
    --------------------------------------------------------------------------- */
-let adRefreshTimer = null;
+function initYandexInImage() {
+  if (!root) return;
+  const images = Array.from(root.querySelectorAll("img"));
+  if (!images.length) return;
 
-function refreshAds() {
-  // Отменяем предыдущий таймер, если пользователь быстро сменил раздел
-  if (adRefreshTimer) clearTimeout(adRefreshTimer);
+  const renderAd = (imageId) => {
+    window.yaContextCb.push(() => {
+      if (typeof Ya !== 'undefined' && Ya.Context && Ya.Context.AdvManager) {
+        Ya.Context.AdvManager.render({
+          "renderTo": imageId,
+          "blockId": "R-A-537370-42",
+          "type": "inImage"
+        });
+      }
+    });
+  };
 
-  adRefreshTimer = setTimeout(() => {
-    // Инициализация блока inImage для картинок новой статьи
-    window.adCountInImage = 0;
-    if (typeof window.initInImageAds === 'function') {
-      window.initInImageAds();
+  images.forEach(image => {
+    if (image.id && image.id.startsWith("yandex_rtb_")) return;
+    image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`;
+
+    if (!image.complete) {
+      image.addEventListener("load", () => { renderAd(image.id); }, { once: true });
+    } else {
+      renderAd(image.id);
     }
-    adRefreshTimer = null;
-  }, 3000);
+  });
+}
+
+/* ---------------------------------------------------------------------------
+   Отложенная загрузка контента на главной странице.
+   --------------------------------------------------------------------------- */
+const HOME_INITIAL_CHUNK = 6;
+const HOME_CHUNK_SIZE = 6;
+let lazyRenderToken = 0;
+let favoritesDelegationBound = false;
+let lazyObserver = null;
+let lazyScrollHandler = null;
+
+function isHomeView() {
+  return !state.path && !state.category && !state.query && !state.favoritesOnly;
+}
+
+function scheduleIdle(callback) {
+  if ("requestIdleCallback" in window) {
+    return window.requestIdleCallback(callback, { timeout: 300 });
+  }
+  return window.setTimeout(callback, 16);
+}
+
+function clearScrollSpyHighlight() {
+  if (!nav) return;
+  nav.querySelectorAll(".menu-item.scroll-active").forEach(el =>
+    el.classList.remove("scroll-active"));
+}
+
+function disconnectLazyLoader() {
+  if (lazyObserver) {
+    lazyObserver.disconnect();
+    lazyObserver = null;
+  }
+  if (lazyScrollHandler) {
+    window.removeEventListener("scroll", lazyScrollHandler);
+    lazyScrollHandler = null;
+  }
+}
+
+function bindFavoriteDelegation() {
+  if (!root || favoritesDelegationBound) return;
+  favoritesDelegationBound = true;
+
+  root.addEventListener("click", (event) => {
+    const btn = event.target.closest("[data-fav]");
+    if (!btn || !root.contains(btn)) return;
+
+    const path = btn.dataset.fav;
+    if (state.favorites.has(path)) state.favorites.delete(path);
+    else state.favorites.add(path);
+    saveFavorites();
+    render();
+  });
+}
+
+function renderSectionsLazy(items) {
+  const token = ++lazyRenderToken;
+  let index = 0;
+  let loading = false;
+
+  disconnectLazyLoader();
+  root.innerHTML = "";
+
+  const sentinel = document.createElement("div");
+  sentinel.className = "lazy-load-sentinel";
+  sentinel.setAttribute("aria-hidden", "true");
+
+  function appendChunk(size) {
+    if (token !== lazyRenderToken || loading) return;
+    loading = true;
+
+    scheduleIdle(() => {
+      if (token !== lazyRenderToken) return;
+
+      const chunk = items.slice(index, index + size);
+      if (!chunk.length) {
+        disconnectLazyLoader();
+        if (sentinel.parentNode) sentinel.remove();
+        loading = false;
+        return;
+      }
+
+      if (sentinel.parentNode) sentinel.remove();
+      root.insertAdjacentHTML("beforeend", chunk.map(renderSection).join(""));
+      index += chunk.length;
+
+      if (index < items.length) {
+        root.appendChild(sentinel);
+      } else {
+        disconnectLazyLoader();
+      }
+
+      setupScrollSpy();
+      updateScrollSpy();
+      
+      // Инициализируем рекламные блоки на только что подгруженных картинках
+      initYandexInImage(); 
+      loading = false;
+    });
+  }
+
+  function loadMore() {
+    if (index < items.length) appendChunk(HOME_CHUNK_SIZE);
+  }
+
+  appendChunk(HOME_INITIAL_CHUNK);
+
+  if ("IntersectionObserver" in window) {
+    lazyObserver = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) loadMore();
+    }, { rootMargin: "600px 0px" });
+    lazyObserver.observe(sentinel);
+  } else {
+    lazyScrollHandler = () => {
+      const rect = sentinel.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 600) loadMore();
+    };
+    window.addEventListener("scroll", lazyScrollHandler, { passive: true });
+  }
 }
 
 /* ---------------------------------------------------------------------------
    Главный рендер.
    --------------------------------------------------------------------------- */
+let lastRenderedPath = null;
+
 function render() {
+  cacheDomElements();
   if (!root) return;
+
+  lazyRenderToken++;
+  bindFavoriteDelegation();
   renderMenu();
+
   const items = filteredSections();
+  const homeView = isHomeView();
+  if (!homeView) disconnectLazyLoader();
+  const pathChanged = state.path !== lastRenderedPath;
+
   renderStatus(items);
-  root.innerHTML = items.length
-    ? items.map(renderSection).join("")
-    : `<div class="card"><div class="card-body"><p>Ничего не найдено. Попробуйте другой запрос.</p></div></div>`;
 
-  root.querySelectorAll("[data-fav]").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const path = btn.dataset.fav;
-      if (state.favorites.has(path)) state.favorites.delete(path);
-      else state.favorites.add(path);
-      saveFavorites();
-      render();
-    });
-  });
+  if (!items.length) {
+    root.innerHTML = `<div class="card"><div class="card-body"><p>Ничего не найдено. Попробуйте другой запрос.</p></div></div>`;
+  } else if (homeView) {
+    renderSectionsLazy(items);
+  } else {
+    root.innerHTML = items.map(renderSection).join("");
+    // Включаем рекламу на обычных страницах сразу после отрисовки
+    initYandexInImage();
+  }
 
-  // прокрутка к началу контента при выборе конкретного раздела
-  if (state.path) {
+  if (state.path && pathChanged) {
     const el = document.getElementById(slug(state.path));
     if (el) el.scrollIntoView({ block: "start", behavior: "smooth" });
   }
 
-  // Мобильный пейджер prev/next (рендерится внутри #manualRoot)
+  // Мобильный пейджер prev/next
   if (state.path) {
     const idx = SECTIONS.findIndex(s => s.path === state.path);
     const prev = idx > 0 ? SECTIONS[idx - 1] : null;
     const next = idx < SECTIONS.length - 1 ? SECTIONS[idx + 1] : null;
     const prevHtml = prev
-      ? `<a class="prev" data-path="${esc(prev.path)}" href="#${esc(prev.path)}"><span class="pl">← Предыдущий</span><span class="pt">${esc(prev.title)}</span></a>`
+      ? `<a class="prev" data-path="${esc(prev.path)}" href="#/${esc(prev.path)}"><span class="pl">← Предыдущий</span><span class="pt">${esc(prev.title)}</span></a>`
       : "";
     const nextHtml = next
-      ? `<a class="next" data-path="${esc(next.path)}" href="#${esc(next.path)}"><span class="pl">Следующий →</span><span class="pt">${esc(next.title)}</span></a>`
+      ? `<a class="next" data-path="${esc(next.path)}" href="#/${esc(next.path)}"><span class="pl">Следующий →</span><span class="pt">${esc(next.title)}</span></a>`
       : "";
-    
-    // Создаём контейнер и добавляем в конец #manualRoot
+
     const pagerDiv = document.createElement("nav");
     pagerDiv.className = "mobile-pager";
-    pagerDiv.style.display = "flex";
     pagerDiv.innerHTML = prevHtml + nextHtml;
     root.appendChild(pagerDiv);
   }
 
-  // === ПЕРЕЗАПУСК РЕКЛАМНЫХ БЛОКОВ ПОСЛЕ СМЕНЫ СТАТЬИ ===
-  refreshAds();
+  lastRenderedPath = state.path;
 
-  // Подсветка кнопок «Все разделы» / «Закладки»
   const allActive = !state.favoritesOnly && !state.category && !state.path && !state.query;
   showAllBtn?.classList.toggle("active-btn", allActive);
   showFavBtn?.classList.toggle("active-btn", state.favoritesOnly);
 
-  // Запускаем scroll spy для навигации при просмотре списка
   setupScrollSpy();
-  // Первичная подсветка сразу после рендера
   setTimeout(updateScrollSpy, 50);
 }
 
 /* ---------------------------------------------------------------------------
    Обработчики событий.
    --------------------------------------------------------------------------- */
-// searchInput удалён — нейронный поиск os-search.js обрабатывается отдельно
 
-showAllBtn?.addEventListener("click", () => {
-  state.category = null;
-  state.path = null;
-  state.query = "";
-  state.favoritesOnly = false;
-  history.replaceState(null, "", location.pathname + location.search);
-  render();
-});
+function bindStaticEvents() {
+  cacheDomElements();
+  if (staticEventsBound) return;
+  staticEventsBound = true;
 
-showFavBtn?.addEventListener("click", () => {
-  state.favoritesOnly = true;
-  state.category = null;
-  state.path = null;
-  state.query = "";
-  history.replaceState(null, "", location.pathname + location.search);
-  render();
-});
+  showAllBtn?.addEventListener("click", () => {
+    state.category = null;
+    state.path = null;
+    state.query = "";
+    state.favoritesOnly = false;
+    history.replaceState(null, "", location.pathname + location.search);
+    render();
+  });
+
+  showFavBtn?.addEventListener("click", () => {
+    state.favoritesOnly = true;
+    state.category = null;
+    state.path = null;
+    state.query = "";
+    history.replaceState(null, "", location.pathname + location.search);
+    render();
+  });
+
+  toTopBtn?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  installBtn?.addEventListener("click", async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    if (installBtn) installBtn.hidden = true;
+  });
+}
 
 window.addEventListener("hashchange", () => {
   syncFromHash();
@@ -2045,11 +2295,10 @@ window.addEventListener("hashchange", () => {
 });
 
 window.addEventListener("scroll", () => {
+  if (!toTopBtn) cacheDomElements();
   toTopBtn?.classList.toggle("visible", window.scrollY > 500);
   onScrollSpy();
 }, { passive: true });
-
-toTopBtn?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
 /* ---------------------------------------------------------------------------
    Установка PWA.
@@ -2058,20 +2307,15 @@ let deferredPrompt;
 window.addEventListener("beforeinstallprompt", event => {
   event.preventDefault();
   deferredPrompt = event;
+  cacheDomElements();
   if (installBtn) installBtn.hidden = false;
-});
-
-installBtn?.addEventListener("click", async () => {
-  if (!deferredPrompt) return;
-  deferredPrompt.prompt();
-  await deferredPrompt.userChoice;
-  deferredPrompt = null;
-  if (installBtn) installBtn.hidden = true;
 });
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js");
+    navigator.serviceWorker
+      .register("./sw.js")
+      .catch(err => console.error("Service worker registration failed:", err));
   });
 }
 
@@ -2080,84 +2324,12 @@ if ("serviceWorker" in navigator) {
    --------------------------------------------------------------------------- */
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
+    bindStaticEvents();
     syncFromHash();
     render();
   });
 } else {
+  bindStaticEvents();
   syncFromHash();
   render();
 }
-
-/* === ЛОГИКА INIMAGE ДЛЯ КАРТИНОК В СТАТЬЯХ CHEVROLET NIVA === */
-
-// Глобальный счетчик для отслеживания лимита внутри текущей статьи
-window.adCountInImage = 0;
-
-const MAX_ADS = 10;
-
-// Проверка размера изображения (только по реальным пикселям, без учёта CSS-масштабирования на мобилке)
-const isImageLargeEnough = (image) => {
-  if (image.complete) {
-    return image.naturalWidth >= 300;
-  }
-  return true; // Если картинка ещё не загрузилась, даём ей шанс
-};
-
-// Проверка перекрытия рекламы
-const hasNearbyAd = (image) => {
-  const rect = image.getBoundingClientRect();
-  const ads = document.querySelectorAll('[data-adfox],[data-yandex]');
-
-  for (let ad of ads) {
-    const adRect = ad.getBoundingClientRect();
-    const overlap =
-      !(rect.right <= adRect.left || rect.left >= adRect.right ||
-        rect.bottom <= adRect.top || rect.top >= adRect.bottom);
-
-    if (overlap) return true;
-  }
-  return false;
-};
-
-// Создание объявления inImage
-const renderInImageAd = (image, index) => {
-  if (window.adCountInImage >= MAX_ADS) return;
-  if (!isImageLargeEnough(image)) return;
-  if (hasNearbyAd(image)) return;
-
-  const imageId = `yandex_rtb_R-A-537370-42_${Date.now()}_${index}`;
-  image.id = imageId;
-  image.setAttribute('data-ad-rendered', 'true');
-
-  window.yaContextCb.push(() => {
-    try {
-      if (window.Ya && Ya.Context) {
-        Ya.Context.AdvManager.render({
-          renderTo: imageId,
-          blockId: 'R-A-537370-42',
-          type: 'inImage'
-        });
-        window.adCountInImage++;
-        console.log(`✅ Rendered inImage ad: ${imageId}`);
-      }
-    } catch (err) {
-      console.error('❌ Error rendering inImage ad:', err.message);
-    }
-  });
-};
-
-// Экспортируемая функция инициализации (вызывается роутером при каждой смене хэша)
-window.initInImageAds = function() {
-  // Находим картинки только в блоке статьи, исключая те, что уже размечены или имеют класс игнорирования
-  const images = Array.from(document.querySelectorAll('#manualRoot img:not([data-ad-rendered]):not(.ad-ignore)'));
-
-  images.forEach((image, index) => {
-    if (window.adCountInImage >= MAX_ADS) return;
-
-    if (image.complete) {
-      renderInImageAd(image, index);
-    } else {
-      image.addEventListener('load', () => renderInImageAd(image, index), { once: true });
-    }
-  });
-};
