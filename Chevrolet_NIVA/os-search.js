@@ -191,7 +191,7 @@ window.OSSearch = (() => {
       appContainer.appendChild(container);
       document.getElementById("osCloseMobile")?.addEventListener("click", close);
     }
-  } /* <--- ЭТА СКОБКА ТЕПЕРЬ НА МЕСТЕ, ФУНКЦИЯ ЗАКРЫТА КОРРЕКТНО */
+  }
 
   function cache() {
     els.openBtn = document.getElementById("osIntegratedSearchBtn");
@@ -315,7 +315,7 @@ window.OSSearch = (() => {
       // Инициализируем легковесную модель для работы с русским языком
       aiExtractor = await pipeline('feature-extraction', 'Xenova/rubert-tiny2');
       
-      log("🤖 Нейросеть ИИ успешно загружена в браузер!");
+      console.log("🤖 Нейросеть ИИ успешно загружена в браузер!");
 
       for (const [id, item] of INDEX.entries()) {
         const textToAnalyze = `${item.title}. ${item.description}`;
@@ -344,7 +344,6 @@ window.OSSearch = (() => {
         const similarity = cosineSimilarity(queryVector, itemVector);
         if (similarity > 0.65) {
           const item = INDEX.get(id);
-              // Фильтр по секции отключён — все разделы доступны
           aiResults.push({ ...item, score: similarity * 10000, isAI: true });
         }
       }
@@ -467,12 +466,17 @@ window.OSSearch = (() => {
     return "..." + cleanText.slice(Math.max(0, index - 50), Math.min(cleanText.length, index + 90)) + "...";
   }
 
-  function getHistory() { return JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]"); }
+  function getHistory() { 
+    try { return JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]"); }
+    catch (e) { return []; }
+  }
   
   function saveHistory(q) {
-    let history = getHistory().filter(item => item !== q);
-    history.unshift(q);
-    localStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(0, 6)));
+    try {
+      let history = getHistory().filter(item => item !== q);
+      history.unshift(q);
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(0, 6)));
+    } catch (e) { /* SecurityError in private mode */ }
   }
 
   function render(list, query) {
@@ -512,7 +516,6 @@ window.OSSearch = (() => {
     if (active) { active.classList.add("active"); active.scrollIntoView({ block: "nearest" }); }
   }
 
-  // Обновлен рендеринг саджестов
   function renderSuggestions() {
     if (!els.results) return;
     const history = getHistory();
@@ -558,7 +561,6 @@ window.OSSearch = (() => {
   function initVoiceSearch() {
     var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     
-    // Проверяем поддержку
     if (!SpeechRecognition) {
       if (els.voiceBtn) {
         els.voiceBtn.style.opacity = "0.4";
@@ -570,7 +572,6 @@ window.OSSearch = (() => {
       return;
     }
 
-    // Проверяем HTTPS (требование для микрофона на мобильных)
     if (window.location.protocol !== "https:" && window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1") {
       if (els.voiceBtn) {
         els.voiceBtn.addEventListener("click", function(){
@@ -635,7 +636,7 @@ window.OSSearch = (() => {
       } else if (e.error === "no-speech") {
         showVoiceHint("Речь не распознана. Попробуйте ещё раз.");
       } else if (e.error === "aborted") {
-        // Пользователь отменил — тихо
+        // Тихо
       } else {
         showVoiceHint("Ошибка: " + e.error);
       }
@@ -645,26 +646,19 @@ window.OSSearch = (() => {
   function navigateTo(targetUrl) {
     if (!targetUrl || targetUrl === "#") return;
     
-    // 1. Очищаем путь от лишних точек и косых черт (избавляемся от ../ и /)
     let cleanUrl = targetUrl.replace(/^\.\.\//, "").replace(/^\/+/, "");
     
-    // 2. Если цель — главная страница, просто сбрасываем хэш
     const lowerUrl = cleanUrl.toLowerCase();
     if (lowerUrl === "" || lowerUrl.endsWith("index.html") || lowerUrl === "index") {
       window.location.hash = "";
       return;
     }
     
-    // 3. Безопасный SPA-переход через изменение хэша
-    // Сначала принудительно переводим пользователя на главную index.html (если он был внутри папки)
-    // и добавляем хэш. Роутер в app.js мгновенно подхватит этот путь!
     const isIndex = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/');
     
     if (isIndex) {
       window.location.hash = cleanUrl;
     } else {
-      // Если пользователь искал, находясь внутри физической SEO-страницы подпапки,
-      // вычисляем путь к корню и отправляем его на главную с правильным хэшем
       const pathParts = window.location.pathname.split("/").filter(Boolean);
       const currentSectionPath = pathParts.slice(-2).join("/");
       const rootPath = window.location.pathname.replace(currentSectionPath, '');
@@ -692,7 +686,6 @@ window.OSSearch = (() => {
   function bind() {
     els.openBtn?.addEventListener("click", open);
     
-    // 🔥 СВЯЗУЮЩИЙ ИНТЕРФЕЙСНЫЙ ШЛЮЗ ДЛЯ КОРНЯ ГЛАВНОЙ СТРАНИЦЫ
     document.querySelector('.core-search-trigger')?.addEventListener('click', open);
     document.querySelector('.bottom-nav, .tabbar, .nav-panel')?.addEventListener('click', e => {
       if (e.target.closest('#osIntegratedSearchBtn')) open();
@@ -749,7 +742,6 @@ window.OSSearch = (() => {
     bind();
     initVoiceSearch();
 
-    // Перехват фокуса плоского инпута на главной
     const rootHomeInput = document.getElementById('globalSearchInput');
     if (rootHomeInput) {
       rootHomeInput.addEventListener('focus', (e) => {
