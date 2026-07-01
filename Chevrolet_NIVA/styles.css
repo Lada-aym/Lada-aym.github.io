@@ -703,15 +703,22 @@ tr:last-child td { border-bottom: 0; }
   .burger-btn { width: 36px; height: 36px; }
   .card { scroll-margin-top: 76px; }
   
-/* 🔥 ИСПРАВЛЕННЫЙ БЛОК: Безопасная отмена обтекания на планшетах и телефонах */
+/* 🔥 ОБНОВЛЕННЫЙ БЛОК: Идеальное центрирование картинок 320px на любых мобильных экранах */
   .figure,
   .figure.float-left {
     float: none !important;
-    width: var(--figure-min-width) !important; /* ЖЕСТКАЯ ФИКСАЦИЯ НА 320PX ДЛЯ ЯНДЕКС.РЕКЛАМЫ */
+    width: var(--figure-min-width) !important; /* Жестко 320px для РСЯ */
     min-width: var(--figure-min-width) !important;
-    max-width: 100% !important;
-    margin: .85rem auto !important; /* Центрирование */
+    max-width: 100vw !important;
     clear: both !important;
+    display: block !important;
+
+    /* Супер-центрирование элемента, который шире родительского контейнера */
+    margin-top: .85rem !important;
+    margin-bottom: .85rem !important;
+    margin-left: 50% !important;
+    margin-right: 0 !important;
+    transform: translateX(-50%) !important;
   }
 
   .figure-text-block {
@@ -719,10 +726,19 @@ tr:last-child td { border-bottom: 0; }
   }
 
   .figure-text-block > .figure {
-    width: var(--figure-min-width) !important; /* ЖЕСТКАЯ ФИКСАЦИЯ НА 320PX ДЛЯ ЯНДЕКС.РЕКЛАМЫ */
+    float: none !important;
+    width: var(--figure-min-width) !important;
     min-width: var(--figure-min-width) !important;
-    margin: 0 auto !important; /* Центрирование внутри текстовых блоков */
+    max-width: 100vw !important;
+
+    /* Применяем тот же трюк для картинок внутри текстовых блоков */
+    margin-top: .85rem !important;
+    margin-bottom: .85rem !important;
+    margin-left: 50% !important;
+    margin-right: 0 !important;
+    transform: translateX(-50%) !important;
   }
+
 } /* Конец блока @media (max-width: 860px) */
 
 @media (max-width: 520px) {
