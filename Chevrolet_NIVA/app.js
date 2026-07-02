@@ -10,32 +10,36 @@
    ========================================================================= */
 (function() {
   const FORBIDDEN_ID = 'R-A-537370-71';
-  
-  // Инициализируем массив, если его ещё нет
-  window.yaContextCb = window.yaContextCb || [];
-  
-  // Оригинальная функция push
+
+  // Важно: не переприсваиваем window.yaContextCb, если он уже создан скриптом РСЯ.
+  // Яндекс предупреждает в консоли: «Переприсваивать window.yaContextCb опасно».
+  if (typeof window.yaContextCb === "undefined") {
+    window.yaContextCb = [];
+  }
+
+  if (!window.yaContextCb || typeof window.yaContextCb.push !== "function") return;
+  if (window.yaContextCb.__nivaPushPatched) return;
+
   const originalPush = window.yaContextCb.push;
-  
-  // Переопределяем метод push для фильтрации данных
+
   window.yaContextCb.push = function(...args) {
     const filteredArgs = args.filter(item => {
-      // Если элемент массива — это функция (колбэк), разрешаем её исполнение
       if (typeof item === 'function') return true;
-      
-      // Если это объект конфигурации рекламы и в нём указан запрещенный ID
+
       if (item && (item.renderTo === FORBIDDEN_ID || item.blockId === FORBIDDEN_ID)) {
         console.warn(`[РСЯ Блокировщик] Запрос на установку блока ${FORBIDDEN_ID} заблокирован.`);
-        return false; // Удаляем этот вызов
+        return false;
       }
       return true;
     });
-    
+
     if (filteredArgs.length > 0) {
       return originalPush.apply(this, filteredArgs);
     }
     return window.yaContextCb.length;
   };
+
+  window.yaContextCb.__nivaPushPatched = true;
 })();
 
 /* --- Безопасный localStorage (защита от SecurityError в режиме инкогнито) --- */
@@ -50,10 +54,10 @@ const safeStorage = {
   }
 };
 
-/* Совместимость со старыми кэшированными сборками/внешними вставками: если где-то ещё
-   остался вызов yaContextCb.push/APExceptionBlocks.push, он не должен ломать приложение. */
-window.yaContextCb = Array.isArray(window.yaContextCb) ? window.yaContextCb : [];
-window.APExceptionBlocks = Array.isArray(window.APExceptionBlocks) ? window.APExceptionBlocks : [];
+/* Совместимость со старыми кэшированными сборками/внешними вставками.
+   Не переприсваиваем window.yaContextCb, если он уже создан РСЯ. */
+if (typeof window.yaContextCb === "undefined") window.yaContextCb = [];
+if (typeof window.APExceptionBlocks === "undefined") window.APExceptionBlocks = [];
 
 /* --- Переключатель темы (тёмная/светлая/авто) --- */
 (function initTheme() {
@@ -2071,34 +2075,94 @@ function onScrollSpy() {
 }
 
 /* ---------------------------------------------------------------------------
-   Реклама Яндекс inImage (Вызов после добавления контента)
+   Реклама Яндекс inImage (инициализация после отрисовки контента)
    --------------------------------------------------------------------------- */
-function initYandexInImage() {
-  if (!root) return;
-  const images = Array.from(root.querySelectorAll("img"));
-  if (!images.length) return;
+const YANDEX_INIMAGE_BLOCK_ID = "R-A-537370-42";
+const INIMAGE_MIN_WIDTH = 320;
 
-  const renderAd = (imageId) => {
-    window.yaContextCb.push(() => {
-      if (typeof Ya !== 'undefined' && Ya.Context && Ya.Context.AdvManager) {
-        Ya.Context.AdvManager.render({
-          "renderTo": imageId,
-          "blockId": "R-A-537370-42",
-          "type": "inImage"
+function ensureYandexQueue() {
+  if (typeof window.yaContextCb === "undefined") {
+    window.yaContextCb = [];
+  }
+
+  if (!window.yaContextCb || typeof window.yaContextCb.push !== "function") {
+    console.warn("yaContextCb недоступен: inImage не будет инициализирован сейчас.");
+    return null;
+  }
+
+  return window.yaContextCb;
+}
+
+function inImageTargetWidth(image) {
+  const figure = image.closest(".figure");
+  const target = figure || image;
+  const rect = target.getBoundingClientRect();
+  return Math.round(rect.width || image.clientWidth || image.naturalWidth || 0);
+}
+
+function canRenderInImage(image) {
+  if (!image || image.dataset.adRendered === "true") return false;
+  if (image.closest(".ad-ignore") || image.classList.contains("ad-ignore")) return false;
+  if (image.closest(".figure.wide")) return false;
+
+  // Если картинка ещё не загрузилась — проверим после load.
+  if (!image.complete) return true;
+
+  return inImageTargetWidth(image) >= INIMAGE_MIN_WIDTH;
+}
+
+function renderYandexInImage(image) {
+  if (!canRenderInImage(image)) return;
+
+  const width = inImageTargetWidth(image);
+  if (image.complete && width < INIMAGE_MIN_WIDTH) {
+    // Не дергаем РСЯ на неподходящих блоках: у inImage минимальная ширина 320px.
+    image.dataset.adSkipped = "too-small";
+    return;
+  }
+
+  if (!image.id) {
+    image.id = `yandex_rtb_${YANDEX_INIMAGE_BLOCK_ID}_${Math.random().toString(16).slice(2)}`;
+  }
+
+  image.dataset.adRendered = "true";
+  const yandexQueue = ensureYandexQueue();
+  if (!yandexQueue) return;
+
+  yandexQueue.push(() => {
+    try {
+      if (window.Ya?.Context?.AdvManager) {
+        window.Ya.Context.AdvManager.render({
+          renderTo: image.id,
+          blockId: YANDEX_INIMAGE_BLOCK_ID,
+          type: "inImage"
         });
       }
-    });
-  };
-
-  images.forEach(image => {
-    if (image.id && image.id.startsWith("yandex_rtb_")) return;
-    image.id = `yandex_rtb_R-A-537370-42-${Math.random().toString(16).slice(2)}`;
-
-    if (!image.complete) {
-      image.addEventListener("load", () => { renderAd(image.id); }, { once: true });
-    } else {
-      renderAd(image.id);
+    } catch (err) {
+      console.error("Yandex inImage render error:", err);
+      image.dataset.adRendered = "false";
     }
+  });
+}
+
+function initYandexInImage(container = root) {
+  if (!container) return;
+
+  ensureYandexQueue();
+
+  // Запускаем после layout, чтобы getBoundingClientRect() вернул реальную ширину.
+  requestAnimationFrame(() => {
+    const images = Array.from(container.querySelectorAll(".figure img:not([data-ad-rendered='true'])"));
+
+    images.forEach(image => {
+      if (!canRenderInImage(image)) return;
+
+      if (!image.complete) {
+        image.addEventListener("load", () => renderYandexInImage(image), { once: true });
+      } else {
+        renderYandexInImage(image);
+      }
+    });
   });
 }
 
