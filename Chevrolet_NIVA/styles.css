@@ -859,24 +859,49 @@ tr:last-child td { border-bottom: 0; }
   .figure { float: none; width: auto; max-width: 70%; margin: .75rem auto; }
 }
 
+/* =========================================================================
+   ФИНАЛЬНЫЕ ПРАВИЛА ДЛЯ ШАПКИ (HEADER)
+   Исправление горизонтальной прокрутки и логики кнопки "Установить"
+   ========================================================================= */
+
+/* Жестко гарантируем, что скрытые JS-скриптом элементы не всплывут */
+[hidden] {
+  display: none !important;
+}
+
+/* Шапка больше не будет распирать экран */
+.app-header {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+/* Разрешаем центральной части (бренду) гибко сжиматься */
+.app-header .brand {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.app-header .brand > div:last-child {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Блок с кнопками: убрано ломающее max-content */
 .header-actions {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: .5rem;
+  gap: .4rem; /* Чуть уменьшенный отступ для экономии места на мобилках */
   flex: 0 0 auto;
+  min-width: 0; 
 }
 
 .header-actions button {
   flex: 0 0 auto;
-}
-
-.brand {
-  min-width: 0;
-}
-
-.brand > div:last-child {
-  min-width: 0;
 }
 
 @media (max-width: 860px) {
@@ -887,38 +912,11 @@ tr:last-child td { border-bottom: 0; }
     height: 36px;
   }
 
+  /* Кнопка "Установить" больше не скрывается, но становится компактнее */
   .app-header .install-btn {
     min-height: 36px;
+    padding: .4rem .6rem;
+    font-size: .75rem;
     white-space: nowrap;
   }
-}
-
-@media (max-width: 420px) {
-  .app-header .install-btn {
-    display: none;
-  }
-}
-
-.app-header {
-  min-width: 0;
-}
-
-.app-header .brand {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
-.app-header > .header-actions,
-.app-header > div:last-child:not(.brand) {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  gap: .5rem !important;
-  flex: 0 0 auto !important;
-  min-width: max-content;
-}
-
-.app-header > .header-actions > button,
-.app-header > div:last-child:not(.brand) > button {
-  flex: 0 0 auto !important;
 }
