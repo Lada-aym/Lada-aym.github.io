@@ -1,0 +1,1138 @@
+:root {
+  color-scheme: dark;
+  --bg: #0f0f10;
+  --panel: #18191b;
+  --panel-2: #222326;
+  --text: #f4f4f5;
+  --muted: #b9bcc3;
+  --line: #34363b;
+  --accent: #f2b21b;
+  --accent-2: #ffe08a;
+  --danger: #ff5c5c;
+  --ok: #4fd18b;
+  --shadow: 0 16px 40px rgba(0,0,0,.28);
+  --radius: 18px;
+  --figure-min-width: 320px;
+  --figure-max-width: 340px;
+  --on-accent: #151515;
+  --header-bg: rgba(15,15,16,.86);
+  --sidebar-bg: rgba(24,25,27,.78);
+  --card-bg: rgba(24,25,27,.88);
+  --input-bg: #101113;
+  --table-bg: #111214;
+  --th-bg: #26272b;
+  --body-text: #e9e9eb;
+  --note-bg: rgba(79,209,139,.08);
+  --note-bd: rgba(79,209,139,.28);
+  --warn-bg: rgba(255,92,92,.09);
+  --warn-bd: rgba(255,92,92,.32);
+  --tag-bg: rgba(255,255,255,.07);
+  --accent-glow: rgba(242,178,27,.18);
+  --figure-bg: #fff;
+  --logo-grad-1: #c68a05;
+  --logo-grad-2: #ffd35a;
+  --logo-shadow: rgba(255,255,255,.35);
+  --theme-btn: "🌙";
+}
+
+/* Светлая тема — ручной выбор */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f0f1f4;
+  --panel: #ffffff;
+  --panel-2: #e5e6ea;
+  --text: #1a1a1f;
+  --muted: #65666f;
+  --line: #d2d3da;
+  --accent: #d99e0a;
+  --accent-2: #9a6e00;
+  --danger: #d63838;
+  --ok: #1a9c52;
+  --shadow: 0 8px 24px rgba(0,0,0,.1);
+  --on-accent: #151515;
+  --header-bg: rgba(255,255,255,.9);
+  --sidebar-bg: rgba(255,255,255,.82);
+  --card-bg: #ffffff;
+  --input-bg: #eaeaee;
+  --table-bg: #ffffff;
+  --th-bg: #e8e9ee;
+  --body-text: #2c2c33;
+  --note-bg: rgba(26,156,82,.07);
+  --note-bd: rgba(26,156,82,.25);
+  --warn-bg: rgba(214,56,56,.06);
+  --warn-bd: rgba(214,56,56,.22);
+  --tag-bg: rgba(0,0,0,.06);
+  --accent-glow: rgba(217,158,10,.12);
+  --figure-bg: #f8f8fa;
+  --logo-grad-1: #d99e0a;
+  --logo-grad-2: #ffc933;
+  --logo-shadow: rgba(0,0,0,.12);
+  --theme-btn: "☀️";
+}
+
+/* Авто: светлая тема по системным настройкам, если нет ручного выбора */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --bg: #f0f1f4;
+    --panel: #ffffff;
+    --panel-2: #e5e6ea;
+    --text: #1a1a1f;
+    --muted: #65666f;
+    --line: #d2d3da;
+    --accent: #d99e0a;
+    --accent-2: #9a6e00;
+    --danger: #d63838;
+    --ok: #1a9c52;
+    --shadow: 0 8px 24px rgba(0,0,0,.1);
+    --on-accent: #151515;
+    --header-bg: rgba(255,255,255,.9);
+    --sidebar-bg: rgba(255,255,255,.82);
+    --card-bg: #ffffff;
+    --input-bg: #eaeaee;
+    --table-bg: #ffffff;
+    --th-bg: #e8e9ee;
+    --body-text: #2c2c33;
+    --note-bg: rgba(26,156,82,.07);
+    --note-bd: rgba(26,156,82,.25);
+    --warn-bg: rgba(214,56,56,.06);
+    --warn-bd: rgba(214,56,56,.22);
+    --tag-bg: rgba(0,0,0,.06);
+    --accent-glow: rgba(217,158,10,.12);
+    --figure-bg: #f8f8fa;
+    --logo-grad-1: #d99e0a;
+    --logo-grad-2: #ffc933;
+    --logo-shadow: rgba(0,0,0,.12);
+    --theme-btn: "☀️";
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, var(--accent-glow), transparent 35rem), var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  overflow-x: clip; 
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input { font: inherit; }
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: .6;
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: .85rem clamp(1rem, 3vw, 2rem);
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+/* Бургер (только на мобильных) */
+.burger-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel-2);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.burger-btn span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text);
+  transition: transform .25s ease, opacity .2s ease;
+}
+.burger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger-btn.open span:nth-child(2) { opacity: 0; }
+.burger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Заслонка под сайдбаром */
+.sidebar-overlay {
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 28;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+.sidebar-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.brand { display: flex; gap: .85rem; align-items: center; }
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--logo-grad-1), var(--logo-grad-2));
+  color: var(--on-accent);
+  font-weight: 900;
+  letter-spacing: .08em;
+  box-shadow: inset 0 0 0 2px var(--logo-shadow);
+}
+
+h1, h2, h3 { margin: 0; line-height: 1.15; }
+
+.header-actions {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brand h1 { font-size: 1.1rem; }
+.brand p { margin: .15rem 0 0; color: var(--muted); font-size: .85rem; }
+
+.install-btn, .home-btn, .side-actions button, .category-nav button, .fav-btn, .to-top {
+  border: 1px solid var(--line);
+  color: var(--text);
+  background: var(--panel-2);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color .15s ease, background-color .15s ease, color .15s ease, filter .15s ease, transform .15s ease;
+}
+
+.install-btn {
+  padding: .65rem 1rem;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: transparent;
+  font-weight: 800;
+}
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  height: 42px;
+  padding: 0 .85rem;
+  font-weight: 700;
+}
+
+.home-btn-icon { font-size: 1.05rem; line-height: 1; }
+.home-btn-text { font-size: .9rem; }
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr minmax(240px, 360px);
+  gap: 1rem;
+  padding: clamp(1rem, 4vw, 2.25rem);
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.hero h2 { font-size: clamp(1.8rem, 5vw, 3.5rem); max-width: 850px; }
+.hero p { color: var(--muted); max-width: 780px; font-size: 1.05rem; }
+
+.hero-card {
+  align-self: end;
+  display: grid;
+  gap: .55rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--accent-glow), transparent);
+  border: 1px solid var(--accent);
+}
+
+.hero-card strong { color: var(--accent-2); }
+.hero-card span { color: var(--muted); }
+
+.layout {
+  display: grid;
+  grid-template-columns: 310px 1fr;
+  gap: 1.25rem;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2.25rem) 2rem;
+}
+
+.sidebar {
+  position: sticky;
+  top: 78px;
+  align-self: start;
+  max-height: calc(100dvh - 90px);
+  overflow: auto;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  background: var(--sidebar-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  overscroll-behavior: contain;
+}
+
+.search-wrap input,
+.sidebar-search-btn {
+  width: 100%;
+  padding: .85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: var(--text);
+  background: var(--input-bg);
+  outline: none;
+}
+
+.sidebar-search-btn {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  cursor: pointer;
+  font-size: .9rem;
+  color: var(--muted);
+}
+.sidebar-search-btn:hover { border-color: var(--accent); color: var(--text); }
+
+.search-wrap input:focus { border-color: var(--accent); }
+
+.category-nav { display: grid; gap: .3rem; margin-top: 1rem; }
+
+/* Аккордеон: группа категории */
+.menu-group { display: flex; flex-direction: column; gap: .2rem; }
+
+.menu-group-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  text-align: left;
+  padding: .65rem .8rem;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 800;
+  font-size: .78rem;
+  line-height: 1.25;
+}
+
+.menu-group-head:hover { border-color: var(--accent); }
+
+.menu-group-head.active {
+  color: var(--on-accent);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.menu-caret {
+  flex: 0 0 auto;
+  font-size: .65rem;
+  transition: transform .18s ease;
+}
+
+.menu-group.open .menu-caret { transform: rotate(90deg); }
+
+.menu-group-title { flex: 1 1 auto; }
+
+/* Список пунктов внутри группы */
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: .12rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  padding: 0 0 0 .55rem;
+  border-left: 2px solid var(--line);
+  margin-left: .35rem;
+  transition: max-height .24s ease, opacity .18s ease, padding .24s ease;
+}
+
+.menu-group.open .menu-items {
+  max-height: 1400px;
+  opacity: 1;
+  pointer-events: auto;
+  padding: .25rem 0 .4rem .55rem;
+}
+.menu-group.open { margin-bottom: .35rem; }
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem;
+  text-align: left;
+  padding: .5rem .7rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: .83rem;
+  line-height: 1.3;
+}
+
+.menu-item:hover { background: var(--tag-bg); color: var(--text); }
+
+.menu-item.active {
+  background: var(--accent-glow);
+  color: var(--accent-2);
+  border-color: var(--line);
+}
+
+/* Подсветка при scroll spy — отличается от активного (кликнутого) пункта */
+.menu-item.scroll-active {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+  font-weight: 700;
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.menu-item-text { flex: 1 1 auto; }
+
+.menu-item-dot {
+  flex: 0 0 auto;
+  font-size: .7rem;
+  color: transparent;
+}
+
+.menu-item-dot.on { color: var(--accent); }
+
+.side-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .5rem;
+  margin-top: 1rem;
+}
+
+.side-actions button { padding: .7rem .65rem; }
+
+.side-actions button.active-btn {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+.status-line { color: var(--muted); margin-bottom: .85rem; }
+
+.lazy-load-sentinel { width: 100%; height: 1px; pointer-events: none; }
+
+#manualRoot { display: grid; gap: 1rem; min-width: 0; }
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  scroll-margin-top: 96px;
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem 1rem .7rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.card-title small {
+  display: inline-block;
+  margin-bottom: .35rem;
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+.card-title h3 { font-size: 1.35rem; }
+
+.fav-btn {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  font-size: 1.15rem;
+}
+
+.fav-btn.active {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+}
+
+.card-body { padding: 1rem; overflow-wrap: break-word; }
+.card-body::after { content: ""; display: block; clear: both; }
+
+.card-body p { margin: 0 0 .85rem; color: var(--body-text); }
+.card-body ul,
+.card-body ol { margin: 0 0 1rem; padding-left: 1.25rem; color: var(--body-text); }
+.card-body p,
+.card-body ul,
+.card-body ol,
+.note,
+.warning {
+  max-width: none;
+}
+.card-body li { margin: .35rem 0; }
+
+.section-subtitle {
+  clear: both;
+  margin: 1.25rem 0 .65rem;
+  color: var(--accent-2);
+  font-size: 1.05rem;
+  line-height: 1.3;
+  letter-spacing: .01em;
+}
+
+.section-subtitle:first-child { margin-top: 0; }
+
+/* Картинки в статьях: 320px для inImage там, где это помещается, без поломки сетки. */
+.figure {
+  float: right;
+  width: clamp(260px, 38%, var(--figure-max-width));
+  min-width: min(100%, var(--figure-min-width));
+  max-width: 100%;
+  margin: .5rem 0 1.2rem 1.5rem;
+  text-align: center;
+}
+
+.figure.float-left {
+  float: left;
+  margin: .5rem 1.5rem 1.2rem 0;
+}
+
+.figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--figure-bg);
+}
+.figure:not(.wide) img { width: 100%; }
+
+.figure + .figure {
+  clear: right;
+}
+
+.figure.float-left + .figure {
+  clear: left;
+}
+
+.figure.wide + .figure,
+.figure + .figure.wide {
+  clear: both;
+}
+
+.figure figcaption {
+  overflow-wrap: break-word;
+  margin-top: .45rem;
+  font-size: .78rem;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.3;
+}
+
+/* Рисунок + поясняющий текст */
+.figure-text-block {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(min(320px, 100%), 38%);
+  gap: 1rem 1.5rem;
+  align-items: start;
+  clear: both;
+  margin: .65rem 0 1rem;
+}
+
+.figure-text-block > p {
+  margin-top: 0;
+}
+
+.figure-text-block > .figure {
+  float: none;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  clear: none;
+  transform: none;
+}
+
+.figure-text-block > .figure img {
+  width: 100%;
+}
+
+.figure.wide {
+  float: none;
+  width: auto;
+  min-width: 0;
+  max-width: 100%;
+  margin: .85rem auto;
+  clear: both;
+}
+
+.note, .warning {
+  margin: .85rem 0;
+  padding: .9rem 1rem;
+  border-radius: 14px;
+  border: 1px solid;
+}
+
+.note { background: var(--note-bg); border-color: var(--note-bd); }
+.note strong { color: var(--ok); }
+
+.warning { background: var(--warn-bg); border-color: var(--warn-bd); }
+.warning strong { color: var(--danger); }
+
+.table-scroll {
+  clear: both;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: .8rem 0 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+  background: var(--table-bg);
+}
+
+th, td {
+  padding: .75rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  text-align: left;
+}
+
+th { background: var(--th-bg); color: var(--accent-2); }
+tr:last-child td { border-bottom: 0; }
+
+.tagline { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .75rem; }
+.tag {
+  font-size: .78rem;
+  padding: .25rem .5rem;
+  border-radius: 999px;
+  background: var(--tag-bg);
+  color: var(--muted);
+}
+
+.to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: 46px;
+  height: 46px;
+  display: none;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: transparent;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.to-top.visible { display: block; }
+
+.install-btn:hover,
+.home-btn:hover,
+.fav-btn:hover,
+.to-top:hover,
+.side-actions button:hover,
+.burger-btn:hover {
+  filter: brightness(1.06);
+}
+
+.install-btn:active,
+.home-btn:active,
+.fav-btn:active,
+.to-top:active,
+.side-actions button:active,
+.burger-btn:active {
+  transform: translateY(1px);
+}
+
+.footer {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 1.25rem clamp(1rem, 4vw, 2.25rem) 2rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; }
+  .layout { grid-template-columns: 1fr; }
+
+  .burger-btn { display: flex; }
+
+  /* Сайдбар — выдвижной drawer */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: min(310px, 85vw);
+    max-height: 100dvh;
+    overflow-y: auto;
+    z-index: 40;
+    border-radius: 0;
+    border-right: 1px solid var(--line);
+    transform: translateX(-100%);
+    transition: transform .28s ease;
+    padding: max(4rem, calc(1rem + env(safe-area-inset-top))) 1rem max(1rem, env(safe-area-inset-bottom));
+    box-shadow: var(--shadow);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .category-nav { grid-template-columns: 1fr; }
+
+  /* Компактная шапка на мобилке */
+  .app-header { padding: .6rem .8rem; gap: .5rem; }
+  .brand h1 { font-size: .95rem; }
+  .brand p { font-size: .72rem; }
+  .logo { width: 46px; height: 32px; }
+  .install-btn { padding: .5rem .7rem; font-size: .8rem; }
+  .theme-toggle, .header-search-btn { width: 36px; height: 36px; font-size: 1.1rem; }
+  .burger-btn { width: 36px; height: 36px; }
+  .card { scroll-margin-top: 76px; }
+
+  .figure,
+  .figure.float-left,
+  .figure.float-right {
+    float: none;
+    width: min(100%, var(--figure-min-width));
+    min-width: 0;
+    max-width: 100%;
+    clear: both;
+    display: block;
+    margin: .85rem auto;
+    transform: none;
+  }
+
+  .figure-text-block {
+    grid-template-columns: 1fr;
+  }
+
+  .figure-text-block > .figure {
+    width: min(100%, var(--figure-min-width));
+    min-width: 0;
+    max-width: 100%;
+    margin: .85rem auto;
+    transform: none;
+  }
+
+  .indicator {
+    padding: .6rem .7rem;
+    gap: .5rem;
+  }
+  .indicator-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .indicator-body {
+    font-size: .85rem;
+  }
+
+} /* Конец блока @media (max-width: 860px) */
+
+@media (max-width: 520px) {
+  .category-nav { grid-template-columns: 1fr; }
+  .brand h1 { font-size: 1rem; }
+  .logo { width: 50px; }
+  .install-btn { padding: .45rem .55rem; font-size: .72rem; }
+  table { min-width: 480px; }
+  th, td { padding: .6rem; font-size: .9rem; }
+  .brand > div:last-child { display: none; }
+}
+
+/* ==========================================================================
+   Сигнализаторы комбинации приборов (блоки type="indicator")
+   ========================================================================== */
+.indicator {
+  display: flex;
+  gap: .75rem;
+  align-items: flex-start;
+  margin: .65rem 0;
+  padding: .75rem .9rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--line);
+  background: var(--tag-bg);
+  transition: background .15s;
+}
+
+.indicator:hover {
+  background: var(--accent-glow);
+}
+
+.indicator-icon {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: var(--figure-bg);
+  padding: 2px;
+}
+
+.indicator-body {
+  flex: 1 1 auto;
+  font-size: .9rem;
+  line-height: 1.45;
+  color: var(--body-text);
+  overflow-wrap: break-word;
+}
+
+/* Цветовая маркировка по типу сигнализатора */
+.indicator-red {
+  border-left-color: var(--danger);
+  background: var(--warn-bg);
+}
+.indicator-red:hover {
+  background: rgba(255, 92, 92, .14);
+}
+
+.indicator-orange {
+  border-left-color: #e8a317;
+  background: rgba(232, 163, 23, .06);
+}
+.indicator-orange:hover {
+  background: rgba(232, 163, 23, .12);
+}
+
+.indicator-green {
+  border-left-color: var(--ok);
+  background: var(--note-bg);
+}
+.indicator-green:hover {
+  background: rgba(79, 209, 139, .14);
+}
+
+.indicator-blue {
+  border-left-color: #4da6ff;
+  background: rgba(77, 166, 255, .06);
+}
+.indicator-blue:hover {
+  background: rgba(77, 166, 255, .12);
+}
+
+.indicator-white {
+  border-left-color: var(--muted);
+  background: var(--tag-bg);
+}
+
+.indicator-default {
+  border-left-color: var(--line);
+}
+
+/* Кнопка переключения темы */
+.theme-toggle {
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--text);
+  border-radius: 999px;
+  width: 42px;
+  height: 42px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: border-color .15s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover { border-color: var(--accent); }
+
+/* Кнопка поиска в шапке */
+.header-search-btn {
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--text);
+  border-radius: 999px;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: border-color .15s;
+  flex-shrink: 0;
+}
+.header-search-btn:hover { border-color: var(--accent); color: var(--accent-2); }
+
+/* Мобильная навигация prev/next */
+.mobile-pager {
+  display: flex;
+  margin: 1.5rem 0 .5rem;
+  gap: .75rem;
+  clear: both;
+}
+.mobile-pager a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  padding: .8rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color .15s;
+}
+.mobile-pager a:hover { border-color: var(--accent); }
+.mobile-pager a .pl { font-size: .75rem; color: var(--muted); }
+.mobile-pager a .pt { font-size: .85rem; font-weight: 600; line-height: 1.3; }
+.mobile-pager a.prev { text-align: left; }
+.mobile-pager a.next { text-align: right; }
+.mobile-pager a:only-child { max-width: 50%; }
+
+@media (max-width: 520px) {
+  .mobile-pager { flex-direction: column; }
+  .mobile-pager a:only-child { max-width: none; }
+}
+
+@media (max-width: 860px) {
+  .mobile-pager { display: flex; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media print {
+  :root {
+    --bg: #ffffff;
+    --text: #000000;
+    --body-text: #000000;
+    --card-bg: #ffffff;
+    --line: #cccccc;
+    --shadow: none;
+  }
+
+  .app-header,
+  .hero,
+  .sidebar,
+  .sidebar-overlay,
+  .to-top,
+  .mobile-pager,
+  .fav-btn,
+  .footer {
+    display: none !important;
+  }
+
+  body { background: #ffffff; color: #000000; }
+  .layout { display: block; max-width: none; padding: 0; }
+  .card { break-inside: avoid; box-shadow: none; border-color: #cccccc; }
+  .figure { float: none; width: auto; max-width: 70%; margin: .75rem auto; }
+}
+
+/* =========================================================================
+   ФИНАЛЬНЫЕ ПРАВИЛА ДЛЯ ШАПКИ (HEADER)
+   Исправление горизонтальной прокрутки и логики кнопки "Установить"
+   ========================================================================= */
+
+/* Жестко гарантируем, что скрытые JS-скриптом элементы не всплывут */
+[hidden] {
+  display: none !important;
+}
+
+/* Шапка больше не будет распирать экран */
+.app-header {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+/* Разрешаем центральной части (бренду) гибко сжиматься */
+.app-header .brand {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.app-header .brand > div:last-child {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Блок с кнопками: убрано ломающее max-content */
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .4rem; /* Чуть уменьшенный отступ для экономии места на мобилках */
+  flex: 0 0 auto;
+  min-width: 0; 
+}
+
+.header-actions button {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 860px) {
+  .app-header .theme-toggle,
+  .app-header .header-search-btn,
+  .app-header .burger-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .app-header .home-btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .app-header .home-btn-text { display: none; }
+
+  /* Кнопка "Установить" больше не скрывается, но становится компактнее */
+  .app-header .install-btn {
+    min-height: 36px;
+    padding: .4rem .6rem;
+    font-size: .75rem;
+    white-space: nowrap;
+  }
+}
+/* ==========================================================================
+   Улучшенные блоки предупреждений (warning с иконками)
+   ========================================================================== */
+.warning {
+  margin: .85rem 0;
+  padding: .9rem 1rem;
+  border-radius: 14px;
+  border-left: 4px solid;
+  background: var(--warn-bg);
+}
+
+.warning.danger {
+  border-left-color: var(--danger);
+  background: rgba(255, 92, 92, .08);
+}
+
+.warning.warning {
+  border-left-color: #e8a317;
+  background: rgba(232, 163, 23, .06);
+}
+
+.warning strong {
+  display: block;
+  margin-bottom: .5rem;
+  font-size: 1rem;
+  letter-spacing: .02em;
+}
+
+.warning.danger strong {
+  color: var(--danger);
+}
+
+.warning.warning strong {
+  color: #c78a00;
+}
+
+/* ==========================================================================
+   Выключатели на панели приборов (блоки type="switch")
+   ========================================================================== */
+.switch {
+  display: flex;
+  gap: .75rem;
+  align-items: flex-start;
+  margin: .65rem 0;
+  padding: .75rem .9rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--line);
+  background: var(--tag-bg);
+  transition: background .15s;
+}
+
+.switch:hover {
+  background: var(--accent-glow);
+}
+
+.switch-icon {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: var(--figure-bg);
+  padding: 2px;
+}
+
+.switch-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: .9rem;
+  line-height: 1.45;
+  color: var(--body-text);
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 860px) {
+  .switch {
+    padding: .6rem .7rem;
+    gap: .5rem;
+  }
+  .switch-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .switch-body {
+    font-size: .85rem;
+  }
+}
+
+/* Адаптивные широкие SEO-изображения для технического обслуживания */
+.figure.wide img {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+.figure.wide figcaption {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}

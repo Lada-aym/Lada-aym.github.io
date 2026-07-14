@@ -1,0 +1,29 @@
+# robots.txt для GAZelle Next — Руководство по эксплуатации
+# https://lada-aym.github.io/GAZel_next/
+
+# Разрешаем всем поисковым ботам
+User-agent: *
+Allow: /
+Allow: /images/
+Allow: /icons/
+Allow: /styles.css
+Allow: /app.js
+Allow: /os-search.js
+
+# Запрещаем индексацию служебных файлов
+Disallow: /sw.js
+Disallow: /manifest.webmanifest
+
+# Указываем карту сайта
+Sitemap: https://lada-aym.github.io/GAZel_next/sitemap.xml
+
+# Указываем главный хост
+Host: lada-aym.github.io
+
+# Специальные правила для Яндекс
+User-agent: Yandex
+Allow: /
+Allow: /images/
+Allow: /icons/
+Disallow: /sw.js
+Disallow: /manifest.webmanifest
