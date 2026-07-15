@@ -35,7 +35,6 @@
   --theme-btn: "🌙";
 }
 
-/* Светлая тема — ручной выбор */
 :root[data-theme="light"] {
   color-scheme: light;
   --bg: #f0f1f4;
@@ -70,7 +69,6 @@
   --theme-btn: "☀️";
 }
 
-/* Авто: светлая тема по системным настройкам, если нет ручного выбора */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
     color-scheme: light;
@@ -151,7 +149,6 @@ button:disabled {
   backdrop-filter: blur(14px);
 }
 
-/* Бургер (только на мобильных) */
 .burger-btn {
   display: none;
   flex-direction: column;
@@ -178,7 +175,6 @@ button:disabled {
 .burger-btn.open span:nth-child(2) { opacity: 0; }
 .burger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Заслонка под сайдбаром */
 .sidebar-overlay {
   display: block;
   position: fixed;
@@ -325,7 +321,6 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
 
 .category-nav { display: grid; gap: .3rem; margin-top: 1rem; }
 
-/* Аккордеон: группа категории */
 .menu-group { display: flex; flex-direction: column; gap: .2rem; }
 
 .menu-group-head {
@@ -363,7 +358,6 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
 
 .menu-group-title { flex: 1 1 auto; }
 
-/* Список пунктов внутри группы */
 .menu-items {
   display: flex;
   flex-direction: column;
@@ -410,7 +404,6 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   border-color: var(--line);
 }
 
-/* Подсветка при scroll spy — отличается от активного (кликнутого) пункта */
 .menu-item.scroll-active {
   background: var(--accent);
   color: var(--on-accent);
@@ -518,7 +511,6 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
 
 .section-subtitle:first-child { margin-top: 0; }
 
-/* Картинки в статьях: 320px для inImage там, где это помещается, без поломки сетки. */
 .figure {
   float: right;
   width: clamp(260px, 38%, var(--figure-max-width));
@@ -541,21 +533,15 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   border-radius: 14px;
   border: 1px solid var(--line);
   background: var(--figure-bg);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 .figure:not(.wide) img { width: 100%; }
 
-.figure + .figure {
-  clear: right;
-}
-
-.figure.float-left + .figure {
-  clear: left;
-}
-
+.figure + .figure { clear: right; }
+.figure.float-left + .figure { clear: left; }
 .figure.wide + .figure,
-.figure + .figure.wide {
-  clear: both;
-}
+.figure + .figure.wide { clear: both; }
 
 .figure figcaption {
   overflow-wrap: break-word;
@@ -566,7 +552,6 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   line-height: 1.3;
 }
 
-/* Рисунок + поясняющий текст */
 .figure-text-block {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(min(320px, 100%), 38%);
@@ -576,9 +561,7 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   margin: .65rem 0 1rem;
 }
 
-.figure-text-block > p {
-  margin-top: 0;
-}
+.figure-text-block > p { margin-top: 0; }
 
 .figure-text-block > .figure {
   float: none;
@@ -590,9 +573,7 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   transform: none;
 }
 
-.figure-text-block > .figure img {
-  width: 100%;
-}
+.figure-text-block > .figure img { width: 100%; }
 
 .figure.wide {
   float: none;
@@ -685,13 +666,7 @@ tr:last-child td { border-bottom: 0; }
   transform: translateY(1px);
 }
 
-.footer {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 1.25rem clamp(1rem, 4vw, 2.25rem) 2rem;
-  color: var(--muted);
-  border-top: 1px solid var(--line);
-}
+
 
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; }
@@ -699,7 +674,6 @@ tr:last-child td { border-bottom: 0; }
 
   .burger-btn { display: flex; }
 
-  /* Сайдбар — выдвижной drawer */
   .sidebar {
     position: fixed;
     top: 0;
@@ -716,13 +690,10 @@ tr:last-child td { border-bottom: 0; }
     padding: max(4rem, calc(1rem + env(safe-area-inset-top))) 1rem max(1rem, env(safe-area-inset-bottom));
     box-shadow: var(--shadow);
   }
-  .sidebar.open {
-    transform: translateX(0);
-  }
+  .sidebar.open { transform: translateX(0); }
 
   .category-nav { grid-template-columns: 1fr; }
 
-  /* Компактная шапка на мобилке */
   .app-header { padding: .6rem .8rem; gap: .5rem; }
   .brand h1 { font-size: .95rem; }
   .brand p { font-size: .72rem; }
@@ -745,9 +716,7 @@ tr:last-child td { border-bottom: 0; }
     transform: none;
   }
 
-  .figure-text-block {
-    grid-template-columns: 1fr;
-  }
+  .figure-text-block { grid-template-columns: 1fr; }
 
   .figure-text-block > .figure {
     width: min(100%, var(--figure-min-width));
@@ -757,19 +726,10 @@ tr:last-child td { border-bottom: 0; }
     transform: none;
   }
 
-  .indicator {
-    padding: .6rem .7rem;
-    gap: .5rem;
-  }
-  .indicator-icon {
-    width: 30px;
-    height: 30px;
-  }
-  .indicator-body {
-    font-size: .85rem;
-  }
-
-} /* Конец блока @media (max-width: 860px) */
+  .indicator { padding: .6rem .7rem; gap: .5rem; }
+  .indicator-icon { width: 30px; height: 30px; }
+  .indicator-body { font-size: .85rem; }
+}
 
 @media (max-width: 520px) {
   .category-nav { grid-template-columns: 1fr; }
@@ -781,9 +741,6 @@ tr:last-child td { border-bottom: 0; }
   .brand > div:last-child { display: none; }
 }
 
-/* ==========================================================================
-   Сигнализаторы комбинации приборов (блоки type="indicator")
-   ========================================================================== */
 .indicator {
   display: flex;
   gap: .75rem;
@@ -796,9 +753,7 @@ tr:last-child td { border-bottom: 0; }
   transition: background .15s;
 }
 
-.indicator:hover {
-  background: var(--accent-glow);
-}
+.indicator:hover { background: var(--accent-glow); }
 
 .indicator-icon {
   flex: 0 0 auto;
@@ -818,49 +773,21 @@ tr:last-child td { border-bottom: 0; }
   overflow-wrap: break-word;
 }
 
-/* Цветовая маркировка по типу сигнализатора */
-.indicator-red {
-  border-left-color: var(--danger);
-  background: var(--warn-bg);
-}
-.indicator-red:hover {
-  background: rgba(255, 92, 92, .14);
-}
+.indicator-red { border-left-color: var(--danger); background: var(--warn-bg); }
+.indicator-red:hover { background: rgba(255, 92, 92, .14); }
 
-.indicator-orange {
-  border-left-color: #e8a317;
-  background: rgba(232, 163, 23, .06);
-}
-.indicator-orange:hover {
-  background: rgba(232, 163, 23, .12);
-}
+.indicator-orange { border-left-color: #e8a317; background: rgba(232, 163, 23, .06); }
+.indicator-orange:hover { background: rgba(232, 163, 23, .12); }
 
-.indicator-green {
-  border-left-color: var(--ok);
-  background: var(--note-bg);
-}
-.indicator-green:hover {
-  background: rgba(79, 209, 139, .14);
-}
+.indicator-green { border-left-color: var(--ok); background: var(--note-bg); }
+.indicator-green:hover { background: rgba(79, 209, 139, .14); }
 
-.indicator-blue {
-  border-left-color: #4da6ff;
-  background: rgba(77, 166, 255, .06);
-}
-.indicator-blue:hover {
-  background: rgba(77, 166, 255, .12);
-}
+.indicator-blue { border-left-color: #4da6ff; background: rgba(77, 166, 255, .06); }
+.indicator-blue:hover { background: rgba(77, 166, 255, .12); }
 
-.indicator-white {
-  border-left-color: var(--muted);
-  background: var(--tag-bg);
-}
+.indicator-white { border-left-color: var(--muted); background: var(--tag-bg); }
+.indicator-default { border-left-color: var(--line); }
 
-.indicator-default {
-  border-left-color: var(--line);
-}
-
-/* Кнопка переключения темы */
 .theme-toggle {
   border: 1px solid var(--line);
   background: var(--panel-2);
@@ -877,7 +804,6 @@ tr:last-child td { border-bottom: 0; }
 }
 .theme-toggle:hover { border-color: var(--accent); }
 
-/* Кнопка поиска в шапке */
 .header-search-btn {
   border: 1px solid var(--line);
   background: var(--panel-2);
@@ -893,7 +819,6 @@ tr:last-child td { border-bottom: 0; }
 }
 .header-search-btn:hover { border-color: var(--accent); color: var(--accent-2); }
 
-/* Мобильная навигация prev/next */
 .mobile-pager {
   display: flex;
   margin: 1.5rem 0 .5rem;
@@ -931,9 +856,7 @@ tr:last-child td { border-bottom: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     transition-duration: .01ms !important;
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
@@ -949,35 +872,17 @@ tr:last-child td { border-bottom: 0; }
     --line: #cccccc;
     --shadow: none;
   }
-
-  .app-header,
-  .hero,
-  .sidebar,
-  .sidebar-overlay,
-  .to-top,
-  .mobile-pager,
-  .fav-btn,
-  .footer {
+  .app-header, .hero, .sidebar, .sidebar-overlay, .to-top, .mobile-pager, .fav-btn {
     display: none !important;
   }
-
   body { background: #ffffff; color: #000000; }
   .layout { display: block; max-width: none; padding: 0; }
   .card { break-inside: avoid; box-shadow: none; border-color: #cccccc; }
   .figure { float: none; width: auto; max-width: 70%; margin: .75rem auto; }
 }
 
-/* =========================================================================
-   ФИНАЛЬНЫЕ ПРАВИЛА ДЛЯ ШАПКИ (HEADER)
-   Исправление горизонтальной прокрутки и логики кнопки "Установить"
-   ========================================================================= */
+[hidden] { display: none !important; }
 
-/* Жестко гарантируем, что скрытые JS-скриптом элементы не всплывут */
-[hidden] {
-  display: none !important;
-}
-
-/* Шапка больше не будет распирать экран */
 .app-header {
   min-width: 0;
   width: 100%;
@@ -986,50 +891,32 @@ tr:last-child td { border-bottom: 0; }
   overflow: hidden;
 }
 
-/* Разрешаем центральной части (бренду) гибко сжиматься */
-.app-header .brand {
-  flex: 1 1 auto;
-  min-width: 0;
-}
+.app-header .brand { flex: 1 1 auto; min-width: 0; }
+.app-header .brand > div:last-child { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-.app-header .brand > div:last-child {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Блок с кнопками: убрано ломающее max-content */
 .header-actions {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: .4rem; /* Чуть уменьшенный отступ для экономии места на мобилках */
+  gap: .4rem;
   flex: 0 0 auto;
   min-width: 0; 
 }
 
-.header-actions button {
-  flex: 0 0 auto;
-}
+.header-actions button { flex: 0 0 auto; }
 
 @media (max-width: 860px) {
   .app-header .theme-toggle,
   .app-header .header-search-btn,
-  .app-header .burger-btn {
-    width: 36px;
-    height: 36px;
-  }
+  .app-header .burger-btn { width: 36px; height: 36px; }
 
   .app-header .home-btn {
-    width: 36px;
-    height: 36px;
+    width: 36px; height: 36px;
     padding: 0;
     justify-content: center;
   }
-
   .app-header .home-btn-text { display: none; }
 
-  /* Кнопка "Установить" больше не скрывается, но становится компактнее */
   .app-header .install-btn {
     min-height: 36px;
     padding: .4rem .6rem;
@@ -1037,45 +924,32 @@ tr:last-child td { border-bottom: 0; }
     white-space: nowrap;
   }
 }
-/* ==========================================================================
-   Улучшенные блоки предупреждений (warning с иконками)
-   ========================================================================== */
+
 .warning {
   margin: .85rem 0;
   padding: .9rem 1rem;
   border-radius: 14px;
   border-left: 4px solid;
   background: var(--warn-bg);
+  color: var(--text);
 }
 
-.warning.danger {
-  border-left-color: var(--danger);
-  background: rgba(255, 92, 92, .08);
-}
-
-.warning.warning {
-  border-left-color: #e8a317;
-  background: rgba(232, 163, 23, .06);
-}
+.warning.danger { border-left-color: var(--danger); background: rgba(255, 92, 92, .12); }
+.warning.warning { border-left-color: #e8a317; background: rgba(232, 163, 23, .10); }
 
 .warning strong {
   display: block;
   margin-bottom: .5rem;
   font-size: 1rem;
   letter-spacing: .02em;
+  font-weight: 700;
 }
 
-.warning.danger strong {
-  color: var(--danger);
-}
+.warning.danger strong { color: #ff6b6b; }
+.warning.warning strong { color: #ffa94d; }
 
-.warning.warning strong {
-  color: #c78a00;
-}
+.warning p, .warning br { color: var(--body-text); line-height: 1.5; }
 
-/* ==========================================================================
-   Выключатели на панели приборов (блоки type="switch")
-   ========================================================================== */
 .switch {
   display: flex;
   gap: .75rem;
@@ -1088,9 +962,7 @@ tr:last-child td { border-bottom: 0; }
   transition: background .15s;
 }
 
-.switch:hover {
-  background: var(--accent-glow);
-}
+.switch:hover { background: var(--accent-glow); }
 
 .switch-icon {
   flex: 0 0 auto;
@@ -1112,27 +984,10 @@ tr:last-child td { border-bottom: 0; }
 }
 
 @media (max-width: 860px) {
-  .switch {
-    padding: .6rem .7rem;
-    gap: .5rem;
-  }
-  .switch-icon {
-    width: 30px;
-    height: 30px;
-  }
-  .switch-body {
-    font-size: .85rem;
-  }
+  .switch { padding: .6rem .7rem; gap: .5rem; }
+  .switch-icon { width: 30px; height: 30px; }
+  .switch-body { font-size: .85rem; }
 }
 
-/* Адаптивные широкие SEO-изображения для технического обслуживания */
-.figure.wide img {
-  width: 100%;
-  max-width: 1280px;
-  margin-inline: auto;
-}
-.figure.wide figcaption {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-}
+.figure.wide img { width: 100%; max-width: 1280px; margin-inline: auto; }
+.figure.wide figcaption { max-width: 1280px; margin-left: auto; margin-right: auto; }
