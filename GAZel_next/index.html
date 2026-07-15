@@ -21,8 +21,14 @@
 
   <title>GAZelle Next — руководство</title>
 
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://yandex.ru" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://yandex.ru">
+  
   <script>
-  // Отложенная загрузка GTM через 5 секунд
+  // Отложенная загрузка GTM через 8 секунд
   window.addEventListener('load', function() {
     setTimeout(function() {
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -30,12 +36,12 @@
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-PRQ33NW3');
-    }, 5000);
+    }, 8000);
   });
   </script>
   
   <script>
-  // Отложенная загрузка Яндекс рекламы через 5 секунд
+  // Отложенная загрузка Яндекс рекламы через 8 секунд
   window.addEventListener('load', function() {
     setTimeout(function() {
       window.yaContextCb = window.yaContextCb || [];
@@ -50,10 +56,11 @@
       s2.async = true;
       s2.setAttribute('data-page-id', '537370');
       document.head.appendChild(s2);
-    }, 5000);
+    }, 8000);
   });
   </script>
 
+  <script src="data.js" defer></script>
   <script src="app.js" defer></script>
   <script src="os-search.js" defer></script>
 </head>
@@ -144,5 +151,5 @@
       сервисной книжкой.
     </p>
   </footer>
-</body>
+  </body>
 </html>
