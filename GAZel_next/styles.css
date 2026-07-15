@@ -120,13 +120,6 @@ body {
   overflow-x: clip; 
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 0 1 auto;
 }
 
 button, input { font: inherit; }
@@ -289,13 +282,12 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 clamp(1rem, 4vw, 2.25rem) 2rem;
-  align-items: start;
 }
 
 .sidebar {
   position: sticky;
   top: 78px;
-  width: 310px;
+  align-self: start;
   max-height: calc(100dvh - 90px);
   overflow: auto;
   padding: 1rem;
@@ -457,15 +449,7 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
 
 .lazy-load-sentinel { width: 100%; height: 1px; pointer-events: none; }
 
-.content {
-  min-height: 400px;
-}
-
-#manualRoot {
-  display: grid;
-  gap: 1rem;
-  min-width: 0;
-}
+#manualRoot { display: grid; gap: 1rem; min-width: 0; }
 
 .card {
   border: 1px solid var(--line);
@@ -707,11 +691,6 @@ tr:last-child td { border-bottom: 0; }
   padding: 1.25rem clamp(1rem, 4vw, 2.25rem) 2rem;
   color: var(--muted);
   border-top: 1px solid var(--line);
-  /* Фиксированная высота для предотвращения CLS */
-  min-height: 80px;
-  flex-shrink: 0;
-  /* Изоляция footer от layout-сдвигов */
-  contain: layout style;
 }
 
 @media (max-width: 860px) {
@@ -1067,18 +1046,16 @@ tr:last-child td { border-bottom: 0; }
   border-radius: 14px;
   border-left: 4px solid;
   background: var(--warn-bg);
-  /* Улучшенная контрастность текста */
-  color: var(--text);
 }
 
 .warning.danger {
   border-left-color: var(--danger);
-  background: rgba(255, 92, 92, .12);
+  background: rgba(255, 92, 92, .08);
 }
 
 .warning.warning {
   border-left-color: #e8a317;
-  background: rgba(232, 163, 23, .10);
+  background: rgba(232, 163, 23, .06);
 }
 
 .warning strong {
@@ -1086,23 +1063,14 @@ tr:last-child td { border-bottom: 0; }
   margin-bottom: .5rem;
   font-size: 1rem;
   letter-spacing: .02em;
-  /* Улучшенная контрастность для заголовков */
-  font-weight: 700;
 }
 
 .warning.danger strong {
-  color: #ff6b6b;
+  color: var(--danger);
 }
 
 .warning.warning strong {
-  color: #ffa94d;
-}
-
-/* Улучшение читаемости текста внутри warning */
-.warning p,
-.warning br {
-  color: var(--body-text);
-  line-height: 1.5;
+  color: #c78a00;
 }
 
 /* ==========================================================================
