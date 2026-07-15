@@ -12,11 +12,6 @@
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://lada-aym.github.io/GAZel_next/" />
   <link rel="stylesheet" href="styles.css" />
-  <!-- Preload critical resources -->
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="preload" href="data.js" as="script">
-  <link rel="preload" href="app.js" as="script">
-
 
   <meta property="og:title" content="GAZelle Next — руководство по эксплуатации" />
   <meta property="og:description" content="Офлайн-справочник владельца GAZelle Next: эксплуатация, обслуживание, характеристики, предохранители и лампы." />
@@ -68,16 +63,6 @@
   <script src="data.js" defer></script>
   <script src="app.js" defer></script>
   <script src="os-search.js" defer></script>
-
-  <!-- Critical CSS for CLS prevention -->
-  <style>
-    .layout { display: grid; grid-template-columns: 310px 1fr; gap: 1.25rem; max-width: 1320px; margin: 0 auto; min-height: 600px; }
-    .sidebar { width: 310px; min-height: calc(100vh - 78px); position: sticky; top: 78px; }
-    #manualRoot { min-height: 600px; display: grid; gap: 1rem; }
-    .card { min-height: 200px; contain: content; }
-    .figure img { aspect-ratio: 4/3; width: 100%; height: auto; }
-    .indicator-icon, .switch-icon { width: 36px; height: 36px; }
-  </style>
 </head>
 <body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRQ33NW3"
@@ -158,5 +143,6 @@
   </main>
 
   <button id="toTopBtn" class="to-top" type="button" title="Наверх" aria-label="Наверх">↑</button>
+
   </body>
 </html>
