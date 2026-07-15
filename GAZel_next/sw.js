@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v42-2026-07-14-cwv-optimization";
+const CACHE_VERSION = "v43-2026-07-14-cwv-optimization";
 const CACHE_PREFIX = "gazelle-next-manual-";
 const CACHE_NAME = `${CACHE_PREFIX}${CACHE_VERSION}`;
 
