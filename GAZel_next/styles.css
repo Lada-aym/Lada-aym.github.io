@@ -1059,11 +1059,19 @@ tr:last-child td { border-bottom: 0; }
 }
 
 .warning.danger strong {
-  color: var(--danger);
+  color: #ffffff;
+  background: var(--danger);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  display: inline-block;
 }
 
 .warning.warning strong {
-  color: #c78a00;
+  color: #ffffff;
+  background: #e8a317;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  display: inline-block;
 }
 
 /* ==========================================================================
