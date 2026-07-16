@@ -685,13 +685,7 @@ tr:last-child td { border-bottom: 0; }
   transform: translateY(1px);
 }
 
-.footer {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 1.25rem clamp(1rem, 4vw, 2.25rem) 2rem;
-  color: var(--muted);
-  border-top: 1px solid var(--line);
-}
+
 
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; }
@@ -956,8 +950,7 @@ tr:last-child td { border-bottom: 0; }
   .sidebar-overlay,
   .to-top,
   .mobile-pager,
-  .fav-btn,
-  .footer {
+  .fav-btn {
     display: none !important;
   }
 
