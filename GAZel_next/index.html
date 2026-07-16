@@ -28,7 +28,7 @@
   <link rel="dns-prefetch" href="https://yandex.ru">
   
   <script>
-  // Отложенная загрузка GTM через 8 секунд
+  // Отложенная загрузка GTM через 5 секунд
   window.addEventListener('load', function() {
     setTimeout(function() {
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -36,29 +36,48 @@
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-PRQ33NW3');
-    }, 8000);
+    }, 5000);
   });
   </script>
-  
-  <script>
-  // Отложенная загрузка Яндекс рекламы через 8 секунд
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      window.yaContextCb = window.yaContextCb || [];
-      
-      var s1 = document.createElement('script');
-      s1.src = 'https://yandex.ru/ads/system/context.js';
-      s1.async = true;
-      document.head.appendChild(s1);
-      
-      var s2 = document.createElement('script');
-      s2.src = 'https://yandex.ru/ads/system/ap-loader.js';
-      s2.async = true;
-      s2.setAttribute('data-page-id', '537370');
-      document.head.appendChild(s2);
-    }, 8000);
-  });
-  </script>
+<script>
+// 1. СРАЗУ объявляем функцию ym, чтобы код не падал в ошибку 'ym is not defined'
+window.ym = window.ym || function() { (window.ym.a = window.ym.a || []).push(arguments) };
+window.ym.l = 1 * new Date();
+
+// Отложенная загрузка Яндекс рекламы и Метрики через 5 секунд
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    window.yaContextCb = window.yaContextCb || [];
+    
+    var s1 = document.createElement('script');
+    s1.src = 'https://yandex.ru/ads/system/context.js';
+    s1.async = true;
+    document.head.appendChild(s1);
+    
+    var s2 = document.createElement('script');
+    s2.src = 'https://yandex.ru/ads/system/ap-loader.js';
+    s2.async = true;
+    s2.setAttribute('data-page-id', '537370');
+    document.head.appendChild(s2);
+    
+    // Яндекс Метрика
+    var m = document.createElement('script');
+    m.src = 'https://mc.yandex.ru/metrika/tag.js';
+    m.async = true;
+    document.head.appendChild(m);
+    
+    // Инициализацию вызываем СРАЗУ. Благодаря заглушке выше, 
+    // она сработает ровно тогда, когда подгрузится tag.js
+    ym(98507731, 'init', {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+    
+  }, 5000);
+});
+</script>
 
   <script src="data.js" defer></script>
   <script src="app.js" defer></script>
