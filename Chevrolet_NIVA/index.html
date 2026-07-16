@@ -20,14 +20,61 @@
 
   <title>Chevrolet Niva — руководство</title>
 
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PRQ33NW3');</script>
-  <script>window.yaContextCb=window.yaContextCb||[]</script>
-  <script src="https://yandex.ru/ads/system/context.js" async></script>
-  <script data-page-id="537370" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://yandex.ru" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://yandex.ru">
+  
+  <script>
+  // Отложенная загрузка GTM через 5 секунд
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PRQ33NW3');
+    }, 5000);
+  });
+  </script>
+  <script>
+// 1. Создаем заглушку СРАЗУ, чтобы в консоли никогда не было ошибки "ym is not defined"
+window.ym = window.ym || function() { (window.ym.a = window.ym.a || []).push(arguments) };
+window.ym.l = 1 * new Date();
+
+// Отложенная загрузка Яндекс рекламы и Метрики через 5 секунд
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    window.yaContextCb = window.yaContextCb || [];
+    
+    var s1 = document.createElement('script');
+    s1.src = 'https://yandex.ru/ads/system/context.js';
+    s1.async = true;
+    document.head.appendChild(s1);
+    
+    var s2 = document.createElement('script');
+    s2.src = 'https://yandex.ru/ads/system/ap-loader.js';
+    s2.async = true;
+    s2.setAttribute('data-page-id', '537370');
+    document.head.appendChild(s2);
+    
+    // Яндекс Метрика
+    var m = document.createElement('script');
+    m.src = 'https://mc.yandex.ru/metrika/tag.js';
+    m.async = true;
+    document.head.appendChild(m);
+    
+    // 2. Вызываем инициализацию напрямую, БЕЗ m.onload. 
+    // Заглушка выше сохранит этот вызов и передаст его Метрике, как только скачается файл tag.js
+    ym(98374907, 'init', {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+  }, 5000);
+});
+</script>
 
   <script src="app.js" defer></script>
   <script src="os-search.js" defer></script>
@@ -104,12 +151,5 @@
 
   <button id="toTopBtn" class="to-top" type="button" title="Наверх" aria-label="Наверх">↑</button>
 
-  <footer class="footer">
-    <p>
-      PWA-версия подготовлена по предоставленному тексту заводского руководства.
-      Для юридически значимых данных сверяйтесь с оригинальным руководством и
-      сервисной книжкой.
-    </p>
-  </footer>
 </body>
 </html>
