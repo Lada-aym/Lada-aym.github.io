@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v16-2026-06-30";
+const CACHE_VERSION = "v17-2026-07-16";
 const CACHE_PREFIX = "chevrolet-niva-manual-";
 const CACHE_NAME = `${CACHE_PREFIX}${CACHE_VERSION}`;
 
