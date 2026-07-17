@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v23-2026-07-17-gazelle-search";
+const CACHE_VERSION = "v24-2026-07-17-gazelle-search";
 const CACHE_PREFIX = "chevrolet-niva-manual-";
 const CACHE_NAME = `${CACHE_PREFIX}${CACHE_VERSION}`;
 
