@@ -37,7 +37,7 @@
     }, 5000);
   });
   </script>
-  <script>
+<script>
 // 1. Создаем заглушку СРАЗУ, чтобы в консоли никогда не было ошибки "ym is not defined"
 window.ym = window.ym || function() { (window.ym.a = window.ym.a || []).push(arguments) };
 window.ym.l = 1 * new Date();
@@ -75,7 +75,6 @@ window.addEventListener('load', function() {
   }, 5000);
 });
 </script>
-
   <script src="app.js" defer></script>
   <script src="os-search.js" defer></script>
 </head>
@@ -96,6 +95,10 @@ window.addEventListener('load', function() {
       </div>
     </div>
     <div class="header-actions">
+      <button id="homeBtn" class="home-btn" type="button" title="На главную сайта" aria-label="Перейти на главную страницу сайта lada-aym.github.io">
+        <span class="home-btn-icon" aria-hidden="true">⌂</span>
+        <span class="home-btn-text">Главная сайта</span>
+      </button>
       <button id="headerSearchBtn" class="header-search-btn" type="button" title="Поиск" aria-label="Открыть поиск">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
           <circle cx="11" cy="11" r="8"></circle>
@@ -150,6 +153,7 @@ window.addEventListener('load', function() {
   </main>
 
   <button id="toTopBtn" class="to-top" type="button" title="Наверх" aria-label="Наверх">↑</button>
+
 
 </body>
 </html>
