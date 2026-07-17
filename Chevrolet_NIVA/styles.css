@@ -221,7 +221,7 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
 .brand h1 { font-size: 1.1rem; }
 .brand p { margin: .15rem 0 0; color: var(--muted); font-size: .85rem; }
 
-.install-btn, .side-actions button, .category-nav button, .fav-btn, .to-top {
+.install-btn, .home-btn, .side-actions button, .category-nav button, .fav-btn, .to-top {
   border: 1px solid var(--line);
   color: var(--text);
   background: var(--panel-2);
@@ -229,6 +229,18 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
   cursor: pointer;
   transition: border-color .15s ease, background-color .15s ease, color .15s ease, filter .15s ease, transform .15s ease;
 }
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  height: 42px;
+  padding: 0 .85rem;
+  font-weight: 700;
+}
+
+.home-btn-icon { font-size: 1.05rem; line-height: 1; }
+.home-btn-text { font-size: .9rem; }
 
 .install-btn {
   padding: .65rem 1rem;
@@ -911,6 +923,15 @@ tr:last-child td { border-bottom: 0; }
     width: 36px;
     height: 36px;
   }
+
+  .app-header .home-btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .app-header .home-btn-text { display: none; }
 
   /* Кнопка "Установить" больше не скрывается, но становится компактнее */
   .app-header .install-btn {
