@@ -598,7 +598,10 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
 }
 
 .note { background: var(--note-bg); border-color: var(--note-bd); }
-.note strong { color: var(--ok); }
+.note strong { 
+  color: var(--text);
+  font-weight: 700;
+}
 
 .warning { background: var(--warn-bg); border-color: var(--warn-bd); }
 .warning strong { 
@@ -643,7 +646,7 @@ th, td {
   text-align: left;
 }
 
-th { background: var(--th-bg); color: var(--accent-2); }
+th { background: var(--th-bg); color: var(--text); font-weight: 700; }
 tr:last-child td { border-bottom: 0; }
 
 .tagline { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .75rem; }
