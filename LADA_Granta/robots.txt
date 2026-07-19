@@ -1,0 +1,51 @@
+<div class="row row-cols-1 row-cols-md-2 g-0"> <div class="col"> <div class="card h-100"> <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img src="/LADA_Kalina/assets/images/LADA_Kalina-image1.webp" class="card-img-top img-thumbnail" alt="Зеркала" itemprop="url"><p class="caption text-center">Рис</p><meta itemprop="description" content="Зеhĥ"><meta itemprop="thumbnail" content="https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image1.webp"></div> <div class="card-body"> <h3 class="card-title" itemprop="name">Регулировк</h3><hr> <p class="card-text" itemprop="articleBody">Это</p> </div> </div> </div><!--  -->
+
+<div class="col"> <div class="card h-100"> <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img src="/LADA_Kalina/assets/images/LADA_Kalina-image1.webp" class="card-img-top img-thumbnail" alt="Зеркала" itemprop="url"><p class="caption text-center">Рис</p><meta itemprop="description" content="Зеркала"><meta itemprop="thumbnail" content="https://lada-aym.github.io/LADA_Kalina/assets/images/LADA_Kalina-image1.webp"></div> <div class="card-body"><h3 class="card-title" itemprop="name">Регулировка</h3><hr> <p class="card-text" itemprop="articleBody">Это</p> </div> </div> </div> </div><!--  -->
+
+
+
+<ul class="list-unstyled" itemprop="articleBody"> <li>Это</li> <li>Это</li> <li>Структурно</li> <li>Однако</li> <li>Влописки: <ul> <li>неподверже</li> <li>все</li> <li>ииметь</li> </ul> </li> <li>Внекоторы</li> </ul>
+
+«»
+<p class="caption text-center">Рис</p>
+
+<p class="card-text" itemprop="articleBody"><small class="text-muted">Примечание.</br> В </small></p>
+
+составь метатеги
+  <meta name="description" content="xxxx">
+  <title>xxxx</title>
+  для страницы LADA_
+  
+
+
+пропиши название id подразделов страницы
+
+
+
+
+сделай файл json микроразметки BreadcrumbList и Article по этой ссылке 
+
+<div class="col"><img src="/Lada_Samara/img/Lada_Samara-image1.webp" class="card-img-top img-thumbnail" alt="Зеркала"><p class="caption text-center">Рис. 19. Органы управления</p></div> <div class="card-body"> <h5 class="card-title" itemprop="name">2.1. Панель приборов</h5><hr> <p class="card-text" itemprop="articleBody">Панель приборов показана на рис. 19, где:</p></div>
+
+
+
+
+https://lada-aym.github.io/LADA_Kalina/opisanie1.html
+
+заглушки изменений
+<div class="card mb-3"> <img src="..." class="card-img-top" alt="..."> <div class="card-body"> <h5 class="card-title">Заголовок карточки</h5> <p class="card-text">Это более широкая карточка с вспомогательным текстом ниже в качестве естественного перехода к дополнительному контенту. Этот контент немного длиннее.</p> <p class="card-text"><small class="text-muted">Последнее обновление 3 мин. назад</small></p> </div> </div>
+
+ <div class="card"> <div class="card-body"> <h5 class="card-title">Заголовок карточки</h5> <p class="card-text">Это более широкая карточка с вспомогательным текстом ниже в качестве естественного перехода к дополнительному контенту. Этот контент немного длиннее.</p> <p class="card-text"><small class="text-muted">Последнее обновление 3 мин. назад</small></p> </div> <img src="..." class="card-img-bottom" alt="..."> </div>
+
+карточки одной высоты
+<div class="row row-cols-1 row-cols-md-3 g-4"> <div class="col"> <div class="card h-100"> <img src="..." class="card-img-top" alt="..."> <div class="card-body"> <h5 class="card-title">Заголовок карточки</h5> <p class="card-text">Это более длинная карта С вспомогательным текстом ниже в качестве естественного перехода к дополнительному контенту. Этот контент немного длиннее.</p> </div> </div> </div> 
+<div class="col"> <div class="card h-100"> <img src="..." class="card-img-top" alt="..."> <div class="card-body"> <h5 class="card-title">Заголовок карточки</h5> <p class="card-text">Это короткая карточка.</p> </div> </div> </div> <div class="col"> <div class="card h-100"> <img src="..." class="card-img-top" alt="..."> <div class="card-body"> <h5 class="card-title">Заголовок карточки</h5> <p class="card-text">Это более длинная карта С вспомогательным текстом ниже в качестве естественного перехода к дополнительному контенту.</p> </div> </div> </div> <div class="col"> <div class="card h-100"> <img src="..." class="card-img-top" alt="..."> <div class="card-body"> <h5 class="card-title">Заголовок карточки</h5> <p class="card-text">Это более длинная карта С вспомогательным текстом ниже в качестве естественного перехода к дополнительному контенту. Этот контент немного длиннее.</p> </div> </div> </div> </div>
+
+список
+<ul class="list-unstyled"> <li>Это список.</li> <li>Это выглядит совершенно без стиля.</li> <li>Структурно это все-таки список.</li> <li>Однако этот стиль применяется только к непосредственным дочерним элементам.</li> <li>Вложенные списки: <ul> <li>не подвержены влиянию этого стиля</li> <li>все равно покажет пулю</li> <li>и иметь соответствующее левое поле</li> </ul> </li> <li>В некоторых ситуациях это может пригодиться.</li> </ul>
+
+
+
+PDF в EPUB
+
+проверь правильность расстановки h1, h2, h3, h4 в следующем коде bootstrap 5

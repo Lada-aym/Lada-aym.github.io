@@ -1,0 +1,867 @@
+{
+ "10": [
+  {
+   "file": "images/figures/lada-granta-1a-klyuchi-dlya-avtomobilya.webp",
+   "caption": "Рис. 1а. Ключи для автомобиля",
+   "page": 10
+  },
+  {
+   "file": "images/figures/lada-granta-1b-klyuchi-dlya-avtomobilya.webp",
+   "caption": "Рис. 1б. Ключи для автомобиля",
+   "page": 10
+  },
+  {
+   "file": "images/figures/lada-granta-1v-klyuch-vyklyuchatelya.webp",
+   "caption": "Рис. 1в. Ключ выключателя",
+   "page": 10
+  },
+  {
+   "file": "images/figures/lada-granta-1g-klyuch-vyklyuchatelya.webp",
+   "caption": "Рис. 1г. Ключ выключателя",
+   "page": 10
+  }
+ ],
+ "11": [
+  {
+   "file": "images/figures/lada-granta-1d-klyuchi-dlya-avtomobilya.webp",
+   "caption": "Рис. 1д. Ключи для автомобиля",
+   "page": 11
+  },
+  {
+   "file": "images/figures/lada-granta-2a-pult-distancionnogo.webp",
+   "caption": "Рис. 2a. Пульт дистанционного",
+   "page": 11
+  }
+ ],
+ "14": [
+  {
+   "file": "images/figures/lada-granta-2b-zaglushka-v-obivke-dveri-zadka.webp",
+   "caption": "Рис. 2б. Заглушка в обивке двери задка",
+   "page": 14
+  }
+ ],
+ "17": [
+  {
+   "file": "images/figures/lada-granta-3-otkryvanie-dveri.webp",
+   "caption": "Рис. 3. Открывание двери",
+   "page": 17
+  },
+  {
+   "file": "images/figures/lada-granta-3-otkryvanie-dveri-2.webp",
+   "caption": "Рис. 3. Открывание двери",
+   "page": 17
+  },
+  {
+   "file": "images/figures/lada-granta-4b-perednyaya-levaya-dver.webp",
+   "caption": "Рис. 4б. Передняя левая дверь",
+   "page": 17
+  },
+  {
+   "file": "images/figures/lada-granta-5a-perednyaya.webp",
+   "caption": "Рис. 5а. Передняя",
+   "page": 17
+  },
+  {
+   "file": "images/figures/lada-granta-6a-blok-pereklyuchatelej.webp",
+   "caption": "Рис. 6а. Блок переключателей",
+   "page": 17
+  }
+ ],
+ "18": [
+  {
+   "file": "images/figures/lada-granta-6b-modul-dveri-voditelya.webp",
+   "caption": "Рис. 6б. Модуль двери водителя",
+   "page": 18
+  }
+ ],
+ "19": [
+  {
+   "file": "images/figures/lada-granta-6v-modul-dveri-voditelya.webp",
+   "caption": "Рис. 6в. Модуль двери водителя",
+   "page": 19
+  }
+ ],
+ "20": [
+  {
+   "file": "images/figures/lada-granta-7a-zadnyaya-dver.webp",
+   "caption": "Рис. 7а. Задняя дверь",
+   "page": 20
+  }
+ ],
+ "21": [
+  {
+   "file": "images/figures/lada-granta-7b-zadnyaya-dver.webp",
+   "caption": "Рис. 7б. Задняя дверь",
+   "page": 21
+  },
+  {
+   "file": "images/figures/lada-granta-8-shlic-zaschelki.webp",
+   "caption": "Рис. 8. Шлиц защелки",
+   "page": 21
+  }
+ ],
+ "22": [
+  {
+   "file": "images/figures/lada-granta-9-perednee-sidene.webp",
+   "caption": "Рис. 9. Переднее сиденье",
+   "page": 22
+  },
+  {
+   "file": "images/figures/lada-granta-9a-perednee-sidene-variantnoe.webp",
+   "caption": "Рис. 9а. Переднее сиденье (в вариантном исполнении)",
+   "page": 22
+  },
+  {
+   "file": "images/figures/lada-granta-10-vyklyuchateli-obogreva.webp",
+   "caption": "Рис. 10. Выключатели обогрева передних сидений",
+   "page": 22
+  },
+  {
+   "file": "images/figures/lada-granta-11a-perednij.webp",
+   "caption": "Рис. 11а. Передний подголовник",
+   "page": 22
+  }
+ ],
+ "23": [
+  {
+   "file": "images/figures/lada-granta-11b-optimalnoe-polozhenie-podgolovnika.webp",
+   "caption": "Рис. 11б. Оптимальное положение подголовника",
+   "page": 23
+  },
+  {
+   "file": "images/figures/lada-granta-11v-zadnij.webp",
+   "caption": "Рис. 11в. Задний",
+   "page": 23
+  },
+  {
+   "file": "images/figures/lada-granta-11g-derzhatel-lenty.webp",
+   "caption": "Рис. 11г. Держатель ленты",
+   "page": 23
+  }
+ ],
+ "24": [
+  {
+   "file": "images/figures/lada-granta-11d-raskladka-zadnego-sidenya.webp",
+   "caption": "Рис. 11д. Раскладка заднего сиденья",
+   "page": 24
+  },
+  {
+   "file": "images/figures/lada-granta-12a-rulevoe-koleso-v-variantnom-ispolnenii.webp",
+   "caption": "Рис. 12а. Рулевое колесо (в вариантном исполнении)",
+   "page": 24
+  },
+  {
+   "file": "images/figures/lada-granta-12b-rulevoe-koleso-v-variantnom-ispolnenii.webp",
+   "caption": "Рис. 12б. Рулевое колесо (в вариантном исполнении)",
+   "page": 24
+  }
+ ],
+ "25": [
+  {
+   "file": "images/figures/lada-granta-12v-regulirovka-polozheniya-rulevogo-kolesa-v-varian.webp",
+   "caption": "Рис. 12в. Регулировка положения рулевого колеса (в вариантном исполнении)",
+   "page": 25
+  },
+  {
+   "file": "images/figures/lada-granta-12v-regulirovka-polozheniya-rulevogo-kolesa-v-varian-2.webp",
+   "caption": "Рис. 12в. Регулировка положения рулевого колеса (в вариантном исполнении)",
+   "page": 25
+  }
+ ],
+ "26": [
+  {
+   "file": "images/figures/lada-granta-13a-pristegivanie.webp",
+   "caption": "Рис. 13а. Пристегивание",
+   "page": 26
+  },
+  {
+   "file": "images/figures/lada-granta-13b-remni-bezopasnosti.webp",
+   "caption": "Рис. 13б. Ремни безопасности",
+   "page": 26
+  },
+  {
+   "file": "images/figures/lada-granta-13v-remni-bezopasnosti-zadnego-sidenya.webp",
+   "caption": "Рис. 13в. Ремни безопасности заднего сиденья",
+   "page": 26
+  }
+ ],
+ "27": [
+  {
+   "file": "images/figures/lada-granta-13g-pravilnoe.webp",
+   "caption": "Рис. 13г. Правильное",
+   "page": 27
+  },
+  {
+   "file": "images/figures/lada-granta-13d-regulirovka.webp",
+   "caption": "Рис. 13д. Регулировка",
+   "page": 27
+  }
+ ],
+ "28": [
+  {
+   "file": "images/figures/lada-granta-14a-zona-razmescheniya.webp",
+   "caption": "Рис. 14а. Зона размещения",
+   "page": 28
+  },
+  {
+   "file": "images/figures/lada-granta-14b-zona-razmescheniya-frontalnoj-podushki-bezopas.webp",
+   "caption": "Рис. 14б. Зона размещения фронтальной подушки безопас-",
+   "page": 28
+  },
+  {
+   "file": "images/figures/lada-granta-14v-preduprezhdayuschaya-tablichka.webp",
+   "caption": "Рис. 14в. Предупреждающая табличка",
+   "page": 28
+  }
+ ],
+ "29": [
+  {
+   "file": "images/figures/lada-granta-14g-nepravilnaya-i-pravilnaya-posadki.webp",
+   "caption": "Рис. 14г. Неправильная и правильная посадки",
+   "page": 29
+  }
+ ],
+ "31": [
+  {
+   "file": "images/figures/lada-granta-15a-zona-dejstviya-i-srabatyvaniya.webp",
+   "caption": "Рис. 15а. Зона действия и срабатывания",
+   "page": 31
+  },
+  {
+   "file": "images/figures/lada-granta-15b-primery-situacij-s-vozmozhnym-srabatyvaniem.webp",
+   "caption": "Рис. 15б. Примеры ситуаций с возможным срабатыванием",
+   "page": 31
+  }
+ ],
+ "32": [
+  {
+   "file": "images/figures/lada-granta-15v-primery-situacij-s-vozmozhnym-nesrabatyvaniem.webp",
+   "caption": "Рис. 15в. Примеры ситуаций с возможным несрабатыванием",
+   "page": 32
+  },
+  {
+   "file": "images/figures/lada-granta-15g-primer-situacii-s-vozmozhnym-nesrabatyvaniem.webp",
+   "caption": "Рис. 15г. Пример ситуации с возможным несрабатыванием",
+   "page": 32
+  }
+ ],
+ "37": [
+  {
+   "file": "images/figures/lada-granta-16-naruzhnoe-zerkalo.webp",
+   "caption": "Рис. 16. Наружное зеркало",
+   "page": 37
+  },
+  {
+   "file": "images/figures/lada-granta-16-naruzhnoe-zerkalo-2.webp",
+   "caption": "Рис. 16. Наружное зеркало",
+   "page": 37
+  },
+  {
+   "file": "images/figures/lada-granta-18a-blok-osvescheniya.webp",
+   "caption": "Рис. 18а. Блок освещения",
+   "page": 37
+  },
+  {
+   "file": "images/figures/lada-granta-18b-zona-raspolozheniya.webp",
+   "caption": "Рис. 18б. Зона расположения",
+   "page": 37
+  }
+ ],
+ "44": [
+  {
+   "file": "images/figures/lada-granta-18v-blok-osvescheniya.webp",
+   "caption": "Рис. 18в. Блок освещения",
+   "page": 44
+  },
+  {
+   "file": "images/figures/lada-granta-19-protivosolnechnyj.webp",
+   "caption": "Рис. 19. Противосолнечный",
+   "page": 44
+  },
+  {
+   "file": "images/figures/lada-granta-20a-klavisha.webp",
+   "caption": "Рис. 20а. Клавиша",
+   "page": 44
+  },
+  {
+   "file": "images/figures/lada-granta-20b-kryshka.webp",
+   "caption": "Рис. 20б. Крышка",
+   "page": 44
+  }
+ ],
+ "45": [
+  {
+   "file": "images/figures/lada-granta-20v-centralnyj.webp",
+   "caption": "Рис. 20в. Центральный",
+   "page": 45
+  },
+  {
+   "file": "images/figures/lada-granta-21a-patron-dlya-podklyucheniya-dopolnitelnogo.webp",
+   "caption": "Рис. 21а. Патрон для подключения дополнительного",
+   "page": 45
+  },
+  {
+   "file": "images/figures/lada-granta-21b-razmery-vilki-elektricheskogo-pribora.webp",
+   "caption": "Рис. 21б. Размеры вилки электрического прибора",
+   "page": 45
+  }
+ ],
+ "46": [
+  {
+   "file": "images/figures/lada-granta-22-rukoyatka-otkryvaniya.webp",
+   "caption": "Рис. 22. Рукоятка открывания",
+   "page": 46
+  },
+  {
+   "file": "images/figures/lada-granta-23-lapka-predohranitelnogo.webp",
+   "caption": "Рис. 23. Лапка предохранительного",
+   "page": 46
+  },
+  {
+   "file": "images/figures/lada-granta-24-otkryvanie-kapota.webp",
+   "caption": "Рис. 24. Открывание капота",
+   "page": 46
+  }
+ ],
+ "47": [
+  {
+   "file": "images/figures/lada-granta-25a-knopka-otkryvaniya.webp",
+   "caption": "Рис. 25а. Кнопка открывания",
+   "page": 47
+  },
+  {
+   "file": "images/figures/lada-granta-25b-otkryvanie.webp",
+   "caption": "Рис. 25б. Открывание",
+   "page": 47
+  },
+  {
+   "file": "images/figures/lada-granta-26a-vyklyuchatel-privoda.webp",
+   "caption": "Рис. 26а. Выключатель привода",
+   "page": 47
+  },
+  {
+   "file": "images/figures/lada-granta-26b-vnutrennyaya-ruchka.webp",
+   "caption": "Рис. 26б. Внутренняя ручка",
+   "page": 47
+  }
+ ],
+ "48": [
+  {
+   "file": "images/figures/lada-granta-26v-vnutrennyaya-ruchka.webp",
+   "caption": "Рис. 26в. Внутренняя ручка",
+   "page": 48
+  }
+ ],
+ "49": [
+  {
+   "file": "images/figures/lada-granta-27-probka-toplivnogo-baka.webp",
+   "caption": "Рис. 27. Пробка топливного бака",
+   "page": 49
+  }
+ ],
+ "51": [
+  {
+   "file": "images/figures/lada-granta-28a-panel-priborov-v-komplektacii-standart.webp",
+   "caption": "Рис. 28а. Панель приборов в комплектации «Стандарт»",
+   "page": 51
+  }
+ ],
+ "52": [
+  {
+   "file": "images/figures/lada-granta-28b-panel-priborov-v-komplektacii-norma.webp",
+   "caption": "Рис. 28б. Панель приборов в комплектации «Норма»",
+   "page": 52
+  }
+ ],
+ "53": [
+  {
+   "file": "images/figures/lada-granta-28v-panel-priborov-v-komplektacii-lyuks.webp",
+   "caption": "Рис. 28в. Панель приборов в комплектации «Люкс»",
+   "page": 53
+  }
+ ],
+ "55": [
+  {
+   "file": "images/figures/lada-granta-29a-kombinaciya-priborov.webp",
+   "caption": "Рис. 29a. Комбинация приборов",
+   "page": 55
+  }
+ ],
+ "58": [
+  {
+   "file": "images/figures/lada-granta-29b-zhidkokristallicheskij.webp",
+   "caption": "Рис. 29б. Жидкокристаллический",
+   "page": 58
+  }
+ ],
+ "59": [
+  {
+   "file": "images/figures/lada-granta-29v-pereklyuchatel.webp",
+   "caption": "Рис. 29в. Переключатель",
+   "page": 59
+  },
+  {
+   "file": "images/figures/lada-granta-29g-pereklyuchatel.webp",
+   "caption": "Рис. 29г. Переключатель",
+   "page": 59
+  }
+ ],
+ "62": [
+  {
+   "file": "images/figures/lada-granta-30a-modul-upravleniya.webp",
+   "caption": "Рис. 30а. Модуль управления",
+   "page": 62
+  }
+ ],
+ "63": [
+  {
+   "file": "images/figures/lada-granta-30b-pereklyuchatel-korrektora.webp",
+   "caption": "Рис. 30б. Переключатель корректора",
+   "page": 63
+  }
+ ],
+ "64": [
+  {
+   "file": "images/figures/lada-granta-31-klavishi-upravleniya.webp",
+   "caption": "Рис. 31. Клавиши управления",
+   "page": 64
+  }
+ ],
+ "69": [
+  {
+   "file": "images/figures/lada-granta-32-rychag-pereklyuchatelya.webp",
+   "caption": "Рис. 32. Рычаг переключателя",
+   "page": 69
+  },
+  {
+   "file": "images/figures/lada-granta-33-rychag-pereklyuchatelya.webp",
+   "caption": "Рис. 33. Рычаг переключателя",
+   "page": 69
+  }
+ ],
+ "71": [
+  {
+   "file": "images/figures/lada-granta-34-datchik-dozhdya.webp",
+   "caption": "Рис. 34. Датчик дождя",
+   "page": 71
+  },
+  {
+   "file": "images/figures/lada-granta-35-vyklyuchatel.webp",
+   "caption": "Рис. 35. Выключатель",
+   "page": 71
+  }
+ ],
+ "72": [
+  {
+   "file": "images/figures/lada-granta-35a-vyklyuchatel.webp",
+   "caption": "Рис. 35a. Выключатель",
+   "page": 72
+  }
+ ],
+ "73": [
+  {
+   "file": "images/figures/lada-granta-36-rychag-pereklyucheniya.webp",
+   "caption": "Рис. 36. Рычаг переключения",
+   "page": 73
+  }
+ ],
+ "74": [
+  {
+   "file": "images/figures/lada-granta-36a-rychag-pereklyucheniya.webp",
+   "caption": "Рис. 36a. Рычаг переключения",
+   "page": 74
+  },
+  {
+   "file": "images/figures/lada-granta-36b-pedali-pri-avtomaticheskoj.webp",
+   "caption": "Рис. 36б. Педали при автоматической",
+   "page": 74
+  }
+ ],
+ "75": [
+  {
+   "file": "images/figures/lada-granta-36v-rychag-pereklyucheniya.webp",
+   "caption": "Рис. 36в. Рычаг переключения",
+   "page": 75
+  },
+  {
+   "file": "images/figures/lada-granta-36g-shema-pereklyucheniya-peredach.webp",
+   "caption": "Рис. 36г. Схема переключения передач",
+   "page": 75
+  }
+ ],
+ "76": [
+  {
+   "file": "images/figures/lada-granta-p76-0.webp",
+   "caption": "",
+   "page": 76
+  }
+ ],
+ "80": [
+  {
+   "file": "images/figures/lada-granta-37-blok-upravleniya-sistemoj-ventilyacii-i-otopleniy.webp",
+   "caption": "Рис. 37. Блок управления системой вентиляции и отопления",
+   "page": 80
+  }
+ ],
+ "81": [
+  {
+   "file": "images/figures/lada-granta-38a-napravleniya-potokov-vozduha-iz-deflektorov.webp",
+   "caption": "Рис. 38а. Направления потоков воздуха из дефлекторов",
+   "page": 81
+  }
+ ],
+ "82": [
+  {
+   "file": "images/figures/lada-granta-38b-centralnye-sopla.webp",
+   "caption": "Рис. 38б. Центральные сопла",
+   "page": 82
+  }
+ ],
+ "85": [
+  {
+   "file": "images/figures/lada-granta-39-blok-upravleniya-klimaticheskoj-sistemoj-v-varian.webp",
+   "caption": "Рис. 39. Блок управления климатической системой (в вариантном исполнении)",
+   "page": 85
+  }
+ ],
+ "90": [
+  {
+   "file": "images/figures/lada-granta-40-kreplenie-perednego.webp",
+   "caption": "Рис. 40. Крепление переднего",
+   "page": 90
+  },
+  {
+   "file": "images/figures/lada-granta-41a-kreplenie-zadnego.webp",
+   "caption": "Рис. 41а. Крепление заднего",
+   "page": 90
+  }
+ ],
+ "99": [
+  {
+   "file": "images/figures/lada-granta-p99-0.webp",
+   "caption": "",
+   "page": 99
+  }
+ ],
+ "105": [
+  {
+   "file": "images/figures/lada-granta-41b-vyklyuchatel-esc-off.webp",
+   "caption": "Рис. 41б. Выключатель «ESC OFF»",
+   "page": 105
+  }
+ ],
+ "106": [
+  {
+   "file": "images/figures/lada-granta-42-raspolozhenie-buksirnyh-proushin.webp",
+   "caption": "Рис. 42. Расположение буксирных проушин",
+   "page": 106
+  }
+ ],
+ "108": [
+  {
+   "file": "images/figures/lada-granta-p108-0.webp",
+   "caption": "",
+   "page": 108
+  }
+ ],
+ "111": [
+  {
+   "file": "images/figures/lada-granta-43a-datchiki-parkovki.webp",
+   "caption": "Рис. 43а. Датчики парковки",
+   "page": 111
+  }
+ ],
+ "113": [
+  {
+   "file": "images/figures/lada-granta-43b-kamera-zadnego-vida.webp",
+   "caption": "Рис. 43б. Камера заднего вида",
+   "page": 113
+  },
+  {
+   "file": "images/figures/lada-granta-43v-parkovochnye-linii.webp",
+   "caption": "Рис. 43в. Парковочные линии",
+   "page": 113
+  }
+ ],
+ "119": [
+  {
+   "file": "images/figures/lada-granta-44-proverka-urovnya-masla-v-kartere-dvigatelya.webp",
+   "caption": "Рис. 44. Проверка уровня масла в картере двигателя",
+   "page": 119
+  },
+  {
+   "file": "images/figures/lada-granta-44a-proverka-urovnya-masla-v-kartere-dvigatelya.webp",
+   "caption": "Рис. 44а. Проверка уровня масла в картере двигателя",
+   "page": 119
+  }
+ ],
+ "120": [
+  {
+   "file": "images/figures/lada-granta-45-rasshiritelnyj.webp",
+   "caption": "Рис. 45. Расширительный",
+   "page": 120
+  }
+ ],
+ "121": [
+  {
+   "file": "images/figures/lada-granta-46-bachok-gidroprivoda-tormozov.webp",
+   "caption": "Рис. 46. Бачок гидропривода тормозов",
+   "page": 121
+  }
+ ],
+ "122": [
+  {
+   "file": "images/figures/lada-granta-47-bachok-stekloomyvatelya.webp",
+   "caption": "Рис. 47. Бачок стеклоомывателя",
+   "page": 122
+  },
+  {
+   "file": "images/figures/lada-granta-48-akkumulyatornaya.webp",
+   "caption": "Рис. 48. Аккумуляторная",
+   "page": 122
+  }
+ ],
+ "125": [
+  {
+   "file": "images/figures/lada-granta-49-shema-perestanovki.webp",
+   "caption": "Рис. 49. Схема перестановки",
+   "page": 125
+  }
+ ],
+ "126": [
+  {
+   "file": "images/figures/lada-granta-50a-podem-avtomobilya.webp",
+   "caption": "Рис. 50а. Подъем автомобиля",
+   "page": 126
+  },
+  {
+   "file": "images/figures/lada-granta-50b-podem-avtomobilya.webp",
+   "caption": "Рис. 50б. Подъем автомобиля",
+   "page": 126
+  }
+ ],
+ "127": [
+  {
+   "file": "images/figures/lada-granta-50v-domkrat-v-variantnom-ispolnenii.webp",
+   "caption": "Рис. 50в. Домкрат (в вариантном исполнении)",
+   "page": 127
+  }
+ ],
+ "128": [
+  {
+   "file": "images/figures/lada-granta-51-ukladka-zapasnogo-kolesa.webp",
+   "caption": "Рис. 51. Укладка запасного колеса",
+   "page": 128
+  },
+  {
+   "file": "images/figures/lada-granta-52-zamena-elementa-pitaniya-pulta-distancionnogo-upr.webp",
+   "caption": "Рис. 52. Замена элемента питания пульта дистанционного управления",
+   "page": 128
+  }
+ ],
+ "129": [
+  {
+   "file": "images/figures/lada-granta-53-otkryvanie-kryshki.webp",
+   "caption": "Рис. 53. Открывание крышки",
+   "page": 129
+  }
+ ],
+ "130": [
+  {
+   "file": "images/figures/lada-granta-54-montazhnyj-blok.webp",
+   "caption": "Рис. 54. Монтажный блок",
+   "page": 130
+  },
+  {
+   "file": "images/figures/lada-granta-55-blok-predohranitelej.webp",
+   "caption": "Рис. 55. Блок предохранителей",
+   "page": 130
+  }
+ ],
+ "137": [
+  {
+   "file": "images/figures/lada-granta-56-blok-fara.webp",
+   "caption": "Рис. 56. Блок-фара",
+   "page": 137
+  },
+  {
+   "file": "images/figures/lada-granta-56-blok-fara-2.webp",
+   "caption": "Рис. 56. Блок-фара",
+   "page": 137
+  }
+ ],
+ "138": [
+  {
+   "file": "images/figures/lada-granta-57b-zadnij-fonar.webp",
+   "caption": "Рис. 57б. Задний фонарь",
+   "page": 138
+  },
+  {
+   "file": "images/figures/lada-granta-57v-snyatie-zaglushki.webp",
+   "caption": "Рис. 57в. Снятие заглушки",
+   "page": 138
+  },
+  {
+   "file": "images/figures/lada-granta-57g-zadnij-fonar.webp",
+   "caption": "Рис. 57г. Задний фонарь",
+   "page": 138
+  }
+ ],
+ "139": [
+  {
+   "file": "images/figures/lada-granta-57d-bokovoj-ukazatel.webp",
+   "caption": "Рис. 57д. Боковой указатель",
+   "page": 139
+  },
+  {
+   "file": "images/figures/lada-granta-58a-fonar-osvescheniya.webp",
+   "caption": "Рис. 58а. Фонарь освещения",
+   "page": 139
+  },
+  {
+   "file": "images/figures/lada-granta-58b-posadochnoe-mesto.webp",
+   "caption": "Рис. 58б. Посадочное место",
+   "page": 139
+  }
+ ],
+ "140": [
+  {
+   "file": "images/figures/lada-granta-59-plafon-osvescheniya.webp",
+   "caption": "Рис. 59. Плафон освещения",
+   "page": 140
+  },
+  {
+   "file": "images/figures/lada-granta-60-plafon-osvescheniya.webp",
+   "caption": "Рис. 60. Плафон освещения",
+   "page": 140
+  },
+  {
+   "file": "images/figures/lada-granta-61-protivotumannaya-fara.webp",
+   "caption": "Рис. 61. Противотуманная фара",
+   "page": 140
+  }
+ ],
+ "146": [
+  {
+   "file": "images/figures/lada-granta-62a-gabaritnye-spravochnye-razmery-avtomobilya-s-kuz.webp",
+   "caption": "Рис. 62а. Габаритные (справочные) размеры автомобиля с кузовом «седан»",
+   "page": 146
+  }
+ ],
+ "149": [
+  {
+   "file": "images/figures/lada-granta-62b-gabaritnye-spravochnye-razmery-avtomobilya-s-kuz.webp",
+   "caption": "Рис. 62б. Габаритные (справочные) размеры автомобиля с кузовом «лифтбек»",
+   "page": 149
+  }
+ ],
+ "152": [
+  {
+   "file": "images/figures/lada-granta-62v-gabaritnye-spravochnye-razmery-avtomobilya-s-kuz.webp",
+   "caption": "Рис. 62в. Габаритные (справочные) размеры автомобиля с кузовом «универсал»",
+   "page": 152
+  }
+ ],
+ "155": [
+  {
+   "file": "images/figures/lada-granta-62g-gabaritnye-spravochnye-razmery-avtomobilya-v-mod.webp",
+   "caption": "Рис. 62г. Габаритные (справочные) размеры автомобиля в модификации «Cross»",
+   "page": 155
+  }
+ ],
+ "161": [
+  {
+   "file": "images/figures/lada-granta-63-tablichka-izgotovitelya.webp",
+   "caption": "Рис. 63. Табличка изготовителя",
+   "page": 161
+  }
+ ],
+ "164": [
+  {
+   "file": "images/figures/lada-granta-p164-0.webp",
+   "caption": "",
+   "page": 164
+  },
+  {
+   "file": "images/figures/lada-granta-p164-1.webp",
+   "caption": "",
+   "page": 164
+  }
+ ],
+ "165": [
+  {
+   "file": "images/figures/lada-granta-1-vneshnij-vid-i-forma-licevoj-paneli.webp",
+   "caption": "Рисунок 1. Внешний вид и форма лицевой панели",
+   "page": 165
+  }
+ ],
+ "166": [
+  {
+   "file": "images/figures/lada-granta-2-vneshnij-vid-displeya-radiopriemnika.webp",
+   "caption": "Рисунок 2. Внешний вид дисплея радиоприемника",
+   "page": 166
+  }
+ ],
+ "189": [
+  {
+   "file": "images/figures/lada-granta-1-ustrojstvo-ruchnogo-upravleniya-pedalyami-akselera.webp",
+   "caption": "Рис. 1. Устройство ручного управления педалями акселератора, тормоза и сцепления для автомобилей с механической коробкой",
+   "page": 189
+  }
+ ],
+ "190": [
+  {
+   "file": "images/figures/lada-granta-2-ustrojstvo-ruchnogo-upravleniya-pedalyami-akselera.webp",
+   "caption": "Рис. 2. Устройство ручного управления педалями акселератора",
+   "page": 190
+  }
+ ],
+ "191": [
+  {
+   "file": "images/figures/lada-granta-3-ustrojstvo-ruchnogo-upravleniya-pedalyami-akselera.webp",
+   "caption": "Рис. 3. Устройство ручного управления педалями акселератора, тормоза и сцепления для автомобилей с механической коробкой",
+   "page": 191
+  }
+ ],
+ "194": [
+  {
+   "file": "images/figures/lada-granta-4-razmeschenie-i-orientaciya-znaka-invalid.webp",
+   "caption": "Рис. 4. Размещение и ориентация знака «Инвалид»",
+   "page": 194
+  },
+  {
+   "file": "images/figures/lada-granta-5-razmeschenie-i-orientaciya-znaka-invalid.webp",
+   "caption": "Рис. 5. Размещение и ориентация знака «Инвалид»",
+   "page": 194
+  }
+ ],
+ "197": [
+  {
+   "file": "images/figures/lada-granta-1-vneshnij-vid-mms-v-variantnom-ispolnenii.webp",
+   "caption": "Рис. 1. Внешний вид ММС (в вариантном исполнении)",
+   "page": 197
+  },
+  {
+   "file": "images/figures/lada-granta-2-mikrofon-mms-v-variantnom-ispolnenii.webp",
+   "caption": "Рис. 2. Микрофон ММС (в вариантном исполнении)",
+   "page": 197
+  },
+  {
+   "file": "images/figures/lada-granta-3-usb-razem-mms-dlya-podklyucheniya-usb-nakopitelya.webp",
+   "caption": "Рис. 3. USB-разъем ММС для подключения USB-накопителя",
+   "page": 197
+  }
+ ],
+ "201": [
+  {
+   "file": "images/figures/lada-granta-p201-0.webp",
+   "caption": "",
+   "page": 201
+  },
+  {
+   "file": "images/figures/lada-granta-p201-1.webp",
+   "caption": "",
+   "page": 201
+  }
+ ]
+}

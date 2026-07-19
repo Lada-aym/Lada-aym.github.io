@@ -1,0 +1,22 @@
+{
+  "name": "LADA Granta — руководство по эксплуатации",
+  "short_name": "Granta РЭ",
+  "description": "Офлайн-справочник владельца LADA Granta: кузов и салон, органы управления, комбинация приборов, эксплуатация, техническое обслуживание, предохранители, лампы и технические характеристики.",
+  "lang": "ru",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#151515",
+  "background_color": "#0f0f10",
+  "categories": ["utilities", "reference"],
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
