@@ -348,14 +348,25 @@ img { max-width: 100%; height: auto; }
   clear: both;
 }
 .note { background: var(--note-bg); border-color: var(--note-bd); }
-.note strong { color: var(--ok); display: block; margin-bottom: .35rem; }
+.note strong { display: block; margin-bottom: .35rem; }
 .warning { background: var(--warn-bg); border-color: var(--warn-bd); }
-.warning strong { display: block; margin-bottom: .35rem; letter-spacing: .02em; }
-.warning.danger { border-left-color: var(--danger); background: rgba(255,92,92,.08); }
-.warning.danger strong { color: var(--danger); }
-.warning.warning { border-left-color: #e8a317; background: rgba(232,163,23,.06); }
-.warning.warning strong { color: #c78a00; }
-:root[data-theme="light"] .warning.warning strong { color: #a86e00; }
+.warning strong { display: block; margin-bottom: .5rem; letter-spacing: .02em; }
+.warning.warning-danger { border-left-color: var(--danger); background: rgba(255,92,92,.08); }
+.warning.warning-warning { border-left-color: #e8a317; background: rgba(232,163,23,.06); }
+/* Контрастные «фишки» подписей — как в разделе GAZelle (исправление PageSpeed/A11y):
+   тёмный текст на ярком фоне одинаково контрастен в обеих темах */
+.note strong,
+.warning.warning-danger strong,
+.warning.warning-warning strong {
+  color: #1a1a1f;
+  padding: .3rem .6rem;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 700;
+}
+.note strong { background: #4fd18b; }
+.warning.warning-danger strong { background: #ff5c5c; }
+.warning.warning-warning strong { background: #e8a317; }
 
 /* ---------- Таблицы ---------- */
 .table-scroll { overflow-x: auto; margin: .85rem 0; border: 1px solid var(--line); border-radius: 12px; clear: both; }
