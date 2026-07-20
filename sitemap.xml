@@ -5,173 +5,439 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
 <url>
   <loc>https://lada-aym.github.io/</loc>
   <lastmod>2026-04-04T11:22:01+00:00</lastmod>
   <priority>1.00</priority>
 </url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/opisanie1.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/opisanie2.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/opisanie3.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/opisanie4.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/opisanie5.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/opisanie6.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/opisanie7.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/opisanie8.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/opisanie9.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/opisanie10.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/opisanie11.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/opisanie12.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/opisanie13.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/opisanie14.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/opisanie15.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/opisanie16.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/opisanie17.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya1.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya2.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya3.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya4.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya5.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/ekspluatatsiya6.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie1.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie2.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie4.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie6.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie7.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika1.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika2.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika3.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/vvedenie/vvedenie.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/kuzov-i-salon/klyuchi.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/kuzov-i-salon/sistema-distancionnogo-upravleniya.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/kuzov-i-salon/rabota-sdu.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/kuzov-i-salon/immobilayzer.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/kuzov-i-salon/dveri.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/kuzov-i-salon/zona-pedaley.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/kuzov-i-salon/sidenya.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/kuzov-i-salon/rulevoe-koleso.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/kuzov-i-salon/passivnaya-bezopasnost.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/kuzov-i-salon/remni-bezopasnosti.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/kuzov-i-salon/podushki-bezopasnosti.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/kuzov-i-salon/detskie-kresla.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/kuzov-i-salon/oborudovanie-salona.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/kuzov-i-salon/kapot.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/kuzov-i-salon/kryshka-bagazhnika.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/kuzov-i-salon/probka-baka.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/organy-upravleniya/panel-priborov.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/organy-upravleniya/kombinaciya-priborov.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/organy-upravleniya/bortovoy-kompyuter.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/organy-upravleniya/podskazchik-peredach.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/organy-upravleniya/servisnoe-informirovanie.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/organy-upravleniya/modul-svetotehniki.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/organy-upravleniya/kruiz-kontrol.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/organy-upravleniya/podrulevye-pereklyuchateli.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/organy-upravleniya/vyklyuchatel-zazhiganiya.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/organy-upravleniya/rychag-mkp.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/organy-upravleniya/rychag-akp.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/organy-upravleniya/rychag-amt.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/organy-upravleniya/instrukciya-amt.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/organy-upravleniya/ventilyaciya-i-otoplenie.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/organy-upravleniya/rezhimy-ventilyacii.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/organy-upravleniya/audiopodgotovka.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/ekspluataciya/ustanovka-nomerov.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/ekspluataciya/osnovy-bezopasnosti.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/ekspluataciya/pusk-dvigatelya.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/ekspluataciya/dvizhenie.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/ekspluataciya/tormozhenie-i-stoyanka.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/ekspluataciya/buksirovanie.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/ekspluataciya/buksirovka-pricepa.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/ekspluataciya/bagazhnik-na-kryshe.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/ekspluataciya/parktronik.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/ekspluataciya/osobennosti-akp.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie/sistema-smazki.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie/korobka-peredach.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie/sistema-ohlazhdeniya.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie/tormoznaya-sistema.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie/omyvatel.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie/akkumulyator.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie/shiny-i-kolesa.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie/zamena-batarei-pdu.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie/predohraniteli.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie/zamena-lamp.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie/kuzov.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie/naruzhnoe-osveshchenie.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie/hranenie.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/obsluzhivanie/neispravnosti.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika/sedan.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika/liftbek.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika/universal.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika/cross.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika/rashod-topliva.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika/rashod-masla.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika/zapravochnye-obemy.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/tehnicheskaya-harakteristika/pasportnye-dannye.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/prilozheniya/toplivo-maslo-zhidkost.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/prilozheniya/lampy.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/prilozheniya/obuchenie-vozhdeniyu.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/prilozheniya/ekologiya.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lada-aym.github.io/LADA_Granta/prilozheniya/kontakty.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
 <url>
   <loc>https://lada-aym.github.io/LADA_Vesta/</loc>
   <lastmod>2026-04-04T11:22:01+00:00</lastmod>
@@ -1027,11 +1293,6 @@
   <lastmod>2026-04-04T11:22:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Kalina/</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
   <url>
     <loc>https://lada-aym.github.io/Lada_Samara/</loc>
     <lastmod>2026-06-16T12:00:00+00:00</lastmod>
@@ -1289,7 +1550,7 @@
     <lastmod>2026-06-16T12:00:00+00:00</lastmod>
     <priority>0.80</priority>
   </url>
-   <url><loc>https://lada-aym.github.io/Chevrolet_NIVA/index.html</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+   <url><loc>https://lada-aym.github.io/Chevrolet_NIVA/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://lada-aym.github.io/Chevrolet_NIVA/introduction/pered-nachalom-ekspluatacii.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://lada-aym.github.io/Chevrolet_NIVA/introduction/vashemu-vnimaniyu.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://lada-aym.github.io/Chevrolet_NIVA/body-and-interior/keys.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
