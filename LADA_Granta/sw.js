@@ -2,7 +2,7 @@
 // Service Worker: офлайн-доступ и быстрая загрузка раздела.
 // При обновлении файлов раздела увеличивайте CACHE_VERSION,
 // чтобы клиенты получили свежие версии.
-const CACHE_VERSION = "v8-2026-07-20";
+const CACHE_VERSION = "v9-2026-07-20";
 const CACHE_PREFIX = "lada-granta-manual-";
 const CACHE_NAME = `${CACHE_PREFIX}${CACHE_VERSION}`;
 const APP_SHELL = [
