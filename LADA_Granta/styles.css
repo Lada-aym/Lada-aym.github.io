@@ -144,6 +144,9 @@ img { max-width: 100%; height: auto; }
 .burger-btn.open span:nth-child(2) { opacity: 0; }
 .burger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 .brand { display: flex; gap: .85rem; align-items: center; }
+/* сброс отступов заголовков в шапке — как в GAZelle (не даём шапке раздуваться) */
+.app-header { line-height: normal; }
+.app-header h1, .app-header h2, .app-header h3 { margin: 0; line-height: 1.15; }
 .brand h1 { font-size: 1.1rem; }
 .brand p { margin: .15rem 0 0; color: var(--muted); font-size: .85rem; }
 .logo {
@@ -409,6 +412,12 @@ tbody tr:hover { background: var(--accent-glow); }
 .indicator-icon, .switch-icon {
   flex: 0 0 auto; width: 36px; height: 36px; object-fit: contain;
   border-radius: 6px; background: var(--figure-bg); padding: 2px;
+}
+/* пиктограммы ламп — чёрные на прозрачном фоне: в тёмной теме инвертируем в белый */
+:root[data-theme="dark"] .indicator-icon,
+:root[data-theme="dark"] .switch-icon {
+  background: transparent;
+  filter: invert(1);
 }
 .indicator-num {
   flex: 0 0 auto; min-width: 26px; height: 26px;
