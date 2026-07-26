@@ -122,7 +122,7 @@ img { max-width: 100%; height: auto; }
 
 /* ---------- Шапка ---------- */
 .app-header {
-  position: sticky; top: 0; z-index: 50;
+  position: sticky; top: 0; z-index: 60;
   display: flex; justify-content: space-between; gap: 1rem; align-items: center;
   padding: .85rem clamp(1rem, 3vw, 2rem);
   background: var(--header-bg);
@@ -201,6 +201,15 @@ img { max-width: 100%; height: auto; }
 .hero-card strong { color: var(--accent-2); }
 .hero-card span { color: var(--muted); }
 
+/* Блокировка body-прокрутки при открытом мобильном меню */
+body.body-locked {
+  position: fixed;
+  left: 0; right: 0;
+  width: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
 /* ---------- Layout ---------- */
 .layout {
   display: grid; grid-template-columns: 320px 1fr; gap: 1rem;
@@ -238,7 +247,20 @@ img { max-width: 100%; height: auto; }
 .menu-group-head.active { border-color: var(--accent); background: var(--accent-glow); }
 .menu-caret { transition: transform .15s; color: var(--muted); }
 .menu-group.open .menu-caret { transform: rotate(90deg); }
-.menu-group-title { flex: 1 1 auto; }
+.menu-group-title { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.menu-group-count {
+  flex: 0 0 auto;
+  min-width: 22px; height: 22px;
+  display: inline-grid; place-items: center;
+  font-size: .72rem; font-weight: 800;
+  color: var(--muted);
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0 .4rem;
+}
+.menu-group-head.active .menu-group-count,
+.menu-group.open .menu-group-count { color: var(--accent-2); border-color: var(--accent); }
 .menu-items { display: none; flex-direction: column; gap: .15rem; padding-left: .45rem; }
 .menu-group.open .menu-items { display: flex; }
 .menu-group.open { margin-bottom: .35rem; }
@@ -508,7 +530,7 @@ td span + .table-img { margin-top: .25rem; }
 /* ---------- Наверх ---------- */
 .to-top {
   display: none;
-  position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 45;
+  position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 62;
   width: 44px; height: 44px; border-radius: 50%;
   border: 1px solid var(--line); background: var(--panel); color: var(--text);
   box-shadow: var(--shadow); font-size: 1.1rem;
@@ -585,7 +607,9 @@ td span + .table-img { margin-top: .25rem; }
     padding-bottom: max(1rem, env(safe-area-inset-bottom));
   }
   .sidebar.open { transform: none; box-shadow: var(--shadow); }
-  .sidebar-overlay.show { display: block; position: fixed; inset: 0; z-index: 28; background: rgba(0,0,0,.45); }
+  .sidebar { z-index: 55; }
+  .sidebar-overlay.show { display: block; position: fixed; inset: 0; z-index: 54; background: rgba(0,0,0,.45); }
+  /* при открытом меню шапка остаётся поверх, но не перекрывает контент панели */
   .home-btn-text { display: none; }
 }
 @media (max-width: 860px) {
