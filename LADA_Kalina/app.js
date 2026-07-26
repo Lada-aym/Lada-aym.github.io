@@ -101,6 +101,21 @@ const MENU = buildMenu();
 
 function isMobile() { return window.matchMedia("(max-width: 980px)").matches; }
 
+/* Блокировка прокрутки body при открытом мобильном сайдбаре */
+let scrollY = 0;
+function lockBody() {
+  if (document.body.classList.contains("body-locked")) return;
+  scrollY = window.scrollY || window.pageYOffset || 0;
+  document.body.style.top = `-${scrollY}px`;
+  document.body.classList.add("body-locked");
+}
+function unlockBody() {
+  if (!document.body.classList.contains("body-locked")) return;
+  document.body.classList.remove("body-locked");
+  document.body.style.top = "";
+  window.scrollTo(0, scrollY);
+}
+
 const state = {
   view: "all",          // all | path | favorites | category
   path: null,
@@ -172,7 +187,13 @@ function goToPath(path) {
   location.hash = "#/" + path.replace(/\.html$/, "");
 }
 function goRootHome() {
-  if (location.hash) location.hash = "#/all"; else renderApp();
+  if (!location.hash || location.hash === "#/all" || location.hash === "#all") {
+    state.view = "all"; state.path = null; state.category = null;
+    renderApp();
+    window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
+    return;
+  }
+  location.hash = "#/all";
 }
 function goCategory(cat) {
   location.hash = "#/cat/" + encodeURIComponent(cat);
@@ -220,7 +241,16 @@ function renderMenu() {
   nav.querySelectorAll(".menu-group-head").forEach(btn => {
     btn.addEventListener("click", () => {
       const cat = btn.getAttribute("data-cat-head");
-      if (state.openCats.has(cat)) state.openCats.delete(cat); else state.openCats.add(cat);
+      const isOpen = state.openCats.has(cat);
+      // На десктопе: клик по уже раскрытой группе сворачивает её (аккордеон).
+      // На мобилке/всегда: клик переключает раскрытие и переходит в категорию.
+      if (!isMobile() && isOpen && state.view === "category" && state.category === cat) {
+        state.openCats.delete(cat);
+        state.category = null;
+        goRootHome();
+        return;
+      }
+      if (isOpen) state.openCats.delete(cat); else state.openCats.add(cat);
       state.category = cat;
       goCategory(cat);
       if (isMobile()) closeSidebar();
@@ -577,9 +607,9 @@ function setupScrollSpy() {
       const id = entry.target.id;
       const section = SECTIONS.find(s => slug(s.path) === id);
       if (!section) continue;
-      // аккордеон: раскрываем только группу активного раздела (как в образце)
-      if (!state.openCats.has(section.category) || state.openCats.size !== 1) {
-        state.openCats = new Set([section.category]);
+      // аккордеон: на главной/в категории раскрываем группу активного раздела
+      if (!state.openCats.has(section.category)) {
+        state.openCats.add(section.category);
         renderMenu();
       }
       nav.querySelectorAll(".menu-item").forEach(btn => {
@@ -695,12 +725,23 @@ function openSidebar() {
   sidebar.classList.add("open");
   overlay.classList.add("show");
   document.getElementById("burgerBtn").setAttribute("aria-expanded", "true");
+  if (isMobile()) lockBody();
 }
 function closeSidebar() {
   sidebar.classList.remove("open");
   overlay.classList.remove("show");
   const b = document.getElementById("burgerBtn");
   if (b) b.setAttribute("aria-expanded", "false");
+  unlockBody();
+}
+
+/* Закрытие сайдбара по Escape (мобилка) */
+function onSidebarKeydown(e) {
+  if (e.key === "Escape" && sidebar.classList.contains("open") && isMobile()) {
+    closeSidebar();
+    const bb = document.getElementById("burgerBtn");
+    if (bb) bb.focus();
+  }
 }
 
 /* ---------------------------------------------------------------------------
@@ -713,13 +754,52 @@ document.addEventListener("DOMContentLoaded", () => {
   cacheDomElements();
 
   document.getElementById("homeBtn").addEventListener("click", goSiteHome);
-  document.getElementById("sideHomeBtn").addEventListener("click", goSiteHome);
-  document.getElementById("showAllBtn").addEventListener("click", goRootHome);
-  document.getElementById("showFavBtn").addEventListener("click", goFavorites);
+  document.getElementById("sideHomeBtn").addEventListener("click", () => { goSiteHome(); });
+
+  /* Закрытие мобильного меню после клика по боковым действиям */
+  const mobileClose = () => { if (isMobile()) closeSidebar(); };
+  const wrap = (fn) => (e) => { fn(e); mobileClose(); };
+  document.getElementById("showAllBtn").addEventListener("click", wrap(goRootHome));
+  document.getElementById("showFavBtn").addEventListener("click", wrap(goFavorites));
+  document.getElementById("osIntegratedSearchBtn").addEventListener("click", mobileClose);
+
   document.getElementById("burgerBtn").addEventListener("click", () => {
     sidebar.classList.contains("open") ? closeSidebar() : openSidebar();
   });
   overlay.addEventListener("click", closeSidebar);
+  document.addEventListener("keydown", onSidebarKeydown);
+
+  /* Свайп влево для закрытия сайдбара (мобилка) */
+  let touchStartX = null, touchStartY = null;
+  sidebar.addEventListener("touchstart", (e) => {
+    if (!isMobile() || !sidebar.classList.contains("open")) return;
+    const t = e.changedTouches[0];
+    touchStartX = t.clientX; touchStartY = t.clientY;
+  }, { passive: true });
+  sidebar.addEventListener("touchend", (e) => {
+    if (touchStartX == null) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touchStartX;
+    const dy = Math.abs(t.clientY - touchStartY);
+    if (dx < -60 && Math.abs(dx) > dy) closeSidebar();
+    touchStartX = touchStartY = null;
+  }, { passive: true });
+
+  /* Синхронизация состояния сайдбара при изменении ширины экрана */
+  const mql = window.matchMedia("(max-width: 980px)");
+  const syncSidebarForViewport = () => {
+    if (!isMobile()) {
+      // Перешли на десктоп: снимаем оверлей и блокировку body
+      overlay.classList.remove("show");
+      unlockBody();
+    } else if (!sidebar.classList.contains("open")) {
+      // На мобилке, но меню закрыто: убеждаемся, что оверлея нет
+      overlay.classList.remove("show");
+      unlockBody();
+    }
+  };
+  if (mql.addEventListener) mql.addEventListener("change", syncSidebarForViewport);
+  else if (mql.addListener) mql.addListener(syncSidebarForViewport); // Safari <14
 
   const toTop = document.getElementById("toTopBtn");
   toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
