@@ -1,5 +1,5 @@
 // LADA Kalina — руководство по эксплуатации
-const CACHE_VERSION = "v43-2026-07-26-seo-redirects";
+const CACHE_VERSION = "v45-2026-07-26-seo-redirects";
 const CACHE_PREFIX = "lada-kalina-manual-";
 const CACHE_NAME = `${CACHE_PREFIX}${CACHE_VERSION}`;
 const APP_SHELL = [
