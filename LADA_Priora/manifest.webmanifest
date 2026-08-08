@@ -1,0 +1,25 @@
+{
+  "name": "LADA Priora — руководство по эксплуатации",
+  "short_name": "LADA Priora",
+  "description": "Интерактивное офлайн-руководство владельца LADA Priora: кузов и салон, органы управления, эксплуатация, обслуживание, характеристики.",
+  "lang": "ru",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f0f1f4",
+  "theme_color": "#151515",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
