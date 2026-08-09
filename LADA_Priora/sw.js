@@ -1,5 +1,5 @@
 // LADA Priora — руководство по эксплуатации
-const CACHE_VERSION = "v36-2026-08-07-priora-redirects-family-style";
+const CACHE_VERSION = "v37-2026-08-07-priora-neispravnosti";
 const CACHE_PREFIX = "lada-priora-manual-";
 const CACHE_NAME = `${CACHE_PREFIX}${CACHE_VERSION}`;
 const APP_SHELL = [
