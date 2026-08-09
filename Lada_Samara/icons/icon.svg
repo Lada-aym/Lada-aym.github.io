@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#151515"/>
+  <ellipse cx="256" cy="216" rx="150" ry="104" fill="none" stroke="#c99a2c" stroke-width="22"/>
+  <path d="M226 250c-10-52 8-96 44-118-18 44-20 84-8 118 6 18 2 34-10 42 28 4 62-8 86-30-30 4-52-4-64-16 40 2 74-10 96-34-26 10-52 10-72-2 26-22 40-50 42-86 14 28 20 62 14 96-8 46-46 76-98 76s-90-30-98-76c-6-34 0-68 14-96 2 36 16 64 42 86-20 12-46 12-72 2 22 24 56 36 96 34-16-14-26-38-26-62z" fill="#c99a2c"/>
+  <text x="256" y="412" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" letter-spacing="6" fill="#f0f1f4">SAMARA</text>
+</svg>
