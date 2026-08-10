@@ -10,7 +10,6 @@
   <lastmod>2026-04-04T11:22:01+00:00</lastmod>
   <priority>1.00</priority>
 </url>
-
   <url>
     <loc>https://lada-aym.github.io/LADA_Granta/</loc>
     <lastmod>2026-07-19</lastmod>
@@ -437,7 +436,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
 <url>
   <loc>https://lada-aym.github.io/LADA_Vesta/</loc>
   <lastmod>2026-04-04T11:22:01+00:00</lastmod>
@@ -1147,410 +1145,133 @@
   <loc>https://lada-aym.github.io/Lada4x4/about_us.html</loc>
   <lastmod>2026-04-04T11:22:01+00:00</lastmod>
   <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/opisanie1.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/opisanie2.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/opisanie3.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/opisanie4.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/opisanie5.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/opisanie6.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/opisanie7.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/opisanie8.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/opisanie9.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/opisanie10.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/opisanie11.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/opisanie12.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/opisanie13.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya1.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya2.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya3.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya4.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/obsluzhivanie1.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/obsluzhivanie2.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/obsluzhivanie3.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/obsluzhivanie4.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/obsluzhivanie5.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/obsluzhivanie6.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/obsluzhivanie7.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/tehnicheskaya-harakteristika1.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/tehnicheskaya-harakteristika2.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/tehnicheskaya-harakteristika3.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://lada-aym.github.io/LADA_Priora/prilozheniya.html</loc>
-  <lastmod>2026-04-04T11:22:01+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/introduction/pered-nachalom-ekspluatacii.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/introduction/obyazannosti-vladelca.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/body-and-interior/keys.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/body-and-interior/doors.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/body-and-interior/seats.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/body-and-interior/safety-belts.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/body-and-interior/interior-equipment.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/body-and-interior/hood.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/body-and-interior/trunk.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/body-and-interior/fuel-cap.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/controls-and-instruments/dashboard.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/controls-and-instruments/instrument-cluster.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/controls-and-instruments/ignition.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/controls-and-instruments/aps-4.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/controls-and-instruments/steering-switches.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/controls-and-instruments/rocker-switches.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/controls-and-instruments/onboard-monitoring.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/controls-and-instruments/mirror-control.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/controls-and-instruments/trip-computer.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/controls-and-instruments/heating-control.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/car-operation/license-plates.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/car-operation/safety-basics.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/car-operation/engine-start.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/car-operation/driving.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/car-operation/braking-and-parking.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/car-operation/towing.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/car-operation/fuel-injection.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/maintenance/lubrication-system.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/maintenance/cooling-system.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/maintenance/braking-system.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/maintenance/battery-charge.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/maintenance/washer-fluids.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/maintenance/spark-plugs.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/maintenance/tires.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/maintenance/wheel-change.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/maintenance/fuse-replacement.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/maintenance/lamp-replacement.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/maintenance/body.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/maintenance/storage.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/specifications/dimensions.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/specifications/engine-specs.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/specifications/performance.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/specifications/capacities.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/specifications/settings.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/specifications/vehicle-id.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/appendices/recommended-fluids.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/appendices/lamps-list.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/appendices/precious-metals.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://lada-aym.github.io/Lada_Samara/appendices/troubleshooting.html</loc>
-    <lastmod>2026-06-16T12:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-   <url><loc>https://lada-aym.github.io/Chevrolet_NIVA/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+</url> <url><loc>https://lada-aym.github.io/LADA_Priora/</loc><lastmod>2026-08-08</lastmod><priority>1.0</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/vvedenie/vashemu-vnimaniyu.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/klyuchi.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/sistema-distantsionnogo-upravleniya.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/rabota-sistemy-distantsionnogo-upravleniya.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/immobilizator.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/dveri.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/dver-zadka.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/zona-raspolozheniya-pedaley.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/sidenya.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/ustanovka-detskogo-uderzhivayuschego-ustroystva.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/ustanovka-detskogo-sidenya-isofix.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/regulirovka-polozheniya-rulevogo-kolesa.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/remni-i-podushki-bezopasnosti.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/gidrousilitel-rulevogo-upravleniya.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/oborudovanie-salona.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/blok-fary.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/kapot.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/kryshka-bagazhnika.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/kuzov-i-salon/probka-toplivnogo-baka.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/organy-upravleniya/organy-upravleniya-i-pribory.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/organy-upravleniya/kombinatsiya-priborov.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/organy-upravleniya/organy-upravleniya-i-pribory-variantnoe-ispolnenie.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/organy-upravleniya/kombinatsiya-priborov-variantnoe-ispolnenie.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/organy-upravleniya/zhidkokristallicheskiy-indikator-i-bortovoy-kompyuter.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/organy-upravleniya/kruiz-kontrol-i-ogranichitel-skorosti.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/organy-upravleniya/blok-upravleniya-obogrevom-perednih-sideniy.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/organy-upravleniya/marshrutnyy-kompyuter.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/organy-upravleniya/predpuskovoy-podogrevatel.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/organy-upravleniya/modul-upravleniya-svetotehnikoy-i-pereklyuchateli.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/organy-upravleniya/pereklyuchatel-stekloochistiteley.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/organy-upravleniya/vyklyuchatel-zazhiganiya.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/organy-upravleniya/rychag-pereklyucheniya-peredach-mkp.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/organy-upravleniya/panel-upravleniya-mms.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/organy-upravleniya/podklyuchenie-usb-sd.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/organy-upravleniya/upravlenie-sistemoy-otopleniya-i-ventilyatsii-salona.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/organy-upravleniya/konditsionirovanie-salona-variantnoe-ispolnenie.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya/ustanovka-nomernyh-znakov.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya/osnovy-bezopasnoy-ekspluatatsii.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya/ekspluatatsiya-novogo-avtomobilya.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya/podgotovka-k-dvizheniyu-i-posadka-voditelya.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya/pusk-dvigatelya.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya/osobennosti-ekspluatatsii-s-sistemoy-vpryska-i-euru.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya/dvizhenie-avtomobilya.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya/tormozhenie-i-stoyanka-abs.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya/sistema-elektronnogo-kontrolya-ustoychivosti-esc.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya/buksirovanie-avtomobilya.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/ekspluatatsiya/sistema-bezopasnoy-parkovki.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/to/tehnicheskoe-obsluzhivanie-i-tekuschiy-remont-avtomobilya.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/to/sistema-smazki-dvigatelya.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/to/avtomatizirovannaya-transmissiya-amt.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/to/korobka-peredach.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/to/sistema-ohlazhdeniya-dvigatelya.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/to/tormoznaya-sistema.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/to/gidrousilitel-rulya-obsluzhivanie.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/to/sistema-omyva-i-ochistki-stekol.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/to/akkumulyatornaya-batareya.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/to/shiny-i-kolesa.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/to/zamena-koles.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/to/zamena-elementa-pitaniya-pulta-du.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/to/predohraniteli-i-montazhnyy-blok.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/to/zamena-lamp.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/to/kuzov-uhod-i-remont.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/to/pribory-naruzhnogo-osvescheniya-i-vneshney-svetovoy-signaliz.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/to/hranenie-avtomobilya.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/harakteristiki/osnovnye-parametry-i-razmery.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/harakteristiki/fakticheskiy-rashod-topliva.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/harakteristiki/pasportnye-dannye.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/prilozheniya/prilozhenie-1-toplivo-i-motornye-masla.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/prilozheniya/prilozhenie-2-lampy-primenyaemye-na-avtomobile.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/prilozheniya/prilozhenie-3-rds-tipy-programm.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/LADA_Priora/prilozheniya/prilozhenie-4-predpuskovoy-podogrevatel-rekomendatsii.html</loc><lastmod>2026-08-08</lastmod><priority>0.7</priority></url>
+ <url><loc>https://lada-aym.github.io/Lada_Samara/</loc><lastmod>2026-08-09</lastmod><priority>1.0</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/vvedenie/vashemu-vnimaniyu.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/kuzov-i-salon/klyuchi.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/kuzov-i-salon/dveri.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/kuzov-i-salon/sidenya.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/kuzov-i-salon/remni-i-podushka-bezopasnosti.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/kuzov-i-salon/oborudovanie-salona.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/kuzov-i-salon/kapot.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/kuzov-i-salon/kryshka-bagazhnika.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/kuzov-i-salon/probka-toplivnogo-baka.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/organy-upravleniya/panel-priborov.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/organy-upravleniya/kombinaciya-priborov.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/organy-upravleniya/vyklyuchatel-zazhiganiya.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/organy-upravleniya/protivougonnaya-sistema.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/organy-upravleniya/podrulevye-pereklyuchateli.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/organy-upravleniya/klavishnye-vyklyuchateli.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/organy-upravleniya/bortovaya-sistema-kontrolya.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/organy-upravleniya/blok-upravleniya-zerkalami.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/organy-upravleniya/marshrutny-kompyuter.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/organy-upravleniya/ventilyatsiya-i-otoplenie.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/ekspluatatsiya/ustanovka-nomernyh-znakov.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/ekspluatatsiya/osnovy-bezopasnoy-ekspluatatsii.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/ekspluatatsiya/pusk-dvigatelya.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/ekspluatatsiya/dvizhenie-avtomobilya.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/ekspluatatsiya/tormozhenie-i-stoyanka.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/ekspluatatsiya/buksirovanie.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/ekspluatatsiya/osobennosti-vpryska.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/to/obshchie-svedeniya.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/to/sistema-smazki-dvigatelya.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/to/sistema-ohlazhdeniya-dvigatelya.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/to/tormoznaya-sistema.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/to/akkumulyatornaya-batareya.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/to/omyvayushchie-zhidkosti.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/to/svechi-zazhiganiya.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/to/shiny.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/to/zamena-koles.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/to/zamena-predohraniteley.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/to/zamena-lamp.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/to/kuzov.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/to/hranenie-avtomobilya.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/neispravnosti/neispravnosti-dvigatelya.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/neispravnosti/stseplenie-i-korobka-peredach.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/neispravnosti/hodovaya-chast-i-rulevoe-upravlenie.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/neispravnosti/tormoznaya-sistema.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/neispravnosti/elektrooborudovanie.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/neispravnosti/otoplenie-i-ventilyatsiya.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/harakteristiki/osnovnye-parametry-i-razmery.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/harakteristiki/harakteristiki-dvigatelya.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/harakteristiki/zapravochnye-obemy.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/harakteristiki/regulirovochnye-parametry.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/harakteristiki/pasportnye-dannye.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/prilozheniya/prilozhenie-1-goryuche-smazochnye-materialy.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/prilozheniya/prilozhenie-2-lampy.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lada-aym.github.io/Lada_Samara/prilozheniya/prilozhenie-3-dragotsennye-metally.html</loc><lastmod>2026-08-09</lastmod><priority>0.7</priority></url>
+ <url><loc>https://lada-aym.github.io/Chevrolet_NIVA/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://lada-aym.github.io/Chevrolet_NIVA/introduction/pered-nachalom-ekspluatacii.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://lada-aym.github.io/Chevrolet_NIVA/introduction/vashemu-vnimaniyu.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://lada-aym.github.io/Chevrolet_NIVA/body-and-interior/keys.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -1603,7 +1324,7 @@
   <url><loc>https://lada-aym.github.io/Chevrolet_NIVA/appendices/recommended-fluids.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://lada-aym.github.io/Chevrolet_NIVA/appendices/lamps-list.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://lada-aym.github.io/Chevrolet_NIVA/appendices/troubleshooting.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  
+
   <url>
     <loc>https://lada-aym.github.io/GAZel_next/</loc>
     <lastmod>2026-07-14</lastmod>
