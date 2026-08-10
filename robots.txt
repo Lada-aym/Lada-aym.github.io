@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /README.md
+Disallow: /LICENSE
+Disallow: /CNAME
+
+Sitemap: https://lada-aym.github.io/sitemap-index.xml
